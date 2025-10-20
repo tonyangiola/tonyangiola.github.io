@@ -1,0 +1,24 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tony Angiola — Author</title>
+
+
+
+
+# create a working folder
+mkdir -p ~/site && cd ~/site
+
+# create and clone your user-site repo
+gh repo create tonyangiola/tonyangiola.github.io --public --clone
+cd tonyangiola.github.io
+
+# make a starter homepage
+cat > index.html <<'HTML'
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tony Angiola — Author</title>
+<h1>Site coming soon</h1>
+<p>Building the new author site…</p>
+<!-- deploy-marker: init -->
