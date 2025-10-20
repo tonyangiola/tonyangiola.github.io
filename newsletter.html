@@ -1,0 +1,40 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter — Tony Angiola</title>
+<link rel="stylesheet" href="/assets/style.css">
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/"><strong>Tony Angiola</strong></a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Newsletter</h1>
+    <p>Get field updates, case write-ups, and new chapter drops.</p>
+    <div class="card">
+      <!-- Replace the action URL with Buttondown/MailerLite later -->
+      <form method="post" action="#" onsubmit="alert('Wire this to your provider (Buttondown/MailerLite).'); return false;">
+        <label for="email">Email</label><br>
+        <input id="email" name="email" type="email" required style="width:100%;max-width:420px;padding:.6rem;border:1px solid #ccc;border-radius:8px">
+        <div style="height:10px"></div>
+        <button class="btn" type="submit">Subscribe</button>
+        <p class="small">No spam. Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="y"></span> Tony Angiola. All rights reserved.</div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
