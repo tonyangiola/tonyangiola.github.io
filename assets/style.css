@@ -17,3 +17,49 @@ h1 { margin: 0.2em 0 0.4em; }
 .small { font-size: 0.92rem; color:#444; }
 ul.clean { padding-left: 1.1rem; }
 code { background:#f6f6f6; padding:0 .3rem; border-radius:6px; }
+
+/* Books grid (uniform cover size + working links) */
+.books-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.book .cover {
+  display: block;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0d0d0d;
+  aspect-ratio: 2 / 3;      /* consistent 6x9 box */
+}
+.book .cover .book-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* no cropping */
+  display: block;
+}
+.book h3 { margin: 0.6rem 0 0.4rem; font-size: 1.05rem; }
+.book h3 a { text-decoration: none; }
+.book h3 a:hover { text-decoration: underline; }
+.book .subtitle { font-size: 0.95rem; opacity: 0.8; margin: 0.25rem 0 0.5rem; }
+.actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #444;
+  text-decoration: none;
+}
+.btn:hover { border-color: #777; }
+.btn.ghost { background: transparent; }
+.book .badge {
+  position: absolute; top: 8px; left: 8px;
+  padding: 0.25rem 0.5rem; border-radius: 999px;
+  font-size: 0.75rem; background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  pointer-events: none;   /* ensure clicks work */
+}
+/* fix potential overlay issues */
+header { position: relative; z-index: 10; }
+main { position: relative; z-index: 0; }
+

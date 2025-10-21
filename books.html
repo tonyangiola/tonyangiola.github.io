@@ -1,63 +1,53 @@
-<!doctype html>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Books — Tony Angiola</title>
-<link rel="stylesheet" href="/assets/style.css">
-<body>
-  <!--#include virtual="/assets/header.html" -->
-  <header>
-    <div class="container">
-      <nav>
-        <a href="/"><strong>Tony Angiola</strong></a>
-        <a href="/books.html">Books</a>
-        <a href="/bio.html">Bio</a>
-        <a href="/newsletter.html">Newsletter</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section style="margin:1.5rem 0;">
-      <a href="/newsletter.html" style="display:inline-block;padding:.6rem 1rem;border-radius:8px;border:1px solid #888;text-decoration:none;">Join the newsletter for new releases</a>
-    </section>
-
-    <section class="books-grid" style="margin:1rem 0 2rem 0;">
-      <h1 style="margin:0 0 1rem 0;">Books</h1>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;">
-        <article style="text-align:center;">
-          <a href="/books/snippy.html" style="text-decoration:none;color:inherit;display:block;">
-            <img src="/images/books/snippy.jpg" alt="Snippy The Horse: A King Family Legacy" style="width:100%;max-width:220px;aspect-ratio:2/3;object-fit:contain;background:#f6f6f6;border:1px solid #ddd;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.08);">
-            <h3 style="margin:.6rem 0 .2rem 0;font-size:1rem;">Snippy The Horse: A King Family Legacy</h3>
-          </a>
-          <p style="margin:0;font-size:.9rem;opacity:.8;">Details & newsletter</p>
-        </article>
-
-        <article style="text-align:center;">
-          <a href="/books/socorro.html" style="text-decoration:none;color:inherit;display:block;">
-            <img src="/images/books/socorro.jpg" alt="Socorro UFO: Not of This World" style="width:100%;max-width:220px;aspect-ratio:2/3;object-fit:contain;background:#f6f6f6;border:1px solid #ddd;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.08);">
-            <h3 style="margin:.6rem 0 .2rem 0;font-size:1rem;">Socorro UFO: Not of This World</h3>
-          </a>
-          <p style="margin:0;font-size:.9rem;opacity:.8;">Details & newsletter</p>
-        </article>
-
-        <article style="text-align:center;">
-          <a href="/books/gremlins.html" style="text-decoration:none;color:inherit;display:block;">
-            <img src="/images/books/gremlins.jpg" alt="Flying Saucers, Aliens, and Gremlins" style="width:100%;max-width:220px;aspect-ratio:2/3;object-fit:contain;background:#f6f6f6;border:1px solid #ddd;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.08);">
-            <h3 style="margin:.6rem 0 .2rem 0;font-size:1rem;">Flying Saucers, Aliens, and Gremlins</h3>
-          </a>
-          <p style="margin:0;font-size:.9rem;opacity:.8;">Details & newsletter</p>
-        </article>
-
-        <article style="text-align:center;">
-          <a href="/books/cosmic.html" style="text-decoration:none;color:inherit;display:block;">
-            <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets" style="width:100%;max-width:220px;aspect-ratio:2/3;object-fit:contain;background:#f6f6f6;border:1px solid #ddd;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,.08);">
-            <h3 style="margin:.6rem 0 .2rem 0;font-size:1rem;">Cosmic Secrets</h3>
-          </a>
-          <p style="margin:0;font-size:.9rem;opacity:.8;">Details & newsletter</p>
-        </article>
-
+<section class="books-grid">
+  <h2>Books</h2>
+  <div class="grid">
+    <!-- Snippy -->
+    <article class="book">
+      <a class="cover" href="https://www.amazon.com/dp/B0F87LHZ7Y" target="_blank" rel="noopener">
+        <img class="book-img" src="/images/books/snippy.jpg" alt="Snippy: The Strange Case of the Colorado UFO Horse">
+      </a>
+      <h3><a href="https://www.amazon.com/dp/B0F87LHZ7Y" target="_blank" rel="noopener">Snippy: The Strange Case of the Colorado UFO Horse</a></h3>
+      <div class="actions">
+        <a class="btn" href="https://www.amazon.com/dp/B0F87LHZ7Y" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn ghost" href="/newsletter.html">Get Updates</a>
       </div>
-    </section>
-  </main>
-</body>
+    </article>
+
+    <!-- Gremlins -->
+    <article class="book">
+      <a class="cover" href="https://www.amazon.com/dp/B0FF3RWHT7" target="_blank" rel="noopener">
+        <img class="book-img" src="/images/books/gremlins.jpg" alt="Flying Saucers, Aliens & Gremlins">
+      </a>
+      <h3><a href="https://www.amazon.com/dp/B0FF3RWHT7" target="_blank" rel="noopener">Flying Saucers, Aliens & Gremlins</a></h3>
+      <div class="actions">
+        <a class="btn" href="https://www.amazon.com/dp/B0FF3RWHT7" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+      </div>
+    </article>
+
+    <!-- Socorro -->
+    <article class="book">
+      <a class="cover" href="https://www.amazon.com/dp/B0FGQP7PHN" target="_blank" rel="noopener">
+        <img class="book-img" src="/images/books/socorro.jpg" alt="SOCORRO UFO: Not of This World">
+      </a>
+      <h3><a href="https://www.amazon.com/dp/B0FGQP7PHN" target="_blank" rel="noopener">SOCORRO UFO: Not of This World</a></h3>
+      <div class="actions">
+        <a class="btn" href="https://www.amazon.com/dp/B0FGQP7PHN" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+      </div>
+    </article>
+
+    <!-- Cosmic Secrets -->
+    <article class="book coming-soon">
+      <div class="cover">
+        <img class="book-img" src="/images/books/cosmic-secrets.jpg" alt="Cosmic Secrets — Coming Soon">
+        <span class="badge">Coming Soon</span>
+      </div>
+      <h3>Cosmic Secrets</h3>
+      <p class="subtitle">The Hidden Truth of Humanity, Consciousness, and the Universe — and Why Governments Fear UFO Disclosure</p>
+      <div class="actions">
+        <a class="btn" href="/newsletter.html">Get Updates</a>
+      </div>
+    </article>
+  </div>
+</section>
