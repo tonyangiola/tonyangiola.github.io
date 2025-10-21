@@ -631,3 +631,8 @@ header nav a:focus-visible {
 :root[data-page="bio"] .container {
   outline: none !important; border: none !important; box-shadow: none !important;
 }
+/* Canonical neutral card border (final override) */
+.bio-card::before,
+.panel::before {
+  border-color: rgba(0,0,0,.08) !important;
+}
