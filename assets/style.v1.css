@@ -43,3 +43,71 @@ a.btn:focus-visible, .btn:focus-visible, a.btn.cta:focus-visible {
   background: linear-gradient(180deg, rgba(37,99,235,.06), transparent) !important;
   border: 0 !important;
 }
+/* === Hard guard rails: background + CTA buttons (all states) === */
+html, body { background:#ffffff !important; color:#111 !important; }
+
+/* Neutralize parent/legacy hover/focus styles on hero/rows if any */
+.hero a, .book-row a, .card a {
+  border: none !important;
+  text-decoration: none !important;
+}
+
+/* Treat newsletter + Amazon links as buttons even without classes */
+main a[href="/newsletter.html"],
+main a[href*="amazon.com"],
+a.btn, a.btn.cta, .btn {
+  display:inline-block !important;
+  padding:.62rem 1rem !important;
+  border-radius:.75rem !important;
+  font-weight:600 !important;
+  border:1px solid rgba(0,0,0,.10) !important;
+  background:#2563eb !important;
+  color:#fff !important;
+  text-decoration:none !important;
+  line-height:1.2 !important;
+  transition: background-color .15s ease, transform .08s ease, box-shadow .15s ease !important;
+}
+
+/* Make all interactive states consistent and predictable */
+main a[href="/newsletter.html"]:link,
+main a[href="/newsletter.html"]:visited,
+main a[href="/newsletter.html"]:focus,
+main a[href="/newsletter.html"]:active,
+main a[href="/newsletter.html"]:hover,
+main a[href*="amazon.com"]:link,
+main a[href*="amazon.com"]:visited,
+main a[href*="amazon.com"]:focus,
+main a[href*="amazon.com"]:active,
+main a[href*="amazon.com"]:hover,
+a.btn:link, a.btn:visited, a.btn:focus, a.btn:active, a.btn:hover,
+.btn:link, .btn:visited, .btn:focus, .btn:active, .btn:hover {
+  color:#fff !important;
+}
+
+main a[href="/newsletter.html"]:hover,
+main a[href*="amazon.com"]:hover,
+a.btn:hover, .btn:hover {
+  background:#1e4fd3 !important;
+  transform:translateY(-1px) !important;
+  box-shadow:0 4px 10px rgba(0,0,0,.12) !important;
+}
+
+main a[href="/newsletter.html"]:active,
+main a[href*="amazon.com"]:active,
+a.btn:active, .btn:active { transform:translateY(0) !important; box-shadow:none !important; }
+
+/* Distinguish keyboard focus from hover without shifting color */
+main a[href="/newsletter.html"]:focus-visible,
+main a[href*="amazon.com"]:focus-visible,
+a.btn:focus-visible, .btn:focus-visible {
+  outline:2px solid #93c5fd !important;
+  outline-offset:2px !important;
+}
+
+/* Absolute last word if some legacy rule uses !important with higher specificity */
+body main .btn.btn,
+body main a.btn.btn.cta,
+body main a[href="/newsletter.html"],
+body main a[href*="amazon.com"] {
+  background:#2563eb !important;
+}
