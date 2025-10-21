@@ -943,3 +943,55 @@ header nav a:focus-visible {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* === Books: card-specific hardening === */
+#socorro-card, #gremlins-card, #cosmic-card {
+  display: grid !important;
+  grid-template-columns: minmax(220px,260px) 1fr !important;
+  gap: 1rem !important;
+  align-items: start !important;
+}
+#socorro-card img, #socorro-card video,
+#gremlins-card img, #gremlins-card video,
+#cosmic-card img, #cosmic-card video {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  position: static !important;
+  float: none !important;
+  margin: 0 !important;
+  border-radius: .5rem;
+  background: #111;
+}
+#socorro-card > *:not(img):not(video):not(figure):not(picture),
+#gremlins-card > *:not(img):not(video):not(figure):not(picture),
+#cosmic-card > *:not(img):not(video):not(figure):not(picture) {
+  grid-column: 2 !important;
+  position: static !important;
+  float: none !important;
+}
+
+#socorro-card .actions a,
+#gremlins-card .actions a,
+#cosmic-card .actions a,
+#socorro-card a.primary, #gremlins-card a.primary, #cosmic-card a.primary {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: #2563eb !important;
+  color: #fff !important;
+  padding: .6rem 1rem !important;
+  border-radius: .5rem !important;
+  font-weight: 700 !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  text-decoration: none !important;
+}
+#socorro-card .actions a.secondary,
+#gremlins-card .actions a.secondary,
+#cosmic-card .actions a.secondary {
+  background: transparent !important;
+  color: inherit !important;
+  border: 1px solid rgba(0,0,0,.2) !important;
+}
