@@ -574,3 +574,55 @@ header nav a:focus-visible {
   outline-offset: 2px !important;
   border-radius: .25rem;
 }
+/* ===== BIO PAGE FRAME RESET (scoped) ===== */
+:root[data-page="bio"],
+:root[data-page="bio"] body,
+:root[data-page="bio"] main,
+:root[data-page="bio"] .container {
+  /* Remove any debug frames, UA outlines, framework rings */
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-width: 0px !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+}
+
+/* Keep the header/nav styling you want */
+:root[data-page="bio"] header {
+  background: #334155 !important;
+  color: #e2e8f0 !important;
+  border-bottom: 1px solid rgba(0,0,0,.08) !important;
+}
+:root[data-page="bio"] header nav a,
+:root[data-page="bio"] header nav a:visited {
+  display:inline-block;padding:.5rem .75rem;margin-right:.5rem;border-radius:.75rem;
+  background: rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+  color:#e2e8f0 !important;text-decoration:none !important;
+}
+:root[data-page="bio"] header nav a:hover,
+:root[data-page="bio"] header nav a:focus-visible {
+  background: rgba(255,255,255,.16);border-color: rgba(255,255,255,.35);color:#fff !important;
+}
+
+/* Restore the card's intended raised look (shadow + neutral border via ::before) */
+:root[data-page="bio"] .bio-card {
+  position: relative !important;
+  background:#fff !important;border-radius:1rem !important;
+  padding:1.5rem clamp(1rem,2vw,2rem) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08) !important;
+}
+:root[data-page="bio"] .bio-card::before {
+  content:"";position:absolute;inset:0;border:1px solid rgba(0,0,0,.08);
+  border-radius:inherit;pointer-events:none;box-shadow:none !important;
+}
+
+/* Keep accessible focus only for real controls inside the card */
+:root[data-page="bio"] .bio-card a:focus-visible,
+:root[data-page="bio"] .bio-card button:focus-visible,
+:root[data-page="bio"] .bio-card input:focus-visible,
+:root[data-page="bio"] .bio-card select:focus-visible,
+:root[data-page="bio"] .bio-card textarea:focus-visible {
+  outline:2px solid rgba(37,99,235,.35);outline-offset:2px;border-radius:.25rem;
+}
