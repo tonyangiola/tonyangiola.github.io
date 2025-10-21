@@ -344,3 +344,12 @@ a.btn:focus {
   color: #111 !important;
   text-decoration: none !important;
 }
+/* --- Outline .btn hover affordance (match other pills) --- */
+a.btn { 
+  background: transparent !important;
+  border-color: #111 !important;
+}
+a.btn:hover {
+  background: rgba(17,17,17,0.06) !important; /* subtle fill on hover */
+  border-color: #777 !important;              /* keep your original darker-outline hover */
+}
