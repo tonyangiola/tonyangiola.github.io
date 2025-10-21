@@ -1,111 +1,45 @@
-/* === NO UNDERLINES ON HOVER (sitewide) === */
-a:hover, header nav a:hover, nav a:hover { text-decoration: none !important; }
-/* === BUTTONIZE CTA LINKS IN BOOK CARDS/ROWS === */
-.book-row p a[href], .card p a[href] {
+/* == Minimal, safe overrides (scoped) == */
+
+/* Light background and normal text */
+html, body {
+  background:#ffffff !important;
+  color:#111 !important;
+}
+
+/* Keep links from underlining on hover but don't change their colors/layout */
+a:hover {
+  text-decoration: none !important;
+}
+
+/* Unified button style — opt-in via class only */
+a.btn, .btn, a.btn.cta {
   display: inline-block !important;
   padding: .62rem 1rem !important;
   border-radius: .75rem !important;
   font-weight: 600 !important;
-  border: 1px solid rgba(0,0,0,.06) !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
   background: #2563eb !important;
   color: #fff !important;
   text-decoration: none !important;
-  transition: background-color .15s ease, transform .08s ease !important;
+  line-height: 1.2 !important;
+  pointer-events: auto !important;
+  transition: background-color .15s ease, transform .08s ease, box-shadow .15s ease !important;
 }
-.book-row p a[href]:hover, .card p a[href]:hover { background:#1e4fd3 !important; transform: translateY(-1px) !important; }
-.book-row p a[href]:active, .card p a[href]:active { transform: translateY(0) !important; }
-
-/* keep ghost buttons readable if present */
-.book-row .btn.ghost, .card .btn.ghost { background: transparent !important; color:#111 !important; border:1px solid rgba(0,0,0,.15) !important; }
-/* Broaden CTA targeting to common button anchors inside cards/rows */
-.book-row a.btn, .card a.btn,
-.book-row a[href^="http"], .card a[href^="http"] {
-  display: inline-block !important;
-  padding: .62rem 1rem !important;
-  border-radius: .75rem !important;
-  font-weight: 600 !important;
-  border: 1px solid rgba(0,0,0,.06) !important;
-  background: #2563eb !important;
-  color: #fff !important;
-  text-decoration: none !important;
-  transition: background-color .15s ease, transform .08s ease !important;
-}
-.book-row a:hover, .card a:hover { background:#1e4fd3 !important; transform: translateY(-1px) !important; }
-.book-row a:active, .card a:active { transform: translateY(0) !important; }
-/* --- Catch-all CTA buttons (safe, targeted) --- */
-a[href*="/newsletter"],
-a[href*="amazon.com"] {
-  display:inline-block !important;
-  padding:.62rem 1rem !important;
-  border-radius:.75rem !important;
-  font-weight:600 !important;
-  border:1px solid rgba(0,0,0,.06) !important;
-  background:#2563eb !important;
-  color:#fff !important;
-  text-decoration:none !important;
-  transition:background-color .15s ease, transform .08s ease !important;
-}
-a[href*="/newsletter"]:hover,
-a[href*="amazon.com"]:hover { background:#1e4fd3 !important; transform:translateY(-1px) !important; }
-a[href*="/newsletter"]:active,
-a[href*="amazon.com"]:active { transform:translateY(0) !important; }
-
-/* No underlines anywhere on hover (belt & suspenders) */
-a:hover { text-decoration:none !important; }
-/* Site background + readable defaults */
-body { background:#0b1220 !important; color:#e6e9f2 !important; }
-header, footer { background:transparent !important; }
-
-/* Buttons on dark background remain legible */
-.btn, a.btn {
-  background:#2563eb !important; color:#fff !important; border:1px solid rgba(255,255,255,.08) !important;
-}
-.btn.ghost, a.btn.ghost { background:transparent !important; color:#e6e9f2 !important; border:1px solid rgba(255,255,255,.25) !important; }
-
-/* Hero */
-.hero { background:linear-gradient(180deg, rgba(37,99,235,.12), transparent) !important; border:0 !important; }
-/* Ensure site-wide dark background */
-html, body { background:#0b1220 !important; color:#e6e9f2 !important; }
-/* Buttonize newsletter + Amazon CTAs everywhere */
-main a[href*="/newsletter"],
-main a[href*="amazon.com"] {
-  display:inline-block !important;
-  padding:.62rem 1rem !important;
-  border-radius:.75rem !important;
-  font-weight:600 !important;
-  border:1px solid rgba(0,0,0,.06) !important;
-  background:#2563eb !important;
-  color:#fff !important;
-  text-decoration:none !important;
-  transition:background-color .15s ease, transform .08s ease !important;
-}
-main a[href*="/newsletter"]:hover,
-main a[href*="amazon.com"]:hover { background:#1e4fd3 !important; transform:translateY(-1px) !important; }
-/* --- Unified CTA button style (class-based) --- */
-a.btn.cta {
-  display:inline-block !important;
-  padding:.62rem 1rem !important;
-  border-radius:.75rem !important;
-  font-weight:600 !important;
-  border:1px solid rgba(0,0,0,.12) !important;
-  background:#2563eb !important;
-  color:#fff !important;
-  text-decoration:none !important;
-  transition:box-shadow .15s ease, transform .08s ease, background-color .15s ease !important;
-}
-
-/* Hover = subtle only, to avoid "stuck hovered" look */
-a.btn.cta:hover {
+a.btn:hover, .btn:hover, a.btn.cta:hover {
   background:#1e4fd3 !important;
-  box-shadow:0 4px 12px rgba(0,0,0,.18) !important;
-  transform:translateY(-1px) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,.12) !important;
+}
+a.btn:active, .btn:active, a.btn.cta:active { transform: translateY(0) !important; box-shadow: none !important; }
+a.btn:visited, .btn:visited, a.btn.cta:visited { color:#fff !important; }
+a.btn:focus, .btn:focus, a.btn.cta:focus { background:#2563eb !important; }
+a.btn:focus-visible, .btn:focus-visible, a.btn.cta:focus-visible {
+  outline: 2px solid #93c5fd !important;
+  outline-offset: 2px !important;
 }
 
-/* Active click state snaps back cleanly */
-a.btn.cta:active { transform:translateY(0) !important; box-shadow:none !important; }
-
-/* Focus ring for keyboard users (distinct from hover color) */
-a.btn.cta:focus-visible {
-  outline:2px solid #93c5fd !important;
-  outline-offset:2px !important;
+/* HERO polish on light bg (subtle, optional) */
+.hero {
+  background: linear-gradient(180deg, rgba(37,99,235,.06), transparent) !important;
+  border: 0 !important;
 }
