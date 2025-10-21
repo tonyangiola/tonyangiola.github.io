@@ -755,3 +755,16 @@ header nav a:focus-visible {
   background: #f3f4f6; color: #111827;
 }
 .book-actions a.secondary:hover { background: #e5e7eb; transform: translateY(-1px); }
+
+/* ==== Books video sizing fixes ==== */
+.book-card { background:#fff; }
+.book-video {
+  width: 100%;
+  /* Use a per-element aspect via --ar; fallback 16/9 */
+  aspect-ratio: var(--ar, 16/9);
+  display: block;
+  border-radius: .5rem;
+  overflow: hidden;
+  background: #000;           /* no light letterbox */
+  object-fit: cover;          /* fill container, crop if needed */
+}
