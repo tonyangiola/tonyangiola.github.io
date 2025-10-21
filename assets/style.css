@@ -765,3 +765,26 @@ header nav a:focus-visible {
   }
 }
 /* === /SNIPPY HOTFIX === */
+/* --- BOOKS GLOBAL LAYOUT (no wrapper dependency) --- */
+.books-grid { display:block; margin-top:.75rem; }
+.book-card{ display:grid; grid-template-columns:320px 1fr; gap:1rem; align-items:start; }
+.book-video{ width:100%; max-width:320px; aspect-ratio:16/9; background:#f5f5f7; border-radius:.5rem; overflow:hidden; object-fit:cover; }
+.book-meta{ grid-column:2; }
+
+/* Hide any stray first child wrapper that isn't media */
+.book-card > :first-child:not(video):not(picture):not(img){ display:none !important; }
+
+/* --- SNIPPY (first card) — 2x width and no crop --- */
+.books-grid > article:nth-of-type(1){ grid-template-columns:640px 1fr !important; }
+.books-grid > article:nth-of-type(1) .book-video{
+  max-width:640px !important;
+  aspect-ratio:16/9 !important;
+  object-fit:contain !important;   /* show full frame (no top/bottom cut) */
+  background:#f5f5f7 !important;   /* light gutters, not black */
+}
+
+/* Mobile stack */
+@media (max-width:900px){
+  .book-card{ grid-template-columns:1fr; }
+  .book-video{ max-width:100% !important; }
+}
