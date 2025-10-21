@@ -1,0 +1,2 @@
+/* === NO UNDERLINES ON HOVER (sitewide) === */
+a:hover, header nav a:hover, nav a:hover { text-decoration: none !important; }
