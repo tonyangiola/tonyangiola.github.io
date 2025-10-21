@@ -703,3 +703,55 @@ header nav a:focus-visible {
 /* Optional: remove link underlines inside book cards */
 .book-card a { text-decoration: none; }
 .book-card a:hover { text-decoration: underline; }
+
+/* ==== Books video grid (safe) ==== */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+.book-card {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: .75rem;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: .75rem;
+  padding: .75rem;
+  background: #fff;
+  box-shadow: 0 1px 8px rgba(0,0,0,.04);
+}
+.book-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border-radius: .5rem;
+  overflow: hidden;
+  background: #f5f5f7;
+}
+.book-meta h3 {
+  margin: 0 0 .25rem 0;
+  font-size: 1.05rem;
+}
+.book-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: .5rem;
+}
+.book-actions a {
+  display: inline-block;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border: 1px solid rgba(0,0,0,.08);
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease, transform .08s ease;
+}
+.book-actions a.primary {
+  background: #2563eb; color: #fff; border-color: rgba(0,0,0,.06);
+}
+.book-actions a.primary:hover { background: #1e4fd3; transform: translateY(-1px); }
+.book-actions a.secondary {
+  background: #f3f4f6; color: #111827;
+}
+.book-actions a.secondary:hover { background: #e5e7eb; transform: translateY(-1px); }
