@@ -626,3 +626,5 @@ header nav a:focus-visible {
 :root[data-page="bio"] .bio-card textarea:focus-visible {
   outline:2px solid rgba(37,99,235,.35);outline-offset:2px;border-radius:.25rem;
 }
+/* TEMP DIAGNOSTIC: red card border (remove after test) */
+:root[data-page="bio"] .bio-card::before { border-color: red !important; }
