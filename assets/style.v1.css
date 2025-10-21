@@ -162,3 +162,45 @@ body :is(main a[href="/newsletter.html"], main a[href*="amazon.com"]):focus-visi
 
 /* Guard rails for page bg */
 html, body { background:#ffffff !important; color:#111 !important; }
+/* --- Targeted, final overrides for book buttons --- */
+.book-row .actions a.btn,
+.book-row a.btn,
+.card a.btn,
+a.btn.cta {
+  display:inline-block !important;
+  padding:.62rem 1rem !important;
+  border-radius:.75rem !important;
+  font-weight:600 !important;
+  border:1px solid rgba(0,0,0,.10) !important;
+  background:#2563eb !important;
+  color:#fff !important;
+  text-decoration:none !important;
+  line-height:1.2 !important;
+  transition:background-color .15s ease, transform .08s ease, box-shadow .15s ease !important;
+}
+
+.book-row .actions a.btn:hover,
+.book-row a.btn:hover,
+.card a.btn:hover,
+a.btn.cta:hover {
+  background:#1e4fd3 !important;
+  transform:translateY(-1px) !important;
+  box-shadow:0 4px 10px rgba(0,0,0,.12) !important;
+}
+
+.book-row .actions a.btn:active,
+.book-row a.btn:active,
+.card a.btn:active,
+a.btn.cta:active { transform:translateY(0) !important; box-shadow:none !important; }
+
+/* Ghost variant stays outlined, readable */
+.book-row .actions a.btn.ghost,
+.book-row a.btn.ghost,
+.card a.btn.ghost {
+  background:transparent !important;
+  color:#111 !important;
+  border:1px solid rgba(0,0,0,.25) !important;
+}
+
+/* Page background stays light */
+html, body { background:#ffffff !important; color:#111 !important; }
