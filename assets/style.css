@@ -527,3 +527,51 @@ header nav a:focus-visible {
 .container .bio-card {
   border-color: rgba(0,0,0,.06) !important;
 }
+/* ==== BIO CARD BLUE-RING EXORCISM ==== */
+
+/* 0) Make the card a positioned container */
+.bio-card { position: relative !important; }
+
+/* 1) Nuke ANY border/outline/ring on the card and everything inside it */
+.bio-card, .bio-card * {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-width: 0px !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+}
+
+/* 2) Re-apply ONLY the drop shadow we want (on the card) */
+.bio-card {
+  background: #fff !important;
+  border-radius: 1rem !important;
+  padding: 1.5rem clamp(1rem, 2vw, 2rem) !important;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.06),
+    0 8px 24px rgba(0,0,0,.08) !important;
+}
+
+/* 3) Paint a neutral border ABOVE everything via a pseudo element
+      (global focus/outline rules can't touch this) */
+.bio-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;                        /* top/right/bottom/left: 0 */
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: none !important;
+}
+
+/* 4) Keep accessible focus ONLY for real controls inside the card */
+.bio-card a:focus-visible,
+.bio-card button:focus-visible,
+.bio-card input:focus-visible,
+.bio-card select:focus-visible,
+.bio-card textarea:focus-visible {
+  outline: 2px solid rgba(37,99,235,.35) !important;
+  outline-offset: 2px !important;
+  border-radius: .25rem;
+}
