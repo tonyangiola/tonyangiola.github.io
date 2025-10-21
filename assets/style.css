@@ -120,3 +120,128 @@ main { position: relative; z-index: 0; }
   }
   .book-row .cover { max-width: 260px; }
 }
+/* === Author Site Polishing (header, background, nav, buttons) === */
+
+/* 1) Page background: soft paper w/ subtle radial glow */
+:root{
+  --bg: #f8fafc;            /* paper */
+  --text: #0f172a;          /* slate-900 */
+  --muted: #475569;         /* slate-600 */
+  --brand: #334155;         /* slate-700 header */
+  --brand-ink: #e2e8f0;     /* slate-200 text on header */
+  --accent: #2563eb;        /* blue-600 primary */
+  --accent-ink: #ffffff;
+  --amazon: #f59e0b;        /* amber-500 */
+  --amazon-ink: #111827;    /* near-black for contrast */
+  --focus: #22c55e;         /* green-500 focus ring */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg: #0b1020;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --brand: #0f172a;
+    --brand-ink: #e2e8f0;
+    --accent: #60a5fa;
+    --accent-ink: #0b1020;
+    --amazon: #fbbf24;
+    --amazon-ink: #111827;
+    --focus: #34d399;
+  }
+}
+
+html, body {
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(2,6,23,0.06), transparent 55%), var(--bg);
+  color: var(--text);
+}
+
+/* 2) Header bar */
+header {
+  background: var(--brand);
+  color: var(--brand-ink);
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem 1rem;
+}
+
+/* 3) Nav → pill buttons */
+nav a {
+  display: inline-block;
+  padding: .5rem .9rem;
+  margin: 0 .15rem;
+  color: var(--brand-ink);
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform .08s ease, background-color .15s ease, color .15s ease;
+  outline: none;
+}
+
+nav a:hover {
+  background: rgba(226,232,240,.12);   /* light mist */
+  transform: translateY(-1px);
+}
+
+nav a:focus-visible {
+  box-shadow: 0 0 0 3px var(--focus);
+  background: rgba(226,232,240,.16);
+}
+
+/* Mark the active page link (add class="active" in HTML) */
+nav a.active {
+  background: rgba(226,232,240,.22);
+  color: #fff;
+}
+
+/* 4) Generic buttons (for newsletter/Amazon CTAs) */
+.button {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: .75rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform .08s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
+  outline: none;
+}
+
+.button:hover { transform: translateY(-1px); }
+.button:active { transform: translateY(0); }
+
+.button:focus-visible {
+  box-shadow: 0 0 0 3px var(--focus);
+}
+
+/* Primary (Newsletter) */
+.button--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: rgba(0,0,0,.06);
+}
+
+/* Outline (secondary action) */
+.button--outline {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(15,23,42,.25);
+}
+
+/* Amazon (subtle amber) */
+.button--amazon {
+  background: var(--amazon);
+  color: var(--amazon-ink);
+  border-color: rgba(0,0,0,.12);
+}
+
+/* Space and alignment helpers */
+.button + .button { margin-left: .5rem; }
+
+/* Book cover images: keep aspect and visibility */
+.book img, .book-card img, .book-grid img {
+  display:block; max-width:100%; height:auto; aspect-ratio:2/3; object-fit:cover;
+}
