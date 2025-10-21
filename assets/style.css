@@ -245,3 +245,42 @@ nav a.active {
 .book img, .book-card img, .book-grid img {
   display:block; max-width:100%; height:auto; aspect-ratio:2/3; object-fit:cover;
 }
+/* === Force header nav links to render as buttons and color-shift on hover === */
+header nav a,
+header nav a:visited {
+  text-decoration: none !important;   /* kill underline even if a global a:hover exists */
+  display: inline-block;
+  padding: .52rem .9rem;
+  margin: 0 .18rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--brand-ink);
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, transform .08s ease, border-color .15s ease;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  /* change color instead of underline */
+  text-decoration: none !important;
+  background: rgba(226,232,240,.18);  /* subtle pill background */
+  color: #ffffff;                      /* brighter ink on hover */
+  transform: translateY(-1px);
+}
+
+header nav a.active {
+  background: rgba(226,232,240,.28);
+  color: #ffffff;
+  border-color: rgba(255,255,255,.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  header nav a:hover,
+  header nav a:focus-visible {
+    background: rgba(148,163,184,.22);
+    color: #ffffff;
+  }
+}
