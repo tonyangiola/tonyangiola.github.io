@@ -335,3 +335,25 @@ a#nl-btn, a#nl-btn:hover, a#nl-btn:active, a#nl-btn:visited {
   text-decoration: none !important;
   border-bottom: none !important;
 }
+/* Force the hero "Join Newsletter" link to act like a button and never underline */
+a[href="/newsletter.html"],
+a[href="/newsletter.html"]:hover,
+a[href="/newsletter.html"]:active,
+a[href="/newsletter.html"]:visited {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* If the hero link lacks button classes, still make it look like a button */
+.hero a[href="/newsletter.html"] {
+  display: inline-block;
+  padding: .62rem 1rem;
+  border-radius: .75rem;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,.06);
+  background: #2563eb;
+  color: #fff;
+  transition: background-color .15s ease, color .15s ease, transform .08s ease, border-color .15s ease;
+}
+.hero a[href="/newsletter.html"]:hover   { background: #1e4fd3; transform: translateY(-1px); }
+.hero a[href="/newsletter.html"]:active  { background: #193fae; transform: translateY(0); }
