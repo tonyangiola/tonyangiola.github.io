@@ -66,3 +66,18 @@ header, footer { background:transparent !important; }
 .hero { background:linear-gradient(180deg, rgba(37,99,235,.12), transparent) !important; border:0 !important; }
 /* Ensure site-wide dark background */
 html, body { background:#0b1220 !important; color:#e6e9f2 !important; }
+/* Buttonize newsletter + Amazon CTAs everywhere */
+main a[href*="/newsletter"],
+main a[href*="amazon.com"] {
+  display:inline-block !important;
+  padding:.62rem 1rem !important;
+  border-radius:.75rem !important;
+  font-weight:600 !important;
+  border:1px solid rgba(0,0,0,.06) !important;
+  background:#2563eb !important;
+  color:#fff !important;
+  text-decoration:none !important;
+  transition:background-color .15s ease, transform .08s ease !important;
+}
+main a[href*="/newsletter"]:hover,
+main a[href*="amazon.com"]:hover { background:#1e4fd3 !important; transform:translateY(-1px) !important; }
