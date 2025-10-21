@@ -779,3 +779,7 @@ header nav a:focus-visible {
   background: #000;     /* prevents light gutters during load */
   object-fit: cover;    /* fill area; crop if needed */
 }
+/* Books: neutral background so no black "static" when no poster is used */
+.book-video {
+  background: #f5f5f7 !important;
+}
