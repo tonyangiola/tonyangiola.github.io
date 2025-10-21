@@ -1,10 +1,48 @@
 <!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Books — Tony Angiola</title>
 <link rel="stylesheet" href="/assets/style.css">
+<style>
+/* --- INLINE FALLBACK: left-to-right rows --- */
+.container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+.books-rows { display: grid; gap: 1.25rem; }
+.book-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid #222;
+  border-radius: 12px;
+}
+.book-row .cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background: #0d0d0d;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.book-row .cover img { width:100%; height:100%; object-fit:contain; display:block; }
+.book-row h3 { margin: 0 0 .4rem; font-size: 1.15rem; }
+.book-row p.subtitle { margin: 0 0 .75rem; opacity: .85; }
+.book-row .actions { display:flex; gap:.5rem; flex-wrap:wrap; }
+.book-row .btn {
+  display:inline-block; padding:.5rem .85rem; border-radius:999px;
+  border:1px solid #444; text-decoration:none;
+}
+.book-row .btn:hover { border-color:#777; }
+.book-row .btn.ghost { background:transparent; }
+@media (max-width: 720px) {
+  .book-row { grid-template-columns: 1fr; }
+  .book-row .cover { max-width: 260px; }
+}
+</style>
+</head>
 <body>
-  <!-- Simple header/nav (match your site) -->
   <header>
     <div class="container">
       <nav>
@@ -82,3 +120,4 @@
     </section>
   </main>
 </body>
+</html>
