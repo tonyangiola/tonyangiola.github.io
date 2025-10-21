@@ -737,3 +737,31 @@ header nav a:focus-visible {
 @media (max-width:720px){ .books .book-card{ grid-template-columns:1fr; } .book-video{ max-width:100%; } }
 /* CANARY wrapper hide */
 .books .book-card > :first-child:not(video){ display:none !important; }
+/* === SNIPPY HOTFIX === */
+/* Make the first book card's media column 640px and keep the full frame (no crop) */
+.books .books-grid > article:nth-of-type(1){ 
+  display:grid; 
+  grid-template-columns: 640px 1fr !important;
+  gap: 1rem;
+  align-items: start;
+}
+.books .books-grid > article:nth-of-type(1) .book-video{
+  max-width: 640px !important;
+  aspect-ratio: 16/9 !important;   /* match the source so height increases */
+  object-fit: contain !important;  /* show entire frame, no top/bottom cut */
+  background: #f5f5f7 !important;  /* light gutters instead of black */
+  display:block !important;
+}
+.books .books-grid > article:nth-of-type(1) .book-meta{
+  grid-column: 2 !important;
+}
+/* On small screens fall back to stacking */
+@media (max-width: 900px){
+  .books .books-grid > article:nth-of-type(1){
+    grid-template-columns: 1fr !important;
+  }
+  .books .books-grid > article:nth-of-type(1) .book-video{
+    max-width: 100% !important;
+  }
+}
+/* === /SNIPPY HOTFIX === */
