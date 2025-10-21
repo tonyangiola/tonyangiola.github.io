@@ -330,3 +330,7 @@ header nav a.active {
 .book img, .book-card img, .book-grid img {
   display:block; max-width:100%; height:auto; aspect-ratio:2/3; object-fit:cover;
 }
+/* --- Button polish: keep color, no underline on hover/visited --- */
+a.btn { color:#111; text-decoration:none; }
+a.btn:visited { color:#111; }
+a.btn:hover { color:#111; text-decoration:none; } /* keep underline off; existing border-color hover still applies */
