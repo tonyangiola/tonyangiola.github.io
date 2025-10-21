@@ -111,3 +111,54 @@ body main a[href="/newsletter.html"],
 body main a[href*="amazon.com"] {
   background:#2563eb !important;
 }
+/* === FINAL OVERRIDE (diagnostic) — do not move above! === */
+body :is(a.btn, .btn, a.btn.cta),
+body :is(main a[href="/newsletter.html"], main a[href*="amazon.com"]) {
+  display:inline-block !important;
+  padding:.62rem 1rem !important;
+  border-radius:.75rem !important;
+  font-weight:600 !important;
+  border:1px solid rgba(0,0,0,.10) !important;
+  background:#2563eb !important;
+  color:#fff !important;
+  text-decoration:none !important;
+  line-height:1.2 !important;
+  transition: background-color .15s ease, transform .08s ease, box-shadow .15s ease !important;
+}
+
+/* Make sure no other rule flips these states */
+body :is(a.btn, .btn, a.btn.cta):link,
+body :is(a.btn, .btn, a.btn.cta):visited,
+body :is(a.btn, .btn, a.btn.cta):focus,
+body :is(a.btn, .btn, a.btn.cta):active,
+body :is(a.btn, .btn, a.btn.cta):hover,
+body :is(main a[href="/newsletter.html"], main a[href*="amazon.com"]):link,
+body :is(main a[href="/newsletter.html"], main a[href*="amazon.com"]):visited,
+body :is(main a[href="/newsletter.html"], main a[href*="amazon.com"]):focus,
+body :is(main a[href="/newsletter.html"], main a[href*="amazon.com"]):active,
+body :is(main a[href="/newsletter.html"], main a[href*="amazon.com"]):hover {
+  color:#fff !important;
+}
+
+/* DIAGNOSTIC hover: turn black so we can SEE it’s applying */
+body :is(a.btn, .btn, a.btn.cta):hover,
+body :is(main a[href="/newsletter.html"], main a[href*="amazon.com"]):hover {
+  background:#000000 !important;   /* TEMPORARY for debugging */
+  transform:translateY(-1px) !important;
+  box-shadow:0 4px 10px rgba(0,0,0,.12) !important;
+}
+
+/* click */
+body :is(a.btn, .btn, a.btn.cta):active,
+body :is(main a[href="/newsletter.html"], main a[href*="amazon.com"]):active {
+  transform:translateY(0) !important; box-shadow:none !important;
+}
+
+/* keyboard focus */
+body :is(a.btn, .btn, a.btn.cta):focus-visible,
+body :is(main a[href="/newsletter.html"], main a[href*="amazon.com"]):focus-visible {
+  outline:2px solid #93c5fd !important; outline-offset:2px !important;
+}
+
+/* Guard rails for page bg */
+html, body { background:#ffffff !important; color:#111 !important; }
