@@ -628,3 +628,8 @@ header nav a:focus-visible {
 }
 /* TEMP DIAGNOSTIC: red card border (remove after test) */
 :root[data-page="bio"] .bio-card::before { border-color: red !important; }
+/* FINAL SLEDGEHAMMER just for bio page shell */
+:root[data-page="bio"] main,
+:root[data-page="bio"] .container {
+  outline: none !important; border: none !important; box-shadow: none !important;
+}
