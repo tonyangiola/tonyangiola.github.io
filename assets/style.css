@@ -783,3 +783,13 @@ header nav a:focus-visible {
 .book-video {
   background: #f5f5f7 !important;
 }
+/* Books: ensure videos show motion (no posters), neutral bg, fill container */
+.book-video {
+  width: 100%;
+  aspect-ratio: var(--ar, 16/9);
+  display: block;
+  border-radius: .5rem;
+  overflow: hidden;
+  background: #f5f5f7 !important; /* neutral, not black */
+  object-fit: cover;               /* fill, crop; no letterbox */
+}
