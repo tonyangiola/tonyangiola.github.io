@@ -1,2 +1,19 @@
 /* === NO UNDERLINES ON HOVER (sitewide) === */
 a:hover, header nav a:hover, nav a:hover { text-decoration: none !important; }
+/* === BUTTONIZE CTA LINKS IN BOOK CARDS/ROWS === */
+.book-row p a[href], .card p a[href] {
+  display: inline-block !important;
+  padding: .62rem 1rem !important;
+  border-radius: .75rem !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(0,0,0,.06) !important;
+  background: #2563eb !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  transition: background-color .15s ease, transform .08s ease !important;
+}
+.book-row p a[href]:hover, .card p a[href]:hover { background:#1e4fd3 !important; transform: translateY(-1px) !important; }
+.book-row p a[href]:active, .card p a[href]:active { transform: translateY(0) !important; }
+
+/* keep ghost buttons readable if present */
+.book-row .btn.ghost, .card .btn.ghost { background: transparent !important; color:#111 !important; border:1px solid rgba(0,0,0,.15) !important; }
