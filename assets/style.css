@@ -470,3 +470,60 @@ header nav a:focus-visible {
   padding: 1.5rem clamp(1rem, 2vw, 2rem);
   box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
 }
+/* ==== Bio-card: nuke any blue box/ring from frameworks or globals ==== */
+.bio-card {
+  /* your intended border */
+  border: 1px solid rgba(0,0,0,.06) !important;
+
+  /* kill outlines & UA rings */
+  outline: none !important;
+  outline-color: transparent !important;
+  -webkit-tap-highlight-color: transparent;
+
+  /* kill Tailwind/utility "ring" shadows and offsets */
+  --tw-ring-inset: initial;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: transparent;
+  --tw-ring-color: transparent;
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+
+  /* ensure only your drop shadow shows */
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.06),
+    0 8px 24px rgba(0,0,0,.08),
+    0 0 0 0 rgba(0,0,0,0) !important;
+}
+
+/* cover every interactive state that might reapply a ring/border */
+.bio-card:hover,
+.bio-card:active,
+.bio-card:focus,
+.bio-card:focus-visible,
+.bio-card:focus-within,
+.bio-card:target {
+  border: 1px solid rgba(0,0,0,.06) !important;
+  outline: none !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.06),
+    0 8px 24px rgba(0,0,0,.08),
+    0 0 0 0 rgba(0,0,0,0) !important;
+}
+
+/* keep proper focus style ONLY for real controls inside the card */
+.bio-card a:focus-visible,
+.bio-card button:focus-visible,
+.bio-card input:focus-visible,
+.bio-card select:focus-visible,
+.bio-card textarea:focus-visible {
+  outline: 2px solid rgba(37,99,235,.35);
+  outline-offset: 2px;
+  border-radius: .25rem;
+}
+
+/* belt-and-suspenders: if a parent container is forcing a border */
+.container .bio-card {
+  border-color: rgba(0,0,0,.06) !important;
+}
