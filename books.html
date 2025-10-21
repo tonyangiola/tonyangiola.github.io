@@ -4,6 +4,7 @@
 <title>Books — Tony Angiola</title>
 <link rel="stylesheet" href="/assets/style.css">
 <body>
+  <!--#include virtual="/assets/header.html" -->
   <header>
     <div class="container">
       <nav>
@@ -17,29 +18,25 @@
   </header>
 
   <main class="container">
-    <h1>Books</h1>
-    <div class="card">
-      <h2><em>Cosmic Secrets</em> (in progress)</h2>
-      <p>Working logline: a frank, evidence-driven tour through cases, secrecy, and the propulsion puzzle. No smoke, no mirrors.</p>
-      <ul class="clean">
-        <li>Scope: historical cases, whistleblower claims, forensics, propulsion hypotheses</li>
-        <li>Style: sourced, high-signal, myth-resistant</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>Future Titles</h3>
-      <ul class="clean">
-        <li>San Luis Valley Field Notes</li>
-        <li>Socorro: A Case Study</li>
-      </ul>
-    </div>
+    <section class="books-grid" style="margin:2rem 0;">
+      <h1 style="margin:0 0 1rem 0;">Books</h1>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;">
+        <article style="text-align:center;">
+          <img src="/images/books/snippy.jpg" alt="Snippy The Horse: A King Family Legacy" style="width:100%;max-width:220px;aspect-ratio:3/4;object-fit:cover;box-shadow:0 0 12px rgba(0,0,0,.15);border-radius:8px;">
+          <h3 style="margin:.6rem 0 .2rem 0;font-size:1rem;">Snippy The Horse: A King Family Legacy</h3>
+          <p style="margin:0;font-size:.9rem;opacity:.8;">Coming soon</p>
+        </article>
+        <article style="text-align:center;">
+          <img src="/images/books/socorro.jpg" alt="Socorro UFO: Not of This World" style="width:100%;max-width:220px;aspect-ratio:3/4;object-fit:cover;box-shadow:0 0 12px rgba(0,0,0,.15);border-radius:8px;">
+          <h3 style="margin:.6rem 0 .2rem 0;font-size:1rem;">Socorro UFO: Not of This World</h3>
+          <p style="margin:0;font-size:.9rem;opacity:.8;">Coming soon</p>
+        </article>
+        <article style="text-align:center;">
+          <img src="/images/books/gremlins.jpg" alt="Flying Saucers, Aliens, and Gremlins" style="width:100%;max-width:220px;aspect-ratio:3/4;object-fit:cover;box-shadow:0 0 12px rgba(0,0,0,.15);border-radius:8px;">
+          <h3 style="margin:.6rem 0 .2rem 0;font-size:1rem;">Flying Saucers, Aliens, and Gremlins</h3>
+          <p style="margin:0;font-size:.9rem;opacity:.8;">Coming soon</p>
+        </article>
+      </div>
+    </section>
   </main>
-
-  <footer>
-    <div class="container">
-      <div>© <span id="y"></span> Tony Angiola. All rights reserved.</div>
-    </div>
-    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  </footer>
 </body>
