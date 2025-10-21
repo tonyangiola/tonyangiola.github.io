@@ -802,3 +802,11 @@ header nav a:focus-visible {
   position: relative;
   z-index: 3;
 }
+
+/* ==== Books page: hide stray full-width media under main (hotfix) ==== */
+.books-page main > img,
+.books-page main > video,
+.books-page main > figure,
+.books-page main > picture {
+  display: none !important;
+}
