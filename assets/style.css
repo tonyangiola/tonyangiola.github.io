@@ -735,3 +735,5 @@ header nav a:focus-visible {
 .books .book-card{ display:grid; grid-template-columns: 320px 1fr; gap:1rem; align-items:start; }
 .book-video{ width:100%; max-width:320px; aspect-ratio:16/9; background:#f5f5f7; object-fit:cover; border-radius:.5rem; overflow:hidden; }
 @media (max-width:720px){ .books .book-card{ grid-template-columns:1fr; } .book-video{ max-width:100%; } }
+/* CANARY wrapper hide */
+.books .book-card > :first-child:not(video){ display:none !important; }
