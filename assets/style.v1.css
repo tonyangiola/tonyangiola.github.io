@@ -52,3 +52,15 @@ a[href*="amazon.com"]:active { transform:translateY(0) !important; }
 
 /* No underlines anywhere on hover (belt & suspenders) */
 a:hover { text-decoration:none !important; }
+/* Site background + readable defaults */
+body { background:#0b1220 !important; color:#e6e9f2 !important; }
+header, footer { background:transparent !important; }
+
+/* Buttons on dark background remain legible */
+.btn, a.btn {
+  background:#2563eb !important; color:#fff !important; border:1px solid rgba(255,255,255,.08) !important;
+}
+.btn.ghost, a.btn.ghost { background:transparent !important; color:#e6e9f2 !important; border:1px solid rgba(255,255,255,.25) !important; }
+
+/* Hero */
+.hero { background:linear-gradient(180deg, rgba(37,99,235,.12), transparent) !important; border:0 !important; }
