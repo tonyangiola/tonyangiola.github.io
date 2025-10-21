@@ -64,3 +64,5 @@ header, footer { background:transparent !important; }
 
 /* Hero */
 .hero { background:linear-gradient(180deg, rgba(37,99,235,.12), transparent) !important; border:0 !important; }
+/* Ensure site-wide dark background */
+html, body { background:#0b1220 !important; color:#e6e9f2 !important; }
