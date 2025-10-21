@@ -398,3 +398,19 @@ main a.btn:focus {
   outline: 2px solid rgba(37,99,235,.35);
   outline-offset: 2px;
 }
+/* === bio-card: remove any inherited focus/outline/border highlight === */
+.bio-card{ outline: none !important; border: 1px solid rgba(0,0,0,.06) !important; }
+.bio-card:focus,
+.bio-card:focus-visible,
+.bio-card:focus-within{ outline: none !important; }
+
+/* Keep accessible focus for interactive elements *inside* the card */
+.bio-card a:focus-visible,
+.bio-card button:focus-visible,
+.bio-card input:focus-visible,
+.bio-card select:focus-visible,
+.bio-card textarea:focus-visible{
+  outline: 2px solid rgba(37,99,235,.35);
+  outline-offset: 2px;
+  border-radius: .25rem;
+}
