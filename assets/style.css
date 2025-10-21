@@ -386,3 +386,15 @@ main a.btn:focus {
 .bio-card a{text-decoration:none;border-bottom:1px dashed rgba(0,0,0,.25);}
 .bio-card a:hover{border-bottom-color:transparent;}
 /* ==== /bio-card ==== */
+/* === bio-card overrides: remove stray blue borders/outlines === */
+.bio-card,
+.bio-card:focus,
+.bio-card:focus-within{
+  outline: none !important;
+  border-color: rgba(0,0,0,.06) !important;
+}
+/* retain accessible focus for interactive elements inside the card */
+.bio-card a:focus, .bio-card button:focus, .bio-card input:focus, .bio-card select:focus, .bio-card textarea:focus{
+  outline: 2px solid rgba(37,99,235,.35);
+  outline-offset: 2px;
+}
