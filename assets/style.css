@@ -768,3 +768,14 @@ header nav a:focus-visible {
   background: #000;           /* no light letterbox */
   object-fit: cover;          /* fill container, crop if needed */
 }
+
+/* ---- Books video aspect fixes (no letterbox) ---- */
+.book-video {
+  width: 100%;
+  aspect-ratio: var(--ar, 16/9);
+  display: block;
+  border-radius: .5rem;
+  overflow: hidden;
+  background: #000;     /* prevents light gutters during load */
+  object-fit: cover;    /* fill area; crop if needed */
+}
