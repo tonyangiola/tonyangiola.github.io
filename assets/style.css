@@ -845,3 +845,47 @@ header nav a:focus-visible {
 .book-card video {
   position: static !important;
 }
+
+/* ==== Books: bulletproof card layout (override legacy floats/absolute) ==== */
+.book-card {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 260px) minmax(0,1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Media in column 1 only, no overlay */
+.book-card > img,
+.book-card > video,
+.book-card > figure,
+.book-card > picture,
+.book-card .cover,
+.book-card .media {
+  grid-column: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  position: static !important;
+  float: none !important;
+  clear: both !important;
+  z-index: auto !important;
+  margin: 0 !important;
+  border-radius: .5rem;
+  object-fit: contain !important;  /* prevent cropping */
+  overflow: hidden;
+  background: #111;
+}
+
+/* All other content in column 2 */
+.book-card > *:not(img):not(video):not(figure):not(picture):not(.cover):not(.media) {
+  grid-column: 2 !important;
+}
+
+/* Make sure paragraphs/buttons wrap nicely and don’t collide */
+.book-card h3, .book-card p, .book-card a, .book-card button {
+  position: static !important;
+  float: none !important;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
