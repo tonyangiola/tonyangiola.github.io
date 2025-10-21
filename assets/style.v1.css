@@ -32,3 +32,23 @@ a:hover, header nav a:hover, nav a:hover { text-decoration: none !important; }
 }
 .book-row a:hover, .card a:hover { background:#1e4fd3 !important; transform: translateY(-1px) !important; }
 .book-row a:active, .card a:active { transform: translateY(0) !important; }
+/* --- Catch-all CTA buttons (safe, targeted) --- */
+a[href*="/newsletter"],
+a[href*="amazon.com"] {
+  display:inline-block !important;
+  padding:.62rem 1rem !important;
+  border-radius:.75rem !important;
+  font-weight:600 !important;
+  border:1px solid rgba(0,0,0,.06) !important;
+  background:#2563eb !important;
+  color:#fff !important;
+  text-decoration:none !important;
+  transition:background-color .15s ease, transform .08s ease !important;
+}
+a[href*="/newsletter"]:hover,
+a[href*="amazon.com"]:hover { background:#1e4fd3 !important; transform:translateY(-1px) !important; }
+a[href*="/newsletter"]:active,
+a[href*="amazon.com"]:active { transform:translateY(0) !important; }
+
+/* No underlines anywhere on hover (belt & suspenders) */
+a:hover { text-decoration:none !important; }
