@@ -414,3 +414,59 @@ main a.btn:focus {
   outline-offset: 2px;
   border-radius: .25rem;
 }
+/* ==== BIO PAGE SAFETY OVERRIDES ==== */
+
+/* Force visible header on pages that might not pick up theme vars */
+header {
+  background: #334155 !important;   /* slate-700 */
+  color: #e2e8f0 !important;         /* slate-200 */
+  border-bottom: 1px solid rgba(0,0,0,.08) !important;
+}
+header a { color: inherit !important; }
+
+/* Render nav as pill buttons so they don't "disappear" on white */
+header nav a,
+header nav a:visited {
+  display: inline-block;
+  padding: .5rem .75rem;
+  margin-right: .5rem;
+  border-radius: .75rem;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.15);
+  color: #e2e8f0 !important;
+  text-decoration: none !important;
+}
+header nav a:hover,
+header nav a:focus-visible {
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.35);
+  color: #ffffff !important;
+}
+
+/* Nuke any blue box around the bio card itself */
+.bio-card,
+.bio-card:focus,
+.bio-card:focus-visible,
+.bio-card:focus-within {
+  outline: none !important;
+  border: 1px solid rgba(0,0,0,.06) !important;
+}
+
+/* Keep proper focus for real controls INSIDE the card */
+.bio-card a:focus-visible,
+.bio-card button:focus-visible,
+.bio-card input:focus-visible,
+.bio-card select:focus-visible,
+.bio-card textarea:focus-visible {
+  outline: 2px solid rgba(37,99,235,.35); /* subtle blue */
+  outline-offset: 2px;
+  border-radius: .25rem;
+}
+
+/* Ensure the card still looks like a raised panel */
+.bio-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem clamp(1rem, 2vw, 2rem);
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
+}
