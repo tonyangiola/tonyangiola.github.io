@@ -794,3 +794,11 @@ header nav a:focus-visible {
 .book-card .cover-link,
 .book-card .media-link,
 .book-card > a:first-child { pointer-events: none !important; }
+/* CLICK FIX (cards): disable ALL links inside a book-card... */
+.book-card a { pointer-events: none !important; }
+/* ...except the action buttons */
+.book-card .book-actions a {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 3;
+}
