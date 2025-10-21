@@ -81,3 +81,31 @@ main a[href*="amazon.com"] {
 }
 main a[href*="/newsletter"]:hover,
 main a[href*="amazon.com"]:hover { background:#1e4fd3 !important; transform:translateY(-1px) !important; }
+/* --- Unified CTA button style (class-based) --- */
+a.btn.cta {
+  display:inline-block !important;
+  padding:.62rem 1rem !important;
+  border-radius:.75rem !important;
+  font-weight:600 !important;
+  border:1px solid rgba(0,0,0,.12) !important;
+  background:#2563eb !important;
+  color:#fff !important;
+  text-decoration:none !important;
+  transition:box-shadow .15s ease, transform .08s ease, background-color .15s ease !important;
+}
+
+/* Hover = subtle only, to avoid "stuck hovered" look */
+a.btn.cta:hover {
+  background:#1e4fd3 !important;
+  box-shadow:0 4px 12px rgba(0,0,0,.18) !important;
+  transform:translateY(-1px) !important;
+}
+
+/* Active click state snaps back cleanly */
+a.btn.cta:active { transform:translateY(0) !important; box-shadow:none !important; }
+
+/* Focus ring for keyboard users (distinct from hover color) */
+a.btn.cta:focus-visible {
+  outline:2px solid #93c5fd !important;
+  outline-offset:2px !important;
+}
