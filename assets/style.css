@@ -687,3 +687,46 @@ header nav a:focus-visible {
   .books .book-card{ grid-template-columns: 1fr; }
   .books .book-card .book-video{ max-width:100%; }
 }
+/* ===== BOOKS HOTFIX (layout + no black box) ===== */
+
+/* 1) Two-column card layout */
+.books .book-card{
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap:1rem;
+  align-items:start;
+  max-width: 100%;
+}
+
+/* 2) Kill the empty legacy media wrapper (causing the black rounded rectangle) */
+.books .book-card .book-media{ display:none !important; }
+
+/* 3) Make the video the left-column media.
+      Show only the FIRST video in each card; hide any duplicates from older markup. */
+.books .book-card video{ display:none !important; }
+.books .book-card video:first-of-type{
+  display:block !important;
+  grid-column:1;
+  width:100%;
+  max-width:320px;
+  border-radius:.5rem;
+  overflow:hidden;
+  background:#f5f5f7;     /* light grey – no black placeholder */
+  object-fit:cover;        /* fill/crop to kill letterboxing */
+  aspect-ratio:16/9;       /* default */
+}
+
+/* 4) Put the text content in the right column */
+.books .book-card .book-meta{ grid-column:2; }
+
+/* 5) Per-card aspect tweaks by order (adjust if your order differs)
+      1: Snippy wide, 2: Gremlins tall, 3: Socorro tall. */
+.books .books-grid > article:nth-of-type(1) video:first-of-type{ aspect-ratio:21/9; }
+.books .books-grid > article:nth-of-type(2) video:first-of-type{ aspect-ratio:3/4;  }
+.books .books-grid > article:nth-of-type(3) video:first-of-type{ aspect-ratio:3/4;  }
+
+/* 6) Mobile: stack vertically */
+@media (max-width: 720px){
+  .books .book-card{ grid-template-columns:1fr; }
+  .books .book-card video:first-of-type{ max-width:100%; }
+}
