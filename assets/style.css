@@ -810,3 +810,38 @@ header nav a:focus-visible {
 .books-page main > picture {
   display: none !important;
 }
+
+/* ==== Books page card grid hardening ==== */
+.book-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Ensure media sits in the first column and never overlaps */
+.book-card > img,
+.book-card > video,
+.book-card > figure,
+.book-card > picture {
+  grid-column: 1;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: .5rem;
+  object-fit: cover;
+  overflow: hidden;
+  background: #111; /* subtle placeholder if video poster missing */
+}
+
+/* Make sure text/buttons flow in column 2 */
+.book-card > *:not(img):not(video):not(figure):not(picture) {
+  grid-column: 2;
+}
+
+/* Defensive: prevent absolutely-positioned media from overlaying text */
+.book-card img,
+.book-card video {
+  position: static !important;
+}
