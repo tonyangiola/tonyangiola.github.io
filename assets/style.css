@@ -284,3 +284,49 @@ header nav a.active {
     color: #ffffff;
   }
 }
+/* deploy-css: 1761013300  — TEMP visible frame below proves CSS is fresh */
+body{ box-shadow: inset 0 0 0 4px rgba(0,128,255,.5) } /* TEMP—remove after verify */
+
+/* --- Enforced paper background + pill nav (overrides) --- */
+html, body { 
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(2,6,23,0.06), transparent 55%), #f8fafc !important; 
+  color: #0f172a;
+}
+
+header { 
+  background: #334155 !important; 
+  color: #e2e8f0 !important; 
+  box-shadow: 0 4px 16px rgba(0,0,0,.18) !important;
+}
+
+header nav a, header nav a:visited {
+  text-decoration: none !important;
+  display: inline-block !important;
+  padding: .52rem .9rem !important;
+  margin: 0 .18rem !important;
+  border-radius: 999px !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  color: #e2e8f0 !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  transition: background-color .15s ease, color .15s ease, transform .08s ease, border-color .15s ease;
+}
+
+header nav a:hover, header nav a:focus-visible {
+  text-decoration: none !important;
+  background: rgba(226,232,240,.18) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+header nav a.active { 
+  background: rgba(226,232,240,.28) !important; 
+  color: #ffffff !important; 
+  border-color: rgba(255,255,255,.12) !important;
+}
+
+/* Book cover safety (keep) */
+.book img, .book-card img, .book-grid img {
+  display:block; max-width:100%; height:auto; aspect-ratio:2/3; object-fit:cover;
+}
