@@ -19,15 +19,23 @@
   <main class="container">
     <h1>Newsletter</h1>
     <p>Get field updates, case write-ups, and new chapter drops.</p>
+
     <div class="card">
-      <!-- Replace the action URL with Buttondown/MailerLite later -->
-      <form method="post" action="#" onsubmit="alert('Wire this to your provider (Buttondown/MailerLite).'); return false;">
-        <label for="email">Email</label><br>
-        <input id="email" name="email" type="email" required style="width:100%;max-width:420px;padding:.6rem;border:1px solid #ccc;border-radius:8px">
+      <!-- Buttondown embed: replace YOUR_BUTTONDOWN_USERNAME, then it just works -->
+      <form
+        action="https://buttondown.email/api/emails/embed-subscribe/YOUR_BUTTONDOWN_USERNAME"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.email/YOUR_BUTTONDOWN_USERNAME','popupwindow')"
+        class="embeddable-buttondown-form">
+        <label for="bd-email">Email</label><br>
+        <input id="bd-email" type="email" name="email" required
+               style="width:100%;max-width:420px;padding:.6rem;border:1px solid #ccc;border-radius:8px">
         <div style="height:10px"></div>
         <button class="btn" type="submit">Subscribe</button>
         <p class="small">No spam. Unsubscribe anytime.</p>
       </form>
+      <p class="small">Want MailerLite instead? Tell me and I’ll swap the embed.</p>
     </div>
   </main>
 
