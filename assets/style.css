@@ -630,3 +630,20 @@ header nav a:focus-visible {
   pointer-events:none;
   box-shadow:none !important;
 }
+/* Book media (img or video) unified styling */
+.book-media,
+.book-media video,
+.book-media img {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius: .75rem;
+  overflow:hidden;
+}
+
+/* Optional: fixed aspect ratio crop like your covers (tall portrait) */
+.book-media video,
+.book-media img {
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
