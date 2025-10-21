@@ -334,3 +334,13 @@ header nav a.active {
 a.btn { color:#111; text-decoration:none; }
 a.btn:visited { color:#111; }
 a.btn:hover { color:#111; text-decoration:none; } /* keep underline off; existing border-color hover still applies */
+/* --- FINAL: buttons keep color and never underline --- */
+a.btn,
+a.btn:link,
+a.btn:visited,
+a.btn:hover,
+a.btn:active,
+a.btn:focus {
+  color: #111 !important;
+  text-decoration: none !important;
+}
