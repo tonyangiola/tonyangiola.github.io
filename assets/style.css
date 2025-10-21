@@ -788,3 +788,9 @@ header nav a:focus-visible {
   .book-card{ grid-template-columns:1fr; }
   .book-video{ max-width:100% !important; }
 }
+/* CLICKTHROUGH HOTFIX: ensure action buttons are clickable even if a card overlay exists */
+.book-card .book-actions a { position: relative; z-index: 3; pointer-events: auto !important; }
+.book-card a.stretched-link,
+.book-card .cover-link,
+.book-card .media-link,
+.book-card > a:first-child { pointer-events: none !important; }
