@@ -27,11 +27,11 @@
       <h2>Books</h2>
 <!-- CANARY: insert directly after first <h2>Books</h2> -->
 <div class="books-grid">
-  <article class="book-card">
-    <video class="book-video" autoplay muted loop playsinline preload="metadata">
+  <article class="book-card" style="display:grid;grid-template-columns:640px 1fr;gap:1rem;align-items:start;">
+    <video class="book-video" autoplay muted loop playsinline preload="metadata" style="display:block;width:100%;max-width:640px;aspect-ratio:16/9;object-fit:contain;background:#f5f5f7;border-radius:.5rem;overflow:hidden;" autoplay muted loop playsinline preload="metadata">
       <source src="/assets/videos/books/snippy.mp4" type="video/mp4">
     </video>
-    <div class="book-meta">
+    <div class="book-meta" style="grid-column:2;">
       <h3>Snippy</h3>
       <div class="book-actions">
         <a class="primary" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
