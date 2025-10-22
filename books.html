@@ -189,17 +189,7 @@
   </main>
 </body>
 </html>
-  <header>
-    <div class="container">
-      <nav>
-        <a href="/" class=""><strong>Tony Angiola</strong></a>
-        <a href="/books.html" class="active">Books</a>
-        <a href="/bio.html">Bio</a>
-        <a href="/newsletter.html">Newsletter</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<div id="site-header"></div>
   <main class="container">
     <h1>Books</h1>
 
@@ -288,3 +278,24 @@
   </main>
 </body>
 </html>
+<script>
+(function() {
+  function setActive(navRoot) {
+    var path = location.pathname.replace(/\/index\.html$/,'/'); // treat /index.html as /
+    var links = navRoot.querySelectorAll('nav a');
+    links.forEach(function(a){
+      var href = a.getAttribute('href');
+      var isActive = (path === '/' && href === '/') || (href === path);
+      a.classList.toggle('active', isActive);
+      if (isActive) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+  }
+  fetch('/assets/header.html', {cache:'no-store'})
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      var mount = document.getElementById('site-header');
+      if (mount) { mount.outerHTML = html; setActive(document.querySelector('header')); }
+    })
+    .catch(function(){ /* fail-quietly */ });
+})();
+</script>
