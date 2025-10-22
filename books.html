@@ -32,6 +32,11 @@
     .book-actions a.secondary { background:#f3f4f6; color:#111827; }
   </style>
 </head>
+  <style id="snippy-size-hotfix">
+    /* Make Snippy the same footprint as Socorro */
+    #snippy-card .book-media{width:100%;max-width:260px}
+    #snippy-card video{display:block!important;width:100%!important;aspect-ratio:3/4;object-fit:contain;border-radius:.5rem;background:#111}
+  </style>
   <style id="books-video-hotfix">
     /* Gremlins/Socorro: show only the FIRST video inside .book-media */
     #gremlins-card .book-media > :not(video:first-of-type){display:none !important;}
@@ -51,9 +56,9 @@
       <!-- 1) Snippy -->
       <article class="book-card" id="snippy-card">
         <div class="book-media">
-          <video preload="metadata" controls playsinline muted
-                 style="display:block !important;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111;z-index:1;pointer-events:auto"
-                 poster="/images/books/snippy.jpg">
+          <video autoplay muted loop playsinline preload="auto"
+                 poster="/images/books/snippy.jpg"
+                 style="display:block;width:100%;max-width:100%;height:auto;aspect-ratio:3/4;object-fit:contain;border-radius:.5rem;background:#111;position:relative;z-index:2">
             <source src="/assets/videos/snippy.mp4#t=0.1" type="video/mp4">
           </video>
         </div>
