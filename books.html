@@ -32,6 +32,14 @@
     .book-actions a.secondary { background:#f3f4f6; color:#111827; }
   </style>
 </head>
+  <style id="site-nav-hotfix">
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid rgba(0,0,0,.06)}
+    .site-header .container{max-width:1000px;margin:0 auto;padding:10px 16px;display:flex;gap:16px;align-items:center;justify-content:space-between}
+    .site-brand{font-weight:700}
+    .site-nav{display:flex;gap:14px;flex-wrap:wrap}
+    .site-nav a{color:#0f172a;text-decoration:none;padding:6px 8px;border-radius:8px}
+    .site-nav a:hover{background:#f1f5f9}
+  </style>
   <style id="snippy-fill-left-override">
     #snippy-card{display:grid !important;grid-template-columns: 1fr 280px !important;gap:16px !important;align-items:start !important}
     #snippy-card .book-media{width:100% !important;max-width:none !important}
@@ -72,6 +80,18 @@
     }
   </style>
 <body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-brand" href="/"><strong>Tony Angiola</strong></a>
+      <nav class="site-nav">
+        <a href="/">Home</a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
   <main class="container">
     <h1>Books</h1>
 
