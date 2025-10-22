@@ -33,12 +33,14 @@
   </style>
 </head>
   <style id="snippy-wide-hotfix">
-    /* Snippy: make media column wider and use 16:9 to fit the video */
-    #snippy-card.book-card,
-    #snippy-card { display:grid; grid-template-columns:420px 1fr; }
-    #snippy-card .book-media{ width:420px; max-width:100%; }
-    #snippy-card .media-box{ width:420px; aspect-ratio:16/9; }
-    #snippy-card video{ width:100%!important; height:100%!important; object-fit:cover!important; display:block!important; }
+    /* Snippy: wider media & right-aligned buttons */
+    #snippy-card{display:grid;grid-template-columns:minmax(460px,680px) 1fr;gap:16px;align-items:start}
+    #snippy-card .book-media{width:100%;max-width:680px}
+    #snippy-card .media-box{width:100%;aspect-ratio:16/9;border-radius:.5rem;overflow:hidden;}
+    #snippy-card video{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
+    /* Push actions to the far right inside the meta column */
+    #snippy-card .book-meta{display:grid;grid-template-rows:auto auto 1fr;}
+    #snippy-card .book-actions{justify-content:flex-end; margin-left:auto;}
   </style>
   <style id="books-video-hotfix">
     /* Gremlins/Socorro: show only the FIRST video inside .book-media */
