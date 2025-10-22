@@ -1043,3 +1043,51 @@ header nav a:focus-visible {
   transition:background-color .15s ease, transform .08s ease;
 }
 .btn-amazon:hover { background:#1e4fd3; }
+
+/* ===== Books page: scoped fixes (navbar-safe) ===== */
+
+/* Keep media responsive and never overflow */
+article[id$="-card"] img,
+article[id$="-card"] video {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:.5rem;
+}
+
+/* --- Snippy: wide media with actions stacked to the right --- */
+#snippy-card {
+  display:grid;
+  grid-template-columns: minmax(520px, 1fr) 240px; /* wide media, compact actions */
+  gap: 1rem;
+  align-items:start;
+}
+#snippy-card > :is(img,video,figure,.media,.poster){ grid-column:1; }
+#snippy-card > :is(.actions, .buttons, .cta, .meta){ grid-column:2; }
+#snippy-card .actions a,
+#snippy-card .buttons a { margin-right:.5rem; margin-bottom:.5rem; }
+
+/* --- Socorro: intentionally smaller media (like your original) --- */
+#socorro-card { max-width: 460px; }
+#socorro-card img, #socorro-card video { max-width: 460px; }
+
+/* --- Gremlins: normal size --- */
+#gremlins-card { max-width: 680px; }
+
+/* --- Cosmic Secrets: static image, normal size --- */
+#cosmic-card   { max-width: 680px; }
+#cosmic-card img { object-fit: cover; }
+
+/* Center each card block and prevent “full bleed” */
+#snippy-card, #socorro-card, #gremlins-card, #cosmic-card {
+  margin-left:auto; margin-right:auto;
+}
+
+/* Blue Amazon button (in case rules were lost) */
+.btn-amazon {
+  display:inline-block; padding:.5rem .8rem; border-radius:.5rem;
+  font-weight:600; text-decoration:none !important;
+  background:#2563eb; color:#fff; border:1px solid rgba(0,0,0,.06);
+  transition:background-color .15s ease, transform .08s ease;
+}
+.btn-amazon:hover { background:#1e4fd3; }
