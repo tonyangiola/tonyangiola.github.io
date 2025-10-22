@@ -1091,3 +1091,57 @@ article[id$="-card"] video {
   transition:background-color .15s ease, transform .08s ease;
 }
 .btn-amazon:hover { background:#1e4fd3; }
+/* ===== Books page: final navbar-safe layout fixes ===== */
+
+/* Normalize media sizing inside any card */
+article[id$="-card"] > img,
+article[id$="-card"] > video,
+article[id$="-card"] > figure {
+  display:block;
+  width:100% !important;
+  height:auto !important;
+  border-radius:.5rem;
+}
+
+/* ---------- Snippy wide (media left, everything else right) ---------- */
+#snippy-card {
+  display:grid !important;
+  grid-template-columns: minmax(520px, 1fr) 260px !important;
+  gap: 1rem !important;
+  align-items:start !important;
+  max-width: 980px;
+  margin-left:auto; margin-right:auto;
+}
+/* Put media on the left… */
+#snippy-card > img,
+#snippy-card > video,
+#snippy-card > figure { grid-column:1 !important; }
+/* …and everything that is NOT media on the right (title, text, buttons, etc.) */
+#snippy-card > :not(img):not(video):not(figure) { grid-column:2 !important; }
+
+/* ---------- Socorro small ---------- */
+#socorro-card {
+  max-width: 480px !important;
+  margin-left:auto; margin-right:auto;
+}
+#socorro-card img,
+#socorro-card video,
+#socorro-card figure { max-width: 460px !important; }
+
+/* ---------- Gremlins & Cosmic normal ---------- */
+#gremlins-card, #cosmic-card {
+  max-width: 680px !important;
+  margin-left:auto; margin-right:auto;
+}
+#cosmic-card img { object-fit: cover; }
+
+/* Optional: ensure Amazon button blue even if base styles changed */
+#snippy-card a, #socorro-card a, #gremlins-card a, #cosmic-card a {
+  text-decoration: none;
+}
+a.btn-amazon {
+  display:inline-block; padding:.5rem .8rem; border-radius:.5rem;
+  font-weight:600; background:#2563eb; color:#fff; border:1px solid rgba(0,0,0,.06);
+  transition:background-color .15s ease, transform .08s ease;
+}
+a.btn-amazon:hover { background:#1e4fd3; }
