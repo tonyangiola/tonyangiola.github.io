@@ -32,6 +32,15 @@
     .book-actions a.secondary { background:#f3f4f6; color:#111827; }
   </style>
 </head>
+  <style id="snippy-fill-left-override">
+    #snippy-card{display:grid !important;grid-template-columns: 1fr 280px !important;gap:16px !important;align-items:start !important}
+    #snippy-card .book-media{width:100% !important;max-width:none !important}
+    #snippy-card .media-box{width:100% !important;aspect-ratio:16/9 !important;border-radius:.5rem;overflow:hidden}
+    #snippy-card video{width:100% !important;height:100% !important;object-fit:cover !important;display:block !important}
+    #snippy-card .book-meta{display:grid;grid-template-rows:auto auto 1fr}
+    #snippy-card .book-actions{justify-content:flex-end;margin-left:auto}
+    @media (max-width:760px){#snippy-card{grid-template-columns:1fr} #snippy-card .book-actions{justify-content:flex-start;margin-left:0}}
+  </style>
   <style id="snippy-wide-hotfix">
     /* Snippy fills the LEFT; meta (title/buttons) in a slim RIGHT column */
     #snippy-card{
@@ -69,9 +78,9 @@
     <section class="books-grid">
 
       <!-- 1) Snippy -->
-      <article class="book-card" id="snippy-card" style="display:grid;grid-template-columns:minmax(520px,1fr) 280px;gap:16px;align-items:start">
-        <div class="book-media" style="width:100%;max-width:none">
-          <div class="media-box" style="width:260px;max-width:100%;aspect-ratio:3/4;background:#111;border-radius:.5rem;overflow:hidden;position:relative;">
+      <article class="book-card" id="snippy-card">
+        <div class="book-media">
+          <div class="media-box">
             <video autoplay muted loop playsinline preload="auto"
                    style="width:100%;height:100%;object-fit:cover;display:block;">
               <source src="/assets/videos/snippy.mp4#t=0.1" type="video/mp4">
