@@ -4,7 +4,7 @@
 <title>Books — Tony Angiola</title>
 <link rel="stylesheet" href="/assets/style.css">
 
-<!-- keep your existing site header/navbar exactly as before -->
+<!-- keep your existing site header/navbar (SSI include + fallback) -->
 <!--#include virtual="/assets/header.html" -->
 <header>
   <div class="container">
@@ -22,12 +22,11 @@
   <main class="container books-page">
     <h1>Books</h1>
 
-    <!-- ======================= SNIPPY (wide) ======================= -->
+    <!-- ======================= SNIPPY (WIDE) ======================= -->
     <article id="snippy-card" class="book-card book-wide" aria-label="Snippy">
       <div class="book-media">
         <video controls preload="metadata" poster="/images/books/snippy.jpg">
           <source src="/assets/videos/snippy.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
       </div>
       <div class="book-side">
@@ -35,51 +34,55 @@
         <p>Animated preview.</p>
         <div class="book-actions">
           <a class="btn btn-amazon" href="https://www.amazon.com/dp/B0F88SPFDS" target="_blank" rel="noopener">Buy on Amazon</a>
-          <a class="btn" href="/newsletter.html">Get updates</a>
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
         </div>
       </div>
     </article>
 
-    <!-- ======================= SOCORRO (small) ===================== -->
-    <article id="socorro-card" class="book-card book-small" aria-label="Socorro UFO">
-      <h2>Socorro UFO</h2>
-      <p>Classic 1964 case: blue flame, red inverted “V” with three bars.</p>
+    <!-- ======================= SOCORRO (NORMAL) ==================== -->
+    <article id="socorro-card" class="book-card" aria-label="Socorro UFO">
       <div class="book-media">
         <video controls preload="metadata" poster="/images/books/socorro.jpg">
           <source src="/assets/videos/socorro.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
       </div>
-      <div class="book-actions">
-        <a class="btn btn-amazon" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
-        <a class="btn" href="/newsletter.html">Get updates</a>
+      <div class="book-side">
+        <h2>Socorro UFO</h2>
+        <p>Classic 1964 case: blue flame, red inverted “V” with three bars.</p>
+        <div class="book-actions">
+          <a class="btn btn-amazon" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
       </div>
     </article>
 
-    <!-- ======================= GREMLINS (normal) =================== -->
+    <!-- ======================= GREMLINS (NORMAL) =================== -->
     <article id="gremlins-card" class="book-card" aria-label="Gremlins">
-      <h2>Gremlins</h2>
       <div class="book-media">
         <video controls preload="metadata" poster="/images/books/gremlins.jpg">
           <source src="/assets/videos/gremlins.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
       </div>
-      <div class="book-actions">
-        <a class="btn btn-amazon" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
-        <a class="btn" href="/newsletter.html">Get updates</a>
+      <div class="book-side">
+        <h2>Gremlins</h2>
+        <div class="book-actions">
+          <a class="btn btn-amazon" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
       </div>
     </article>
 
-    <!-- ======================= COSMIC (static image) =============== -->
+    <!-- ======================= COSMIC (STATIC IMAGE) =============== -->
     <article id="cosmic-card" class="book-card" aria-label="Cosmic Secrets">
-      <h2>Cosmic Secrets</h2>
-      <p>Coming soon. Get notified when it launches.</p>
       <div class="book-media">
         <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover">
       </div>
-      <div class="book-actions">
-        <a class="btn" href="/newsletter.html">Get updates</a>
+      <div class="book-side">
+        <h2>Cosmic Secrets</h2>
+        <p>Coming soon. Get notified when it launches.</p>
+        <div class="book-actions">
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
       </div>
     </article>
   </main>

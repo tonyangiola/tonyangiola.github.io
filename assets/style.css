@@ -1207,3 +1207,44 @@ a.btn-amazon:hover { background:#1e4fd3; }
   .book-wide { grid-template-columns: 1fr; }
   .book-wide .book-side { grid-column:1; }
 }
+/* ===== Books page FINAL rebuild (scoped; navbar-safe) ===== */
+.books-page { padding-top: .5rem; }
+.books-page h1 { margin: .5rem 0 1rem; }
+
+.book-card{
+  display:grid;
+  grid-template-columns: minmax(520px, 1fr) 300px; /* media left, side right */
+  gap: 1rem;
+  align-items:start;
+  background:#fff; border:1px solid rgba(0,0,0,.08);
+  border-radius:.75rem; padding:1rem; margin:0 auto 1rem;
+  max-width: 1024px; box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+.book-media img, .book-media video{
+  display:block; width:100%; height:auto; border-radius:.5rem; background:#000;
+}
+.book-side h2{ margin:.25rem 0 .25rem; font-size:1.15rem; }
+.book-side p { margin:0 0 .5rem; color:#444; }
+
+/* Snippy = wider media column */
+.book-wide{ grid-template-columns: minmax(640px,1fr) 300px; max-width:1180px; }
+
+/* Buttons (blue Amazon, blue Updates) */
+.book-actions{ display:flex; flex-direction:column; gap:.5rem; }
+.btn{
+  display:inline-block; padding:.55rem .9rem; border-radius:.6rem;
+  font-weight:600; text-decoration:none !important; text-align:center;
+  border:1px solid rgba(0,0,0,.06); background:#2563eb; color:#fff;
+  transition:background-color .15s ease, transform .08s ease;
+}
+.btn:hover{ background:#1e4fd3; }
+.btn-amazon{ background:#2563eb; }
+.btn-update{ background:#2563eb; }
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 900px){
+  .book-card, .book-wide{
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+}
