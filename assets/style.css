@@ -1096,3 +1096,11 @@ header nav a:focus-visible {
 .book-media img, .book-media video { display:block !important; width:100% !important; height:auto !important; object-fit:cover; }
 .books-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.2rem; }
 .book-card { display:grid; gap:.75rem; }
+
+/* BOOKS STABLE GRID */
+main.container h1 { margin-top: .5rem; }
+.books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+.book-card { display: grid; gap: .75rem; padding: 1rem; border-radius: 1rem; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.book-media { border-radius: .75rem; overflow: hidden; background: #f3f4f6; }
+.book-media img, .book-media video { display: block; width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; }
+.book-actions { display: flex; gap: .5rem; flex-wrap: wrap; }
