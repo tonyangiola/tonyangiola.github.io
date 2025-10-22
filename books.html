@@ -89,76 +89,75 @@
   <main id="books-page" class="container">
   <h1>Books</h1>
 
-  <!-- Scoped styles so other CSS can't break this layout -->
-  <style>
-    #books-page .books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
-    #books-page .book-card{display:grid;gap:.75rem;padding:1rem;border-radius:1rem;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-    #books-page .book-card h3{margin:.25rem 0}
-    #books-page .book-media{border-radius:.75rem;overflow:hidden;background:#f3f4f6}
-    #books-page .book-media img,#books-page .book-media video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-    #books-page .book-actions{display:flex;gap:.5rem;flex-wrap:wrap}
-    /* force buttons horizontal */
-    #books-page .btn{display:inline-flex;align-items:center;justify-content:center;padding:.5rem .8rem;border-radius:.6rem;border:1px solid rgba(0,0,0,.08);text-decoration:none;white-space:nowrap;word-break:normal;writing-mode:horizontal-tb;width:auto;min-height:2.25rem}
-    #books-page .btn-primary{background:#2563eb;color:#fff;border-color:transparent}
-    #books-page .btn-primary:hover{filter:brightness(.96)}
-  </style>
-
-  <section class="books-grid">
-
-    <!-- Snippy (video) -->
-    <article class="book-card" id="snippy-card">
-      <h3>Snippy</h3>
+  <section style="
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:1.25rem">
+    <!-- Card style (inline so nothing overrides) -->
+    <!-- Snippy -->
+    <article style="display:grid;gap:.75rem;padding:1rem;border-radius:1rem;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)">
+      <h3 style="margin:.25rem 0">Snippy</h3>
       <p>Animated preview.</p>
-      <div class="book-media">
-        <video controls preload="metadata" poster="/images/books/snippy.jpg">
+      <div style="border-radius:.75rem;overflow:hidden;background:#f3f4f6">
+        <video controls preload="metadata" poster="/images/books/snippy.jpg" style="display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:16/9">
           <source src="/assets/videos/snippy.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="book-actions">
-        <a class="btn btn-primary" href="https://www.amazon.com/dp/B0F88SPFDS" target="_blank" rel="noopener">Buy on Amazon</a>
-        <a class="btn" href="/newsletter.html">Get updates</a>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <a href="https://www.amazon.com/dp/B0F88SPFDS" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;justify-content:center;padding:.5rem .8rem;border-radius:.6rem;border:1px solid transparent;background:#2563eb;color:#fff;text-decoration:none;white-space:nowrap">Buy on Amazon</a>
+        <a href="/newsletter.html"
+           style="display:inline-flex;align-items:center;justify-content:center;padding:.5rem .8rem;border-radius:.6rem;border:1px solid rgba(0,0,0,.08);text-decoration:none;white-space:nowrap">Get updates</a>
       </div>
     </article>
 
-    <!-- Socorro (image) -->
-    <article class="book-card" id="socorro-card">
-      <h3>Socorro UFO</h3>
+    <!-- Socorro -->
+    <article style="display:grid;gap:.75rem;padding:1rem;border-radius:1rem;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)">
+      <h3 style="margin:.25rem 0">Socorro UFO</h3>
       <p>Classic 1964 case. Blue flame, oval craft, inverted “V” with three bars.</p>
-      <div class="book-media">
-        <img src="/images/books/socorro.jpg" alt="Socorro book cover">
+      <div style="border-radius:.75rem;overflow:hidden;background:#f3f4f6">
+        <img src="/images/books/socorro.jpg" alt="Socorro book cover"
+             style="display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:16/9">
       </div>
-      <div class="book-actions">
-        <a class="btn btn-primary" href="https://www.amazon.com/dp/B0FGQP7PHN" target="_blank" rel="noopener">Buy on Amazon</a>
-        <a class="btn" href="/newsletter.html">Get updates</a>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <a href="https://www.amazon.com/dp/B0FGQP7PHN" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;justify-content:center;padding:.5rem .8rem;border-radius:.6rem;border:1px solid transparent;background:#2563eb;color:#fff;text-decoration:none;white-space:nowrap">Buy on Amazon</a>
+        <a href="/newsletter.html"
+           style="display:inline-flex;align-items:center;justify-content:center;padding:.5rem .8rem;border-radius:.6rem;border:1px solid rgba(0,0,0,.08);text-decoration:none;white-space:nowrap">Get updates</a>
       </div>
     </article>
 
-    <!-- Gremlins (image) -->
-    <article class="book-card" id="gremlins-card">
-      <h3>Gremlins</h3>
-      <div class="book-media">
-        <img src="/images/books/gremlins.jpg" alt="Gremlins book cover">
+    <!-- Gremlins -->
+    <article style="display:grid;gap:.75rem;padding:1rem;border-radius:1rem;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)">
+      <h3 style="margin:.25rem 0">Gremlins</h3>
+      <div style="border-radius:.75rem;overflow:hidden;background:#f3f4f6">
+        <img src="/images/books/gremlins.jpg" alt="Gremlins book cover"
+             style="display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:16/9">
       </div>
-      <div class="book-actions">
-        <a class="btn btn-primary" href="https://www.amazon.com/dp/B0FF3RWHT7" target="_blank" rel="noopener">Buy on Amazon</a>
-        <a class="btn" href="/newsletter.html">Get updates</a>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <a href="https://www.amazon.com/dp/B0FF3RWHT7" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;justify-content:center;padding:.5rem .8rem;border-radius:.6rem;border:1px solid transparent;background:#2563eb;color:#fff;text-decoration:none;white-space:nowrap">Buy on Amazon</a>
+        <a href="/newsletter.html"
+           style="display:inline-flex;align-items:center;justify-content:center;padding:.5rem .8rem;border-radius:.6rem;border:1px solid rgba(0,0,0,.08);text-decoration:none;white-space:nowrap">Get updates</a>
       </div>
     </article>
 
     <!-- Cosmic Secrets -->
-    <article class="book-card" id="cosmic-card">
-      <h3>Cosmic Secrets</h3>
+    <article style="display:grid;gap:.75rem;padding:1rem;border-radius:1rem;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)">
+      <h3 style="margin:.25rem 0">Cosmic Secrets</h3>
       <p>Coming soon. Get notified when it launches.</p>
-      <div class="book-media">
-        <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets (coming soon)">
+      <div style="border-radius:.75rem;overflow:hidden;background:#f3f4f6">
+        <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets (coming soon)"
+             style="display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:16/9">
       </div>
-      <div class="book-actions">
-        <a class="btn" href="/newsletter.html">Get updates</a>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <a href="/newsletter.html"
+           style="display:inline-flex;align-items:center;justify-content:center;padding:.5rem .8rem;border-radius:.6rem;border:1px solid rgba(0,0,0,.08);text-decoration:none;white-space:nowrap">Get updates</a>
       </div>
     </article>
 
   </section>
 </main>
+
 
   
 </body>
