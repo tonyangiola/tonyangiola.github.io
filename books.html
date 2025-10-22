@@ -1,26 +1,34 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Books – Tony Angiola</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Keep your site CSS, but also add scoped rules that guarantee layout -->
     <link rel="stylesheet" href="/assets/style.css">
-    <!-- Scoped styles so this page is stable no matter what -->
     <style>
-      #books fresh h1{margin:.5rem 0 1rem}
-      #booksfresh .card{display:grid;gap:1rem;padding:1rem;border-radius:1rem;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:1rem}
-      #booksfresh .media{border-radius:.75rem;overflow:hidden;background:#0b0b0b}
-      #booksfresh .media video,#booksfresh .media img{display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:16/9}
-      #booksfresh .actions{display:flex;gap:.5rem;flex-wrap:wrap}
-      #booksfresh .btn{display:inline-flex;align-items:center;justify-content:center;padding:.55rem .95rem;border-radius:.6rem;text-decoration:none;white-space:nowrap;min-height:2.25rem}
-      #booksfresh .btn.primary{background:#2563eb;color:#fff;border:1px solid transparent}
-      #booksfresh .btn.secondary{background:#fff;color:#111;border:1px solid rgba(0,0,0,.12)}
-      #booksfresh .btn.primary:hover{filter:brightness(.96)}
-      /* Snippy: two columns on wide screens */
-      #booksfresh .snippy{grid-template-columns:1fr}
-      #booksfresh .snippy .side{display:grid;gap:.75rem}
-      @media (min-width:900px){ #booksfresh .snippy{grid-template-columns:minmax(0,1fr) 320px} #booksfresh .snippy .side{position:sticky;top:1rem} }
-      #booksfresh .note{color:#4b5563;font-size:.95rem;margin:.25rem 0 .5rem 0}
+      /* ===== EVERYTHING BELOW IS SCOPED TO #books-page ONLY ===== */
+      #books-page { display:block; }
+      #books-page h1 { margin:.5rem 0 1rem; }
+
+      /* Cards, media, buttons */
+      #books-page .card{display:grid;gap:1rem;padding:1rem;border-radius:1rem;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:1rem}
+      #books-page .media{border-radius:.75rem;overflow:hidden;background:#0b0b0b}
+      #books-page .media video,#books-page .media img{display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:16/9}
+      #books-page .actions{display:flex;gap:.5rem;flex-wrap:wrap}
+      #books-page .btn{display:inline-flex;align-items:center;justify-content:center;padding:.55rem .95rem;border-radius:.6rem;text-decoration:none;white-space:nowrap;min-height:2.25rem}
+      #books-page .btn.primary{background:#2563eb;color:#fff;border:1px solid transparent}
+      #books-page .btn.secondary{background:#fff;color:#111;border:1px solid rgba(0,0,0,.12)}
+      #books-page .btn.primary:hover{filter:brightness(.96)}
+      #books-page .note{color:#4b5563;font-size:.95rem;margin:.25rem 0 .5rem 0}
+
+      /* Snippy layout: wide video + right panel on desktop */
+      #books-page .snippy{grid-template-columns:1fr;align-items:start}
+      #books-page .snippy .side{display:grid;gap:.75rem}
+      @media (min-width:960px){
+        #books-page .snippy{grid-template-columns:minmax(0,1fr) 320px}
+        #books-page .snippy .side{position:sticky;top:1rem}
+      }
     </style>
   </head>
   <body>
@@ -36,10 +44,10 @@
   </div>
 </header>
 
-    <main id="booksfresh" class="container">
+    <main id="books-page" class="container">
       <h1>Books</h1>
 
-      <!-- Snippy (WIDE video with right-side buttons) -->
+      <!-- ===== Snippy (WIDE video with right-side buttons) ===== -->
       <section class="card snippy" id="snippy">
         <div class="media">
           <video controls preload="metadata" poster="/images/books/snippy.jpg">
@@ -58,7 +66,7 @@
         </aside>
       </section>
 
-      <!-- Socorro (video + buttons) -->
+      <!-- ===== Socorro (video + buttons) ===== -->
       <section class="card" id="socorro">
         <div>
           <h3>Socorro UFO</h3>
@@ -75,7 +83,7 @@
         </div>
       </section>
 
-      <!-- Gremlins (video + buttons) -->
+      <!-- ===== Gremlins (video + buttons) ===== -->
       <section class="card" id="gremlins">
         <div><h3>Gremlins</h3></div>
         <div class="media">
@@ -89,7 +97,7 @@
         </div>
       </section>
 
-      <!-- Cosmic Secrets (static image + updates) -->
+      <!-- ===== Cosmic Secrets (static image + updates) ===== -->
       <section class="card" id="cosmic-secrets">
         <div>
           <h3>Cosmic Secrets</h3>
