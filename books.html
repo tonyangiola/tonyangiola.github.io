@@ -32,6 +32,16 @@
     .book-actions a.secondary { background:#f3f4f6; color:#111827; }
   </style>
 </head>
+  <style id="books-video-hotfix">
+    /* Gremlins/Socorro: show only the FIRST video inside .book-media */
+    #gremlins-card .book-media > :not(video:first-of-type){display:none !important;}
+    #socorro-card  .book-media > :not(video:first-of-type){display:none !important;}
+    /* Make the visible video bullet-proof */
+    #snippy-card video, #gremlins-card video, #socorro-card video{
+      display:block !important;width:100%;max-width:100%;height:auto;object-fit:contain;
+      border-radius:.5rem;background:#111;position:relative;z-index:2;
+    }
+  </style>
 <body>
   <main class="container">
     <h1>Books</h1>
@@ -61,7 +71,7 @@
       <!-- 2) Socorro -->
       <article class="book-card" id="socorro-card">
         <div class="book-media">
-          <video preload="metadata" controls playsinline muted
+          <video loop autoplay preload="metadata" controls playsinline muted
                  style="display:block !important;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111;z-index:1;pointer-events:auto"
                  poster="/images/books/socorro.jpg">
             <source src="/assets/videos/socorro.mp4#t=0.1" type="video/mp4">
