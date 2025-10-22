@@ -33,35 +33,6 @@
   </style>
   <link rel="stylesheet" href="/assets/style.css">
 </head>
-  <style id="snippy-fill-left-override">
-    #snippy-card{display:grid !important;grid-template-columns: 1fr 280px !important;gap:16px !important;align-items:start !important}
-    #snippy-card .book-media{width:100% !important;max-width:none !important}
-    #snippy-card .media-box{width:100% !important;aspect-ratio:16/9 !important;border-radius:.5rem;overflow:hidden}
-    #snippy-card video{width:100% !important;height:100% !important;object-fit:cover !important;display:block !important}
-    #snippy-card .book-meta{display:grid;grid-template-rows:auto auto 1fr}
-    #snippy-card .book-actions{justify-content:flex-end;margin-left:auto}
-    @media (max-width:760px){#snippy-card{grid-template-columns:1fr} #snippy-card .book-actions{justify-content:flex-start;margin-left:0}}
-  </style>
-  <style id="snippy-wide-hotfix">
-    /* Snippy fills the LEFT; meta (title/buttons) in a slim RIGHT column */
-    #snippy-card{
-      display:grid;
-      grid-template-columns: 1fr 280px;  /* left fills card, right stays ~280px */
-      gap:16px; align-items:start;
-    }
-    #snippy-card .book-media{ width:100%; max-width:none; }
-    /* Wide 16:9 frame that expands to full left column width */
-    #snippy-card .media-box{ width:100%; aspect-ratio:16/9; border-radius:.5rem; overflow:hidden; }
-    #snippy-card video{ width:100%!important; height:100%!important; object-fit:cover!important; display:block!important; }
-    /* Right column layout + right-align actions */
-    #snippy-card .book-meta{ display:grid; grid-template-rows:auto auto 1fr; }
-    #snippy-card .book-actions{ justify-content:flex-end; margin-left:auto; }
-    /* Small screens: stack (media first) */
-    @media (max-width: 760px){
-      #snippy-card{ grid-template-columns: 1fr; }
-      #snippy-card .book-actions{ justify-content:flex-start; margin-left:0; }
-    }
-  </style>
   <style id="books-video-hotfix">
     /* Gremlins/Socorro: show only the FIRST video inside .book-media */
     #gremlins-card .book-media > :not(video:first-of-type){display:none !important;}
@@ -73,6 +44,7 @@
     }
   </style>
 <body>
+  </header>
   </header>
   <main class="container">
     <h1>Books</h1>
