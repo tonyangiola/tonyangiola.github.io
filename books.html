@@ -86,92 +86,87 @@
 </header>
 
   
-  <main class="container">
-    <h1>Books</h1>
+  <main class="container" id="books-page">
+  <h1>Books</h1>
 
-    <section class="books-grid">
+  <!-- SCOPED styles so nothing else on the site can override this layout -->
+  <style>
+    /* scope everything under #books-page to avoid collisions */
+    #books-page .books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+    #books-page .book-card{display:grid;gap:.75rem;padding:1rem;border-radius:1rem;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+    #books-page .book-card h3{margin:.25rem 0 .25rem 0}
+    #books-page .book-media{border-radius:.75rem;overflow:hidden;background:#f3f4f6}
+    #books-page .book-media video,#books-page .book-media img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+    #books-page .book-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+    #books-page .btn{display:inline-block;padding:.5rem .8rem;border-radius:.6rem;border:1px solid rgba(0,0,0,.08);text-decoration:none}
+    #books-page .btn-primary{background:#2563eb;color:#fff;border-color:transparent}
+    #books-page .btn-primary:hover{filter:brightness(.95)}
+  </style>
 
-      <!-- 1) Snippy -->
-      <article class="book-card" id="snippy-card">
-        <div class="book-media">
-          <div class="media-box">
-            <video autoplay muted loop playsinline preload="auto"
-                   style="width:100%;height:100%;object-fit:cover;display:block;">
-              <source src="/assets/videos/snippy.mp4#t=0.1" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="book-meta">
-          <h3>Snippy</h3>
-          <p>Animated preview.</p>
-          <div class="book-actions">
-            <a class="primary" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer"
-               href="https://www.amazon.com/Snippy-Horse-Unveiling-Mutilation-Encounters-ebook/dp/B0F88SPFDS/ref=sr_1_1?crid=3MGG0M69SF65K&dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761090591&sprefix=tony+angiol%2Caps%2C187&sr=8-1">Buy on Amazon</a>
-            <a class="secondary" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" href="/newsletter.html">Get updates</a>
-          </div>
-        </div>
-      </article>
+  <section class="books-grid">
 
-      <!-- 2) Socorro -->
-      <article class="book-card" id="socorro-card">
-        <div class="book-media">
-          <video autoplay muted loop playsinline preload="metadata"
-                 poster="/images/books/socorro.jpg"
-                 style="display:block;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111;position:relative;z-index:2">
-            <source src="/assets/videos/socorro.mp4#t=0.1" type="video/mp4">
-          </video>
-          <img src="/images/books/socorro.jpg" alt="Socorro UFO cover"
-               style="display:block;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111;margin-top:8px">
-          <div class="media-box" style="background-image:url('/images/books/socorro.jpg');"></div>
-        </div>
-        <div class="book-meta">
-          <h3>Socorro UFO</h3>
-          <p>Classic 1964 case. Blue flame, red inverted “V” with three bars.</p>
-          <div class="book-actions">
-            <a class="primary" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer"
-               href="https://www.amazon.com/SOCORRO-UFO-Not-This-World/dp/B0FGQP7PHN/ref=sr_1_3?crid=3MGG0M69SF65K&dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761090607&sprefix=tony+angiol%2Caps%2C187&sr=8-3">Buy on Amazon</a>
-            <a class="secondary" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" href="/newsletter.html">Get updates</a>
-          </div>
-        </div>
-      </article>
+    <!-- Snippy (video + correct Amazon ASIN) -->
+    <article class="book-card" id="snippy-card">
+      <h3>Snippy</h3>
+      <p>Animated preview.</p>
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/snippy.jpg">
+          <source src="/assets/videos/snippy.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-actions">
+        <a class="btn btn-primary" href="https://www.amazon.com/dp/B0F88SPFDS" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn" href="/newsletter.html">Get updates</a>
+      </div>
+    </article>
 
-      <!-- 3) Gremlins -->
-      <article class="book-card" id="gremlins-card">
-        <div class="book-media">
-          <video autoplay muted loop playsinline preload="metadata"
-                 style="display:block !important;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111;position:relative;z-index:2"
-                 poster="/images/books/gremlins.jpg">
-            <source src="/assets/videos/gremlins.mp4#t=0.1" type="video/mp4">
-          </video>
-          <div class="media-box" style="background-image:url('/images/books/gremlins.jpg');"></div>
-        </div>
-        <div class="book-meta">
-          <h3>Gremlins</h3>
-          <p>&nbsp;</p>
-          <div class="book-actions">
-            <a class="primary" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer"
-               href="https://www.amazon.com/Flying-Saucers-Aliens-Gremlins-Angiola-ebook/dp/B0FF3RWHT7/ref=sr_1_2?crid=3MGG0M69SF65K&dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761090607&sprefix=tony+angiol%2Caps%2C187&sr=8-2">Buy on Amazon</a>
-            <a class="secondary" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" href="/newsletter.html">Get updates</a>
-          </div>
-        </div>
-      </article>
+    <!-- Socorro (video for now; update Amazon when you have the ASIN) -->
+    <article class="book-card" id="socorro-card">
+      <h3>Socorro</h3>
+      <p>Classic 1964 landing case. Blue flame, oval craft, inverted “V” with three bars.</p>
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/socorro.jpg">
+          <source src="/assets/videos/socorro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-actions">
+        <!-- TODO: replace # with your ASIN link when available -->
+        <a class="btn btn-primary" href="#" target="_blank" rel="noopener" aria-disabled="true">Buy on Amazon</a>
+        <a class="btn" href="/newsletter.html">Get updates</a>
+      </div>
+    </article>
 
-      <!-- 4) Cosmic Secrets -->
-      <article class="book-card" id="cosmic-card">
-        <div class="book-media">
-          <div class="media-box" style="background-image:url('/images/books/cosmic.jpg');"></div>
-        </div>
-        <div class="book-meta">
-          <h3>Cosmic Secrets</h3>
-          <p>Coming soon. Get notified when it launches.</p>
-          <div class="book-actions">
-            <a class="secondary" target="_blank" rel="noopener noreferrer" target="_blank" rel="noopener noreferrer" href="/newsletter.html">Get updates</a>
-          </div>
-        </div>
-      </article>
+    <!-- Gremlins (video for now; update Amazon when you have the ASIN) -->
+    <article class="book-card" id="gremlins-card">
+      <h3>Gremlins</h3>
+      <p></p>
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/gremlins.jpg">
+          <source src="/assets/videos/gremlins.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-actions">
+        <!-- TODO: replace # with your ASIN link when available -->
+        <a class="btn btn-primary" href="#" target="_blank" rel="noopener" aria-disabled="true">Buy on Amazon</a>
+        <a class="btn" href="/newsletter.html">Get updates</a>
+      </div>
+    </article>
 
-    </section>
-  </main>
+    <!-- Cosmic Secrets -->
+    <article class="book-card" id="cosmic-card">
+      <h3>Cosmic Secrets</h3>
+      <p>Coming soon. Get notified when it launches.</p>
+      <div class="book-media">
+        <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets (coming soon)">
+      </div>
+      <div class="book-actions">
+        <a class="btn" href="/newsletter.html">Get updates</a>
+      </div>
+    </article>
+
+  </section>
+</main>
+
 
   
 </body>
