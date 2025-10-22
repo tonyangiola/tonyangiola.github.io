@@ -33,12 +33,21 @@
   </style>
 </head>
   <style id="site-nav-hotfix">
-    .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid rgba(0,0,0,.06)}
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:saturate(1.1) blur(6px);border-bottom:1px solid rgba(15,23,42,.06)}
     .site-header .container{max-width:1000px;margin:0 auto;padding:10px 16px;display:flex;gap:16px;align-items:center;justify-content:space-between}
-    .site-brand{font-weight:700}
-    .site-nav{display:flex;gap:14px;flex-wrap:wrap}
-    .site-nav a{color:#0f172a;text-decoration:none;padding:6px 8px;border-radius:8px}
-    .site-nav a:hover{background:#f1f5f9}
+    .site-brand{font-weight:800;text-decoration:none;color:#0f172a}
+    .site-brand:hover{opacity:.85}
+    .site-nav{display:flex;gap:10px;flex-wrap:wrap}
+    .site-nav a{
+      display:inline-block;padding:8px 12px;border-radius:10px;
+      font-weight:600;text-decoration:none;letter-spacing:.1px;
+      color:#0f172a;background:#f8fafc;border:1px solid rgba(15,23,42,.08);
+      transition:background .15s ease, color .15s ease, box-shadow .15s ease, border-color .15s ease, transform .02s ease;
+    }
+    .site-nav a:hover{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 6px 16px rgba(37,99,235,.22)}
+    .site-nav a:active{transform:translateY(1px)}
+    /* Active (current page) */
+    .site-nav a.active, .site-nav a[aria-current="page"]{background:#2563eb;color:#fff;border-color:#2563eb}
   </style>
   <style id="snippy-fill-left-override">
     #snippy-card{display:grid !important;grid-template-columns: 1fr 280px !important;gap:16px !important;align-items:start !important}
@@ -85,7 +94,7 @@
       <a class="site-brand" href="/"><strong>Tony Angiola</strong></a>
       <nav class="site-nav">
         <a href="/">Home</a>
-        <a href="/books.html">Books</a>
+        <a href="/books.html" class="active" aria-current="page">Books</a>
         <a href="/bio.html">Bio</a>
         <a href="/newsletter.html">Newsletter</a>
         <a href="/contact.html">Contact</a>
