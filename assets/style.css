@@ -1356,7 +1356,7 @@ main.container { margin-top: .2rem; }
 /* ===== Books page hard tighten to nav ===== */
 header { margin-bottom: 0; }
 header .container { padding-bottom: .1rem; }
-header + main.container { margin-top: -0.45rem !important; } /* pull up tight */
+header + main.container { margin-top: -0.65rem !important; } /* pull up tight */
 
 /* Grid + card layout */
 .books-grid {
