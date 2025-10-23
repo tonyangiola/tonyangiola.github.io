@@ -42,6 +42,25 @@
 </style>
 
 <body class="newsletter-page" class="newsletter-page" class="newsletter-page" class="newsletter-page" class="newsletter-page" style="background:#0e1424 !important; background-color:#0e1424 !important;">
+<style id="newsletter-textforce">
+  /* Force visible white text on dark BG */
+  body.newsletter-page,
+  body.newsletter-page * { color: #ffffff !important; }
+
+  /* Slightly blue links for readability */
+  body.newsletter-page a { color: #93c5fd !important; }
+  body.newsletter-page a:hover { color: #dbeafe !important; }
+
+  /* Inputs: keep white text, subtle border */
+  body.newsletter-page input,
+  body.newsletter-page textarea,
+  body.newsletter-page select {
+    color:#ffffff !important;
+    background: rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+  }
+  body.newsletter-page input::placeholder { color:#cbd5e1 !important; }
+</style>
 <style id="newsletter-text-contrast">
   /* Text: bright on dark BG (newsletter page only) */
   body.newsletter-page main,
