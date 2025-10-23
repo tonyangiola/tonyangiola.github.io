@@ -1497,3 +1497,53 @@ body.books-page #gremlins-card .media-box{ min-height:320px!important; }
 
 /* Keep the video visible too (belt & suspenders) */
 .books .book-card video { display:block !important; visibility:visible !important; }
+
+/* === Books layout polish === */
+body.books-page .books-grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+body.books-page .book-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  align-items: start;
+  gap: 1rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: .75rem;
+  padding: .9rem;
+}
+
+/* Snippy spans both columns */
+body.books-page #snippy-card.wide {
+  grid-column: 1 / span 2;
+}
+
+/* Media column sizing */
+body.books-page .book-card .media-box {
+  max-width: 360px;
+  margin: auto;
+  display: block !important;
+  overflow: visible !important;
+}
+
+/* Snippy wide video a bit larger */
+body.books-page #snippy-card .media-box video {
+  max-width: 640px !important;
+}
+
+/* Center videos and keep aspect ratio clean */
+body.books-page .book-card video {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: .5rem;
+  background: #111 !important;
+}
+
+@media (max-width: 720px) {
+  body.books-page .book-card {
+    grid-template-columns: 1fr;
+  }
+}
