@@ -2201,3 +2201,17 @@ body.newsletter-page .page-header {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+/* === Site-wide background unify (Bio color) === */
+/* Set to the exact hex from Bio. If you’re unsure, use the working Bio hex here. */
+:root { --site-bg: #0e1424; }  /* <— replace with your Bio page hex if different */
+html, body {
+  background: var(--site-bg) !important;
+  background-color: var(--site-bg) !important;
+}
+
+/* Avoid white wrappers blocking the bg (keeps nav/cards untouched) */
+main, .content, .page, .container {
+  background: transparent !important;
+  background-color: transparent !important;
+}
