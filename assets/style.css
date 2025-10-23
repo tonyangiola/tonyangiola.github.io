@@ -2057,3 +2057,24 @@ header, .site-header, nav {
 
 /* Give all pages breathing room beneath the nav */
 main, main.container { padding-top: 1.25rem; }
+
+/* ==== Global, stubborn-page override (bio/newsletter/contact) ==== */
+:root{
+  --nav-bg:#0f172a;  /* keep nav dark */
+  --bg:#f3f4f6;      /* light site background (same as home) */
+  --text:#111827;
+}
+
+/* Make the page canvas light, everywhere */
+html, body { background-color: var(--bg) !important; color: var(--text); }
+
+/* Prevent wrappers on subpages from repainting white */
+main, .container, .content, .page, .wrapper, .shell, section, article {
+  background-color: transparent !important;
+}
+
+/* Keep the nav/header dark across the site */
+header, .site-header, nav { background-color: var(--nav-bg) !important; }
+
+/* Space below nav so content never touches it */
+main, main.container { padding-top: 1.25rem; }
