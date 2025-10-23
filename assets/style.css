@@ -2201,10 +2201,3 @@ body.newsletter-page .page-header {
   padding: 0 !important;
   margin: 0 !important;
 }
-
-/* === Main (home) page background to match Bio (scoped) === */
-body.home-page,
-body.home-page html {
-  background: #f6f7fb !important;
-  background-color: #f6f7fb !important;
-}
