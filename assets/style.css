@@ -1794,3 +1794,35 @@ body.books-page main,
 body.books-page .container {
   background: transparent !important;
 }
+
+/* === Dark background: HOME + BOOKS (hard, safe) === */
+html, body { background: #05070D !important; } /* ensure viewport is dark */
+
+body.home-page,
+body.books-page,
+#books-app {
+  background: #05070D !important;  /* deep indigo/near-black */
+  color: #e5e7eb;                  /* readable stray text */
+}
+
+/* Keep containers transparent so the page bg shows through */
+body.home-page main,
+body.home-page .container,
+body.books-page main,
+body.books-page .container,
+#books-app .container {
+  background: transparent !important;
+}
+
+/* Header rides on the dark bg */
+body.home-page header,
+body.books-page header { background: transparent !important; border-color: rgba(255,255,255,0.08) !important; }
+body.home-page header a,
+body.books-page header a { color: inherit !important; }
+
+/* Cards stay bright so they pop on dark */
+body.home-page .book-card,
+body.books-page .book-card {
+  background: #ffffff !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,.22) !important;
+}
