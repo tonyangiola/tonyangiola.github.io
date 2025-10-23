@@ -27,8 +27,20 @@
   }catch(e){}
 </script>
   <link rel="stylesheet" href="/assets/override.css?cb=20251022211156">
+  <style id="home-only-bg-fix">
+    /* Home-only: keep wrappers transparent so page bg shows */
+    #home main, #home section, #home article,
+    #home .hero, #home .banner, #home .masthead, #home .page-header,
+    #home .wrapper, #home .content, #home .stack {
+      background: transparent !important;
+      background-image: none !important;
+      box-shadow: none !important; border:0 !important;
+    }
+    /* Ensure full-viewport paint on short pages */
+    #home { min-height:100vh; }
+  </style>
 </head>
-<body class="home-page home-page" class="home-only">
+<body\1 style="background:#f6f7fb;">
   <header>
   <div class="container">
     <nav>
