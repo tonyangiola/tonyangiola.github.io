@@ -2012,25 +2012,55 @@ header nav a:first-child strong {  /* brand */
   color:#ffffff !important; font-weight:600;
 }
 /* ==== Hide baked-in subtitle line on Gremlins media (non-destructive) ==== */
-#gremlins-card .media { position: relative; }
 /* ==== Adjusted overlay for Gremlins baked-in subtitle ==== */
-#gremlins-card .media { position: relative; }
 /* ==== Gremlins: hide baked-in subtitle with a bottom gradient ==== */
-#gremlins-card .media { position: relative; overflow: hidden; }
 
 /* Covers the lower portion regardless of exact text height */
-#gremlins-card .media::after {
+  pointer-events: none;
+}
+/* ==== GREMLINS: universal mask for baked-in subtitle ==== */
+/* Catch the card by id or any article whose id contains 'gremlins' */
+#gremlins-card,
+article[id*="gremlins"] {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Put media beneath, ensure overlay sits above it */
+#gremlins-card .media,
+article[id*="gremlins"] .media,
+#gremlins-card img,
+article[id*="gremlins"] img,
+#gremlins-card video,
+article[id*="gremlins"] video {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+/* The actual mask: covers lower portion regardless of where the text sits */
+#gremlins-card::after,
+article[id*="gremlins"]::after {
   content: "";
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  height: 40%;  /* covers bottom 40% of the media area */
-  /* Solid white near the bottom, fading to transparent upward */
+  height: 55%;                 /* if any hint remains, bump to 60–65% */
+  z-index: 3;                   /* above media, below card text/buttons */
+  pointer-events: none;
   background: linear-gradient(
     to top,
     #ffffff 0%,
-    #ffffff 60%,
-    rgba(255,255,255,0.95) 80%,
-    rgba(255,255,255,0.0) 100%
+    #ffffff 70%,
+    rgba(255,255,255,0.98) 85%,
+    rgba(255,255,255,0.00) 100%
   );
-  pointer-events: none;
+}
+
+/* Keep card text/buttons above the mask */
+#gremlins-card .content,
+article[id*="gremlins"] .content,
+#gremlins-card .card-body,
+article[id*="gremlins"] .card-body {
+  position: relative;
+  z-index: 4;
 }
