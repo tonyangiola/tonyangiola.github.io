@@ -1771,3 +1771,26 @@ body.books-page .book-card {
 
 /* buttons unchanged; ensure ghost button stays visible on dark page */
 body.books-page .btn-ghost { background:#f3f4f6; color:#111827; }
+
+/* === Books page: hard dark background (scoped, high-specificity) === */
+body.books-page,
+body.books-page #books-app {
+  background: #05070D !important;   /* near-black indigo */
+  color: #e5e7eb;                   /* readable stray text on dark */
+}
+
+/* keep header looking good on dark bg */
+body.books-page header { background: transparent !important; border-color: rgba(255,255,255,0.08) !important; }
+body.books-page header a { color: inherit !important; }
+
+/* cards remain white and pop on dark */
+body.books-page .book-card {
+  background: #ffffff !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,.22) !important;
+}
+
+/* containers stay transparent so the page bg shows through */
+body.books-page main,
+body.books-page .container {
+  background: transparent !important;
+}
