@@ -1,0 +1,98 @@
+<!-- fallback-404 mirrors index (20251023-001311) -->
+<!doctype html>
+<head>
+<link rel="stylesheet" href="https://tonyangiola.github.io/assets/style.css?ver=20251023">
+<style>
+  /* FORCE dark page background (beats legacy rules) */
+  html, body { background:#0B0F1A !important; }
+  body.home-page { background:#0B0F1A !important; color:#e5e7eb; }
+  /* keep content wrappers transparent so the page bg shows */
+  body.home-page main,
+  body.home-page .container,
+  body.home-page .wrapper,
+  body.home-page .page,
+  body.home-page .content { background:transparent !important; }
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tony Angiola — Author</title>
+<link rel="stylesheet" href="https://tonyangiola.github.io/assets/style.css?ver=20251023">
+<!-- deploy-marker: init -->
+
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
+  
+
+<style id="bg-enforce-20251023">
+:root{
+  --page-bg:#f4f5f7 !important;   /* LIGHTER PAGE BACKGROUND */
+  --nav-bg:#111827 !important;     /* DARK NAV (Books tone)  */
+  --nav-text:#ffffff !important;   /* White nav text         */
+}
+html,body{background:var(--page-bg) !important; background-color:var(--page-bg) !important;}
+header, .site-header, .navbar, header[role="banner"]{
+  background:var(--nav-bg) !important; color:var(--nav-text) !important;
+  box-shadow:0 1px 6px rgba(0,0,0,.25);
+}
+header a, .site-header a, .navbar a{ color:var(--nav-text) !important; text-decoration:none !important; }
+main,.main,.wrapper,.container,.page,.content,section,article{
+  background:transparent !important; background-image:none !important; box-shadow:none !important; border:0 !important;
+}
+main,.main{ padding-top:1rem !important; }
+</style>
+
+
+</head>
+<body style="background:#f4f5f7 !important;">
+  <header>
+  <div class="container">
+    <nav>
+      <a href="/" class="active" aria-current="page"><strong>Tony Angiola</strong></a>
+      <a href="/books.html">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  
+
+  <main class="container">
+    <section class="hero">
+      <h1>Author. Researcher. Explorer of High Strangeness.</h1>
+      <p class="small">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley,
+      and updates on current projects.</p>
+      <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
+    </section>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h2>Current Project: <em>Cosmic Secrets</em></h2>
+        <p>A deep dive into disclosure, historical cases, and propulsion hypotheses—told straight, documented, and BS-resistant.</p>
+        <p><a href="/books.html">See books →</a></p>
+      </div>
+      <div class="card">
+        <h2>New Articles</h2>
+        <ul class="clean">
+          <li><a href="#">Socorro Revisited — Signatures in the Dust (coming soon)</a></li>
+          <li><a href="#">MHD & “Blue Flame” Notes (coming soon)</a></li>
+        </ul>
+      </div>
+    </section>
+<section class="author-photo" style="text-align:center; margin:2em 0;">
+  <img src="/images/tony.jpg" alt="Tony Angiola" style="width:240px; border-radius:50%; box-shadow:0 0 12px rgba(0,0,0,.25);">
+  <h2 style="margin-top:1em;font-weight:600;">Tony Angiola</h2>
+</section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="y"></span> Tony Angiola. All rights reserved.</div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+  
+</body>
+
+<!-- deploy-marker 20251023-000917 -->
