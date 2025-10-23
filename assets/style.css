@@ -1342,3 +1342,13 @@ main.container {
 .book-card a { text-decoration:none; }
 .book-card a:hover { text-decoration:none; }
 
+
+/* tighten books page spacing a hair more */
+main.container { margin-top: .2rem; }
+
+/* keep solid blue buttons across the site */
+.btn { display:inline-block; padding:.5rem .8rem; border-radius:.5rem; font-weight:600; text-decoration:none!important; border:1px solid transparent; }
+.btn-blue { background:#2563eb; color:#fff; }
+.btn-blue:hover { background:#1e4fd3; }
+.btn-ghost { background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
+.btn-ghost:hover { background:#e5e7eb; }
