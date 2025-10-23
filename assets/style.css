@@ -2049,3 +2049,23 @@ main.container section.stack {
   box-shadow: none !important;
   border: 0 !important;
 }
+
+/* ===== Force newsletter to match site background & remove white block ===== */
+body.newsletter-page {
+  /* Use the same light gray as the rest of the site.
+     If your site uses a different custom value, set it here once. */
+  background-color: #f6f7fb !important;
+  background: #f6f7fb !important;
+}
+
+/* Strip white panels just on the newsletter page (keep inputs/buttons) */
+body.newsletter-page main.container :where(section, article, .stack, .content, .wrapper, .panel) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Make sure the container itself isn't painting white */
+body.newsletter-page main.container {
+  background: transparent !important;
+}
