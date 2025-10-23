@@ -2078,3 +2078,45 @@ header, .site-header, nav { background-color: var(--nav-bg) !important; }
 
 /* Space below nav so content never touches it */
 main, main.container { padding-top: 1.25rem; }
+/* ==== Recolor Fix (nav dark, page light, normal text) ==== */
+:root{
+  --nav-bg:#0f172a;    /* dark slate nav */
+  --bg:#f3f4f6;        /* LIGHT site background */
+  --text:#111827;      /* normal dark text */
+  --muted:#374151;     /* body copy */
+  --link:#2563eb;      /* link blue */
+}
+
+html, body { background: var(--bg) !important; color: var(--text) !important; }
+
+/* NAV: keep bar dark with readable links */
+header, .site-header, nav { background: var(--nav-bg) !important; }
+header nav a,
+.site-header nav a {
+  color: #e5e7eb !important;         /* light gray text */
+  text-decoration: none !important;
+}
+header nav a:hover,
+.site-header nav a:hover,
+header nav a.active,
+.site-header nav a.active,
+header nav a[aria-current="page"],
+.site-header nav a[aria-current="page"] {
+  color: #ffffff !important;         /* bright white on hover/active */
+  font-weight: 600;
+}
+header nav a:focus-visible { outline: 2px solid rgba(255,255,255,.35); outline-offset: 2px; }
+
+/* Typography back to normal contrast */
+body p, body li, body span, .content p { color: var(--muted) !important; }
+h1,h2,h3,h4 { color: var(--text) !important; }
+a { color: var(--link); }
+a:hover { text-decoration: underline; }
+
+/* Ensure page wrappers don't repaint dark */
+main, .container, .content, .page, .wrapper, section, article {
+  background: transparent !important;
+}
+
+/* Spacing below the nav everywhere */
+main, main.container { padding-top: 1.25rem !important; }
