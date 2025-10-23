@@ -2156,3 +2156,48 @@ html, body {
   background: var(--site-bg) !important;
   background-color: var(--site-bg) !important;
 }
+
+/* ===== Canonical site colors (match BIO) ===== */
+:root{
+  --page-bg: #f6f7fb;      /* BIO background */
+  --nav-bg:  #0f1623;      /* dark header/nav */
+  --nav-text: #ffffff;
+}
+
+/* Sitewide background */
+html, body {
+  background: var(--page-bg) !important;
+  background-color: var(--page-bg) !important;
+}
+
+/* Dark nav bar everywhere */
+header {
+  background: var(--nav-bg) !important;
+  box-shadow: 0 1px 6px rgba(0,0,0,.25);
+}
+header nav a { color: var(--nav-text) !important; text-decoration: none; }
+header nav a[aria-current="page"] { opacity:.95; }
+
+/* Newsletter: ensure everything BELOW header shows the light page bg */
+body.newsletter-page main,
+body.newsletter-page section,
+body.newsletter-page article,
+body.newsletter-page .wrapper,
+body.newsletter-page .stack {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Safety: kill any full-width dark hero that might linger on newsletter */
+body.newsletter-page .hero,
+body.newsletter-page .banner,
+body.newsletter-page .masthead,
+body.newsletter-page .page-header {
+  background: transparent !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
