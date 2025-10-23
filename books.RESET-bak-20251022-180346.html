@@ -62,6 +62,25 @@
 }
 </style>
   <link rel="stylesheet" href="/assets/override.css?cb=20251022211119">
+<style id="final-site-colors">
+:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
+html,body{background:var(--bg)!important;color:var(--text)!important;}
+/* NAV must be dark, links bright */
+header,.site-header,nav,header .container{background:var(--nav-bg)!important;}
+header a,.site-header a,header nav a{color:#e5e7eb!important;text-decoration:none!important;}
+header a:hover,header nav a:hover,header nav a[aria-current="page"]{color:#fff!important;font-weight:600;}
+/* Kill any dimming/invert on header */
+header,header *{filter:none!important;mix-blend-mode:normal!important;opacity:1!important;}
+/* Content contrast */
+p,li,span,.content p{color:var(--muted)!important;}
+h1,h2,h3,h4{color:var(--text)!important;}
+a{color:var(--link)!important;}
+a:hover{text-decoration:underline!important;}
+/* Make wrappers transparent so the light bg shows */
+main,.container,.content,.page,.wrapper,section,article{background:transparent!important;}
+/* Space below nav */
+main,main.container{padding-top:1.25rem!important;}
+</style>
 </head>
 <body>
   <!-- keep your existing header/navbar -->
