@@ -2011,3 +2011,14 @@ header nav a.active,
 header nav a:first-child strong {  /* brand */
   color:#ffffff !important; font-weight:600;
 }
+/* ==== Hide baked-in subtitle line on Gremlins media (non-destructive) ==== */
+#gremlins-card .media { position: relative; }
+#gremlins-card .media::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 0;
+  height: 42px;          /* tweak +/− if a sliver shows */
+  background: #fff;      /* matches your card background */
+  pointer-events: none;
+}
