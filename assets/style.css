@@ -1899,3 +1899,24 @@ header nav a:hover,
 @media (min-width: 768px) {
   .books-grid { margin-top: 44px !important; }
 }
+
+/* === FINAL OVERRIDE: light background, dark nav, extra books spacing === */
+html, body {
+  background-color: #f2f4f7 !important; /* clearly lighter */
+  color: #111; /* good contrast on light bg */
+}
+
+header,
+.site-header,
+header nav,
+.site-header nav,
+header .container,
+.site-header .container {
+  background-color: #0d0f14 !important; /* solid dark nav */
+}
+
+/* Books: push cards down from the nav */
+.books-grid { margin-top: clamp(36px, 4vh, 64px) !important; }
+@media (min-width: 768px) {
+  .books-grid { margin-top: clamp(44px, 4.5vh, 72px) !important; }
+}
