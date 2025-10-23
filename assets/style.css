@@ -1866,3 +1866,36 @@ html, body {
 @media (min-width: 768px) {
   .books-grid { margin-top: clamp(28px, 3.5vh, 64px); }
 }
+
+/* ==== FORCE SWAP: dark nav, lighter page background ==== */
+/* Pick your exact shades here */
+:root {
+  /* nav darker */
+  /* almost-black navy */
+}
+html, body {
+  /* Lighter than nav */
+  background-color: #1b1f27 !important;  /* site background */
+}
+
+/* Make header/nav definitely dark everywhere */
+header,
+.site-header,
+header nav,
+.site-header nav,
+header .container,
+.site-header .container {
+  background-color: #0d0f14 !important;  /* nav */
+}
+
+/* Ensure nav links are readable */
+header nav a,
+.site-header nav a { color: #fff !important; }
+header nav a:hover,
+.site-header nav a:hover { opacity: .85; text-decoration: none; }
+
+/* Books page: push cards down further from the nav */
+.books-grid { margin-top: 32px !important; }
+@media (min-width: 768px) {
+  .books-grid { margin-top: 44px !important; }
+}
