@@ -1,6 +1,6 @@
 :root { --max: 880px; --pad: 16px; }
-  --page-bg: color-mix(in srgb, var(--nav-bg) 80%, white 20%);
-  --nav-bg: #fff;
+  --page-bg: color-mix(in srgb, var(--nav-bg) 70%, white 30%);
+  --nav-bg: #0f1115;
 * { box-sizing: border-box; }
 html, body { margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.6; }
 a { text-decoration: none; }
@@ -126,8 +126,8 @@ main { position: relative; z-index: 0; }
 
 /* 1) Page background: soft paper w/ subtle radial glow */
 :root{
-  --page-bg: color-mix(in srgb, var(--nav-bg) 80%, white 20%);
-  --nav-bg: #fff;
+  --page-bg: color-mix(in srgb, var(--nav-bg) 70%, white 30%);
+  --nav-bg: #0f1115;
   --bg: #f8fafc;            /* paper */
   --text: #0f172a;          /* slate-900 */
   --muted: #475569;         /* slate-600 */
@@ -162,7 +162,7 @@ html, body {
 
 /* 2) Header bar */
 header {
-  background: var(--brand);
+  /* background: var(--brand); */
   color: var(--brand-ink);
   box-shadow: 0 4px 16px rgba(0,0,0,.18);
 }
@@ -187,18 +187,18 @@ nav a {
 }
 
 nav a:hover {
-  background: rgba(226,232,240,.12);   /* light mist */
+  /* background: rgba(226,232,240,.12); */   /* light mist */
   transform: translateY(-1px);
 }
 
 nav a:focus-visible {
   box-shadow: 0 0 0 3px var(--focus);
-  background: rgba(226,232,240,.16);
+  /* background: rgba(226,232,240,.16); */
 }
 
 /* Mark the active page link (add class="active" in HTML) */
 nav a.active {
-  background: rgba(226,232,240,.22);
+  /* background: rgba(226,232,240,.22); */
   color: #fff;
 }
 
@@ -258,7 +258,7 @@ header nav a:visited {
   margin: 0 .18rem;
   border-radius: 999px;
   border: 1px solid transparent;
-  background: transparent;
+  /* background: transparent; */
   color: var(--brand-ink);
   font-weight: 600;
   line-height: 1;
@@ -270,13 +270,13 @@ header nav a:hover,
 header nav a:focus-visible {
   /* change color instead of underline */
   text-decoration: none !important;
-  background: rgba(226,232,240,.18);  /* subtle pill background */
+  /* background: rgba(226,232,240,.18); */  /* subtle pill background */
   color: #ffffff;                      /* brighter ink on hover */
   transform: translateY(-1px);
 }
 
 header nav a.active {
-  background: rgba(226,232,240,.28);
+  /* background: rgba(226,232,240,.28); */
   color: #ffffff;
   border-color: rgba(255,255,255,.12);
 }
@@ -284,7 +284,7 @@ header nav a.active {
 @media (prefers-color-scheme: dark) {
   header nav a:hover,
   header nav a:focus-visible {
-    background: rgba(148,163,184,.22);
+    /* background: rgba(148,163,184,.22); */
     color: #ffffff;
   }
 }
@@ -297,7 +297,7 @@ html, body {
 }
 
 header { 
-  background: #334155 !important; 
+  /* background: #334155 !important; */ 
   color: #e2e8f0 !important; 
   box-shadow: 0 4px 16px rgba(0,0,0,.18) !important;
 }
@@ -309,7 +309,7 @@ header nav a, header nav a:visited {
   margin: 0 .18rem !important;
   border-radius: 999px !important;
   border: 1px solid transparent !important;
-  background: transparent !important;
+  /* background: transparent !important; */
   color: #e2e8f0 !important;
   font-weight: 600 !important;
   line-height: 1 !important;
@@ -318,13 +318,13 @@ header nav a, header nav a:visited {
 
 header nav a:hover, header nav a:focus-visible {
   text-decoration: none !important;
-  background: rgba(226,232,240,.18) !important;
+  /* background: rgba(226,232,240,.18) !important; */
   color: #ffffff !important;
   transform: translateY(-1px) !important;
 }
 
 header nav a.active { 
-  background: rgba(226,232,240,.28) !important; 
+  /* background: rgba(226,232,240,.28) !important; */ 
   color: #ffffff !important; 
   border-color: rgba(255,255,255,.12) !important;
 }
@@ -421,7 +421,7 @@ main a.btn:focus {
 
 /* Force visible header on pages that might not pick up theme vars */
 header {
-  background: #334155 !important;   /* slate-700 */
+  /* background: #334155 !important; */   /* slate-700 */
   color: #e2e8f0 !important;         /* slate-200 */
   border-bottom: 1px solid rgba(0,0,0,.08) !important;
 }
@@ -434,14 +434,14 @@ header nav a:visited {
   padding: .5rem .75rem;
   margin-right: .5rem;
   border-radius: .75rem;
-  background: rgba(255,255,255,.06);
+  /* background: rgba(255,255,255,.06); */
   border: 1px solid rgba(255,255,255,.15);
   color: #e2e8f0 !important;
   text-decoration: none !important;
 }
 header nav a:hover,
 header nav a:focus-visible {
-  background: rgba(255,255,255,.16);
+  /* background: rgba(255,255,255,.16); */
   border-color: rgba(255,255,255,.35);
   color: #ffffff !important;
 }
@@ -586,19 +586,19 @@ header nav a:focus-visible {
 
 /* Keep the header/nav styling you want */
 :root[data-page="bio"] header {
-  background: #334155 !important;
+  /* background: #334155 !important; */
   color: #e2e8f0 !important;
   border-bottom: 1px solid rgba(0,0,0,.08) !important;
 }
 :root[data-page="bio"] header nav a,
 :root[data-page="bio"] header nav a:visited {
   display:inline-block;padding:.5rem .75rem;margin-right:.5rem;border-radius:.75rem;
-  background: rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+  /* background: rgba(255,255,255,.06); */border:1px solid rgba(255,255,255,.15);
   color:#e2e8f0 !important;text-decoration:none !important;
 }
 :root[data-page="bio"] header nav a:hover,
 :root[data-page="bio"] header nav a:focus-visible {
-  background: rgba(255,255,255,.16);border-color: rgba(255,255,255,.35);color:#fff !important;
+  /* background: rgba(255,255,255,.16); */border-color: rgba(255,255,255,.35);color:#fff !important;
 }
 
 /* Restore the card's intended raised look (shadow + neutral border via ::before) */
@@ -1689,7 +1689,7 @@ body.books-page header + main.container{ margin-top:-.35rem !important; }
 
 /* === Amazon Button Style (Books page) === */
 .btn.btn-blue {
-  /* background-color: #2563eb !important; */   /* bright blue */
+  /* /* background-color: #2563eb !important; */ */   /* bright blue */
   color: #fff !important;
   border: 1px solid rgba(0,0,0,.06);
   border-radius: .5rem;
@@ -1784,7 +1784,7 @@ body.books-page #books-app {
 }
 
 /* keep header looking good on dark bg */
-//body.books-page header { /* background: transparent !important; */ border-color: rgba(255,255,255,0.08) !important; }
+//body.books-page header { /* /* background: transparent !important; */ */ border-color: rgba(255,255,255,0.08) !important; }
 body.books-page header a { color: inherit !important; }
 
 /* cards remain white and pop on dark */
@@ -1820,7 +1820,7 @@ body.books-page .container,
 
 /* Header rides on the dark bg */
 body.home-page header,
-//body.books-page header { /* background: transparent !important; */ border-color: rgba(255,255,255,0.08) !important; }
+//body.books-page header { /* /* background: transparent !important; */ */ border-color: rgba(255,255,255,0.08) !important; }
 body.home-page header a,
 body.books-page header a { color: inherit !important; }
 
@@ -1837,7 +1837,7 @@ body {
 }
 
 header, .site-header, header nav, .site-header nav {
-  background-color: var(--nav-bg) !important;
+  /* background-color: var(--nav-bg) !important; */
 }
 
 /* If your nav text needs contrast, uncomment:
@@ -1849,4 +1849,20 @@ header nav a:hover, .site-header nav a:hover { opacity: .85; }
 .books-grid { margin-top: clamp(16px, 2.5vh, 32px); }
 @media (min-width: 768px) {
   .books-grid { margin-top: clamp(20px, 3vh, 40px); }
+}
+
+/* === Nav: locked dark === */
+header, .site-header, header nav, .site-header nav {
+  /* background-color: var(--nav-bg) !important; */
+}
+
+/* === Body/site background: a bit lighter than nav === */
+html, body {
+  background-color: var(--page-bg) !important;
+}
+
+/* Books page: add more breathing room under the nav */
+.books-grid { margin-top: clamp(24px, 3vh, 56px); }
+@media (min-width: 768px) {
+  .books-grid { margin-top: clamp(28px, 3.5vh, 64px); }
 }
