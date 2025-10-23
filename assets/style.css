@@ -1490,3 +1490,10 @@ body.books-page #gremlins-card .media-box video{ display:block!important; width:
 body.books-page #snippy-card  .media-box{ min-height:260px!important; }
 body.books-page #socorro-card .media-box,
 body.books-page #gremlins-card .media-box{ min-height:320px!important; }
+
+/* === Books: unhide media column even with legacy "first-child" hide rules === */
+.books .book-card > .media-box,
+.book-card > .media-box { display:block !important; visibility:visible !important; }
+
+/* Keep the video visible too (belt & suspenders) */
+.books .book-card video { display:block !important; visibility:visible !important; }
