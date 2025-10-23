@@ -1,8 +1,0 @@
-
-# local backups
-books.html.bak-*
-
-# Local backups
-*.bak-*.css
-*.bak-*.html
-backups/
