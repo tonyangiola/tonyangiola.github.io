@@ -2201,3 +2201,7 @@ body.newsletter-page .page-header {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+/* Home-only: let page background show through hero band */
+body.home-hero-fix .hero,
+body.home-hero-fix .page-header { background: transparent !important; }
