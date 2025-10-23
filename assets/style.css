@@ -2201,3 +2201,7 @@ body.newsletter-page .page-header {
   padding: 0 !important;
   margin: 0 !important;
 }
+/* Home-only: ensure hero band shows the site bg */
+body.home-only .hero,
+body.home-only .page-header,
+body.home-only .intro { background: transparent !important; }
