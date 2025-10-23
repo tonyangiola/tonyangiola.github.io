@@ -1,0 +1,49 @@
+/* ===== BOOKS: final lock (navbar-safe) ===== */
+.books-page .book-card{
+  display:grid !important;
+  grid-template-columns: minmax(560px,1fr) 300px !important; /* media left, side right */
+  gap:1rem !important; align-items:start !important;
+  background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:.75rem;
+  padding:1rem; margin:0 auto 1rem; max-width:1040px;
+  box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+
+/* Snippy WIDE, Socorro small, others normal */
+#snippy-card  { grid-template-columns: 720px 300px !important; max-width:1120px; }
+#socorro-card { grid-template-columns: 420px 280px !important; max-width: 760px; }
+#gremlins-card, #cosmic-card { grid-template-columns: 560px 300px !important; max-width: 940px; }
+
+/* Media panel always visible and 16:9; video truly fills it */
+.books-page .book-card .book-media{
+  grid-column:1 !important;
+  width:100% !important;
+  aspect-ratio:16/9 !important;
+  background:#000 !important;
+  border-radius:.5rem !important; overflow:hidden !important;
+}
+.books-page .book-card .book-media > video,
+.books-page .book-card .book-media > img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  background:#000 !important;
+}
+
+/* Right column content + blue buttons */
+.books-page .book-card .book-side{ grid-column:2 !important; }
+.books-page .book-card .book-actions{
+  display:flex !important; flex-direction:column !important; gap:.5rem !important;
+}
+.books-page .book-card .book-actions .btn{
+  display:inline-block !important; text-align:center !important; font-weight:600 !important;
+  padding:.55rem .9rem !important; border-radius:.6rem !important; text-decoration:none !important;
+  background:#2563eb !important; color:#fff !important; border:1px solid rgba(0,0,0,.06) !important;
+}
+.books-page .book-card .book-actions .btn:hover{ background:#1e4fd3 !important; }
+
+/* Mobile stack */
+@media (max-width:900px){
+  .books-page .book-card{ grid-template-columns:1fr !important; max-width:720px !important; }
+  .books-page .book-card .book-side{ grid-column:1 !important; }
+}

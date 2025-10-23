@@ -1,0 +1,87 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Books — Tony Angiola</title>
+<link rel="stylesheet" href="/assets/style.css">
+<body class="books-page">
+  <!--#include virtual="/assets/header.html" -->
+  <div id="site-header"></div>
+
+  <main class="container">
+    <h1>Books</h1>
+
+    <style>
+      /* Hard, page-local rules so nothing can override them */
+      .books-page .book-card{display:grid;grid-template-columns:minmax(220px,260px) 1fr;gap:1rem;align-items:start}
+      .books-page .book-card img,.books-page .book-card video{display:block;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111}
+      .books-page .book-card .actions a,.books-page .book-card a.primary{
+        display:inline-block;padding:.6rem 1rem;border-radius:.5rem;font-weight:700;text-decoration:none;border:1px solid rgba(0,0,0,.12)
+      }
+      .books-page .book-card a.primary{background:#2563eb;color:#fff}
+      .books-page .book-card a.secondary{background:#f3f4f6;color:#111827}
+      @media (max-width: 700px){.books-page .book-card{grid-template-columns:1fr}}
+    </style>
+
+    <!-- SNIPPY -->
+    <article id="snippy-card" class="book-card" style="margin-bottom:1.25rem">
+      <video class="book-video" autoplay muted loop playsinline preload="metadata" style="aspect-ratio:16/9">
+        <source src="/assets/videos/books/snippy.mp4" type="video/mp4">
+      </video>
+      <div class="book-meta">
+        <h3>Snippy</h3>
+        <p>Unveiling the horse mutilation encounters in Colorado.</p>
+        <div class="actions" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;">
+          <a class="primary" href="https://www.amazon.com/Snippy-Horse-Unveiling-Mutilation-Encounters-ebook/dp/B0F88SPFDS" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="secondary" href="/newsletter.html?book=Snippy">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SOCORRO -->
+    <article id="socorro-card" class="book-card" style="margin-bottom:1.25rem">
+      <video class="book-video" autoplay muted loop playsinline preload="metadata" style="aspect-ratio:3/4">
+        <source src="/assets/videos/books/socorro.mp4" type="video/mp4">
+      </video>
+      <div class="book-meta">
+        <h3>Socorro UFO</h3>
+        <p>Lonnie Zamora’s 1964 landing case—reconstructed and analyzed.</p>
+        <div class="actions" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;">
+          <a class="primary" href="https://www.amazon.com/dp/B0FGQP7PHN" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="secondary" href="/newsletter.html?book=Socorro">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- COSMIC (directly under Socorro) -->
+    <article id="cosmic-card" class="book-card" style="margin-bottom:1.25rem">
+      <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets — Coming Soon">
+      <div class="book-meta">
+        <h3>Cosmic Secrets</h3>
+        <p>Coming soon. The hidden truth of humanity, consciousness, and the universe.</p>
+        <div class="actions" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;">
+          <a class="secondary" href="/newsletter.html?book=CosmicSecrets">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- GREMLINS -->
+    <article id="gremlins-card" class="book-card" style="margin-bottom:1.25rem">
+      <video class="book-video" autoplay muted loop playsinline preload="metadata" style="aspect-ratio:3/4">
+        <source src="/assets/videos/books/gremlins.mp4" type="video/mp4">
+      </video>
+      <div class="book-meta">
+        <h3>Flying Saucers, Aliens &amp; Gremlins</h3>
+        <p>Strange craft, stranger encounters—casefiles and commentary.</p>
+        <div class="actions" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;">
+          <a class="primary" href="https://www.amazon.com/dp/B0FF3RWHT7" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="secondary" href="/newsletter.html?book=Gremlins">Get updates</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!--#include virtual="/assets/footer.html" -->
+  <script src="/assets/nav-loader.js"></script>
+</body>
+
+<!-- deploy-marker: 20251021-231021 -->

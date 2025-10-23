@@ -1,38 +1,72 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Newsletter • Tony Angiola</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="favicon.svg">
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-<header class="site-header">
-  <nav class="nav">
-    <a href="/index.html" class="brand">Tony Angiola</a>
-    <a href="/books.html">Books</a>
-    <a href="/bio.html">Bio</a>
-    <a href="/newsletter.html" aria-current="page">Newsletter</a>
-    <a href="/contact.html">Contact</a>
-  </nav>
-</header>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter — Tony Angiola</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/style.css">
 
-<main class="content" style="max-width: 960px; margin: 2rem auto; padding: 0 1rem;">
-  <h1>Join the Newsletter</h1>
-  <p>Get updates on book releases, investigations, and behind-the-scenes notes.</p>
+<style id="nl-critical">
+  /* === Exact Bio background + full-height paint === */
+  :root { --page-bg:#f6f7fb; --nav-bg:#0f1623; --nav-text:#fff; }
+  html, body { height: 100%; min-height: 100%; background: var(--page-bg) !important; margin:0; }
+  /* Ensure full viewport coverage even if content is short */
+  body { min-height: 100vh; }
 
-  <!-- Replace this block with your real provider form when ready -->
-  <form action="#" method="post" onsubmit="return false" style="display:grid; gap:.75rem; max-width:520px;">
-    <label for="email" style="font-weight:600;">Email</label>
-    <input id="email" type="email" required placeholder="you@example.com"
-           style="padding:.6rem .8rem; border-radius:.5rem; border:1px solid rgba(0,0,0,.15); width:100%;">
-    <button type="submit" class="btn"
-            style="display:inline-block; padding:.62rem 1rem; border-radius:.75rem; font-weight:600; border:1px solid rgba(0,0,0,.06); background:#2563eb; color:#fff;">
-      Subscribe
-    </button>
-    <p style="opacity:.8; font-size:.95rem; margin-top:.25rem;">We’ll never share your email.</p>
-  </form>
-</main>
+  /* === Dark NAV, always === */
+  header { background: var(--nav-bg) !important; box-shadow: 0 1px 6px rgba(0,0,0,.25); }
+  header nav a { color: var(--nav-text) !important; text-decoration: none; }
+
+  /* === Kill ANY non-header backgrounds below the nav on this page === */
+  /* Keep buttons/inputs normal */
+  .newsletter-page :where(main, section, article, div, aside, footer) {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+  /* Also kill pseudo-elements that some “hero” blocks use */
+  .newsletter-page :where(main, .hero, .banner, .masthead, .page-header)::before,
+  .newsletter-page :where(main, .hero, .banner, .masthead, .page-header)::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Containers & basics */
+  .container { max-width: 980px; margin: 0 auto; padding: 0 1rem; }
+  nav { display:flex; gap:1rem; align-items:center; padding:.85rem 0; }
+  main { padding-bottom: 2.5rem; }
+  .hero-pad { margin-top: 1.25rem; }
+  .btn { display:inline-block; padding:.6rem 1rem; border-radius:.7rem; font-weight:600; border:1px solid rgba(0,0,0,.06); background:#2563eb; color:#fff; }
+  input[type="email"] { display:block; width:100%; max-width:28rem; padding:.6rem .7rem; border-radius:.6rem; border:1px solid #d0d4dc; }
+</style>
+
+<body class="newsletter-page">
+  <!-- Direct header (no SSI) -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/"><strong>Tony Angiola</strong></a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html" aria-current="page">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-pad">
+      <h1>Newsletter</h1>
+      <p>Get updates on new investigations, videos, and book progress.</p>
+
+      <form action="mailto:contact@tonyangiola.com" method="post" enctype="text/plain" style="max-width:28rem">
+        <label for="nl-email"><strong>Email</strong></label>
+        <input id="nl-email" name="email" type="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+
+      <p style="opacity:.85;font-size:.95rem">We’ll only email when there’s something worth reading.</p>
+    </section>
+  </main>
 </body>
-</html>
