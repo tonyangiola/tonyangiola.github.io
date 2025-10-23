@@ -2201,36 +2201,3 @@ body.newsletter-page .page-header {
   padding: 0 !important;
   margin: 0 !important;
 }
-/* Home-only: ensure hero band shows the site bg */
-body.home-only .hero,
-body.home-only .page-header,
-body.home-only .intro { background: transparent !important; }
-
-/* === Home-only: match BIO background & remove dark hero === */
-body.home-light{
-  background:#f6f7fb !important;       /* same as BIO */
-  min-height:100vh;                      /* cover full viewport */
-}
-
-/* anything under the header on HOME should not be dark */
-body.home-light main,
-body.home-light section,
-body.home-light article,
-body.home-light .hero,
-body.home-light .page-header,
-body.home-light .intro,
-body.home-light .wrapper {
-  background:#f6f7fb !important;
-  background-image:none !important;
-  box-shadow:none !important;
-  border:0 !important;
-}
-
-/* kill decorative hero pseudo-elements that might paint a dark slab */
-body.home-light .hero::before,
-body.home-light .hero::after,
-body.home-light .page-header::before,
-body.home-light .page-header::after {
-  content:none !important;
-  display:none !important;
-}
