@@ -73,16 +73,26 @@ header + main.container{ margin-top:-.35rem !important; }
 @media (max-width:900px){
   #books-app .grid{
     grid-template-columns:1fr !important;
-    grid-template-areas: "snippy" "socorro" "gremlins" "cosmic" !important;
+    grid-template-areas: "snippy snippy" "socorro gremlins" "cosmic  cosmic" !important;
   }
   #books-app article{ grid-template-columns:1fr !important; }
   #books-app #snippy-card .media-box{ max-width:100% !important; }
 }
 </style>
 
-<body>
+<body class="books-page">
   <!-- keep your working header include -->
-  <!--#include virtual="/assets/header.html" -->
+<header>
+  <div class="container">
+    <nav>
+      <a href="/"><strong>Tony Angiola</strong></a>
+      <a href="/books.html">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
   <main class="container">
     <div id="books-app">
