@@ -1920,3 +1920,39 @@ header .container,
 @media (min-width: 768px) {
   .books-grid { margin-top: clamp(44px, 4.5vh, 72px) !important; }
 }
+
+/* ==== FINAL HARD OVERRIDES: dark NAV, light BACKGROUND ==== */
+:root {
+  --nav-dark: #0d0f14;     /* nav stays dark */
+  --bg-light: #f5f7fb;     /* site background MUCH lighter */
+}
+
+/* NAV stays dark everywhere */
+header,
+.site-header,
+header nav,
+.site-header nav,
+header .container,
+.site-header .container {
+  background-color: var(--nav-dark) !important;
+  background-image: none !important;
+}
+
+/* BACKGROUND is light, even if something else tried to make it dark */
+html, body,
+main, .page, .content, .container,
+.wrapper, .site, .site-body {
+  background-color: var(--bg-light) !important;
+  background-image: none !important;
+}
+
+/* Any sections/grids/cards should NOT re-darken the page bg */
+section, article,
+.grid, .cards, .card-grid,
+.books-grid {
+  background: transparent !important;
+}
+
+/* Books: extra breathing room under the nav */
+.books-grid { margin-top: 48px !important; }
+@media (min-width: 768px) { .books-grid { margin-top: 60px !important; } }
