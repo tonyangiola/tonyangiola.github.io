@@ -1996,3 +1996,36 @@ section, article, .books-grid, .book-card, .card {
 /* 5) Books: add breathing room under the nav */
 .books-grid { margin-top: 56px !important; }
 @media (min-width: 768px) { .books-grid { margin-top: 64px !important; } }
+
+/* ==== Global background unifier (safe) ==== */
+:root{
+  /* Keep your dark nav; set site background to a light gray like the main page */
+  --nav-bg: #0f172a;    /* slate-950-ish (your dark nav) */
+  --bg:     #f3f4f6;    /* light site background used on home */
+  --text:   #111827;    /* readable dark text */
+}
+
+/* Apply the same background everywhere */
+html, body{
+  background: var(--bg) !important;
+  color: var(--text);
+}
+
+/* Make sure sections don't paint white over the bg */
+main, .container, section, .content, .page {
+  background: transparent !important;
+}
+
+/* Keep the nav/header dark (matches your main page) */
+header, .site-header, nav {
+  background: var(--nav-bg) !important;
+}
+
+/* Buttons and links should NOT look underlined unless you want them to */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Add a little top spacing so content doesn't touch the nav on any page */
+main.container, main {
+  padding-top: 1.25rem; /* 20px */
+}
