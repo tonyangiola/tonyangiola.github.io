@@ -4,23 +4,27 @@
 <title>Books</title>
 <link rel="stylesheet" href="/assets/style.css">
 
-<!-- === BOOKS PAGE: fully isolated layout & autoplay === -->
 <style id="books-final">
-/* isolate with a unique root to beat legacy CSS */
-#books-app { --gap:1.1rem; --radius:.75rem; }
-#books-app .grid {
+/* ==== HARD ISOLATION (only inside #books-app) ==== */
+#books-app { --gap:1.1rem; --radius:.75rem; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+#books-app * { box-sizing:border-box !important; }
+
+/* Grid of cards */
+#books-app .grid{
   display:grid !important;
-  grid-template-columns: 1.1fr 1fr !important;
+  grid-template-columns:1.1fr 1fr !important;
   grid-template-areas:
     "snippy snippy"
     "socorro gremlins"
     "cosmic  cosmic" !important;
-  gap: var(--gap) !important;
+  gap:var(--gap) !important;
 }
-#books-app article { 
-  background:#fff; border:1px solid rgba(0,0,0,.06);
-  border-radius:var(--radius); padding:.9rem;
-  display:grid !important; grid-template-columns: 260px 1fr !important; gap:1rem !important;
+
+/* Card base */
+#books-app article{
+  background:#fff !important; border:1px solid rgba(0,0,0,.06) !important;
+  border-radius:var(--radius) !important; padding:.9rem !important;
+  display:grid !important; grid-template-columns:260px 1fr !important; gap:1rem !important;
   align-items:start !important; position:relative !important;
 }
 #books-app #snippy-card{ grid-area:snippy !important; grid-template-columns:640px 1fr !important; }
@@ -28,38 +32,44 @@
 #books-app #gremlins-card{ grid-area:gremlins !important; }
 #books-app #cosmic-card{ grid-area:cosmic !important; }
 
+/* Media column */
 #books-app .media-box{
   grid-column:1 !important; width:100% !important; max-width:360px !important;
-  margin:0 !important; overflow:visible !important; position:relative !important;
+  margin:0 !important; overflow:visible !important; position:relative !important; z-index:0 !important;
 }
 #books-app #snippy-card .media-box{ max-width:640px !important; }
 
-/* show only the first <video> in the media box, hide anything else */
+/* Only the first video shows; kill all other children */
 #books-app .media-box > *{ display:none !important; }
 #books-app .media-box > video:first-of-type{ display:block !important; }
 
-/* video sizing */
+/* Video sizing */
 #books-app .media-box > video{
-  width:100% !important; height:auto !important; border-radius:.5rem;
-  background:#111 !important; object-fit:cover !important;
+  width:100% !important; height:auto !important; border-radius:.5rem !important;
+  background:#111 !important; object-fit:cover !important; position:relative !important; z-index:1 !important;
 }
 #books-app #snippy-card   .media-box > video{ aspect-ratio:16/9 !important; }
 #books-app #socorro-card  .media-box > video,
 #books-app #gremlins-card .media-box > video{ aspect-ratio:3/4 !important; }
 
-#books-app .meta{ grid-column:2 !important; display:flex; flex-direction:column; gap:.5rem; }
-#books-app .kicker{ font-size:.8rem; opacity:.8; margin-top:.15rem; }
-#books-app .btn{ display:inline-block; padding:.5rem .8rem; border-radius:.5rem;
-  font-weight:600; text-decoration:none!important; border:1px solid transparent; white-space:nowrap; }
-#books-app .btn-blue{ background:#2563eb; color:#fff; }
-#books-app .btn-blue:hover{ background:#1e4fd3; }
-#books-app .btn-ghost{ background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
-#books-app .btn-ghost:hover{ background:#e5e7eb; }
-#books-app .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }
+/* Text/meta */
+#books-app .meta{ grid-column:2 !important; display:flex !important; flex-direction:column !important; gap:.5rem !important; }
+#books-app .kicker{ font-size:.8rem !important; opacity:.8 !important; margin-top:.15rem !important; }
 
-/* tuck under nav a bit */
+/* Buttons (kept local so legacy rules can’t disable clicks) */
+#books-app .btn{ display:inline-block !important; padding:.5rem .8rem !important; border-radius:.5rem !important;
+  font-weight:600 !important; text-decoration:none !important; border:1px solid transparent !important; white-space:nowrap !important; }
+#books-app .btn-blue{ background:#2563eb !important; color:#fff !important; }
+#books-app .btn-blue:hover{ background:#1e4fd3 !important; }
+#books-app .btn-ghost{ background:#f3f4f6 !important; color:#111827 !important; border-color:rgba(0,0,0,.08) !important; }
+#books-app .btn-ghost:hover{ background:#e5e7eb !important; }
+#books-app .btn-row{ display:flex !important; gap:.4rem !important; flex-wrap:wrap !important; }
+#books-app .btn, #books-app .btn *{ pointer-events:auto !important; }
+
+/* Tuck under nav */
 header + main.container{ margin-top:-.35rem !important; }
 
+/* Mobile */
 @media (max-width:900px){
   #books-app .grid{
     grid-template-columns:1fr !important;
@@ -71,7 +81,7 @@ header + main.container{ margin-top:-.35rem !important; }
 </style>
 
 <body>
-  <!-- keep your working nav include -->
+  <!-- keep your working header include -->
   <!--#include virtual="/assets/header.html" -->
 
   <main class="container">
@@ -129,7 +139,7 @@ header + main.container{ margin-top:-.35rem !important; }
           </div>
         </article>
 
-        <!-- COSMIC (image for now) -->
+        <!-- COSMIC (image only) -->
         <article id="cosmic-card">
           <div class="media-box">
             <img class="media" src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover" style="display:block;width:100%;height:auto;border-radius:.5rem;">
@@ -147,21 +157,15 @@ header + main.container{ margin-top:-.35rem !important; }
     </div>
   </main>
 
-  <!-- tiny autoplay helper: start when visible, retry if blocked -->
+  <!-- Autoplay helper: programmatic start when visible -->
   <script>
-  (function(){
-    const vids = document.querySelectorAll('#books-app video');
-    vids.forEach(v => {
-      v.muted = true; v.playsInline = true; v.autoplay = true;
-    });
-    const play = v => v.play().catch(()=>{/* ignored; will retry on intersect */});
-    const io = new IntersectionObserver(entries=>{
-      entries.forEach(e => { if(e.isIntersecting) play(e.target); });
-    }, {threshold: .25});
-    vids.forEach(v => io.observe(v));
-    document.addEventListener('visibilitychange', ()=>{
-      if(!document.hidden) vids.forEach(play);
-    });
-  })();
+    (function(){
+      const vids = document.querySelectorAll('#books-app video');
+      const play = v => { v.muted = true; v.playsInline = true; v.autoplay = true; v.play().catch(()=>{}); };
+      const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && play(e.target)), {threshold:.25});
+      vids.forEach(v => io.observe(v));
+      window.addEventListener('focus', ()=> vids.forEach(play));
+      document.addEventListener('visibilitychange', ()=> { if(!document.hidden) vids.forEach(play); });
+    })();
   </script>
 </body>
