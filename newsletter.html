@@ -42,6 +42,41 @@
 </style>
 
 <body class="newsletter-page" class="newsletter-page" class="newsletter-page" class="newsletter-page" class="newsletter-page" style="background:#0e1424 !important; background-color:#0e1424 !important;">
+<style id="newsletter-text-contrast">
+  /* Text: bright on dark BG (newsletter page only) */
+  body.newsletter-page main,
+  body.newsletter-page .container,
+  body.newsletter-page section.hero-pad { color:#ffffff !important; }
+  body.newsletter-page h1,
+  body.newsletter-page h2,
+  body.newsletter-page h3,
+  body.newsletter-page p,
+  body.newsletter-page label { color:#ffffff !important; }
+
+  /* Links remain readable */
+  body.newsletter-page a { color:#bfdbfe; }
+  body.newsletter-page a:hover { color:#e5efff; }
+
+    /* Form controls: light text, subtle dark glass background */
+  body.newsletter-page input,
+  body.newsletter-page textarea,
+  body.newsletter-page select {
+    color:#ffffff !important;
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    outline: none;
+  }
+  body.newsletter-page input::placeholder,
+  body.newsletter-page textarea::placeholder { color:#cbd5e1 !important; }
+
+  /* Button: keep your blue, ensure white text */
+  body.newsletter-page .btn,
+  body.newsletter-page button[type=submit] {
+    color:#ffffff !important;
+    background:#2563eb !important;
+    border:1px solid rgba(255,255,255,0.12) !important;
+  }
+</style>
 <style id="bg-kill-hero">
   :root{ --site-bg:#0e1424; } /* Bio background */
   html,body{ background:var(--site-bg)!important; background-color:var(--site-bg)!important; }
