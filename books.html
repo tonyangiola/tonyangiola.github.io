@@ -5,6 +5,13 @@
 <link rel="stylesheet" href="/assets/style.css">
 
 <style id="books-hard">
+
+/* --- Cosmic card: single column, centered, bigger portrait --- */
+#books-app #cosmic-card{ grid-template-columns:1fr !important; }
+#books-app #cosmic-card .media-box{ max-width:520px !important; margin:0 auto !important; }
+#books-app #cosmic-card .meta{ grid-column:1 !important; text-align:center; }
+#books-app #cosmic-card .media-box img{ display:block; width:100% !important; height:auto !important; aspect-ratio:3/4; object-fit:cover; border-radius:.5rem; }
+<style id="books-hard">
 /* --- isolate everything under #books-app so legacy rules can’t interfere --- */
 #books-app{ --gap:1.1rem; --radius:.75rem; }
 #books-app header{ position:relative; z-index:1; }
