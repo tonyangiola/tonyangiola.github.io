@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Books – Tony Angiola</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Keep your site CSS, but also add scoped rules that guarantee layout -->
+    <link rel="stylesheet" href="/assets/style.css">
+    <style>
+      /* ===== EVERYTHING BELOW IS SCOPED TO #books-page ONLY ===== */
+      #books-page { display:block; }
+      #books-page h1 { margin:.5rem 0 1rem; }
+
+      /* Cards, media, buttons */
+      #books-page .card{display:grid;gap:1rem;padding:1rem;border-radius:1rem;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.06);margin-bottom:1rem}
+      #books-page .media{border-radius:.75rem;overflow:hidden;background:#0b0b0b}
+      #books-page .media video,#books-page .media img{display:block;width:100%;height:auto;object-fit:cover;aspect-ratio:16/9}
+      #books-page .actions{display:flex;gap:.5rem;flex-wrap:wrap}
+      #books-page .btn{display:inline-flex;align-items:center;justify-content:center;padding:.55rem .95rem;border-radius:.6rem;text-decoration:none;white-space:nowrap;min-height:2.25rem}
+      #books-page .btn.primary{background:#2563eb;color:#fff;border:1px solid transparent}
+      #books-page .btn.secondary{background:#fff;color:#111;border:1px solid rgba(0,0,0,.12)}
+      #books-page .btn.primary:hover{filter:brightness(.96)}
+      #books-page .note{color:#4b5563;font-size:.95rem;margin:.25rem 0 .5rem 0}
+
+      /* Snippy layout: wide video + right panel on desktop */
+      #books-page .snippy{grid-template-columns:1fr;align-items:start}
+      #books-page .snippy .side{display:grid;gap:.75rem}
+      @media (min-width:960px){
+        #books-page .snippy{grid-template-columns:minmax(0,1fr) 320px}
+        #books-page .snippy .side{position:sticky;top:1rem}
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+  <div class="container">
+    <nav>
+      <a href="/"  aria-current="page"><strong>Tony Angiola</strong></a>
+      <a href="/books.html" class="active" aria-current="page">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+    <main id="books-page" class="container">
+      <h1>Books</h1>
+
+      <!-- ===== Snippy (WIDE video with right-side buttons) ===== -->
+      <section class="card snippy" id="snippy">
+        <div class="media">
+          <video controls preload="metadata" poster="/images/books/snippy.jpg">
+            <source src="/assets/videos/snippy.mp4" type="video/mp4">
+          </video>
+        </div>
+        <aside class="side">
+          <div>
+            <h2>Snippy</h2>
+            <p class="note">Animated preview.</p>
+          </div>
+          <div class="actions">
+            <a class="btn primary"  href="https://www.amazon.com/dp/B0F88SPFDS" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a class="btn secondary" href="/newsletter.html">Get updates</a>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ===== Socorro (video + buttons) ===== -->
+      <section class="card" id="socorro">
+        <div>
+          <h3>Socorro UFO</h3>
+          <p class="note">Classic 1964 case. Blue flame, red inverted “V” with three bars.</p>
+        </div>
+        <div class="media">
+          <video controls preload="metadata" poster="/images/books/socorro.jpg">
+            <source src="/assets/videos/socorro.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="actions">
+          <a class="btn primary"  href="https://www.amazon.com/dp/B0FGQP7PHN" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn secondary" href="/newsletter.html">Get updates</a>
+        </div>
+      </section>
+
+      <!-- ===== Gremlins (video + buttons) ===== -->
+      <section class="card" id="gremlins">
+        <div><h3>Gremlins</h3></div>
+        <div class="media">
+          <video controls preload="metadata" poster="/images/books/gremlins.jpg">
+            <source src="/assets/videos/gremlins.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="actions">
+          <a class="btn primary"  href="https://www.amazon.com/dp/B0FF3RWHT7" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn secondary" href="/newsletter.html">Get updates</a>
+        </div>
+      </section>
+
+      <!-- ===== Cosmic Secrets (static image + updates) ===== -->
+      <section class="card" id="cosmic-secrets">
+        <div>
+          <h3>Cosmic Secrets</h3>
+          <p class="note">Coming soon. Get notified when it launches.</p>
+        </div>
+        <div class="media">
+          <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets (coming soon)">
+        </div>
+        <div class="actions">
+          <a class="btn secondary" href="/newsletter.html">Get updates</a>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>

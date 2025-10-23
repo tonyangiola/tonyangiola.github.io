@@ -1,0 +1,80 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Books — Tony Angiola</title>
+<link rel="stylesheet" href="/assets/style.css?v=1761013300">
+
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
+</head>
+<body>
+  <!-- Simple header/nav (match your site) -->
+  <div id="site-header"></div>
+
+  <main class="container">
+    <section class="books-rows">
+      <h2>Books</h2>
+
+      <!-- Snippy -->
+      <article class="book-row">
+        <a class="cover" href="https://www.amazon.com/dp/B0F87LHZ7Y" target="_blank" rel="noopener">
+          <video class="book-media" src="/assets/videos/snippy.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Snippy: A King Family Legacy animated cover">Sorry, your browser can’t play this video.</video>
+        </a>
+        <div class="content">
+          <h3>Snippy: The Strange Case of the Colorado UFO Horse</h3>
+          <p class="subtitle">The King Family legacy and the high-strangeness case that gripped Colorado.</p>
+          <div class="actions">
+            <a class="btn" href="https://www.amazon.com/dp/B0F87LHZ7Y" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Flying Saucers, Aliens & Gremlins -->
+      <article class="book-row">
+        <a class="cover" href="https://www.amazon.com/dp/B0FF3RWHT7" target="_blank" rel="noopener">
+          <video class="book-media" src="/assets/videos/gremlins.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Flying Saucers, Aliens, and Gremlins animated cover">Sorry, your browser can’t play this video.</video>
+        </a>
+        <div class="content">
+          <h3>Flying Saucers, Aliens & Gremlins</h3>
+          <p class="subtitle">A tour through lore, sightings, and the trickster edge of UFO history.</p>
+          <div class="actions">
+            <a class="btn" href="https://www.amazon.com/dp/B0FF3RWHT7" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Socorro -->
+      <article class="book-row">
+        <a class="cover" href="https://www.amazon.com/dp/B0FGQP7PHN" target="_blank" rel="noopener">
+          <video class="book-media" src="/assets/videos/socorro.mp4" autoplay muted loop playsinline preload="metadata" aria-label="Socorro: Not of This World animated cover">Sorry, your browser can’t play this video.</video>
+        </a>
+        <div class="content">
+          <h3>SOCORRO UFO: Not of This World</h3>
+          <p class="subtitle">The Lonnie Zamora landing — one of the most credible close encounters ever documented.</p>
+          <div class="actions">
+            <a class="btn" href="https://www.amazon.com/dp/B0FGQP7PHN" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cosmic Secrets (coming soon) -->
+      <article class="book-row">
+        <div class="cover">
+          <img src="/images/books/cosmic.jpg?cb=1761012770" alt="Cosmic Secrets — Coming Soon">
+        </div>
+        <div class="content">
+          <h3>Cosmic Secrets</h3>
+          <p class="subtitle">The Hidden Truth of Humanity, Consciousness, and the Universe — and why governments fear UFO disclosure.</p>
+          <div class="actions">
+            <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="/assets/nav-loader.js"></script>
+</body>

@@ -1,0 +1,183 @@
+<!-- deploy-marker books clean 20251022-175354 -->
+<!-- deploy-marker books inline-flex 20251022-175013 -->
+<!-- deploy-marker books csslock 20251022-174656 -->
+<!-- deploy-marker books recover 20251022-174553 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Books — Tony Angiola</title>
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+/* ===== BOOKS — locked layout (navbar-safe) ===== */
+:root { --gap: 1rem; }
+.books-page { padding-top:.5rem; }
+
+/* Two-column grid: media left, details/buttons right */
+.book-card{
+  display:grid;
+  grid-template-columns: minmax(560px,1fr) 300px;
+  gap: var(--gap);
+  align-items:start;
+  background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:.75rem;
+  padding:1rem; margin:0 auto 1rem; max-width: 1040px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.03);
+}
+
+/* Snippy WIDE; Socorro SMALL; Gremlins/Cosmic NORMAL */
+#snippy-card   { grid-template-columns: 720px 300px; max-width: 1120px; }
+#socorro-card  { grid-template-columns: 420px 280px; max-width:  760px; }
+#gremlins-card { grid-template-columns: 560px 300px; max-width:  940px; }
+#cosmic-card   { grid-template-columns: 560px 300px; max-width:  940px; }
+
+/* Media box: always visible, 16:9 window */
+.book-media{
+  grid-column:1;
+  width:100%; aspect-ratio:16/9;
+  background:#000; border-radius:.5rem; overflow:hidden;
+}
+.book-media video,
+.book-media img{
+  width:100%; height:100%;
+  display:block; object-fit:cover; background:#000;
+}
+
+/* Right column + blue buttons */
+.book-side{ grid-column:2; }
+.book-actions{ display:flex; flex-direction:column; gap:.5rem; margin-top:.5rem; }
+.book-actions .btn{
+  display:inline-block; text-align:center;
+  padding:.55rem .9rem; border-radius:.6rem;
+  font-weight:600; text-decoration:none;
+  background:#2563eb; color:#fff; border:1px solid rgba(0,0,0,.06);
+}
+.book-actions .btn:hover{ background:#1e4fd3; }
+
+/* Mobile */
+@media (max-width: 900px){
+  .book-card{ grid-template-columns: 1fr; max-width: 720px; }
+  .book-side{ grid-column:1; }
+}
+</style>
+</head>
+<body>
+  <!-- keep your existing header/navbar -->
+  <!--#include virtual="/assets/header.html" -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/"><strong>Tony Angiola</strong></a>
+        <a href="/books.html" aria-current="page">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+<main class="container books-page">
+  <h1>Books</h1>
+  <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1rem;">
+    <article style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #ccc;border-radius:10px;padding:1rem;max-width:1100px;margin:0 auto;box-shadow:0 1px 3px rgba(0,0,0,.1);">
+      <video controls poster="/images/books/snippy.jpg" style="flex:0 0 720px;border-radius:8px;background:#000;width:720px;height:auto;">
+        <source src="/assets/videos/snippy.mp4" type="video/mp4">
+      </video>
+      <div style="flex:0 0 300px;">
+        <h2>Snippy</h2><p>Animated preview.</p>
+        <a href="https://www.amazon.com/dp/B0F88SPFDS" target="_blank" rel="noopener"
+           style="display:block;margin-bottom:8px;padding:10px 0;border-radius:8px;text-align:center;font-weight:600;background:#2563eb;color:#fff;text-decoration:none;">Buy on Amazon</a>
+        <a href="/newsletter.html"
+           style="display:block;padding:10px 0;border-radius:8px;text-align:center;font-weight:600;background:#2563eb;color:#fff;text-decoration:none;">Get updates</a>
+      </div>
+    </article>
+    <article style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #ccc;border-radius:10px;padding:1rem;max-width:800px;margin:0 auto;box-shadow:0 1px 3px rgba(0,0,0,.1);">
+      <video controls poster="/images/books/socorro.jpg" style="flex:0 0 420px;border-radius:8px;background:#000;width:420px;height:auto;">
+        <source src="/assets/videos/socorro.mp4" type="video/mp4">
+      </video>
+      <div style="flex:0 0 280px;">
+        <h2>Socorro UFO</h2><p>Classic 1964 case — blue flame; red inverted V with three bars.</p>
+        <a href="https://www.amazon.com/" target="_blank" rel="noopener"
+           style="display:block;margin-bottom:8px;padding:10px 0;border-radius:8px;text-align:center;font-weight:600;background:#2563eb;color:#fff;text-decoration:none;">Buy on Amazon</a>
+        <a href="/newsletter.html"
+           style="display:block;padding:10px 0;border-radius:8px;text-align:center;font-weight:600;background:#2563eb;color:#fff;text-decoration:none;">Get updates</a>
+      </div>
+    </article>
+    <article style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #ccc;border-radius:10px;padding:1rem;max-width:900px;margin:0 auto;box-shadow:0 1px 3px rgba(0,0,0,.1);">
+      <video controls poster="/images/books/gremlins.jpg" style="flex:0 0 560px;border-radius:8px;background:#000;width:560px;height:auto;">
+        <source src="/assets/videos/gremlins.mp4" type="video/mp4">
+      </video>
+      <div style="flex:0 0 300px;">
+        <h2>Gremlins</h2>
+        <a href="https://www.amazon.com/" target="_blank" rel="noopener"
+           style="display:block;margin-bottom:8px;padding:10px 0;border-radius:8px;text-align:center;font-weight:600;background:#2563eb;color:#fff;text-decoration:none;">Buy on Amazon</a>
+        <a href="/newsletter.html"
+           style="display:block;padding:10px 0;border-radius:8px;text-align:center;font-weight:600;background:#2563eb;color:#fff;text-decoration:none;">Get updates</a>
+      </div>
+    </article>
+    <article style="display:flex;gap:1rem;align-items:flex-start;background:#fff;border:1px solid #ccc;border-radius:10px;padding:1rem;max-width:900px;margin:0 auto;box-shadow:0 1px 3px rgba(0,0,0,.1);">
+      <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover" style="flex:0 0 560px;border-radius:8px;background:#000;width:560px;height:auto;">
+      <div style="flex:0 0 300px;">
+        <h2>Cosmic Secrets</h2><p>Coming soon. Get notified when it launches.</p>
+        <a href="/newsletter.html"
+           style="display:block;padding:10px 0;border-radius:8px;text-align:center;font-weight:600;background:#2563eb;color:#fff;text-decoration:none;">Get updates</a>
+      </div>
+    </article>
+  </div>
+  </main>
+  </main>
+<!-- books-lock start -->
+<style>
+/* ===== BOOKS: final lock (navbar-safe) ===== */
+.books-page .book-card{
+  display:grid !important;
+  grid-template-columns: minmax(560px,1fr) 300px !important; /* media left, side right */
+  gap:1rem !important; align-items:start !important;
+  background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:.75rem;
+  padding:1rem; margin:0 auto 1rem; max-width:1040px;
+  box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+
+/* Snippy WIDE, Socorro small, others normal */
+#snippy-card  { grid-template-columns: 720px 300px !important; max-width:1120px; }
+#socorro-card { grid-template-columns: 420px 280px !important; max-width: 760px; }
+#gremlins-card, #cosmic-card { grid-template-columns: 560px 300px !important; max-width: 940px; }
+
+/* Media panel always visible and 16:9; video truly fills it */
+.books-page .book-card .book-media{
+  grid-column:1 !important;
+  width:100% !important;
+  aspect-ratio:16/9 !important;
+  background:#000 !important;
+  border-radius:.5rem !important; overflow:hidden !important;
+}
+.books-page .book-card .book-media > video,
+.books-page .book-card .book-media > img{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  background:#000 !important;
+}
+
+/* Right column content + blue buttons */
+.books-page .book-card .book-side{ grid-column:2 !important; }
+.books-page .book-card .book-actions{
+  display:flex !important; flex-direction:column !important; gap:.5rem !important;
+}
+.books-page .book-card .book-actions .btn{
+  display:inline-block !important; text-align:center !important; font-weight:600 !important;
+  padding:.55rem .9rem !important; border-radius:.6rem !important; text-decoration:none !important;
+  background:#2563eb !important; color:#fff !important; border:1px solid rgba(0,0,0,.06) !important;
+}
+.books-page .book-card .book-actions .btn:hover{ background:#1e4fd3 !important; }
+
+/* Mobile stack */
+@media (max-width:900px){
+  .books-page .book-card{ grid-template-columns:1fr !important; max-width:720px !important; }
+  .books-page .book-card .book-side{ grid-column:1 !important; }
+}
+</style>
+<!-- books-lock end -->
+</body>
+</html>
