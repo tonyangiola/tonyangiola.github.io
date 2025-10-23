@@ -1752,3 +1752,22 @@ body.books-page .btn-blue:hover, body.books-page .btn-blue:focus, body.books-pag
   -webkit-text-fill-color: #fff !important; /* iOS/Safari */
   text-decoration: none !important;
 }
+
+/* === Books page: darker background without touching layout/cards === */
+body.books-page {
+  background: #0b1220;                     /* deep slate/indigo */
+  color: #e5e7eb;                          /* keep stray text readable */
+}
+
+/* keep header looking consistent on dark bg */
+body.books-page header { border-color: rgba(255,255,255,0.08); }
+body.books-page header a { color: inherit; }
+
+/* cards stay white; add a subtle shadow so they pop on dark */
+body.books-page .book-card {
+  background:#ffffff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+}
+
+/* buttons unchanged; ensure ghost button stays visible on dark page */
+body.books-page .btn-ghost { background:#f3f4f6; color:#111827; }
