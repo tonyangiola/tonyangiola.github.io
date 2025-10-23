@@ -10,7 +10,41 @@
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
   <link rel="stylesheet" href="/assets/override.css?cb=20251022211117">
+<style id="bg-nav-hotfix">
+:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
+html,body{background:var(--bg) !important;color:var(--text) !important;}
+/* keep nav dark & readable */
+header,.site-header,nav,header .container{background:var(--nav-bg) !important;}
+header nav a,.site-header nav a,header a{color:#e5e7eb !important;text-decoration:none !important;}
+header nav a:hover,header a:hover,header nav a[aria-current="page"]{color:#fff !important;font-weight:600;}
+header,header *{mix-blend-mode:normal !important;filter:none !important;opacity:1 !important;}
+/* content contrast + spacing */
+body p,li,span,.content p{color:var(--muted) !important;}
+h1,h2,h3,h4{color:var(--text) !important;}
+a{color:var(--link) !important;}
+a:hover{text-decoration:underline !important;}
+main,main.container{padding-top:1.25rem !important;}
+/* never repaint page white */
+main,.container,.content,.page,.wrapper,section,article{background:transparent !important;}
+</style>
 </head>
+<style id="bg-nav-hotfix">
+:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
+html,body{background:var(--bg) !important;color:var(--text) !important;}
+/* keep nav dark & readable */
+header,.site-header,nav,header .container{background:var(--nav-bg) !important;}
+header nav a,.site-header nav a,header a{color:#e5e7eb !important;text-decoration:none !important;}
+header nav a:hover,header a:hover,header nav a[aria-current="page"]{color:#fff !important;font-weight:600;}
+header,header *{mix-blend-mode:normal !important;filter:none !important;opacity:1 !important;}
+/* content contrast + spacing */
+body p,li,span,.content p{color:var(--muted) !important;}
+h1,h2,h3,h4{color:var(--text) !important;}
+a{color:var(--link) !important;}
+a:hover{text-decoration:underline !important;}
+main,main.container{padding-top:1.25rem !important;}
+/* never repaint page white */
+main,.container,.content,.page,.wrapper,section,article{background:transparent !important;}
+</style>
 </head>
 <body>
   <header>
