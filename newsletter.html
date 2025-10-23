@@ -41,16 +41,21 @@
   input[type="email"] { display:block; width:100%; max-width:28rem; padding:.6rem .7rem; border-radius:.6rem; border:1px solid #d0d4dc; }
 </style>
 
-<body class="newsletter-page" class="newsletter-page" class="newsletter-page">
+<body class="newsletter-page" class="newsletter-page" class="newsletter-page" class="newsletter-page">
 <style id="bg-scope-newsletter">
   :root{ --site-bg:#0e1424; } /* Bio background */
   html,body{ background:var(--site-bg)!important; background-color:var(--site-bg)!important; }
 
-  /* HARD OVERRIDE: only the newsletter content area */
+  /* Kill white fills ONLY in newsletter content containers */
+  body.newsletter-page div.container,
   body.newsletter-page main.container,
-  body.newsletter-page main.container * {
-    background: transparent !important;
-    background-color: transparent !important;
+  body.newsletter-page div.container *,
+  body.newsletter-page main.container *,
+  body.newsletter-page div.container::before,
+  body.newsletter-page div.container::after,
+  body.newsletter-page main.container::before,
+  body.newsletter-page main.container::after {
+    background: transparent !important; background-color: transparent !important;
   }
 </style>
 </style>
