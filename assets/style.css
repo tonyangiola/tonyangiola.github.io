@@ -2229,3 +2229,10 @@ main,.main,.content,.page,.wrapper,.container,section,article{
 
 /* Give a little breathing room under the nav */
 main,.main{ padding-top: 1rem !important; }
+
+/* === 2025-10-23 Vars override (last wins) === */
+:root{
+  --page-bg: #f4f5f7;   /* LIGHTER PAGE BACKGROUND */
+  --nav-bg:  #111827;   /* KEEP NAV DARK (same as Books) */
+  --nav-text:#ffffff;   /* White nav links */
+}
