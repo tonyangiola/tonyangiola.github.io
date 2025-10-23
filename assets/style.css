@@ -703,7 +703,7 @@ header nav a:focus-visible {
 
 /* 3) Make the video the left-column media.
       Show only the FIRST video in each card; hide any duplicates from older markup. */
-.books .book-card video{ display:none !important; }
+.books .book-card video{ display:block !important; }
 .books .book-card video:first-of-type{
   display:block !important;
   grid-column:1;
@@ -736,7 +736,7 @@ header nav a:focus-visible {
 .book-video{ width:100%; max-width:320px; aspect-ratio:16/9; background:#f5f5f7; object-fit:cover; border-radius:.5rem; overflow:hidden; }
 @media (max-width:720px){ .books .book-card{ grid-template-columns:1fr; } .book-video{ max-width:100%; } }
 /* CANARY wrapper hide */
-.books .book-card > :first-child:not(video){ display:none !important; }
+.books .book-card > :first-child:not(video){ display:block !important; }
 /* === SNIPPY HOTFIX === */
 /* Make the first book card's media column 640px and keep the full frame (no crop) */
 .books .books-grid > article:nth-of-type(1){ 
@@ -772,7 +772,7 @@ header nav a:focus-visible {
 .book-meta{ grid-column:2; }
 
 /* Hide any stray first child wrapper that isn't media */
-.book-card > :first-child:not(video):not(picture):not(img){ display:none !important; }
+.book-card > :first-child:not(video):not(picture):not(img){ display:block !important; }
 
 /* --- SNIPPY (first card) — 2x width and no crop --- */
 .books-grid > article:nth-of-type(1){ grid-template-columns:640px 1fr !important; }
@@ -1477,3 +1477,6 @@ body.books-page .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }
 
 /* ==== Kill legacy rule that hides videos on Books ==== */
 .books .book-card video { display:block !important; visibility:visible !important; opacity:1 !important; }
+
+/* Books page: never clip the media column */
+body.books-page .book-card .media-box{overflow:visible!important}
