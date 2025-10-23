@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/assets/style.css">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — Tony Angiola</title>
+<title>Newsletter — Tony Angiola</title>
 <link rel="stylesheet" href="/assets/style.css?v=1761013300">
 
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
@@ -44,7 +44,6 @@ main,.container,.content,.page,.wrapper,section,article{background:transparent!i
 /* Space below nav */
 main,main.container{padding-top:1.25rem!important;}
 </style>
-  <link rel="stylesheet" href="/assets/site-final.css">
 </head>
 <body>
   <header>
@@ -53,8 +52,8 @@ main,main.container{padding-top:1.25rem!important;}
       <a href="/"><strong>Tony Angiola</strong></a>
       <a href="/books.html">Books</a>
       <a href="/bio.html">Bio</a>
-      <a href="/newsletter.html">Newsletter</a>
-      <a href="/contact.html" class="active" aria-current="page">Contact</a>
+      <a href="/newsletter.html" class="active" aria-current="page">Newsletter</a>
+      <a href="/contact.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -62,11 +61,25 @@ main,main.container{padding-top:1.25rem!important;}
   
 
   <main class="container">
-    <h1>Contact</h1>
-    <p class="small">For interviews, research leads, or media inquiries.</p>
+    <h1>Newsletter</h1>
+    <p>Get field updates, case write-ups, and new chapter drops.</p>
+
     <div class="card">
-      <p>Email: <a href="mailto:contact@tonyangiola.com">contact@tonyangiola.com</a></p>
-      <p class="small">You can wire a contact form later (Netlify Forms, Formspree, or your own API).</p>
+      <!-- Buttondown embed: replace YOUR_BUTTONDOWN_USERNAME, then it just works -->
+      <form
+        action="https://buttondown.email/api/emails/embed-subscribe/YOUR_BUTTONDOWN_USERNAME"
+        method="post"
+        target="popupwindow"
+        onsubmit="window.open('https://buttondown.email/YOUR_BUTTONDOWN_USERNAME','popupwindow')"
+        class="embeddable-buttondown-form">
+        <label for="bd-email">Email</label><br>
+        <input id="bd-email" type="email" name="email" required
+               style="width:100%;max-width:420px;padding:.6rem;border:1px solid #ccc;border-radius:8px">
+        <div style="height:10px"></div>
+        <button class="btn" type="submit">Subscribe</button>
+        <p class="small">No spam. Unsubscribe anytime.</p>
+      </form>
+      <p class="small">Want MailerLite instead? Tell me and I’ll swap the embed.</p>
     </div>
   </main>
 
