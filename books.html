@@ -3,6 +3,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Books</title>
 <link rel="stylesheet" href="/assets/style.css">
+<style id="bg-hotfix-books">
+  html, body { background:#0B0F1A !important; }
+  body.books-page { background:#0B0F1A !important; color:#e5e7eb; }
+  body.books-page main,
+  body.books-page .container,
+  #books-app, #books-app .container { background:transparent !important; }
+</style>
 
 <style id="books-hard">
 
@@ -83,7 +90,7 @@
 }
 </style>
 
-<body>
+<body class="books-page">
 <div id="books-app">
   <!-- inline header (works on GitHub Pages) -->
   <header>
