@@ -1474,3 +1474,6 @@ body.books-page .btn-blue:hover{ background:#1e4fd3; }
 body.books-page .btn-ghost{ background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
 body.books-page .btn-ghost:hover{ background:#e5e7eb; }
 body.books-page .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }
+
+/* ==== Kill legacy rule that hides videos on Books ==== */
+.books .book-card video { display:block !important; visibility:visible !important; opacity:1 !important; }
