@@ -2215,3 +2215,8 @@ main, .content, .page, .container {
   background: transparent !important;
   background-color: transparent !important;
 }
+
+/* === Site-wide BG unify (exact Bio color) === */
+:root{--site-bg:#2563eb;}
+html,body{background:var(--site-bg)!important;background-color:var(--site-bg)!important;}
+main,.content,.page,.container,section,article{background:transparent!important;background-color:transparent!important;}
