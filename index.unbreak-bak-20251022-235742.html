@@ -1,0 +1,81 @@
+<!doctype html>
+<head>
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  /* FORCE dark page background (beats legacy rules) */
+  html, body { background:#0B0F1A !important; }
+  body.home-page { background:#0B0F1A !important; color:#e5e7eb; }
+  /* keep content wrappers transparent so the page bg shows */
+  body.home-page main,
+  body.home-page .container,
+  body.home-page .wrapper,
+  body.home-page .page,
+  body.home-page .content { background:transparent !important; }
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tony Angiola — Author</title>
+<link rel="stylesheet" href="/assets/style.css?v=1761013300">
+<!-- deploy-marker: init -->
+
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
+<script id="bg-hotfix-script">
+  try{
+    document.documentElement.style.setProperty("background","#0B0F1A","important");
+    document.body && document.body.setAttribute("style","background:#0B0F1A !important;");
+  }catch(e){}
+</script>
+  <link rel="stylesheet" href="/assets/override.css?cb=20251022211156">
+</head>
+<body>
+  <header>
+  <div class="container">
+    <nav>
+      <a href="/" class="active" aria-current="page"><strong>Tony Angiola</strong></a>
+      <a href="/books.html">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  
+
+  <main class="container">
+    <section class="hero">
+      <h1>Author. Researcher. Explorer of High Strangeness.</h1>
+      <p class="small">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley,
+      and updates on current projects.</p>
+      <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
+    </section>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h2>Current Project: <em>Cosmic Secrets</em></h2>
+        <p>A deep dive into disclosure, historical cases, and propulsion hypotheses—told straight, documented, and BS-resistant.</p>
+        <p><a href="/books.html">See books →</a></p>
+      </div>
+      <div class="card">
+        <h2>New Articles</h2>
+        <ul class="clean">
+          <li><a href="#">Socorro Revisited — Signatures in the Dust (coming soon)</a></li>
+          <li><a href="#">MHD & “Blue Flame” Notes (coming soon)</a></li>
+        </ul>
+      </div>
+    </section>
+<section class="author-photo" style="text-align:center; margin:2em 0;">
+  <img src="/images/tony.jpg" alt="Tony Angiola" style="width:240px; border-radius:50%; box-shadow:0 0 12px rgba(0,0,0,.25);">
+  <h2 style="margin-top:1em;font-weight:600;">Tony Angiola</h2>
+</section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="y"></span> Tony Angiola. All rights reserved.</div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+  
+</body>
