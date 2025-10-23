@@ -1728,3 +1728,27 @@ body.books-page a.btn[href*="amazon.com"]:focus,
   -webkit-text-fill-color: #fff !important; /* iOS Safari */
   text-decoration: none !important;
 }
+/* === Force white text on ALL blue buttons (normal/hover/visited/focus) === */
+.btn-blue,
+.btn.btn-blue,
+a.btn-blue, a.btn.btn-blue,
+button.btn-blue,
+body.books-page .btn-blue,
+#books-app .btn-blue,
+.btn-blue:visited,
+.btn.btn-blue:visited,
+a.btn-blue:visited, a.btn.btn-blue:visited,
+button.btn-blue:visited,
+body.books-page .btn-blue:visited,
+#books-app .btn-blue:visited,
+.btn-blue:hover, .btn-blue:focus, .btn-blue:focus-visible,
+.btn.btn-blue:hover, .btn.btn-blue:focus, .btn.btn-blue:focus-visible,
+a.btn-blue:hover, a.btn-blue:focus, a.btn-blue:focus-visible,
+a.btn.btn-blue:hover, a.btn.btn-blue:focus, a.btn.btn-blue:focus-visible,
+button.btn-blue:hover, button.btn-blue:focus, button.btn-blue:focus-visible,
+body.books-page .btn-blue:hover, body.books-page .btn-blue:focus, body.books-page .btn-blue:focus-visible,
+#books-app .btn-blue:hover, #books-app .btn-blue:focus, #books-app .btn-blue:focus-visible {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important; /* iOS/Safari */
+  text-decoration: none !important;
+}
