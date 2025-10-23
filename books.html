@@ -4,178 +4,170 @@
 <title>Books</title>
 <link rel="stylesheet" href="/assets/style.css">
 
-<style id="books-final">
-/* ==== HARD ISOLATION (only inside #books-app) ==== */
-#books-app { --gap:1.1rem; --radius:.75rem; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-#books-app * { box-sizing:border-box !important; }
+<style id="books-hard">
+/* --- isolate everything under #books-app so legacy rules can’t interfere --- */
+#books-app{ --gap:1.1rem; --radius:.75rem; }
+#books-app header{ position:relative; z-index:1; }
+#books-app header .container{ padding: .4rem 0 .35rem; }
+#books-app header + main.container{ margin-top: .1rem; }
 
-/* Grid of cards */
+/* Grid of cards (Snippy wide on top; Socorro left, Gremlins right; Cosmic full) */
 #books-app .grid{
-  display:grid !important;
-  grid-template-columns:1.1fr 1fr !important;
+  display:grid!important;
+  grid-template-columns: 1.1fr 1fr!important;
   grid-template-areas:
     "snippy snippy"
     "socorro gremlins"
-    "cosmic  cosmic" !important;
-  gap:var(--gap) !important;
+    "cosmic  cosmic"!important;
+  gap: var(--gap)!important;
 }
 
-/* Card base */
 #books-app article{
-  background:#fff !important; border:1px solid rgba(0,0,0,.06) !important;
-  border-radius:var(--radius) !important; padding:.9rem !important;
-  display:grid !important; grid-template-columns:260px 1fr !important; gap:1rem !important;
-  align-items:start !important; position:relative !important;
+  background:#fff; border:1px solid rgba(0,0,0,.06);
+  border-radius:var(--radius); padding:.9rem;
+  display:grid!important; grid-template-columns:260px 1fr!important; gap:1rem!important;
+  align-items:start!important;
 }
-#books-app #snippy-card{ grid-area:snippy !important; grid-template-columns:640px 1fr !important; }
-#books-app #socorro-card{ grid-area:socorro !important; }
-#books-app #gremlins-card{ grid-area:gremlins !important; }
-#books-app #cosmic-card{ grid-area:cosmic !important; }
 
-/* Media column */
-#books-app .media-box{
-  grid-column:1 !important; width:100% !important; max-width:360px !important;
-  margin:0 !important; overflow:visible !important; position:relative !important; z-index:0 !important;
-}
-#books-app #snippy-card .media-box{ max-width:640px !important; }
+/* Card placement */
+#books-app #snippy-card{ grid-area:snippy!important; grid-template-columns:640px 1fr!important; }
+#books-app #socorro-card{ grid-area:socorro!important; }
+#books-app #gremlins-card{ grid-area:gremlins!important; }
+#books-app #cosmic-card{ grid-area:cosmic!important; }
 
-/* Only the first video shows; kill all other children */
-#books-app .media-box > *{ display:none !important; }
-#books-app .media-box > video:first-of-type{ display:block !important; }
+/* Media column – use ONLY the first media-box; hide any accidental extras */
+#books-app article .media-box{ grid-column:1!important; width:100%!important; max-width:360px!important; }
+#books-app #snippy-card .media-box{ max-width:640px!important; }
+#books-app article .media-box ~ .media-box{ display:none!important; }  /* kill duplicates */
 
-/* Video sizing */
+/* Inside media-box show only the FIRST video or image */
+#books-app .media-box > *{ display:none!important; }
+#books-app .media-box > video:first-of-type,
+#books-app .media-box > img:first-of-type{ display:block!important; }
+
+/* Video sizing + look */
 #books-app .media-box > video{
-  width:100% !important; height:auto !important; border-radius:.5rem !important;
-  background:#111 !important; object-fit:cover !important; position:relative !important; z-index:1 !important;
+  width:100%!important; height:auto!important; border-radius:.5rem;
+  background:#111!important; object-fit:cover!important;
 }
-#books-app #snippy-card   .media-box > video{ aspect-ratio:16/9 !important; }
+#books-app #snippy-card   .media-box > video{ aspect-ratio:16/9!important; }
 #books-app #socorro-card  .media-box > video,
-#books-app #gremlins-card .media-box > video{ aspect-ratio:3/4 !important; }
+#books-app #gremlins-card .media-box > video{ aspect-ratio:3/4!important; }
 
-/* Text/meta */
-#books-app .meta{ grid-column:2 !important; display:flex !important; flex-direction:column !important; gap:.5rem !important; }
-#books-app .kicker{ font-size:.8rem !important; opacity:.8 !important; margin-top:.15rem !important; }
+/* Meta column on the right */
+#books-app .meta{ grid-column:2!important; display:flex; flex-direction:column; gap:.5rem; }
+#books-app .kicker{ font-size:.8rem; opacity:.8; margin-top:.15rem; }
 
-/* Buttons (kept local so legacy rules can’t disable clicks) */
-#books-app .btn{ display:inline-block !important; padding:.5rem .8rem !important; border-radius:.5rem !important;
-  font-weight:600 !important; text-decoration:none !important; border:1px solid transparent !important; white-space:nowrap !important; }
-#books-app .btn-blue{ background:#2563eb !important; color:#fff !important; }
-#books-app .btn-blue:hover{ background:#1e4fd3 !important; }
-#books-app .btn-ghost{ background:#f3f4f6 !important; color:#111827 !important; border-color:rgba(0,0,0,.08) !important; }
-#books-app .btn-ghost:hover{ background:#e5e7eb !important; }
-#books-app .btn-row{ display:flex !important; gap:.4rem !important; flex-wrap:wrap !important; }
-#books-app .btn, #books-app .btn *{ pointer-events:auto !important; }
+/* Buttons */
+#books-app .btn{ display:inline-block; padding:.5rem .8rem; border-radius:.5rem;
+  font-weight:600; text-decoration:none!important; border:1px solid transparent; white-space:nowrap; }
+#books-app .btn-blue{ background:#2563eb; color:#fff; }
+#books-app .btn-blue:hover{ background:#1e4fd3; }
+#books-app .btn-ghost{ background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
+#books-app .btn-ghost:hover{ background:#e5e7eb; }
+#books-app .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }
 
-/* Tuck under nav */
-header + main.container{ margin-top:-.35rem !important; }
-
-/* Mobile */
+/* Mobile stack */
 @media (max-width:900px){
-  #books-app .grid{
-    grid-template-columns:1fr !important;
-    grid-template-areas: "snippy snippy" "socorro gremlins" "cosmic  cosmic" !important;
-  }
-  #books-app article{ grid-template-columns:1fr !important; }
-  #books-app #snippy-card .media-box{ max-width:100% !important; }
+  #books-app .grid{ grid-template-columns:1fr!important;
+    grid-template-areas: "snippy" "socorro" "gremlins" "cosmic"!important; }
+  #books-app article{ grid-template-columns:1fr!important; }
+  #books-app #snippy-card{ grid-template-columns:1fr!important; }
 }
 </style>
 
-<body class="books-page">
-  <!-- keep your working header include -->
-<header>
-  <div class="container">
-    <nav>
-      <a href="/"><strong>Tony Angiola</strong></a>
-      <a href="/books.html">Books</a>
-      <a href="/bio.html">Bio</a>
-      <a href="/newsletter.html">Newsletter</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+<body>
+<div id="books-app">
+  <!-- inline header (works on GitHub Pages) -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/"><strong>Tony Angiola</strong></a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main class="container">
-    <div id="books-app">
-      <div class="grid">
+    <div class="grid">
 
-        <!-- SNIPPY -->
-        <article id="snippy-card">
-          <div class="media-box">
-            <video class="media" muted autoplay loop playsinline preload="metadata" poster="/images/books/snippy.jpg">
-              <source src="/assets/videos/books/snippy.mp4" type="video/mp4">
-            </video>
+      <!-- SNIPPY (wide) -->
+      <article id="snippy-card">
+        <div class="media-box">
+          <video autoplay muted loop playsinline preload="metadata" poster="/images/books/snippy.jpg">
+            <source src="/assets/videos/books/snippy.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="meta">
+          <div class="kicker">A King Family Legacy</div>
+          <h3>Snippy</h3>
+          <div class="btn-row">
+            <a class="btn btn-blue" href="https://www.amazon.com/Snippy-Horse-Unveiling-Mutilation-Encounters-ebook/dp/B0F88SPFDS" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a class="btn btn-ghost" href="/newsletter.html">Get Updates</a>
           </div>
-          <div class="meta">
-            <div class="kicker">A King Family Legacy</div>
-            <h3>Snippy</h3>
-            <div class="btn-row">
-              <a class="btn btn-blue" href="https://www.amazon.com/Snippy-Horse-Unveiling-Mutilation-Encounters-ebook/dp/B0F88SPFDS" target="_blank" rel="noopener">Buy on Amazon</a>
-              <a class="btn btn-ghost" href="/newsletter.html">Get Updates</a>
-            </div>
-          </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- SOCORRO -->
-        <article id="socorro-card">
-          <div class="media-box">
-            <video class="media" muted autoplay loop playsinline preload="metadata" poster="/images/books/socorro.jpg">
-              <source src="/assets/videos/books/socorro.mp4" type="video/mp4">
-            </video>
+      <!-- SOCORRO (left) -->
+      <article id="socorro-card">
+        <div class="media-box">
+          <video autoplay muted loop playsinline preload="metadata" poster="/images/books/socorro.jpg">
+            <source src="/assets/videos/books/socorro.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="meta">
+          <div class="kicker">Lonnie Zamora • April 24, 1964</div>
+          <h3>Socorro UFO</h3>
+          <div class="btn-row">
+            <a class="btn btn-blue" href="https://www.amazon.com/dp/1518692804" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a class="btn btn-ghost" href="/newsletter.html">Get Updates</a>
           </div>
-          <div class="meta">
-            <div class="kicker">Lonnie Zamora • April 24, 1964</div>
-            <h3>Socorro UFO</h3>
-            <div class="btn-row">
-              <a class="btn btn-blue" href="https://www.amazon.com/dp/1518692804" target="_blank" rel="noopener">Buy on Amazon</a>
-              <a class="btn btn-ghost" href="/newsletter.html">Get Updates</a>
-            </div>
-          </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- GREMLINS -->
-        <article id="gremlins-card">
-          <div class="media-box">
-            <video class="media" muted autoplay loop playsinline preload="metadata" poster="/images/books/gremlins.jpg">
-              <source src="/assets/videos/books/gremlins.mp4" type="video/mp4">
-            </video>
+      <!-- GREMLINS (right) -->
+      <article id="gremlins-card">
+        <div class="media-box">
+          <video autoplay muted loop playsinline preload="metadata" poster="/images/books/gremlins.jpg">
+            <source src="/assets/videos/books/gremlins.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="meta">
+          <div class="kicker">Project Sign to Blue Book</div>
+          <h3>Gremlins</h3>
+          <div class="btn-row">
+            <a class="btn btn-blue" href="https://www.amazon.com/dp/B0C6Q8V8V8" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a class="btn btn-ghost" href="/newsletter.html">Get Updates</a>
           </div>
-          <div class="meta">
-            <div class="kicker">Project Sign to Blue Book</div>
-            <h3>Gremlins</h3>
-            <div class="btn-row">
-              <a class="btn btn-blue" href="https://www.amazon.com/dp/B0C6Q8V8V8" target="_blank" rel="noopener">Buy on Amazon</a>
-              <a class="btn btn-ghost" href="/newsletter.html">Get Updates</a>
-            </div>
-          </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- COSMIC (image only) -->
-        <article id="cosmic-card">
-          <div class="media-box">
-            <img class="media" src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover" style="display:block;width:100%;height:auto;border-radius:.5rem;">
+      <!-- COSMIC (full width, image only) -->
+      <article id="cosmic-card">
+        <div class="media-box">
+          <img class="media" src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover" style="display:block;width:100%;height:auto;border-radius:.5rem;">
+        </div>
+        <div class="meta">
+          <div class="kicker">Coming Soon</div>
+          <h3>Cosmic Secrets</h3>
+          <div class="btn-row">
+            <a class="btn btn-ghost" href="/newsletter.html">Get Updates</a>
           </div>
-          <div class="meta">
-            <div class="kicker">Coming Soon</div>
-            <h3>Cosmic Secrets</h3>
-            <div class="btn-row">
-              <a class="btn btn-ghost" href="/newsletter.html">Get Updates</a>
-            </div>
-          </div>
-        </article>
+        </div>
+      </article>
 
-      </div>
     </div>
   </main>
+</div>
 
-  <!-- Autoplay helper: programmatic start when visible -->
-  <script>
-    (function(){
-      const vids = document.querySelectorAll('#books-app video');
-      const play = v => { v.muted = true; v.playsInline = true; v.autoplay = true; v.play().catch(()=>{}); };
-      const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && play(e.target)), {threshold:.25});
-      vids.forEach(v => io.observe(v));
-      window.addEventListener('focus', ()=> vids.forEach(play));
-      document.addEventListener('visibilitychange', ()=> { if(!document.hidden) vids.forEach(play); });
-    })();
-  </script>
-</body>
+<script>
+/* Nudge autoplay on iOS/Safari if needed */
+document.querySelectorAll('#books-app video[autoplay]').forEach(v=>{
+  const kick=()=>{ v.play().catch(()=>{}); };
+  v.addEventListener('canplay',kick,{once:true});
+  document.addEventListener('visibilitychange',()=>{ if(!document.hidden) kick(); });
+});
+</script>
