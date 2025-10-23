@@ -1714,3 +1714,17 @@ body.books-page .btn.btn-blue:hover,
   background-color: #1e4fd3 !important;
   transform: scale(1.02);
 }
+
+/* --- Amazon buttons: keep text white in all states --- */
+body.books-page a.btn[href*="amazon.com"],
+body.books-page a.btn[href*="amazon.com"]:visited,
+body.books-page a.btn[href*="amazon.com"]:hover,
+body.books-page a.btn[href*="amazon.com"]:focus,
+#books-app a.btn[href*="amazon.com"],
+#books-app a.btn[href*="amazon.com"]:visited,
+#books-app a.btn[href*="amazon.com"]:hover,
+#books-app a.btn[href*="amazon.com"]:focus {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important; /* iOS Safari */
+  text-decoration: none !important;
+}
