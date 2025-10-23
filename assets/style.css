@@ -2220,3 +2220,49 @@ main, .content, .page, .container {
 :root{--site-bg:#2563eb;}
 html,body{background:var(--site-bg)!important;background-color:var(--site-bg)!important;}
 main,.content,.page,.container,section,article{background:transparent!important;background-color:transparent!important;}
+
+/* ==== FIX: Make Newsletter match Bio background ==== */
+:root { --site-bg: #0e1424; }
+
+/* Force the page background */
+html, body {
+  background: var(--site-bg) !important;
+  background-color: var(--site-bg) !important;
+}
+
+/* Kill common white wrappers that can cover the page BG */
+body .site,
+body .site-wrap,
+body .site-container,
+body .wrapper,
+body .wrapper-inner,
+body .page-wrap,
+body .page,
+body #page,
+body .content,
+body .content-wrap,
+body .content-area,
+body #content,
+body .container,
+body .container-fluid,
+body .main,
+body .main-content,
+body #main,
+body main,
+body section[role="main"] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Extra insurance just for the newsletter page elements often used by form providers */
+body .newsletter,
+body .newsletter-page,
+body .subscribe,
+body .subscribe-wrap,
+body .form-wrap,
+body form,
+body .form-container,
+body .form-section {
+  background: transparent !important;
+  background-color: transparent !important;
+}
