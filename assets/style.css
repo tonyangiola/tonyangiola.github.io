@@ -2208,27 +2208,3 @@ body.home-page html {
   background: #f6f7fb !important;
   background-color: #f6f7fb !important;
 }
-
-/* === Home page: match BIO background (scoped) === */
-body.home-page {
-  background: #f6f7fb !important;     /* same as BIO */
-  background-image: none !important;
-  min-height: 100vh;                   /* cover full viewport */
-}
-
-/* On home page only, don't let wrappers paint over the bg */
-body.home-page main,
-body.home-page section,
-body.home-page article,
-body.home-page .hero,
-body.home-page .banner,
-body.home-page .masthead,
-body.home-page .page-header,
-body.home-page .wrapper,
-body.home-page .content,
-body.home-page .stack {
-  background: transparent !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  border: 0 !important;
-}
