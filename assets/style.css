@@ -2023,3 +2023,12 @@ main.container section.stack {
   box-shadow: none !important;
   padding: 1.5rem 1rem;
 }
+
+/* Optional: soft card style for newsletter box */
+main.container section.stack {
+  background: rgba(255,255,255,0.9);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 2rem 1.5rem;
+  margin-top: 1.5rem;
+}
