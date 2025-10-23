@@ -2111,3 +2111,41 @@ body.newsletter-page main :where(.wrapper,.panel,.content,.stack){
   background-color: transparent !important;
   box-shadow: none !important;
 }
+
+/* ===== Newsletter MUST match Bio background (no dark hero anywhere) ===== */
+body.newsletter-page {
+  background: #f6f7fb !important;   /* same light bg as Bio */
+  background-image: none !important;
+}
+
+/* Nuke backgrounds on layout wrappers only (do NOT affect inputs/buttons) */
+body.newsletter-page main,
+body.newsletter-page header + *,
+body.newsletter-page :where(section,article,div,aside,nav,footer,.hero,.banner,.masthead,.page-header,.wrapper,.content,.stack) {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Kill any decorative pseudo elements used by hero/banners */
+body.newsletter-page main::before,
+body.newsletter-page main::after,
+body.newsletter-page .hero::before,
+body.newsletter-page .hero::after,
+body.newsletter-page .banner::before,
+body.newsletter-page .banner::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Ensure the dark block isn't a 100vh hero leftover */
+body.newsletter-page .hero,
+body.newsletter-page .banner,
+body.newsletter-page .masthead,
+body.newsletter-page .page-header {
+  min-height: auto !important;
+  height: auto !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
