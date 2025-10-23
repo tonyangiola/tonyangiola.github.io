@@ -1998,7 +1998,7 @@ section, article, .books-grid, .book-card, .card {
 @media (min-width: 768px) { .books-grid { margin-top: 64px !important; } }
 /* === Nav readability + soft page background (tiny override) === */
 :root{ --bg-soft:#f5f7fb; }
-html,body{ background: var(--bg-soft) !important; }
+html,body{ background: #f4f5f7; }
 
 /* ensure nav text is visible on the dark bar */
 header, .site-header, nav { filter:none !important; mix-blend-mode:normal !important; }
