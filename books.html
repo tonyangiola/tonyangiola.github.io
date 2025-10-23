@@ -3,6 +3,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Books</title>
 <link rel="stylesheet" href="/assets/style.css">
+<style id="books-final">
+/* === Page-local, wins-over-everything layout & sizing === */
+body.books-page header + main.container{ margin-top:-.35rem !important; }
+.books-grid{
+  display:grid !important;
+  grid-template-columns: 1.1fr 1fr !important;
+  grid-template-areas: \
+    "snippy snippy" \
+    "socorro gremlins" \
+    "cosmic cosmic" !important;
+  gap:1.1rem !important;
+}
+#snippy-card{ grid-area: snippy !important; }
+#socorro-card{ grid-area: socorro !important; }
+#gremlins-card{ grid-area: gremlins !important; }
+#cosmic-card{ grid-area: cosmic !important; }
+.book-card{
+  display:grid !important; grid-template-columns: 260px 1fr !important;
+  align-items:start !important; gap:1rem !important;
+  background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:.75rem; padding:.9rem;
+}
+.book-card .media-box{ width:100% !important; max-width:360px !important; overflow:visible !important; }
+#snippy-card .media-box{ max-width:640px !important; }
+.book-card video{ display:block !important; width:100% !important; height:auto !important; border-radius:.5rem; background:#111 !important; }
+#snippy-card .media-box video{ aspect-ratio:16/9 !important; }
+#socorro-card .media-box video, #gremlins-card .media-box video{ aspect-ratio:3/4 !important; }
+@media (max-width:900px){
+  .books-grid{ grid-template-columns:1fr !important;
+               grid-template-areas: \
+                "snippy" "socorro" "gremlins" "cosmic" !important; }
+  .book-card{ grid-template-columns:1fr !important; }
+  #snippy-card .media-box{ max-width:100% !important; }
+}
+</style>
 <style id="books-hotfix">
 /* === Books page hard layout hotfix (wins over legacy CSS) === */
 body.books-page .book-card{
