@@ -2074,3 +2074,9 @@ body.newsletter-page main.container {
 main .stack { background: transparent !important; box-shadow: none !important; border: 0 !important; }
 /* If Bio uses a body class, reassert the same bg for safety */
 
+/* === Newsletter: kill the white panel on its stack section === */
+.stack.transparent{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
