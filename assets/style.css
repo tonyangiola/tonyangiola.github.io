@@ -1248,3 +1248,97 @@ a.btn-amazon:hover { background:#1e4fd3; }
     max-width: 700px;
   }
 }
+
+/* ========== Books page reset (fresh) ========== */
+
+/* Get the content closer to the nav */
+main.container {
+  margin-top: .35rem;   /* was too big; tighten */
+}
+
+/* Grid wrapper for book cards */
+.books-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* Two cols on wider screens; snippy can span */
+@media (min-width: 900px) {
+  .books-grid { grid-template-columns: 1.1fr 1fr; }
+  .book-card.wide { grid-column: 1 / span 2; }
+}
+
+/* Card */
+.book-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1rem;
+  align-items: start;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: .75rem;
+  padding: .9rem;
+  background: #fff;
+}
+
+/* Stack on narrow widths */
+@media (max-width: 720px) {
+  .book-card { grid-template-columns: 1fr; }
+}
+
+/* Media box (image or video) */
+.book-card .media-box {
+  width: 100%;
+  max-width: 360px;
+}
+.book-card .media-box img,
+.book-card .media-box video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: .5rem;
+}
+
+/* Make Snippy feel wider without being huge */
+.book-card.wide .media-box {
+  max-width: 640px;   /* bigger than others */
+}
+
+/* Title + buttons column */
+.book-card .meta {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+/* Buttons: bring back solid blue */
+.btn { 
+  display:inline-block; 
+  padding:.5rem .8rem; 
+  border-radius:.5rem; 
+  font-weight:600; 
+  text-decoration:none !important; 
+  border:1px solid transparent;
+}
+.btn-blue { 
+  background:#2563eb; 
+  color:#fff; 
+}
+.btn-blue:hover { background:#1e4fd3; }
+.btn-ghost { 
+  background:#f3f4f6; 
+  color:#111827; 
+  border-color:rgba(0,0,0,.08);
+}
+.btn-ghost:hover { background:#e5e7eb; }
+
+/* Space buttons together nicely */
+.btn-row { display:flex; gap:.4rem; flex-wrap:wrap; }
+
+/* Small, subtle overlines for series notes */
+.meta .kicker { font-size:.8rem; opacity:.8; margin-top:.15rem; }
+
+/* Keep links in cards from underlining on hover */
+.book-card a { text-decoration:none; }
+.book-card a:hover { text-decoration:none; }
+
