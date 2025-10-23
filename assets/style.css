@@ -2018,34 +2018,34 @@ header nav a:first-child strong {  /* brand */
 /* Covers the lower portion regardless of exact text height */
   pointer-events: none;
 }
-/* ==== GREMLINS: universal mask for baked-in subtitle ==== */
-/* Catch the card by id or any article whose id contains 'gremlins' */
-#gremlins-card,
-article[id*="gremlins"] {
+/* ==== gremlins mask (filename-based, robust) ==== */
+/* Find the card/section that CONTAINS an img/video referencing gremlin(s) */
+article:has(img[src*="gremlin"]),
+article:has(img[src*="Gremlin"]),
+article:has(img[src*="gremlins"]),
+article:has(img[src*="Gremlins"]),
+article:has(video[poster*="gremlin"]),
+article:has(video[poster*="Gremlin"]),
+article:has(video[poster*="gremlins"]),
+article:has(video[poster*="Gremlins"]) {
   position: relative;
   overflow: hidden;
 }
 
-/* Put media beneath, ensure overlay sits above it */
-#gremlins-card .media,
-article[id*="gremlins"] .media,
-#gremlins-card img,
-article[id*="gremlins"] img,
-#gremlins-card video,
-article[id*="gremlins"] video {
-  position: relative;
-  z-index: 1;
-  display: block;
-}
-
-/* The actual mask: covers lower portion regardless of where the text sits */
-#gremlins-card::after,
-article[id*="gremlins"]::after {
+/* Overlay that hides the baked-in subtitle in the lower area */
+article:has(img[src*="gremlin"])::after,
+article:has(img[src*="Gremlin"])::after,
+article:has(img[src*="gremlins"])::after,
+article:has(img[src*="Gremlins"])::after,
+article:has(video[poster*="gremlin"])::after,
+article:has(video[poster*="Gremlin"])::after,
+article:has(video[poster*="gremlins"])::after,
+article:has(video[poster*="Gremlins"])::after {
   content: "";
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  height: 55%;                 /* if any hint remains, bump to 60–65% */
-  z-index: 3;                   /* above media, below card text/buttons */
+  height: 60%;                 /* if any text shows, bump to 65–70% */
+  z-index: 3;
   pointer-events: none;
   background: linear-gradient(
     to top,
@@ -2056,11 +2056,15 @@ article[id*="gremlins"]::after {
   );
 }
 
-/* Keep card text/buttons above the mask */
-#gremlins-card .content,
-article[id*="gremlins"] .content,
-#gremlins-card .card-body,
-article[id*="gremlins"] .card-body {
+/* Ensure card text/buttons sit above the overlay */
+article:has(img[src*="gremlin"]) .content,
+article:has(img[src*="Gremlin"]) .content,
+article:has(img[src*="gremlins"]) .content,
+article:has(img[src*="Gremlins"]) .content,
+article:has(video[poster*="gremlin"]) .content,
+article:has(video[poster*="Gremlin"]) .content,
+article:has(video[poster*="gremlins"]) .content,
+article:has(video[poster*="Gremlins"]) .content {
   position: relative;
   z-index: 4;
 }
