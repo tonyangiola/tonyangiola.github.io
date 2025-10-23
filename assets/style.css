@@ -1,4 +1,6 @@
 :root { --max: 880px; --pad: 16px; }
+  --page-bg: color-mix(in srgb, var(--nav-bg) 80%, white 20%);
+  --nav-bg: #fff;
 * { box-sizing: border-box; }
 html, body { margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.6; }
 a { text-decoration: none; }
@@ -124,6 +126,8 @@ main { position: relative; z-index: 0; }
 
 /* 1) Page background: soft paper w/ subtle radial glow */
 :root{
+  --page-bg: color-mix(in srgb, var(--nav-bg) 80%, white 20%);
+  --nav-bg: #fff;
   --bg: #f8fafc;            /* paper */
   --text: #0f172a;          /* slate-900 */
   --muted: #475569;         /* slate-600 */
@@ -1421,8 +1425,8 @@ body.books-page .book-card .meta      { position: relative; z-index: 1; }
 
 /* Buttons stay solid blue here too */
 body.books-page .btn        { text-decoration: none !important; border:1px solid transparent; }
-body.books-page .btn-blue   { background:#2563eb; color:#fff; }
-body.books-page .btn-blue:hover { background:#1e4fd3; }
+//body.books-page .btn-blue   { background:#2563eb; color:#fff; }
+//body.books-page .btn-blue:hover { background:#1e4fd3; }
 
 /* === Books page: safe spacing & visibility (final overrides) === */
 body.books-page header { margin-bottom: .15rem !important; }
@@ -1449,10 +1453,10 @@ body.books-page .book-card .media-box video{ display:block !important; visibilit
 
 /* Buttons: blue + ghost */
 body.books-page .btn{ display:inline-block; padding:.5rem .8rem; border-radius:.5rem; font-weight:600; text-decoration:none!important; border:1px solid transparent; }
-body.books-page .btn-blue{ background:#2563eb; color:#fff; }
-body.books-page .btn-blue:hover{ background:#1e4fd3; }
-body.books-page .btn-ghost{ background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
-body.books-page .btn-ghost:hover{ background:#e5e7eb; }
+//body.books-page .btn-blue{ background:#2563eb; color:#fff; }
+//body.books-page .btn-blue:hover{ background:#1e4fd3; }
+//body.books-page .btn-ghost{ background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
+//body.books-page .btn-ghost:hover{ background:#e5e7eb; }
 body.books-page .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }
 
 /* ==== Books page: guaranteed visible media + tighter spacing ==== */
@@ -1460,19 +1464,19 @@ body.books-page header .container { padding-top:.2rem !important; padding-bottom
 body.books-page main.container    { margin-top:0 !important; padding-top:.15rem !important; }
 
 /* Snippy: wide 16:9 box; others: 3:4 portrait-ish */
-body.books-page #snippy-card   .media-box video { aspect-ratio:16/9; background:#111 !important; display:block !important; width:100% !important; height:auto !important; }
+//body.books-page #snippy-card   .media-box video { aspect-ratio:16/9; background:#111 !important; display:block !important; width:100% !important; height:auto !important; }
 body.books-page #socorro-card  .media-box video,
-body.books-page #gremlins-card .media-box video { aspect-ratio:3/4;  background:#111 !important; display:block !important; width:100% !important; height:auto !important; }
+//body.books-page #gremlins-card .media-box video { aspect-ratio:3/4;  background:#111 !important; display:block !important; width:100% !important; height:auto !important; }
 
 /* Make sure image-only Cosmic card is sized nicely */
 body.books-page #cosmic-card .media { display:block; width:100%; max-width:360px; border-radius:.5rem; }
 
 /* Keep blue buttons consistent */
 body.books-page .btn{ display:inline-block; padding:.5rem .8rem; border-radius:.5rem; font-weight:600; text-decoration:none!important; border:1px solid transparent; }
-body.books-page .btn-blue{ background:#2563eb; color:#fff; }
-body.books-page .btn-blue:hover{ background:#1e4fd3; }
-body.books-page .btn-ghost{ background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
-body.books-page .btn-ghost:hover{ background:#e5e7eb; }
+//body.books-page .btn-blue{ background:#2563eb; color:#fff; }
+//body.books-page .btn-blue:hover{ background:#1e4fd3; }
+//body.books-page .btn-ghost{ background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
+//body.books-page .btn-ghost:hover{ background:#e5e7eb; }
 body.books-page .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }
 
 /* ==== Kill legacy rule that hides videos on Books ==== */
@@ -1482,9 +1486,9 @@ body.books-page .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }
 body.books-page .book-card .media-box{overflow:visible!important}
 
 /* Books page: guarantee visible video boxes */
-body.books-page #snippy-card   .media-box video{ display:block!important; width:100%!important; height:auto!important; aspect-ratio:16/9; background:#111!important; }
+//body.books-page #snippy-card   .media-box video{ display:block!important; width:100%!important; height:auto!important; aspect-ratio:16/9; background:#111!important; }
 body.books-page #socorro-card  .media-box video,
-body.books-page #gremlins-card .media-box video{ display:block!important; width:100%!important; height:auto!important; aspect-ratio:3/4;  background:#111!important; }
+//body.books-page #gremlins-card .media-box video{ display:block!important; width:100%!important; height:auto!important; aspect-ratio:3/4;  background:#111!important; }
 
 /* Keep the media column from collapsing even if video paints late */
 body.books-page #snippy-card  .media-box{ min-height:260px!important; }
@@ -1685,7 +1689,7 @@ body.books-page header + main.container{ margin-top:-.35rem !important; }
 
 /* === Amazon Button Style (Books page) === */
 .btn.btn-blue {
-  background-color: #2563eb !important;   /* bright blue */
+  /* background-color: #2563eb !important; */   /* bright blue */
   color: #fff !important;
   border: 1px solid rgba(0,0,0,.06);
   border-radius: .5rem;
@@ -1770,7 +1774,7 @@ body.books-page .book-card {
 }
 
 /* buttons unchanged; ensure ghost button stays visible on dark page */
-body.books-page .btn-ghost { background:#f3f4f6; color:#111827; }
+//body.books-page .btn-ghost { background:#f3f4f6; color:#111827; }
 
 /* === Books page: hard dark background (scoped, high-specificity) === */
 body.books-page,
@@ -1780,7 +1784,7 @@ body.books-page #books-app {
 }
 
 /* keep header looking good on dark bg */
-body.books-page header { background: transparent !important; border-color: rgba(255,255,255,0.08) !important; }
+//body.books-page header { /* background: transparent !important; */ border-color: rgba(255,255,255,0.08) !important; }
 body.books-page header a { color: inherit !important; }
 
 /* cards remain white and pop on dark */
@@ -1816,7 +1820,7 @@ body.books-page .container,
 
 /* Header rides on the dark bg */
 body.home-page header,
-body.books-page header { background: transparent !important; border-color: rgba(255,255,255,0.08) !important; }
+//body.books-page header { /* background: transparent !important; */ border-color: rgba(255,255,255,0.08) !important; }
 body.home-page header a,
 body.books-page header a { color: inherit !important; }
 
@@ -1826,3 +1830,17 @@ body.books-page .book-card {
   background: #ffffff !important;
   box-shadow: 0 8px 22px rgba(0,0,0,.22) !important;
 }
+
+/* === Unified nav & background === */
+body {
+  background-color: var(--page-bg) !important;
+}
+
+header, .site-header, header nav, .site-header nav {
+  background-color: var(--nav-bg) !important;
+}
+
+/* If your nav text needs contrast, uncomment:
+header nav a, .site-header nav a { color: #fff; }
+header nav a:hover, .site-header nav a:hover { opacity: .85; }
+*/
