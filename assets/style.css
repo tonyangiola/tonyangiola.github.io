@@ -1550,3 +1550,60 @@ body.books-page .book-card video {
 
 /* Books page: media column must be visible */
 body.books-page .book-card .media-box{overflow:visible!important}
+
+/* ===== BOOKS PAGE RESCUE (last-wins) ===== */
+body.books-page .books-grid{
+  display:grid !important;
+  grid-template-columns: 1.1fr 1fr !important;
+  grid-template-areas:
+    "snippy snippy"
+    "socorro gremlins"
+    "cosmic cosmic" !important;
+  gap:1.1rem !important;
+}
+body.books-page #snippy-card   { grid-area: snippy   !important; }
+body.books-page #socorro-card  { grid-area: socorro  !important; }
+body.books-page #gremlins-card { grid-area: gremlins !important; }
+body.books-page #cosmic-card   { grid-area: cosmic   !important; }
+
+body.books-page .book-card{
+  display:grid !important;
+  grid-template-columns: 260px 1fr !important;
+  align-items:start !important;
+  gap:1rem !important;
+}
+
+/* Only the first <video> per card should render; hide strays */
+body.books-page .book-card video:not(:first-of-type){ display:none !important; }
+
+/* Put media in the left column, no floats/abs positioning allowed */
+body.books-page .book-card .media-box{
+  grid-column:1 !important;
+  width:100% !important; max-width:360px !important;
+  margin:0 !important; overflow:visible !important;
+  position:static !important; float:none !important; clear:none !important;
+}
+body.books-page #snippy-card .media-box{ max-width:640px !important; }
+
+/* Video sizing + aspect */
+body.books-page .book-card .media-box video{
+  display:block !important; width:100% !important; height:auto !important;
+  background:#111 !important; border-radius:.5rem;
+  position:static !important; float:none !important; clear:none !important;
+}
+body.books-page #snippy-card   .media-box video{ aspect-ratio:16/9 !important; }
+body.books-page #socorro-card  .media-box video,
+body.books-page #gremlins-card .media-box video{ aspect-ratio:3/4 !important; }
+
+/* On small screens: stack cards cleanly */
+@media (max-width:900px){
+  body.books-page .books-grid{
+    grid-template-columns:1fr !important;
+    grid-template-areas:
+      "snippy" "socorro" "gremlins" "cosmic" !important;
+  }
+  body.books-page .book-card{ grid-template-columns:1fr !important; }
+  body.books-page #snippy-card .media-box{ max-width:100% !important; }
+}
+/* Pull content a touch closer to the nav */
+body.books-page header + main.container{ margin-top:-.35rem !important; }
