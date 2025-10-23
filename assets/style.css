@@ -2266,3 +2266,35 @@ body .form-section {
   background: transparent !important;
   background-color: transparent !important;
 }
+/* ==== Contact page: readable light text on dark background (scoped) ==== */
+.contact-content h1,
+.contact-content p { color: #fff; }
+
+.contact-form label { color: #fff; font-weight: 600; }
+
+.contact-form input,
+.contact-form textarea {
+  color: #fff;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: .5rem;
+  padding: .6rem .75rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255,255,255,.75);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(255,255,255,.45);
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(37,99,235,.35);
+}
+
+.contact-form .btn-primary {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+}
