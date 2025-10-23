@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
-<link rel="stylesheet" href="https://tonyangiola.github.io/assets/style.css?ver=20251023">
-<style>
+<link rel="stylesheet" href="/assets/style.css">
+<style id="bg-hotfix-home">
   /* FORCE dark page background (beats legacy rules) */
   html, body { background:#0B0F1A !important; }
   body.home-page { background:#0B0F1A !important; color:#e5e7eb; }
@@ -15,34 +15,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tony Angiola — Author</title>
-<link rel="stylesheet" href="https://tonyangiola.github.io/assets/style.css?ver=20251023">
+<link rel="stylesheet" href="/assets/style.css?v=1761013300">
 <!-- deploy-marker: init -->
 
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
-  
-
-<style id="bg-enforce-20251023">
-:root{
-  --page-bg:#f4f5f7 !important;   /* LIGHTER PAGE BACKGROUND */
-  --nav-bg:#111827 !important;     /* DARK NAV (Books tone)  */
-  --nav-text:#ffffff !important;   /* White nav text         */
-}
-html,body{background:var(--page-bg) !important; background-color:var(--page-bg) !important;}
-header, .site-header, .navbar, header[role="banner"]{
-  background:var(--nav-bg) !important; color:var(--nav-text) !important;
-  box-shadow:0 1px 6px rgba(0,0,0,.25);
-}
-header a, .site-header a, .navbar a{ color:var(--nav-text) !important; text-decoration:none !important; }
-main,.main,.wrapper,.container,.page,.content,section,article{
-  background:transparent !important; background-image:none !important; box-shadow:none !important; border:0 !important;
-}
-main,.main{ padding-top:1rem !important; }
-</style>
-
-
+<script id="bg-hotfix-script">
+  try{
+    document.documentElement.style.setProperty("background","#0B0F1A","important");
+    document.body && document.body.setAttribute("style","background:#0B0F1A !important;");
+  }catch(e){}
+</script>
+  <link rel="stylesheet" href="/assets/override.css?cb=20251022211156">
 </head>
-<body style="background:#f4f5f7 !important;">
+<body class="home-page home-page">
   <header>
   <div class="container">
     <nav>
@@ -93,5 +79,3 @@ main,.main{ padding-top:1rem !important; }
   </footer>
   
 </body>
-
-<!-- deploy-marker 20251023-000917 -->
