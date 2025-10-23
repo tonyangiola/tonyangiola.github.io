@@ -1682,3 +1682,18 @@ body.books-page #cosmic-card{ grid-area:cosmic !important; }
 
 /* Pull content a touch closer to the nav */
 body.books-page header + main.container{ margin-top:-.35rem !important; }
+
+/* === Amazon Button Style (Books page) === */
+.btn.btn-blue {
+  background-color: #2563eb !important;   /* bright blue */
+  color: #fff !important;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: .5rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background-color .15s ease, color .15s ease, transform .08s ease;
+}
+.btn.btn-blue:hover {
+  background-color: #1e4fd3 !important;
+  transform: scale(1.02);
+}
