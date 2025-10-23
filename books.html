@@ -3,6 +3,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Books</title>
 <link rel="stylesheet" href="/assets/style.css">
+<style>
+/* ==== Books (page-only) inline overrides ==== */
+body.books-page header .container { padding-top:.2rem; padding-bottom:.25rem; }
+body.books-page main.container { margin-top:0; padding-top:.15rem; }
+
+/* Layout */
+body.books-page .books-grid{ display:grid; grid-template-columns:1fr; gap:1.1rem; }
+@media (min-width:900px){
+  body.books-page .books-grid{ grid-template-columns:1.1fr 1fr; }
+  body.books-page .book-card.wide{ grid-column:1 / span 2; }
+}
+body.books-page .book-card{
+  display:grid; grid-template-columns:260px 1fr; gap:1rem; align-items:start;
+  border:1px solid rgba(0,0,0,.06); border-radius:.75rem; padding:.9rem; background:#fff;
+}
+@media (max-width:720px){ body.books-page .book-card{ grid-template-columns:1fr; } }
+
+/* GUARANTEE visible video frames immediately */
+body.books-page #snippy-card   .media-box video{ display:block!important; width:100%!important; height:auto!important; aspect-ratio:16/9; background:#111!important; }
+body.books-page #socorro-card  .media-box video,
+body.books-page #gremlins-card .media-box video{ display:block!important; width:100%!important; height:auto!important; aspect-ratio:3/4;  background:#111!important; }
+
+/* Buttons shouldn’t wrap */
+body.books-page .btn{ white-space:nowrap; }
+</style>
 <!-- deploy-marker: books-inline-header -->
 
 <body class="books-page">
