@@ -1393,3 +1393,33 @@ header + main.container { margin-top: -0.65rem !important; } /* pull up tight */
 .btn-ghost { background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
 .btn-ghost:hover { background:#e5e7eb; }
 .btn-row { display:flex; gap:.4rem; flex-wrap:wrap; }
+
+/* ===== FINAL OVERRIDES: Books page tighten + video visibility ===== */
+body.books-page header,
+body.books-page header * { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+
+body.books-page header + main.container,
+body.books-page main.container {
+  /* yank page content up tight under nav; adjust to taste */
+  margin-top: -1.1rem !important;
+  padding-top: 0 !important;
+}
+
+/* In case any earlier rule hid/inline'd videos */
+body.books-page .book-card .media-box video {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 120px !important; /* prevents zero-height from bad calc */
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Prevent accidental overlays covering video */
+body.books-page .book-card .media-box { position: relative; z-index: 0; }
+body.books-page .book-card .meta      { position: relative; z-index: 1; }
+
+/* Buttons stay solid blue here too */
+body.books-page .btn        { text-decoration: none !important; border:1px solid transparent; }
+body.books-page .btn-blue   { background:#2563eb; color:#fff; }
+body.books-page .btn-blue:hover { background:#1e4fd3; }
