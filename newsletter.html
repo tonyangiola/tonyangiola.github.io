@@ -1,110 +1,41 @@
 <!doctype html>
-<head>
-<html lang="en" data-page="bio">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Tony Angiola — Bio</title>
-  <link rel="stylesheet" href="/assets/style.css">
-
-  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
-  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
-<style id="bg-nav-hotfix">
-:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
-html,body{background:var(--bg) !important;color:var(--text) !important;}
-/* keep nav dark & readable */
-header,.site-header,nav,header .container{background:var(--nav-bg) !important;}
-header nav a,.site-header nav a,header a{color:#e5e7eb !important;text-decoration:none !important;}
-header nav a:hover,header a:hover,header nav a[aria-current="page"]{color:#fff !important;font-weight:600;}
-header,header *{mix-blend-mode:normal !important;filter:none !important;opacity:1 !important;}
-/* content contrast + spacing */
-body p,li,span,.content p{color:var(--muted) !important;}
-h1,h2,h3,h4{color:var(--text) !important;}
-a{color:var(--link) !important;}
-a:hover{text-decoration:underline !important;}
-main,main.container{padding-top:1.25rem !important;}
-/* never repaint page white */
-main,.container,.content,.page,.wrapper,section,article{background:transparent !important;}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter — Tony Angiola</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/style.css">
+<!-- Hard, page-scoped overrides so this page matches BIO no matter what -->
+<style id="nl-bg-fix">
+  /* Make this page use the same light background as BIO edge-to-edge */
+  body.newsletter-page, html { background:#f6f7fb !important; }
+  /* Nuke any hero/banner/wrapper backgrounds just on this page */
+  body.newsletter-page main,
+  body.newsletter-page header,
+  body.newsletter-page .hero,
+  body.newsletter-page .banner,
+  body.newsletter-page .masthead,
+  body.newsletter-page .page-header,
+  body.newsletter-page section,
+  body.newsletter-page article,
+  body.newsletter-page .wrapper,
+  body.newsletter-page .content,
+  body.newsletter-page .stack {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+  /* Keep nav readable; don't collapse spacing */
+  body.newsletter-page header nav { background: inherit; }
+  body.newsletter-page header { padding-bottom: 0 !important; margin-bottom: 0 !important; }
 </style>
-  
-<style id="final-site-colors">
-:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
-html,body{background:var(--bg)!important;color:var(--text)!important;}
-/* NAV must be dark, links bright */
-header,.site-header,nav,header .container{background:var(--nav-bg)!important;}
-header a,.site-header a,header nav a{color:#e5e7eb!important;text-decoration:none!important;}
-header a:hover,header nav a:hover,header nav a[aria-current="page"]{color:#fff!important;font-weight:600;}
-/* Kill any dimming/invert on header */
-header,header *{filter:none!important;mix-blend-mode:normal!important;opacity:1!important;}
-/* Content contrast */
-p,li,span,.content p{color:var(--muted)!important;}
-h1,h2,h3,h4{color:var(--text)!important;}
-a{color:var(--link)!important;}
-a:hover{text-decoration:underline!important;}
-/* Make wrappers transparent so the light bg shows */
-main,.container,.content,.page,.wrapper,section,article{background:transparent!important;}
-/* Space below nav */
-main,main.container{padding-top:1.25rem!important;}
-</style>
-  
-  
-</head>
-<style id="bg-nav-hotfix">
-:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
-html,body{background:var(--bg) !important;color:var(--text) !important;}
-/* keep nav dark & readable */
-header,.site-header,nav,header .container{background:var(--nav-bg) !important;}
-header nav a,.site-header nav a,header a{color:#e5e7eb !important;text-decoration:none !important;}
-header nav a:hover,header a:hover,header nav a[aria-current="page"]{color:#fff !important;font-weight:600;}
-header,header *{mix-blend-mode:normal !important;filter:none !important;opacity:1 !important;}
-/* content contrast + spacing */
-body p,li,span,.content p{color:var(--muted) !important;}
-h1,h2,h3,h4{color:var(--text) !important;}
-a{color:var(--link) !important;}
-a:hover{text-decoration:underline !important;}
-main,main.container{padding-top:1.25rem !important;}
-/* never repaint page white */
-main,.container,.content,.page,.wrapper,section,article{background:transparent !important;}
-</style>
-<style id="final-site-colors">
-:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
-html,body{background:var(--bg)!important;color:var(--text)!important;}
-/* NAV must be dark, links bright */
-header,.site-header,nav,header .container{background:var(--nav-bg)!important;}
-header a,.site-header a,header nav a{color:#e5e7eb!important;text-decoration:none!important;}
-header a:hover,header nav a:hover,header nav a[aria-current="page"]{color:#fff!important;font-weight:600;}
-/* Kill any dimming/invert on header */
-header,header *{filter:none!important;mix-blend-mode:normal!important;opacity:1!important;}
-/* Content contrast */
-p,li,span,.content p{color:var(--muted)!important;}
-h1,h2,h3,h4{color:var(--text)!important;}
-a{color:var(--link)!important;}
-a:hover{text-decoration:underline!important;}
-/* Make wrappers transparent so the light bg shows */
-main,.container,.content,.page,.wrapper,section,article{background:transparent!important;}
-/* Space below nav */
-main,main.container{padding-top:1.25rem!important;}
-</style>
-  
-  
-</head>
 <body class="newsletter-page">
-  <header>
-  <header>
-    <div class="container">
-      <nav>
-        <a href="/"><strong>Tony Angiola</strong></a>
-        <a href="/books.html">Books</a>
-        <a href="/bio.html">Bio</a>
-        <a href="/newsletter.html">Newsletter</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Use the same header include as BIO -->
+  <!--#include virtual="/assets/header.html" -->
 
-  
   <main class="container">
-    <section class="stack transparent" style="margin-top:1.25rem">
+    <section class="stack" style="margin-top:1.25rem">
       <h1>Newsletter</h1>
       <p>Get updates on new investigations, videos, and book progress.</p>
 
@@ -117,10 +48,4 @@ main,main.container{padding-top:1.25rem!important;}
       <p style="opacity:.8;font-size:.95rem">We’ll only email when there’s something worth reading.</p>
     </section>
   </main>
-
-  <footer class="container" style="padding:2rem 0;"></footer>
-  
 </body>
-</html>
-
-<!-- deploy-marker: 2025-10-21-0144pm -->
