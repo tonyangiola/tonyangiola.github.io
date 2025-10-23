@@ -44,7 +44,36 @@ body.books-page .btn{ white-space:nowrap; }
         <a href="/contact.html">Contact</a>
       </nav>
     </div>
-  </header>
+</header>
+
+  <style id="books-hotfix">
+  /* === Books page hard layout hotfix (wins over legacy CSS) === */
+  body.books-page .book-card{
+    display:grid !important;
+    grid-template-columns:260px 1fr !important;
+    gap:1rem !important;
+    align-items:start !important;
+    justify-items:start !important;
+  }
+  body.books-page .book-card .media-box{
+    display:block !important;
+    justify-self:start !important;
+    align-self:start !important;
+    margin:0 !important;
+    width:100% !important;
+    max-width:360px !important;
+    overflow:visible !important;
+  }
+  body.books-page #snippy-card.wide{ grid-column:1 / span 2 !important; }
+  body.books-page #snippy-card .media-box{ max-width:640px !important; }
+  body.books-page .book-card .media-box video{
+    display:block !important; width:100% !important; height:auto !important;
+    border-radius:.5rem; background:#111 !important;
+  }
+  @media (max-width:720px){
+    body.books-page .book-card{ grid-template-columns:1fr !important; }
+  }
+  </style>
 
   <main class="container">
     <div class="books-grid">
