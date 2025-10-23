@@ -42,3 +42,9 @@
 
 /* If the hero section had its own dark background, make it transparent so page BG shows */
 .hero { background: transparent !important; }
+
+/* Brighter hero paragraph copy */
+.hero p {
+  color: #ffffff !important;     /* pure white for max contrast */
+  font-weight: 500 !important;   /* a touch bolder for clarity */
+}
