@@ -5,31 +5,6 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/assets/style.css">
 <!-- Hard, page-scoped overrides so this page matches BIO no matter what -->
-<style id="nl-bg-fix">
-  /* Make this page use the same light background as BIO edge-to-edge */
-  body.newsletter-page, html { background:#f6f7fb !important; }
-  /* Nuke any hero/banner/wrapper backgrounds just on this page */
-  body.newsletter-page main,
-  body.newsletter-page header,
-  body.newsletter-page .hero,
-  body.newsletter-page .banner,
-  body.newsletter-page .masthead,
-  body.newsletter-page .page-header,
-  body.newsletter-page section,
-  body.newsletter-page article,
-  body.newsletter-page .wrapper,
-  body.newsletter-page .content,
-  body.newsletter-page .stack {
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    box-shadow: none !important;
-    border: 0 !important;
-  }
-  /* Keep nav readable; don't collapse spacing */
-  body.newsletter-page header nav { background: inherit; }
-  body.newsletter-page header { padding-bottom: 0 !important; margin-bottom: 0 !important; }
-</style>
 <body class="newsletter-page">
   <!-- Use the same header include as BIO -->
   <!--#include virtual="/assets/header.html" -->

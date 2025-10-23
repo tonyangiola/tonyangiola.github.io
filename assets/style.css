@@ -2149,3 +2149,10 @@ body.newsletter-page .page-header {
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
+
+/* === Sitewide page background (match BIO everywhere) === */
+:root { --site-bg: #f6f7fb; }        /* light gray used on BIO */
+html, body {
+  background: var(--site-bg) !important;
+  background-color: var(--site-bg) !important;
+}
