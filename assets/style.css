@@ -1480,3 +1480,13 @@ body.books-page .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }
 
 /* Books page: never clip the media column */
 body.books-page .book-card .media-box{overflow:visible!important}
+
+/* Books page: guarantee visible video boxes */
+body.books-page #snippy-card   .media-box video{ display:block!important; width:100%!important; height:auto!important; aspect-ratio:16/9; background:#111!important; }
+body.books-page #socorro-card  .media-box video,
+body.books-page #gremlins-card .media-box video{ display:block!important; width:100%!important; height:auto!important; aspect-ratio:3/4;  background:#111!important; }
+
+/* Keep the media column from collapsing even if video paints late */
+body.books-page #snippy-card  .media-box{ min-height:260px!important; }
+body.books-page #socorro-card .media-box,
+body.books-page #gremlins-card .media-box{ min-height:320px!important; }
