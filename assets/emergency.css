@@ -1,0 +1,44 @@
+:root{
+  --nav-bg:#0f172a;    /* dark nav */
+  --page:#f3f4f6;      /* light page background */
+  --card:#ffffff;      /* white cards */
+  --text:#111827;      /* headings */
+  --muted:#374151;     /* body copy */
+  --link:#2563eb;      /* link blue */
+}
+
+/* Page canvas */
+html,body { background: var(--page) !important; color: var(--text) !important; }
+
+/* Never repaint the canvas dark */
+main, section, article, .container, .content, .page, .wrapper { background: transparent !important; }
+
+/* Cards/panels/boxes must be WHITE, not dark */
+.card, .panel, .box, .media-box, .book-card, .grid .card {
+  background: var(--card) !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06) !important;
+}
+
+/* Hero section should not paint dark */
+.hero, .hero * { background: transparent !important; filter: none !important; mix-blend-mode: normal !important; }
+
+/* Nav: dark bar + bright readable links/brand */
+header, .site-header, nav, header .container { background: var(--nav-bg) !important; }
+header a, header a *, .site-header a, .site-header a * { 
+  color: #e5e7eb !important; text-decoration: none !important; opacity: 1 !important; 
+  filter: none !important; mix-blend-mode: normal !important;
+}
+header a:hover, header nav a:hover, header nav a[aria-current="page"] { color: #ffffff !important; font-weight: 600; }
+
+/* Typography */
+p, li, span, .content p { color: var(--muted) !important; }
+h1, h2, h3, h4 { color: var(--text) !important; }
+
+/* Buttons (e.g., Join the Newsletter) */
+.btn, a.btn { background:#2563eb !important; color:#fff !important; border:1px solid rgba(0,0,0,.06) !important; }
+.btn:hover, a.btn:hover { background:#1e4fd3 !important; }
+
+/* Space below nav */
+main, main.container { padding-top: 1.25rem !important; }
