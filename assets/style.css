@@ -2298,3 +2298,43 @@ body .form-section {
   color: #fff;
   border: none;
 }
+/* ===== Contact page: high-contrast text (scoped) ===== */
+.contact-content,
+.contact-content * { color: #f8fafc !important; }  /* force light text inside contact page */
+
+.contact-form label { font-weight: 600; }
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255,255,255,.08);
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.30);
+  border-radius: .5rem;
+  padding: .6rem .75rem;
+  caret-color: #fff;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: rgba(255,255,255,.75) !important; }
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(255,255,255,.45);
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(37,99,235,.35);
+}
+
+/* Button stays readable */
+.contact-form .btn-primary { background:#2563eb; color:#fff !important; }
+.contact-form .btn-primary:hover { filter: brightness(1.05); }
+
+/* Links on the page (if any) */
+.contact-content a { color:#93c5fd !important; text-decoration:none; border-bottom:1px dashed rgba(147,197,253,.4); }
+.contact-content a:hover { color:#bfdbfe !important; border-bottom-color:#bfdbfe; }
+
+/* Chrome autofill fix (prevents yellow on dark bg) */
+.contact-form input:-webkit-autofill,
+.contact-form textarea:-webkit-autofill {
+  -webkit-text-fill-color:#fff !important;
+  transition: background-color 100000s ease-in-out 0s; /* hide autofill bg */
+}
