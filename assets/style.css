@@ -2101,3 +2101,31 @@ main, .container, .content, .page, .wrapper, section, article {
 
 /* Spacing below the nav everywhere */
 main, main.container { padding-top: 1.25rem !important; }
+
+/* ===== Site-wide palette (uniform) ===== */
+:root{
+  --bg:       #f5f7fb;  /* light page background */
+  --nav-bg:   #1e293b;  /* slightly lighter dark nav (slate-800) */
+  --card:     #ffffff;  /* white cards */
+  --text:     #0f172a;  /* headings */
+  --muted:    #334155;  /* body text */
+  --link:     #2563eb;  /* link blue */
+}
+
+/* Canvas & type */
+html,body { background: var(--bg) !important; color: var(--text); }
+p,li,span { color: var(--muted); }
+a { color: var(--link); }
+a:hover { text-decoration: underline; }
+
+/* Nav: lighter but still dark enough; links readable */
+header,.site-header,nav { background: var(--nav-bg) !important; }
+header nav a,.site-header nav a { color:#e5e7eb !important; text-decoration:none !important; }
+header nav a:hover, header nav a[aria-current="page"] { color:#ffffff !important; font-weight:600; }
+
+/* Let the site bg show through; cards stay white */
+main,.container,section,article { background: transparent !important; }
+.card,.book-card,.panel,.box,.media-box { background: var(--card) !important; }
+
+/* Breathing room under the nav */
+main, main.container { padding-top: 1.25rem !important; }
