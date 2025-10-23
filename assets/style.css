@@ -2080,3 +2080,34 @@ main .stack { background: transparent !important; box-shadow: none !important; b
   box-shadow: none !important;
   border: 0 !important;
 }
+
+/* ==== Newsletter: match BIO background and remove dark hero block ==== */
+body.newsletter-page {
+  /* same light background as BIO */
+  background: #f6f7fb !important;
+  background-color: #f6f7fb !important;
+}
+
+/* Keep the HEADER dark (do not touch it) */
+
+/* Everything below the header should not paint its own dark BG */
+body.newsletter-page main,
+body.newsletter-page .hero,
+body.newsletter-page .banner,
+body.newsletter-page .masthead,
+body.newsletter-page .page-header,
+body.newsletter-page .intro,
+body.newsletter-page section,
+body.newsletter-page article {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Also neutralize any nested wrappers that might be coloring the block */
+body.newsletter-page main :where(.wrapper,.panel,.content,.stack){
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
