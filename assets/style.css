@@ -1607,3 +1607,78 @@ body.books-page #gremlins-card .media-box video{ aspect-ratio:3/4 !important; }
 }
 /* Pull content a touch closer to the nav */
 body.books-page header + main.container{ margin-top:-.35rem !important; }
+
+/* ===== BOOKS PAGE: OVERLAY KILL + SINGLE VIDEO PER CARD (LAST-WINS) ===== */
+body.books-page .book-card{
+  display:grid !important;
+  grid-template-columns: 260px 1fr !important;
+  align-items:start !important;
+  gap:1rem !important;
+  position:relative !important;
+}
+
+body.books-page .book-card > .media-box{
+  grid-column:1 !important;
+  width:100% !important; max-width:360px !important;
+  margin:0 !important; overflow:visible !important;
+  position:relative !important; z-index:auto !important; float:none !important;
+}
+body.books-page #snippy-card .media-box{ max-width:640px !important; }
+
+body.books-page .book-card > .meta{
+  grid-column:2 !important;
+  position:relative !important; z-index:1 !important;
+}
+
+/* Kill ANY absolute/float in the media column that can cause piling */
+body.books-page .book-card .media-box *,
+body.books-page .book-card .media-box{
+  position:static !important;
+  float:none !important;
+  clear:none !important;
+  transform:none !important;
+}
+
+/* ——— SINGLE VIDEO ONLY ———
+   Hide EVERYTHING inside .media-box, then re-enable only the first <video> */
+body.books-page .book-card .media-box > *{ display:none !important; }
+body.books-page #snippy-card   .media-box > video:first-of-type,
+body.books-page #socorro-card  .media-box > video:first-of-type,
+body.books-page #gremlins-card .media-box > video:first-of-type{ display:block !important; }
+
+/* Video sizing/aspect */
+body.books-page .book-card .media-box > video:first-of-type{
+  width:100% !important; height:auto !important;
+  background:#111 !important; border-radius:.5rem;
+}
+body.books-page #snippy-card   .media-box > video:first-of-type{ aspect-ratio:16/9 !important; }
+body.books-page #socorro-card  .media-box > video:first-of-type,
+body.books-page #gremlins-card .media-box > video:first-of-type{ aspect-ratio:3/4 !important; }
+
+/* Grid of the page itself */
+body.books-page .books-grid{
+  display:grid !important;
+  grid-template-columns: 1.1fr 1fr !important;
+  grid-template-areas:
+    "snippy snippy"
+    "socorro gremlins"
+    "cosmic  cosmic" !important;
+  gap:1.1rem !important;
+}
+body.books-page #snippy-card{ grid-area:snippy !important; }
+body.books-page #socorro-card{ grid-area:socorro !important; }
+body.books-page #gremlins-card{ grid-area:gremlins !important; }
+body.books-page #cosmic-card{ grid-area:cosmic !important; }
+
+@media (max-width:900px){
+  body.books-page .books-grid{
+    grid-template-columns:1fr !important;
+    grid-template-areas:
+      "snippy" "socorro" "gremlins" "cosmic" !important;
+  }
+  body.books-page .book-card{ grid-template-columns:1fr !important; }
+  body.books-page #snippy-card .media-box{ max-width:100% !important; }
+}
+
+/* Pull content a touch closer to the nav */
+body.books-page header + main.container{ margin-top:-.35rem !important; }
