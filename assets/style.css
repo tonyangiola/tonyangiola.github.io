@@ -2205,3 +2205,27 @@ body.newsletter-page .page-header {
 /* Home-only: let page background show through hero band */
 body.home-hero-fix .hero,
 body.home-hero-fix .page-header { background: transparent !important; }
+
+/* === 2025-10-23 Tony BG override (last wins) === */
+:root{ --ta-bg:#f4f5f7; }             /* pick your light gray here */
+
+html,body{
+  background: var(--ta-bg) !important;
+  background-color: var(--ta-bg) !important;
+}
+
+/* Make inner wrappers transparent so page BG actually shows */
+main,.main,.content,.page,.wrapper,.container,section,article{
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Keep nav dark even if something tries to lighten it */
+.site-header,.navbar,.topnav,header[role="banner"]{
+  background:#111827 !important;  /* your dark nav tone */
+  color:#fff !important;
+}
+.site-header a,.navbar a,.topnav a{ color:#fff !important; }
+
+/* Give a little breathing room under the nav */
+main,.main{ padding-top: 1rem !important; }
