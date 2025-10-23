@@ -1,0 +1,10 @@
+/* === site-wide last-word overrides === */
+html, body { background:#ffffff !important; color:#111 !important; background-image:none !important; }
+
+header, .site-header, header nav, .site-header nav,
+header .container, .site-header .container {
+  background:#0d0f14 !important; background-image:none !important;
+}
+
+.books-grid { margin-top: 56px !important; }
+@media (min-width:768px){ .books-grid { margin-top: 64px !important; } }
