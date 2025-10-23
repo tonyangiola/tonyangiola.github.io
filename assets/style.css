@@ -2069,3 +2069,8 @@ body.newsletter-page main.container :where(section, article, .stack, .content, .
 body.newsletter-page main.container {
   background: transparent !important;
 }
+
+/* === Newsletter inherits Bio background, never white === */
+main .stack { background: transparent !important; box-shadow: none !important; border: 0 !important; }
+/* If Bio uses a body class, reassert the same bg for safety */
+
