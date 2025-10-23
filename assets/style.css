@@ -1423,3 +1423,34 @@ body.books-page .book-card .meta      { position: relative; z-index: 1; }
 body.books-page .btn        { text-decoration: none !important; border:1px solid transparent; }
 body.books-page .btn-blue   { background:#2563eb; color:#fff; }
 body.books-page .btn-blue:hover { background:#1e4fd3; }
+
+/* === Books page: safe spacing & visibility (final overrides) === */
+body.books-page header { margin-bottom: .15rem !important; }
+body.books-page main.container { margin-top: 0 !important; padding-top: .25rem !important; }
+
+/* Layout (Snippy wide, others normal) */
+body.books-page .books-grid { display:grid; grid-template-columns:1fr; gap:1.1rem; }
+@media (min-width:900px){
+  body.books-page .books-grid{ grid-template-columns:1.1fr 1fr; }
+  body.books-page .book-card.wide{ grid-column:1 / span 2; }
+}
+body.books-page .book-card{ display:grid; grid-template-columns:260px 1fr; gap:1rem; align-items:start;
+  border:1px solid rgba(0,0,0,.06); border-radius:.75rem; padding:.9rem; background:#fff; }
+@media (max-width:720px){ body.books-page .book-card{ grid-template-columns:1fr; } }
+
+/* Media blocks */
+body.books-page .book-card .media-box{ width:100%; max-width:360px; }
+body.books-page .book-card.wide .media-box{ max-width:640px; }
+body.books-page .book-card .media-box img,
+body.books-page .book-card .media-box video{ display:block; width:100%; height:auto; border-radius:.5rem; }
+
+/* Force-visible videos in case older rules hid them */
+body.books-page .book-card .media-box video{ display:block !important; visibility:visible !important; opacity:1 !important; }
+
+/* Buttons: blue + ghost */
+body.books-page .btn{ display:inline-block; padding:.5rem .8rem; border-radius:.5rem; font-weight:600; text-decoration:none!important; border:1px solid transparent; }
+body.books-page .btn-blue{ background:#2563eb; color:#fff; }
+body.books-page .btn-blue:hover{ background:#1e4fd3; }
+body.books-page .btn-ghost{ background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
+body.books-page .btn-ghost:hover{ background:#e5e7eb; }
+body.books-page .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }
