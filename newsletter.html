@@ -41,7 +41,35 @@
   input[type="email"] { display:block; width:100%; max-width:28rem; padding:.6rem .7rem; border-radius:.6rem; border:1px solid #d0d4dc; }
 </style>
 
-<body class="newsletter-page">
+<body class="newsletter-page" class="newsletter-page">
+<style id="bg-scope-newsletter">
+  :root{ --site-bg:#0e1424; } /* Bio background */
+  html,body{ background:var(--site-bg) !important; background-color:var(--site-bg) !important; }
+
+  /* Keep header/nav intact; only clear backgrounds in the main content area */
+  body.newsletter-page main,
+  body.newsletter-page .content,
+  body.newsletter-page .page,
+  body.newsletter-page .container,
+  body.newsletter-page .wrapper,
+  body.newsletter-page .subscribe,
+  body.newsletter-page .form-wrap,
+  body.newsletter-page .form-container,
+  body.newsletter-page .form-section {
+    background: transparent !important; background-color: transparent !important;
+  }
+  body.newsletter-page main *,
+  body.newsletter-page .content *,
+  body.newsletter-page .page *,
+  body.newsletter-page .container *,
+  body.newsletter-page .wrapper *,
+  body.newsletter-page .subscribe *,
+  body.newsletter-page .form-wrap *,
+  body.newsletter-page .form-container *,
+  body.newsletter-page .form-section * {
+    background: transparent !important; background-color: transparent !important;
+  }
+</style>
 <style>
   :root{ --site-bg:#0e1424; } /* Bio background */
   html,body{ background:var(--site-bg) !important; background-color:var(--site-bg) !important; }
