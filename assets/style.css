@@ -2029,3 +2029,31 @@ a:hover { text-decoration: underline; }
 main.container, main {
   padding-top: 1.25rem; /* 20px */
 }
+
+/* ==== Force light site background everywhere (bio/contact fix) ==== */
+:root{
+  --nav-bg: #0f172a;   /* keep dark nav */
+  --bg:     #f3f4f6;   /* light site background */
+  --text:   #111827;
+}
+
+/* Highest-specificity sweep for stubborn page wrappers */
+html, body,
+body *, /* descendants won't repaint page but increases weight for resets */
+.wrapper, .page, .content, .site, .shell, .container, main {
+  background-color: transparent !important;
+  color: var(--text);
+}
+
+/* Page canvas itself MUST be light */
+html, body {
+  background-color: var(--bg) !important;
+}
+
+/* Keep the nav/header dark */
+header, .site-header, nav {
+  background-color: var(--nav-bg) !important;
+}
+
+/* Give all pages breathing room beneath the nav */
+main, main.container { padding-top: 1.25rem; }
