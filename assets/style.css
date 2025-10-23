@@ -795,7 +795,7 @@ header nav a:focus-visible {
 .book-card .media-link,
 .book-card > a:first-child { pointer-events: none !important; }
 /* CLICK FIX (cards): disable ALL links inside a book-card... */
-.book-card a { pointer-events: none !important; }
+.book-card a{ pointer-events:auto !important; }
 /* ...except the action buttons */
 .book-card .book-actions a {
   pointer-events: auto !important;
@@ -1547,3 +1547,6 @@ body.books-page .book-card video {
     grid-template-columns: 1fr;
   }
 }
+
+/* Books page: media column must be visible */
+body.books-page .book-card .media-box{overflow:visible!important}
