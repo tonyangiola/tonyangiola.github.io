@@ -2032,3 +2032,20 @@ main.container section.stack {
   padding: 2rem 1.5rem;
   margin-top: 1.5rem;
 }
+
+/* ==== Newsletter page: match site background, remove white block ==== */
+.newsletter-page,
+.newsletter-page html,
+.newsletter-page body {
+  /* inherit whatever global site bg is (from other pages) */
+  background: inherit !important;
+  background-color: inherit !important;
+}
+
+/* make the newsletter section transparent so the page bg shows through */
+.newsletter-page main.container section,
+.newsletter-page main.container section.stack {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
