@@ -6,3 +6,6 @@ books.html.bak-*
 *.bak-*.css
 *.bak-*.html
 backups/
+# Temp/transient media
+*.tmp.mp4
+system-commandline-sentinel-files/
