@@ -140,19 +140,6 @@ main { position: relative; z-index: 0; }
   --focus: #22c55e;         /* green-500 focus ring */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root{
-    --bg: #0b1020;
-    --text: #e5e7eb;
-    --muted: #94a3b8;
-    --brand: #0f172a;
-    --brand-ink: #e2e8f0;
-    --accent: #60a5fa;
-    --accent-ink: #0b1020;
-    --amazon: #fbbf24;
-    --amazon-ink: #111827;
-    --focus: #34d399;
-  }
 }
 
 html, body {
@@ -281,12 +268,6 @@ header nav a.active {
   border-color: rgba(255,255,255,.12);
 }
 
-@media (prefers-color-scheme: dark) {
-  header nav a:hover,
-  header nav a:focus-visible {
-    /* background: rgba(148,163,184,.22); */
-    color: #ffffff;
-  }
 }
 /* deploy-css: 1761013300  — TEMP visible frame below proves CSS is fresh */
 
@@ -1996,3 +1977,127 @@ section, article, .books-grid, .book-card, .card {
 /* 5) Books: add breathing room under the nav */
 .books-grid { margin-top: 56px !important; }
 @media (min-width: 768px) { .books-grid { margin-top: 64px !important; } }
+
+/* ==== Global background unifier (safe) ==== */
+:root{
+  /* Keep your dark nav; set site background to a light gray like the main page */
+  --nav-bg: #0f172a;    /* slate-950-ish (your dark nav) */
+  --bg:     #f3f4f6;    /* light site background used on home */
+  --text:   #111827;    /* readable dark text */
+}
+
+/* Apply the same background everywhere */
+html, body{
+  background: var(--bg) !important;
+  color: var(--text);
+}
+
+/* Make sure sections don't paint white over the bg */
+main, .container, section, .content, .page {
+  background: transparent !important;
+}
+
+/* Keep the nav/header dark (matches your main page) */
+header, .site-header, nav {
+  background: var(--nav-bg) !important;
+}
+
+/* Buttons and links should NOT look underlined unless you want them to */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Add a little top spacing so content doesn't touch the nav on any page */
+main.container, main {
+  padding-top: 1.25rem; /* 20px */
+}
+
+/* ==== Force light site background everywhere (bio/contact fix) ==== */
+:root{
+  --nav-bg: #0f172a;   /* keep dark nav */
+  --bg:     #f3f4f6;   /* light site background */
+  --text:   #111827;
+}
+
+/* Highest-specificity sweep for stubborn page wrappers */
+html, body,
+body *, /* descendants won't repaint page but increases weight for resets */
+.wrapper, .page, .content, .site, .shell, .container, main {
+  background-color: transparent !important;
+  color: var(--text);
+}
+
+/* Page canvas itself MUST be light */
+html, body {
+  background-color: var(--bg) !important;
+}
+
+/* Keep the nav/header dark */
+header, .site-header, nav {
+  background-color: var(--nav-bg) !important;
+}
+
+/* Give all pages breathing room beneath the nav */
+main, main.container { padding-top: 1.25rem; }
+
+/* ==== Global, stubborn-page override (bio/newsletter/contact) ==== */
+:root{
+  --nav-bg:#0f172a;  /* keep nav dark */
+  --bg:#f3f4f6;      /* light site background (same as home) */
+  --text:#111827;
+}
+
+/* Make the page canvas light, everywhere */
+html, body { background-color: var(--bg) !important; color: var(--text); }
+
+/* Prevent wrappers on subpages from repainting white */
+main, .container, .content, .page, .wrapper, .shell, section, article {
+  background-color: transparent !important;
+}
+
+/* Keep the nav/header dark across the site */
+header, .site-header, nav { background-color: var(--nav-bg) !important; }
+
+/* Space below nav so content never touches it */
+main, main.container { padding-top: 1.25rem; }
+/* ==== Recolor Fix (nav dark, page light, normal text) ==== */
+:root{
+  --nav-bg:#0f172a;    /* dark slate nav */
+  --bg:#f3f4f6;        /* LIGHT site background */
+  --text:#111827;      /* normal dark text */
+  --muted:#374151;     /* body copy */
+  --link:#2563eb;      /* link blue */
+}
+
+html, body { background: var(--bg) !important; color: var(--text) !important; }
+
+/* NAV: keep bar dark with readable links */
+header, .site-header, nav { background: var(--nav-bg) !important; }
+header nav a,
+.site-header nav a {
+  color: #e5e7eb !important;         /* light gray text */
+  text-decoration: none !important;
+}
+header nav a:hover,
+.site-header nav a:hover,
+header nav a.active,
+.site-header nav a.active,
+header nav a[aria-current="page"],
+.site-header nav a[aria-current="page"] {
+  color: #ffffff !important;         /* bright white on hover/active */
+  font-weight: 600;
+}
+header nav a:focus-visible { outline: 2px solid rgba(255,255,255,.35); outline-offset: 2px; }
+
+/* Typography back to normal contrast */
+body p, body li, body span, .content p { color: var(--muted) !important; }
+h1,h2,h3,h4 { color: var(--text) !important; }
+a { color: var(--link); }
+a:hover { text-decoration: underline; }
+
+/* Ensure page wrappers don't repaint dark */
+main, .container, .content, .page, .wrapper, section, article {
+  background: transparent !important;
+}
+
+/* Spacing below the nav everywhere */
+main, main.container { padding-top: 1.25rem !important; }
