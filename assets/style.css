@@ -1956,3 +1956,43 @@ section, article,
 /* Books: extra breathing room under the nav */
 .books-grid { margin-top: 48px !important; }
 @media (min-width: 768px) { .books-grid { margin-top: 60px !important; } }
+/* ===== FINAL OVERRIDE: DARK NAV, LIGHT PAGE BACKGROUND ===== */
+
+/* 1) NAV stays dark */
+header,
+.site-header,
+header nav,
+.site-header nav,
+header .container,
+.site-header .container {
+  background-color: #0d0f14 !important;   /* dark */
+  background-image: none !important;
+}
+
+/* 2) PAGE background is LIGHTER than nav (pure white) */
+html, body,
+.site, .page, .wrapper, .container,
+main, .content {
+  background-color: #ffffff !important;   /* LIGHT */
+  background-image: none !important;
+  filter: none !important;
+}
+
+/* 3) Kill any pseudo-element overlays/gradients that might be re-darkening */
+html::before, html::after,
+body::before, body::after,
+main::before, main::after {
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* 4) Cards/sections inherit the page bg (no surprise dark blocks) */
+section, article, .books-grid, .book-card, .card {
+  background: transparent !important;
+}
+
+/* 5) Books: add breathing room under the nav */
+.books-grid { margin-top: 56px !important; }
+@media (min-width: 768px) { .books-grid { margin-top: 64px !important; } }
