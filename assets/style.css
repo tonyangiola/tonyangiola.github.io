@@ -2015,12 +2015,22 @@ header nav a:first-child strong {  /* brand */
 #gremlins-card .media { position: relative; }
 /* ==== Adjusted overlay for Gremlins baked-in subtitle ==== */
 #gremlins-card .media { position: relative; }
+/* ==== Gremlins: hide baked-in subtitle with a bottom gradient ==== */
+#gremlins-card .media { position: relative; overflow: hidden; }
+
+/* Covers the lower portion regardless of exact text height */
 #gremlins-card .media::after {
   content: "";
   position: absolute;
-  left: 0; right: 0;
-  bottom: 20px;       /* lift overlay upward */
-  height: 60px;       /* taller to cover "Project Sign to Blue Book" fully */
-  background: #fff;   /* same as card background */
+  left: 0; right: 0; bottom: 0;
+  height: 40%;  /* covers bottom 40% of the media area */
+  /* Solid white near the bottom, fading to transparent upward */
+  background: linear-gradient(
+    to top,
+    #ffffff 0%,
+    #ffffff 60%,
+    rgba(255,255,255,0.95) 80%,
+    rgba(255,255,255,0.0) 100%
+  );
   pointer-events: none;
 }
