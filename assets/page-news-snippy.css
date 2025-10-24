@@ -1,0 +1,45 @@
+/* ===== news-snippy page-only fixes ===== */
+
+/* Make the Back to Home button readable on dark background */
+.news-snippy-page a:contains("Back to Home"),
+.news-snippy-page a.back-home,
+.news-snippy-page .back-home a,
+.news-snippy-page a.button.back,
+.news-snippy-page .btn.back-home,
+.news-snippy-page a[href="index.html"],
+.news-snippy-page a[href="/"],
+.news-snippy-page a[href="./"] {
+  background: #1e1e1e !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 10px !important;
+  padding: 10px 16px !important;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+/* Hover focus for accessibility */
+.news-snippy-page a.back-home:hover,
+.news-snippy-page a.back-home:focus {
+  background: #262b33 !important;
+  color: #ffffff !important;
+  border-color: #66ccff !important;
+  box-shadow: 0 0 0 3px rgba(102,204,255,.25) !important;
+}
+
+/* Ensure link text inside any button stays white */
+.news-snippy-page .back-home a { color:#fff !important; }
+
+/* Images: keep within article width and visible on mobile */
+.news-snippy-page article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 12px auto;
+  border-radius: 8px;
+}
+
+/* Optional: lighten article card a touch for contrast */
+.news-snippy-page .card, .news-snippy-page .article-card {
+  background: rgba(20, 27, 36, 0.9);
+}
