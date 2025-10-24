@@ -3150,3 +3150,43 @@ main.page-content .card *[style*="background-color:#fff"],
 main.page-content .card *[style*="background-color: #fff"]{
   background: transparent !important;
 }
+
+/* === Unify all home cards to Bio BG === */
+main.page-content .card{
+  background-color: var(--bio-bg, var(--card-bg, #0e1116));
+  color: var(--card-fg, #fff);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 12px;
+}
+
+/* Headings on dark cards */
+main.page-content .card h1,
+main.page-content .card h2,
+main.page-content .card h3 { color:#fff; }
+
+/* Kill white inner boxes inside Latest News (common class names) */
+#latest-news .card,
+#latest-news .panel,
+#latest-news .box,
+#latest-news .content,
+#latest-news .entry,
+#latest-news .post,
+#latest-news .news,
+#latest-news .inner,
+#latest-news .card-inner {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+/* If an embed forces white, neutralize */
+#latest-news iframe,
+#latest-news .embed,
+#latest-news .article,
+#latest-news .article-card {
+  background: transparent !important;
+}
+
+/* Hide any truly empty card sections between hero and Latest News */
+main.page-content section.card:not(:has(h1,h2,h3,p,ul,ol,li,img,figure,blockquote,iframe,video)) {
+  display: none;
+}
