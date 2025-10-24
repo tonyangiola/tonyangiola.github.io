@@ -154,3 +154,31 @@
     padding-right: 12px !important;
   }
 }
+/* ===== Mobile nav comfort (scoped, safe) ===== */
+@media (max-width: 768px) {
+  header.site-header nav ul,
+  .site-header nav ul,
+  nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    list-style: none !important;
+  }
+  header.site-header nav li,
+  nav li { margin: 0 !important; }
+  header.site-header nav a,
+  .site-header nav a,
+  nav a {
+    display: inline-block !important;
+    padding: 12px 14px !important;
+    min-height: 44px !important;
+    line-height: 1.2 !important;
+    border-radius: 9999px !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.05);
+  }
+}
