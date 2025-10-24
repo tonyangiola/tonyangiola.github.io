@@ -1,6 +1,20 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style id="socorro-superfix">
+    /* Books-only Socorro override: kill crop + sane mobile size */
+    #socorro-card, #socorro-card.book-card, #socorro-card .media {
+      overflow: visible !important; height: auto !important; max-height: none !important;
+      padding: 0 !important;
+    }
+    #socorro-card > video, #socorro-card .media > video {
+      display: block !important; width: 100% !important; height: auto !important;
+      max-height: none !important; object-fit: contain !important; aspect-ratio: auto !important;
+    }
+    @media (max-width: 600px) {
+      #socorro-card > video, #socorro-card .media > video { max-height: 65vh !important; }
+    }
+  </style>
   <style id="books-mobile-overrides">
     /* Page-local: only affects Books page */
     #socorro-card :is(video,iframe) { object-fit: contain !important; }
