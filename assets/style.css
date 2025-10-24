@@ -3092,3 +3092,14 @@ body .form-section {
   #socorro-card video { max-height: 65vh !important; } /* adjust 60–70vh if needed */
 }
 /* === /SOCORRO UNCROP === */
+
+/* === Home-only: place Latest News under Author, Researcher === */
+body.home-hero-fix main.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md, 1.25rem); /* keeps breathing room */
+}
+body.home-hero-fix #author-researcher { order: 10; }
+body.home-hero-fix #latest-news      { order: 11; }
+
+/* If your Author block uses a different id, change #author-researcher above. */
