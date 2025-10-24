@@ -3132,3 +3132,21 @@ body.home-hero-fix #latest-news      { order: 11; }
 #latest-news button:hover {
   color: #4cf;
 }
+
+/* === Home: unify all cards to Bio background === */
+main.page-content .card{
+  background-color: var(--bio-bg, var(--card-bg, #0e1116));
+  color: var(--card-fg, #fff);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 12px;
+}
+main.page-content .card h2,
+main.page-content .card h3 { color: #fff; }
+
+/* If any component forces white inside cards, neutralize it here */
+main.page-content .card *[style*="background:#fff"],
+main.page-content .card *[style*="background: #fff"],
+main.page-content .card *[style*="background-color:#fff"],
+main.page-content .card *[style*="background-color: #fff"]{
+  background: transparent !important;
+}
