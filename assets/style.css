@@ -2799,3 +2799,19 @@ body .form-section {
   }
   video { object-fit: contain; }
 }
+/* === iPhone video sizing (bigger pass) === */
+@media (max-width: 480px) {
+  /* Snippy: bigger/wider */
+  #snippy-card video,
+  #snippy-card iframe {
+    max-height: 380px !important; /* was 320px */
+  }
+
+  /* Socorro & Gremlins: bigger */
+  #socorro-card video,
+  #socorro-card iframe,
+  #gremlins-card video,
+  #gremlins-card iframe {
+    max-height: 300px !important; /* was 240px */
+  }
+}
