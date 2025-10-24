@@ -3052,3 +3052,12 @@ body .form-section {
   }
 }
 /* === /SOCORRO iPhone CAP === */
+/* === SOCORRO iPhone CAP (effective only with viewport meta) === */
+@media (max-width: 600px) {
+  #socorro-card :is(video,iframe) {
+    max-height: 320px !important;  /* adjust to 300/340 if needed */
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+}
