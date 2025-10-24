@@ -2815,3 +2815,36 @@ body .form-section {
     max-height: 300px !important; /* was 240px */
   }
 }
+/* === iPhone video sizing (small bump #2; final override) === */
+@media (max-width: 600px) {
+  .book-card video,
+  .book-card iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+  .book-card iframe { aspect-ratio: 16 / 9; }
+
+  /* Snippy: a touch bigger */
+  #snippy-card video,
+  #snippy-card iframe {
+    max-height: 420px !important;  /* was 380px */
+  }
+
+  /* Socorro & Gremlins: a touch bigger */
+  #socorro-card video,
+  #socorro-card iframe,
+  #gremlins-card video,
+  #gremlins-card iframe {
+    max-height: 340px !important;  /* was 300px */
+  }
+
+  /* Safety: ensure the media wrapper can't constrain height */
+  #snippy-card .media,
+  #socorro-card .media,
+  #gremlins-card .media {
+    max-height: none !important;
+    overflow: visible;
+  }
+}
