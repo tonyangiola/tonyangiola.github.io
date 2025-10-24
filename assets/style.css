@@ -2484,3 +2484,63 @@ body .form-section {
   /* Buttons readable on phones */
   .book-card .actions :is(a,button) { padding: 12px 14px !important; font-size: 16px !important; border-radius: 12px !important; }
 }
+/* ===== Books: iPhone hard fix (≤600px) ===== */
+@media (max-width: 600px) {
+  /* Nuke layout constraints that can keep cards/media narrow */
+  .books-grid,
+  .books-grid *:where(.book-card, .media-box, .media, figure) {
+    max-width: 100% !important;
+  }
+
+  /* Avoid multi-column / narrow columns on phones */
+  .books-grid {
+    display: block !important;             /* override grid entirely if needed */
+    width: 100% !important;
+  }
+
+  /* Each card occupies full width, regardless of grid/flex rules */
+  .book-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;             /* if inside flex */
+    grid-column: 1 / -1 !important;        /* if grid is still active */
+    box-sizing: border-box !important;
+    padding: 12px !important;
+  }
+
+  /* Common wrappers around media */
+  .book-card .media-box,
+  .book-card .media,
+  .book-card figure,
+  .book-card .content,
+  .book-card .inner {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Let flex children actually grow to full width */
+  .book-card * { min-width: 0 !important; }
+
+  /* Actual media elements — fill width, keep ratio */
+  .book-card :is(video, iframe, img) {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border: 0 !important;
+    border-radius: 12px !important;
+    transform: none !important;            /* kill any accidental scaling */
+  }
+
+  /* Enforce a clean 16:9 for embeds (if no size is computed) */
+  .embed-16x9 { position: relative !important; width: 100% !important; }
+  .embed-16x9::before { content: ""; display: block; padding-top: 56.25%; }
+  .embed-16x9 > iframe {
+    position: absolute !important; inset: 0 !important;
+    width: 100% !important; height: 100% !important;
+  }
+}
