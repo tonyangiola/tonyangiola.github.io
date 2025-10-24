@@ -3294,3 +3294,15 @@ main.page-content .card h3 { color:#fff !important; }
   .mini-bio-badge img{ width: 32px; height: 32px; }
   .mini-bio-badge .name{ font-size: 13px; }
 }
+/* === Dedupe: ensure only ONE site header renders per page === */
+body header ~ header { display: none !important; }
+
+/* If a template injects two burger toggles inside the same header, hide any duplicates */
+header .hamburger ~ .hamburger,
+header .menu-toggle ~ .menu-toggle,
+header .nav-toggle ~ .nav-toggle {
+  display: none !important;
+}
+
+/* Keep layout stable if the hidden header had spacing */
+body header ~ header + * { margin-top: 0 !important; }
