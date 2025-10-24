@@ -2947,3 +2947,32 @@ body .form-section {
   #socorro-card :is(video,iframe)  { max-height: 680px !important; }
 }
 /* === /FINAL (10-23-2025) === */
+/* === SUPERFINAL (10-23-2025): iPhone bigger + Socorro no-crop, guaranteed === */
+
+/* Socorro: absolutely no clipping or forced height limits anywhere */
+#socorro-card,
+#socorro-card .media {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+#socorro-card :is(video,iframe) {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;   /* remove any caps */
+  display: block !important;
+  object-fit: contain !important;
+  aspect-ratio: 16 / 9 !important;
+}
+
+/* iPhone/small screens: bump sizes a touch more */
+@media (max-width: 600px) {
+  #snippy-card :is(video,iframe)   { max-height: 500px !important; } /* +40 */
+  #gremlins-card :is(video,iframe) { max-height: 420px !important; } /* +40 */
+  /* Socorro remains uncapped to avoid crop; natural height via aspect-ratio */
+}
+
+/* Safety: if any earlier rule set .book-card .media {overflow:hidden;height:...} */
+.book-card .media { overflow: visible !important; height: auto !important; max-height: none !important; }
+
+/* === /SUPERFINAL (10-23-2025) === */
