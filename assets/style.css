@@ -3306,3 +3306,29 @@ header .nav-toggle ~ .nav-toggle {
 
 /* Keep layout stable if the hidden header had spacing */
 body header ~ header + * { margin-top: 0 !important; }
+/* === Force-visible "Back to Home" button (dark theme) === */
+.article footer a,
+footer.article a,
+a[href="/index.html"],
+a[href="/"],
+a[href="./"],
+a[href="index.html"],
+a[href^="index.htm"] {
+  color:#fff !important;
+  background:rgba(255,255,255,0.14) !important;
+  border:1px solid rgba(255,255,255,0.28) !important;
+  padding:.6rem 1rem !important;
+  border-radius:10px !important;
+  text-decoration:none !important;
+  display:inline-block !important;
+}
+.article footer a:hover,
+footer.article a:hover,
+a[href="/index.html"]:hover,
+a[href="/"]:hover,
+a[href="./"]:hover,
+a[href="index.html"]:hover,
+a[href^="index.htm"]:hover {
+  background:rgba(255,255,255,0.24) !important;
+  border-color:rgba(255,255,255,0.36) !important;
+}
