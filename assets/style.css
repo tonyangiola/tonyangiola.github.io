@@ -2848,3 +2848,61 @@ body .form-section {
     overflow: visible;
   }
 }
+/* === FINAL mobile & Socorro fixes (append-last) === */
+
+/* Universal: containers should not crop media */
+#snippy-card .media,
+#socorro-card .media,
+#gremlins-card .media,
+.book-card .media {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Make embeds fill width and keep their aspect clean */
+#snippy-card video, #snippy-card iframe,
+#socorro-card video, #socorro-card iframe,
+#gremlins-card video, #gremlins-card iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Videos should never crop inside their box */
+#snippy-card video,
+#socorro-card video,
+#gremlins-card video {
+  object-fit: contain !important;
+}
+
+/* Help YouTube/Vimeo iframes size cleanly */
+#snippy-card iframe,
+#socorro-card iframe,
+#gremlins-card iframe {
+  aspect-ratio: 16 / 9 !important;
+}
+
+/* --- iPhone/small screens: small size bump --- */
+@media (max-width: 600px) {
+  /* Snippy: slightly bigger */
+  #snippy-card :is(video, iframe) {
+    max-height: 440px !important;  /* small bump */
+  }
+  /* Socorro: taller so nothing gets clipped */
+  #socorro-card :is(video, iframe) {
+    max-height: 380px !important;  /* was smaller before */
+  }
+  /* Gremlins: small bump */
+  #gremlins-card :is(video, iframe) {
+    max-height: 360px !important;
+  }
+}
+
+/* --- Desktop/tablet: give Socorro extra headroom too --- */
+@media (min-width: 601px) {
+  #socorro-card :is(video, iframe) {
+    max-height: 620px !important;  /* taller to avoid top/bottom cut */
+  }
+}
