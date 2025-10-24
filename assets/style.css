@@ -2976,3 +2976,33 @@ body .form-section {
 .book-card .media { overflow: visible !important; height: auto !important; max-height: none !important; }
 
 /* === /SUPERFINAL (10-23-2025) === */
+/* === MICROFIX (10-23-2025): Socorro taller, no crop; Snippy untouched === */
+#socorro-card,
+#socorro-card .media {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 0 !important;           /* ensure no accidental aspect hacks */
+}
+
+#socorro-card video,
+#socorro-card iframe {
+  width: 100% !important;
+  height: auto !important;         /* keep natural aspect */
+  max-height: none !important;     /* don’t clamp */
+  display: block !important;
+  object-fit: contain !important;  /* avoid top/bottom crop */
+}
+
+/* modest iPhone bump ONLY for Socorro */
+@media (max-width: 600px) {
+  #socorro-card video,
+  #socorro-card iframe { max-height: 440px !important; }
+}
+
+/* modest desktop headroom ONLY for Socorro */
+@media (min-width: 601px) {
+  #socorro-card video,
+  #socorro-card iframe { max-height: 660px !important; }
+}
+/* === /MICROFIX === */
