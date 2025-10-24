@@ -10,29 +10,6 @@
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
   <link rel="stylesheet" href="/assets/override.css?cb=20251022211136">
   <link rel="stylesheet" href="assets/mobile.css?v=20251023214637" media="(max-width: 768px)">
-  <!-- MOBILE-NAV-FORCE-START -->
-  <style media="(max-width: 768px)">
-    /* iPhone nav rescue: wraps, spacing, 44px tap targets */
-    :root { --nav-gap: 10px; --nav-pad-y: 10px; --nav-pad-x: 12px; }
-    header.site-header, .site-header, header { position: sticky !important; top: 0 !important; z-index: 100 !important; }
-    header nav ul, .site-header nav ul, nav ul, .nav ul, .nav-list {
-      display: flex !important; flex-wrap: wrap !important; gap: var(--nav-gap) !important;
-      margin: 0 !important; padding: var(--nav-pad-y) var(--nav-pad-x) !important; list-style: none !important;
-    }
-    header nav li, nav li { margin: 0 !important; }
-    header nav a, .site-header nav a, nav a, .nav a, .nav-list a {
-      display: inline-block !important; padding: 12px 14px !important; min-height: 44px !important;
-      line-height: 1.2 !important; border-radius: 9999px !important; white-space: nowrap !important; text-decoration: none !important;
-      -webkit-tap-highlight-color: rgba(0,0,0,0.05); touch-action: manipulation !important;
-    }
-    /* Some themes clamp nav width—let it breathe */
-    header nav, .site-header nav, nav { max-width: 100% !important; overflow: visible !important; }
-    /* Add a bit of space below the sticky header */
-    main, .page-content, .content-wrap { margin-top: 8px !important; }
-    /* Optional: shrink slightly on tiny phones */
-    @media (max-width: 380px) { header nav a, nav a { padding: 11px 12px !important; font-size: 15px !important; } }
-  </style>
-  <!-- MOBILE-NAV-FORCE-END -->
 </head>
 <body>
   <header>
