@@ -2759,3 +2759,43 @@ body .form-section {
     }
   }
 }
+/* ===== iPhone video sizing: Snippy wide, Socorro/Gremlins medium ===== */
+@media (max-width: 480px) {
+  /* General: make any video/iframe fill its card width */
+  .book-card video,
+  .book-card iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;         /* for <video> */
+    display: block;
+  }
+
+  /* If iframe (YouTube/Vimeo), enforce 16:9 */
+  .book-card iframe {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Snippy = larger */
+  #snippy-card video,
+  #snippy-card iframe {
+    /* taller cap so it appears bigger */
+    max-height: 320px !important;
+  }
+
+  /* Socorro & Gremlins = medium */
+  #socorro-card video,
+  #socorro-card iframe,
+  #gremlins-card video,
+  #gremlins-card iframe {
+    max-height: 240px !important;
+  }
+
+  /* iOS Safari quirks: avoid overflow and odd scaling */
+  .book-card .media, 
+  #snippy-card .media,
+  #socorro-card .media,
+  #gremlins-card .media {
+    overflow: hidden;
+  }
+  video { object-fit: contain; }
+}
