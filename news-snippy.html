@@ -1,125 +1,101 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>What’s a Snippy? — News</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/style.css?cb=1761281552">
-  <script defer src="assets/nav.mobile.js?cb=1761281365"></script>
+  <meta charset="utf-8">
+  <title>What’s a SNIPPY? — News</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <!-- Load your site stylesheet (cache-busted by the script that wrote this file) -->
+  <link rel="stylesheet" href="assets/style.css?cb=1761281840">
 
-  <style id="news-article-inline-fix">
-    .news-article{background:#0f172a!important;color:#fff!important;border:1px solid rgba(255,255,255,.15)!important;border-radius:16px!important;padding:16px!important;box-shadow:0 6px 20px rgba(0,0,0,.35)}
-    .news-article h1,.news-article h2,.news-article h3{color:#fff!important}
-    .news-article p,.news-article li{color:rgba(255,255,255,.92)!important;line-height:1.65}
-    .news-article a{color:#fff!important;text-decoration:underline}
-    .news-article hr{border:none;height:1px;background:rgba(255,255,255,.15);margin:1rem 0}
-    .news-article img,.news-article video,.news-article iframe{max-width:100%;width:100%;height:auto;border-radius:12px}
+  <!-- Last-in-head overrides to guarantee readability + visible nav -->
+  <style id="article-contrast-fix">
+    /* Page + header/nav visible on dark */
+    html, body { background:#0b1220 !important; color:#f5f7ff !important; }
+    .site-header, .site-header nav {
+      position: sticky; top: 0; z-index: 1000;
+      background:#0b1220 !important; color:#f5f7ff !important;
+    }
+    .site-header a, .site-header * {
+      color:#f5f7ff !important; opacity:1 !important; filter:none !important; mix-blend-mode:normal !important;
+    }
+
+    /* Hamburger behavior: phones only */
+    @media (max-width:600px){
+      nav .nav-links{display:none;flex-direction:column;gap:10px;padding:10px 12px}
+      nav.is-open .nav-links{display:flex}
+      .hamburger-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;margin:8px 12px;border:0;background:transparent;font-size:18px;cursor:pointer}
+      .hamburger-icon{width:22px;height:14px;position:relative}
+      .hamburger-icon::before,.hamburger-icon::after,.hamburger-icon span{
+        content:"";display:block;height:2px;width:100%;margin:3px 0;background:currentColor;transition:transform .2s ease,opacity .2s ease
+      }
+      nav.is-open .hamburger-icon span{opacity:0}
+      nav.is-open .hamburger-icon::before{transform:translateY(5px) rotate(45deg)}
+      nav.is-open .hamburger-icon::after{transform:translateY(-5px) rotate(-45deg)}
+    }
+
+    /* Article card */
+    .page-content { max-width: 900px; margin: 0 auto; padding: 1.25rem; }
+    .news-article{
+      background:#121a2e !important; color:#ffffff !important;
+      border:1px solid rgba(255,255,255,.2) !important; border-radius:16px !important;
+      padding:18px !important; box-shadow:0 6px 20px rgba(0,0,0,.35)
+    }
+    .news-article *{ color:#f5f7ff !important; opacity:1 !important; filter:none !important; mix-blend-mode:normal !important; }
+    .news-article h1,.news-article h2,.news-article h3{ color:#ffffff !important; margin-top:1rem }
+    .news-article hr{ border:none; height:1px; background:rgba(255,255,255,.18); margin:1rem 0 }
+    .news-article img,.news-article video,.news-article iframe{ max-width:100%; width:100%; height:auto; border-radius:12px }
+    .news-article a{ color:#fff !important; text-decoration:underline }
+    .news-article .btn{ display:inline-block; padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.6) }
   </style>
+
+  <!-- Ensure hamburger script loads -->
+  <script defer src="assets/nav.mobile.js?cb=1761281840"></script>
 </head>
-<body>
-<!doctype html>
-<head>
-<link rel="stylesheet" href="/assets/style.css?cb=1761281365">
-<style id="bg-hotfix-home">
-  /* FORCE dark page background (beats legacy rules) */
-  html, body { background:#0B0F1A !important; }
-  body.home-page { background:#0B0F1A !important; color:#e5e7eb; }
-  /* keep content wrappers transparent so the page bg shows */
-  body.home-page main,
-  body.home-page .container,
-  body.home-page .wrapper,
-  body.home-page .page,
-  body.home-page .content { background:transparent !important; }
-</style>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tony Angiola — Author</title>
-<link rel="stylesheet" href="/assets/style.css?cb=1761281365?v=1761013300">
-<!-- deploy-marker: init -->
-
-  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
-  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
-<script id="bg-hotfix-script">
-  try{
-    document.documentElement.style.setProperty("background","#0B0F1A","important");
-    document.body && document.body.setAttribute("style","background:#0B0F1A !important;");
-  }catch(e){}
-</script>
-  <link rel="stylesheet" href="/assets/override.css?cb=20251022211156">
-  <link rel="stylesheet" href="assets/mobile.css?v=20251023215900" media="(max-width: 768px)">
-  <script defer src="assets/nav.mobile.js?cb=1761279014"></script>
-
-  <style id="latest-news-hardfix">
-  #news .book-card.news-card{background:#0f172a !important;color:#fff !important;border:1px solid rgba(255,255,255,.15) !important;border-radius:16px !important;box-shadow:0 6px 20px rgba(0,0,0,.35);padding:1.25rem !important}
-  #news .section-title{color:#fff !important}
-  #news .book-card.news-card h1,#news .book-card.news-card h2,#news .book-card.news-card h3,#news .book-card.news-card h4{color:#fff !important;opacity:1 !important}
-  #news .book-card.news-card p,#news .book-card.news-card .news-meta,#news .book-card.news-card .news-excerpt{color:rgba(255,255,255,.92) !important;line-height:1.55}
-  #news .book-card.news-card a{color:#fff !important;text-decoration:none}
-  #news .book-card.news-card a:hover{text-decoration:underline}
-  #news .book-card.news-card .btn{background:transparent !important;color:#fff !important;border:1px solid rgba(255,255,255,.6) !important;border-radius:12px;padding:10px 16px;transition:all .2s ease}
-  #news .book-card.news-card .btn:hover{background:rgba(255,255,255,.15);border-color:#fff;transform:translateY(-1px)}
-  </style>
-
-  <style id="news-card-inline-fix">
-    #news .dark-card{background:#0f172a!important;color:#fff!important;border:1px solid rgba(255,255,255,.15)!important;border-radius:16px!important;box-shadow:0 6px 20px rgba(0,0,0,.35);padding:1.25rem!important}
-    #news .section-title,#news .news-title{color:#fff!important}
-    #news p,#news .news-meta,#news .news-excerpt{color:rgba(255,255,255,.92)!important;line-height:1.55}
-    #news .btn{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.6)!important;border-radius:12px;padding:10px 16px}
-    #news .btn:hover{background:rgba(255,255,255,.15);border-color:#fff}
-  </style>
-</head>
-<body class="home-page home-page">
-  <header>
-  <div class="container">
+<body class="news-page">
+  <!-- Simple, dependable header/nav (desktop nav + mobile hamburger) -->
+  <header class="site-header">
     <nav class="site-nav">
-      <a href="/" class="active" aria-current="page"><strong>Tony Angiola</strong></a>
-      <a href="/books.html">Books</a>
-      <a href="/bio.html">Bio</a>
-      <a href="/newsletter.html">Newsletter</a>
-      <a href="/contact.html">Contact</a>
+      <!-- Hamburger button (shown on phones by CSS above) -->
+      <button class="hamburger-btn" aria-label="Menu" aria-controls="nav-links" aria-expanded="false">
+        <span class="hamburger-icon"><span></span></span>
+      </button>
+
+      <!-- Your links (JS will wrap these into .nav-links if your site script does it; we also include it inline for safety) -->
+      <div class="nav-links">
+        <a href="index.html">Tony Angiola</a>
+        <a href="books.html">Books</a>
+        <a href="bio.html">Bio</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+        <a href="index.html#news">News</a>
+      </div>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main class="page-content" style="max-width: 900px; margin: 0 auto; padding: 1.25rem;">
-  <article class="news-article>
-    <header>
-      <h1 style="margin-bottom: .25rem;">What’s a SNIPPY?</h1>
-      <p style="opacity:.8; margin-top:0;">By Tony Angiola and Katie Paige • <time datetime="2025-10-23">October 23, 2025</time></p>
-      <hr style="border:none;height:1px;background:currentColor;opacity:.15;margin:1rem 0;">
-    </header>
+  <main class="page-content">
+    <article class="news-article">
+      <header>
+        <h1 style="margin-bottom:.25rem">What’s a SNIPPY?</h1>
+        <p style="opacity:.9;margin-top:0">By Tony Angiola and Katie Paige • <time datetime="2025-10-23">October 23, 2025</time></p>
+        <hr>
+      </header>
 
-    <p><em>“What is a Snippy?”</em> That curious question recently came from a well-known figure in the UFO/UAP world who, despite their recognition, had never heard of the infamous case of Snippy the Horse.</p>
+      <!-- Keep the article body concise here; we can paste the full text next if you want -->
+      <p><em>“What is a Snippy?”</em> A surprising question from a well-known figure in the UFO/UAP world rekindled the San Luis Valley’s most pivotal case — Snippy the Horse.</p>
+      <h2>The Valley of Shadows</h2>
+      <p>The valley’s reputation exploded with the Snippy case, the first animal mutilation to gain worldwide attention, amid reports of luminous craft around Mount Blanca and beyond.</p>
+      <h2>The Horses</h2>
+      <p>In 1967, Snippy was a 3-year-old Appaloosa gelding kept between the Lewis cabin and the King Ranch, alongside Smokey, Sheiba, and Lady.</p>
+      <h2>Discovery & Forensics</h2>
+      <p>Snippy’s remains showed a cauterized collar-like incision, dried vertebrae and skull, and no blood. Forensics reported organ removal without blood and other anomalies.</p>
+      <h2>Environmental Anomalies</h2>
+      <p>Investigators documented a green ooze, unusual ground impressions, and posts seemingly cut by extreme heat — suggesting a massive object had been present.</p>
+      <h2>Closing</h2>
+      <p>For full interviews and original documents, see <em>Snippy: A King Family Legacy</em>.</p>
 
-    <p>If you’re a MUFON investigator, or an enthusiast of UFOs, cryptids, and high strangeness, the following account draws on unsealed APRO files preserved at the National UFO Historical Records Center in Rio Rancho, NM — uncovering the hidden truth behind one of the most important mutilation cases in history.</p>
-
-    <h2>The Valley of Shadows</h2>
-    <p>The San Luis Valley’s reputation for high strangeness became globally recognized with the Snippy case — the first animal mutilation to gain worldwide attention. Nearby residents reported luminous objects near Mount Blanca, craft over the Sand Dunes, and fast-moving orbs.</p>
-
-    <h2>The Horses</h2>
-    <p>Snippy was a 3-year-old Appaloosa gelding in 1967, gifted to Nellie Lewis and later kept between the Lewis cabin and the King Ranch. Other horses on the King Ranch included Smokey, Sheiba, and Lady.</p>
-
-    <h2>Confusion over Identity</h2>
-    <p>Over time, Snippy was often mixed up with Lady. Photographic evidence and examination of the bones confirmed Snippy was male—corroborated by witnesses present during the 1967 investigation.</p>
-
-    <h2>Discovery & Forensics</h2>
-    <p>On September 9, 1967, Snippy’s remains were found: flesh removed from the neck up with a cauterized collar-like incision, dry vertebrae and skull, and no blood. Forensic inspection reported organs removed without blood, a dry brain cavity, white powder in the stomach, and a possibly broken hind leg consistent with a fall from height.</p>
-
-    <h2>Environmental Anomalies</h2>
-    <p>Investigators noted a green ooze, an odd “tool,” scorch marks, cylindrical ground holes, large circular impressions, and fence posts seemingly severed by extreme heat—suggesting the presence of a massive object.</p>
-
-    <h2>Aftermath</h2>
-    <p>Following the investigation, sudden deaths and ongoing reports of bloodless animal deaths, craft sightings, missing time, and other anomalies continued across the valley.</p>
-
-    <h2>Closing</h2>
-    <p>For original interview transcriptions and APRO/NICAP documents from S.O.R.T. (Dr. Leo Sprinkle), see <em>Snippy: A King Family Legacy</em> (foreword by David Marler; note from Linda Howe; dedication to Chris O’Brien).</p>
-
-    <p style="margin-top:2rem;">
-      <a class="btn" href="index.html">← Back to Home</a>
-    </p>
-  </article>
-</main>
-
+      <p style="margin-top:2rem"><a class="btn" href="index.html">← Back to Home</a></p>
+    </article>
+  </main>
 </body>
 </html>
