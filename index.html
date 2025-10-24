@@ -1,6 +1,6 @@
 <!doctype html>
 <head>
-<link rel="stylesheet" href="/assets/style.css?cb=1761280601">
+<link rel="stylesheet" href="/assets/style.css?cb=1761281365">
 <style id="bg-hotfix-home">
   /* FORCE dark page background (beats legacy rules) */
   html, body { background:#0B0F1A !important; }
@@ -15,7 +15,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tony Angiola — Author</title>
-<link rel="stylesheet" href="/assets/style.css?v=1761013300">
+<link rel="stylesheet" href="/assets/style.css?cb=1761281365?v=1761013300">
 <!-- deploy-marker: init -->
 
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
@@ -40,6 +40,14 @@
   #news .book-card.news-card .btn{background:transparent !important;color:#fff !important;border:1px solid rgba(255,255,255,.6) !important;border-radius:12px;padding:10px 16px;transition:all .2s ease}
   #news .book-card.news-card .btn:hover{background:rgba(255,255,255,.15);border-color:#fff;transform:translateY(-1px)}
   </style>
+
+  <style id="news-card-inline-fix">
+    #news .dark-card{background:#0f172a!important;color:#fff!important;border:1px solid rgba(255,255,255,.15)!important;border-radius:16px!important;box-shadow:0 6px 20px rgba(0,0,0,.35);padding:1.25rem!important}
+    #news .section-title,#news .news-title{color:#fff!important}
+    #news p,#news .news-meta,#news .news-excerpt{color:rgba(255,255,255,.92)!important;line-height:1.55}
+    #news .btn{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.6)!important;border-radius:12px;padding:10px 16px}
+    #news .btn:hover{background:rgba(255,255,255,.15);border-color:#fff}
+  </style>
 </head>
 <body class="home-page home-page">
   <header>
@@ -57,14 +65,14 @@
   
 
   <main class="container">
-  <section id="news" class="news-section" style="margin:1.25rem auto;max-width:900px;">
+  <section id="news" class="news-section">
     <h2 class="section-title">Latest News</h2>
-    <article class="book-card news-card">
+    <article class="book-card news-card dark-card">
       <div class="content">
-        <h3 class="news-title" style="margin:0 0 .25rem 0;">What’s a SNIPPY?</h3>
-        <p class="news-meta" style="opacity:.8;margin:.1rem 0 .6rem 0;">By Tony Angiola & Katie Paige — Oct 23, 2025</p>
+        <h3 class="news-title">What’s a SNIPPY?</h3>
+        <p class="news-meta">By Tony Angiola & Katie Paige — Oct 23, 2025</p>
         <p class="news-excerpt">A fresh look at the San Luis Valley’s most pivotal case — Snippy the Horse — drawing on newly available APRO files and on-site testimony.</p>
-        <p class="news-actions"><a class="btn" href="news-snippy.html?cb=1761280601">Read article</a></p>
+        <p class="news-actions"><a class="btn" href="news-snippy.html">Read article</a></p>
       </div>
     </article>
   </section>
