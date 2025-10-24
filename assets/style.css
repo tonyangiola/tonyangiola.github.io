@@ -3223,3 +3223,45 @@ main.page-content .card h3 { color:#fff !important; }
 /* Keep the link readable */
 #latest-news a { color: #cfe8ff !important; }
 #latest-news a:hover { color:#e8f3ff !important; }
+
+/* === Mini Bio Badge (top-right) === */
+.mini-bio-badge{
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: color-mix(in hsl, var(--bio-bg, #0e1116) 88%, transparent);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  z-index: 4000; /* above content, below any modal */
+  text-decoration: none;
+}
+
+.mini-bio-badge img{
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.mini-bio-badge .name{
+  font: 600 14px/1.1 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Keep clear of the burger on phones */
+@media (max-width: 480px){
+  .mini-bio-badge{ top: 64px; right: 10px; padding: 6px 9px; }
+  .mini-bio-badge img{ width: 32px; height: 32px; }
+  .mini-bio-badge .name{ font-size: 13px; }
+}
+
+/* If any header overlay tries to cover it, ensure clicks go through on the burger area */
+.header, header { position: relative; z-index: 3000; } /* typical header safety */
