@@ -2338,3 +2338,72 @@ body .form-section {
   -webkit-text-fill-color:#fff !important;
   transition: background-color 100000s ease-in-out 0s; /* hide autofill bg */
 }
+/* ===== Mobile Hamburger Nav (phones only) ===== */
+@media (max-width: 768px) {
+  /* Keep your nav sticky if you already use it; no color changes */
+  nav, .site-header nav, nav.site-nav, header nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Container that holds your existing links (JS will create .nav-links) */
+  nav .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  /* When menu is open */
+  nav.is-open .nav-links { display: flex; }
+
+  /* Make each link a comfy tap target on mobile */
+  nav .nav-links a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 16px;   /* ≥44px tap target */
+    line-height: 1.25;
+    border-radius: 12px;
+  }
+
+  /* The hamburger button */
+  .hamburger-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    margin: 8px 12px;
+    border-radius: 12px;
+    border: none;
+    background: transparent; /* keeps your existing header color visible */
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  /* Icon bars */
+  .hamburger-icon {
+    width: 22px; height: 14px; position: relative;
+  }
+  .hamburger-icon::before,
+  .hamburger-icon::after,
+  .hamburger-icon span {
+    content: ""; display: block; height: 2px; width: 100%;
+    margin: 3px 0;
+    background: currentColor; /* inherits nav text color */
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  /* Turn into "X" when open */
+  nav.is-open .hamburger-icon span { opacity: 0; }
+  nav.is-open .hamburger-icon::before {
+    transform: translateY(5px) rotate(45deg);
+  }
+  nav.is-open .hamburger-icon::after {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  /* Hide your normal inline nav layout on phones; JS controls visibility */
+  nav ul { margin: 0; padding: 0; }
+}
