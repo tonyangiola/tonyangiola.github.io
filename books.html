@@ -1,6 +1,17 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style id="books-mobile-overrides">
+    /* Page-local: only affects Books page */
+    #socorro-card :is(video,iframe) { object-fit: contain !important; }
+    @media (max-width: 600px) {
+      #socorro-card :is(video,iframe) {
+        max-height: 300px !important;  /* tweak to 320/340 if you want */
+        height: auto !important;
+        width: 100% !important;
+      }
+    }
+  </style>
 <title>Books</title>
 <link rel="stylesheet" href="/assets/style.css?cb=1761279649">
 <style id="bg-hotfix-books">
