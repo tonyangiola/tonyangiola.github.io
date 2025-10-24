@@ -2407,3 +2407,43 @@ body .form-section {
   /* Hide your normal inline nav layout on phones; JS controls visibility */
   nav ul { margin: 0; padding: 0; }
 }
+/* ===== Books page: phone layout (≤600px) ===== */
+@media (max-width: 600px) {
+  /* One column grid; comfy spacing */
+  .books-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .book-card { padding: 12px !important; }
+
+  /* Make video/iframe/image fill the phone width cleanly */
+  .book-card :is(video, iframe, img) {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;          /* keep natural ratio for <video>/<img> */
+    border-radius: 12px;
+  }
+
+  /* iframes (e.g., YouTube/Vimeo) need an enforced aspect ratio */
+  .book-card iframe {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Optional: subtle “hero” feel for Snippy on phones */
+  #snippy-card :is(video, iframe, img) {
+    aspect-ratio: 16 / 9;             /* gives a consistent, larger look */
+    object-fit: cover;
+  }
+
+  /* Buttons readable on phones */
+  .book-card .actions :is(a, button) {
+    display: inline-block;
+    padding: 12px 14px;
+    font-size: 16px;
+    border-radius: 12px;
+    line-height: 1.2;
+  }
+}
