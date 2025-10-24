@@ -2906,3 +2906,44 @@ body .form-section {
     max-height: 620px !important;  /* taller to avoid top/bottom cut */
   }
 }
+/* === FINAL (10-23-2025): iPhone size bump + Socorro no-crop === */
+
+/* Never crop media wrappers */
+#snippy-card .media,
+#socorro-card .media,
+#gremlins-card .media,
+.book-card .media {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* All embeds fill width, keep aspect */
+#snippy-card :is(video,iframe),
+#socorro-card :is(video,iframe),
+#gremlins-card :is(video,iframe) {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  object-fit: contain !important;
+  aspect-ratio: 16 / 9 !important; /* helps iframes */
+}
+
+/* --- Mobile (iPhone & small): make them a bit bigger --- */
+@media (max-width: 600px) {
+  /* Snippy biggest */
+  #snippy-card :is(video,iframe)   { max-height: 460px !important; }  /* +40 */
+
+  /* Socorro taller so no crop */
+  #socorro-card :is(video,iframe)  { max-height: 420px !important; }
+
+  /* Gremlins slightly bigger */
+  #gremlins-card :is(video,iframe) { max-height: 380px !important; }
+}
+
+/* --- Desktop/Tablet: give Socorro room too --- */
+@media (min-width: 601px) {
+  #socorro-card :is(video,iframe)  { max-height: 680px !important; }
+}
+/* === /FINAL (10-23-2025) === */
