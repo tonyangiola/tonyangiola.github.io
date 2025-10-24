@@ -2691,3 +2691,18 @@ body .form-section {
   border-color: #fff;
   transform: translateY(-1px);
 }
+/* ==== Latest News dark card (match site theme) ==== */
+.news-section { background: transparent !important; color: #fff !important; }
+.news-card {
+  background: #0f172a !important; color: #fff !important;
+  border: 1px solid rgba(255,255,255,.15) !important;
+  border-radius: 16px !important; padding: 1.25rem !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+}
+.news-card h1, .news-card h2, .news-card h3 { color: #fff !important; }
+.news-card p, .news-card .news-meta, .news-card .news-excerpt { color: rgba(255,255,255,.92) !important; }
+.news-card .btn {
+  background: transparent !important; color: #fff !important;
+  border: 1px solid rgba(255,255,255,.6) !important; border-radius: 12px; padding: 10px 16px;
+}
+.news-card .btn:hover { background: rgba(255,255,255,.15); border-color:#fff; transform: translateY(-1px); }
