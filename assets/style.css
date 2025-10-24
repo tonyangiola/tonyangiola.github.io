@@ -2339,7 +2339,7 @@ body .form-section {
   transition: background-color 100000s ease-in-out 0s; /* hide autofill bg */
 }
 /* ===== Mobile Hamburger Nav (phones only) ===== */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   /* Keep your nav sticky if you already use it; no color changes */
   nav, .site-header nav, nav.site-nav, header nav {
     position: sticky;
