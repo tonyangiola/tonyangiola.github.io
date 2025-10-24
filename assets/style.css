@@ -2976,31 +2976,3 @@ body .form-section {
 .book-card .media { overflow: visible !important; height: auto !important; max-height: none !important; }
 
 /* === /SUPERFINAL (10-23-2025) === */
-/* === SOCORRO ABSOLUTE-FIT (forces full 16:9, no crop, overrides inline) === */
-#socorro-card { min-height: 0 !important; }
-#socorro-card .media {
-  position: relative !important;
-  width: 100% !important;
-  /* 16:9 aspect; change if your video is different */
-  padding-top: 56.25% !important;
-  height: 0 !important;
-  overflow: visible !important;
-}
-
-/* Pin the player to fill the box; ignore any inline sizes */
-#socorro-card :is(iframe, video) {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-height: none !important;
-  display: block !important;
-  object-fit: contain !important; /* prevents cropping if it's a <video> */
-}
-
-/* On very small screens, allow a bit more height visually if needed */
-@media (max-width: 600px) {
-  #socorro-card .media { padding-top: 60% !important; } /* ~16:9.6, a smidge taller */
-}
-/* === /SOCORRO ABSOLUTE-FIT === */
