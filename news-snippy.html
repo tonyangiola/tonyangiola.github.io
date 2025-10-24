@@ -75,11 +75,6 @@
 
   <main class="page-content">
     <article class="news-article">
-      <header>
-        <h1 style="margin-bottom:.25rem">What’s a SNIPPY?</h1>
-        <p style="opacity:.9;margin-top:0">By Tony Angiola and Katie Paige • <time datetime="2025-10-23">October 23, 2025</time></p>
-        <hr>
-      </header>
 
       <!-- Keep the article body concise here; we can paste the full text next if you want -->
       <p><em>“What is a Snippy?”</em> A surprising question from a well-known figure in the UFO/UAP world rekindled the San Luis Valley’s most pivotal case — Snippy the Horse.</p>
@@ -97,5 +92,55 @@
       <p style="margin-top:2rem"><a class="btn" href="index.html">← Back to Home</a></p>
     </article>
   </main>
+<!-- DEDUPE-HEADERS: keep only the first header/nav on this page -->
+<style>
+/* Hide any header after the first one */
+body header ~ header,
+body .site-header ~ .site-header,
+body [role="banner"] ~ [role="banner"] { display:none !important; }
+/* If multiple burger toggles exist in the kept header, keep the first */
+header .hamburger ~ .hamburger,
+header .menu-toggle ~ .menu-toggle,
+header .nav-toggle ~ .nav-toggle { display:none !important; }
+/* Remove stray duplicate "Home" buttons/links under the header (common patterns) */
+header ~ a[href="/"], header ~ a[href="./"], header ~ a[href="index.html"] { display:none !important; }
+</style>
+<script>
+(function(){
+  function topMost(els){var r,best=null,y=1e9; for(var i=0;i<els.length;i++){r=els[i].getBoundingClientRect(); if(r && r.top<y){y=r.top; best=els[i];}} return best;}
+  function run(){
+    var headers=[].slice.call(document.querySelectorAll('header,.site-header,[role="banner"]'));
+    if(headers.length>1){
+      var keep=topMost(headers);
+      headers.forEach(function(h){ if(h!==keep && h.parentNode){ h.parentNode.removeChild(h);} });
+      if(keep){
+        var t=keep.querySelectorAll('.hamburger,.menu-toggle,.nav-toggle');
+        for(var i=1;i<t.length;i++){ if(t[i]&&t[i].parentNode){ t[i].parentNode.removeChild(t[i]); } }
+      }
+    }
+    // Remove stray duplicate "Home" button under header if present
+    var killers=document.querySelectorAll('header ~ a[href="/"], header ~ a[href="./"], header ~ a[href="index.html"]');
+    killers.forEach(function(k){ if(k && k.parentNode){ k.parentNode.removeChild(k); } });
+  }
+  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', run); } else { run(); }
+  window.addEventListener('load', function(){ setTimeout(run,0); });
+})();
+</script>
+<!-- /DEDUPE-HEADERS -->
+<!-- NEWS-PAGE-FIX -->
+<style>
+/* show only the topmost header just in case a stray slips in */
+body header ~ header { display:none !important; }
+/* make any bottom “Home” button/link readable */
+a[href="/"], a[href="./"], a[href="index.html"], a[href="index.htm"], a[href="index"]{
+  color:#fff !important; background:rgba(255,255,255,0.08) !important; 
+  border:1px solid rgba(255,255,255,0.18) !important; padding:.6rem 1rem; border-radius:8px;
+  text-decoration:none !important;
+}
+a[href="/"]:hover, a[href="./"]:hover, a[href="index.html"]:hover, a[href="index.htm"]:hover, a[href="index"]:hover{
+  background:rgba(255,255,255,0.16) !important;
+}
+</style>
+<!-- /NEWS-PAGE-FIX -->
 </body>
 </html>
