@@ -2447,3 +2447,40 @@ body .form-section {
     line-height: 1.2;
   }
 }
+/* ===== Books page: hard override for phones (≤600px) ===== */
+@media (max-width: 600px) {
+  /* One column, comfy spacing */
+  .books-grid { display: grid !important; grid-template-columns: 1fr !important; gap: 16px !important; }
+
+  /* Ensure media containers expand */
+  .book-card, .book-card .media-box { width: 100% !important; max-width: 100% !important; }
+
+  /* Videos & images: fill width, keep ratio */
+  .book-card video,
+  .book-card img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 12px;
+  }
+
+  /* Iframes: we’ll wrap with .embed-16x9 via JS; these rules are the fallback */
+  .book-card iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border: 0 !important;
+  }
+
+  /* Responsive 16:9 wrapper for iframes */
+  .embed-16x9 { position: relative !important; width: 100% !important; }
+  .embed-16x9::before { content: "" !important; display: block !important; padding-top: 56.25% !important; }
+  .embed-16x9 > iframe {
+    position: absolute !important; inset: 0 !important;
+    width: 100% !important; height: 100% !important;
+  }
+
+  /* Buttons readable on phones */
+  .book-card .actions :is(a,button) { padding: 12px 14px !important; font-size: 16px !important; border-radius: 12px !important; }
+}
