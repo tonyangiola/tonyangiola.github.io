@@ -3006,3 +3006,39 @@ body .form-section {
   #socorro-card iframe { max-height: 660px !important; }
 }
 /* === /MICROFIX === */
+/* === SOCORRO HARD RESET (10-23-2025): cancel all clamps; no crop; sane size === */
+
+/* 0) Ensure the card and any inner wrapper never enforce height or crop */
+#socorro-card,
+#socorro-card.book-card,
+#socorro-card .media {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 0 !important;
+}
+
+/* 1) Neutralize previous global rules that forced aspect-ratio or max-height */
+#socorro-card :is(video,iframe) {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;    /* cancel earlier caps */
+  aspect-ratio: auto !important;  /* cancel any forced 16:9 */
+  display: block !important;
+  object-fit: contain !important; /* never crop top/bottom */
+}
+
+/* 2) Desktop/tablet: keep Socorro from getting too wide overall */
+@media (min-width: 601px) {
+  #socorro-card {
+    max-width: 900px;             /* tweak if you want a bit wider/narrower */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 3) Mobile: card spans full width; height will follow the video naturally */
+@media (max-width: 600px) {
+  #socorro-card { max-width: 100% !important; }
+}
+/* === /SOCORRO HARD RESET === */
