@@ -2559,3 +2559,53 @@ body .form-section {
 
 /* If you already have .book-card, this keeps styling consistent */
 .news-card.book-card { /* intentionally empty – inherits your book-card styles */ }
+/* ==== Unified dark card theme (News + Books) ==== */
+/* Base card surface */
+.news-card,
+.book-card {
+  background: #0f172a !important;            /* slate-900-ish */
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,.35);
+}
+
+/* Headings readable (kill any purple) */
+.news-card h1, .news-card h2, .news-card h3, .news-card h4,
+.book-card h1, .book-card h2, .book-card h3, .book-card h4 {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+/* Body text slightly softer than pure white */
+.news-card p, .news-card .news-meta,
+.book-card p, .book-card .meta {
+  color: rgba(255,255,255,.92) !important;
+}
+
+/* Links inside cards: white, underline on hover (replace any purple) */
+.news-card a, .book-card a {
+  color: #fff !important;
+  text-decoration: none;
+}
+.news-card a:hover, .book-card a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons on dark cards: white text, subtle outline */
+.news-card .btn, .book-card .btn {
+  background: transparent !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.6) !important;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+.news-card .btn:hover, .book-card .btn:hover {
+  border-color: #fff !important;
+  transform: translateY(-1px);
+}
+
+/* Optional: card titles that were low-contrast */
+.news-title,
+.book-title {
+  color: #fff !important;
+}
