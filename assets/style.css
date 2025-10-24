@@ -3061,3 +3061,34 @@ body .form-section {
     object-fit: contain !important;
   }
 }
+/* === SOCORRO UNCROP (10-23-2025): remove ancestor clipping & fixed heights === */
+
+/* 0) Grid should not force equal row heights */
+.books-grid { grid-auto-rows: auto !important; align-items: start !important; }
+
+/* 1) Socorro wrappers: no fixed height, no padding hacks, no clipping */
+#socorro-card,
+#socorro-card .media,
+#socorro-card .card,
+#socorro-card .content {
+  height: auto !important;
+  max-height: none !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+/* 2) The video itself: natural aspect, never cropped, no forced aspect */
+#socorro-card video {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  aspect-ratio: auto !important;
+}
+
+/* 3) iPhone-only: keep it tall enough to see ALL of it, but not gigantic */
+@media (max-width: 600px) {
+  #socorro-card video { max-height: 65vh !important; } /* adjust 60–70vh if needed */
+}
+/* === /SOCORRO UNCROP === */
