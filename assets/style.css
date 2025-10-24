@@ -2544,3 +2544,18 @@ body .form-section {
     width: 100% !important; height: 100% !important;
   }
 }
+
+/* ==== Latest News section (home) ==== */
+.news-section { padding: 0 12px; }
+.news-section .section-title { margin: 0 0 .75rem 0; font-size: 1.5rem; }
+.news-card { display: grid; gap: .6rem; padding: 12px; border-radius: 16px; }
+.news-card .btn { display: inline-block; padding: 10px 14px; border-radius: 12px; }
+
+/* Make it breathe on phones */
+@media (max-width: 600px) {
+  .news-section { padding: 0 10px; }
+  .news-card { padding: 12px; }
+}
+
+/* If you already have .book-card, this keeps styling consistent */
+.news-card.book-card { /* intentionally empty – inherits your book-card styles */ }
