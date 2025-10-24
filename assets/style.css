@@ -2706,3 +2706,56 @@ body .form-section {
   border: 1px solid rgba(255,255,255,.6) !important; border-radius: 12px; padding: 10px 16px;
 }
 .news-card .btn:hover { background: rgba(255,255,255,.15); border-color:#fff; transform: translateY(-1px); }
+/* ===== Books: make Snippy, Socorro, Gremlins BIG on iPhone (≤600px) ===== */
+@media (max-width: 600px) {
+  /* Ensure single column so cards can expand */
+  .books-grid { display: grid !important; grid-template-columns: 1fr !important; gap: 16px !important; }
+
+  /* Full-bleed containers: push media to the screen edges for visual impact */
+  #snippy-card,
+  #socorro-card,
+  #gremlins-card {
+    width: 100vw !important;                    /* span entire viewport width */
+    margin-left: calc(50% - 50vw) !important;   /* align to edges */
+    margin-right: calc(50% - 50vw) !important;
+    border-radius: 0 !important;                /* let media define its own radius */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Inner wrappers shouldn’t cap width */
+  #snippy-card :is(.media-box,.media,figure,.inner,.content),
+  #socorro-card :is(.media-box,.media,figure,.inner,.content),
+  #gremlins-card :is(.media-box,.media,figure,.inner,.content) {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make the actual media fill the viewport width */
+  #snippy-card :is(video,iframe,img),
+  #socorro-card :is(video,iframe,img),
+  #gremlins-card :is(video,iframe,img) {
+    display: block !important;
+    width: 100vw !important;                    /* match container */
+    max-width: 100vw !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    border-radius: 12px !important;             /* keep your rounded look */
+  }
+
+  /* Give each a pleasing, larger aspect; Snippy a touch taller “hero” look */
+  #snippy-card :is(video,iframe,img) { aspect-ratio: 3 / 2; object-fit: cover; }
+  #socorro-card :is(video,iframe,img),
+  #gremlins-card :is(video,iframe,img) { aspect-ratio: 16 / 9; object-fit: cover; }
+
+  /* iOS-specific safety: allow width to truly expand */
+  @supports (-webkit-touch-callout: none) {
+    #snippy-card :is(video,iframe,img),
+    #socorro-card :is(video,iframe,img),
+    #gremlins-card :is(video,iframe,img) {
+      width: -webkit-fill-available !important;
+      max-width: 100vw !important;
+    }
+  }
+}
