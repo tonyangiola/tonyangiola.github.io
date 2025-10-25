@@ -3516,3 +3516,28 @@ header > nav:first-of-type a:first-of-type{
 @media (max-width: 768px){
   .name-badge-fixed{ display: none !important; }
 }
+
+/* === Fixed name next to upper-right badge (hard element) === */
+header nav { position: relative !important; }
+@media (min-width: 769px){
+  /* Reserve room for avatar + name so links never overlap */
+  header nav { padding-right: 220px !important; } /* adjust 200–260 if needed */
+
+  .name-by-avatar{
+    position: absolute !important;
+    top: 8px !important;
+    right: 56px !important;          /* nudge 52–64 to align with the avatar */
+    font-weight: 600 !important;
+    font-size: .95rem !important;
+    line-height: 1 !important;
+    color: #fff !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    z-index: 9 !important;
+  }
+}
+/* Keep mobile clean */
+@media (max-width: 768px){
+  .name-by-avatar{ display:none !important; }
+}
