@@ -4266,3 +4266,4 @@ header nav ul, header nav .menu, header nav .links {
 /* Ensure no accidental text overlays near the avatar */
 #badge::before, #badge::after,
 .badge::before, .badge::after { content: none !important; display: none !important; }
+<!-- deploy-marker 20251025-145312 -->
