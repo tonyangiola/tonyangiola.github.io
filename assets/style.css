@@ -3254,3 +3254,22 @@ header.light > nav:first-of-type::before { color: #111; text-shadow: none; }
     font-size: .9rem;
   }
 }
+/* === Name next to upper-right headshot === */
+header > nav:first-of-type { position: relative !important; }
+header > nav:first-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute;
+  top: 8px;
+  right: 56px;        /* nudge this if needed */
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 3;
+}
+@media (max-width: 430px){
+  header > nav:first-of-type::before{ right: 50px; font-size: .9rem; }
+}
