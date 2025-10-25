@@ -1,3 +1,12 @@
+2025
+@media all {
+  html, body { transform: none !important; overflow: visible !important; }
+  #mobile-drawer, .mobile-nav-toggle { display: none !important; }
+  header nav { display: block !important; }
+  .page-header, .site-header, header { padding-left: 0 !important; }
+  img, video, iframe { opacity: 1 !important; visibility: visible !important; }
+  html.mobile-nav-open { overflow: visible !important; }
+}
 :root { --max: 880px; --pad: 16px; }
   --page-bg: color-mix(in srgb, var(--nav-bg) 70%, white 30%);
   --nav-bg: #0f1115;
