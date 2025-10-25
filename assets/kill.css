@@ -1,0 +1,10 @@
+/* EMERGENCY VISIBILITY OVERRIDE (last-in-wins) */
+html, body { background:#fff !important; color:#000 !important; transform:none !important; overflow:visible !important; }
+* { filter:none !important; opacity:1 !important; }
+img, video, iframe, canvas, svg { display:block !important; max-width:100% !important; height:auto !important; visibility:visible !important; }
+header, nav, main, .page, .container, .content, .wrapper { position:static !important; transform:none !important; overflow:visible !important; }
+#mobile-drawer, .mobile-nav-toggle { display:none !important; }
+header nav { display:block !important; }
+body { padding:0 !important; margin:0 !important; }
+a { color:#0645ad !important; }
+@media (max-width:915px){ html, body { width:100% !important; } }
