@@ -4460,3 +4460,25 @@ header > nav:first-of-type::before{content:none!important}
 <!-- deploy-marker 20251025-152009 -->
 <!-- deploy-marker 20251025-152133 -->
 <!-- deploy-marker 20251025-152300 -->
+
+/* === Home bottom hero (responsive, safe for portrait images) === */
+.home-bottom-hero {
+  margin: 2rem 0 0 0;
+}
+.home-bottom-hero img {
+  display: block;
+  width: 100%;
+  max-height: 480px;       /* cap the banner height */
+  height: 45vh;            /* responsive feel on tall screens */
+  object-fit: cover;       /* crop edges to make a nice banner even if portrait */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+/* Mobile tweak */
+@media (max-width: 480px){
+  .home-bottom-hero img{
+    height: 32vh;
+    max-height: 360px;
+    border-radius: 12px;
+  }
+}
