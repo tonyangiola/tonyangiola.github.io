@@ -3654,3 +3654,8 @@ header [class*="brand"] > *:empty {
 @media (hover:hover) and (pointer:fine){
   header .hamburger-btn{ display: none !important; visibility: hidden !important; }
 }
+/* snippy prose scope */
+.news-article.prose { line-height: 1.65; }
+.news-article h2 { margin-top: 1.25rem; font-size: 1.375rem; }
+.news-article figure img { width: 100%; height: auto; border-radius: 12px; }
+.news-article figcaption { font-size: .95rem; opacity: .85; margin-top: .35rem; }
