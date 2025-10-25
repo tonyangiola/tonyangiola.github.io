@@ -3938,3 +3938,59 @@ header [class*="brand"] > *:empty {
   .mobile-nav-toggle{ display: none !important; }
   #mobile-drawer{ transform: none; position: static; width: auto; box-shadow: none; padding: 0; }
 }
+
+/* ===== Consistent Mobile Nav (site-wide) ===== */
+@media (max-width: 915px){
+  /* Always show our white hamburger in the upper-left */
+  .mobile-nav-toggle{
+    position: fixed !important; top: 12px !important; left: 12px !important;
+    z-index: 10020 !important; background: rgba(255,255,255,0.16) !important;
+    border: none !important; padding: 8px !important; border-radius: 10px !important;
+  }
+  .mobile-nav-toggle svg{ width: 28px; height: 28px; display:block; }
+  .mobile-nav-toggle svg rect{ fill:#fff !important; } /* force white bars */
+
+  /* Kill any other buttons/menus so only OUR drawer exists */
+  .hamburger, .menu-btn, .menu-toggle, button[aria-label="Menu"]{ display:none !important; }
+
+  /* Hide desktop header navs on mobile so Snippy/news pages don't revert */
+  header nav:not(#mobile-drawer .mobile-menu){ display:none !important; }
+
+  /* Our self-contained drawer (if not already present from earlier step) */
+  #mobile-drawer{
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: 65vw; max-width: 300px;
+    background: #141820; color:#fff;
+    transform: translateX(-110%); transition: transform .25s ease; z-index: 10010;
+    padding: 64px 16px 16px; overflow-y:auto; box-shadow: 4px 0 16px rgba(0,0,0,.35);
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  html.mobile-nav-open #mobile-drawer{ transform: translateX(0); }
+  html.mobile-nav-open body{ transform: translateX(65vw); transition: transform .25s ease; position: relative; }
+
+  #mobile-drawer .mobile-menu{ display:flex; flex-direction:column; gap:14px; }
+  #mobile-drawer .mobile-menu a{ color:#fff; text-decoration:none; font-size:18px; padding:8px 4px; border-radius:8px; }
+  #mobile-drawer .mobile-menu a:active{ background: rgba(255,255,255,0.12); }
+}
+
+/* Desktop sanity */
+@media (min-width: 916px){
+  .mobile-nav-toggle{ display:none !important; }
+}
+
+/* ===== Books / video sizing fixes (site-wide) ===== */
+#socorro-card, #socorro-card.book-card, #socorro-card .media{
+  overflow: visible !important; height: auto !important; max-height: none !important; padding: 0 !important;
+}
+.book-card .media, .book-card .video, .media, .video{
+  width: 100% !important; max-width: 100% !important;
+}
+.book-card video, .book-card iframe,
+.media video, .media iframe,
+.video video, .video iframe{
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  aspect-ratio: 16/9; /* helps iframes keep shape */
+}
