@@ -3350,3 +3350,21 @@ header.light:has(nav img) nav:last-of-type::before { color:#111 !important; text
 @media (max-width: 430px){
   header:has(nav img) nav:last-of-type::before{ right: 50px !important; font-size: .9rem !important; }
 }
+/* === brand-name-ur-badge (next to upper-right avatar) === */
+header nav { position: relative; }
+.brand-name-ur-badge{
+  position: absolute;
+  top: 8px;
+  right: 56px;      /* tweak to align with the pic edge */
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7);
+  white-space: nowrap;
+  z-index: 999;
+  pointer-events: none;
+}
+@media (max-width: 430px){
+  .brand-name-ur-badge{ right: 50px; font-size: .9rem; }
+}
