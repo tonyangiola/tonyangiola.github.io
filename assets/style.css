@@ -3525,3 +3525,66 @@ button:hover, .btn:hover, .back-button:hover, a.button:hover, a.btn:hover {
   display: none !important;
   visibility: hidden !important;
 }
+/* ============================
+   Global (all pages): remove the tiny oval "pill"
+   that sits above/behind the site title/logo in the HEADER.
+   Keeps nav buttons/links untouched.
+   ============================ */
+
+/* Kill decorative pseudo-elements commonly used as the pill */
+header .site-title::before,
+header .site-title::after,
+header [class*="site-title"]::before,
+header [class*="site-title"]::after,
+header .logo::before,
+header .logo::after,
+header [class*="logo"]::before,
+header [class*="logo"]::after,
+header [class*="brand"]::before,
+header [class*="brand"]::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Remove backgrounds/borders/shadows from the logo/title wrappers */
+header .site-title,
+header [class*="site-title"],
+header .logo,
+header [class*="logo"],
+header [class*="brand"] {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Hide any explicit ".pill" element placed near the logo/title */
+header .site-title .pill,
+header [class*="site-title"] .pill,
+header .logo .pill,
+header [class*="logo"] .pill,
+header [class*="brand"] .pill,
+header .site-title [class*="pill"],
+header [class*="site-title"] [class*="pill"],
+header .logo [class*="pill"],
+header [class*="logo"] [class*="pill"],
+header [class*="brand"] [class*="pill"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide empty spacer nodes that could render as a small rounded badge */
+header .site-title > *:empty,
+header [class*="site-title"] > *:empty,
+header .logo > *:empty,
+header [class*="logo"] > *:empty,
+header [class*="brand"] > *:empty {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* NOTE: we intentionally do NOT target header nav buttons/links.
+   If any button in the nav had a ".pill" utility, it will remain,
+   because our selectors scope to logo/title/brand containers only. */
