@@ -3687,3 +3687,12 @@ header [class*="brand"] > *:empty {
   text-align: center;
   margin-top: 0.5rem;
 }
+
+/* news-snippy-caption-size: scoped to Snippy page */
+.news-snippy-page figcaption {
+  font-size: 0.9rem !important;
+  line-height: 1.35 !important;
+  color: #cfd6e4 !important;
+  text-align: center;
+  margin-top: 0.5rem;
+}
