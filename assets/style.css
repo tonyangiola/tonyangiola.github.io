@@ -3942,3 +3942,74 @@ header nav li, header nav a{ float: none !important; }
   .header-name{ font-size: .85rem !important; }
   .header-avatar{ width: 36px !important; height: 36px !important; }
 }
+
+/* ===== LOCK: centered nav + visible name next to avatar on EVERY page ===== */
+header{ position: relative !important; }
+header, header nav{ min-height:56px !important; } /* stop layout jumps */
+
+/* Center link row and reserve room at right for name+avatar block */
+header nav{
+  position: relative !important;
+  width:100% !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+  padding-right:168px !important; /* reserved width for the right block */
+}
+header nav ul{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  margin:0 auto !important; padding:0 !important; list-style:none !important;
+}
+header nav li, header nav a{ float:none !important; }
+
+/* Kill any old pseudo-badges that might still inject duplicate text */
+header > nav::before, header > nav::after{ content:none !important; }
+
+/* Right block: NAME snug to the avatar (this is the thing you want) */
+.header-right{
+  position:absolute !important;
+  top:8px !important; right:8px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:6px !important;                 /* <— tighten/loosen name-to-avatar gap */
+  width:160px !important;             /* matches reserved space above */
+  z-index:1000 !important;
+}
+
+/* Make DAMN sure the name is visible */
+.header-name{
+  display:inline-block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  color:#fff !important;
+  font-weight:600 !important;
+  font-size:.95rem !important;
+  line-height:1 !important;
+  text-indent:0 !important;
+  clip:auto !important; clip-path:none !important;
+  white-space:nowrap !important;
+  pointer-events:none !important;
+  z-index:1001 !important;
+}
+
+/* Avatar lock */
+.header-avatar{
+  width:40px !important; height:40px !important;
+  border-radius:50% !important; object-fit:cover !important;
+  outline:2px solid rgba(255,255,255,.35) !important;
+  display:block !important; visibility:visible !important;
+  z-index:1001 !important;
+}
+
+/* Mobile: keep both, just smaller so nothing disappears */
+@media (max-width:768px){
+  header, header nav{ min-height:52px !important; }
+  header nav{ padding-right:148px !important; }
+  .header-right{ width:140px !important; gap:4px !important; }
+  .header-name{ font-size:.85rem !important; }
+  .header-avatar{ width:36px !important; height:36px !important; }
+}
