@@ -3841,3 +3841,46 @@ header [class*="brand"] > *:empty {
     width: auto !important; box-shadow: none !important; background: transparent !important; padding: 0 !important;
   }
 }
+/* === Universal Mobile Drawer (independent of page nav) === */
+@media (max-width: 915px){
+  .mobile-nav-toggle{
+    position: fixed !important;
+    top: 12px !important; left: 12px !important;
+    z-index: 10020 !important;
+    background: rgba(255,255,255,0.12) !important;
+    border: none !important; padding: 8px !important;
+    border-radius: 10px !important; line-height: 0 !important;
+    color: #fff !important; /* white bars via currentColor */
+  }
+  .mobile-nav-toggle svg rect{ fill: currentColor !important; }
+
+  #mobile-drawer{
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: 72vw; max-width: 320px;
+    background: #0e0f12; color: #fff;
+    transform: translateX(-110%); opacity: 0;
+    transition: transform .25s ease, opacity .25s ease;
+    z-index: 10010; padding: 64px 16px 16px; overflow-y: auto;
+    box-shadow: 4px 0 16px rgba(0,0,0,.35);
+  }
+  #mobile-backdrop{
+    content:""; position: fixed; inset: 0;
+    background: rgba(0,0,0,.35); z-index: 10000;
+    opacity: 0; pointer-events: none; transition: opacity .2s ease;
+  }
+  html.mobile-nav-open #mobile-drawer{ transform: translateX(0); opacity: 1; }
+  html.mobile-nav-open #mobile-backdrop{ opacity: 1; pointer-events: auto; }
+  html.mobile-nav-open, html.mobile-nav-open body{ overflow: hidden !important; }
+
+  /* Drawer links */
+  #mobile-drawer .mobile-menu{ display: flex; flex-direction: column; gap: 14px; }
+  #mobile-drawer .mobile-menu a{
+    color: #fff; text-decoration: none; font-size: 18px; padding: 8px 4px; border-radius: 8px;
+  }
+  #mobile-drawer .mobile-menu a:active{ background: rgba(255,255,255,0.12); }
+}
+
+/* Desktop: never show the button; drawer inactive */
+@media (min-width: 916px){
+  .mobile-nav-toggle{ display: none !important; }
+}
