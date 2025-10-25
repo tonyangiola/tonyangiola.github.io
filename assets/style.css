@@ -3125,3 +3125,10 @@ header,.page-header,.site-header{ position:relative; }
 @media (max-width:640px){
   #mini-brand .mini-name{ display:none; }
 }
+
+/* mini-brand (upper-right) */
+#mini-brand{position:absolute;top:10px;right:12px;display:flex;align-items:center;gap:.5rem;text-decoration:none;z-index:6}
+#mini-brand .mini-photo{width:40px;height:40px;border-radius:9999px;object-fit:cover;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+#mini-brand .mini-name{font-weight:600;font-size:.95rem;line-height:1;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);padding:.25rem .5rem;border-radius:9999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
+header,.page-header,.site-header{position:relative}
+@media (max-width:640px){#mini-brand .mini-name{display:none}}
