@@ -3498,3 +3498,30 @@ button:hover, .btn:hover, .back-button:hover, a.button:hover, a.btn:hover {
 /* Safety: disable cropping behaviors */
 .news-snippy .media, .news-snippy .media img { object-fit: contain !important; }
 <!-- deploy-marker 20251024-220856 -->
+/* ===== Snippy page: hide NAV logo pill only (safe + scoped) ===== */
+.news-snippy-page header [class*="pill"],
+.news-snippy-page header .pill { display:none !important; }
+
+/* Nuke decorative ::before/::after pills commonly used for logo badges */
+.news-snippy-page header *::before,
+.news-snippy-page header *::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Ensure no background/border bubble remains on logo/brand/title wrappers */
+.news-snippy-page header [class*="logo"],
+.news-snippy-page header [class*="brand"],
+.news-snippy-page header [class*="title"] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Hide any empty spacer element that could render as a small rounded pill */
+.news-snippy-page header .site-title > *:empty,
+.news-snippy-page header [class*="logo"] > *:empty,
+.news-snippy-page header [class*="brand"] > *:empty {
+  display: none !important;
+  visibility: hidden !important;
+}
