@@ -3583,3 +3583,45 @@ header nav { position: relative !important; }
 @media (max-width: 768px){
   .contact-content .name-by-avatar{ display: none !important; }
 }
+
+/* ==== SITE-WIDE NAV CENTER + UPPER-RIGHT BADGE NAME (unified) ==== */
+header nav{
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;   /* center links */
+  text-align: center !important;
+  padding-right: 220px !important;      /* room for avatar + name on right */
+}
+
+/* Make sure list/links don't force-left via floats */
+header nav ul{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+header nav li, header nav a{ float: none !important; }
+
+/* Single, hard element for the name next to the avatar (desktop only) */
+@media (min-width: 769px){
+  .name-by-avatar{
+    position: absolute !important;
+    top: 8px !important;
+    right: 56px !important;      /* tweak 52–64 if needed to kiss the avatar */
+    font-weight: 600 !important;
+    font-size: .95rem !important;
+    line-height: 1 !important;
+    color: #fff !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    z-index: 9 !important;
+  }
+}
+
+/* Mobile stays clean: hide the name to avoid crowding the hamburger */
+@media (max-width: 768px){
+  .name-by-avatar{ display: none !important; }
+}
