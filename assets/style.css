@@ -3468,3 +3468,22 @@ header nav { position: relative !important; }
 }
 /* keep mobile clean */
 @media (max-width: 768px){ header nav .brand-badge-ur{ display: none !important; } }
+
+/* === Name beside avatar (final working version) === */
+.name-by-avatar {
+  position:absolute;
+  right: 60px;        /* adjust closer/further from avatar */
+  top: 10px;
+  font-weight: 600;
+  font-size: .95rem;
+  color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.7);
+  pointer-events:none;
+  white-space:nowrap;
+  z-index:200;
+}
+header nav { position: relative !important; }
+
+@media(max-width:768px){
+  .name-by-avatar{ display:none !important; }
+}
