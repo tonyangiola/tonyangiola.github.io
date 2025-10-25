@@ -3589,3 +3589,26 @@ header [class*="brand"] > *:empty {
    If any button in the nav had a ".pill" utility, it will remain,
    because our selectors scope to logo/title/brand containers only. */
 <!-- deploy-marker 20251025-095959 -->
+/* === Hamburger: mobile only + no pill === */
+
+/* Remove the oval/pill look everywhere */
+.hamburger-btn{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide hamburger on desktop/tablet */
+@media (min-width: 768px){
+  .hamburger-btn{ display: none !important; }
+}
+
+/* Show hamburger on phones */
+@media (max-width: 767px){
+  .hamburger-btn{ display: inline-flex !important; align-items: center; justify-content: center; }
+  /* Ensure the bars/icon are visible on dark headers */
+  .hamburger-btn span,
+  .hamburger-btn i { background: #fff !important; }
+}
