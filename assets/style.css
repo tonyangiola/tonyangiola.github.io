@@ -3234,3 +3234,23 @@ header nav:first-of-type .brand-name {
   color: #fff !important;
   text-shadow: 0 1px 2px rgba(0,0,0,0.7);
 }
+/* === Upper-right name badge next to small photo === */
+header > nav:first-of-type { position: relative !important; }
+header > nav:first-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute; top: 8px; right: 56px;  /* nudge right value if needed */
+  font-weight: 600; font-size: .95rem; line-height: 1;
+  color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.7);
+  pointer-events: none;
+  white-space: nowrap;
+}
+/* Optional: if header is light on some pages, ensure readable */
+header.light > nav:first-of-type::before { color: #111; text-shadow: none; }
+
+/* Mobile: slightly tighter fit if needed */
+@media (max-width: 430px){
+  header > nav:first-of-type::before{
+    right: 50px;
+    font-size: .9rem;
+  }
+}
