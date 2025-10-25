@@ -3368,3 +3368,34 @@ header nav { position: relative; }
 @media (max-width: 430px){
   .brand-name-ur-badge{ right: 50px; font-size: .9rem; }
 }
+/* === Upper-right name badge (final, non-overlapping) === */
+header > nav:first-of-type { 
+  position: relative !important;
+  /* Reserve space on the right so links don't sit under the badge+avatar */
+  padding-right: 220px !important;  /* adjust if you want tighter; 180–240 is typical */
+}
+
+/* Draw the name to the LEFT of the small photo (badge pinned inside same nav) */
+header > nav:first-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 56px !important;      /* equals avatar width + small gap; tweak to align */
+  font-weight: 600 !important;
+  font-size: .95rem !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
+  white-space: nowrap !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+}
+
+/* If some pages use a light header, keep it readable there */
+header.light > nav:first-of-type::before{ color:#111 !important; text-shadow:none !important; }
+
+/* Mobile: hide the badge so it doesn't crowd the hamburger */
+@media (max-width: 768px){
+  header > nav:first-of-type { padding-right: 0 !important; }
+  header > nav:first-of-type::before { display: none !important; }
+}
