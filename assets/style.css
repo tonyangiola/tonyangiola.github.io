@@ -3497,3 +3497,4 @@ button:hover, .btn:hover, .back-button:hover, a.button:hover, a.btn:hover {
 
 /* Safety: disable cropping behaviors */
 .news-snippy .media, .news-snippy .media img { object-fit: contain !important; }
+<!-- deploy-marker 20251024-220856 -->
