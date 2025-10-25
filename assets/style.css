@@ -4301,3 +4301,56 @@ img#badge, img.badge, img.avatar, img[alt="Tony"], img[alt*="Tony"]{
 /* Ensure nothing else draws a duplicate name anywhere near header */
 #site-badge,.site-badge,.header-name{ display:none !important; }
 <!-- deploy-marker 20251025-145707 -->
+
+/* === FINAL header standardization (2025-10-25) === */
+/* Kill any previous header name injections or pills */
+header nav::before,
+header nav::after,
+
+/* Stable header + nav height/centering */
+header { position:relative !important; min-height:56px !important; }
+header nav {
+  height:56px !important; min-height:56px !important;
+  margin:8px auto !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  box-sizing:border-box !important;
+}
+
+/* Avatar: keep round, visible, and anchored top-right */
+header img#site-avatar,
+header img.avatar,
+header img.badge,
+header img[alt="Tony"],
+header img[alt*="Tony"] {
+  position:absolute !important;
+  top:10px !important; right:14px !important;
+  width:36px !important; height:36px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  display:block !important;
+  z-index:5 !important;
+}
+
+/* If more than one matching image slipped in, show only the rightmost one */
+header img[alt*="Tony"]:not(:last-of-type),
+header img.avatar:not(:last-of-type),
+header img.badge:not(:last-of-type) { display:none !important; }
+
+/* Add the NAME exactly once, to the LEFT of the avatar, vertically centered */
+header img#site-avatar::after,
+header img.avatar::after,
+header img.badge::after,
+header img[alt="Tony"]::after,
+header img[alt*="Tony"]::after {
+  position:absolute;
+  top:50%;
+  right:46px;                 /* places the text left of the 36px avatar */
+  transform:translateY(-50%); /* vertical center align with avatar */
+  white-space:nowrap;
+  font-weight:600; font-size:.95rem; line-height:1;
+  color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.6);
+}
+
+/* Never allow a second label anywhere in header */
+#site-badge + .name, .badge + .name { display:none !important; }
