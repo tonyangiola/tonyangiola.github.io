@@ -3613,3 +3613,44 @@ header [class*="brand"] > *:empty {
   .hamburger-btn i { background: #fff !important; }
 }
 <!-- deploy-marker 20251025-100439 -->
+/* === FINAL OVERRIDE: hide hamburger on desktop, show on phones === */
+
+/* Mobile baseline: allow it on small screens */
+@media (max-width: 767.98px){
+  header .hamburger-btn,
+  .site-header .hamburger-btn,
+  .navbar .hamburger-btn,
+  button.hamburger-btn{
+    display: inline-flex !important;
+    align-items: center; justify-content: center;
+    background: transparent !important;
+    border: none !important; box-shadow: none !important; border-radius: 0 !important; padding: 0 !important;
+  }
+}
+
+/* Desktop/tablet: nuke it hard (wins over framework + inline set by JS) */
+@media (min-width: 768px){
+  header .hamburger-btn,
+  .site-header .hamburger-btn,
+  .navbar .hamburger-btn,
+  button.hamburger-btn,
+  button.hamburger-btn.is-active,
+  button.hamburger-btn[aria-expanded="true"]{
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important; height: 0 !important;
+    padding: 0 !important; margin: 0 !important;
+    border: 0 !important; box-shadow: none !important;
+  }
+  /* in case the icon is drawn via pseudo-elements */
+  header .hamburger-btn::before,
+  header .hamburger-btn::after{
+    content: none !important; display: none !important;
+  }
+}
+
+/* Extra safeguard: desktop-classic devices (mouse/trackpad) */
+@media (hover:hover) and (pointer:fine){
+  header .hamburger-btn{ display: none !important; visibility: hidden !important; }
+}
