@@ -1,10 +1,11 @@
-/* Global nav stabilization (safe) */
-header a:empty, header button:empty { display:none !important; } /* kill "pills" */
-header a:not([href]), header a[href="#"] { display:none !important; }
+/* Kill empty header pills */
+header a:empty, header button:empty { display:none !important; }
+header a[href="#"], header a:not([href]) { display:none !important; }
 
-.site-header, header { display:flex !important; align-items:center !important; }
-.site-header nav, header nav { margin-left:auto !important; margin-right:auto !important; } /* keep nav centered across pages */
-.site-header nav ul, header nav ul {
-  display:flex !important; gap:1.2rem !important; list-style:none; padding:0; margin:0;
-}
-.menu-toggle + .menu-toggle { display:none !important; } /* hide duplicate burger */
+/* Center the nav across all pages */
+.site-header, header { display:flex; align-items:center; }
+.site-header nav, header nav { margin-left:auto; margin-right:auto; }
+.site-header nav ul, header nav ul { display:flex; gap:1.2rem; list-style:none; padding:0; margin:0; }
+
+/* One burger only */
+.menu-toggle + .menu-toggle { display:none !important; }
