@@ -4013,3 +4013,49 @@ header > nav::before, header > nav::after{ content:none !important; }
   .header-name{ font-size:.85rem !important; }
   .header-avatar{ width:36px !important; height:36px !important; }
 }
+/* === Unified fixed header-right block === */
+header{
+  position: relative !important;
+  min-height: 64px !important;
+}
+
+/* center nav links AND reserve badge+name space */
+header nav{
+  width:100% !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding-right:200px !important;
+  text-align:center !important;
+}
+
+/* right block pinned top-right */
+.header-right{
+  position:absolute !important;
+  top:12px !important;
+  right:12px !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  z-index:1000 !important;
+}
+
+/* name styling */
+.header-name{
+  font-weight:600 !important;
+  font-size:.95rem !important;
+  color:#fff !important;
+  white-space:nowrap !important;
+  pointer-events:none !important;
+}
+
+/* avatar styling */
+.header-avatar{
+  width:40px !important;
+  height:40px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  outline:2px solid rgba(255,255,255,.3) !important;
+  display:block !important;
+  visibility:visible !important;
+}
