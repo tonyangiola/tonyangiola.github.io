@@ -4205,3 +4205,96 @@ header > nav::before, header > nav::after{ content: none !important; }
   .header-name{ font-size: .85rem !important; }
   .header-avatar{ width: 36px !important; height: 36px !important; }
 }
+/* ===== CONSISTENT NAV + SINGLE NAME+BANNER ON EVERY PAGE ===== */
+:root{
+  --nav-width: 760px;           /* set one width so nav never "jumps" */
+  --right-block-width: 170px;   /* reserved space for name + avatar */
+  --right-gap: 6px;             /* name-to-avatar spacing */
+}
+
+header{ position: relative !important; min-height: 64px !important; }
+
+/* Center nav and lock its width */
+header nav{
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  width: var(--nav-width) !important;
+  max-width: calc(100% - (var(--right-block-width) + 24px)) !important;
+  margin: 0 auto !important;
+
+  /* visually consistent shell */
+  box-sizing: border-box !important;
+  padding: 6px 14px !important;
+  border-radius: 8px !important;
+
+  /* reserve room on the right so links never collide with the badge block */
+  padding-right: 0 !important;   /* nav itself is fixed-width; reserve done by right block width */
+}
+
+/* Make sure UL/links center and never fight via floats */
+header nav ul{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important; padding: 0 !important; list-style: none !important;
+}
+header nav li, header nav a{ float: none !important; }
+
+/* Kill any old pseudo-badge content */
+header > nav::before, header > nav::after{ content: none !important; }
+
+/* Right block pinned; name snug to avatar */
+.header-right{
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  width: var(--right-block-width) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: var(--right-gap) !important;
+  z-index: 1000 !important;
+
+  /* hide any stray text nodes by collapsing their size, then restore on children */
+  font-size: 0 !important;
+}
+.header-right .header-name{ font-size: .95rem !important; }
+.header-right .header-avatar{ font-size: 0 !important; } /* no visual effect; keeps rule symmetry */
+
+/* Name styling */
+.header-name{
+  color: #fff !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Avatar styling */
+.header-avatar{
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  outline: 2px solid rgba(255,255,255,.35) !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Mobile: keep both, slightly smaller */
+@media (max-width: 768px){
+  header{ min-height: 56px !important; }
+  header nav{
+    width: min(var(--nav-width), calc(100% - (var(--right-block-width) + 24px))) !important;
+  }
+  .header-right{ gap: 4px !important; }
+  .header-name{ font-size: .85rem !important; }
+  .header-avatar{ width: 36px !important; height: 36px !important; }
+}
