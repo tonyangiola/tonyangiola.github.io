@@ -3487,3 +3487,17 @@ header nav { position: relative !important; }
 @media(max-width:768px){
   .name-by-avatar{ display:none !important; }
 }
+/* Force first-left nav link to be visible and labeled */
+header > nav:first-of-type a:first-of-type{
+  position: relative !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  font-size: .95rem !important;
+  text-indent: 0 !important;
+  opacity: 1 !important;
+  filter: none !important;
+  display: inline-block !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.08) !important; /* subtle pill */
+}
