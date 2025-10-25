@@ -4503,28 +4503,3 @@ header > nav:first-of-type::before{
 }
 <!-- deploy-marker 20251025-153437 -->
 <!-- deploy-marker 20251025-153602 -->
-
-/* === Global kill for accidental injected content (name badges etc.) === */
-header::before, header::after,
-nav::before, nav::after,
-.hero::before, .hero::after,
-.grid::before, .grid::after,
-.card::before, .card::after {
-  content: none !important;
-}
-
-/* Explicitly neutralize the old badge rule */
-header > nav:first-of-type::before {
-  content: none !important;
-}
-
-/* Keep bottom hero visible and tidy */
-.home-bottom-hero{margin:2rem 0 0}
-.home-bottom-hero img{
-  display:block;width:100%;height:45vh;max-height:480px;object-fit:cover;
-  border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.25)
-}
-@media (max-width:480px){
-  .home-bottom-hero img{height:32vh;max-height:360px;border-radius:12px}
-}
-<!-- deploy-marker 20251025-153848 -->
