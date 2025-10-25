@@ -1,0 +1,10 @@
+/* Global nav stabilization (safe) */
+header a:empty, header button:empty { display:none !important; } /* kill "pills" */
+header a:not([href]), header a[href="#"] { display:none !important; }
+
+.site-header, header { display:flex !important; align-items:center !important; }
+.site-header nav, header nav { margin-left:auto !important; margin-right:auto !important; } /* keep nav centered across pages */
+.site-header nav ul, header nav ul {
+  display:flex !important; gap:1.2rem !important; list-style:none; padding:0; margin:0;
+}
+.menu-toggle + .menu-toggle { display:none !important; } /* hide duplicate burger */

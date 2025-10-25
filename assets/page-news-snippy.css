@@ -1,27 +1,8 @@
-/* news-snippy: page-only minimal overrides */
-.news-snippy-page header a:empty,
-.news-snippy-page header button:empty,
-.news-snippy-page nav a:empty,
-.news-snippy-page nav button:empty { display: none !important; }
-.news-snippy-page header a:not([href]),
-.news-snippy-page header a[href="#"] { display:none !important; } /* hide spacer pills */
-.news-snippy-page header nav ul { justify-content: center; } /* keep nav centered */
-
 .news-snippy-page .article-card { background: rgba(20,27,36,.92); }
 .news-snippy-page article figure { margin:16px 0; text-align:center; }
 .news-snippy-page article img { max-width:100%; height:auto; display:block; margin:8px auto; border-radius:8px; }
-.news-snippy-page article figcaption { font-size:.95rem; opacity:.85; }
-
-/* Back to Home button */
-.news-snippy-page a#back-home {
-  background:#1e1e1e !important; color:#fff !important;
-  border:1px solid #fff !important; border-radius:10px !important;
-  padding:8px 16px !important; text-decoration:none !important; display:inline-block;
+.news-snippy-page a#back-home{
+  background:#1e1e1e !important; color:#fff !important; border:1px solid #fff !important;
+  border-radius:10px !important; padding:8px 16px !important; text-decoration:none !important; display:inline-block;
 }
-.news-snippy-page a#back-home:hover {
-  background:#2a2a2a !important; border-color:#66ccff !important;
-  box-shadow:0 0 0 3px rgba(102,204,255,.25) !important;
-}
-
-/* iPhone: if a duplicate burger renders, hide any after the first */
-.news-snippy-page .menu-toggle + .menu-toggle { display:none !important; }
+.news-snippy-page a#back-home:hover{ background:#2a2a2a !important; border-color:#66ccff !important; box-shadow:0 0 0 3px rgba(102,204,255,.25) !important; }
