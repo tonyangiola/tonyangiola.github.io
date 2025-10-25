@@ -4421,3 +4421,18 @@ header nav {
 /* Nuke any stray pills/names */
 .badge-name, .name-pill, .header-name { display:none !important; }
 <!-- deploy-marker 20251025-150709 -->
+
+/* === Global author badge (one per page) === */
+header .author-badge{position:absolute;right:18px;top:12px;display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:600;font-size:.95rem;z-index:3}
+header .author-badge .name{white-space:nowrap}
+header .author-badge img{width:36px;height:36px;border-radius:50%;object-fit:cover;display:block}
+/* Kill any older name-via-::before or legacy badges */
+header>nav:first-of-type::before{content:none!important}
+header .old-badge,header .profile-badge,header .avatar-name{display:none!important}
+/* Keep nav from jumping */
+header .main-nav{min-width:520px;max-width:520px;margin:0 auto}
+@media(max-width:640px){header .main-nav{min-width:auto;max-width:none}header .author-badge{right:12px;top:12px;gap:8px;font-size:.9rem}}
+
+/* Home: bottom hero image */
+.bottom-hero{margin:40px auto 0;max-width:1200px}
+.bottom-hero img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
