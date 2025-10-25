@@ -3711,3 +3711,20 @@ header [class*="brand"] > *:empty {
 
 /* Hide any accidental second navbar that appears inside article content */
 .news-snippy-page .article-content .navbar { display: none !important; }
+/* news-snippy-navtoggle */
+.news-snippy-page .navbar { position: relative; z-index: 1000; }
+.news-snippy-page .navbar-brand { position: relative; z-index: 1200; }
+.news-snippy-page .navbar-toggler .navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important;
+  background-size:1.5rem 1.5rem;
+}
+.news-snippy-page .navbar-toggler{ padding:.25rem .5rem; border:1px solid rgba(255,255,255,.25); }
+
+/* JS-less collapse fallback (scoped) */
+.news-snippy-page .navbar-collapse{ display:none; }
+.news-snippy-page .navbar-collapse.show{ display:block; }
+
+/* tidy dropdown spacing on mobile */
+@media (max-width: 768px){
+  .news-snippy-page .navbar-collapse.show { padding: .5rem 0; }
+}
