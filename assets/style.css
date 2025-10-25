@@ -3677,3 +3677,65 @@ header nav li, header nav a{ float: none !important; }
 @media (max-width: 768px){
   .name-by-avatar{ display: none !important; }
 }
+
+/* ===== UNIFY: center nav, single name, avatar visible on the right ===== */
+
+/* Center the link group and keep room on the right for avatar+name */
+header nav{
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding-right: 220px !important; /* tweak 200–260 if needed */
+  overflow: visible !important;
+}
+
+/* 1) KILL any previous pseudo-badges that might still inject "Tony Angiola" */
+@media (min-width: 769px){
+  header > nav:first-of-type::before,
+  header > nav:first-of-type::after{
+    content: none !important;
+  }
+}
+
+/* 2) HARD-PIN the actual small avatar image at top-right (catch common selectors) */
+@media (min-width: 769px){
+  header img[src*="avatar"],
+  header img[src*="avatar-small"],
+  header img[class*="avatar"],
+  header img[class*="headshot"],
+  header img[class*="profile"]{
+    position: absolute !important;
+    top: 4px !important;
+    right: 8px !important;
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    outline: 2px solid rgba(255,255,255,.35) !important;
+    z-index: 10 !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  /* 3) SINGLE name element, just to the LEFT of the avatar */
+  .name-by-avatar{
+    position: absolute !important;
+    top: 10px !important;
+    right: 56px !important;   /* nudge 52–64 to kiss the avatar edge */
+    font-weight: 600 !important;
+    font-size: .95rem !important;
+    line-height: 1 !important;
+    color: #fff !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    z-index: 11 !important;
+  }
+}
+
+/* Mobile stays clean */
+@media (max-width: 768px){
+  .name-by-avatar{ display: none !important; }
+}
