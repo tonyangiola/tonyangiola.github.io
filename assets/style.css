@@ -3273,3 +3273,26 @@ header > nav:first-of-type::before{
 @media (max-width: 430px){
   header > nav:first-of-type::before{ right: 50px; font-size: .9rem; }
 }
+/* === Tony Angiola name hard insert (upper-right) === */
+/* Tony Angiola name hard insert */
+header nav:first-of-type { position: relative !important; }
+/* Ensure it's visible over any background */
+header nav:first-of-type .brand-name[data-auto="true"]{
+  position: absolute !important;
+  top: 8px !important;
+  right: 56px !important;   /* nudge if needed */
+  font-weight: 600 !important;
+  font-size: .95rem !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
+  white-space: nowrap !important;
+  z-index: 9 !important;
+  pointer-events: none !important;
+}
+@media (max-width: 430px){
+  header nav:first-of-type .brand-name[data-auto="true"]{
+    right: 50px !important;
+    font-size: .9rem !important;
+  }
+}
