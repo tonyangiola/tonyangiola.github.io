@@ -3678,3 +3678,12 @@ header [class*="brand"] > *:empty {
 .news-snippy-page h4,
 .news-snippy-page h5,
 .news-snippy-page h6 { font-weight: 700 !important; font-variation-settings: "wght" 700 !important; }
+
+/* news-snippy-caption-tweak: smaller, readable captions only on the Snippy page */
+.news-snippy-page figcaption {
+  font-size: 0.9rem !important;
+  line-height: 1.35 !important;
+  color: #cfd6e4 !important;
+  text-align: center;
+  margin-top: 0.5rem;
+}
