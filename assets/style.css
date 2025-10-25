@@ -4504,3 +4504,9 @@ header > nav:first-of-type::before{
 <!-- deploy-marker 20251025-153437 -->
 <!-- deploy-marker 20251025-153602 -->
 <!-- deploy-marker 20251025-154016 -->
+
+/* Safe neutralizer: prevent accidental injected labels */
+header *::before, header *::after,
+.card *::before, .card *::after {
+  content: none !important;
+}
