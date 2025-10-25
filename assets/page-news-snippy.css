@@ -12,7 +12,7 @@
   display: inline !important;
   color: inherit !important;
 }
-/* Hide genuinely empty header pills */
+/* Hide genuinely empty links/buttons (the tiny "pills") */
 .news-snippy-page header a:empty,
 .news-snippy-page header button:empty,
 .news-snippy-page nav a:empty,
@@ -26,7 +26,7 @@
 .news-snippy-page article img{
   max-width:100%; height:auto; display:block; margin:8px auto; border-radius:8px;
 }
-.news-snippy-page article figcaption{ font-size:.95rem; opacity:.8; }
+.news-snippy-page article figcaption{ font-size:.95rem; opacity:.85; }
 
 /* Back to Home button */
 .news-snippy-page a#back-home{
