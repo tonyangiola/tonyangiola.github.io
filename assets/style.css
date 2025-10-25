@@ -4300,3 +4300,4 @@ img#badge, img.badge, img.avatar, img[alt="Tony"], img[alt*="Tony"]{
 
 /* Ensure nothing else draws a duplicate name anywhere near header */
 #site-badge,.site-badge,.header-name{ display:none !important; }
+<!-- deploy-marker 20251025-145707 -->
