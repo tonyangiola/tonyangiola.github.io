@@ -3399,3 +3399,28 @@ header.light > nav:first-of-type::before{ color:#111 !important; text-shadow:non
   header > nav:first-of-type { padding-right: 0 !important; }
   header > nav:first-of-type::before { display: none !important; }
 }
+/* === FINAL: Name badge on the nav that HAS the small headshot === */
+header > nav:has(img[src*="avatar"], img[src*="avatar-small"], img[class*="avatar"], img[class*="headshot"], img[class*="profile"]) {
+  position: relative !important;
+}
+header > nav:has(img[src*="avatar"], img[src*="avatar-small"], img[class*="avatar"], img[class*="headshot"], img[class*="profile"])::before {
+  content: "Tony Angiola" !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 56px !important;   /* nudge if needed */
+  font-weight: 600 !important;
+  font-size: .95rem !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  z-index: 99 !important;
+}
+
+/* Desktop only; on mobile we keep it clean */
+@media (max-width: 768px){
+  header > nav:has(img[src*="avatar"], img[src*="avatar-small"], img[class*="avatar"], img[class*="headshot"], img[class*="profile"])::before {
+    display: none !important;
+  }
+}
