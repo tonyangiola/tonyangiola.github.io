@@ -3140,18 +3140,15 @@ nav, .nav-bar, .site-nav { position:relative !important; }
 /* === Nav badge: Tony + photo (top-right) === */
 header, .page-header, .site-header { position: relative; }
 nav, .nav, .navbar, .site-nav, header nav { position: relative !important; }
-nav::before, .nav::before, .navbar::before, .site-nav::before, header nav::before {
   border: 1px solid rgba(255,255,255,.2);
   background: rgba(255,255,255,.06); z-index: 9999;
 }
-nav::after, .nav::after, .navbar::after, .site-nav::after, header nav::after {
   content: ""; position: absolute; top: 6px; right: 12px;
   width: 40px; height: 40px; border-radius: 9999px;
   background: url("assets/images/tony.jpg") center/cover no-repeat;
   border: 2px solid rgba(255,255,255,.9);
   box-shadow: 0 6px 18px rgba(0,0,0,.35); z-index: 9999;
 }
-@media (max-width:640px){ nav::before, .nav::before, .navbar::before, .site-nav::before, header nav::before { display:none } }
 
 /* === Avatar badge: final override (single source of truth) === */
 /* Kill all previous header/nav badges */
@@ -4221,8 +4218,6 @@ header nav li, header nav a{ float: none !important; }
 /* === Header/Badge hard lock (2025-10-25) === */
 
 /* Remove any injected name/pill near the badge, everywhere */
-header nav::before,
-header nav::after,
 
 /* Make the header a stable positioning context */
 header { position: relative !important; min-height: 56px !important; }
@@ -4264,9 +4259,6 @@ header nav ul, header nav .menu, header nav .links {
 
 /* === FINAL header standardization (2025-10-25) === */
 /* Kill any leftover name/pill injections */
-header nav::before,
-header nav::after,
-#badge + .name, .badge + .name { display:none !important; content:none !important; }
 
 /* Keep header/nav consistent on every page */
 header { position: relative !important; min-height: 56px !important; }
@@ -4304,8 +4296,6 @@ img#badge, img.badge, img.avatar, img[alt="Tony"], img[alt*="Tony"]{
 
 /* === FINAL header standardization (2025-10-25) === */
 /* Kill any previous header name injections or pills */
-header nav::before,
-header nav::after,
 
 /* Stable header + nav height/centering */
 header { position:relative !important; min-height:56px !important; }
@@ -4353,5 +4343,57 @@ header img[alt*="Tony"]::after {
 }
 
 /* Never allow a second label anywhere in header */
-#site-badge + .name, .badge + .name { display:none !important; }
 <!-- deploy-marker 20251025-150223 -->
+
+/* === HEADER SOLID (2025-10-25) === */
+
+/* Ensure header is the position anchor */
+header { position: relative !important; min-height: 56px !important; }
+
+/* Lock nav size & centering so it doesn't jump */
+header nav{
+  height:56px !important; min-height:56px !important;
+  margin:8px auto !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  box-sizing:border-box !important;
+}
+
+/* Make sure the avatar (your round photo) is visible and in the same spot */
+header img.avatar,
+header img.badge,
+header img#badge,
+header img[alt="Tony"],
+header img[alt*="Tony"],
+header img[src*="tony"],
+header img[src*="avatar"]{
+  position:absolute !important;
+  top:10px !important; right:14px !important;
+  width:36px !important; height:36px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  display:block !important;
+  z-index:5 !important;
+  filter:none !important; opacity:1 !important; visibility:visible !important;
+}
+
+/* Remove any stray overlays/pills/duplicate labels near the header */
+.badge-name, .name-pill, .header-name { display:none !important; }
+
+/* Show the NAME once, anchored to header itself (to the LEFT of the photo) */
+header::after{
+  content:"Tony Angiola";
+  position:absolute;
+  top:50%;                 /* vertically center to the nav */
+  right:60px;              /* 36px avatar + ~24px gap = 60px from right */
+  transform:translateY(-50%);
+  white-space:nowrap;
+  font-weight:600; font-size:.95rem; line-height:1;
+  color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.6);
+  z-index:6;
+}
+
+/* Prevent other ::before/::after header text from appearing */
+header::before { content:none !important; }
+
+/* Do NOT hide header::after anywhere */
