@@ -3541,3 +3541,45 @@ header nav { position: relative !important; }
 @media (max-width: 768px){
   .name-by-avatar{ display:none !important; }
 }
+/* ==== Contact page: center the NAV and keep right-side badge/avatar ==== */
+/* Your contact page wrapper we added earlier: .contact-content */
+.contact-content header nav{
+  position: relative !important;
+  /* Center the nav bar */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  /* Reserve space for avatar + name on the right */
+  padding-right: 220px !important; /* tweak 200–260 if needed */
+}
+
+/* If the UL/links are flexed left somewhere, override to center */
+.contact-content header nav ul{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/* Kill any floats that shove items left */
+.contact-content header nav ul li,
+.contact-content header nav a{
+  float: none !important;
+}
+
+/* Keep the hard-added name element tight to the avatar on Contact page too */
+@media (min-width: 769px){
+  .contact-content .name-by-avatar{
+    position: absolute !important;
+    top: 8px !important;
+    right: 56px !important;  /* nudge to align with the avatar edge */
+    white-space: nowrap !important;
+    z-index: 9 !important;
+  }
+}
+/* Mobile stays clean */
+@media (max-width: 768px){
+  .contact-content .name-by-avatar{ display: none !important; }
+}
