@@ -3994,3 +3994,80 @@ header [class*="brand"] > *:empty {
   max-width: 100% !important;
   aspect-ratio: 16/9; /* helps iframes keep shape */
 }
+
+/* ===== GLOBAL MOBILE CONSISTENCY ===== */
+@media (max-width: 915px){
+  /* 3a) Reserve space for the burger so titles/text don't collide */
+  .has-mobile-burger header,
+  .has-mobile-burger .page-header,
+  .has-mobile-burger .site-header {
+    padding-left: 60px !important;  /* keeps "Author words" clear */
+    position: relative;
+  }
+  /* Also give content a little breathing room from the fixed button */
+  .has-mobile-burger body { padding-top: 56px !important; }
+
+  /* 3b) Force single white hamburger in the upper-left on all pages */
+  .mobile-nav-toggle{
+    position: fixed !important; top: 12px !important; left: 12px !important;
+    z-index: 10020 !important;
+    background: rgba(255,255,255,0.16) !important; border: none !important;
+    padding: 8px !important; border-radius: 10px !important; line-height: 0 !important;
+  }
+  .mobile-nav-toggle svg{ width: 28px; height: 28px; display:block; }
+  .mobile-nav-toggle svg rect{ fill:#fff !important; }
+
+  /* 3c) Hide any desktop navs so Snippy/Newsletter can't revert */
+  header nav:not(#mobile-drawer .mobile-menu){ display:none !important; }
+
+  /* 3d) Drawer: left-aligned menu (prevents "pushed right") */
+  #mobile-drawer{
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: 65vw; max-width: 300px;
+    background: #141820; color:#fff;
+    transform: translateX(-110%); transition: transform .25s ease; z-index: 10010;
+    padding: 64px 16px 16px; overflow-y:auto; box-shadow: 4px 0 16px rgba(0,0,0,.35);
+    border-right: 1px solid rgba(255,255,255,0.08);
+    text-align: left !important;
+  }
+  html.mobile-nav-open #mobile-drawer{ transform: translateX(0); }
+  html.mobile-nav-open body{ transform: translateX(65vw); transition: transform .25s ease; position: relative; }
+
+  #mobile-drawer .mobile-menu{
+    display:flex; flex-direction:column; gap:14px;
+    align-items:flex-start !important; justify-content:flex-start !important;
+    text-align:left !important;
+  }
+  #mobile-drawer .mobile-menu a{
+    color:#fff; text-decoration:none; font-size:18px; padding:8px 4px; border-radius:8px;
+  }
+  #mobile-drawer .mobile-menu a:active{ background: rgba(255,255,255,0.12); }
+
+  /* 3e) BIO card not skinny on mobile */
+  .bio-card, #bio-card, .bio .card, .profile-card {
+    width: auto !important; max-width: 100% !important;
+    margin-left: auto !important; margin-right: auto !important;
+  }
+
+  /* 3f) BOOKS: videos full width with correct aspect */
+  .book-card .media, .book-card .video, .media, .video { width:100% !important; max-width:100% !important; }
+  .book-card video, .book-card iframe,
+  .media video, .media iframe,
+  .video video, .video iframe{
+    display:block !important; width:100% !important; height:auto !important; max-width:100% !important; aspect-ratio:16/9;
+  }
+}
+
+/* ===== DESKTOP sanity ===== */
+@media (min-width: 916px){
+  .mobile-nav-toggle{ display:none !important; }
+}
+
+/* 3g) BOOKS: override any hardcoded width/height attributes */
+.book-card video[width], .book-card video[height],
+.media video[width], .media video[height] { width:100% !important; height:auto !important; }
+
+/* 3h) SNIPPY card spacing (ensure it isn't tucked under the burger) */
+.news-card, .article-card, #snippy-card {
+  margin-top: 12px;
+}

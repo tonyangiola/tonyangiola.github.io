@@ -1,10 +1,13 @@
 (function(){
   function ready(f){document.readyState!=='loading'?f():document.addEventListener('DOMContentLoaded',f);}
   ready(function(){
-    // remove any prior toggles
+    // Signal CSS that burger exists site-wide
+    document.documentElement.classList.add('has-mobile-burger');
+
+    // Remove any other toggles so there is only ONE
     document.querySelectorAll('#mobile-toggle,.hamburger,button[aria-label="Menu"]').forEach(el=>el.remove());
 
-    // Build drawer if missing
+    // Build drawer if missing (self-contained)
     var drawer=document.getElementById('mobile-drawer');
     if(!drawer){
       drawer=document.createElement('aside');
@@ -21,10 +24,13 @@
       document.body.appendChild(drawer);
     }
 
-    // Upper-left hamburger (always white)
+    // Upper-left hamburger (hard white icon)
     var header=document.querySelector('header')||document.body;
     var btn=document.createElement('button');
-    btn.id='mobile-toggle'; btn.className='mobile-nav-toggle'; btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','Open menu');
+    btn.id='mobile-toggle';
+    btn.className='mobile-nav-toggle';
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Open menu');
     btn.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'
                 + '<rect x="3" y="5" width="18" height="2" fill="#ffffff"/>'
                 + '<rect x="3" y="11" width="18" height="2" fill="#ffffff"/>'
@@ -40,9 +46,9 @@
     document.addEventListener('keydown', function(e){ if(e.key==='Escape' && isOpen()) close(); });
     document.addEventListener('click', function(e){
       if(!isOpen()) return;
-      var insideDrawer = drawer && drawer.contains(e.target);
-      var onButton = (e.target===btn || btn.contains(e.target));
-      if(!insideDrawer && !onButton) close();
+      var onBtn=(e.target===btn || btn.contains(e.target));
+      var inDrawer=drawer && drawer.contains(e.target);
+      if(!onBtn && !inDrawer) close();
     });
   });
 })();
