@@ -1,0 +1,63 @@
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .HEADER.snip
+	modified:   .books_grid.new.html
+	modified:   .header.include.html
+	modified:   .tmp-books-restore/cosmic-card.html
+	modified:   .tmp-books-restore/gremlins-card.html
+	modified:   .tmp-books-restore/snippy-card.html
+	modified:   .tmp-books-restore/socorro-card.html
+	modified:   assets/header.nav-unify-bak-20251022-205034.html
+	modified:   assets/home-move-news.js
+	modified:   assets/style.css
+	modified:   books/cosmic.html
+	modified:   books/gremlins.html
+	modified:   books/snippy.html
+	modified:   books/socorro.html
+	modified:   contact/index.html
+	modified:   images/author-photo.html
+	modified:   images/bio-head.html
+	modified:   news-snippy.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.SNIPPY_BODY.html
+	.new
+	.snapshot-commit.txt
+	.snapshot-status.txt
+	assets/news-under-author.js
+	assets/site-nav-cleanup.bak-20251024-220117.js
+	assets/style.SOCORRO-absolute-fit-bak-20251023-232525.css
+	assets/style.SOCORRO-hard-reset-bak-20251023-232916.css
+	assets/style.SUPERFINAL-iphone-socorro-bak-20251023-232346.css
+	assets/style.books-iphone-bigger-bak-20251023-230704.css
+	assets/style.books-iphone-hardfix-bak-20251023-222717.css
+	assets/style.books-mobile-bak-20251023-221644.css
+	assets/style.books-mobile-fix-bak-20251023-222041.css
+	assets/style.button-fix-bak-20251024-125923.css
+	assets/style.final-iphone-socorro-bak-20251023-232038.css
+	assets/style.iphone-video-bak-20251023-231547.css
+	assets/style.iphone-video-bigger-bak-20251023-231650.css
+	assets/style.iphone-video-bump2-bak-20251023-231805.css
+	assets/style.iphone-video-bump3-bak-20251023-231948.css
+	assets/style.iphone-video-fix-bak-20251023-222212.css
+	assets/style.micro-socorro-bak-20251023-232803.css
+	assets/style.mobile-hamburger-bak-20251023-220504.css
+	assets/style.mobile-hamburger-bak-20251023-221010.css
+	assets/style.navfix-bak-20251024-133555.css
+	assets/style.news-article-dark-bak-20251023-224345.css
+	assets/style.news-card-fix-bak-20251023-224544.css
+	assets/style.news-card-fix-bak-20251023-224643.css
+	assets/style.news-darkcards-bak-20251023-224022.css
+	assets/style.pre-pillfix-20251024-133334.css
+	assets/style.socorro-iphone-cap-bak-20251023-233054.css
+	assets/style.socorro-iphone-cap2-bak-20251023-233349.css
+	assets/style.socorro-uncrop-bak-20251023-233902.css
+	index.html.bak
+	nul
+
+no changes added to commit (use "git add" and/or "git commit -a")

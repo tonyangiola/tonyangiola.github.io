@@ -56,7 +56,7 @@
   <link rel="stylesheet" href="assets/nav-reset.css?v=1761334472">
   <link rel="stylesheet" href="assets/site-nav-fix.css?v=1761363142">
 </head>
-<body class="news-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page">
+<body class="news-snippy-page news-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page">
   <!-- Simple, dependable header/nav (desktop nav + mobile hamburger) -->
   <header class="site-header">
     <nav class="site-nav">
@@ -77,7 +77,7 @@
     </nav>
   </header>
 
-  <main class="page-content">
+  <main class="page-content news-snippy page-content news-snippy page-content news-snippy page-content">
 <!-- SNIPPY START -->
 <article id="snippy-article" class="article-card">
   <header>
@@ -241,6 +241,21 @@ a[href="/"]:hover, a[href="./"]:hover, a[href="index.html"]:hover, a[href="index
   <script src="assets/snippy-fallback.js?v=1761362122"></script>
   <script src="assets/site-nav-cleanup.js?v=1761363846"></script>
 </body>
+<script id="snippy-unfix">(function(){
+  var scope=document.querySelector('.news-snippy')||document;
+  scope.querySelectorAll('img').forEach(function(img){
+    img.removeAttribute('width'); img.removeAttribute('height');
+    img.style.height='auto';
+    img.style.maxWidth='100%!'.replace('!','');
+  });
+})();</script>
+<script>(function(){
+  var scope=document.querySelector('.news-snippy')||document;
+  scope.querySelectorAll('img').forEach(function(img){
+    img.removeAttribute('width'); img.removeAttribute('height');
+    img.style.height='auto'; img.style.maxWidth='100%';
+  });
+})();</script>
 </html>
 
 

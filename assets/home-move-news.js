@@ -1,27 +1,23 @@
 (function(){
-  function move() {
-    var news   = document.querySelector('#latest-news');
-    if (!news) return;
-    // Prefer a whole Author section whose id starts with "author"
-    var author = document.querySelector('section[id^="author"]') ||
-                 document.querySelector('#author-researcher');
-    if (author) {
-      author.insertAdjacentElement('afterend', news);
-      return;
-    }
-    // Fallback: after the H2 "Author, Researcher" (robust to &, /, extra spaces)
-    var h2s = document.querySelectorAll('h2');
-    for (var i=0; i<h2s.length; i++) {
-      var t = (h2s[i].textContent || '').replace(/\s+/g,' ').trim();
-      if (/^Author\s*[,/&]\s*Researcher$/i.test(t) || /^Author\s*Researcher$/i.test(t)) {
-        h2s[i].insertAdjacentElement('afterend', news);
-        return;
-      }
+  function move(){
+    var main = document.querySelector('main.page-content');
+    var news = document.querySelector('#latest-news');
+    if(!main || !news) return;
+
+    // find 1st *section/article/div* child inside main (the "Author" card)
+    var kids = Array.prototype.slice.call(main.children).filter(function(n){
+      if(!(n instanceof Element)) return false;
+      var tag = n.tagName.toLowerCase();
+      return (tag==='section' || tag==='article' || tag==='div');
+    });
+    if(kids.length===0) return;
+
+    var first = kids[0];
+    if(first && news){
+      // place Latest News immediately after the first content block
+      first.insertAdjacentElement('afterend', news);
     }
   }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', move);
-  } else {
-    move();
-  }
+  // run after EVERYTHING (HTML, includes, images) is there
+  window.addEventListener('load', move);
 })();

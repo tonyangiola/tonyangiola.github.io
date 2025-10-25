@@ -9,3 +9,7 @@ backups/
 # Temp/transient media
 *.tmp.mp4
 system-commandline-sentinel-files/
+
+# Windows device filename that broke Git
+nul
+
