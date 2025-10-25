@@ -3316,3 +3316,37 @@ header nav { position: relative; } /* ensure absolute children anchor to nav */
 @media (max-width: 430px){
   .brand-name-ur[data-auto="true"]{ right: 50px; font-size: .9rem; }
 }
+/* === ULTRA-FORCED: add "Tony Angiola" next to the small upper-right photo ===
+   Works without HTML edits. Targets the <nav> that HAS the avatar image.
+   Supported in modern Chrome/Safari/iOS via :has()
+*/
+header:has(nav img[src*="avatar"]) nav:last-of-type,
+header:has(nav img[src*="avatar-small"]) nav:last-of-type,
+header:has(nav img[src*="headshot"]) nav:last-of-type,
+header:has(nav img[src*="profile"]) nav:last-of-type {
+  position: relative !important;
+}
+header:has(nav img[src*="avatar"]) nav:last-of-type::before,
+header:has(nav img[src*="avatar-small"]) nav:last-of-type::before,
+header:has(nav img[src*="headshot"]) nav:last-of-type::before,
+header:has(nav img[src*="profile"]) nav:last-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 56px !important;   /* adjust to tighten/loosen spacing from photo */
+  font-weight: 600 !important;
+  font-size: .95rem !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
+  white-space: nowrap !important;
+  z-index: 99 !important;
+  pointer-events: none !important;
+}
+/* If some pages have a light header, ensure contrast there */
+header.light:has(nav img) nav:last-of-type::before { color:#111 !important; text-shadow:none !important; }
+
+/* Slightly tighter on small iPhones */
+@media (max-width: 430px){
+  header:has(nav img) nav:last-of-type::before{ right: 50px !important; font-size: .9rem !important; }
+}
