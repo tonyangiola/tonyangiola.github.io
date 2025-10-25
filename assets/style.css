@@ -3668,3 +3668,13 @@ header [class*="brand"] > *:empty {
 .news-snippy-page li {
   font-weight: normal !important;
 }
+
+/* === Snippy article: force normal weight site-wide on this page === */
+.news-snippy-page * { font-weight: 400 !important; font-variation-settings: "wght" 400 !important; }
+/* Keep headings actually bold */
+.news-snippy-page h1,
+.news-snippy-page h2,
+.news-snippy-page h3,
+.news-snippy-page h4,
+.news-snippy-page h5,
+.news-snippy-page h6 { font-weight: 700 !important; font-variation-settings: "wght" 700 !important; }
