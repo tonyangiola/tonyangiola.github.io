@@ -3221,3 +3221,16 @@ header > nav:first-of-type::before{
   z-index:9999; display:block!important;
 }
 @media(max-width:640px){ header > nav:first-of-type::before{ display:none } }
+/* === Tony name next to headshot (upper-right) === */
+header nav:first-of-type {
+  position: relative !important;
+}
+header nav:first-of-type .brand-name {
+  position: absolute;
+  top: 10px;
+  right: 56px; /* adjust if needed */
+  font-weight: 600;
+  font-size: .95rem;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+}
