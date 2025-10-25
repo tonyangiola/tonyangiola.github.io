@@ -4059,3 +4059,62 @@ header nav{
   display:block !important;
   visibility:visible !important;
 }
+
+/* === FINAL: centered nav + single right-side name+avatar on every page === */
+header{ position: relative !important; min-height: 64px !important; }
+
+/* Center link row and reserve space at right for the block */
+header nav{
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding-right: 200px !important;   /* adjust 180–240 if needed */
+  overflow: visible !important;
+}
+
+/* Kill any legacy pseudo-badges to avoid duplicate names */
+header > nav::before, header > nav::after { content: none !important; }
+
+/* Right-side block: name snug to avatar */
+.header-right{
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 6px !important;              /* tighten/loosen name-to-avatar distance */
+  z-index: 1000 !important;
+}
+
+.header-name{
+  display: inline-block !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: .95rem !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+
+.header-avatar{
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  outline: 2px solid rgba(255,255,255,.35) !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Mobile: keep both, just slightly smaller so nothing disappears */
+@media (max-width: 768px){
+  header, header nav{ min-height: 56px !important; }
+  header nav{ padding-right: 170px !important; }
+  .header-right{ gap: 4px !important; }
+  .header-name{ font-size: .85rem !important; }
+  .header-avatar{ width: 36px !important; height: 36px !important; }
+}
