@@ -1,40 +1,29 @@
 /* news-snippy page-only overrides */
-.news-snippy-page header a,
-.news-snippy-page header button,
-.news-snippy-page nav a,
-.news-snippy-page nav button{
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 .5rem !important;
-  margin: 0 !important;
-  box-shadow: none !important;
-  display: inline !important;
-  color: inherit !important;
-}
-/* Hide genuinely empty links/buttons (the tiny "pills") */
+
+/* Only hide truly empty links/buttons in header to kill the tiny "pills" */
 .news-snippy-page header a:empty,
 .news-snippy-page header button:empty,
 .news-snippy-page nav a:empty,
-.news-snippy-page nav button:empty{ display:none !important; }
+.news-snippy-page nav button:empty { display: none !important; }
 
-/* Article card slightly lighter than page bg for readability */
-.news-snippy-page .article-card{ background: rgba(20,27,36,.92); }
+/* Do NOT reset all header/nav styles anymore (keeps burger solid) */
 
-/* Figures/images */
-.news-snippy-page article figure{ margin:16px 0; text-align:center; }
-.news-snippy-page article img{
-  max-width:100%; height:auto; display:block; margin:8px auto; border-radius:8px;
-}
-.news-snippy-page article figcaption{ font-size:.95rem; opacity:.85; }
+/* Article styles */
+.news-snippy-page .article-card { background: rgba(20,27,36,.92); }
+.news-snippy-page article figure { margin:16px 0; text-align:center; }
+.news-snippy-page article img { max-width:100%; height:auto; display:block; margin:8px auto; border-radius:8px; }
+.news-snippy-page article figcaption { font-size:.95rem; opacity:.85; }
 
-/* Back to Home button */
-.news-snippy-page a#back-home{
+/* Back to Home */
+.news-snippy-page a#back-home {
   background:#1e1e1e !important; color:#fff !important;
   border:1px solid #fff !important; border-radius:10px !important;
   padding:8px 16px !important; text-decoration:none !important; display:inline-block;
 }
-.news-snippy-page a#back-home:hover{
+.news-snippy-page a#back-home:hover {
   background:#2a2a2a !important; border-color:#66ccff !important;
   box-shadow:0 0 0 3px rgba(102,204,255,.25) !important;
 }
+
+/* iPhone: if two burgers ever render, hide any duplicate after the first */
+.news-snippy-page .menu-toggle + .menu-toggle { display:none !important; }
