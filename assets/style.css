@@ -4457,3 +4457,4 @@ header > nav:first-of-type::before{content:none!important}
 @media(max-width:640px){#site-badge{right:12px;top:12px;gap:8px;font-size:.9rem}}
 .bottom-hero{margin:48px auto 16px;max-width:1200px;padding:0 12px}
 .bottom-hero img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+<!-- deploy-marker 20251025-152009 -->
