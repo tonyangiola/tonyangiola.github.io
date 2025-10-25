@@ -4437,3 +4437,12 @@ header .main-nav{min-width:520px;max-width:520px;margin:0 auto}
 .bottom-hero{margin:40px auto 0;max-width:1200px}
 .bottom-hero img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
 <!-- deploy-marker 20251025-151302 -->
+
+/* === Unified badge + home hero (final) === */
+header > nav:first-of-type::before{content:none!important}
+#site-badge{position:absolute;right:18px;top:12px;display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:600;font-size:.95rem;z-index:10}
+#site-badge .name{white-space:nowrap}
+#site-badge img{width:36px;height:36px;border-radius:50%;object-fit:cover;display:block}
+@media(max-width:640px){#site-badge{right:12px;top:12px;gap:8px;font-size:.9rem}}
+.bottom-hero{margin:40px auto 0;max-width:1200px}
+.bottom-hero img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
