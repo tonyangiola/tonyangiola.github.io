@@ -11,9 +11,6 @@
   <link rel="stylesheet" href="/assets/override.css?cb=20251022211156">
   <link rel="stylesheet" href="assets/mobile.css?v=20251023214637" media="(max-width: 768px)">
   <script defer src="assets/nav.mobile.js?cb=1761279014"></script>
-  <link rel="stylesheet" href="assets/fix-buttons.css?v=1761332507">
-  <link rel="stylesheet" href="assets/nav-reset.css?v=1761334481">
-  <link rel="stylesheet" href="assets/site-nav-fix.css?v=1761363151">
 </head>
 <body>
   <header>
@@ -60,40 +57,4 @@
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
   
-<!-- DEDUPE-HEADERS: keep only the first header/nav on this page -->
-<style>
-/* Hide any header after the first one */
-body header ~ header,
-body .site-header ~ .site-header,
-body [role="banner"] ~ [role="banner"] { display:none !important; }
-/* If multiple burger toggles exist in the kept header, keep the first */
-header .hamburger ~ .hamburger,
-header .menu-toggle ~ .menu-toggle,
-header .nav-toggle ~ .nav-toggle { display:none !important; }
-/* Remove stray duplicate "Home" buttons/links under the header (common patterns) */
-header ~ a[href="/"], header ~ a[href="./"], header ~ a[href="index.html"] { display:none !important; }
-</style>
-<script>
-(function(){
-  function topMost(els){var r,best=null,y=1e9; for(var i=0;i<els.length;i++){r=els[i].getBoundingClientRect(); if(r && r.top<y){y=r.top; best=els[i];}} return best;}
-  function run(){
-    var headers=[].slice.call(document.querySelectorAll('header,.site-header,[role="banner"]'));
-    if(headers.length>1){
-      var keep=topMost(headers);
-      headers.forEach(function(h){ if(h!==keep && h.parentNode){ h.parentNode.removeChild(h);} });
-      if(keep){
-        var t=keep.querySelectorAll('.hamburger,.menu-toggle,.nav-toggle');
-        for(var i=1;i<t.length;i++){ if(t[i]&&t[i].parentNode){ t[i].parentNode.removeChild(t[i]); } }
-      }
-    }
-    // Remove stray duplicate "Home" button under header if present
-    var killers=document.querySelectorAll('header ~ a[href="/"], header ~ a[href="./"], header ~ a[href="index.html"]');
-    killers.forEach(function(k){ if(k && k.parentNode){ k.parentNode.removeChild(k); } });
-  }
-  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', run); } else { run(); }
-  window.addEventListener('load', function(){ setTimeout(run,0); });
-})();
-</script>
-<!-- /DEDUPE-HEADERS -->
-  <script src="assets/site-nav-cleanup.js?v=1761363856"></script>
 </body>
