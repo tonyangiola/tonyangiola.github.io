@@ -4354,3 +4354,4 @@ header img[alt*="Tony"]::after {
 
 /* Never allow a second label anywhere in header */
 #site-badge + .name, .badge + .name { display:none !important; }
+<!-- deploy-marker 20251025-150223 -->
