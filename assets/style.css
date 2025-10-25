@@ -4118,3 +4118,90 @@ header > nav::before, header > nav::after { content: none !important; }
   .header-name{ font-size: .85rem !important; }
   .header-avatar{ width: 36px !important; height: 36px !important; }
 }
+/* ===== CONSISTENT NAV + RIGHT BADGE ACROSS ALL PAGES ===== */
+:root{
+  --nav-width: 760px;           /* set your preferred nav bar width */
+  --right-block-width: 170px;   /* room reserved for name + avatar */
+  --right-gap: 6px;             /* gap between name and avatar */
+}
+
+header{ position: relative !important; min-height: 64px !important; overflow: visible !important; }
+
+/* Center nav and lock its width so it never shifts page-to-page */
+header nav{
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  width: var(--nav-width) !important;
+  max-width: calc(100% - (var(--right-block-width) + 24px)) !important;
+  margin: 0 auto !important;
+
+  /* visual shell (optional, matches your dark pill) */
+  box-sizing: border-box !important;
+  padding: 6px 14px !important;
+  border-radius: 8px !important;
+
+  /* keep link row centered and prevent clipping */
+  overflow: visible !important;
+}
+
+/* UL/links never fight centering */
+header nav ul{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+header nav li, header nav a{ float: none !important; }
+
+/* Kill any legacy pseudo-badges that could duplicate the name */
+header > nav::before, header > nav::after{ content: none !important; }
+
+/* Right-side block: NAME snug to AVATAR, pinned */
+.header-right{
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  width: var(--right-block-width) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: var(--right-gap) !important;
+  z-index: 1000 !important;
+}
+
+.header-name{
+  display: inline-block !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: .95rem !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+
+.header-avatar{
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  outline: 2px solid rgba(255,255,255,.35) !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Mobile: keep both, just slightly smaller */
+@media (max-width: 768px){
+  header{ min-height: 56px !important; }
+  header nav{
+    width: min(var(--nav-width), calc(100% - (var(--right-block-width) + 24px))) !important;
+  }
+  .header-right{ gap: 4px !important; }
+  .header-name{ font-size: .85rem !important; }
+  .header-avatar{ width: 36px !important; height: 36px !important; }
+}
