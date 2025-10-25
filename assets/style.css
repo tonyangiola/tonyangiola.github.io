@@ -3659,3 +3659,12 @@ header [class*="brand"] > *:empty {
 .news-article h2 { margin-top: 1.25rem; font-size: 1.375rem; }
 .news-article figure img { width: 100%; height: auto; border-radius: 12px; }
 .news-article figcaption { font-size: .95rem; opacity: .85; margin-top: .35rem; }
+
+/* === NEWS-SNIPPY PAGE: remove forced bold === */
+.news-snippy-page h1,
+.news-snippy-page h2,
+.news-snippy-page h3,
+.news-snippy-page p,
+.news-snippy-page li {
+  font-weight: normal !important;
+}
