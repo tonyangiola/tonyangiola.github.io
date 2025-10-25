@@ -3182,7 +3182,6 @@ header > nav:first-of-type::after {
 
 /* === FINAL: single avatar badge (nav top-right) === */
 /* Neutralize any previous badges */
-header::before, header::after, nav::before, nav::after, .nav::before, .nav::after, .navbar::before, .navbar::after, .site-nav::before, .site-nav::after{content:none!important;background:none!important;border:0!important;box-shadow:none!important}
 /* Anchor to the first nav inside header */
 header > nav:first-of-type{position:relative!important}
 /* FORCE UPPER-RIGHT for badge */
@@ -3719,7 +3718,6 @@ header nav{
 }
 
 /* Kill any old pseudo-badge content that might still inject text */
-header > nav::before, header > nav::after{ content: none !important; }
 /* =========================
    NAV & BADGE: SITE-WIDE LOCK
    ========================= */
@@ -3890,7 +3888,6 @@ header nav ul{
 header nav li, header nav a{ float:none !important; }
 
 /* Kill any old pseudo-badges that might still inject duplicate text */
-header > nav::before, header > nav::after{ content:none !important; }
 
 /* Right block: NAME snug to the avatar (this is the thing you want) */
 .header-right{
@@ -4084,7 +4081,6 @@ header nav ul{
 header nav li, header nav a{ float: none !important; }
 
 /* Kill any legacy pseudo-badges that could duplicate the name */
-header > nav::before, header > nav::after{ content: none !important; }
 
 /* Right-side block: NAME snug to AVATAR, pinned */
 .header-right{
@@ -4169,7 +4165,6 @@ header nav ul{
 header nav li, header nav a{ float: none !important; }
 
 /* Kill any old pseudo-badge content */
-header > nav::before, header > nav::after{ content: none !important; }
 
 /* Right block pinned; name snug to avatar */
 .header-right{
@@ -4228,7 +4223,6 @@ header > nav::before, header > nav::after{ content: none !important; }
 /* Remove any injected name/pill near the badge, everywhere */
 header nav::before,
 header nav::after,
-.badge-name, .name-pill, .name, .badge .name { display:none !important; content:none !important; }
 
 /* Make the header a stable positioning context */
 header { position: relative !important; min-height: 56px !important; }
@@ -4267,3 +4261,42 @@ header nav ul, header nav .menu, header nav .links {
 #badge::before, #badge::after,
 .badge::before, .badge::after { content: none !important; display: none !important; }
 <!-- deploy-marker 20251025-145312 -->
+
+/* === FINAL header standardization (2025-10-25) === */
+/* Kill any leftover name/pill injections */
+header nav::before,
+header nav::after,
+#badge + .name, .badge + .name { display:none !important; content:none !important; }
+
+/* Keep header/nav consistent on every page */
+header { position: relative !important; min-height: 56px !important; }
+header nav{
+  height:56px !important; min-height:56px !important;
+  margin:8px auto !important;
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  box-sizing:border-box !important;
+}
+
+/* Avatar selector: match the existing round photo (don’t change src) */
+img#badge, img.badge, img.avatar, img[alt="Tony"], img[alt*="Tony"]{
+  position:absolute !important;
+  top:10px !important; right:14px !important;
+  width:36px !important; height:36px !important;
+  border-radius:50% !important; object-fit:cover !important;
+  z-index:5 !important;
+  /* Make this element the anchor for the label */
+  pointer-events:auto !important;
+}
+
+/* Add the NAME once, anchored to the avatar itself */
+  position:absolute;
+  top:4px;                /* vertical alignment with nav */
+  right:46px;             /* places text to the LEFT of the 36px avatar */
+  white-space:nowrap;
+  font-weight:600; font-size:.95rem; line-height:1;
+  color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.6);
+}
+
+/* Ensure nothing else draws a duplicate name anywhere near header */
+#site-badge,.site-badge,.header-name{ display:none !important; }
