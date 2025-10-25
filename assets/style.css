@@ -3791,3 +3791,53 @@ header [class*="brand"] > *:empty {
     padding: 0 !important;
   }
 }
+
+/* === Mobile Nav: forced upper-left hamburger & drawer (iPhone-safe) === */
+@media (max-width: 915px) {
+  .mobile-nav-toggle{
+    position: fixed !important;
+    top: 12px !important; left: 12px !important;
+    z-index: 10010 !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 8px !important;
+    line-height: 0 !important;
+    border-radius: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important; justify-content: center !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-nav-toggle svg{ width: 28px; height: 28px; display: block; }
+
+  #site-nav, header nav {
+    position: fixed !important; top: 0 !important; left: 0 !important; bottom: 0 !important;
+    width: 72vw !important; max-width: 320px !important;
+    background: #0e0f12 !important; color: #fff !important;
+    transform: translateX(-110%) !important;
+    opacity: 0 !important;
+    transition: transform .25s ease, opacity .25s ease !important;
+    z-index: 10000 !important;
+    padding: 64px 16px 16px !important;
+    overflow-y: auto !important;
+    box-shadow: 4px 0 16px rgba(0,0,0,.35) !important;
+  }
+  html.mobile-nav-open #site-nav,
+  html.mobile-nav-open header nav {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+  html.mobile-nav-open::before{
+    content:""; position: fixed; inset: 0;
+    background: rgba(0,0,0,.35); z-index: 9999;
+  }
+  html.mobile-nav-open, html.mobile-nav-open body { overflow: hidden !important; }
+}
+
+/* Desktop: never show the button */
+@media (min-width: 916px) {
+  .mobile-nav-toggle{ display: none !important; }
+  #site-nav, header nav {
+    position: static !important; transform: none !important; opacity: 1 !important;
+    width: auto !important; box-shadow: none !important; background: transparent !important; padding: 0 !important;
+  }
+}
