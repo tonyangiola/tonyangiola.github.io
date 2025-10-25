@@ -3135,20 +3135,35 @@ header,.page-header,.site-header{position:relative}
 
 /* CSS-only mini brand */
 header,.page-header,.site-header{position:relative}
+#header::before{content:"Tony Angiola";position:absolute;top:10px;right:58px;font-weight:600;font-size:.95rem;line-height:1;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);padding:.25rem .5rem;border-radius:9999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);z-index:6}
+#header::after{content:"";position:absolute;top:10px;right:12px;width:40px;height:40px;border-radius:9999px;background:url("assets/images/tony.jpg") center/cover no-repeat;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:6}
+@media (max-width:640px){header::before{display:none}}
+
 /* Move avatar badge to right side of navbar */
 nav, .nav-bar, .site-nav { position:relative !important; }
+nav::before { content:"Tony Angiola";position:absolute;top:10px;right:58px;font-weight:600;font-size:.95rem;line-height:1;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);padding:.25rem .5rem;border-radius:9999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);z-index:9999 }
+nav::after { content:"";position:absolute;top:10px;right:12px;width:40px;height:40px;border-radius:9999px;background:url("assets/images/tony.jpg") center/cover no-repeat;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:9999 }
+@media(max-width:640px){nav::before{display:none}}
+
 /* === Nav badge: Tony + photo (top-right) === */
 header, .page-header, .site-header { position: relative; }
 nav, .nav, .navbar, .site-nav, header nav { position: relative !important; }
+nav::before, .nav::before, .navbar::before, .site-nav::before, header nav::before {
+  content: "Tony Angiola"; position: absolute; top: 8px; right: 56px;
+  font-weight: 600; font-size: .95rem; line-height: 1; color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  padding: .25rem .5rem; border-radius: 9999px;
   border: 1px solid rgba(255,255,255,.2);
   background: rgba(255,255,255,.06); z-index: 9999;
 }
+nav::after, .nav::after, .navbar::after, .site-nav::after, header nav::after {
   content: ""; position: absolute; top: 6px; right: 12px;
   width: 40px; height: 40px; border-radius: 9999px;
   background: url("assets/images/tony.jpg") center/cover no-repeat;
   border: 2px solid rgba(255,255,255,.9);
   box-shadow: 0 6px 18px rgba(0,0,0,.35); z-index: 9999;
 }
+@media (max-width:640px){ nav::before, .nav::before, .navbar::before, .site-nav::before, header nav::before { display:none } }
 
 /* === Avatar badge: final override (single source of truth) === */
 /* Kill all previous header/nav badges */
@@ -3163,6 +3178,10 @@ nav::before, nav::after,
 /* Pin ONE badge to the first nav inside header */
 header > nav:first-of-type { position: relative !important; }
 header > nav:first-of-type::before {
+  content: "Tony Angiola";
+  position: absolute; top: 8px; right: 56px;
+  font-weight: 600; font-size: .95rem; line-height: 1; color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
   padding: .25rem .5rem; border-radius: 9999px;
   border: 1px solid rgba(255,255,255,.2);
   background: rgba(255,255,255,.06);
@@ -3179,15 +3198,32 @@ header > nav:first-of-type::after {
 
 /* === FINAL: single avatar badge (nav top-right) === */
 /* Neutralize any previous badges */
+header::before, header::after, nav::before, nav::after, .nav::before, .nav::after, .navbar::before, .navbar::after, .site-nav::before, .site-nav::after{content:none!important;background:none!important;border:0!important;box-shadow:none!important}
 /* Anchor to the first nav inside header */
 header > nav:first-of-type{position:relative!important}
+header > nav:first-of-type::before{content:"Tony Angiola";position:absolute;top:8px;right:56px;font-weight:600;font-size:.95rem;line-height:1;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);padding:.25rem .5rem;border-radius:9999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);z-index:9999}
+header > nav:first-of-type::after{content:"";position:absolute;top:6px;right:12px;width:40px;height:40px;border-radius:9999px;background:url("assets/images/tony.jpg") center/cover no-repeat;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:9999}
+@media(max-width:640px){header > nav:first-of-type::before{display:none}}
+
 /* FORCE UPPER-RIGHT for badge */
+html::before{left:auto!important;right:58px!important;top:10px!important}
+html::after{left:auto!important;right:12px!important;top:10px!important}
+
+/* === Re-enable badge NAME next to photo (upper-right) === */
 header > nav:first-of-type{position:relative!important}
+header > nav:first-of-type::before{
+  content:"Tony Angiola"!important; position:absolute; top:8px; right:56px;
+  font-weight:600; font-size:.95rem; line-height:1; color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.35);
   padding:.25rem .5rem; border-radius:9999px;
   border:1px solid rgba(255,255,255,.2);
   background:rgba(255,255,255,.06);
   z-index:9999; display:block!important;
 }
+@media(max-width:640px){ header > nav:first-of-type::before{ display:none } }
+/* === Tony name next to headshot (upper-right) === */
+header nav:first-of-type {
+  position: relative !important;
 }
 header nav:first-of-type .brand-name {
   position: absolute;
@@ -3200,6 +3236,10 @@ header nav:first-of-type .brand-name {
 }
 /* === Upper-right name badge next to small photo === */
 header > nav:first-of-type { position: relative !important; }
+header > nav:first-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute; top: 8px; right: 56px;  /* nudge right value if needed */
+  font-weight: 600; font-size: .95rem; line-height: 1;
   color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.7);
   pointer-events: none;
   white-space: nowrap;
@@ -3209,9 +3249,17 @@ header.light > nav:first-of-type::before { color: #111; text-shadow: none; }
 
 /* Mobile: slightly tighter fit if needed */
 @media (max-width: 430px){
+  header > nav:first-of-type::before{
+    right: 50px;
+    font-size: .9rem;
+  }
 }
 /* === Name next to upper-right headshot === */
 header > nav:first-of-type { position: relative !important; }
+header > nav:first-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute;
+  top: 8px;
   right: 56px;        /* nudge this if needed */
   font-weight: 600;
   font-size: .95rem;
@@ -3223,6 +3271,10 @@ header > nav:first-of-type { position: relative !important; }
   z-index: 3;
 }
 @media (max-width: 430px){
+  header > nav:first-of-type::before{ right: 50px; font-size: .9rem; }
+}
+/* === Tony Angiola name hard insert (upper-right) === */
+/* Tony Angiola name hard insert */
 header nav:first-of-type { position: relative !important; }
 /* Ensure it's visible over any background */
 header nav:first-of-type .brand-name[data-auto="true"]{
@@ -3264,6 +3316,10 @@ header nav { position: relative; } /* ensure absolute children anchor to nav */
 @media (max-width: 430px){
   .brand-name-ur[data-auto="true"]{ right: 50px; font-size: .9rem; }
 }
+/* === ULTRA-FORCED: add "Tony Angiola" next to the small upper-right photo ===
+   Works without HTML edits. Targets the <nav> that HAS the avatar image.
+   Supported in modern Chrome/Safari/iOS via :has()
+*/
 header:has(nav img[src*="avatar"]) nav:last-of-type,
 header:has(nav img[src*="avatar-small"]) nav:last-of-type,
 header:has(nav img[src*="headshot"]) nav:last-of-type,
@@ -3273,6 +3329,10 @@ header:has(nav img[src*="profile"]) nav:last-of-type {
 header:has(nav img[src*="avatar"]) nav:last-of-type::before,
 header:has(nav img[src*="avatar-small"]) nav:last-of-type::before,
 header:has(nav img[src*="headshot"]) nav:last-of-type::before,
+header:has(nav img[src*="profile"]) nav:last-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute !important;
+  top: 8px !important;
   right: 56px !important;   /* adjust to tighten/loosen spacing from photo */
   font-weight: 600 !important;
   font-size: .95rem !important;
@@ -3288,6 +3348,10 @@ header.light:has(nav img) nav:last-of-type::before { color:#111 !important; text
 
 /* Slightly tighter on small iPhones */
 @media (max-width: 430px){
+  header:has(nav img) nav:last-of-type::before{ right: 50px !important; font-size: .9rem !important; }
+}
+/* === brand-name-ur-badge (next to upper-right avatar) === */
+header nav { position: relative; }
 .brand-name-ur-badge{
   position: absolute;
   top: 8px;
@@ -3312,6 +3376,10 @@ header > nav:first-of-type {
 }
 
 /* Draw the name to the LEFT of the small photo (badge pinned inside same nav) */
+header > nav:first-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute !important;
+  top: 8px !important;
   right: 56px !important;      /* equals avatar width + small gap; tweak to align */
   font-weight: 600 !important;
   font-size: .95rem !important;
@@ -3324,6 +3392,10 @@ header > nav:first-of-type {
 }
 
 /* If some pages use a light header, keep it readable there */
+header.light > nav:first-of-type::before{ color:#111 !important; text-shadow:none !important; }
+
+/* Mobile: hide the badge so it doesn't crowd the hamburger */
+@media (max-width: 768px){
   header > nav:first-of-type { padding-right: 0 !important; }
   header > nav:first-of-type::before { display: none !important; }
 }
@@ -3332,6 +3404,10 @@ header > nav:has(img[src*="avatar"], img[src*="avatar-small"], img[class*="avata
   position: relative !important;
 }
 header > nav:has(img[src*="avatar"], img[src*="avatar-small"], img[class*="avatar"], img[class*="headshot"], img[class*="profile"])::before {
+  content: "Tony Angiola" !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 56px !important;   /* nudge if needed */
   font-weight: 600 !important;
   font-size: .95rem !important;
   line-height: 1 !important;
@@ -3465,1050 +3541,3 @@ header nav { position: relative !important; }
 @media (max-width: 768px){
   .name-by-avatar{ display:none !important; }
 }
-/* ==== Contact page: center the NAV and keep right-side badge/avatar ==== */
-/* Your contact page wrapper we added earlier: .contact-content */
-.contact-content header nav{
-  position: relative !important;
-  /* Center the nav bar */
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  /* Reserve space for avatar + name on the right */
-  padding-right: 220px !important; /* tweak 200–260 if needed */
-}
-
-/* If the UL/links are flexed left somewhere, override to center */
-.contact-content header nav ul{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-}
-
-/* Kill any floats that shove items left */
-.contact-content header nav ul li,
-.contact-content header nav a{
-  float: none !important;
-}
-
-/* Keep the hard-added name element tight to the avatar on Contact page too */
-@media (min-width: 769px){
-  .contact-content .name-by-avatar{
-    position: absolute !important;
-    top: 8px !important;
-    right: 56px !important;  /* nudge to align with the avatar edge */
-    white-space: nowrap !important;
-    z-index: 9 !important;
-  }
-}
-/* Mobile stays clean */
-@media (max-width: 768px){
-  .contact-content .name-by-avatar{ display: none !important; }
-}
-
-/* ==== SITE-WIDE NAV CENTER + UPPER-RIGHT BADGE NAME (unified) ==== */
-header nav{
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;   /* center links */
-  text-align: center !important;
-  padding-right: 220px !important;      /* room for avatar + name on right */
-}
-
-/* Make sure list/links don't force-left via floats */
-header nav ul{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-}
-header nav li, header nav a{ float: none !important; }
-
-/* Single, hard element for the name next to the avatar (desktop only) */
-@media (min-width: 769px){
-  .name-by-avatar{
-    position: absolute !important;
-    top: 8px !important;
-    right: 56px !important;      /* tweak 52–64 if needed to kiss the avatar */
-    font-weight: 600 !important;
-    font-size: .95rem !important;
-    line-height: 1 !important;
-    color: #fff !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
-    white-space: nowrap !important;
-    pointer-events: none !important;
-    z-index: 9 !important;
-  }
-}
-
-/* Mobile stays clean: hide the name to avoid crowding the hamburger */
-@media (max-width: 768px){
-  .name-by-avatar{ display: none !important; }
-}
-
-/* === NAV CENTERED ON EVERY PAGE + CONSISTENT BADGE RIGHT === */
-
-/* Make the nav span the full width and center its link group */
-header, header .page-header, header .container { position: relative !important; }
-header nav,
-header .nav,
-header > nav:first-of-type{
-  position: relative !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;   /* center the links */
-  text-align: center !important;
-
-  padding-right: 220px !important;      /* room for avatar + name on the right */
-}
-
-/* Ensure UL/links don’t fight centering */
-header nav ul{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-header nav li, header nav a{ float: none !important; }
-
-/* Single hard element for the name beside the badge (desktop only) */
-@media (min-width: 769px){
-  .name-by-avatar{
-    position: absolute !important;
-    top: 8px !important;
-    right: 56px !important;      /* tweak 52–64 if needed */
-    font-weight: 600 !important;
-    font-size: .95rem !important;
-    line-height: 1 !important;
-    color: #fff !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
-    white-space: nowrap !important;
-    pointer-events: none !important;
-    z-index: 9 !important;
-  }
-}
-
-/* Mobile: hide the name so it never crowds the hamburger */
-@media (max-width: 768px){
-  .name-by-avatar{ display: none !important; }
-}
-
-/* ===== UNIFY: center nav, single name, avatar visible on the right ===== */
-
-/* Center the link group and keep room on the right for avatar+name */
-header nav{
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding-right: 220px !important; /* tweak 200–260 if needed */
-  overflow: visible !important;
-}
-
-    content: none !important;
-  }
-}
-
-/* 2) HARD-PIN the actual small avatar image at top-right (catch common selectors) */
-@media (min-width: 769px){
-  header img[src*="avatar"],
-  header img[src*="avatar-small"],
-  header img[class*="avatar"],
-  header img[class*="headshot"],
-  header img[class*="profile"]{
-    position: absolute !important;
-    top: 4px !important;
-    right: 8px !important;
-    width: 40px !important;
-    height: 40px !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
-    outline: 2px solid rgba(255,255,255,.35) !important;
-    z-index: 10 !important;
-    display: block !important;
-    visibility: visible !important;
-  }
-
-  /* 3) SINGLE name element, just to the LEFT of the avatar */
-  .name-by-avatar{
-    position: absolute !important;
-    top: 10px !important;
-    right: 56px !important;   /* nudge 52–64 to kiss the avatar edge */
-    font-weight: 600 !important;
-    font-size: .95rem !important;
-    line-height: 1 !important;
-    color: #fff !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
-    white-space: nowrap !important;
-    pointer-events: none !important;
-    z-index: 11 !important;
-  }
-}
-
-/* Mobile stays clean */
-@media (max-width: 768px){
-  .name-by-avatar{ display: none !important; }
-}
-
-/* === Unified: centered nav + fixed badge+name in upper-right on every page === */
-header{ position: relative !important; }
-
-/* Center links on all pages */
-header nav{
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding-right: 240px !important; /* room for avatar+name block; tweak 220–280 */
-}
-
-/* The single, consistent block on the far right */
-@media (min-width: 769px){
-  .header-right{
-    position: absolute !important;
-    top: 6px !important;
-    right: 8px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    z-index: 20 !important;
-  }
-  .header-name{
-    font-weight: 600 !important;
-    font-size: .95rem !important;
-    line-height: 1 !important;
-    color: #fff !important;
-    text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
-    white-space: nowrap !important;
-    pointer-events: none !important;
-  }
-  .header-avatar{
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    outline: 2px solid rgba(255,255,255,.35) !important;
-    display: block !important;
-    visibility: visible !important;
-  }
-
-  /* Hide any legacy avatar inside nav so we don't double-show */
-  header nav img[class*="avatar"], header nav img[src*="avatar"]{ display: none !important; }
-}
-
-/* Mobile: keep avatar, hide the name to avoid crowding */
-@media (max-width: 768px){
-  .header-right{ right: 8px !important; }
-  .header-name{ display: none !important; }
-  .header-avatar{ width: 36px !important; height: 36px !important; }
-}
-
-/* Kill any old pseudo-badge content that might still inject text */
-/* =========================
-   NAV & BADGE: SITE-WIDE LOCK
-   ========================= */
-
-/* 0) Kill any legacy pseudo-badges that might duplicate the name */
-header > nav::before, header > nav::after { content: none !important; }
-
-/* 1) Fix header/nav height so nothing jumps on load (prevents CLS) */
-header { position: relative !important; }
-header, header nav { min-height: 56px !important; }  /* lock bar height */
-
-/* 2) Center the links AND always reserve room for the right block */
-header nav{
-  position: relative !important;
-  width: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding-right: 168px !important;   /* = reserved width for right block */
-}
-
-/* Keep the UL from fighting centering */
-header nav ul{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-header nav li, header nav a{ float: none !important; }
-
-/* 3) SINGLE right block: name snug to avatar */
-.header-right{
-  position: absolute !important;
-  top: 8px !important;
-  right: 8px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: 6px !important;                 /* <-- distance between name and avatar */
-  width: 160px !important;             /* matches the reserved space above */
-  z-index: 20 !important;
-}
-.header-name{
-  margin: 0 !important;
-  font-weight: 600 !important;
-  font-size: .95rem !important;
-  line-height: 1 !important;
-  color: #fff !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
-  white-space: nowrap !important;
-  pointer-events: none !important;
-}
-.header-avatar{
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  outline: 2px solid rgba(255,255,255,.35) !important;
-  display: block !important;
-  visibility: visible !important;
-}
-
-/* 4) Keep both visible on mobile (smaller so nothing disappears) */
-@media (max-width: 768px){
-  header, header nav { min-height: 52px !important; }
-  header nav { padding-right: 148px !important; }
-  .header-right{ right: 8px !important; width: 140px !important; gap: 4px !important; }
-  .header-name{ font-size: .85rem !important; }
-  .header-avatar{ width: 36px !important; height: 36px !important; }
-}
-/* =========================
-   NAV & BADGE: SITE-WIDE LOCK
-   ========================= */
-
-/* 0) Kill any legacy pseudo-badges that might duplicate the name */
-header > nav::before, header > nav::after { content: none !important; }
-
-/* 1) Fix header/nav height so nothing jumps on load (prevents CLS) */
-header { position: relative !important; }
-header, header nav { min-height: 56px !important; }  /* lock bar height */
-
-/* 2) Center the links AND always reserve room for the right block */
-header nav{
-  position: relative !important;
-  width: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding-right: 168px !important;   /* = reserved width for right block */
-}
-
-/* Keep the UL from fighting centering */
-header nav ul{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-header nav li, header nav a{ float: none !important; }
-
-/* 3) SINGLE right block: name snug to avatar */
-.header-right{
-  position: absolute !important;
-  top: 8px !important;
-  right: 8px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: 6px !important;                 /* <-- distance between name and avatar */
-  width: 160px !important;             /* matches the reserved space above */
-  z-index: 20 !important;
-}
-.header-name{
-  margin: 0 !important;
-  font-weight: 600 !important;
-  font-size: .95rem !important;
-  line-height: 1 !important;
-  color: #fff !important;
-  text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
-  white-space: nowrap !important;
-  pointer-events: none !important;
-}
-.header-avatar{
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  outline: 2px solid rgba(255,255,255,.35) !important;
-  display: block !important;
-  visibility: visible !important;
-}
-
-/* 4) Keep both visible on mobile (smaller so nothing disappears) */
-@media (max-width: 768px){
-  header, header nav { min-height: 52px !important; }
-  header nav { padding-right: 148px !important; }
-  .header-right{ right: 8px !important; width: 140px !important; gap: 4px !important; }
-  .header-name{ font-size: .85rem !important; }
-  .header-avatar{ width: 36px !important; height: 36px !important; }
-}
-
-/* ===== LOCK: centered nav + visible name next to avatar on EVERY page ===== */
-header{ position: relative !important; }
-header, header nav{ min-height:56px !important; } /* stop layout jumps */
-
-/* Center link row and reserve room at right for name+avatar block */
-header nav{
-  position: relative !important;
-  width:100% !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  text-align:center !important;
-  padding-right:168px !important; /* reserved width for the right block */
-}
-header nav ul{
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  margin:0 auto !important; padding:0 !important; list-style:none !important;
-}
-header nav li, header nav a{ float:none !important; }
-
-/* Kill any old pseudo-badges that might still inject duplicate text */
-
-/* Right block: NAME snug to the avatar (this is the thing you want) */
-.header-right{
-  position:absolute !important;
-  top:8px !important; right:8px !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:flex-end !important;
-  gap:6px !important;                 /* <— tighten/loosen name-to-avatar gap */
-  width:160px !important;             /* matches reserved space above */
-  z-index:1000 !important;
-}
-
-/* Make DAMN sure the name is visible */
-.header-name{
-  display:inline-block !important;
-  visibility:visible !important;
-  opacity:1 !important;
-  color:#fff !important;
-  font-weight:600 !important;
-  font-size:.95rem !important;
-  line-height:1 !important;
-  text-indent:0 !important;
-  clip:auto !important; clip-path:none !important;
-  white-space:nowrap !important;
-  pointer-events:none !important;
-  z-index:1001 !important;
-}
-
-/* Avatar lock */
-.header-avatar{
-  width:40px !important; height:40px !important;
-  border-radius:50% !important; object-fit:cover !important;
-  outline:2px solid rgba(255,255,255,.35) !important;
-  display:block !important; visibility:visible !important;
-  z-index:1001 !important;
-}
-
-/* Mobile: keep both, just smaller so nothing disappears */
-@media (max-width:768px){
-  header, header nav{ min-height:52px !important; }
-  header nav{ padding-right:148px !important; }
-  .header-right{ width:140px !important; gap:4px !important; }
-  .header-name{ font-size:.85rem !important; }
-  .header-avatar{ width:36px !important; height:36px !important; }
-}
-/* === Unified fixed header-right block === */
-header{
-  position: relative !important;
-  min-height: 64px !important;
-}
-
-/* center nav links AND reserve badge+name space */
-header nav{
-  width:100% !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  padding-right:200px !important;
-  text-align:center !important;
-}
-
-/* right block pinned top-right */
-.header-right{
-  position:absolute !important;
-  top:12px !important;
-  right:12px !important;
-  display:flex !important;
-  align-items:center !important;
-  gap:6px !important;
-  z-index:1000 !important;
-}
-
-/* name styling */
-.header-name{
-  font-weight:600 !important;
-  font-size:.95rem !important;
-  color:#fff !important;
-  white-space:nowrap !important;
-  pointer-events:none !important;
-}
-
-/* avatar styling */
-.header-avatar{
-  width:40px !important;
-  height:40px !important;
-  border-radius:50% !important;
-  object-fit:cover !important;
-  outline:2px solid rgba(255,255,255,.3) !important;
-  display:block !important;
-  visibility:visible !important;
-}
-
-/* === FINAL: centered nav + single right-side name+avatar on every page === */
-header{ position: relative !important; min-height: 64px !important; }
-
-/* Center link row and reserve space at right for the block */
-header nav{
-  position: relative !important;
-  width: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-  padding-right: 200px !important;   /* adjust 180–240 if needed */
-  overflow: visible !important;
-}
-
-/* Kill any legacy pseudo-badges to avoid duplicate names */
-header > nav::before, header > nav::after { content: none !important; }
-
-/* Right-side block: name snug to avatar */
-.header-right{
-  position: absolute !important;
-  top: 10px !important;
-  right: 10px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: 6px !important;              /* tighten/loosen name-to-avatar distance */
-  z-index: 1000 !important;
-}
-
-.header-name{
-  display: inline-block !important;
-  color: #fff !important;
-  font-weight: 600 !important;
-  font-size: .95rem !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  pointer-events: none !important;
-}
-
-.header-avatar{
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  outline: 2px solid rgba(255,255,255,.35) !important;
-  display: block !important;
-  visibility: visible !important;
-}
-
-/* Mobile: keep both, just slightly smaller so nothing disappears */
-@media (max-width: 768px){
-  header, header nav{ min-height: 56px !important; }
-  header nav{ padding-right: 170px !important; }
-  .header-right{ gap: 4px !important; }
-  .header-name{ font-size: .85rem !important; }
-  .header-avatar{ width: 36px !important; height: 36px !important; }
-}
-/* ===== CONSISTENT NAV + RIGHT BADGE ACROSS ALL PAGES ===== */
-:root{
-  --nav-width: 760px;           /* set your preferred nav bar width */
-  --right-block-width: 170px;   /* room reserved for name + avatar */
-  --right-gap: 6px;             /* gap between name and avatar */
-}
-
-header{ position: relative !important; min-height: 64px !important; overflow: visible !important; }
-
-/* Center nav and lock its width so it never shifts page-to-page */
-header nav{
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-
-  width: var(--nav-width) !important;
-  max-width: calc(100% - (var(--right-block-width) + 24px)) !important;
-  margin: 0 auto !important;
-
-  /* visual shell (optional, matches your dark pill) */
-  box-sizing: border-box !important;
-  padding: 6px 14px !important;
-  border-radius: 8px !important;
-
-  /* keep link row centered and prevent clipping */
-  overflow: visible !important;
-}
-
-/* UL/links never fight centering */
-header nav ul{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-header nav li, header nav a{ float: none !important; }
-
-/* Kill any legacy pseudo-badges that could duplicate the name */
-
-/* Right-side block: NAME snug to AVATAR, pinned */
-.header-right{
-  position: absolute !important;
-  top: 10px !important;
-  right: 10px !important;
-  width: var(--right-block-width) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: var(--right-gap) !important;
-  z-index: 1000 !important;
-}
-
-.header-name{
-  display: inline-block !important;
-  color: #fff !important;
-  font-weight: 600 !important;
-  font-size: .95rem !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  pointer-events: none !important;
-}
-
-.header-avatar{
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  outline: 2px solid rgba(255,255,255,.35) !important;
-  display: block !important;
-  visibility: visible !important;
-}
-
-/* Mobile: keep both, just slightly smaller */
-@media (max-width: 768px){
-  header{ min-height: 56px !important; }
-  header nav{
-    width: min(var(--nav-width), calc(100% - (var(--right-block-width) + 24px))) !important;
-  }
-  .header-right{ gap: 4px !important; }
-  .header-name{ font-size: .85rem !important; }
-  .header-avatar{ width: 36px !important; height: 36px !important; }
-}
-/* ===== CONSISTENT NAV + SINGLE NAME+BANNER ON EVERY PAGE ===== */
-:root{
-  --nav-width: 760px;           /* set one width so nav never "jumps" */
-  --right-block-width: 170px;   /* reserved space for name + avatar */
-  --right-gap: 6px;             /* name-to-avatar spacing */
-}
-
-header{ position: relative !important; min-height: 64px !important; }
-
-/* Center nav and lock its width */
-header nav{
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  text-align: center !important;
-
-  width: var(--nav-width) !important;
-  max-width: calc(100% - (var(--right-block-width) + 24px)) !important;
-  margin: 0 auto !important;
-
-  /* visually consistent shell */
-  box-sizing: border-box !important;
-  padding: 6px 14px !important;
-  border-radius: 8px !important;
-
-  /* reserve room on the right so links never collide with the badge block */
-  padding-right: 0 !important;   /* nav itself is fixed-width; reserve done by right block width */
-}
-
-/* Make sure UL/links center and never fight via floats */
-header nav ul{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 auto !important; padding: 0 !important; list-style: none !important;
-}
-header nav li, header nav a{ float: none !important; }
-
-/* Kill any old pseudo-badge content */
-
-/* Right block pinned; name snug to avatar */
-.header-right{
-  position: absolute !important;
-  top: 10px !important;
-  right: 10px !important;
-  width: var(--right-block-width) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: var(--right-gap) !important;
-  z-index: 1000 !important;
-
-  /* hide any stray text nodes by collapsing their size, then restore on children */
-  font-size: 0 !important;
-}
-.header-right .header-name{ font-size: .95rem !important; }
-.header-right .header-avatar{ font-size: 0 !important; } /* no visual effect; keeps rule symmetry */
-
-/* Name styling */
-.header-name{
-  color: #fff !important;
-  font-weight: 600 !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  pointer-events: none !important;
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* Avatar styling */
-.header-avatar{
-  width: 40px !important;
-  height: 40px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  outline: 2px solid rgba(255,255,255,.35) !important;
-  display: block !important;
-  visibility: visible !important;
-}
-
-/* Mobile: keep both, slightly smaller */
-@media (max-width: 768px){
-  header{ min-height: 56px !important; }
-  header nav{
-    width: min(var(--nav-width), calc(100% - (var(--right-block-width) + 24px))) !important;
-  }
-  .header-right{ gap: 4px !important; }
-  .header-name{ font-size: .85rem !important; }
-  .header-avatar{ width: 36px !important; height: 36px !important; }
-}
-
-/* === Header/Badge hard lock (2025-10-25) === */
-
-/* Remove any injected name/pill near the badge, everywhere */
-
-/* Make the header a stable positioning context */
-header { position: relative !important; min-height: 56px !important; }
-
-/* Keep the dark nav bar the same size and centered on every page */
-header nav {
-  height: 56px !important;
-  min-height: 56px !important;
-  margin: 8px auto !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-sizing: border-box !important;
-}
-
-/* Keep nav items vertically centered */
-header nav ul, header nav .menu, header nav .links {
-  height: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
-/* Force the round photo to the exact same spot on every page */
-#badge, .badge, img.avatar, img[alt="Tony"], img[alt*="Tony"] {
-  position: absolute !important;
-  top: 10px !important;
-  right: 14px !important;
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  /* no text next to it */
-}
-
-/* Ensure no accidental text overlays near the avatar */
-#badge::before, #badge::after,
-.badge::before, .badge::after { content: none !important; display: none !important; }
-<!-- deploy-marker 20251025-145312 -->
-
-/* === FINAL header standardization (2025-10-25) === */
-/* Kill any leftover name/pill injections */
-
-/* Keep header/nav consistent on every page */
-header { position: relative !important; min-height: 56px !important; }
-header nav{
-  height:56px !important; min-height:56px !important;
-  margin:8px auto !important;
-  display:flex !important; align-items:center !important; justify-content:center !important;
-  box-sizing:border-box !important;
-}
-
-/* Avatar selector: match the existing round photo (don’t change src) */
-img#badge, img.badge, img.avatar, img[alt="Tony"], img[alt*="Tony"]{
-  position:absolute !important;
-  top:10px !important; right:14px !important;
-  width:36px !important; height:36px !important;
-  border-radius:50% !important; object-fit:cover !important;
-  z-index:5 !important;
-  /* Make this element the anchor for the label */
-  pointer-events:auto !important;
-}
-
-/* Add the NAME once, anchored to the avatar itself */
-  position:absolute;
-  top:4px;                /* vertical alignment with nav */
-  right:46px;             /* places text to the LEFT of the 36px avatar */
-  white-space:nowrap;
-  font-weight:600; font-size:.95rem; line-height:1;
-  color:#fff;
-  text-shadow:0 1px 2px rgba(0,0,0,.6);
-}
-
-/* Ensure nothing else draws a duplicate name anywhere near header */
-#site-badge,.site-badge,.header-name{ display:none !important; }
-<!-- deploy-marker 20251025-145707 -->
-
-/* === FINAL header standardization (2025-10-25) === */
-/* Kill any previous header name injections or pills */
-
-/* Stable header + nav height/centering */
-header { position:relative !important; min-height:56px !important; }
-header nav {
-  height:56px !important; min-height:56px !important;
-  margin:8px auto !important;
-  display:flex !important; align-items:center !important; justify-content:center !important;
-  box-sizing:border-box !important;
-}
-
-/* Avatar: keep round, visible, and anchored top-right */
-header img#site-avatar,
-header img.avatar,
-header img.badge,
-header img[alt="Tony"],
-header img[alt*="Tony"] {
-  position:absolute !important;
-  top:10px !important; right:14px !important;
-  width:36px !important; height:36px !important;
-  border-radius:50% !important;
-  object-fit:cover !important;
-  display:block !important;
-  z-index:5 !important;
-}
-
-/* If more than one matching image slipped in, show only the rightmost one */
-header img[alt*="Tony"]:not(:last-of-type),
-header img.avatar:not(:last-of-type),
-header img.badge:not(:last-of-type) { display:none !important; }
-
-/* Add the NAME exactly once, to the LEFT of the avatar, vertically centered */
-header img#site-avatar::after,
-header img.avatar::after,
-header img.badge::after,
-header img[alt="Tony"]::after,
-header img[alt*="Tony"]::after {
-  position:absolute;
-  top:50%;
-  right:46px;                 /* places the text left of the 36px avatar */
-  transform:translateY(-50%); /* vertical center align with avatar */
-  white-space:nowrap;
-  font-weight:600; font-size:.95rem; line-height:1;
-  color:#fff;
-  text-shadow:0 1px 2px rgba(0,0,0,.6);
-}
-
-/* Never allow a second label anywhere in header */
-<!-- deploy-marker 20251025-150223 -->
-
-/* === HEADER SOLID (2025-10-25) === */
-
-/* Ensure header is the position anchor */
-header { position: relative !important; min-height: 56px !important; }
-
-/* Lock nav size & centering so it doesn't jump */
-header nav{
-  height:56px !important; min-height:56px !important;
-  margin:8px auto !important;
-  display:flex !important; align-items:center !important; justify-content:center !important;
-  box-sizing:border-box !important;
-}
-
-/* Make sure the avatar (your round photo) is visible and in the same spot */
-header img.avatar,
-header img.badge,
-header img#badge,
-header img[alt="Tony"],
-header img[alt*="Tony"],
-header img[src*="tony"],
-header img[src*="avatar"]{
-  position:absolute !important;
-  top:10px !important; right:14px !important;
-  width:36px !important; height:36px !important;
-  border-radius:50% !important;
-  object-fit:cover !important;
-  display:block !important;
-  z-index:5 !important;
-  filter:none !important; opacity:1 !important; visibility:visible !important;
-}
-
-/* Remove any stray overlays/pills/duplicate labels near the header */
-.badge-name, .name-pill, .header-name { display:none !important; }
-
-/* Show the NAME once, anchored to header itself (to the LEFT of the photo) */
-header::after{
-  content:"Tony Angiola";
-  position:absolute;
-  top:50%;                 /* vertically center to the nav */
-  right:60px;              /* 36px avatar + ~24px gap = 60px from right */
-  transform:translateY(-50%);
-  white-space:nowrap;
-  font-weight:600; font-size:.95rem; line-height:1;
-  color:#fff;
-  text-shadow:0 1px 2px rgba(0,0,0,.6);
-  z-index:6;
-}
-
-/* Prevent other ::before/::after header text from appearing */
-header::before { content:none !important; }
-
-/* Do NOT hide header::after anywhere */
-<!-- deploy-marker 20251025-150517 -->
-
-/* === Header Fix (2025-10-25) === */
-header { position: relative !important; }
-header nav {
-  min-height:56px !important; height:56px !important;
-  margin:8px auto !important;
-  display:flex !important; align-items:center !important; justify-content:center !important;
-  box-sizing:border-box !important;
-}
-#siteAvatar{
-  position:absolute !important; top:10px !important; right:14px !important;
-  width:36px !important; height:36px !important; border-radius:50% !important; object-fit:cover !important;
-  z-index:5 !important; display:block !important; opacity:1 !important; visibility:visible !important;
-}
-#siteNameLabel{
-  position:absolute !important; top:50% !important; transform:translateY(-50%) !important;
-  right:60px !important; white-space:nowrap !important; font-weight:600 !important;
-  font-size:.95rem !important; line-height:1 !important; color:#fff !important;
-  text-shadow:0 1px 2px rgba(0,0,0,.6) !important; z-index:6 !important;
-}
-/* Nuke any stray pills/names */
-.badge-name, .name-pill, .header-name { display:none !important; }
-<!-- deploy-marker 20251025-150709 -->
-
-/* === Global author badge (one per page) === */
-header .author-badge{position:absolute;right:18px;top:12px;display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:600;font-size:.95rem;z-index:3}
-header .author-badge .name{white-space:nowrap}
-header .author-badge img{width:36px;height:36px;border-radius:50%;object-fit:cover;display:block}
-/* Kill any older name-via-::before or legacy badges */
-header>nav:first-of-type::before{content:none!important}
-header .old-badge,header .profile-badge,header .avatar-name{display:none!important}
-/* Keep nav from jumping */
-header .main-nav{min-width:520px;max-width:520px;margin:0 auto}
-@media(max-width:640px){header .main-nav{min-width:auto;max-width:none}header .author-badge{right:12px;top:12px;gap:8px;font-size:.9rem}}
-
-/* Home: bottom hero image */
-.bottom-hero{margin:40px auto 0;max-width:1200px}
-.bottom-hero img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
-<!-- deploy-marker 20251025-151302 -->
-
-/* === Unified badge + home hero (final) === */
-header > nav:first-of-type::before{content:none!important}
-#site-badge{position:absolute;right:18px;top:12px;display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font-weight:600;font-size:.95rem;z-index:10}
-#site-badge .name{white-space:nowrap}
-#site-badge img{width:36px;height:36px;border-radius:50%;object-fit:cover;display:block}
-@media(max-width:640px){#site-badge{right:12px;top:12px;gap:8px;font-size:.9rem}}
-.bottom-hero{margin:40px auto 0;max-width:1200px}
-.bottom-hero img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
-<!-- deploy-marker 20251025-151541 -->
-<!-- deploy-marker 20251025-151710 -->
-
-/* === One-and-only site badge + home hero === */
-header > nav:first-of-type::before{content:none!important}
-#site-badge{position:absolute;right:18px;top:12px;display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-weight:600;font-size:.95rem;z-index:20}
-#site-badge .name{white-space:nowrap}
-#site-badge img{width:40px;height:40px;border-radius:50%;object-fit:cover;display:block}
-@media(max-width:640px){#site-badge{right:12px;top:12px;gap:8px;font-size:.9rem}}
-.bottom-hero{margin:48px auto 16px;max-width:1200px;padding:0 12px}
-.bottom-hero img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
-<!-- deploy-marker 20251025-152009 -->
-<!-- deploy-marker 20251025-152133 -->
-<!-- deploy-marker 20251025-152300 -->
-
-/* === Home bottom hero (responsive, safe for portrait images) === */
-.home-bottom-hero {
-  margin: 2rem 0 0 0;
-}
-.home-bottom-hero img {
-  display: block;
-  width: 100%;
-  max-height: 480px;       /* cap the banner height */
-  height: 45vh;            /* responsive feel on tall screens */
-  object-fit: cover;       /* crop edges to make a nice banner even if portrait */
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.25);
-}
-/* Mobile tweak */
-@media (max-width: 480px){
-  .home-bottom-hero img{
-    height: 32vh;
-    max-height: 360px;
-    border-radius: 12px;
-  }
-}
-/* === Home bottom hero (responsive) === */
-.home-bottom-hero{margin:2rem 0 0}
-.home-bottom-hero img{
-  display:block;width:100%;height:45vh;max-height:480px;object-fit:cover;
-  border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.25)
-}
-@media (max-width:480px){
-  .home-bottom-hero img{height:32vh;max-height:360px;border-radius:12px}
-}
-/* === Header/nav stability (min heights) === */
-header{min-height:72px}
-header>nav{min-height:46px;display:flex;justify-content:center;align-items:center}
-/* === Badge name (upper-right) === */
-header > nav:first-of-type{position:relative!important}
-header > nav:first-of-type::before{
-  content:"Tony Angiola";position:absolute;top:8px;right:56px;
-  font-weight:600;font-size:.95rem;line-height:1;color:#fff;
-  text-shadow:0 1px 2px rgba(0,0,0,.35)
-}
-<!-- deploy-marker 20251025-153437 -->
-<!-- deploy-marker 20251025-153602 -->
-<!-- deploy-marker 20251025-154016 -->
-
-/* Safe neutralizer: prevent accidental injected labels */
-header *::before, header *::after,
-.card *::before, .card *::after {
-  content: none !important;
-}
-<!-- deploy-marker 20251025-154032 -->
-<!-- deploy-marker 20251025-154107 -->
