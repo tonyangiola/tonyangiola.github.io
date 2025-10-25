@@ -3092,3 +3092,23 @@ body .form-section {
   #socorro-card video { max-height: 65vh !important; } /* adjust 60–70vh if needed */
 }
 /* === /SOCORRO UNCROP === */
+
+/* === Header avatar (desktop, top-right) === */
+#site-avatar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.85);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  z-index: 5;
+}
+header, .page-header, .site-header { position: relative; }
+
+/* Tuck away on small screens to avoid crowding the burger/menu */
+@media (max-width: 640px) {
+  #site-avatar { display: none; }
+}
