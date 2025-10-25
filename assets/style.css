@@ -3296,3 +3296,23 @@ header nav:first-of-type .brand-name[data-auto="true"]{
     font-size: .9rem !important;
   }
 }
+/* === Upper-right brand-name badge === */
+header nav { position: relative; } /* ensure absolute children anchor to nav */
+
+.brand-name-ur[data-auto="true"]{
+  position: absolute;
+  top: 8px;
+  right: 56px;         /* adjust if you want it tighter/looser */
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7);
+  white-space: nowrap;
+  z-index: 999;
+  pointer-events: none;
+}
+
+@media (max-width: 430px){
+  .brand-name-ur[data-auto="true"]{ right: 50px; font-size: .9rem; }
+}
