@@ -3884,3 +3884,57 @@ header [class*="brand"] > *:empty {
 @media (min-width: 916px){
   .mobile-nav-toggle{ display: none !important; }
 }
+
+/* === Mobile Drawer (no backdrop; push page; white icon) === */
+@media (max-width: 915px){
+  .mobile-nav-toggle{
+    position: fixed !important;
+    top: 12px !important; left: 12px !important;
+    z-index: 10020 !important;
+    background: rgba(255,255,255,0.16) !important; /* small pill so visible */
+    border: none !important; padding: 8px !important;
+    border-radius: 10px !important; line-height: 0 !important;
+  }
+  .mobile-nav-toggle svg{ width: 28px; height: 28px; display: block; }
+
+  /* Drawer: narrower so page is still visible; no overlay */
+  #mobile-drawer{
+    position: fixed; top: 0; left: 0; bottom: 0;
+    width: 65vw; max-width: 300px;
+    background: #141820; color: #fff;
+    transform: translateX(-110%); opacity: 1;
+    transition: transform .25s ease;
+    z-index: 10010; padding: 64px 16px 16px; overflow-y: auto;
+    box-shadow: 4px 0 16px rgba(0,0,0,.35);
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  /* Close button in drawer */
+  #mobile-drawer #mobile-close{
+    position: absolute; top: 12px; right: 12px;
+    font-size: 28px; line-height: 1; width: 36px; height: 36px;
+    border: none; border-radius: 10px; background: rgba(255,255,255,0.08); color: #fff;
+  }
+
+  html.mobile-nav-open #mobile-drawer{ transform: translateX(0); }
+
+  /* Push the page right so it never feels "covered" */
+  html.mobile-nav-open body{
+    transform: translateX(65vw);
+    transition: transform .25s ease;
+    position: relative;
+  }
+
+  /* Drawer links */
+  #mobile-drawer .mobile-menu{ display: flex; flex-direction: column; gap: 14px; }
+  #mobile-drawer .mobile-menu a{
+    color: #fff; text-decoration: none; font-size: 18px;
+    padding: 8px 4px; border-radius: 8px;
+  }
+  #mobile-drawer .mobile-menu a:active{ background: rgba(255,255,255,0.12); }
+}
+
+/* Desktop: never show the button; drawer inactive */
+@media (min-width: 916px){
+  .mobile-nav-toggle{ display: none !important; }
+  #mobile-drawer{ transform: none; position: static; width: auto; box-shadow: none; padding: 0; }
+}
