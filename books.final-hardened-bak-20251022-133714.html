@@ -33,8 +33,9 @@
     .book-actions a.secondary { background:#f3f4f6; color:#111827; }
   </style>
   <link rel="stylesheet" href="/assets/override.css?cb=20251022211126">
+  
   <script src="assets/name-badge-fixed.js" defer></script>
-    
+</head>
   <style id="snippy-fill-left-override">
     #snippy-card{display:grid !important;grid-template-columns: 1fr 280px !important;gap:16px !important;align-items:start !important}
     #snippy-card .book-media{width:100% !important;max-width:none !important}
@@ -166,15 +167,3 @@
   
 </body>
 </html>
-    <link rel="stylesheet" href="/assets/layout-hotfix.css?cb=1761515475" />
-  <style id="sitewide-bg-assert">
-      :root{ --site-bg: #121a2f; } /* single source of truth */
-      html,body{ background: var(--site-bg) !important; background-color: var(--site-bg) !important; }
-
-      /* Let the page background show (don’t touch cards) */
-      body > main, .page-content, main .content, main .container, main section.page-hero, main section.page-wrap{
-        background: transparent !important; background-color: transparent !important; background-image: none !important;
-      }
-      body > main::before, body > main::after, .page-content::before, .page-content::after { content: none !important; display:none !important; }
-    </style>
-</head>

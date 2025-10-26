@@ -1,63 +1,53 @@
 <!DOCTYPE html>
-<!-- sitewide-critical-begin -->
-<style id="sitewide-critical">
-  :root{ --site-bg:#121a2f; --nav-bg:#0f1623; --nav-text:#ffffff; }
-  html,body{ background:var(--site-bg) !important; background-color:var(--site-bg) !important; margin:0; }
-
-  /* NAV: match Contact tone everywhere, and keep links readable */
-  header.site-header, header{ background:var(--nav-bg) !important; box-shadow:0 1px 6px rgba(0,0,0,.25); }
-  header.site-header nav a, header nav a{ color:var(--nav-text) !important; text-decoration:none; }
-
-  /* Let the page BG show by clearing big wrappers */
-  body > main, .page-content, main .content, main .container, main section.page-hero, main section.page-wrap{
-    background:transparent !important; background-color:transparent !important; background-image:none !important;
-  }
-  body > main::before, body > main::after, .page-content::before, .page-content::after{
-    content:none !important; display:none !important;
-  }
-</style>
-<!-- sitewide-critical-end -->
-<script src="/assets/sitewide-assert.js?cb=1761516799" defer></script>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact – Tony Angiola</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/name-badge-fixed.js" defer></script>
 
   <!-- Contact page only: small, safe header styles (won't touch other pages) -->
-    <link rel="stylesheet" href="/assets/style.css?cb=20251026-174910">
-  <link rel="stylesheet" href="assets/override.css">
-  <link rel="stylesheet" href="assets/header-hotfix.css">
-  <link rel="stylesheet" href="/assets/final.css?cb=20251026-174910">
+  <style>
+    header.contact-header{position:relative; padding:0.75rem 0;}
+    header.contact-header .container{max-width:1100px; margin:0 auto; padding:0 1rem;}
+    header.contact-header nav{display:flex; justify-content:center; gap:2rem;}
+    header.contact-header nav a{font-weight:600; text-decoration:none;}
+    header.contact-header a.owner-badge{
+      position:absolute; top:10px; right:12px;
+      display:flex; align-items:center; gap:.5rem;
+      text-decoration:none; font-weight:600; font-size:.95rem; line-height:1;
+      color:#fff; z-index:5;
+    }
+    header.contact-header .owner-badge .owner-avatar{
+      width:40px; height:40px; border-radius:50%; object-fit:cover; display:block;
+    }
+    @media (max-width:640px){
+      header.contact-header a.owner-badge{top:8px; right:8px}
+      header.contact-header .owner-badge .owner-avatar{width:32px; height:32px}
+    }
+  </style>
 </head>
 <body>
-<header class="site-header site-header  ">
+  <!-- CLEAN HEADER: centered nav + small badge (name left, round photo right) -->
+  <header class="contact-header">
     <div class="container">
       <nav>
-        <a href="/" class="  active" aria-current="page">HOME</a>
+        <a href="/" class="active" aria-current="page">HOME</a>
         <a href="/books.html">Books</a>
         <a href="/bio.html">Bio</a>
         <a href="/newsletter.html">Newsletter</a>
         <a href="/contact.html">Contact</a>
       </nav>
-      <div class="owner-badge">
+      <a class="owner-badge" href="/bio.html">
         <span class="owner-name">Tony Angiola</span>
         <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
-      </div>
+      </a>
     </div>
   </header>
-<!-- SITE HEADER (Newsletter canonical) -->
-
-
-<!-- SITE HEADER (Newsletter canonical) -->
-
-
-  <!-- CLEAN HEADER: centered nav + small badge (name left, round photo right) -->
-  
 
   <!-- MAIN: your existing form only -->
-  <main class="page-content page-content contact-content" style="max-width:640px;margin:2rem auto;padding:1rem;">
+  <main class="page-content contact-content" style="max-width:640px;margin:2rem auto;padding:1rem;">
     <h1>Contact Tony</h1>
     <p>Use the form below to send a direct message.</p>
 
@@ -92,7 +82,5 @@
     </div>
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
-  <script src="/assets/badge-unlink.js?cb=20251026-174910"></script>
 </body>
 </html>
-</head>

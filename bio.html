@@ -1,63 +1,123 @@
 <!doctype html>
-<!-- sitewide-critical-begin -->
-<style id="sitewide-critical">
-  :root{ --site-bg:#121a2f; --nav-bg:#0f1623; --nav-text:#ffffff; }
-  html,body{ background:var(--site-bg) !important; background-color:var(--site-bg) !important; margin:0; }
-
-  /* NAV: match Contact tone everywhere, and keep links readable */
-  header.site-header, header{ background:var(--nav-bg) !important; box-shadow:0 1px 6px rgba(0,0,0,.25); }
-  header.site-header nav a, header nav a{ color:var(--nav-text) !important; text-decoration:none; }
-
-  /* Let the page BG show by clearing big wrappers */
-  body > main, .page-content, main .content, main .container, main section.page-hero, main section.page-wrap{
-    background:transparent !important; background-color:transparent !important; background-image:none !important;
-  }
-  body > main::before, body > main::after, .page-content::before, .page-content::after{
-    content:none !important; display:none !important;
-  }
-</style>
-<!-- sitewide-critical-end -->
-<script src="/assets/sitewide-assert.js?cb=1761516799" defer></script>
-
 <head>
 <html lang="en" data-page="bio">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Tony Angiola — Bio</title>
+  <link rel="stylesheet" href="/assets/style.css">
+
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
-    <link rel="stylesheet" href="/assets/style.css?cb=20251026-174910">
-  <link rel="stylesheet" href="assets/override.css">
-  <link rel="stylesheet" href="assets/header-hotfix.css">
-  <link rel="stylesheet" href="/assets/final.css?cb=20251026-174910">
+<style id="bg-nav-hotfix">
+:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
+html,body{background:var(--bg) !important;color:var(--text) !important;}
+/* keep nav dark & readable */
+header,.site-header,nav,header .container{background:var(--nav-bg) !important;}
+header nav a,.site-header nav a,header a{color:#e5e7eb !important;text-decoration:none !important;}
+header nav a:hover,header a:hover,header nav a[aria-current="page"]{color:#fff !important;font-weight:600;}
+header,header *{mix-blend-mode:normal !important;filter:none !important;opacity:1 !important;}
+/* content contrast + spacing */
+body p,li,span,.content p{color:var(--muted) !important;}
+h1,h2,h3,h4{color:var(--text) !important;}
+a{color:var(--link) !important;}
+a:hover{text-decoration:underline !important;}
+main,main.container{padding-top:1.25rem !important;}
+/* never repaint page white */
+main,.container,.content,.page,.wrapper,section,article{background:transparent !important;}
+</style>
+  <link rel="stylesheet" href="/assets/fix-light.css">
+<style id="final-site-colors">
+:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
+html,body{background:var(--bg)!important;color:var(--text)!important;}
+/* NAV must be dark, links bright */
+header,.site-header,nav,header .container{background:var(--nav-bg)!important;}
+header a,.site-header a,header nav a{color:#e5e7eb!important;text-decoration:none!important;}
+header a:hover,header nav a:hover,header nav a[aria-current="page"]{color:#fff!important;font-weight:600;}
+/* Kill any dimming/invert on header */
+header,header *{filter:none!important;mix-blend-mode:normal!important;opacity:1!important;}
+/* Content contrast */
+p,li,span,.content p{color:var(--muted)!important;}
+h1,h2,h3,h4{color:var(--text)!important;}
+a{color:var(--link)!important;}
+a:hover{text-decoration:underline!important;}
+/* Make wrappers transparent so the light bg shows */
+main,.container,.content,.page,.wrapper,section,article{background:transparent!important;}
+/* Space below nav */
+main,main.container{padding-top:1.25rem!important;}
+</style>
+  <link rel="stylesheet" href="/assets/final-light.css">
+  <link rel="stylesheet" href="/assets/emergency.css">
+  
+  <script src="assets/name-badge-fixed.js" defer></script>
 </head>
-<body class="bio-page">
-<header class="site-header site-header  ">
+<style id="bg-nav-hotfix">
+:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
+html,body{background:var(--bg) !important;color:var(--text) !important;}
+/* keep nav dark & readable */
+header,.site-header,nav,header .container{background:var(--nav-bg) !important;}
+header nav a,.site-header nav a,header a{color:#e5e7eb !important;text-decoration:none !important;}
+header nav a:hover,header a:hover,header nav a[aria-current="page"]{color:#fff !important;font-weight:600;}
+header,header *{mix-blend-mode:normal !important;filter:none !important;opacity:1 !important;}
+/* content contrast + spacing */
+body p,li,span,.content p{color:var(--muted) !important;}
+h1,h2,h3,h4{color:var(--text) !important;}
+a{color:var(--link) !important;}
+a:hover{text-decoration:underline !important;}
+main,main.container{padding-top:1.25rem !important;}
+/* never repaint page white */
+main,.container,.content,.page,.wrapper,section,article{background:transparent !important;}
+</style>
+<style id="final-site-colors">
+:root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
+html,body{background:var(--bg)!important;color:var(--text)!important;}
+/* NAV must be dark, links bright */
+header,.site-header,nav,header .container{background:var(--nav-bg)!important;}
+header a,.site-header a,header nav a{color:#e5e7eb!important;text-decoration:none!important;}
+header a:hover,header nav a:hover,header nav a[aria-current="page"]{color:#fff!important;font-weight:600;}
+/* Kill any dimming/invert on header */
+header,header *{filter:none!important;mix-blend-mode:normal!important;opacity:1!important;}
+/* Content contrast */
+p,li,span,.content p{color:var(--muted)!important;}
+h1,h2,h3,h4{color:var(--text)!important;}
+a{color:var(--link)!important;}
+a:hover{text-decoration:underline!important;}
+/* Make wrappers transparent so the light bg shows */
+main,.container,.content,.page,.wrapper,section,article{background:transparent!important;}
+/* Space below nav */
+main,main.container{padding-top:1.25rem!important;}
+</style>
+  <link rel="stylesheet" href="/assets/final-light.css">
+  <link rel="stylesheet" href="/assets/emergency.css">
+</head>
+<body>
+  <header>
+  <header>
     <div class="container">
       <nav>
-        <a href="/" class="  active" aria-current="page">HOME</a>
+    
+        <a href="/"><strong\1HOME\2/strong>HOME</a>
         <a href="/books.html">Books</a>
         <a href="/bio.html">Bio</a>
         <a href="/newsletter.html">Newsletter</a>
         <a href="/contact.html">Contact</a>
-      </nav>
-      <div class="owner-badge">
-        <span class="owner-name">Tony Angiola</span>
-        <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
-      </div>
+    </nav>
     </div>
-  </header>
-<!-- SITE HEADER (Newsletter canonical) -->
-
-
-<!-- SITE HEADER (Newsletter canonical) -->
-
+  <style id="bio-nav-name-fix">
+    /* Bio: remove pseudo-element that prints \"Tony Angiola\" in the nav */
+    header > nav:first-of-type::before,
+    header > nav:first-of-type::after,
+    nav::before, nav::after { content: none !important; }
+  </style>
+  <style id="bio-nav-name-fix">
+    /* Bio: neutralize any injected nav label */
+    header > nav:first-of-type::before, header > nav:first-of-type::after,
+    header nav *::before, header nav *::after { content: none !important; }
+  </style>
+  <a class="owner-badge" href="/bio.html"><span class="owner-name">Tony Angiola</span><img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy"></a></header>
 
   
-
-  
-  <main class="page-content container">
+  <main class="container">
     <section class="bio-card">
       <h1>About Tony Angiola</h1>
 
@@ -79,9 +139,7 @@
 
   <footer class="container" style="padding:2rem 0;"></footer>
   
-  <script src="/assets/badge-unlink.js?cb=20251026-174910"></script>
 </body>
 </html>
 
 <!-- deploy-marker: 2025-10-21-0144pm -->
-</head>

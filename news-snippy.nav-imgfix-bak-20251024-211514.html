@@ -54,7 +54,7 @@
   <link rel="stylesheet" href="assets/page-news-snippy.css?v=1761333604">
   <link rel="stylesheet" href="assets/nav-reset.css?v=1761334472">
   <link rel="stylesheet" href="assets/site-nav-fix.css?v=1761363142">
-  (function(){
+(function(){
   var s=document.createElement('script');
 })();
 </script>
@@ -62,7 +62,7 @@
 
   
   <script src="assets/name-badge-fixed.js" defer></script>
-    
+</head>
 <body class="news-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page" class="news-snippy-page">
   <!-- Simple, dependable header/nav (desktop nav + mobile hamburger) -->
   <header class="site-header">
@@ -252,15 +252,3 @@ a[href="/"]:hover, a[href="./"]:hover, a[href="index.html"]:hover, a[href="index
 
 
 
-    <link rel="stylesheet" href="/assets/layout-hotfix.css?cb=1761515521" />
-  <style id="sitewide-bg-assert">
-      :root{ --site-bg: #121a2f; } /* single source of truth */
-      html,body{ background: var(--site-bg) !important; background-color: var(--site-bg) !important; }
-
-      /* Let the page background show (don’t touch cards) */
-      body > main, .page-content, main .content, main .container, main section.page-hero, main section.page-wrap{
-        background: transparent !important; background-color: transparent !important; background-image: none !important;
-      }
-      body > main::before, body > main::after, .page-content::before, .page-content::after { content: none !important; display:none !important; }
-    </style>
-</head>

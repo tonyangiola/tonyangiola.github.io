@@ -60,8 +60,9 @@
 }
 </style>
   <link rel="stylesheet" href="/assets/override.css?cb=20251022211124">
+  
   <script src="assets/name-badge-fixed.js" defer></script>
-    
+</head>
 <body>
   <!-- keep your existing header/navbar -->
   <!--#include virtual="/assets/header.html" -->
@@ -267,15 +268,3 @@
 <!-- books-lock end -->
 </body>
 </html>
-    <link rel="stylesheet" href="/assets/layout-hotfix.css?cb=1761515472" />
-  <style id="sitewide-bg-assert">
-      :root{ --site-bg: #121a2f; } /* single source of truth */
-      html,body{ background: var(--site-bg) !important; background-color: var(--site-bg) !important; }
-
-      /* Let the page background show (don’t touch cards) */
-      body > main, .page-content, main .content, main .container, main section.page-hero, main section.page-wrap{
-        background: transparent !important; background-color: transparent !important; background-image: none !important;
-      }
-      body > main::before, body > main::after, .page-content::before, .page-content::after { content: none !important; display:none !important; }
-    </style>
-</head>
