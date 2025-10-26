@@ -3717,3 +3717,21 @@ a.owner-badge .owner-avatar{width:40px; height:40px; border-radius:50%; object-f
 /* Contact page: make sure its nav centers like the others without touching global nav */
 .contact-content header nav{justify-content:center !important; align-items:center !important}
 <!-- deploy-marker 20251025-213226 -->
+/* contact hero hide */
+.contact-content .hero,
+.contact-content .hero-photo,
+.contact-content .page-hero,
+.contact-content .author-hero,
+.contact-content .profile-hero,
+.contact-content .mast-portrait,
+.contact-content figure.hero,
+.contact-content figure.author,
+.contact-content img.avatar,
+.contact-content img.avatar-large,
+.contact-content img[alt*="Tony"][class*="hero"],
+.contact-content .left-portrait,
+.contact-content .big-portrait {
+  display: none !important;
+}
+/* contact nav center */
+.contact-content header nav{justify-content:center !important; align-items:center !important}
