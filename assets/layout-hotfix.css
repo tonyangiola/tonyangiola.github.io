@@ -65,3 +65,14 @@ html, body { background: var(--site-bg) !important; }
 /* FINAL SITEWIDE BG (guard) */
 :root { --site-bg: #f6f7fb; }
 html, body { background: var(--site-bg) !important; }
+
+/* === FINAL OVERRIDE: site background must win everywhere === */
+:root { --site-bg: #0b0c10; } /* keep your preferred tone here */
+html, body {
+  background: var(--site-bg) !important;
+  background-color: var(--site-bg) !important;
+}
+/* If any pseudo background mask existed, nuke it */
+body::before, body::after {
+  content: none !important;
+}
