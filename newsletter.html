@@ -14,6 +14,42 @@
   <link rel="stylesheet" href="/assets/layout-hotfix.css?cb=1761517752"><!-- last -->
 </head>
 <body class="newsletter-page">
+<style id="page-bg-fix">
+  /* Use the site token already defined globally; just enforce it on these pages */
+  body.books-page,
+  body.newsletter-page{
+    background: var(--site-bg) !important;
+    background-color: var(--site-bg) !important;
+  }
+
+  /* Let the background show through common wrappers on these two pages */
+  body.books-page :where(main, .page-content, .container, section, article, .hero, .banner, .masthead, .page-header, .grid, .book-card, .media-box),
+  body.newsletter-page :where(main, .page-content, .container, section, article, .hero, .banner, .masthead, .page-header){
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+
+  /* Kill before/after “overlay” paints that some blocks add */
+  body.books-page  :where(main, .hero, .banner, .masthead, .page-header, .page-content)::before,
+  body.books-page  :where(main, .hero, .banner, .masthead, .page-header, .page-content)::after,
+  body.newsletter-page :where(main, .hero, .banner, .masthead, .page-header, .page-content)::before,
+  body.newsletter-page :where(main, .hero, .banner, .masthead, .page-header, .page-content)::after{
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Books: keep videos contained and not insanely tall */
+  #books-app :is(video, iframe){
+    object-fit: contain !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 70vh !important; /* tweak if you want */
+  }
+</style>
+
 <header class="site-header site-header  ">
     <div class="container">
       <nav>
