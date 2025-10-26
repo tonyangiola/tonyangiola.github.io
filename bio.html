@@ -101,14 +101,18 @@ main,main.container{padding-top:1.25rem!important;}
         <a href="/bio.html">Bio</a>
         <a href="/newsletter.html">Newsletter</a>
         <a href="/contact.html">Contact</a>
-    <span class="name-by-avatar">Tony Angiola</span>
-      </nav>
+    </nav>
     </div>
   <style id="bio-nav-name-fix">
     /* Bio: remove pseudo-element that prints \"Tony Angiola\" in the nav */
     header > nav:first-of-type::before,
     header > nav:first-of-type::after,
     nav::before, nav::after { content: none !important; }
+  </style>
+  <style id="bio-nav-name-fix">
+    /* Bio: neutralize any injected nav label */
+    header > nav:first-of-type::before, header > nav:first-of-type::after,
+    header nav *::before, header nav *::after { content: none !important; }
   </style>
   </header>
 
