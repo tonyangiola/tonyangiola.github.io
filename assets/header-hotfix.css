@@ -106,7 +106,7 @@ body:not(.home-page) .author-photo {
 }
 
 /* Safety: never let header images blow up due to global rules */
-header.site-header img { max-width: none !important; height: auto !important; }
+
 img.owner-avatar { width:44px !important; height:44px !important; border-radius:50% !important; object-fit:cover !important; }
 /* Keep nav and badge aligned */
 header.site-header .container{ display:flex !important; align-items:center !important; justify-content:center !important; position:relative !important; min-height:76px !important; }
@@ -175,4 +175,15 @@ header.site-header .owner-badge{
   background:transparent !important;
   border:0 !important;
   box-shadow:none !important;
+}
+
+/* === Avatar hard lock (beats generic header image rules) === */
+header.site-header .owner-badge img.owner-avatar{
+  width:44px !important;
+  height:44px !important;
+  max-width:44px !important;
+  max-height:44px !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  display:inline-block !important;
 }
