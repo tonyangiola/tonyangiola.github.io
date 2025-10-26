@@ -130,6 +130,12 @@
         <a href="/contact.html">Contact</a>
     </nav>
     </div>
+  <style id="books-nav-name-fix">
+    /* Books: remove pseudo-element that prints \"Tony Angiola\" in the nav */
+    header > nav:first-of-type::before,
+    header > nav:first-of-type::after,
+    nav::before, nav::after { content: none !important; }
+  </style>
   </header>
 
   <main class="container">
