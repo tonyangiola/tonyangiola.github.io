@@ -3676,3 +3676,26 @@ body.contact-page .contact-badge::after{
 <!-- deploy-marker 20251025-212325 -->
 <!-- deploy-marker 20251025-212502 -->
 <!-- deploy-marker 20251025-212812 -->
+
+/* === Site-wide: steady centered nav + owner badge (2025-10-25) === */
+header{position:relative}
+header nav{display:flex; justify-content:center; align-items:center; gap:1rem}
+header nav ul{margin:0; padding:0}
+header > nav:first-of-type::before{content:normal !important} /* kill any earlier pseudo-name */
+
+/* Owner badge */
+a.owner-badge{position:absolute; top:10px; right:12px; display:flex; align-items:center; gap:.5rem;
+  text-decoration:none; font-weight:600; font-size:.95rem; line-height:1; color:#fff; z-index:5}
+a.owner-badge .owner-name{white-space:nowrap}
+a.owner-badge .owner-avatar{width:40px; height:40px; border-radius:50%; object-fit:cover; display:block}
+
+/* Keep nav from "jumping" across pages by reserving header height */
+header{min-height:64px}
+
+/* Mobile tweaks */
+@media (max-width:640px){
+  a.owner-badge{top:8px; right:8px}
+  a.owner-badge .owner-avatar{width:32px; height:32px}
+}
+/* contact nav center */
+.contact-content header nav{display:flex !important; justify-content:center !important; align-items:center !important}
