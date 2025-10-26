@@ -3875,3 +3875,4 @@ header.site-header h1, header.site-header h2, header.site-header p { margin:0 }
 
 /* normalize the first element after the header so its top margin can’t “pull” the header */
 header.site-header + * { margin-top: 0 !important }
+<!-- deploy-marker 20251025-215724 -->
