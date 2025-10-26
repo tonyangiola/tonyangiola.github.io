@@ -1,21 +1,19 @@
 /* header-hotfix (last loaded, higher specificity & !important) */
-:root{ --hdr-h:60px }
+:root{ --hdr-h:60px } /* set your preferred thin header height */
 
 body header.site-header.site-header{
   background:#0e0f12 !important;
   min-height:var(--hdr-h) !important;
 }
-
 body header.site-header.site-header .container{
   height:var(--hdr-h) !important;
   display:flex; align-items:center; justify-content:center; position:relative;
 }
-
+/* consistent badge placement inside container */
+body header.site-header.site-header .container a.owner-badge{
+  right:16px !important;
+  top:calc((var(--hdr-h) - 40px)/2) !important;
+}
 body header.site-header.site-header nav a{
   color:#fff !important;
 }
-
-/* badge vertical center based on height */
-body a.owner-badge{ top:calc((var(--hdr-h) - 40px)/2) !important; }
-/* owner-badge right inset */
-body header.site-header.site-header .container a.owner-badge{ right:16px !important; }

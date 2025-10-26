@@ -1,87 +1,68 @@
-/* layout-hotfix (final stylesheet) — 2025-10-25 */
-/* Consistent dimensions & spacing across all pages */
-
+/* layout-hotfix (final stylesheet) — unified content width & spacing */
 :root{
-  --hdr-h:60px;           /* header height already used by header-hotfix */
-  --container-w:1100px;   /* site-wide content width */
+  --container-w:1080px;   /* total content width; tweak if needed */
   --gutter:16px;          /* side padding on small screens */
   --gap:24px;             /* vertical rhythm */
   --card-pad:18px;
   --card-radius:14px;
   --card-shadow:0 6px 20px rgba(0,0,0,.06);
-  --card-bg: #0f1115;     /* subtle dark to match BIO header vibe */
-  --body-bg: #0a0b0e;
+  --card-bg:#0f1115;
+  --body-bg:#0a0b0e;
   --text-color:#e8eaf0;
   --muted:#c1c6d0;
 }
 
-/* Base */
-html, body{background:var(--body-bg); color:var(--text-color);}
-img{max-width:100%; height:auto; display:block; border:0;}
+html, body{ background:var(--body-bg); color:var(--text-color); }
+img{ max-width:100%; height:auto; display:block; border:0 }
 
-/* Universal container */
-.container{max-width:var(--container-w); margin:0 auto; padding:0 var(--gutter);}
+/* containers */
+.container{ max-width:var(--container-w); margin:0 auto; padding:0 var(--gutter); }
 
-/* MAIN content width & gutters — applies even if markup is messy */
+/* main region */
 main, .page-content{
   max-width:calc(var(--container-w) - var(--gutter)*2);
   margin: 2rem auto;
   padding: 0 var(--gutter);
 }
-
-/* Vertical rhythm: give everything inside main breathing room */
 main > * + *{ margin-top: var(--gap); }
+main h1, main h2, main h3{ margin:0 }
+main h1 + *, main h2 + *, main h3 + *{ margin-top:.75rem }
 
-/* Normalize headings spacing */
-main h1, main h2, main h3{ margin: 0; }
-main h1 + *, main h2 + *, main h3 + *{ margin-top: .75rem; }
-
-/* Cards/sections look nice even without explicit classes */
-main article,
-main section,
-main .card {
-  background: var(--card-bg);
-  border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
-  padding: var(--card-pad);
+/* HERO (centered, consistent) */
+main .hero{
+  display:flex; align-items:center; justify-content:center;
+  padding: 8px; border-radius: var(--card-radius);
+}
+main .hero img{
+  max-width: 240px; /* set the hero size */
+  border-radius:50%;
+  box-shadow:0 0 12px rgba(0,0,0,.25);
 }
 
-/* Lists of cards (e.g., home/index) */
-main .cards,
-main .grid,
-main .list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--gap);
+/* Cards/sections styling */
+main article, main section.card, main .card {
+  background:var(--card-bg);
+  border-radius:var(--card-radius);
+  box-shadow:var(--card-shadow);
+  padding:var(--card-pad);
+}
+
+/* Common lists of cards */
+main .cards, main .grid, main .list{
+  display:grid; grid-template-columns:1fr; gap:var(--gap);
 }
 @media (min-width:720px){
-  main .cards,
-  main .grid,
-  main .list { grid-template-columns: repeat(2, 1fr); }
+  main .cards, main .grid, main .list{ grid-template-columns: repeat(2,1fr) }
 }
 @media (min-width:1040px){
-  main .cards,
-  main .grid,
-  main .list { grid-template-columns: repeat(3, 1fr); }
+  main .cards, main .grid, main .list{ grid-template-columns: repeat(3,1fr) }
 }
 
-/* Prevent edge-touch: sections or articles directly under main get extra padding */
-main > section, main > article{ padding: var(--card-pad); }
-
-/* Footer container match */
-footer .container{max-width:var(--container-w); padding:0 var(--gutter);}
-
-/* Safety: if any page lacks .page-content, keep first element after header off the header */
-header.site-header + * { margin-top: 0 !important; }
-
-/* Make anchor links legible on dark BGs inside cards */
-main a{ color:#9ecbff; text-decoration:none; }
-main a:hover{ text-decoration:underline; }
-
-/* Tweak form fields (Contact page) so they don't kiss the edges */
+/* Forms (Contact) */
 main form input, main form textarea{
-  width:100%; padding:.65rem .75rem; border-radius:8px; border:1px solid rgba(255,255,255,.08);
+  width:100%; padding:.65rem .75rem; border-radius:8px;
+  border:1px solid rgba(255,255,255,.08);
   background:#0b0c10; color:#e8eaf0;
 }
-main form label{ color:var(--muted); font-weight:600; }
-main button.btn-primary{ border-radius:10px; }
+main form label{ color:var(--muted); font-weight:600 }
+main button.btn-primary{ border-radius:10px }
