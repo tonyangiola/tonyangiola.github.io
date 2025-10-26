@@ -18,6 +18,10 @@
       <a href="newsletter.html">Newsletter</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
+  <style id="contact-nav-name-fix">
+    header > nav:first-of-type::before, header > nav:first-of-type::after,
+    header nav *::before, header nav *::after { content: none !important; }
+  </style>
   </header>
 
   <main class="page-content contact-content" style="max-width:640px;margin:2rem auto;padding:1rem;">
