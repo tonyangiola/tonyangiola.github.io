@@ -1,72 +1,18 @@
 <!doctype html>
-<!-- sitewide-critical-begin -->
-<style id="sitewide-critical">
-  :root{ --site-bg:#121a2f; --nav-bg:#0f1623; --nav-text:#ffffff; }
-  html,body{ background:var(--site-bg) !important; background-color:var(--site-bg) !important; margin:0; }
-
-  /* NAV: match Contact tone everywhere, and keep links readable */
-  header.site-header, header{ background:var(--nav-bg) !important; box-shadow:0 1px 6px rgba(0,0,0,.25); }
-  header.site-header nav a, header nav a{ color:var(--nav-text) !important; text-decoration:none; }
-
-  /* Let the page BG show by clearing big wrappers */
-  body > main, .page-content, main .content, main .container, main section.page-hero, main section.page-wrap{
-    background:transparent !important; background-color:transparent !important; background-image:none !important;
-  }
-  body > main::before, body > main::after, .page-content::before, .page-content::after{
-    content:none !important; display:none !important;
-  }
-</style>
-<!-- sitewide-critical-end -->
-<script src="/assets/sitewide-assert.js?cb=1761516799" defer></script>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <style id="avatar-lock">
-    body.newsletter-page header img.owner-avatar{
-      width:44px!important;height:44px!important;max-width:44px!important;max-height:44px!important;
-      border-radius:50%!important;object-fit:cover!important;display:inline-block!important;
-    }
-    body.newsletter-page header img:not(.owner-avatar){display:none!important}
-  </style>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Newsletter — Tony Angiola</title>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<style id="nl-critical">
-  /* === Exact Bio background + full-height paint === */
-  :root { --page-bg:#f6f7fb; --nav-bg:#0f1623; --nav-text:#fff; }
-  html, body { height: 100%; min-height: 100%; background: var(--site-bg) !important; margin:0; }
-  /* Ensure full viewport coverage even if content is short */
-  body { min-height: 100vh; }
-
-  /* === Dark NAV, always === */
-  header { background: var(--nav-bg) !important; box-shadow: 0 1px 6px rgba(0,0,0,.25); }
-  header nav a { color: var(--nav-text) !important; text-decoration: none; }
-
-  /* === Kill ANY non-header backgrounds below the nav on this page === */
-  /* Keep buttons/inputs normal */
-  .newsletter-page :where(main, section, article, div, aside, footer) {
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    box-shadow: none !important;
-    border: 0 !important;
-  }
-  /* Also kill pseudo-elements that some “hero” blocks use */
-  .newsletter-page :where(main, .hero, .banner, .masthead, .page-header)::before,
-  .newsletter-page :where(main, .hero, .banner, .masthead, .page-header)::after {
-    content: none !important;
-    display: none !important;
-  }
-
-  /* Containers & basics */
-  .container { max-width: 980px; margin: 0 auto; padding: 0 1rem; }
-  nav { display:flex; gap:1rem; align-items:center; padding:.85rem 0; }
-  main { padding-bottom: 2.5rem; }
-  .hero-pad { margin-top: 1.25rem; }
-  .btn { display:inline-block; padding:.6rem 1rem; border-radius:.7rem; font-weight:600; border:1px solid rgba(0,0,0,.06); background:#2563eb; color:#fff; }
-  input[type="email"] { display:block; width:100%; max-width:28rem; padding:.6rem .7rem; border-radius:.6rem; border:1px solid #d0d4dc; }
-</style>
-
-<body class="newsletter-page" class="newsletter-page" class="newsletter-page" class="newsletter-page" class="newsletter-page" style="background:#0e1424 !important; background-color:#0e1424 !important;">
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
+  <script src="assets/name-badge-fixed.js" defer></script>
+  <link rel="stylesheet" href="/assets/style.css?cb=1761517752">
+  <link rel="stylesheet" href="/assets/override.css?cb=1761517752">
+  <link rel="stylesheet" href="/assets/header-hotfix.css?cb=1761517752">
+  <link rel="stylesheet" href="/assets/layout-hotfix.css?cb=1761517752"><!-- last -->
+</head>
+<body class="newsletter-page">
 <header class="site-header site-header  ">
     <div class="container">
       <nav>
@@ -83,65 +29,7 @@
     </div>
   </header>
 
-<style id="newsletter-textforce">
-  /* Force visible white text on dark BG */
-  body.newsletter-page,
-  body.newsletter-page * { color: #ffffff !important; }
-
-  /* Slightly blue links for readability */
-  body.newsletter-page a { color: #93c5fd !important; }
-  body.newsletter-page a:hover { color: #dbeafe !important; }
-
-  /* Inputs: keep white text, subtle border */
-  body.newsletter-page input,
-  body.newsletter-page textarea,
-  body.newsletter-page select {
-    color:#ffffff !important;
-    background: rgba(255,255,255,0.1) !important;
-    border: 1px solid rgba(255,255,255,0.3) !important;
-  }
-  body.newsletter-page input::placeholder { color:#cbd5e1 !important; }
-</style>
-<style id="newsletter-text-contrast">
-  /* Text: bright on dark BG (newsletter page only) */
-  body.newsletter-page main,
-  body.newsletter-page .container,
-  body.newsletter-page section.hero-pad { color:#ffffff !important; }
-  body.newsletter-page h1,
-  body.newsletter-page h2,
-  body.newsletter-page h3,
-  body.newsletter-page p,
-  body.newsletter-page label { color:#ffffff !important; }
-
-  /* Links remain readable */
-  body.newsletter-page a { color:#bfdbfe; }
-  body.newsletter-page a:hover { color:#e5efff; }
-
-    /* Form controls: light text, subtle dark glass background */
-  body.newsletter-page input,
-  body.newsletter-page textarea,
-  body.newsletter-page select {
-    color:#ffffff !important;
-    background: rgba(255,255,255,0.08) !important;
-    border: 1px solid rgba(255,255,255,0.25) !important;
-    outline: none;
-  }
-  body.newsletter-page input::placeholder,
-  body.newsletter-page textarea::placeholder { color:#cbd5e1 !important; }
-
-  /* Button: keep your blue, ensure white text */
-  body.newsletter-page .btn,
-  body.newsletter-page button[type=submit] {
-    color:#ffffff !important;
-    background:#2563eb !important;
-    border:1px solid rgba(255,255,255,0.12) !important;
-  }
-</style>
-</style>
-<!-- Direct header (no SSI) -->
-  
-
-  <main class="page-content container" style="background:transparent !important; background-color:transparent !important;">
+<main class="page-content container" style="background:transparent !important; background-color:transparent !important;">
     <section class="hero-pad" style="background:transparent !important; background-color:transparent !important;">
       <h1>Newsletter</h1>
       <p>Get updates on new investigations, videos, and book progress.</p>
@@ -156,4 +44,4 @@
     </section>
   </main>
 </body>
-
+</html>
