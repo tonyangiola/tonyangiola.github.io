@@ -56,3 +56,42 @@ body.books-page img{max-width:100%!important;height:auto!important}
 
 /* Safety: prevent any top margin collapsing from pushing header */
 header.site-header + * {margin-top:0!important}
+/* === HEADER (final): grid with reserved right column; nav perfectly centered === */
+header.site-header{min-height:72px!important}
+header.site-header .container{
+  display:grid!important;
+  grid-template-columns: 1fr auto auto !important; /* left spacer | NAV | badge */
+  align-items:center!important;
+  gap:12px!important;
+}
+header.site-header nav{grid-column:2!important; justify-self:center!important; margin:0!important; text-align:center!important; white-space:nowrap!important}
+header.site-header .owner-badge{
+  grid-column:3!important; justify-self:end!important;
+  position:static!important; transform:none!important; /* undo absolute */
+  display:flex!important; align-items:center!important; gap:8px!important;
+}
+header.site-header .owner-avatar{width:40px!important;height:40px!important;border-radius:9999px!important;overflow:hidden!important;display:block!important}
+header.site-header img{width:40px!important;height:40px!important;display:block!important}
+
+/* === PAGE WRAPPER: consistent width/padding, no white panels === */
+main.page-content, .page-content{max-width:1100px!important;margin:0 auto!important;padding:24px 16px!important;box-sizing:border-box!important;background:transparent!important}
+
+/* === CONTACT: kill white BG; readable text === */
+.contact-content, body.contact-content .container, body.contact-content .page-content{
+  background:transparent!important; color:#ffffff!important
+}
+body.contact-content h1, body.contact-content h2, body.contact-content p, body.contact-content label, body.contact-content li{color:#e6e9f0!important}
+
+/* === NEWSLETTER: dark/readable (reinforce) === */
+body.newsletter-page main, body.newsletter-page .container, body.newsletter-page .page-content{
+  background:transparent!important; color:#ffffff!important
+}
+body.newsletter-page h1, body.newsletter-page h2, body.newsletter-page p, body.newsletter-page label, body.newsletter-page li{color:#e6e9f0!important}
+
+/* === BOOKS: dark/readable + media sane width === */
+body.books-page main, body.books-page .container, body.books-page .page-content{
+  background:transparent!important; color:#ffffff!important
+}
+body.books-page h1, body.books-page h2, body.books-page p, body.books-page li{color:#e6e9f0!important}
+body.books-page .media, body.books-page .media-box{max-width:100%!important}
+body.books-page img{max-width:100%!important;height:auto!important}
