@@ -3736,3 +3736,19 @@ a.owner-badge .owner-avatar{width:40px; height:40px; border-radius:50%; object-f
 /* contact nav center */
 .contact-content header nav{justify-content:center !important; align-items:center !important}
 <!-- deploy-marker 20251025-213412 -->
+/* contact header cleanup */
+.contact-content header{position:relative}
+.contact-content header img:not(.owner-avatar){display:none !important}
+.contact-content header figure,
+.contact-content header .hero,
+.contact-content header .author,
+.contact-content header .profile,
+.contact-content header .page-hero,
+.contact-content header .big-portrait,
+.contact-content header .left-portrait {display:none !important}
+.contact-content header h1,
+.contact-content header .author-name,
+.contact-content header .page-title {display:none !important}
+
+/* keep Contact nav centered (scoped) */
+.contact-content header nav{justify-content:center !important; align-items:center !important}
