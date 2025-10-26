@@ -236,4 +236,14 @@
 
 <!-- deploy-marker: 2025-10-21-0229pm -->
     <link rel="stylesheet" href="/assets/layout-hotfix.css?cb=1761515499" />
+  <style id="sitewide-bg-assert">
+      :root{ --site-bg: #121a2f; } /* single source of truth */
+      html,body{ background: var(--site-bg) !important; background-color: var(--site-bg) !important; }
+
+      /* Let the page background show (don’t touch cards) */
+      body > main, .page-content, main .content, main .container, main section.page-hero, main section.page-wrap{
+        background: transparent !important; background-color: transparent !important; background-image: none !important;
+      }
+      body > main::before, body > main::after, .page-content::before, .page-content::after { content: none !important; display:none !important; }
+    </style>
 </head>
