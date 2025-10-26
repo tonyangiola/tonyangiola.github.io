@@ -50,3 +50,10 @@ body > .container,
 .page-content.container {
   background: transparent !important;
 }
+
+/* Transparent wrappers for bg (keep background visible) */
+main.page-content,
+body > .container,
+.page-content.container {
+  background: transparent !important;
+}
