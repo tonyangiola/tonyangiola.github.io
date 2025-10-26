@@ -119,3 +119,29 @@ header.site-header .owner-badge .owner-name{ font-weight:600 !important; line-he
 body:not(.home-page) .hero,
 body:not(.home-page) section.hero,
 body:not(.home-page) .author-photo { display:none !important; }
+
+/* === Books + Newsletter: force small badge avatar; hide any large header portraits === */
+body.books-page   header img:not(.owner-avatar),
+body.newsletter-page header img:not(.owner-avatar),
+body.books-page   .left-portrait, 
+body.newsletter-page .left-portrait,
+body.books-page   .author-photo, 
+body.newsletter-page .author-photo { display: none !important; }
+
+body.books-page   .owner-badge img.owner-avatar,
+body.newsletter-page .owner-badge img.owner-avatar {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: none !important;
+}
+
+/* Keep the name+badge row tidy on these pages */
+body.books-page   .owner-badge,
+body.newsletter-page .owner-badge {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-left: auto !important;
+}
