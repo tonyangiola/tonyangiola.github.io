@@ -37,3 +37,6 @@ body.newsletter-page label,
 body.newsletter-page li { color:#e6e9f0 !important; }
 body.newsletter-page input[type="email"] { background:#111 !important; color:#fff !important; border-color:#333 !important; }
 body.newsletter-page .btn, body.newsletter-page button { color:#fff !important; }
+
+/* Header size lock to stop nav jumping */
+header.site-header{min-height:72px!important}
