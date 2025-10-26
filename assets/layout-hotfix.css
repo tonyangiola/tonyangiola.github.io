@@ -1,68 +1,30 @@
-/* layout-hotfix (final stylesheet) — unified content width & spacing */
-:root{
-  --container-w:1080px;   /* total content width; tweak if needed */
-  --gutter:16px;          /* side padding on small screens */
-  --gap:24px;             /* vertical rhythm */
-  --card-pad:18px;
-  --card-radius:14px;
-  --card-shadow:0 6px 20px rgba(0,0,0,.06);
-  --card-bg:#0f1115;
-  --body-bg:#0a0b0e;
-  --text-color:#e8eaf0;
-  --muted:#c1c6d0;
+/* === Page width/gutters (site-wide) === */
+main, .page-content, .content, .wrapper{
+  max-width:1200px; margin:0 auto; padding-left:16px; padding-right:16px;
 }
 
-html, body{ background:var(--body-bg); color:var(--text-color); }
-img{ max-width:100%; height:auto; display:block; border:0 }
-
-/* containers */
-.container{ max-width:var(--container-w); margin:0 auto; padding:0 var(--gutter); }
-
-/* main region */
-main, .page-content{
-  max-width:calc(var(--container-w) - var(--gutter)*2);
-  margin: 2rem auto;
-  padding: 0 var(--gutter);
-}
-main > * + *{ margin-top: var(--gap); }
-main h1, main h2, main h3{ margin:0 }
-main h1 + *, main h2 + *, main h3 + *{ margin-top:.75rem }
-
-/* HERO (centered, consistent) */
-main .hero{
-  display:flex; align-items:center; justify-content:center;
-  padding: 8px; border-radius: var(--card-radius);
-}
-main .hero img{
-  max-width: 240px; /* set the hero size */
-  border-radius:50%;
-  box-shadow:0 0 12px rgba(0,0,0,.25);
+/* Prevent edge-touching cards */
+.card, .news-card, .book-card, .section{
+  border-radius:16px;
+  padding:1rem;
+  box-sizing:border-box;
 }
 
-/* Cards/sections styling */
-main article, main section.card, main .card {
-  background:var(--card-bg);
-  border-radius:var(--card-radius);
-  box-shadow:var(--card-shadow);
-  padding:var(--card-pad);
+/* Hero image consistently centered and non-jumpy */
+.hero{
+  display:flex; justify-content:center; align-items:center;
+  margin:16px auto;
+}
+.hero img{
+  display:block; height:auto; max-width:min(100%, 920px);
 }
 
-/* Common lists of cards */
-main .cards, main .grid, main .list{
-  display:grid; grid-template-columns:1fr; gap:var(--gap);
-}
-@media (min-width:720px){
-  main .cards, main .grid, main .list{ grid-template-columns: repeat(2,1fr) }
-}
-@media (min-width:1040px){
-  main .cards, main .grid, main .list{ grid-template-columns: repeat(3,1fr) }
+/* Stabilize vertical rhythm */
+header.site-header, main, footer{
+  scroll-margin-top:90px;
 }
 
-/* Forms (Contact) */
-main form input, main form textarea{
-  width:100%; padding:.65rem .75rem; border-radius:8px;
-  border:1px solid rgba(255,255,255,.08);
-  background:#0b0c10; color:#e8eaf0;
+/* Optional: avoid nav wrap jitter by shrinking gap on narrow widths */
+@media (max-width:780px){
+  nav ul{ gap:.5rem !important; }
 }
-main form label{ color:var(--muted); font-weight:600 }
-main button.btn-primary{ border-radius:10px }
