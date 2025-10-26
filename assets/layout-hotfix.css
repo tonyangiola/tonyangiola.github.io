@@ -164,3 +164,61 @@ section, article,
   height: auto !important;
   max-height: 70vh !important;
 }
+
+/* ===========================
+   FINAL STANDARDIZATION (global, last-wins)
+   Keep this block at the very end of layout-hotfix.css
+   =========================== */
+
+/* A) Header name looks "doubled" -> kill faux-bold & shadows */
+header.site-header .owner-name {
+  font-weight: 600 !important;       /* avoid faux-bold 700 */
+  font-synthesis: none !important;    /* prevent synthetic bold/italic */
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* Keep header nav text crisp, no shadows */
+header.site-header nav a {
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+/* B) Books page: restore a simple, responsive grid + sane media sizing */
+#books-app .grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.25rem !important;
+  align-items: start !important;
+}
+@media (max-width: 900px) {
+  #books-app .grid { grid-template-columns: 1fr !important; }
+}
+/* Cards breathe a bit without repainting page BG */
+#books-app .book-card, #books-app article {
+  border-radius: 16px !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  background: rgba(255,255,255,.02) !important;
+  padding: 1rem !important;
+}
+/* Media sizing: no overflow, keep aspect */
+#books-app :is(video,iframe,img) {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  max-height: 70vh !important;
+}
+
+/* C) Newsletter readability on dark BG */
+body.newsletter-page main,
+body.newsletter-page .page-content,
+body.newsletter-page .container {
+  color: rgba(255,255,255,.92) !important;
+}
+body.newsletter-page h1, body.newsletter-page h2, body.newsletter-page h3 {
+  color: #fff !important;
+}
+body.newsletter-page a { color: #fff !important; }
