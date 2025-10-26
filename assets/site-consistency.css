@@ -95,3 +95,42 @@ body.books-page main, body.books-page .container, body.books-page .page-content{
 body.books-page h1, body.books-page h2, body.books-page p, body.books-page li{color:#e6e9f0!important}
 body.books-page .media, body.books-page .media-box{max-width:100%!important}
 body.books-page img{max-width:100%!important;height:auto!important}
+/* ===== FINAL HEADER (no overlap, no jump) ===== */
+header.site-header{min-height:72px!important}
+header.site-header .container{
+  position:relative!important;
+  display:flex!important; align-items:center!important; justify-content:center!important;
+  padding-right:76px!important; /* reserve space for badge on the right */
+}
+header.site-header nav{display:inline-block!important; margin:0!important; text-align:center!important; white-space:nowrap!important}
+header.site-header .owner-badge{
+  position:absolute!important; right:16px!important; top:50%!important; transform:translateY(-50%)!important;
+  display:flex!important; align-items:center!important; gap:8px!important;
+}
+header.site-header .owner-avatar, header.site-header img{
+  width:40px!important; height:40px!important; display:block!important; border-radius:9999px!important;
+}
+/* nuke any left-floats from older sheets */
+header.site-header nav, header.site-header .owner-badge{float:none!important}
+
+/* ===== GLOBAL PAGE WRAPPER ===== */
+main.page-content, .page-content{max-width:1100px!important; margin:0 auto!important; padding:24px 16px!important; box-sizing:border-box!important}
+
+/* ===== HARD DARK BACKGROUNDS (body level) ===== */
+body.contact-content, body.newsletter-page, body.books-page, body.bio-page, body.home-page{
+  background-color:#0e0f12!important; color:#fff!important;
+}
+
+/* ===== CONTACT / NEWSLETTER readable text ===== */
+body.contact-content h1, body.contact-content h2, body.contact-content p, body.contact-content label, body.contact-content li,
+body.newsletter-page h1, body.newsletter-page h2, body.newsletter-page p, body.newsletter-page label, body.newsletter-page li{
+  color:#e6e9f0!important;
+}
+
+/* ===== BOOKS real layout (your diag shows .grid + .media/.media-box) ===== */
+body.books-page .grid{display:grid!important; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))!important; gap:16px!important}
+body.books-page .media, body.books-page .media-box{width:auto!important; max-width:100%!important; height:auto!important; margin:0!important}
+body.books-page img{max-width:100%!important; height:auto!important}
+
+/* Safety: prevent header + first element margin collapse */
+header.site-header + * { margin-top:0!important }
