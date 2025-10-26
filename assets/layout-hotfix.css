@@ -98,3 +98,24 @@ body.bio-page section::before,
 body.bio-page section::after {
   content: none !important;
 }
+
+/* === SITEWIDE: Let the page BG show through === */
+/* Keep content cards intact; only clear the big page containers */
+body > main,
+.page-content,
+main .content,
+main .container,
+main section.page-hero,
+main section.page-wrap {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Guard against overlay/mask pseudo-elements on top-level wrappers */
+body > main::before,
+body > main::after,
+.page-content::before,
+.page-content::after {
+  content: none !important;
+}
