@@ -108,3 +108,14 @@ body:not(.home-page) .author-photo {
 /* Safety: never let header images blow up due to global rules */
 header.site-header img { max-width: none !important; height: auto !important; }
 img.owner-avatar { width:44px !important; height:44px !important; border-radius:50% !important; object-fit:cover !important; }
+/* Keep nav and badge aligned */
+header.site-header .container{ display:flex !important; align-items:center !important; justify-content:center !important; position:relative !important; min-height:76px !important; }
+header.site-header nav ul{ display:flex !important; align-items:center !important; justify-content:center !important; gap:1rem !important; margin:0 !important; padding:0 !important; list-style:none !important; }
+header.site-header .owner-badge{ position:static !important; transform:none !important; margin-left:auto !important; display:flex !important; align-items:center !important; gap:10px !important; background:transparent !important; border:0 !important; box-shadow:none !important; }
+header.site-header .owner-badge img{ width:44px !important; height:44px !important; border-radius:50% !important; object-fit:cover !important; border:none !important; }
+header.site-header .owner-badge .owner-name{ font-weight:600 !important; line-height:1 !important; text-decoration:none !important; border:0 !important; pointer-events:none !important; }
+
+/* Home-only scoping so huge portrait/hero doesn't bleed to other pages */
+body:not(.home-page) .hero,
+body:not(.home-page) section.hero,
+body:not(.home-page) .author-photo { display:none !important; }
