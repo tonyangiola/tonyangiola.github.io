@@ -1,228 +1,5 @@
-/* === Unified page width/gutters === */
-main, .page-content, .content, .wrapper, .container-main{
-  max-width:1200px; margin:0 auto; padding-left:16px; padding-right:16px; box-sizing:border-box;
-}
-
-/* Card padding so content never kisses the edges */
-.card, .news-card, .book-card, .section{
-  border-radius:16px; padding:1rem; box-sizing:border-box;
-}
-
-/* Optional: consistent hero presentation (does not affect header size) */
-.hero{ display:flex; justify-content:center; align-items:center; margin:16px auto; }
-.hero img{ max-width:min(100%, 920px); height:auto; display:block; }
-
-/* === BIO page dark background & readability === */
-body.bio-page{
-  background:#0B0F1A !important;
-  color:#e5e7eb !important;
-}
-
-/* Let the background show through common wrappers */
-body.bio-page main,
-body.bio-page .container,
-body.bio-page .wrapper,
-body.bio-page .page,
-body.bio-page .content{
-  background:transparent !important;
-}
-
-/* Link contrast on dark bg */
-body.bio-page a{ color:#dbeafe !important; }
-
-/* Optional: soften bright cards/panels if any */
-body.bio-page .card,
-body.bio-page .panel,
-body.bio-page .section,
-body.bio-page .book-card,
-body.bio-page .content-box{
-  background:rgba(255,255,255,0.03) !important;
-  color:inherit !important;
-}
-
-/* === Global site background (uniform across all pages) === */
-/* change this one color later if needed */
-/* Let the background show; avoid white blocks on top-level wrappers */
-main.page-content,
-body > .container,
-.page-content.container {
-  background: transparent !important;
-}
-
-/* Transparent wrappers for bg (keep background visible) */
-main.page-content,
-body > .container,
-.page-content.container {
-  background: transparent !important;
-}
-
-/* === FINAL OVERRIDE: sitewide background from Newsletter === */
-/* FINAL SITEWIDE BG (guard) */
-/* === FINAL OVERRIDE: site background must win everywhere === */
-/* keep your preferred tone here */
-/* If any pseudo background mask existed, nuke it */
-body::before, body::after {
-  content: none !important;
-}
-
-/* === BIO PAGE: make wrappers transparent so the sitewide --site-bg shows through === */
-body.bio-page main,
-body.bio-page .page-content,
-body.bio-page .content,
-body.bio-page .container,
-body.bio-page section,
-body.bio-page article {
-  background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
-/* guard against overlay pseudo-elements on Bio */
-body.bio-page main::before,
-body.bio-page main::after,
-body.bio-page .page-content::before,
-body.bio-page .page-content::after,
-body.bio-page section::before,
-body.bio-page section::after {
-  content: none !important;
-}
-
-/* === SITEWIDE: Let the page BG show through === */
-/* Keep content cards intact; only clear the big page containers */
-body > main,
-.page-content,
-main .content,
-main .container,
-main section.page-hero,
-main section.page-wrap {
-  background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
-/* Guard against overlay/mask pseudo-elements on top-level wrappers */
-body > main::before,
-body > main::after,
-.page-content::before,
-.page-content::after {
-  content: none !important;
-}
-
-/* === Canonical sitewide BG token === */
-
-/* === Canonical sitewide BG token (Contact tone) === */
-/* === Canonical sitewide BG token (Contact tone) === */
-
-/* === Canonical sitewide BG token === */
-
-/* === Canonical sitewide BG (Contact tone) === */
-:root { --site-bg: #121a2f; }
-html, body { background: var(--site-bg) !important; background-color: var(--site-bg) !important; }
-
-/* Ensure large wrappers are transparent so the page BG shows */
-body > main, .page-content, main .content, main .container, main section.page-hero, main section.page-wrap {
-  background: transparent !important; background-color: transparent !important; background-image: none !important;
-}
-body > main::before, body > main::after, .page-content::before, .page-content::after {
-  content: none !important; display: none !important;
-}
-
-/* ========================== */
-/* FINAL SITEWIDE BG OVERRIDES
-   (last-wins; keep at file end)
-   ========================== */
-
-/* 1) The token + paint (already present earlier, but we assert again here as last-wins) */
-:root { --site-bg: #121a2f; }
-html, body { background: var(--site-bg) !important; background-color: var(--site-bg) !important; }
-
-/* 2) Make the big wrappers transparent so the site BG shows through everywhere */
-body > main,
-.page-content,
-main .container,
-section, article,
-.hero, .banner, .masthead, .page-header,
-.grid, .book-card, .media-box {
-  background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  border: 0 !important;
-}
-
-/* 3) Kill pseudo-element overlays that paint over the page background */
-:where(main, .page-content, .hero, .banner, .masthead, .page-header)::before,
-:where(main, .page-content, .hero, .banner, .masthead, .page-header)::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* 4) Books: keep videos contained; prevents layout blowup */
-#books-app :is(video, iframe){
-  object-fit: contain !important;
-  width: 100% !important;
-  height: auto !important;
-  max-height: 70vh !important;
-}
-
-/* ===========================
-   FINAL STANDARDIZATION (global, last-wins)
-   Keep this block at the very end of layout-hotfix.css
-   =========================== */
-
-/* A) Header name looks "doubled" -> kill faux-bold & shadows */
-header.site-header .owner-name {
-  font-weight: 600 !important;       /* avoid faux-bold 700 */
-  font-synthesis: none !important;    /* prevent synthetic bold/italic */
-  text-shadow: none !important;
-  -webkit-text-stroke: 0 !important;
-  filter: none !important;
-  opacity: 1 !important;
-}
-
-/* Keep header nav text crisp, no shadows */
-header.site-header nav a {
-  font-weight: 600 !important;
-  text-shadow: none !important;
-}
-
-/* B) Books page: restore a simple, responsive grid + sane media sizing */
-#books-app .grid {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 1.25rem !important;
-  align-items: start !important;
-}
-@media (max-width: 900px) {
-  #books-app .grid { grid-template-columns: 1fr !important; }
-}
-/* Cards breathe a bit without repainting page BG */
-#books-app .book-card, #books-app article {
-  border-radius: 16px !important;
-  border: 1px solid rgba(255,255,255,.08) !important;
-  background: rgba(255,255,255,.02) !important;
-  padding: 1rem !important;
-}
-/* Media sizing: no overflow, keep aspect */
-#books-app :is(video,iframe,img) {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  object-fit: contain !important;
-  max-height: 70vh !important;
-}
-
-/* C) Newsletter readability on dark BG */
-body.newsletter-page main,
-body.newsletter-page .page-content,
-body.newsletter-page .container {
-  color: rgba(255,255,255,.92) !important;
-}
-body.newsletter-page h1, body.newsletter-page h2, body.newsletter-page h3 {
-  color: #fff !important;
-}
-body.newsletter-page a { color: #fff !important; }
-/* === FIX Books Swiper Wrapper === */
+/* === Books: make any Swiper layout behave like normal blocks === */
+body.books-page .swiper,
 body.books-page .swiper-container,
 body.books-page .swiper-wrapper,
 body.books-page .swiper-slide {
@@ -232,20 +9,22 @@ body.books-page .swiper-slide {
   overflow: visible !important;
   transform: none !important;
 }
-body.books-page #books-app {
+body.books-page #books-app,
+body.books-page .books-app,
+body.books-page main .books-section {
   display: block !important;
   width: 100% !important;
   margin: 0 auto !important;
   padding: 2rem 1rem !important;
 }
 
-/* === FIX pseudo-name ghost layer === */
+/* Kill any pseudo-name ghost layer */
 header.site-header .avatar::before,
 header.site-header .owner-name::before {
   content: none !important;
 }
 
-/* === Newsletter readable + remove white block === */
+/* Newsletter readability + remove white panel */
 body.newsletter-page main,
 body.newsletter-page .container,
 body.newsletter-page .page-content {
