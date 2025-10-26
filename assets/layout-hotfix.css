@@ -109,5 +109,7 @@ body > main::after,
 }
 
 /* === Canonical sitewide BG token === */
-:root { --site-bg: #121a2f; }
+
+/* === Canonical sitewide BG token (Contact tone) === */
+:root { --site-bg: CT_HEX; }
 html, body { background: var(--site-bg) !important; }
