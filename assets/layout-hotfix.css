@@ -126,3 +126,41 @@ body > main, .page-content, main .content, main .container, main section.page-he
 body > main::before, body > main::after, .page-content::before, .page-content::after {
   content: none !important; display: none !important;
 }
+
+/* ========================== */
+/* FINAL SITEWIDE BG OVERRIDES
+   (last-wins; keep at file end)
+   ========================== */
+
+/* 1) The token + paint (already present earlier, but we assert again here as last-wins) */
+:root { --site-bg: #121a2f; }
+html, body { background: var(--site-bg) !important; background-color: var(--site-bg) !important; }
+
+/* 2) Make the big wrappers transparent so the site BG shows through everywhere */
+body > main,
+.page-content,
+main .container,
+section, article,
+.hero, .banner, .masthead, .page-header,
+.grid, .book-card, .media-box {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* 3) Kill pseudo-element overlays that paint over the page background */
+:where(main, .page-content, .hero, .banner, .masthead, .page-header)::before,
+:where(main, .page-content, .hero, .banner, .masthead, .page-header)::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* 4) Books: keep videos contained; prevents layout blowup */
+#books-app :is(video, iframe){
+  object-fit: contain !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 70vh !important;
+}
