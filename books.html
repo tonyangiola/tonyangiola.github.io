@@ -1,6 +1,14 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style id="avatar-lock">
+    body.books-page header img.owner-avatar{
+      width:44px!important;height:44px!important;max-width:44px!important;max-height:44px!important;
+      border-radius:50%!important;object-fit:cover!important;display:inline-block!important;
+    }
+    body.books-page header img:not(.owner-avatar){display:none!important}
+  </style>
+  <link rel="stylesheet" href="/assets/header-hotfix.css">
   <style id="socorro-superfix">
     /* Books-only Socorro override: kill crop + sane mobile size */
     #socorro-card, #socorro-card.book-card, #socorro-card .media {
