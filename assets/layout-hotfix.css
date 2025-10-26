@@ -41,7 +41,7 @@ body.bio-page .content-box{
 }
 
 /* === Global site background (uniform across all pages) === */
-:root { --site-bg: #0B0F1A; } /* change this one color later if needed */
+:root { --site-bg: ; } /* change this one color later if needed */
 html, body { background: var(--site-bg) !important; }
 
 /* Let the background show; avoid white blocks on top-level wrappers */
