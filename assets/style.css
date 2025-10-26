@@ -3606,3 +3606,63 @@ header nav { position: relative !important; }
   }
 }
 <!-- deploy-marker 20251025-205247 -->
+/* ==== Contact page: center nav + left badge (scoped) ==== */
+body.contact-page header{ position:relative !important; }
+
+/* Try all common nav containers just in case */
+body.contact-page header nav,
+body.contact-page header .nav,
+body.contact-page header .navbar,
+body.contact-page header > nav:first-of-type {
+  position:relative !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;   /* center the links */
+  gap:.75rem !important;
+  margin:0 auto !important;
+  width:auto !important;
+  max-width:100% !important;
+  padding-left:150px !important;       /* reserve space for badge on the LEFT */
+  min-height:110px !important;         /* keep header height consistent across pages */
+  flex-wrap:wrap !important;
+}
+
+/* The badge container we injected (LEFT side) */
+body.contact-page .contact-badge{
+  position:absolute !important;
+  left:16px; top:8px;
+  width:96px; height:96px;
+  border-radius:50%;
+  background-image:url("assets/images/avatar.jpg");
+  background-size:cover; background-position:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+  z-index:2;
+}
+
+/* Name to the RIGHT of the photo */
+body.contact-page .contact-badge::after{
+  content:"Tony Angiola";
+  position:absolute;
+  left:104px; top:32px;
+  font-weight:700; font-size:1rem; line-height:1;
+  color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.45);
+  white-space:nowrap;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px){
+  body.contact-page header nav,
+  body.contact-page header .nav,
+  body.contact-page header .navbar,
+  body.contact-page header > nav:first-of-type {
+    padding-left:112px !important;
+    min-height:84px !important;
+  }
+  body.contact-page .contact-badge{
+    width:64px; height:64px; top:10px; left:12px;
+  }
+  body.contact-page .contact-badge::after{
+    left:80px; top:22px; font-size:.95rem;
+  }
+}
