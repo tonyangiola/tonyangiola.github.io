@@ -114,5 +114,15 @@ body > main::after,
 /* === Canonical sitewide BG token (Contact tone) === */
 
 /* === Canonical sitewide BG token === */
+
+/* === Canonical sitewide BG (Contact tone) === */
 :root { --site-bg: #121a2f; }
-html, body { background: var(--site-bg) !important; }
+html, body { background: var(--site-bg) !important; background-color: var(--site-bg) !important; }
+
+/* Ensure large wrappers are transparent so the page BG shows */
+body > main, .page-content, main .content, main .container, main section.page-hero, main section.page-wrap {
+  background: transparent !important; background-color: transparent !important; background-image: none !important;
+}
+body > main::before, body > main::after, .page-content::before, .page-content::after {
+  content: none !important; display: none !important;
+}
