@@ -154,12 +154,6 @@ main { position: relative; z-index: 0; }
     --focus: #34d399;
   }
 }
-
-html, body {
-  background: radial-gradient(1200px 600px at 50% -10%, rgba(2,6,23,0.06), transparent 55%), var(--bg);
-  color: var(--text);
-}
-
 /* 2) Header bar */
 header {
   /* background: var(--brand); */
@@ -291,11 +285,6 @@ header nav a.active {
 /* deploy-css: 1761013300  — TEMP visible frame below proves CSS is fresh */
 
 /* --- Enforced paper background + pill nav (overrides) --- */
-html, body { 
-  background: radial-gradient(1200px 600px at 50% -10%, rgba(2,6,23,0.06), transparent 55%), #f8fafc !important; 
-  color: #0f172a;
-}
-
 header { 
   /* background: #334155 !important; */ 
   color: #e2e8f0 !important; 
@@ -1800,7 +1789,7 @@ body.books-page .container {
 }
 
 /* === Dark background: HOME + BOOKS (hard, safe) === */
-html, body { background: #05070D !important; } /* ensure viewport is dark */
+/* ensure viewport is dark */
 
 body.home-page,
 body.books-page,
@@ -1857,10 +1846,6 @@ header, .site-header, header nav, .site-header nav {
 }
 
 /* === Body/site background: a bit lighter than nav === */
-html, body {
-  background-color: var(--page-bg) !important;
-}
-
 /* Books page: add more breathing room under the nav */
 .books-grid { margin-top: clamp(24px, 3vh, 56px); }
 @media (min-width: 768px) {
@@ -1901,11 +1886,6 @@ header nav a:hover,
 }
 
 /* === FINAL OVERRIDE: light background, dark nav, extra books spacing === */
-html, body {
-  background-color: #f2f4f7 !important; /* clearly lighter */
-  color: #111; /* good contrast on light bg */
-}
-
 header,
 .site-header,
 header nav,
@@ -1998,8 +1978,6 @@ section, article, .books-grid, .book-card, .card {
 @media (min-width: 768px) { .books-grid { margin-top: 64px !important; } }
 /* === Nav readability + soft page background (tiny override) === */
 :root{ --bg-soft:#f5f7fb; }
-html,body{ background: var(--bg-soft) !important; }
-
 /* ensure nav text is visible on the dark bar */
 header, .site-header, nav { filter:none !important; mix-blend-mode:normal !important; }
 header nav a, header nav a *, .site-header nav a {
@@ -2152,11 +2130,6 @@ body.newsletter-page .page-header {
 
 /* === Sitewide page background (match BIO everywhere) === */
 :root { --site-bg: #f6f7fb; }        /* light gray used on BIO */
-html, body {
-  background: var(--site-bg) !important;
-  background-color: var(--site-bg) !important;
-}
-
 /* ===== Canonical site colors (match BIO) ===== */
 :root{
   --page-bg: #f6f7fb;      /* BIO background */
@@ -2165,11 +2138,6 @@ html, body {
 }
 
 /* Sitewide background */
-html, body {
-  background: var(--page-bg) !important;
-  background-color: var(--page-bg) !important;
-}
-
 /* Dark nav bar everywhere */
 header {
   background: var(--nav-bg) !important;
@@ -2205,11 +2173,6 @@ body.newsletter-page .page-header {
 /* === Site-wide background unify (Bio color) === */
 /* Set to the exact hex from Bio. If you’re unsure, use the working Bio hex here. */
 :root { --site-bg: #0e1424; }  /* <— replace with your Bio page hex if different */
-html, body {
-  background: var(--site-bg) !important;
-  background-color: var(--site-bg) !important;
-}
-
 /* Avoid white wrappers blocking the bg (keeps nav/cards untouched) */
 main, .content, .page, .container {
   background: transparent !important;
@@ -2218,18 +2181,12 @@ main, .content, .page, .container {
 
 /* === Site-wide BG unify (exact Bio color) === */
 :root{--site-bg:#2563eb;}
-html,body{background:var(--site-bg)!important;background-color:var(--site-bg)!important;}
 main,.content,.page,.container,section,article{background:transparent!important;background-color:transparent!important;}
 
 /* ==== FIX: Make Newsletter match Bio background ==== */
 :root { --site-bg: #0e1424; }
 
 /* Force the page background */
-html, body {
-  background: var(--site-bg) !important;
-  background-color: var(--site-bg) !important;
-}
-
 /* Kill common white wrappers that can cover the page BG */
 body .site,
 body .site-wrap,
