@@ -104,6 +104,12 @@ main,main.container{padding-top:1.25rem!important;}
     <span class="name-by-avatar">Tony Angiola</span>
       </nav>
     </div>
+  <style id="bio-nav-name-fix">
+    /* Bio: remove pseudo-element that prints \"Tony Angiola\" in the nav */
+    header > nav:first-of-type::before,
+    header > nav:first-of-type::after,
+    nav::before, nav::after { content: none !important; }
+  </style>
   </header>
 
   
