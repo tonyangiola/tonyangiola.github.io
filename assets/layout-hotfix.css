@@ -41,9 +41,7 @@ body.bio-page .content-box{
 }
 
 /* === Global site background (uniform across all pages) === */
-:root { --site-bg: #121a2f; } /* change this one color later if needed */
-html, body { background: var(--site-bg) !important; }
-
+/* change this one color later if needed */
 /* Let the background show; avoid white blocks on top-level wrappers */
 main.page-content,
 body > .container,
@@ -59,19 +57,9 @@ body > .container,
 }
 
 /* === FINAL OVERRIDE: sitewide background from Newsletter === */
-:root { --site-bg: #121a2f; }
-html, body { background: var(--site-bg) !important; }
-
 /* FINAL SITEWIDE BG (guard) */
-:root { --site-bg: #121a2f; }
-html, body { background: var(--site-bg) !important; }
-
 /* === FINAL OVERRIDE: site background must win everywhere === */
-:root { --site-bg: #121a2f; } /* keep your preferred tone here */
-html, body {
-  background: var(--site-bg) !important;
-  background-color: var(--site-bg) !important;
-}
+/* keep your preferred tone here */
 /* If any pseudo background mask existed, nuke it */
 body::before, body::after {
   content: none !important;
@@ -119,3 +107,7 @@ body > main::after,
 .page-content::after {
   content: none !important;
 }
+
+/* === Canonical sitewide BG token === */
+:root { --site-bg: #121a2f; }
+html, body { background: var(--site-bg) !important; }
