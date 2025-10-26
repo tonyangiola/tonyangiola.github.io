@@ -76,3 +76,25 @@ html, body {
 body::before, body::after {
   content: none !important;
 }
+
+/* === BIO PAGE: make wrappers transparent so the sitewide --site-bg shows through === */
+body.bio-page main,
+body.bio-page .page-content,
+body.bio-page .content,
+body.bio-page .container,
+body.bio-page section,
+body.bio-page article {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* guard against overlay pseudo-elements on Bio */
+body.bio-page main::before,
+body.bio-page main::after,
+body.bio-page .page-content::before,
+body.bio-page .page-content::after,
+body.bio-page section::before,
+body.bio-page section::after {
+  content: none !important;
+}
