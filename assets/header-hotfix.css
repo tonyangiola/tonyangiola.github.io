@@ -22,3 +22,19 @@
   .site-header .owner-badge .name{ font-size:.9rem; }
   .site-header .owner-badge{ right:12px; }
 }
+
+/* === No underline on owner badge (title-like) === */
+.site-header .owner-badge,
+.site-header .owner-badge:link,
+.site-header .owner-badge:visited,
+.site-header .owner-badge:hover,
+.site-header .owner-badge:focus,
+.site-header .owner-badge:active {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+}
+.site-header .owner-badge .name {
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  pointer-events: none; /* prevents hover styles from targeting the span */
+}

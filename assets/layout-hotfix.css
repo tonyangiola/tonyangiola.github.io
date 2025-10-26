@@ -1,30 +1,10 @@
-/* === Page width/gutters (site-wide) === */
+/* Consistent page width & gutters */
+.site-header .container,
 main, .page-content, .content, .wrapper{
   max-width:1200px; margin:0 auto; padding-left:16px; padding-right:16px;
 }
 
-/* Prevent edge-touching cards */
-.card, .news-card, .book-card, .section{
-  border-radius:16px;
-  padding:1rem;
-  box-sizing:border-box;
-}
-
-/* Hero image consistently centered and non-jumpy */
-.hero{
-  display:flex; justify-content:center; align-items:center;
-  margin:16px auto;
-}
-.hero img{
-  display:block; height:auto; max-width:min(100%, 920px);
-}
-
-/* Stabilize vertical rhythm */
-header.site-header, main, footer{
-  scroll-margin-top:90px;
-}
-
-/* Optional: avoid nav wrap jitter by shrinking gap on narrow widths */
-@media (max-width:780px){
-  nav ul{ gap:.5rem !important; }
+/* Keep header height stable; nav centered; badge can be absolutely placed in BIO markup */
+.site-header .container{
+  min-height:76px; display:flex; align-items:center; justify-content:center; position:relative;
 }
