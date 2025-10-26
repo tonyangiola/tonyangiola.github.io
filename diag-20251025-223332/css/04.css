@@ -1,20 +1,20 @@
-/* === Canonical header behavior (copied from Newsletter look/feel) === */
+/* === Header standardization === */
 .site-header{ background:#0e0f12; }
 .site-header .container{
   max-width:1200px; margin:0 auto; padding:0 16px;
-  min-height:76px; display:flex; align-items:center; justify-content:center;
+  min-height:76px;
+  display:flex; align-items:center; justify-content:center;
   position:relative;
 }
 
-/* Keep nav centered; consistent spacing */
+/* Center nav reliably */
 .site-header nav{ flex:0 0 auto; }
 .site-header nav ul{ display:flex; gap:1rem; margin:0; padding:0; list-style:none; }
 
-/* Pin the owner badge at the right, vertically centered */
+/* Pin the owner badge to the right */
 .site-header .owner-badge{
   position:absolute; right:16px; top:50%; transform:translateY(-50%);
-  display:flex; align-items:center; gap:10px;
-  text-decoration:none !important; border-bottom:0 !important;
+  display:flex; align-items:center; gap:10px; text-decoration:none !important;
 }
 .site-header .owner-badge img{
   width:44px; height:44px; border-radius:50%; object-fit:cover; display:block;
@@ -24,7 +24,7 @@
   text-decoration:none !important; border-bottom:0 !important; pointer-events:none;
 }
 
-/* Kill underline on hover/focus */
+/* Prevent hover underline on the whole badge */
 .site-header .owner-badge:link,
 .site-header .owner-badge:visited,
 .site-header .owner-badge:hover,
@@ -33,8 +33,5 @@
   text-decoration:none !important; border-bottom:0 !important;
 }
 
-/* Tighten on narrow widths to prevent wrap-jump */
-@media (max-width:780px){
-  .site-header .owner-badge{ right:12px; }
-  .site-header nav ul{ gap:.5rem; }
-}
+/* Keep layout stable on narrow screens */
+@media (max-width:780px){ .site-header .owner-badge{ right:12px; } nav ul{ gap:.5rem; } }
