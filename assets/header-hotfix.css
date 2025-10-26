@@ -1,40 +1,37 @@
-/* === Header standardization (site-wide) === */
+/* === Header standardization === */
 .site-header{ background:#0e0f12; }
 .site-header .container{
   max-width:1200px; margin:0 auto; padding:0 16px;
+  min-height:76px;
   display:flex; align-items:center; justify-content:center;
-  min-height:76px; position:relative;
+  position:relative;
 }
+
+/* Center nav reliably */
 .site-header nav{ flex:0 0 auto; }
+.site-header nav ul{ display:flex; gap:1rem; margin:0; padding:0; list-style:none; }
+
+/* Pin the owner badge to the right */
 .site-header .owner-badge{
   position:absolute; right:16px; top:50%; transform:translateY(-50%);
-  display:flex; align-items:center; gap:10px; text-decoration:none;
+  display:flex; align-items:center; gap:10px; text-decoration:none !important;
 }
 .site-header .owner-badge img{
   width:44px; height:44px; border-radius:50%; object-fit:cover; display:block;
 }
 .site-header .owner-badge .name{
-  font-weight:600; font-size:0.98rem; line-height:1; color:#fff;
-  text-shadow:0 1px 2px rgba(0,0,0,.35);
-}
-/* Keep header stable even if fonts wrap */
-@media (max-width:480px){
-  .site-header .owner-badge .name{ font-size:.9rem; }
-  .site-header .owner-badge{ right:12px; }
+  font-weight:600; font-size:.98rem; line-height:1; color:#fff;
+  text-decoration:none !important; border-bottom:0 !important; pointer-events:none;
 }
 
-/* === No underline on owner badge (title-like) === */
-.site-header .owner-badge,
+/* Prevent hover underline on the whole badge */
 .site-header .owner-badge:link,
 .site-header .owner-badge:visited,
 .site-header .owner-badge:hover,
 .site-header .owner-badge:focus,
-.site-header .owner-badge:active {
-  text-decoration: none !important;
-  border-bottom: 0 !important;
+.site-header .owner-badge:active{
+  text-decoration:none !important; border-bottom:0 !important;
 }
-.site-header .owner-badge .name {
-  text-decoration: none !important;
-  border-bottom: 0 !important;
-  pointer-events: none; /* prevents hover styles from targeting the span */
-}
+
+/* Keep layout stable on narrow screens */
+@media (max-width:780px){ .site-header .owner-badge{ right:12px; } nav ul{ gap:.5rem; } }

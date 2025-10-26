@@ -1,10 +1,10 @@
-/* Consistent page width & gutters */
-.site-header .container,
-main, .page-content, .content, .wrapper{
-  max-width:1200px; margin:0 auto; padding-left:16px; padding-right:16px;
+/* === Page width/gutters (site-wide) === */
+main, .page-content, .content, .wrapper, .container-main{
+  max-width:1200px; margin:0 auto; padding-left:16px; padding-right:16px; box-sizing:border-box;
 }
+/* Round + pad common cards/sections so pages feel the same width */
+.card, .news-card, .book-card, .section{ border-radius:16px; padding:1rem; box-sizing:border-box; }
 
-/* Keep header height stable; nav centered; badge can be absolutely placed in BIO markup */
-.site-header .container{
-  min-height:76px; display:flex; align-items:center; justify-content:center; position:relative;
-}
+/* Optional: consistent hero behavior (won't affect header height) */
+.hero{ display:flex; justify-content:center; align-items:center; margin:16px auto; }
+.hero img{ display:block; height:auto; max-width:min(100%, 920px); }
