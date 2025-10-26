@@ -91,30 +91,21 @@ main,main.container{padding-top:1.25rem!important;}
   <link rel="stylesheet" href="/assets/emergency.css">
 </head>
 <body>
-  <header>
-  <header>
+  <header class="site-header  ">
     <div class="container">
       <nav>
-    
-        <a href="/"><strong\1HOME\2/strong>HOME</a>
+        <a href="/" class="active" aria-current="page">HOME</a>
         <a href="/books.html">Books</a>
         <a href="/bio.html">Bio</a>
         <a href="/newsletter.html">Newsletter</a>
         <a href="/contact.html">Contact</a>
-    </nav>
+      </nav>
+      <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
+        <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
+      </a>
     </div>
-  <style id="bio-nav-name-fix">
-    /* Bio: remove pseudo-element that prints \"Tony Angiola\" in the nav */
-    header > nav:first-of-type::before,
-    header > nav:first-of-type::after,
-    nav::before, nav::after { content: none !important; }
-  </style>
-  <style id="bio-nav-name-fix">
-    /* Bio: neutralize any injected nav label */
-    header > nav:first-of-type::before, header > nav:first-of-type::after,
-    header nav *::before, header nav *::after { content: none !important; }
-  </style>
-  <a class="owner-badge" href="/bio.html"><span class="owner-name">Tony Angiola</span><img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy"></a></header>
+  </header>
 
   
   <main class="container">
