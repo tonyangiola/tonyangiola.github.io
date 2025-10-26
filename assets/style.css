@@ -3850,3 +3850,28 @@ a.owner-badge .owner-avatar{
   a.owner-badge .owner-avatar{width:32px; height:32px}
 }
 <!-- deploy-marker 20251025-215523 -->
+/* --- NAV anti-jump pack (site-wide, 2025-10-25) --- */
+:root{ --hdr-h:72px } /* single source of truth for header height */
+
+header.site-header{ min-height:var(--hdr-h) }
+header.site-header .container{
+  height:var(--hdr-h);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; /* holds the badge */
+}
+
+/* keep nav links compact & consistent so text wrap doesn't change height */
+header.site-header nav a{
+  display:inline-block; line-height:1;
+  padding:.25rem .5rem; white-space:nowrap;
+}
+
+/* badge: vertically center based on the reserved header height */
+a.owner-badge{ top:calc((var(--hdr-h) - 40px)/2) }
+a.owner-badge .owner-avatar{ width:40px; height:40px }
+
+/* remove any default margins inside the header so pages can’t add extra space */
+header.site-header h1, header.site-header h2, header.site-header p { margin:0 }
+
+/* normalize the first element after the header so its top margin can’t “pull” the header */
+header.site-header + * { margin-top: 0 !important }
