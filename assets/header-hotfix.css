@@ -38,3 +38,41 @@
   .site-header .owner-badge{ right:12px; }
   .site-header nav ul{ gap:.5rem; }
 }
+
+/* Center nav AND badge on the same baseline, put badge at far right */
+header.site-header .container {
+  display:flex !important;
+  align-items:center !important;   /* vertical center for nav + badge */
+  justify-content:center !important;
+  position:relative !important;
+  min-height:76px !important;
+}
+
+/* Let the badge live in the normal flow at the right (not absolute) */
+header.site-header .owner-badge {
+  position:static !important;
+  transform:none !important;
+  margin-left:auto !important;     /* push it to the right edge of the container */
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  background:transparent !important; border:0 !important; box-shadow:none !important;
+}
+
+/* Avatar tidy-up */
+header.site-header .owner-badge img {
+  width:44px !important; height:44px !important; border-radius:50% !important;
+  object-fit:cover !important; border:none !important; box-shadow:none !important;
+}
+
+/* No underline on the name (title-like) */
+header.site-header .owner-badge .owner-name {
+  text-decoration:none !important; border:0 !important; pointer-events:none !important;
+  font-weight:600 !important; line-height:1 !important;
+}
+
+/* Nav list clean baseline */
+header.site-header nav ul {
+  display:flex !important; gap:1rem !important; margin:0 !important; padding:0 !important; list-style:none !important;
+  align-items:center !important; justify-content:center !important;
+}
