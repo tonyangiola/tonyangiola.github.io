@@ -41,7 +41,7 @@ body.bio-page .content-box{
 }
 
 /* === Global site background (uniform across all pages) === */
-:root { --site-bg: #0e1424; } /* change this one color later if needed */
+:root { --site-bg: #121a2f; } /* change this one color later if needed */
 html, body { background: var(--site-bg) !important; }
 
 /* Let the background show; avoid white blocks on top-level wrappers */
@@ -59,15 +59,15 @@ body > .container,
 }
 
 /* === FINAL OVERRIDE: sitewide background from Newsletter === */
-:root { --site-bg: #11131a; }
+:root { --site-bg: #121a2f; }
 html, body { background: var(--site-bg) !important; }
 
 /* FINAL SITEWIDE BG (guard) */
-:root { --site-bg: #11131a; }
+:root { --site-bg: #121a2f; }
 html, body { background: var(--site-bg) !important; }
 
 /* === FINAL OVERRIDE: site background must win everywhere === */
-:root { --site-bg: #11131a; } /* keep your preferred tone here */
+:root { --site-bg: #121a2f; } /* keep your preferred tone here */
 html, body {
   background: var(--site-bg) !important;
   background-color: var(--site-bg) !important;
