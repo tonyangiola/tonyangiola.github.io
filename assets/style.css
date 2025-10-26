@@ -3876,3 +3876,37 @@ header.site-header h1, header.site-header h2, header.site-header p { margin:0 }
 /* normalize the first element after the header so its top margin can’t “pull” the header */
 header.site-header + * { margin-top: 0 !important }
 <!-- deploy-marker 20251025-215724 -->
+/* bio header standard */
+:root{ --hdr-h:72px } /* header height */
+header.site-header{position:relative; min-height:var(--hdr-h); padding:0}
+header.site-header .container{max-width:1100px; margin:0 auto; padding:0 16px;
+  height:var(--hdr-h); display:flex; align-items:center; justify-content:center; position:relative}
+header.site-header nav{display:flex; gap:2rem}
+header.site-header nav a{font-weight:600; text-decoration:none; white-space:nowrap; line-height:1}
+
+/* Kill any stray pseudo text some pages injected into navs */
+header > nav:first-of-type::before,
+header > nav:first-of-type::after,
+nav::before, nav::after { content:none !important }
+
+/* Owner badge (name left, round photo right) — exact size & position */
+a.owner-badge{
+  position:absolute; right:12px; top:calc((var(--hdr-h) - 40px)/2);
+  display:flex; align-items:center; gap:.5rem;
+  text-decoration:none; font-weight:600; font-size:.95rem; line-height:1; color:#fff; z-index:5
+}
+a.owner-badge .owner-avatar{
+  width:40px; height:40px; border-radius:50%; object-fit:cover; display:block;
+  border:0 !important; outline:0 !important; box-shadow:none !important; background:transparent !important;
+}
+
+/* Normalize header internals to prevent per-page shifts */
+header.site-header h1, header.site-header h2, header.site-header p{margin:0}
+header.site-header + * { margin-top:0 !important }
+
+/* Mobile tweak */
+@media (max-width:640px){
+  :root{ --hdr-h:64px }
+  a.owner-badge{ right:8px; top:calc((var(--hdr-h) - 32px)/2) }
+  a.owner-badge .owner-avatar{ width:32px; height:32px }
+}
