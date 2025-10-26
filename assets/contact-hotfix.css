@@ -1,0 +1,60 @@
+/* CONTACT PAGE — right-side badge + name, nav centered; kill any left-name */
+body.contact-page header{ position:relative !important; }
+
+/* Keep nav centered; reserve space on RIGHT for badge+name */
+body.contact-page header nav,
+body.contact-page header .nav,
+body.contact-page header .navbar{
+  position:relative !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:.75rem !important;
+  width:100% !important;
+  max-width:100% !important;
+  margin:0 auto !important;
+  padding-right:160px !important;   /* space for badge on RIGHT */
+  padding-left:0 !important;        /* no left reservation */
+  min-height:110px !important;
+  flex-wrap:wrap !important;
+  float:none !important;
+  left:auto !important; right:auto !important; transform:none !important;
+  text-align:center !important;
+}
+
+/* Kill any prior left badge/name artifacts on Contact only */
+body.contact-page header .contact-badge,
+body.contact-page header .badge-name,
+body.contact-page header .owner-name,
+body.contact-page header [class*="name-by-avatar"],
+body.contact-page header .name{ display:none !important; }
+
+/* RIGHT badge (photo) anchored to the header's right edge */
+body.contact-page header::after{
+  content:"";
+  position:absolute; top:8px; right:16px;
+  width:96px; height:96px; border-radius:50%;
+  background:url("assets/images/avatar.jpg") center/cover no-repeat;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+  z-index:4;
+}
+
+/* Your name just to the LEFT of the photo */
+body.contact-page header::before{
+  content:"Tony Angiola";
+  position:absolute; top:40px; right:120px;
+  font-weight:700; font-size:1rem; line-height:1;
+  color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.45);
+  white-space:nowrap; z-index:4;
+}
+
+/* Mobile tweaks */
+@media (max-width:600px){
+  body.contact-page header nav,
+  body.contact-page header .nav,
+  body.contact-page header .navbar{
+    padding-right:112px !important; min-height:84px !important;
+  }
+  body.contact-page header::after{ width:64px; height:64px; top:10px; right:12px; }
+  body.contact-page header::before{ top:26px; right:80px; font-size:.95rem; }
+}
