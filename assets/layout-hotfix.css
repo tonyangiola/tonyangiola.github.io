@@ -11,3 +11,31 @@ main, .page-content, .content, .wrapper, .container-main{
 /* Optional: consistent hero presentation (does not affect header size) */
 .hero{ display:flex; justify-content:center; align-items:center; margin:16px auto; }
 .hero img{ max-width:min(100%, 920px); height:auto; display:block; }
+
+/* === BIO page dark background & readability === */
+body.bio-page{
+  background:#0B0F1A !important;
+  color:#e5e7eb !important;
+}
+
+/* Let the background show through common wrappers */
+body.bio-page main,
+body.bio-page .container,
+body.bio-page .wrapper,
+body.bio-page .page,
+body.bio-page .content{
+  background:transparent !important;
+}
+
+/* Link contrast on dark bg */
+body.bio-page a{ color:#dbeafe !important; }
+
+/* Optional: soften bright cards/panels if any */
+body.bio-page .card,
+body.bio-page .panel,
+body.bio-page .section,
+body.bio-page .book-card,
+body.bio-page .content-box{
+  background:rgba(255,255,255,0.03) !important;
+  color:inherit !important;
+}
