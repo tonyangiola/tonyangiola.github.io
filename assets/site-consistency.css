@@ -9,3 +9,50 @@ body.books-page #books-app .swiper,body.books-page #books-app .swiper-container,
 body.books-page #books-app{max-width:760px!important;margin:0 auto!important}
 body.books-page #books-app img{max-width:100%!important;height:auto!important}
 body.books-page .swiper-button-next,body.books-page .swiper-button-prev,body.books-page .swiper-pagination{display:none!important}
+/* ===== HEADER: lock structure so NAV never jumps ===== */
+header.site-header{min-height:72px!important;position:relative!important}
+header.site-header .container{display:flex!important;align-items:center!important;justify-content:center!important;gap:12px!important}
+header.site-header nav{margin:0 auto!important;text-align:center!important;float:none!important}
+header.site-header .owner-badge{position:absolute!important;right:16px!important;top:50%!important;transform:translateY(-50%)!important;display:flex!important;align-items:center!important;gap:8px!important}
+header.site-header .owner-name{margin:0!important}
+header.site-header .owner-avatar{width:40px!important;height:40px!important;border-radius:9999px!important;overflow:hidden!important;display:block!important}
+header.site-header img{width:40px!important;height:40px!important;display:block!important}
+
+/* Remove any stray header left-align rules from other sheets */
+header.site-header, header.site-header * {text-align:inherit}
+
+/* ===== PAGE CONTAINERS: consistent width/padding ===== */
+main.page-content, .page-content{max-width:1100px!important;margin:0 auto!important;padding:24px 16px!important;box-sizing:border-box!important}
+
+/* ===== BACKGROUNDS ===== */
+/* Contact: kill white panel & ensure readable text */
+body.contact-content main,
+body.contact-content .container,
+body.contact-content .page-content{
+  background:transparent!important;background-color:transparent!important;color:#ffffff!important
+}
+body.contact-content h1, body.contact-content h2, 
+body.contact-content p,  body.contact-content label, body.contact-content li{color:#e6e9f0!important}
+
+/* Newsletter: already mostly fixed; reinforce */
+body.newsletter-page main,
+body.newsletter-page .container,
+body.newsletter-page .page-content{
+  background:transparent!important;background-color:transparent!important;color:#ffffff!important
+}
+body.newsletter-page h1, body.newsletter-page h2, 
+body.newsletter-page p,  body.newsletter-page label, body.newsletter-page li{color:#e6e9f0!important}
+
+/* Books: ensure same dark bg/readable text + tame media width */
+body.books-page main,
+body.books-page .container,
+body.books-page .page-content{
+  background:transparent!important;background-color:transparent!important;color:#ffffff!important
+}
+body.books-page h1, body.books-page h2, 
+body.books-page p,  body.books-page li{color:#e6e9f0!important}
+body.books-page .media, body.books-page .media-box{max-width:100%!important}
+body.books-page img{max-width:100%!important;height:auto!important}
+
+/* Safety: prevent any top margin collapsing from pushing header */
+header.site-header + * {margin-top:0!important}
