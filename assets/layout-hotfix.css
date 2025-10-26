@@ -61,3 +61,7 @@ body > .container,
 /* === FINAL OVERRIDE: sitewide background from Newsletter === */
 :root { --site-bg: #f6f7fb; }
 html, body { background: var(--site-bg) !important; }
+
+/* FINAL SITEWIDE BG (guard) */
+:root { --site-bg: #f6f7fb; }
+html, body { background: var(--site-bg) !important; }
