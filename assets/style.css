@@ -3949,3 +3949,21 @@ header.site-header + * { margin-top:0 !important }
   a.owner-badge .owner-avatar{ width:32px; height:32px }
 }
 <!-- deploy-marker 20251025-220201 -->
+/* === Bio-standard header restore (2025-10-25) === */
+/* Thinner, steady header height across all pages */
+:root{ --hdr-h:60px }  /* change to 58/62 later if you want slightly thinner/thicker */
+
+/* Use the BIO header background everywhere */
+header.site-header{ background:#0e0f12 !important; }
+
+/* Ensure nav links remain readable on the dark header */
+header.site-header nav a{ color:#fff !important; }
+
+/* Keep contents vertically centered in the reserved height */
+header.site-header .container{
+  height:var(--hdr-h) !important;
+  display:flex; align-items:center; justify-content:center; position:relative;
+}
+
+/* Keep the badge centered vertically relative to header height */
+a.owner-badge{ top:calc((var(--hdr-h) - 40px)/2) !important; }
