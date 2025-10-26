@@ -1,21 +1,24 @@
 <!doctype html>
-<script src="/assets/sitewide-assert.js?cb=1761516798" defer></script>
 <!-- sitewide-critical-begin -->
 <style id="sitewide-critical">
   :root{ --site-bg:#121a2f; --nav-bg:#0f1623; --nav-text:#ffffff; }
   html,body{ background:var(--site-bg) !important; background-color:var(--site-bg) !important; margin:0; }
 
-  /* NAV: dark bar + white links, even on malformed pages */
+  /* NAV: match Contact tone everywhere, and keep links readable */
   header.site-header, header{ background:var(--nav-bg) !important; box-shadow:0 1px 6px rgba(0,0,0,.25); }
   header.site-header nav a, header nav a{ color:var(--nav-text) !important; text-decoration:none; }
 
-  /* Let the page BG show through big wrappers */
+  /* Let the page BG show by clearing big wrappers */
   body > main, .page-content, main .content, main .container, main section.page-hero, main section.page-wrap{
     background:transparent !important; background-color:transparent !important; background-image:none !important;
   }
-  body > main::before, body > main::after, .page-content::before, .page-content::after{ content:none !important; display:none !important; }
+  body > main::before, body > main::after, .page-content::before, .page-content::after{
+    content:none !important; display:none !important;
+  }
 </style>
 <!-- sitewide-critical-end -->
+<script src="/assets/sitewide-assert.js?cb=1761516798" defer></script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <style id="avatar-lock">
@@ -135,8 +138,8 @@
 <header class="site-header site-header  ">
     <div class="container">
       <nav>
-        <a href="/" >HOME</a>
-        <a href="/books.html" class="active" aria-current="page">Books</a>
+        <a href="/" class="active" aria-current="page">HOME</a>
+        <a href="/books.html">Books</a>
         <a href="/bio.html">Bio</a>
         <a href="/newsletter.html">Newsletter</a>
         <a href="/contact.html">Contact</a>
