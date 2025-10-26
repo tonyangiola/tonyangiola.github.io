@@ -97,3 +97,14 @@ header.site-header .owner-badge img{
 header.site-header .owner-badge .owner-name{
   font-weight:600 !important; line-height:1 !important; text-decoration:none !important; border:0 !important; pointer-events:none !important;
 }
+
+/* Hide Home-only blocks on non-Home pages */
+body:not(.home-page) .hero,
+body:not(.home-page) section.hero,
+body:not(.home-page) .author-photo {
+  display: none !important;
+}
+
+/* Safety: never let header images blow up due to global rules */
+header.site-header img { max-width: none !important; height: auto !important; }
+img.owner-avatar { width:44px !important; height:44px !important; border-radius:50% !important; object-fit:cover !important; }
