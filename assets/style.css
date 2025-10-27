@@ -3281,26 +3281,7 @@ header.light:has(nav img) nav:last-of-type::before { color:#111 !important; text
 @media (max-width: 430px){
   header:has(nav img) nav:last-of-type::before{ right: 50px !important; font-size: .9rem !important; }
 }
-/* === brand-name-ur-badge (next to upper-right avatar) === */
-header nav { position: relative; }
-.brand-name-ur-badge{
-  position: absolute;
-  top: 8px;
-  right: 56px;      /* tweak to align with the pic edge */
-  font-weight: 600;
-  font-size: .95rem;
-  line-height: 1;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,.7);
-  white-space: nowrap;
-  z-index: 999;
-  pointer-events: none;
-}
-@media (max-width: 430px){
-  .brand-name-ur-badge{ right: 50px; font-size: .9rem; }
-}
-/* === Upper-right name badge (final, non-overlapping) === */
-header > nav:first-of-type { 
+/* === brand-name-> nav:first-of-type { 
   position: relative !important;
   /* Reserve space on the right so links don't sit under the badge+avatar */
   padding-right: 220px !important;  /* adjust if you want tighter; 180–240 is typical */
@@ -3520,12 +3501,7 @@ body.contact-page header > nav:first-of-type {
 }
 
 /* The badge container we injected (LEFT side) */
-body.contact-page .contact-badge{
-  position:absolute !important;
-  left:16px; top:8px;
-  width:96px; height:96px;
-  border-radius:50%;
-  background-image:url("assets/images/avatar.jpg");
+body.contact-page ."assets/images/avatar.jpg");
   background-size:cover; background-position:center;
   box-shadow:0 2px 8px rgba(0,0,0,.25);
   z-index:2;
@@ -3540,14 +3516,7 @@ body.contact-page .contact-badge{
     padding-left:112px !important;
     min-height:84px !important;
   }
-  body.contact-page .contact-badge{
-    width:64px; height:64px; top:10px; left:12px;
-  }
-  body.contact-page .contact-badge::after{
-    left:80px; top:22px; font-size:.95rem;
-  }
-}
-<!-- deploy-marker 20251025-205414 -->
+  body.contact-page .>
 <!-- deploy-marker 20251025-210318 -->
 <!-- deploy-marker 20251025-211307 -->
 <!-- deploy-marker 20251025-211419 -->
