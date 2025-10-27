@@ -1,0 +1,12 @@
+/* === Header hardlock: allow only HOME, .nav-links, .badge ================= */
+header.site-header .nav{
+  display:flex; align-items:center; gap:14px;
+}
+header.site-header .nav > *:not(.nav-links):not(.badge):not(a[href="/index.html"]) {
+  display:none !important;           /* hide any stray nodes like extra "Tony" */
+}
+
+/* Keep the right badge visible + tidy */
+header.site-header .badge{display:flex;align-items:center;gap:10px}
+header.site-header .badge img{width:40px;height:40px;border-radius:9999px;object-fit:cover}
+header.site-header .badge .name{font-weight:600;white-space:nowrap}
