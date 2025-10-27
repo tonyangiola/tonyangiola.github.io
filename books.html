@@ -27,6 +27,7 @@
     }
   </style>
 <title>Books</title>
+<link rel="stylesheet" href="/assets/style.css?cb=1761279649">
 <style id="bg-hotfix-books">
   html, body { background:#0B0F1A !important; }
   body.books-page { background:#0B0F1A !important; color:#e5e7eb; }
@@ -115,11 +116,23 @@
 </style>
 
 <body class="books-page">
-
-
 <div id="books-app">
   <!-- inline header (works on GitHub Pages) -->
-  
+  <header class="site-header site-header site-header  ">
+    <div class="container">
+      <nav>
+        <a href="/" class="active" aria-current="page">HOME</a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
+        <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
+      </a>
+    </div>
+  </header>
 
   <main class="container">
     <div class="grid">
@@ -206,11 +219,3 @@ document.querySelectorAll('#books-app video[autoplay]').forEach(v=>{
 </script>
 </article>
 
-
-<!-- deploy-marker 20251026-220154 -->
-
-<!-- deploy-marker NAVBAR-LOCKDOWN 20251026-221222 -->
-
-<!-- deploy-marker NAV-FIX 20251026-221530 -->
-
-<!-- deploy-marker NAV-REPAIR 20251026-221741 -->
