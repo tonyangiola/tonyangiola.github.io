@@ -3868,3 +3868,54 @@ body.newsletter-page main { padding-top: 16px; }
 body.newsletter-page .badge-pill,
 body.newsletter-page .header-pill,
 body.newsletter-page .mobile-pill { display: none !important; }
+
+/* === [PAGE HOTFIX 2025-10-26] ===================================== */
+/* Common container to stop width/position jumps on these two pages */
+body.newsletter-page main,
+body.newsletter-page .container,
+body.books-page main,
+body.books-page .container{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+/* Newsletter: cap first/hero image height */
+body.newsletter-page img:first-of-type,
+body.newsletter-page .hero img,
+body.newsletter-page .newsletter-hero img{
+  display:block; margin:12px auto 16px; width:100%; max-width:900px;
+  max-height:420px; height:auto; object-fit:contain;
+}
+
+/* Books: prevent any image from blowing out layout; keep covers neat */
+body.books-page img{
+  max-width:100%; height:auto; object-fit:contain;
+}
+body.books-page .book, body.books-page .card{
+  overflow:hidden;
+}
+
+/* Burger shows <= 430px; keep desktop inline nav */
+.nav-toggle{ display:none; width:40px; height:40px; border:0; background:transparent; cursor:pointer; }
+.nav-toggle .nav-bars{ display:inline-block; width:22px; height:14px; position:relative; border-top:2px solid currentColor; }
+.nav-toggle .nav-bars::before, .nav-toggle .nav-bars::after{
+  content:""; position:absolute; left:0; right:0; height:2px; background:currentColor;
+}
+.nav-toggle .nav-bars::before{ top:0 } .nav-toggle .nav-bars::after{ bottom:0 }
+
+@media (max-width:430px){
+  .nav-toggle{ display:block; margin-left:auto; }
+  header.site-header .nav{ flex-wrap:wrap }
+  header.site-header .nav-links, header.site-header .badge{ display:none }
+  header.site-header.nav-open .nav-links, header.site-header.nav-open .badge{
+    display:flex; width:100%; padding:8px 0 6px; border-top:1px solid rgba(255,255,255,.08);
+  }
+}
+
+/* Kill any lingering pills/dupe headers specific to these pages */
+body.newsletter-page .badge-pill,
+body.books-page .badge-pill,
+body.newsletter-page .header-pill,
+body.books-page .header-pill{ display:none !important; }

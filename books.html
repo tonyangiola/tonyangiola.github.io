@@ -114,7 +114,25 @@
 }
 </style>
 
-<body class="books-page">
+<body class="books-page books-page">
+<header class="contact-header">
+    <link rel="stylesheet" href="/assets/style.css">
+<!--CSS-INJECTED-PAGE-->
+<div class="container">
+      <nav>
+        <a href="/" class="active" aria-current="page">HOME</a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
+        <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
+      </a>
+    </div>
+  </header>
+
 <div id="books-app">
   <!-- inline header (works on GitHub Pages) -->
   <header class="contact-header">
@@ -222,3 +240,5 @@ document.querySelectorAll('#books-app video[autoplay]').forEach(v=>{
 <!-- deploy-marker restore-10-25-2025-950pm (20251026-222440) -->
 
 <!-- deploy-marker navbar-sync 20251026-224346 -->
+
+<!-- deploy-marker fix-nl-books 20251026-225555 -->
