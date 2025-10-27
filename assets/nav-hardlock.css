@@ -23,3 +23,15 @@ header.site-header .nav .nav-links > a:not([href="/books.html"]):not([href="/bio
 
 /* Also: if anything slipped in as a 5th+ item, kill it. */
 header.site-header .nav .nav-links > a:nth-child(n+5) { display:none !important; }
+
+/* --- Kill any anchors outside the whitelist ---------------------- */
+/* Keep only HOME at far-left */
+header.site-header .nav > a:not([href="/index.html"]) { display:none !important; }
+
+/* Badge should never contain links */
+header.site-header .badge a { display:none !important; }
+
+/* Safety: only allow anchors inside .nav-links block */
+header.site-header .nav a { display:none !important; }
+header.site-header .nav .nav-links a,
+header.site-header .nav > a[href="/index.html"] { display:inline-block !important; }
