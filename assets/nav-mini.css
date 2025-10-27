@@ -16,3 +16,30 @@ header.site-header .nav a:hover{ opacity:1; }
 .badge .name{ font-weight:600; white-space:nowrap; }
 /* Prevent old experiments from showing */
 .badge-pill,.header-pill,.mobile-pill{ display:none !important; }
+
+/* === nav-mini specificity bump (HOME ONLY) ======================= */
+body.home-page header.site-header{
+  position:sticky !important; top:0 !important; z-index:1000 !important;
+  background:#0f172a !important; border-bottom:1px solid rgba(255,255,255,.08) !important;
+}
+body.home-page header.site-header .nav{
+  max-width:1100px !important; margin:0 auto !important; padding:10px 12px !important;
+  min-height:64px !important; display:flex !important; align-items:center !important; gap:14px !important;
+}
+body.home-page header.site-header .nav a{
+  color:#e5e7eb !important; text-decoration:none !important; opacity:.95 !important;
+}
+body.home-page header.site-header .nav a:hover{ opacity:1 !important; }
+body.home-page header.site-header .nav .nav-links{
+  margin-left:auto !important; display:flex !important; gap:14px !important; align-items:center !important;
+}
+body.home-page header.site-header .badge{
+  display:flex !important; align-items:center !important; gap:10px !important; margin-left:12px !important;
+}
+body.home-page header.site-header .badge img{
+  width:40px !important; height:40px !important; border-radius:9999px !important; object-fit:cover !important; display:block !important;
+}
+body.home-page header.site-header .badge .name{ font-weight:600 !important; white-space:nowrap !important; }
+
+/* Optional guard: if any plain <header> (non .site-header) remains, hide it */
+body.home-page > header:not(.site-header){ display:none !important; }
