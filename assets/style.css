@@ -3135,12 +3135,12 @@ header,.page-header,.site-header{position:relative}
 
 /* CSS-only mini brand */
 header,.page-header,.site-header{position:relative}
-#header::after{content:"";position:absolute;top:10px;right:12px;width:40px;height:40px;border-radius:9999px;background:url("assets/images/tony.jpg") center/cover no-repeat;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:6}
+#header::after{content:"";position:absolute;top:10px;right:12px;width:40px;height:40px;border-radius:9999px;background: none !important;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:6}
 @media (max-width:640px){header::before{display:none}}
 
 /* Move avatar badge to right side of navbar */
 nav, .nav-bar, .site-nav { position:relative !important; }
-nav::after { content:"";position:absolute;top:10px;right:12px;width:40px;height:40px;border-radius:9999px;background:url("assets/images/tony.jpg") center/cover no-repeat;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:9999 }
+nav::after { content:"";position:absolute;top:10px;right:12px;width:40px;height:40px;border-radius:9999px;background: none !important;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:9999 }
 @media(max-width:640px){nav::before{display:none}}
 
 /* === Nav badge: Tony + photo (top-right) === */
@@ -3149,7 +3149,7 @@ nav, .nav, .navbar, .site-nav, header nav { position: relative !important; }
 nav::after, .nav::after, .navbar::after, .site-nav::after, header nav::after {
   content: ""; position: absolute; top: 6px; right: 12px;
   width: 40px; height: 40px; border-radius: 9999px;
-  background: url("assets/images/tony.jpg") center/cover no-repeat;
+  background: none !important;
   border: 2px solid rgba(255,255,255,.9);
   box-shadow: 0 6px 18px rgba(0,0,0,.35); z-index: 9999;
 }
@@ -3170,7 +3170,7 @@ header > nav:first-of-type { position: relative !important; }
 header > nav:first-of-type::after {
   content: ""; position: absolute; top: 6px; right: 12px;
   width: 40px; height: 40px; border-radius: 9999px;
-  background: url("assets/images/tony.jpg") center/cover no-repeat;
+  background: none !important;
   border: 2px solid rgba(255,255,255,.9);
   box-shadow: 0 6px 18px rgba(0,0,0,.35); z-index: 9999;
 }
@@ -3181,7 +3181,7 @@ header > nav:first-of-type::after {
 header::before, header::after, nav::before, nav::after, .nav::before, .nav::after, .navbar::before, .navbar::after, .site-nav::before, .site-nav::after{content:none!important;background:none!important;border:0!important;box-shadow:none!important}
 /* Anchor to the first nav inside header */
 header > nav:first-of-type{position:relative!important}
-header > nav:first-of-type::after{content:"";position:absolute;top:6px;right:12px;width:40px;height:40px;border-radius:9999px;background:url("assets/images/tony.jpg") center/cover no-repeat;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:9999}
+header > nav:first-of-type::after{content:"";position:absolute;top:6px;right:12px;width:40px;height:40px;border-radius:9999px;background: none !important;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:9999}
 @media(max-width:640px){header > nav:first-of-type::before{display:none}}
 
 /* FORCE UPPER-RIGHT for badge */
