@@ -118,21 +118,25 @@
 <body class="books-page">
 <div id="books-app">
   <!-- inline header (works on GitHub Pages) -->
-  <header class="site-header site-header site-header  ">
+  <header>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <div class="container">
       <nav>
-        <a href="/" class="active" aria-current="page">HOME</a>
+    
+        <a href="/"><strong\1HOME\2/strong>HOME</a>
         <a href="/books.html">Books</a>
         <a href="/bio.html">Bio</a>
         <a href="/newsletter.html">Newsletter</a>
         <a href="/contact.html">Contact</a>
-      </nav>
-      <a class="owner-badge" href="/bio.html">
-        <span class="owner-name">Tony Angiola</span>
-        <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
-      </a>
+    </nav>
     </div>
-  </header>
+  <style id="books-nav-name-fix">
+    /* Books: remove pseudo-element that prints \"Tony Angiola\" in the nav */
+    header > nav:first-of-type::before,
+    header > nav:first-of-type::after,
+    nav::before, nav::after { content: none !important; }
+  </style>
+  <a class="owner-badge" href="/bio.html"><span class="owner-name">Tony Angiola</span><img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy"></a></header>
 
   <main class="container">
     <div class="grid">
@@ -219,3 +223,5 @@ document.querySelectorAll('#books-app video[autoplay]').forEach(v=>{
 </script>
 </article>
 
+
+<!-- deploy-marker restore-10-25-2025-950pm (20251026-222440) -->
