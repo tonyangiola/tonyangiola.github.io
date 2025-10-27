@@ -1,5 +1,7 @@
 <!doctype html>
 <head>
+<link rel="stylesheet" href="/assets/style.css">
+<!--CSS-INJECTED-->
 <html lang="en" data-page="bio">
 <head>
   <meta charset="utf-8">
@@ -48,8 +50,7 @@ main,main.container{padding-top:1.25rem!important;}
   <link rel="stylesheet" href="/assets/emergency.css">
   
   <script src="assets/name-badge-fixed.js" defer></script>
-  <link rel="stylesheet" href="/assets/style.css">
-</head>
+  </head>
 <style id="bg-nav-hotfix">
 :root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
 html,body{background:var(--bg) !important;color:var(--text) !important;}
@@ -90,6 +91,23 @@ main,main.container{padding-top:1.25rem!important;}
   <link rel="stylesheet" href="/assets/emergency.css">
 </head>
 <body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="/index.html">HOME</a>
+    <div class="nav-links">
+      <a href="/books.html">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="badge">
+      <img src="/assets/images/avatar.jpg" alt="Tony Angiola">
+      <span class="name">Tony Angiola</span>
+    </div>
+  </nav>
+</header>
+
+
   <header class="contact-header">
     <div class="container">
       <nav>
@@ -129,6 +147,7 @@ main,main.container{padding-top:1.25rem!important;}
 
   <footer class="container" style="padding:2rem 0;"></footer>
   
+<script src="/assets/js/nav.js"></script>
 </body>
 </html>
 
@@ -137,3 +156,5 @@ main,main.container{padding-top:1.25rem!important;}
 <!-- deploy-marker restore-10-25-2025-950pm (20251026-222440) -->
 
 <!-- deploy-marker navbar-sync 20251026-224346 -->
+
+<!-- deploy-marker clean-css-reset 20251026-230352 -->
