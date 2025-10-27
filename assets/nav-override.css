@@ -11,3 +11,6 @@ body.home-page #header::after {
   background: none !important;
   display: none !important;
 }
+
+/* kill root pseudo badge on Home */
+:root::before,:root::after{content:none!important;display:none!important;background:none!important}
