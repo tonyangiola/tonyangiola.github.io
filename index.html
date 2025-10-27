@@ -1,7 +1,6 @@
 <!-- deploy-nudge: 20251025-122536 -->
 <!doctype html>
 <head>
-<link rel="stylesheet" href="/assets/style.css?cb=1761281365">
 <style id="bg-hotfix-home">
   /* FORCE dark page background (beats legacy rules) */
   html, body { background:#0B0F1A !important; }
@@ -15,7 +14,6 @@
 </style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/assets/style.css?cb=1761281365?v=1761013300">
 <!-- deploy-marker: init -->
 
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
@@ -48,8 +46,25 @@
   </style>
   
   <script src="assets/name-badge-fixed.js" defer></script>
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body class="home-page home-page">
+<header class="contact-header">
+    <div class="container">
+      <nav>
+        <a href="/" class="active" aria-current="page">HOME</a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
+        <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
+      </a>
+    </div>
+  </header>
+
   <header>
   <div class="container">
     <nav>
@@ -134,3 +149,5 @@ header::before,header::after,nav::before,nav::after,.nav::before,.nav::after,.na
 </div>
 
 <!-- deploy-marker restore-10-25-2025-950pm (20251026-222440) -->
+
+<!-- deploy-marker navbar-sync 20251026-224346 -->

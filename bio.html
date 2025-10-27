@@ -5,8 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Tony Angiola — Bio</title>
-  <link rel="stylesheet" href="/assets/style.css">
-
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
 <style id="bg-nav-hotfix">
@@ -50,6 +48,7 @@ main,main.container{padding-top:1.25rem!important;}
   <link rel="stylesheet" href="/assets/emergency.css">
   
   <script src="assets/name-badge-fixed.js" defer></script>
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
 <style id="bg-nav-hotfix">
 :root{--nav-bg:#0f172a;--bg:#f3f4f6;--text:#111827;--muted:#374151;--link:#2563eb;}
@@ -91,30 +90,21 @@ main,main.container{padding-top:1.25rem!important;}
   <link rel="stylesheet" href="/assets/emergency.css">
 </head>
 <body>
-  <header>
-  <header>
+  <header class="contact-header">
     <div class="container">
       <nav>
-    
-        <a href="/"><strong\1HOME\2/strong>HOME</a>
+        <a href="/" class="active" aria-current="page">HOME</a>
         <a href="/books.html">Books</a>
         <a href="/bio.html">Bio</a>
         <a href="/newsletter.html">Newsletter</a>
         <a href="/contact.html">Contact</a>
-    </nav>
+      </nav>
+      <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
+        <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
+      </a>
     </div>
-  <style id="bio-nav-name-fix">
-    /* Bio: remove pseudo-element that prints \"Tony Angiola\" in the nav */
-    header > nav:first-of-type::before,
-    header > nav:first-of-type::after,
-    nav::before, nav::after { content: none !important; }
-  </style>
-  <style id="bio-nav-name-fix">
-    /* Bio: neutralize any injected nav label */
-    header > nav:first-of-type::before, header > nav:first-of-type::after,
-    header nav *::before, header nav *::after { content: none !important; }
-  </style>
-  <a class="owner-badge" href="/bio.html"><span class="owner-name">Tony Angiola</span><img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy"></a></header>
+  </header>
 
   
   <main class="container">
@@ -145,3 +135,5 @@ main,main.container{padding-top:1.25rem!important;}
 <!-- deploy-marker: 2025-10-21-0144pm -->
 
 <!-- deploy-marker restore-10-25-2025-950pm (20251026-222440) -->
+
+<!-- deploy-marker navbar-sync 20251026-224346 -->
