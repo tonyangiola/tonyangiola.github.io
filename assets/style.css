@@ -3824,3 +3824,47 @@ a.owner-badge .owner-avatar{width:40px; height:40px; border-radius:50%; object-f
 /* contact nuke big portrait */
 .contact-content img[src*="/images/tony.jpg"]{display:none !important}
 <!-- deploy-marker 20251025-214926 -->
+
+/* === [NEWSLETTER HOTFIX 2025-10-26] =============================== */
+/* Scope: newsletter only (via body.newsletter-page) */
+
+/* Keep content readable and centered */
+body.newsletter-page main,
+body.newsletter-page .container,
+body.newsletter-page .content,
+body.newsletter-page .page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  box-sizing: border-box;
+}
+
+/* Tame the first large/hero image on the page */
+body.newsletter-page img:first-of-type,
+body.newsletter-page .hero img,
+body.newsletter-page .newsletter-hero img {
+  display: block;
+  margin: 12px auto 16px;
+  width: 100%;
+  max-width: 900px;
+  /* Height caps to avoid a massive image taking the screen */
+  max-height: 420px;
+  height: auto;
+  object-fit: contain; /* show the whole image, no cropping */
+}
+
+/* General images in newsletter: keep inside column and not oversized */
+body.newsletter-page main img,
+body.newsletter-page .content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Extra breathing room so header doesn’t overlap after sticky */
+body.newsletter-page main { padding-top: 16px; }
+
+/* Safety: if any pill/hamburger artifacts linger, kill them */
+body.newsletter-page .badge-pill,
+body.newsletter-page .header-pill,
+body.newsletter-page .mobile-pill { display: none !important; }
