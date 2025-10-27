@@ -35,3 +35,30 @@ header.site-header .badge a { display:none !important; }
 header.site-header .nav a { display:none !important; }
 header.site-header .nav .nav-links a,
 header.site-header .nav > a[href="/index.html"] { display:inline-block !important; }
+
+/* --- FINAL HARDLOCKS ---------------------------------------------- */
+
+/* 1) Inside .nav, allow only: HOME anchor, .nav-links block, and the .badge */
+header.site-header .nav > *:not(.nav-links):not(.badge):not(a[href="/index.html"]) {
+  display: none !important;
+}
+
+/* 2) Inside .nav-links, allow only the 4 anchors (hide any non-anchors) */
+header.site-header .nav .nav-links > :not(a) { display: none !important; }
+
+/* (already whitelisted the 4 anchors earlier) */
+
+/* 3) Inside .badge, allow only: one IMG + one .name span */
+header.site-header .badge > :not(img):not(.name) { display: none !important; }
+
+/* 4) Belt & suspenders: no pseudo-elements anywhere in the header */
+header.site-header::before,
+header.site-header::after,
+header.site-header *::before,
+header.site-header *::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
