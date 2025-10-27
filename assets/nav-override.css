@@ -1,0 +1,13 @@
+/* kill duplicated name/photo injected by CSS pseudo-elements (HOME only) */
+body.home-page header::before,
+body.home-page header::after,
+body.home-page header .nav::before,
+body.home-page header .nav::after,
+body.home-page header nav::before,
+body.home-page header nav::after,
+body.home-page #header::before,
+body.home-page #header::after {
+  content: none !important;
+  background: none !important;
+  display: none !important;
+}
