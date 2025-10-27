@@ -1,0 +1,18 @@
+/* === nav-mini (index only) ======================================= */
+:root{ --site-max:1100px; --nav-h:64px; --muted:rgba(255,255,255,.08); }
+header.site-header{
+  position:sticky; top:0; z-index:1000;
+  background:#0f172a; border-bottom:1px solid var(--muted);
+}
+header.site-header .nav{
+  max-width:var(--site-max); margin:0 auto; padding:10px 12px;
+  min-height:var(--nav-h); display:flex; align-items:center; gap:14px;
+}
+header.site-header .nav a{ color:#e5e7eb; text-decoration:none; opacity:.95; }
+header.site-header .nav a:hover{ opacity:1; }
+.nav-links{ margin-left:auto; display:flex; gap:14px; align-items:center; }
+.badge{ display:flex; align-items:center; gap:10px; margin-left:12px; }
+.badge img{ width:40px; height:40px; border-radius:9999px; object-fit:cover; display:block; }
+.badge .name{ font-weight:600; white-space:nowrap; }
+/* Prevent old experiments from showing */
+.badge-pill,.header-pill,.mobile-pill{ display:none !important; }
