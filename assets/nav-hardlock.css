@@ -10,3 +10,16 @@ header.site-header .nav > *:not(.nav-links):not(.badge):not(a[href="/index.html"
 header.site-header .badge{display:flex;align-items:center;gap:10px}
 header.site-header .badge img{width:40px;height:40px;border-radius:9999px;object-fit:cover}
 header.site-header .badge .name{font-weight:600;white-space:nowrap}
+
+/* --- Strict whitelist inside .nav-links (hide any rogue anchors) --- */
+header.site-header .nav .nav-links > a[href="/books.html"],
+header.site-header .nav .nav-links > a[href="/bio.html"],
+header.site-header .nav .nav-links > a[href="/newsletter.html"],
+header.site-header .nav .nav-links > a[href="/contact.html"] { display:inline-block !important; }
+
+header.site-header .nav .nav-links > a:not([href="/books.html"]):not([href="/bio.html"]):not([href="/newsletter.html"]):not([href="/contact.html"]) {
+  display:none !important;
+}
+
+/* Also: if anything slipped in as a 5th+ item, kill it. */
+header.site-header .nav .nav-links > a:nth-child(n+5) { display:none !important; }
