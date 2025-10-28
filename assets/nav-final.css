@@ -1,0 +1,28 @@
+/* === FINAL NAV LOCK === */
+/* Kill *all* pseudo-injected name/photo in/under header, no matter what */
+header.site-header::before,
+header.site-header::after,
+header.site-header *::before,
+header.site-header *::after { content:none !important; display:none !important; background:none !important; border:0 !important; box-shadow:none !important; }
+
+/* Only allow: HOME (left), .nav-links (middle), .badge (right) */
+header.site-header .nav { display:flex !important; align-items:center !important; gap:14px !important; }
+header.site-header .nav > *:not(.nav-links):not(.badge):not(a[href="/index.html"]) { display:none !important; }
+
+/* Inside .nav-links, allow only the 4 anchors */
+header.site-header .nav .nav-links > a[href="/books.html"],
+header.site-header .nav .nav-links > a[href="/bio.html"],
+header.site-header .nav .nav-links > a[href="/newsletter.html"],
+header.site-header .nav .nav-links > a[href="/contact.html"] { display:inline-block !important; }
+header.site-header .nav .nav-links > *:not(a) { display:none !important; }
+header.site-header .nav .nav-links > a:nth-child(n+5) { display:none !important; }
+
+/* Badge = image + name only; never links inside */
+header.site-header .badge { display:flex !important; align-items:center !important; gap:10px !important; }
+header.site-header .badge a { display:none !important; }
+header.site-header .badge img { width:40px !important; height:40px !important; border-radius:9999px !important; object-fit:cover !important; }
+header.site-header .badge .name { font-weight:600 !important; white-space:nowrap !important; }
+
+/* Make sure header text stays readable and layout stable */
+header.site-header { background:#0e1320 !important; border-bottom:1px solid rgba(255,255,255,.12) !important; }
+header.site-header .nav a { color:#fff !important; text-decoration:none !important; font-weight:600 !important; padding:6px 10px !important; border-radius:10px !important; }
