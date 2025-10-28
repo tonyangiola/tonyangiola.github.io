@@ -3722,3 +3722,18 @@ body.home-page main img:first-of-type{
 }
 body.home-page main{max-width:1100px;margin:0 auto;padding:20px;}
 <!-- deploy-marker 20251027-224040 -->
+
+/* fix-home-hero-by-src 20251027-224148 */
+body.home-page main img[src*="/assets/images/home/bottom-hero.jpg"]{
+  width:100%; max-width:420px !important; height:auto;
+  display:block; margin:28px auto 10px; border-radius:8px;
+}
+/* fix-home-hero-fallback: first image in <main> */
+body.home-page main > img:first-of-type{
+  width:100%;
+  max-width:420px !important;
+  height:auto;
+  display:block;
+  margin:28px auto 10px;
+  border-radius:8px;
+}
