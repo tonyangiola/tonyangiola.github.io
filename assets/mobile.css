@@ -1,0 +1,214 @@
+/* ===== Mobile-only overrides (≤ 768px) ===== */
+@media (max-width: 768px) {
+
+  /* Base & spacing */
+  html, body { margin: 0; padding: 0; }
+  body { font-size: 16px; line-height: 1.5; }
+
+  /* Header & nav */
+  .site-header { position: sticky; top: 0; z-index: 50; }
+  .site-header .nav,
+  nav ul { display: grid; grid-auto-flow: row; gap: .5rem; padding: .75rem 1rem; }
+  nav li { margin: 0; }
+  nav a { display: block; padding: .6rem .8rem; text-decoration: none; }
+
+  /* Layout wrappers */
+  .page-content, main, .container, .content-wrap {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Hero blocks */
+  .hero, .page-header { padding: 1.25rem 1rem !important; }
+
+  /* Cards & grids (Books page, etc.) */
+  .books-grid { display: grid !important; grid-template-columns: 1fr !important; gap: 1rem !important; }
+  .book-card, .card { margin: 0 !important; border-radius: 12px; overflow: hidden; }
+
+  /* “Snippy” special case (wider media on mobile, text stacks) */
+  #snippy-card .media-box,
+  .media-box { width: 100% !important; }
+  #snippy-card .actions, .book-card .actions { display: grid; grid-auto-flow: row; gap: .5rem; }
+  .actions .btn, .actions a.button { width: 100%; text-align: center; }
+
+  /* Video & images */
+  video, img { max-width: 100% !important; height: auto !important; }
+  /* Optional: prevent mobile autoplay issues */
+  video[autoplay] { autoplay: initial; }
+
+  /* Tables (prevent sideways scroll hell) */
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; }
+
+  /* Tap targets */
+  button, .btn, a.button { min-height: 44px; }
+
+  /* Footer */
+  footer { padding: 1.25rem 1rem !important; }
+}
+
+/* ==== Mobile Nav Comfort (iPhone) ==== */
+@media (max-width: 768px) {
+  /* Respect the notch/safe-area */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding-top: calc(0.4rem + env(safe-area-inset-top));
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    -webkit-backdrop-filter: saturate(180%) blur(6px);
+            backdrop-filter: saturate(180%) blur(6px);
+  }
+
+  /* Allow nav items to wrap instead of squeezing */
+  .site-header .nav,
+  nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;             /* space between buttons */
+    margin: 0;
+    padding: 10px 12px;
+    list-style: none;
+  }
+
+  /* Make each link a comfy pill button */
+  nav li { margin: 0 !important; }
+  nav a,
+  .nav a {
+    display: inline-block;
+    padding: 12px 14px !important;   /* bigger tap target */
+    min-height: 44px !important;     /* Apple HIG */
+    line-height: 1.2;
+    border-radius: 9999px;           /* pill shape */
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.05);
+    touch-action: manipulation;
+    white-space: nowrap;             /* keep text on one line per pill */
+  }
+
+  /* If you prefer a single row with sideways scroll instead of wrap, uncomment:
+  .site-header .nav, nav ul {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  nav li { flex: 0 0 auto; }
+  */
+
+  /* Tighten header height on very small phones */
+  @media (max-width: 380px) {
+    .site-header .nav, nav ul { gap: 6px; padding: 8px 10px; }
+    nav a { padding: 11px 12px !important; font-size: 15px; }
+  }
+}
+
+/* ==== Mobile Nav Rescue (stronger selectors + important) ==== */
+@media (max-width: 768px) {
+  /* Make header sticky and roomy, honor iPhone safe area */
+  .site-header, header.site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    padding-top: calc(0.4rem + env(safe-area-inset-top)) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(6px);
+            backdrop-filter: saturate(180%) blur(6px);
+  }
+
+  /* Cover common nav wrappers you may have */
+  .site-header .nav,
+  .site-header nav ul,
+  header.site-header nav ul,
+  nav .nav-list,
+  nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;   /* allow wrapping instead of cramming */
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    list-style: none !important;
+  }
+
+  /* Comfy pill links with 44px tap targets */
+  .site-header nav li,
+  nav li { margin: 0 !important; }
+
+  .site-header nav a,
+  nav a,
+  .nav a,
+  .nav-list a {
+    display: inline-block !important;
+    padding: 12px 14px !important;
+    min-height: 44px !important;
+    line-height: 1.2 !important;
+    border-radius: 9999px !important;
+    text-decoration: none !important;
+    touch-action: manipulation !important;
+    white-space: nowrap !important;
+  }
+
+  /* Add a hair more breathing room below header */
+  main, .page-content, .content-wrap {
+    margin-top: 6px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+/* ===== Mobile nav comfort (scoped, safe) ===== */
+@media (max-width: 768px) {
+  header.site-header nav ul,
+  .site-header nav ul,
+  nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    list-style: none !important;
+  }
+  header.site-header nav li,
+  nav li { margin: 0 !important; }
+  header.site-header nav a,
+  .site-header nav a,
+  nav a {
+    display: inline-block !important;
+    padding: 12px 14px !important;
+    min-height: 44px !important;
+    line-height: 1.2 !important;
+    border-radius: 9999px !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.05);
+  }
+}
+/* ===== Mobile nav comfort (≤768px) ===== */
+@media (max-width: 768px) {
+  /* Allow wrapping with spacing */
+  header.site-header nav ul,
+  .site-header nav ul,
+  nav ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 10px 12px !important;
+    list-style: none !important;
+  }
+  /* Bigger, pill-like links (44px target) */
+  header.site-header nav a,
+  .site-header nav a,
+  nav a {
+    display: inline-block !important;
+    padding: 12px 14px !important;
+    min-height: 44px !important;
+    line-height: 1.2 !important;
+    border-radius: 9999px !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.05);
+    touch-action: manipulation !important;
+  }
+  /* A little breathing room below the header */
+  main, .page-content, .content-wrap { margin-top: 8px !important; }
+}

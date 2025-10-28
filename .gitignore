@@ -1,7 +1,0 @@
-backups/
-tmp/
-tmp-*/
-*.tar.gz
-*.zip
-*.bak
-assets/_header.html
