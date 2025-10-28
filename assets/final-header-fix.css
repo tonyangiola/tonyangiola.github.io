@@ -1,30 +1,15 @@
-/* --- Kill any stray quotes coming from global ::before/::after --- */
-html::before, html::after,
-body::before, body::after { content:none !important; display:none !important; }
+/* Pin badge (photo only) to the far right */
+header.site-header .nav{display:flex!important;align-items:center!important}
+header.site-header .nav .nav-links{margin-left:auto!important;display:flex!important;gap:18px!important}
+header.site-header .badge{margin-left:16px!important;display:flex!important;align-items:center!important;gap:10px!important}
+header.site-header .badge .name{display:none!important}
+header.site-header .badge img{width:40px;height:40px;border-radius:9999px;object-fit:cover}
 
-/* --- Lock header layout: HOME | links .......... [badge at far right] --- */
-header.site-header .nav{
-  display:flex !important; align-items:center !important;
-  justify-content:flex-start !important; gap:16px !important;
-}
-header.site-header .nav .nav-links{
-  display:flex !important; gap:18px !important;
-  margin-left:auto !important;            /* push badge to the FAR RIGHT */
-}
+/* Kill any stray quote/text pseudos on HOME only */
+body.home-page html::before, body.home-page html::after,
+body.home-page body::before, body.home-page body::after,
+body.home-page header::before, body.home-page header::after,
+body.home-page header *::before, body.home-page header *::after { content:none!important; display:none!important; background:none!important; }
 
-/* Badge: photo only (no name), always on the right */
-header.site-header .badge{
-  display:flex !important; align-items:center !important; gap:10px !important;
-  margin-left:16px !important;
-}
-header.site-header .badge .name { display:none !important; }  /* hide text */
-header.site-header .badge a     { display:none !important; }  /* just in case */
-header.site-header .badge img{
-  width:40px; height:40px; border-radius:9999px; object-fit:cover;
-}
-
-/* Belt & suspenders: no pseudo inserts inside the header at all */
-header.site-header::before, header.site-header::after,
-header.site-header *::before, header.site-header *::after{
-  content:none !important; display:none !important; background:none !important;
-}
+/* If some other CSS still injects content on the whole page, neutralize it (HOME only) */
+body.home-page *::before, body.home-page *::after { content:normal!important; }
