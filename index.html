@@ -44,15 +44,11 @@
   </style>
   
   <link rel="stylesheet" href="/assets/style.css?cb=20251027-191834">
-<link rel="stylesheet" href="/assets/header-visibility-clamp.css">
 
 <link rel="stylesheet" href="/assets/nav-final.css?cb=20251027-191834">
 
-<link rel="stylesheet" href="/assets/final-header-fix.css">
 
-<link rel="stylesheet" href="/assets/final-ghost-kill.css">
 
-<link rel="stylesheet" href="/assets/final-nav-lock.css">
 
   <style id="home-hero-final-lock">
     /* Constrain the rectangular wood-wall portrait wherever it sits */
@@ -118,6 +114,25 @@
     body.home-page header, body.home-page .site-header, body.home-page .contact-header{
       min-height:auto !important; height:auto !important; overflow:visible !important;
     }
+  </style>
+  
+
+  <style id="kill-body-header-giant-photo">
+    /* Kill ANY background or pseudo-element trying to show the big photo */
+    body.home-page, body.home-page *{
+      background-image: none !important;
+      background: none !important;
+    }
+    body.home-page::before, body.home-page::after,
+    body.home-page *::before, body.home-page *::after{
+      content: none !important;
+      background: none !important;
+      background-image: none !important;
+      display: none !important;
+      box-shadow: none !important;
+    }
+    /* Keep only the tiny avatar in the header */
+    body.home-page header img:not(.owner-avatar){ display:none !important; }
   </style>
   
 </head>
