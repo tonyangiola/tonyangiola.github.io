@@ -3640,3 +3640,14 @@ header.site-header *::before, header.site-header *::after { content:none !import
 <!-- deploy-marker 20251027-220218 -->
 <!-- deploy-marker 20251027-220617 -->
 <!-- deploy-marker 20251027-221027 -->
+
+/* === nav/avatar lock (added by header-sync) === */
+.site-header .badge img{
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 9999px !important;
+  object-fit: cover !important;
+  display: inline-block !important;
+}
+
+/* deploy-css-bump 20251027-221825 */
