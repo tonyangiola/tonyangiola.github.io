@@ -3702,3 +3702,9 @@ body.home-page .author-hero-img{display:inline-block;width:260px;height:260px;bo
 /* deploy-css-bump 20251027-223515 */
 <!-- deploy-marker 20251027-223532 -->
 <!-- deploy-marker 20251027-223711 -->
+
+/* deploy-marker: home-hero-20251027-223834 */
+.home-page main{max-width:1100px;margin:0 auto;padding:20px;}
+.home-page img[src*="/assets/images/avatar"]{
+  width:100%;max-width:400px;height:auto;display:block;margin:20px auto;border-radius:8px;
+}
