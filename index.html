@@ -48,13 +48,39 @@
 
 <link rel="stylesheet" href="/assets/nav-final.css?cb=20251027-191834">
 
-<link rel="stylesheet" href="/assets/header-photoonly-override.css">
-
 <link rel="stylesheet" href="/assets/final-header-fix.css">
 
 <link rel="stylesheet" href="/assets/final-ghost-kill.css">
 
 <link rel="stylesheet" href="/assets/final-nav-lock.css">
+
+  <style id="home-hero-final-lock">
+    /* Constrain the rectangular wood-wall portrait wherever it sits */
+    .author-hero-img,
+    img[src*="/assets/images/home/bottom-hero.jpg"]{
+      width:100% !important;
+      max-width:420px !important;
+      height:auto !important;
+      display:block !important;
+      margin:28px auto 10px !important;
+      border-radius:8px !important;
+    }
+
+    /* Hide duplicate hero images (keep only the first one) */
+    .author-hero-img:not(:first-of-type),
+    img[src*="/assets/images/home/bottom-hero.jpg"]:not(:first-of-type){
+      display:none !important;
+    }
+
+    /* Make sure main content has sane width */
+    .home-main, body.home-page main{
+      max-width:1100px !important;
+      margin:0 auto !important;
+      padding:20px !important;
+      background:transparent !important;
+    }
+  </style>
+  
 </head>
 <body class="home-page home-page"><header class="contact-header">
     <div class="container">
@@ -82,7 +108,7 @@
   <h2>Tony Angiola</h2>
 </section>
 <section class="home-hero">
-  <img class="home-hero-img" src="/assets/images/home/bottom-hero.jpg" alt="Tony Angiola">
+  <img class="home-hero-img" src="/assets/images/home/bottom-hero.jpg" alt="Tony Angiola" style="max-width:420px;width:100%;height:auto;display:block;margin:28px auto 10px;border-radius:8px;">
 </section>
 
 
