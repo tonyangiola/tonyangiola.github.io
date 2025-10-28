@@ -3786,3 +3786,4 @@ header img:not(.owner-avatar), .site-header img:not(.owner-avatar), .contact-hea
 .contact-header::before,.contact-header::after{content:none!important;display:none!important}
 .owner-avatar{width:44px;height:44px;border-radius:9999px;object-fit:cover;display:inline-block}
 .home-hero-img{max-width:420px;width:100%;height:auto;display:block;margin:28px auto 10px;border-radius:8px}
+<!-- deploy-marker 20251027-230016 -->
