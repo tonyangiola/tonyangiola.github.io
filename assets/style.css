@@ -3825,3 +3825,52 @@ a.owner-badge .owner-avatar{width:40px; height:40px; border-radius:50%; object-f
 .contact-content img[src*="/images/tony.jpg"]{display:none !important}
 <!-- deploy-marker 20251025-214926 -->
 <!-- deploy-marker 20251027-231211 -->
+
+/* ===================== NAV v4 (fixed + taller) — 2025-10-28 ===================== */
+:root{
+  --nav-height-desktop: 96px;   /* make the navbar taller on desktop/iPad */
+  --nav-height-phone:   76px;   /* taller on phones too */
+}
+
+/* Make header fixed and always on top */
+.site-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+}
+
+/* Increase the row height/padding + badge size so the header feels taller */
+.site-header .nav{
+  min-height: var(--nav-height-desktop);
+  padding: 14px 16px !important;
+}
+.site-header .badge-img{
+  width: 56px; height: 56px;  /* was 48px */
+}
+
+/* Desktop/iPad content should start below the fixed header */
+@media (min-width:601px){
+  body{ padding-top: var(--nav-height-desktop); }               /* reserve space */
+  .mobile-menu{ display:none !important; }                      /* no mobile menu on iPad/desktop */
+}
+
+/* Phones: show hamburger; content starts below fixed header; mobile menu drops under header */
+@media (max-width:600px){
+  body{ padding-top: var(--nav-height-phone); }                 /* reserve space */
+  .site-header .nav{
+    min-height: var(--nav-height-phone);
+  }
+  .hamburger{ display:block; }                                  /* ensure phone toggle visible */
+  .site-header .nav-links{ display:none; }                      /* hide desktop links on phones */
+  .mobile-menu{
+    position: fixed;
+    top: var(--nav-height-phone);                               /* appears directly under fixed header */
+    left: 0; right: 0;
+    border-top: 1px solid rgba(255,255,255,.08);
+    display: none;                                              /* remains hidden until .open */
+  }
+  .mobile-menu.open{ display:flex; }
+}
+
+/* Optional: ensure page layout looks consistent under fixed header */
+main{ max-width:1100px; margin:0 auto; padding:20px; }
