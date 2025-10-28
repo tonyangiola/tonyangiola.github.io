@@ -3752,3 +3752,24 @@ body.home-page main > img:first-of-type{
 <!-- deploy-marker 20251027-224448 -->
 <!-- deploy-marker 20251027-224734 -->
 <!-- deploy-marker 20251027-225000 -->
+
+/* header-photo-kill 20251027-225146 */
+/* Remove any header background/overlay that injects the big photo */
+header, .site-header, .contact-header{
+  background:none !important;
+  background-image:none !important;
+  min-height:auto !important;
+}
+header::before, header::after,
+.site-header::before, .site-header::after,
+.contact-header::before, .contact-header::after{
+  content:none !important;
+  background:none !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  display:none !important;
+}
+/* If any stray <img> gets inserted into the header, hide it (keep the small avatar) */
+header img:not(.owner-avatar), .site-header img:not(.owner-avatar), .contact-header img:not(.owner-avatar){
+  display:none !important;
+}
