@@ -1,21 +1,8 @@
 <!-- deploy-nudge: 20251025-122536 -->
 <!doctype html>
 <head>
-<link rel="stylesheet" href="/assets/style.css?cb=1761281365">
-<style id="bg-hotfix-home">
-  /* FORCE dark page background (beats legacy rules) */
-  html, body { background:#0B0F1A !important; }
-  body.home-page { background:#0B0F1A !important; color:#e5e7eb; }
-  /* keep content wrappers transparent so the page bg shows */
-  body.home-page main,
-  body.home-page .container,
-  body.home-page .wrapper,
-  body.home-page .page,
-  body.home-page .content { background:transparent !important; }
-</style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/assets/style.css?cb=1761281365?v=1761013300">
 <!-- deploy-marker: init -->
 
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
@@ -26,30 +13,41 @@
     document.body && document.body.setAttribute("style","background:#0B0F1A !important;");
   }catch(e){}
 </script>
-  <link rel="stylesheet" href="/assets/override.css?cb=20251022211156">
-
-  <style id="latest-news-hardfix">
-  #news .book-card.news-card{background:#0f172a !important;color:#fff !important;border:1px solid rgba(255,255,255,.15) !important;border-radius:16px !important;box-shadow:0 6px 20px rgba(0,0,0,.35);padding:1.25rem !important}
-  #news .section-title{color:#fff !important}
-  #news .book-card.news-card h1,#news .book-card.news-card h2,#news .book-card.news-card h3,#news .book-card.news-card h4{color:#fff !important;opacity:1 !important}
-  #news .book-card.news-card p,#news .book-card.news-card .news-meta,#news .book-card.news-card .news-excerpt{color:rgba(255,255,255,.92) !important;line-height:1.55}
-  #news .book-card.news-card a{color:#fff !important;text-decoration:none}
-  #news .book-card.news-card a:hover{text-decoration:underline}
-  #news .book-card.news-card .btn{background:transparent !important;color:#fff !important;border:1px solid rgba(255,255,255,.6) !important;border-radius:12px;padding:10px 16px;transition:all .2s ease}
-  #news .book-card.news-card .btn:hover{background:rgba(255,255,255,.15);border-color:#fff;transform:translateY(-1px)}
-  </style>
-
-  <style id="news-card-inline-fix">
-    #news .dark-card{background:#0f172a!important;color:#fff!important;border:1px solid rgba(255,255,255,.15)!important;border-radius:16px!important;box-shadow:0 6px 20px rgba(0,0,0,.35);padding:1.25rem!important}
-    #news .section-title,#news .news-title{color:#fff!important}
-    #news p,#news .news-meta,#news .news-excerpt{color:rgba(255,255,255,.92)!important;line-height:1.55}
-    #news .btn{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.6)!important;border-radius:12px;padding:10px 16px}
-    #news .btn:hover{background:rgba(255,255,255,.15);border-color:#fff}
-  </style>
-  
   <script src="assets/name-badge-fixed.js" defer></script>
+<link rel="stylesheet" href="/assets/style.css">
 </head>
 <body class="home-page home-page">
+<header class="site-header" role="banner">
+  <div class="nav">
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/books.html">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+
+    <a class="brand" href="/" aria-label="Home">
+      <img class="badge-img" src="/assets/images/avatar.jpg" alt="Site badge">
+    </a>
+  </div>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Primary">
+    <a href="/">Home</a>
+    <a href="/books.html">Books</a>
+    <a href="/bio.html">Bio</a>
+    <a href="/newsletter.html">Newsletter</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+</header>
+
+
   <header>
   <div class="container">
     <nav>
@@ -99,29 +97,12 @@
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
   
+<script src="/assets/site.js"></script>
 </body>
 
 
 <!-- BADGE_FINAL_UR -->
-<style>
-/* Neutralize any earlier badge rules so we only see one */
-header::before,header::after,nav::before,nav::after,.nav::before,.nav::after,.navbar::before,.navbar::after,.site-nav::before,.site-nav::after{content:none!important;background:none!important;border:0!important;box-shadow:none!important}
-
-/* One fixed badge: UPPER RIGHT, always on top, no clicks blocked */
-
-/* Tiny phones: hide the name, keep photo */
-@media (max-width:640px){ html::before{display:none} }
-</style>
-
 <!-- UR_BADGE_FINAL -->
-<style>
-/* kill any previous pseudo-element badges so we only see one */
-header::before,header::after,nav::before,nav::after,.nav::before,.nav::after,.navbar::before,.navbar::after,.site-nav::before,.site-nav::after{
-  content:none !important; background:none !important; border:0 !important; box-shadow:none !important; display:none !important;
-}
-/* responsive: hide the name on tiny phones */
-@media (max-width:640px){ #ur-badge .ur-name { display:none } }
-</style>
 <div id="ur-badge"
      style="position:fixed;top:10px;right:12px;z-index:2147483647;display:flex;align-items:center;gap:8px;pointer-events:none;">
   <span class="ur-name"
@@ -136,3 +117,7 @@ header::before,header::after,nav::before,nav::after,.nav::before,.nav::after,.na
 <!-- deploy-marker fixed-nav 20251028-104717 -->
 
 <!-- deploy-marker nav-v4.1 20251028-104923 -->
+
+<!-- deploy-marker nav-clean 20251028-105538 -->
+
+<!-- deploy-marker nav-consistency 20251028-141111 -->
