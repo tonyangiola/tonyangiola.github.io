@@ -1,175 +1,27 @@
-<!-- deploy-nudge: 20251025-122536 -->
 <!doctype html>
+<html lang="en">
 <head>
-<style id="bg-hotfix-home">
-  /* FORCE dark page background (beats legacy rules) */
-  html, body { background:#0B0F1A !important; }
-  body.home-page { background:#0B0F1A !important; color:#e5e7eb; }
-  /* keep content wrappers transparent so the page bg shows */
-  body.home-page main,
-  body.home-page .container,
-  body.home-page .wrapper,
-  body.home-page .page,
-  body.home-page .content { background:transparent !important; }
-</style>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- deploy-marker: init -->
-
-  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
-  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
-<script id="bg-hotfix-script">
-  try{
-    document.documentElement.style.setProperty("background","#0B0F1A","important");
-    document.body && document.body.setAttribute("style","background:#0B0F1A !important;");
-  }catch(e){}
-</script>
-  <style id="latest-news-hardfix">
-  #news .book-card.news-card{background:#0f172a !important;color:#fff !important;border:1px solid rgba(255,255,255,.15) !important;border-radius:16px !important;box-shadow:0 6px 20px rgba(0,0,0,.35);padding:1.25rem !important}
-  #news .section-title{color:#fff !important}
-  #news .book-card.news-card h1,#news .book-card.news-card h2,#news .book-card.news-card h3,#news .book-card.news-card h4{color:#fff !important;opacity:1 !important}
-  #news .book-card.news-card p,#news .book-card.news-card .news-meta,#news .book-card.news-card .news-excerpt{color:rgba(255,255,255,.92) !important;line-height:1.55}
-  #news .book-card.news-card a{color:#fff !important;text-decoration:none}
-  #news .book-card.news-card a:hover{text-decoration:underline}
-  #news .book-card.news-card .btn{background:transparent !important;color:#fff !important;border:1px solid rgba(255,255,255,.6) !important;border-radius:12px;padding:10px 16px;transition:all .2s ease}
-  #news .book-card.news-card .btn:hover{background:rgba(255,255,255,.15);border-color:#fff;transform:translateY(-1px)}
-  </style>
-
-  <style id="news-card-inline-fix">
-    #news .dark-card{background:#0f172a!important;color:#fff!important;border:1px solid rgba(255,255,255,.15)!important;border-radius:16px!important;box-shadow:0 6px 20px rgba(0,0,0,.35);padding:1.25rem!important}
-    #news .section-title,#news .news-title{color:#fff!important}
-    #news p,#news .news-meta,#news .news-excerpt{color:rgba(255,255,255,.92)!important;line-height:1.55}
-    #news .btn{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.6)!important;border-radius:12px;padding:10px 16px}
-    #news .btn:hover{background:rgba(255,255,255,.15);border-color:#fff}
-  </style>
-  
-  <link rel="stylesheet" href="/assets/style.css?cb=20251027-191834">
-
-<link rel="stylesheet" href="/assets/nav-final.css?cb=20251027-191834">
-
-
-
-
-  <style id="home-hero-final-lock">
-    /* Constrain the rectangular wood-wall portrait wherever it sits */
-    .author-hero-img,
-    img[src*="/assets/images/home/bottom-hero.jpg"]{
-      width:100% !important;
-      max-width:420px !important;
-      height:auto !important;
-      display:block !important;
-      margin:28px auto 10px !important;
-      border-radius:8px !important;
-    }
-
-    /* Hide duplicate hero images (keep only the first one) */
-    .author-hero-img:not(:first-of-type),
-    img[src*="/assets/images/home/bottom-hero.jpg"]:not(:first-of-type){
-      display:none !important;
-    }
-
-    /* Make sure main content has sane width */
-    .home-main, body.home-page main{
-      max-width:1100px !important;
-      margin:0 auto !important;
-      padding:20px !important;
-      background:transparent !important;
-    }
-  </style>
-  
-
-<link rel="stylesheet" href="/assets/zz-final-override.css?cb=1761627204">
-
-  <style id="kill-header-photo-">
-    /* Nuke ALL header backgrounds (any element or pseudo inside header) */
-    body.home-page header,
-    body.home-page .site-header,
-    body.home-page .contact-header,
-    body.home-page header *,
-    body.home-page .site-header *,
-    body.home-page .contact-header *{
-      background: none !important;
-      background-image: none !important;
-      background-size: initial !important;
-      background-repeat: no-repeat !important;
-      background-position: initial !important;
-    }
-    body.home-page header::before,
-    body.home-page header::after,
-    body.home-page .site-header::before,
-    body.home-page .site-header::after,
-    body.home-page .contact-header::before,
-    body.home-page .contact-header::after,
-    body.home-page header *::before,
-    body.home-page header *::after{
-      content: none !important;
-      background: none !important;
-      background-image: none !important;
-      display: none !important;
-      box-shadow: none !important;
-    }
-    /* Keep only the tiny avatar in header, hide any other header <img> */
-    body.home-page header img:not(.owner-avatar){ display:none !important; }
-    /* Ensure header height collapses naturally */
-    body.home-page header, body.home-page .site-header, body.home-page .contact-header{
-      min-height:auto !important; height:auto !important; overflow:visible !important;
-    }
-  </style>
-  
-
-  <style id="kill-body-header-giant-photo">
-    /* Kill ANY background or pseudo-element trying to show the big photo */
-    body.home-page, body.home-page *{
-      background-image: none !important;
-      background: none !important;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tony Angiola — Author</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <!-- FINAL inline guard: no backgrounds or pseudo images on body/header -->
+  <style>
+    body, body * { background-origin: initial; background-clip: initial; }
+    body.home-page{
+      background:#0B0F1A !important;
+      background-image:none !important;
     }
     body.home-page::before, body.home-page::after,
-    body.home-page *::before, body.home-page *::after{
-      content: none !important;
-      background: none !important;
-      background-image: none !important;
-      display: none !important;
-      box-shadow: none !important;
-    }
-    /* Keep only the tiny avatar in the header */
-    body.home-page header img:not(.owner-avatar){ display:none !important; }
-  </style>
-  
-
-<style id="kill-body-bg-">
-  body.home-page {
-    background-image: none !important;
-    background: #0B0F1A !important;
-    background-color: #0B0F1A !important;
-  }
-  body.home-page::before, body.home-page::after {
-    content: none !important;
-    display: none !important;
-    background: none !important;
-    background-image: none !important;
-  }
-</style>
-
-  <style id="hero-sledge-">
-    /* 1) Hide ANY bottom-hero.jpg that is NOT inside <main> */
-    body.home-page img[src*="/assets/images/home/bottom-hero.jpg"]{
-      display:none !important;
-    }
-    /* 2) Keep the one INSIDE <main> visible and sized */
-    body.home-page main img[src*="/assets/images/home/bottom-hero.jpg"],
-    body.home-page main .home-hero-img{
-      display:block !important;
-      width:100% !important;
-      max-width:420px !important;
-      height:auto !important;
-      margin:28px auto 10px !important;
-      border-radius:8px !important;
+    body.home-page header::before, body.home-page header::after{
+      content:none !important; display:none !important; background-image:none !important;
     }
   </style>
-  
 </head>
+<body class="home-page">
 
-<body class="home-page home-page"><header class="contact-header">
+  <header class="contact-header">
     <div class="container">
       <nav>
         <a href="/" class="active" aria-current="page">HOME</a>
@@ -179,42 +31,22 @@
         <a href="/contact.html">Contact</a>
       </nav>
       <a class="owner-badge" href="/bio.html">
-        <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
+        <img class="owner-avatar" src="/assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
       </a>
     </div>
   </header>
 
-  <script id="scrub-header-images" defer>
-    try{
-      var hdr = document.querySelector("header");
-      if(hdr){
-        Array.from(hdr.querySelectorAll("img:not(.owner-avatar)")).forEach(function(im){
-          if (im.naturalWidth>300 || im.width>300 || im.height>300) im.remove();
-        });
-      }
-    }catch(e){}
-  </script>
-  
-<main class="home-main">
-
-<section class="hero">
+  <main class="home-main">
+    <section class="hero">
       <h1>Author. Researcher. Explorer of High Strangeness.</h1>
-      <p class="small">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley,
-      and updates on current projects.</p>
-      <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
+      <p class="small">Welcome to my official site. Here you’ll find books, articles, field notes, and updates on current projects.</p>
     </section>
-<section class="author-hero" id="home-bottom-hero">
-  <h2>Tony Angiola</h2>
-</section>
-<section class="home-hero">
-  <img class="home-hero-img" style="max-width:420px;width:100%;height:auto;display:block;margin:28px auto 10px;border-radius:8px;" src="/assets/images/home/bottom-hero.jpg" alt="Tony Angiola" style="max-width:420px;width:100%;height:auto;display:block;margin:28px auto 10px;border-radius:8px;">
-</section>
 
-
-
-
-
-
+    <!-- Single, controlled hero portrait -->
+    <section class="home-hero">
+      <img class="home-hero-img" src="/assets/images/home/bottom-hero.jpg" alt="Tony Angiola"
+           style="max-width:420px;width:100%;height:auto;display:block;margin:28px auto 10px;border-radius:8px;">
+    </section>
 
     <section class="grid grid-2">
       <div class="card">
@@ -230,111 +62,12 @@
         </ul>
       </div>
     </section>
-
-
   </main>
 
   <footer>
-    <div class="container">
-      <div>© <span id="y"></span> Tony Angiola. All rights reserved.</div>
-    </div>
+    <div class="container">© <span id="y"></span> Tony Angiola. All rights reserved.</div>
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
-  
 
-<script src="/assets/header-scrub.js" defer></script>
-<script src="/assets/header-diag.js" defer></script>
-
-    
-<!-- BADGE_FINAL_UR -->
-<style>
-/* Neutralize any earlier badge rules so we only see one */
-header::before,header::after,nav::before,nav::after,.nav::before,.nav::after,.navbar::before,.navbar::after,.site-nav::before,.site-nav::after{content:none!important;background:none!important;border:0!important;box-shadow:none!important}
-
-/* One fixed badge: UPPER RIGHT, always on top, no clicks blocked */
-
-/* Tiny phones: hide the name, keep photo */
-@media (max-width:640px){ html::before{display:none} }
-</style>
-
-<!-- deploy-marker restored-publish 20251027-110040 -->
-
-<!-- deploy-marker add-header-index 20251027-112609 -->
-
-<!-- deploy-marker nav-mini-index 20251027-113015 -->
-
-<!-- deploy-marker rm-legacy-header 20251027-113431 -->
-
-<!-- deploy-marker nav-mini-last 20251027-114930 -->
-
-<!-- deploy-marker nav-mini-specificity 20251027-115219 -->
-
-<!-- deploy-marker relocate-header 20251027-120529 -->
-
-<!-- deploy-marker rm-plain-header 20251027-121644 -->
-
-<!-- deploy-marker rm-legacy2 20251027-122103 -->
-
-<!-- deploy-marker strip-legacy-header 20251027-130347 -->
-
-<!-- deploy-marker rm-override-home 20251027-131032 -->
-
-<!-- deploy-marker stylesheet-order 20251027-131946 -->
-
-<!-- deploy-marker rm-override-css 20251027-132853 -->
-
-<!-- deploy-marker inline-flex-home 20251027-134359 -->
-
-<!-- deploy-marker remove-ur-badge 20251027-141018 -->
-
-<!-- deploy-marker rm-badge-js 20251027-141858 -->
-
-<!-- deploy-marker rm-tony-navlinks 20251027-144957 -->
-
-<!-- deploy-marker rm-rogue-navlinks 20251027-145448 -->
-
-<!-- deploy-marker rm-rogue-navlinks 20251027-151243 -->
-
-<!-- deploy-marker kill-pseudo 20251027-152638 -->
-
-<!-- deploy-marker kill-root-pseudos 20251027-155245 -->
-
-<!-- deploy-marker remove-ur-badge-and-inline-injections 20251027-161044 -->
-
-<!-- deploy-marker kill-rogue-tony 20251027-162435 -->
-
-<!-- deploy-marker kill-header-pseudos 20251027-164816 -->
-
-<!-- deploy-marker header-hardlock 20251027-165402 -->
-
-<!-- deploy-marker nav-links-whitelist 20251027-170305 -->
-
-<!-- deploy-marker nav-hardlock-anchors 20251027-170711 -->
-
-<!-- deploy-marker nav-hardlock-final 20251027-171137 -->
-
-<!-- deploy-marker header-scrub 20251027-171818 -->
-
-<!-- deploy-marker header-clamp 20251027-173108 -->
-
-<!-- deploy-marker rm-ur-badge 20251027-173450 -->
-
-<!-- deploy-marker ghost-purge 20251027-185519 -->
-
-<!-- deploy-marker nav-final 20251027-191834 -->
-
-<!-- deploy-marker css-clean 20251027-195620 -->
-
-<!-- deploy-marker photo-only-badge 20251027-202157 -->
-
-<!-- deploy-marker nav-final 20251027-203609 -->
-
-<!-- deploy-marker final-header-fix 20251027-210557 -->
-
-<!-- deploy-marker rm-nav-mini 20251027-211354 -->
-
-<!-- deploy-marker final-ghost-kill 20251027-211354 -->
-
-<!-- deploy-marker badge-photo-only 20251027-212255 -->
-
-<!-- deploy-marker ghostfix 20251027-213047 -->
+</body>
+</html>
