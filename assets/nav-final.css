@@ -1,28 +1,30 @@
-/* === FINAL NAV LOCK === */
-/* Kill *all* pseudo-injected name/photo in/under header, no matter what */
-header.site-header::before,
-header.site-header::after,
-header.site-header *::before,
-header.site-header *::after { content:none !important; display:none !important; background:none !important; border:0 !important; box-shadow:none !important; }
+/* ===== FINAL NAV LAYOUT (wins last) ===== */
+header.site-header .nav{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;   /* never centered */
+  gap:14px !important;
+}
 
-/* Only allow: HOME (left), .nav-links (middle), .badge (right) */
-header.site-header .nav { display:flex !important; align-items:center !important; gap:14px !important; }
-header.site-header .nav > *:not(.nav-links):not(.badge):not(a[href="/index.html"]) { display:none !important; }
+/* links block expands, pushes badge to the far right */
+header.site-header .nav .nav-links{
+  display:flex !important;
+  gap:18px !important;
+  margin-left:auto !important;             /* this is the pusher */
+}
 
-/* Inside .nav-links, allow only the 4 anchors */
-header.site-header .nav .nav-links > a[href="/books.html"],
-header.site-header .nav .nav-links > a[href="/bio.html"],
-header.site-header .nav .nav-links > a[href="/newsletter.html"],
-header.site-header .nav .nav-links > a[href="/contact.html"] { display:inline-block !important; }
-header.site-header .nav .nav-links > *:not(a) { display:none !important; }
-header.site-header .nav .nav-links > a:nth-child(n+5) { display:none !important; }
+/* badge stays at the extreme right */
+header.site-header .badge{
+  display:flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  margin-left:16px !important;
+}
 
-/* Badge = image + name only; never links inside */
-header.site-header .badge { display:flex !important; align-items:center !important; gap:10px !important; }
-header.site-header .badge a { display:none !important; }
-header.site-header .badge img { width:40px !important; height:40px !important; border-radius:9999px !important; object-fit:cover !important; }
-header.site-header .badge .name { font-weight:600 !important; white-space:nowrap !important; }
+header.site-header .badge img{
+  width:40px !important; height:40px !important;
+  border-radius:9999px !important; object-fit:cover !important;
+}
 
-/* Make sure header text stays readable and layout stable */
-header.site-header { background:#0e1320 !important; border-bottom:1px solid rgba(255,255,255,.12) !important; }
-header.site-header .nav a { color:#fff !important; text-decoration:none !important; font-weight:600 !important; padding:6px 10px !important; border-radius:10px !important; }
+/* absolutely never center the nav via legacy rules */
+header nav, .site-header nav{ justify-content:flex-start !important; }
