@@ -149,6 +149,24 @@
     background-image: none !important;
   }
 </style>
+
+  <style id="hero-sledge-">
+    /* 1) Hide ANY bottom-hero.jpg that is NOT inside <main> */
+    body.home-page img[src*="/assets/images/home/bottom-hero.jpg"]{
+      display:none !important;
+    }
+    /* 2) Keep the one INSIDE <main> visible and sized */
+    body.home-page main img[src*="/assets/images/home/bottom-hero.jpg"],
+    body.home-page main .home-hero-img{
+      display:block !important;
+      width:100% !important;
+      max-width:420px !important;
+      height:auto !important;
+      margin:28px auto 10px !important;
+      border-radius:8px !important;
+    }
+  </style>
+  
 </head>
 
 <body class="home-page home-page"><header class="contact-header">
