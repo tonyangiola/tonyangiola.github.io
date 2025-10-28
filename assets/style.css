@@ -58,3 +58,7 @@ main{ max-width:1100px; margin:0 auto; padding:20px; }
 /* Cards/util */
 .container{ max-width:1100px; margin:0 auto; padding:20px; }
 .card{ background:#0f1526; border:1px solid rgba(255,255,255,.06); border-radius:14px; padding:16px; }
+
+/* Nav/link color locks (visited included) */
+.nav-links a, .nav-links a:visited{ color:#e5e7eb; }
+a:visited{ color:#60a5fa; }
