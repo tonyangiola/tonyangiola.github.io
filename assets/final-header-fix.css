@@ -1,0 +1,30 @@
+/* --- Kill any stray quotes coming from global ::before/::after --- */
+html::before, html::after,
+body::before, body::after { content:none !important; display:none !important; }
+
+/* --- Lock header layout: HOME | links .......... [badge at far right] --- */
+header.site-header .nav{
+  display:flex !important; align-items:center !important;
+  justify-content:flex-start !important; gap:16px !important;
+}
+header.site-header .nav .nav-links{
+  display:flex !important; gap:18px !important;
+  margin-left:auto !important;            /* push badge to the FAR RIGHT */
+}
+
+/* Badge: photo only (no name), always on the right */
+header.site-header .badge{
+  display:flex !important; align-items:center !important; gap:10px !important;
+  margin-left:16px !important;
+}
+header.site-header .badge .name { display:none !important; }  /* hide text */
+header.site-header .badge a     { display:none !important; }  /* just in case */
+header.site-header .badge img{
+  width:40px; height:40px; border-radius:9999px; object-fit:cover;
+}
+
+/* Belt & suspenders: no pseudo inserts inside the header at all */
+header.site-header::before, header.site-header::after,
+header.site-header *::before, header.site-header *::after{
+  content:none !important; display:none !important; background:none !important;
+}
