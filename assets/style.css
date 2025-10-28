@@ -3874,3 +3874,64 @@ a.owner-badge .owner-avatar{width:40px; height:40px; border-radius:50%; object-f
 
 /* Optional: ensure page layout looks consistent under fixed header */
 main{ max-width:1100px; margin:0 auto; padding:20px; }
+
+/* ===================== NAV v4.1 (forced, fixed + taller, global) — 2025-10-28 ===================== */
+:root{
+  --nav-height-desktop: 96px;
+  --nav-height-phone:   76px;
+}
+
+/* Hard-stop: fixed header always on top */
+.site-header{
+  position: fixed !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  z-index: 9999 !important;
+  background: #0f172a !important;
+  border-bottom: 1px solid rgba(255,255,255,.08) !important;
+}
+
+/* Taller row + bigger badge */
+.site-header .nav{
+  min-height: var(--nav-height-desktop) !important;
+  padding: 14px 16px !important;
+  display:flex !important; align-items:center !important; justify-content:space-between !important;
+}
+.site-header .badge-img{
+  width: 56px !important; height: 56px !important; border-radius: 9999px !important; object-fit: cover !important;
+}
+
+/* Ensure content never sits under the fixed header */
+@media (min-width:601px){
+  html, body { margin:0 !important; }
+  body{ padding-top: var(--nav-height-desktop) !important; }
+  .mobile-menu{ display:none !important; }
+}
+
+/* Phone rules: hamburger shows; mobile menu drops under header */
+@media (max-width:600px){
+  html, body { margin:0 !important; }
+  body{ padding-top: var(--nav-height-phone) !important; }
+  .site-header .nav{ min-height: var(--nav-height-phone) !important; }
+  .hamburger{ display:block !important; background:transparent !important; border:0 !important; padding:8px !important; }
+  .site-header .nav-links{ display:none !important; }
+  .mobile-menu{
+    position: fixed !important;
+    top: var(--nav-height-phone) !important;
+    left: 0 !important; right: 0 !important;
+    display: none !important;
+    background:#0f172a !important;
+    border-top: 1px solid rgba(255,255,255,.08) !important;
+    z-index: 9998 !important; /* just under header */
+    flex-direction: column !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
+  }
+  .mobile-menu.open{ display:flex !important; }
+}
+
+/* Keep layout tidy site-wide */
+main{ max-width:1100px; margin:0 auto; padding:20px; }
+/* Safety colors */
+html,body{ background:#0B0F1A; color:#e5e7eb; }
+a{ color:#60a5fa; }
+img{ max-width:100%; height:auto; }
