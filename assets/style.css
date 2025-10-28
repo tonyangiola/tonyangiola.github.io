@@ -1,3 +1,5 @@
+
+/* home bottom hero lock () */
 :root { --max: 880px; --pad: 16px; }
   --page-bg: color-mix(in srgb, var(--nav-bg) 70%, white 30%);
   --nav-bg: #0f1115;
@@ -3652,3 +3654,8 @@ header.site-header *::before, header.site-header *::after { content:none !import
 
 /* deploy-css-bump 20251027-221825 */
 <!-- deploy-marker 20251027-221843 -->
+
+.author-hero{display:block;text-align:center;margin:48px auto 8px;}
+.author-hero-img{display:inline-block;width:220px;height:220px;border-radius:9999px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+@media(min-width:900px){.author-hero-img{width:280px;height:280px}}
+<!-- deploy-marker 20251027-222001 -->
