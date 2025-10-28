@@ -135,7 +135,22 @@
     body.home-page header img:not(.owner-avatar){ display:none !important; }
   </style>
   
+
+<style id="kill-body-bg-">
+  body.home-page {
+    background-image: none !important;
+    background: #0B0F1A !important;
+    background-color: #0B0F1A !important;
+  }
+  body.home-page::before, body.home-page::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+  }
+</style>
 </head>
+
 <body class="home-page home-page"><header class="contact-header">
     <div class="container">
       <nav>
