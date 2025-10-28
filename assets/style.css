@@ -1,5 +1,5 @@
 
-/* home bottom hero lock () */
+
 :root { --max: 880px; --pad: 16px; }
   --page-bg: color-mix(in srgb, var(--nav-bg) 70%, white 30%);
   --nav-bg: #0f1115;
@@ -3660,7 +3660,7 @@ header.site-header *::before, header.site-header *::after { content:none !import
 @media(min-width:900px){.author-hero-img{width:280px;height:280px}}
 <!-- deploy-marker 20251027-222001 -->
 
-/* home bottom hero lock */
+
 body.home-page .author-hero{display:block;text-align:center;margin:48px auto 8px}
 body.home-page .author-hero-img{display:inline-block;width:220px;height:220px;border-radius:9999px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,.35)}
 @media(min-width:900px){body.home-page .author-hero-img{width:280px;height:280px}}
@@ -3670,3 +3670,11 @@ body.home-page .author-hero-img{display:inline-block;width:220px;height:220px;bo
 
 /* deploy-css-bump 20251027-222231 */
 <!-- deploy-marker 20251027-222249 -->
+
+/* home bottom hero lock */
+body.home-page .author-hero{display:block;text-align:center;margin:48px auto 8px}
+body.home-page .author-hero-img{display:inline-block;width:260px;height:260px;border-radius:9999px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+@media(min-width:900px){body.home-page .author-hero-img{width:300px;height:300px}}
+
+/* deploy-css-bump 20251027-222405 */
+<!-- deploy-marker 20251027-222420 -->
