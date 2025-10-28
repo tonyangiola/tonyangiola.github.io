@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Books — Tony Angiola</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+  <!-- books-page rescue css start -->
+  <style>
+    /* Kill any vertical text experiments on this page */
+    .books-page, .books-page * { writing-mode: horizontal-tb !important; text-orientation: mixed !important; }
+
+    /* Books grid & cards */
+    .books-grid { display:grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    @media (min-width: 720px){ .books-grid { grid-template-columns: 1fr; } }
+    .book-card { display:grid; grid-template-columns: 260px 1fr; gap:1rem; align-items:start; }
+
+    /* Media sizing */
+    .book-card img, .book-card video { display:block; width:100%; max-width:100%; height:auto; object-fit:contain; border-radius:.5rem; background:#111; }
+    .book-card video { controls: controls; }
+
+    /* Buttons */
+    .book-actions { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.5rem; }
+    .book-actions a { display:inline-block; padding:.62rem 1rem; border-radius:.5rem; font-weight:600; text-decoration:none; border:1px solid rgba(0,0,0,.08); white-space:nowrap; }
+    .book-actions a.primary { background:#2563eb; color:#fff; }
+    .book-actions a.secondary { background:#f5f5f5; color:#111; }
+    .book-actions a:hover { filter:brightness(.96); }
+  </style>
+  <!-- books-page rescue css end -->
+<body class="books-page">
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/"><strong>Tony Angiola</strong></a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Books</h1>
+
+<section class="books-grid">
+
+  <!-- 1) Snippy -->
+  <article class="book-card" style="display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start" style="display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start" id="snippy-card">
+    <div class="book-media" style="display:block;grid-column:auto;grid-row:auto;width:260px;max-width:100%;aspect-ratio:3/4">
+      <video style="display:block !important;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111" style="display:block;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111" preload="metadata" poster="/images/books/snippy.jpg">
+        <source src="/assets/videos/snippy.mp4#t=0.1" type="video/mp4">
+      </video>
+    </div>
+    <div class="book-meta" style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">
+      <h3 style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">Snippy</h3>
+      <p style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">Animated preview.</p>
+      <div class="book-actions" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;">
+        <a class="primary" style="display:inline-block;padding:.62rem 1rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,.08);white-space:nowrap;writing-mode:horizontal-tb;text-orientation:mixed;transform:none;background:#2563eb;color:#fff" href="#" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="secondary" style="display:inline-block;padding:.62rem 1rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,.08);white-space:nowrap;writing-mode:horizontal-tb;text-orientation:mixed;transform:none;background:#f5f5f5;color:#111" href="/newsletter.html">Get updates</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- 2) Socorro -->
+  <article class="book-card" style="display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start" style="display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start" id="socorro-card">
+    <div class="book-media" style="display:block;grid-column:auto;grid-row:auto;width:260px;max-width:100%;aspect-ratio:3/4">
+      <img style="display:block !important;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111" style="display:block;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111" src="/images/books/socorro.jpg" alt="Socorro UFO cover" loading="lazy">
+    </div>
+    <div class="book-meta" style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">
+      <h3 style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">Socorro UFO</h3>
+      <p style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">Classic 1964 case. Blue flame, red inverted “V” with three bars.</p>
+      <div class="book-actions" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;">
+        <a class="primary" style="display:inline-block;padding:.62rem 1rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,.08);white-space:nowrap;writing-mode:horizontal-tb;text-orientation:mixed;transform:none;background:#2563eb;color:#fff" href="#" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="secondary" style="display:inline-block;padding:.62rem 1rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,.08);white-space:nowrap;writing-mode:horizontal-tb;text-orientation:mixed;transform:none;background:#f5f5f5;color:#111" href="/newsletter.html">Get updates</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- 3) Gremlins -->
+  <article class="book-card" style="display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start" style="display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start" id="gremlins-card">
+    <div class="book-media" style="display:block;grid-column:auto;grid-row:auto;width:260px;max-width:100%;aspect-ratio:3/4">
+      <img style="display:block !important;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111" style="display:block;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111" src="/images/books/gremlins.jpg" alt="Gremlins cover" loading="lazy">
+    </div>
+    <div class="book-meta" style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">
+      <h3 style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">Gremlins</h3>
+      <p style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">&nbsp;</p>
+      <div class="book-actions" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;">
+        <a class="primary" style="display:inline-block;padding:.62rem 1rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,.08);white-space:nowrap;writing-mode:horizontal-tb;text-orientation:mixed;transform:none;background:#2563eb;color:#fff" href="#" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="secondary" style="display:inline-block;padding:.62rem 1rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,.08);white-space:nowrap;writing-mode:horizontal-tb;text-orientation:mixed;transform:none;background:#f5f5f5;color:#111" href="/newsletter.html">Get updates</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- 4) Cosmic Secrets -->
+  <article class="book-card" style="display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start" style="display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start" id="cosmic-card">
+    <div class="book-media" style="display:block;grid-column:auto;grid-row:auto;width:260px;max-width:100%;aspect-ratio:3/4">
+      <img style="display:block !important;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111" style="display:block;width:100%;max-width:100%;height:auto;object-fit:contain;border-radius:.5rem;background:#111" src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover" loading="lazy">
+    </div>
+    <div class="book-meta" style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">
+      <h3 style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">Cosmic Secrets</h3>
+      <p style="writing-mode:horizontal-tb;text-orientation:mixed;transform:none">Coming soon. Get notified when it launches.</p>
+      <div class="book-actions" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem" style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;">
+        <a class="secondary" style="display:inline-block;padding:.62rem 1rem;border-radius:.5rem;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,.08);white-space:nowrap;writing-mode:horizontal-tb;text-orientation:mixed;transform:none;background:#f5f5f5;color:#111" href="/newsletter.html">Get updates</a>
+      </div>
+    </div>
+  </article>
+
+</section>
+  </main>
+</body>
+</html>

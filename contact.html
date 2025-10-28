@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact – Tony Angiola</title>
   <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/name-badge-fixed.js" defer></script>
+
   <!-- Contact page only: small, safe header styles (won't touch other pages) -->
   <style>
     header.contact-header{position:relative; padding:0.75rem 0;}
@@ -25,19 +27,9 @@
       header.contact-header .owner-badge .owner-avatar{width:32px; height:32px}
     }
   </style>
-<link rel="stylesheet" href="/assets/header-visibility-clamp.css">
-
-<link rel="stylesheet" href="/assets/nav-final.css?cb=20251027-191834">
-
-<link rel="stylesheet" href="/assets/header-photoonly-override.css">
-
-<link rel="stylesheet" href="/assets/final-header-fix.css">
-
-<link rel="stylesheet" href="/assets/final-ghost-kill.css">
-
-<link rel="stylesheet" href="/assets/final-nav-lock.css">
 </head>
-<body><!-- CLEAN HEADER: centered nav + small badge (name left, round photo right) -->
+<body>
+  <!-- CLEAN HEADER: centered nav + small badge (name left, round photo right) -->
   <header class="contact-header">
     <div class="container">
       <nav>
@@ -48,6 +40,7 @@
         <a href="/contact.html">Contact</a>
       </nav>
       <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
         <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
       </a>
     </div>
@@ -89,11 +82,5 @@
     </div>
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
-
-<script src="/assets/header-scrub.js" defer></script>
-<script src="/assets/header-diag.js" defer></script>
-
-    
+</body>
 </html>
-
-<!-- deploy-marker restored-publish 20251027-110040 -->

@@ -1,5 +1,3 @@
-
-
 :root { --max: 880px; --pad: 16px; }
   --page-bg: color-mix(in srgb, var(--nav-bg) 70%, white 30%);
   --nav-bg: #0f1115;
@@ -2399,7 +2397,10 @@ body .form-section {
 
   /* Turn into "X" when open */
   nav.is-open .hamburger-icon span { opacity: 0; }
-nav.is-open .hamburger-icon::after {
+  nav.is-open .hamburger-icon::before {
+    transform: translateY(5px) rotate(45deg);
+  }
+  nav.is-open .hamburger-icon::after {
     transform: translateY(-5px) rotate(-45deg);
   }
 
@@ -3134,25 +3135,75 @@ header,.page-header,.site-header{position:relative}
 
 /* CSS-only mini brand */
 header,.page-header,.site-header{position:relative}
-}
+#header::before{content:"Tony Angiola";position:absolute;top:10px;right:58px;font-weight:600;font-size:.95rem;line-height:1;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);padding:.25rem .5rem;border-radius:9999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);z-index:6}
+#header::after{content:"";position:absolute;top:10px;right:12px;width:40px;height:40px;border-radius:9999px;background:url("assets/images/tony.jpg") center/cover no-repeat;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:6}
+@media (max-width:640px){header::before{display:none}}
 
 /* Move avatar badge to right side of navbar */
 nav, .nav-bar, .site-nav { position:relative !important; }
-}
+nav::before { content:"Tony Angiola";position:absolute;top:10px;right:58px;font-weight:600;font-size:.95rem;line-height:1;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);padding:.25rem .5rem;border-radius:9999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);z-index:9999 }
+nav::after { content:"";position:absolute;top:10px;right:12px;width:40px;height:40px;border-radius:9999px;background:url("assets/images/tony.jpg") center/cover no-repeat;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:9999 }
+@media(max-width:640px){nav::before{display:none}}
 
 /* === Nav badge: Tony + photo (top-right) === */
 header, .page-header, .site-header { position: relative; }
 nav, .nav, .navbar, .site-nav, header nav { position: relative !important; }
+nav::before, .nav::before, .navbar::before, .site-nav::before, header nav::before {
+  content: "Tony Angiola"; position: absolute; top: 8px; right: 56px;
+  font-weight: 600; font-size: .95rem; line-height: 1; color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  padding: .25rem .5rem; border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.06); z-index: 9999;
 }
+nav::after, .nav::after, .navbar::after, .site-nav::after, header nav::after {
+  content: ""; position: absolute; top: 6px; right: 12px;
+  width: 40px; height: 40px; border-radius: 9999px;
+  background: url("assets/images/tony.jpg") center/cover no-repeat;
+  border: 2px solid rgba(255,255,255,.9);
+  box-shadow: 0 6px 18px rgba(0,0,0,.35); z-index: 9999;
+}
+@media (max-width:640px){ nav::before, .nav::before, .navbar::before, .site-nav::before, header nav::before { display:none } }
 
 /* === Avatar badge: final override (single source of truth) === */
+/* Kill all previous header/nav badges */
+header::before, header::after,
+nav::before, nav::after,
+.nav::before, .nav::after,
+.navbar::before, .navbar::after,
+.site-nav::before, .site-nav::after {
+  content: none !important; background: none !important;
+  border: 0 !important; box-shadow: none !important;
+}
 /* Pin ONE badge to the first nav inside header */
 header > nav:first-of-type { position: relative !important; }
+header > nav:first-of-type::before {
+  content: "Tony Angiola";
+  position: absolute; top: 8px; right: 56px;
+  font-weight: 600; font-size: .95rem; line-height: 1; color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  padding: .25rem .5rem; border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.06);
+  z-index: 9999;
 }
+header > nav:first-of-type::after {
+  content: ""; position: absolute; top: 6px; right: 12px;
+  width: 40px; height: 40px; border-radius: 9999px;
+  background: url("assets/images/tony.jpg") center/cover no-repeat;
+  border: 2px solid rgba(255,255,255,.9);
+  box-shadow: 0 6px 18px rgba(0,0,0,.35); z-index: 9999;
+}
+@media (max-width:640px){ header > nav:first-of-type::before { display: none } }
 
+/* === FINAL: single avatar badge (nav top-right) === */
+/* Neutralize any previous badges */
+header::before, header::after, nav::before, nav::after, .nav::before, .nav::after, .navbar::before, .navbar::after, .site-nav::before, .site-nav::after{content:none!important;background:none!important;border:0!important;box-shadow:none!important}
 /* Anchor to the first nav inside header */
 header > nav:first-of-type{position:relative!important}
-}
+header > nav:first-of-type::before{content:"Tony Angiola";position:absolute;top:8px;right:56px;font-weight:600;font-size:.95rem;line-height:1;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35);padding:.25rem .5rem;border-radius:9999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);z-index:9999}
+header > nav:first-of-type::after{content:"";position:absolute;top:6px;right:12px;width:40px;height:40px;border-radius:9999px;background:url("assets/images/tony.jpg") center/cover no-repeat;border:2px solid rgba(255,255,255,.9);box-shadow:0 6px 18px rgba(0,0,0,.35);z-index:9999}
+@media(max-width:640px){header > nav:first-of-type::before{display:none}}
 
 /* FORCE UPPER-RIGHT for badge */
 html::before{left:auto!important;right:58px!important;top:10px!important}
@@ -3160,7 +3211,16 @@ html::after{left:auto!important;right:12px!important;top:10px!important}
 
 /* === Re-enable badge NAME next to photo (upper-right) === */
 header > nav:first-of-type{position:relative!important}
+header > nav:first-of-type::before{
+  content:"Tony Angiola"!important; position:absolute; top:8px; right:56px;
+  font-weight:600; font-size:.95rem; line-height:1; color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.35);
+  padding:.25rem .5rem; border-radius:9999px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.06);
+  z-index:9999; display:block!important;
 }
+@media(max-width:640px){ header > nav:first-of-type::before{ display:none } }
 /* === Tony name next to headshot (upper-right) === */
 header nav:first-of-type {
   position: relative !important;
@@ -3176,12 +3236,42 @@ header nav:first-of-type .brand-name {
 }
 /* === Upper-right name badge next to small photo === */
 header > nav:first-of-type { position: relative !important; }
+header > nav:first-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute; top: 8px; right: 56px;  /* nudge right value if needed */
+  font-weight: 600; font-size: .95rem; line-height: 1;
+  color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.7);
+  pointer-events: none;
+  white-space: nowrap;
+}
+/* Optional: if header is light on some pages, ensure readable */
+header.light > nav:first-of-type::before { color: #111; text-shadow: none; }
+
 /* Mobile: slightly tighter fit if needed */
 @media (max-width: 430px){
+  header > nav:first-of-type::before{
+    right: 50px;
+    font-size: .9rem;
+  }
 }
 /* === Name next to upper-right headshot === */
 header > nav:first-of-type { position: relative !important; }
+header > nav:first-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute;
+  top: 8px;
+  right: 56px;        /* nudge this if needed */
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 3;
+}
 @media (max-width: 430px){
+  header > nav:first-of-type::before{ right: 50px; font-size: .9rem; }
 }
 /* === Tony Angiola name hard insert (upper-right) === */
 /* Tony Angiola name hard insert */
@@ -3236,26 +3326,103 @@ header:has(nav img[src*="headshot"]) nav:last-of-type,
 header:has(nav img[src*="profile"]) nav:last-of-type {
   position: relative !important;
 }
+header:has(nav img[src*="avatar"]) nav:last-of-type::before,
+header:has(nav img[src*="avatar-small"]) nav:last-of-type::before,
+header:has(nav img[src*="headshot"]) nav:last-of-type::before,
+header:has(nav img[src*="profile"]) nav:last-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 56px !important;   /* adjust to tighten/loosen spacing from photo */
+  font-weight: 600 !important;
+  font-size: .95rem !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
+  white-space: nowrap !important;
+  z-index: 99 !important;
+  pointer-events: none !important;
+}
+/* If some pages have a light header, ensure contrast there */
+header.light:has(nav img) nav:last-of-type::before { color:#111 !important; text-shadow:none !important; }
+
 /* Slightly tighter on small iPhones */
 @media (max-width: 430px){
+  header:has(nav img) nav:last-of-type::before{ right: 50px !important; font-size: .9rem !important; }
 }
-/* === brand-name-> nav:first-of-type { 
+/* === brand-name-ur-badge (next to upper-right avatar) === */
+header nav { position: relative; }
+.brand-name-ur-badge{
+  position: absolute;
+  top: 8px;
+  right: 56px;      /* tweak to align with the pic edge */
+  font-weight: 600;
+  font-size: .95rem;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7);
+  white-space: nowrap;
+  z-index: 999;
+  pointer-events: none;
+}
+@media (max-width: 430px){
+  .brand-name-ur-badge{ right: 50px; font-size: .9rem; }
+}
+/* === Upper-right name badge (final, non-overlapping) === */
+header > nav:first-of-type { 
   position: relative !important;
   /* Reserve space on the right so links don't sit under the badge+avatar */
   padding-right: 220px !important;  /* adjust if you want tighter; 180–240 is typical */
 }
 
+/* Draw the name to the LEFT of the small photo (badge pinned inside same nav) */
+header > nav:first-of-type::before{
+  content: "Tony Angiola" !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 56px !important;      /* equals avatar width + small gap; tweak to align */
+  font-weight: 600 !important;
+  font-size: .95rem !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
+  white-space: nowrap !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+}
+
+/* If some pages use a light header, keep it readable there */
+header.light > nav:first-of-type::before{ color:#111 !important; text-shadow:none !important; }
+
 /* Mobile: hide the badge so it doesn't crowd the hamburger */
 @media (max-width: 768px){
   header > nav:first-of-type { padding-right: 0 !important; }
+  header > nav:first-of-type::before { display: none !important; }
 }
 /* === FINAL: Name badge on the nav that HAS the small headshot === */
 header > nav:has(img[src*="avatar"], img[src*="avatar-small"], img[class*="avatar"], img[class*="headshot"], img[class*="profile"]) {
   position: relative !important;
 }
+header > nav:has(img[src*="avatar"], img[src*="avatar-small"], img[class*="avatar"], img[class*="headshot"], img[class*="profile"])::before {
+  content: "Tony Angiola" !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 56px !important;   /* nudge if needed */
+  font-weight: 600 !important;
+  font-size: .95rem !important;
+  line-height: 1 !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.7) !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+  z-index: 99 !important;
+}
 
 /* Desktop only; on mobile we keep it clean */
 @media (max-width: 768px){
+  header > nav:has(img[src*="avatar"], img[src*="avatar-small"], img[class*="avatar"], img[class*="headshot"], img[class*="profile"])::before {
+    display: none !important;
+  }
 }
 /* === UR badge final (portable) === */
 header nav { position: relative !important; }
@@ -3400,13 +3567,41 @@ header nav { position: relative !important; }
   align-items:center !important;
   justify-content:center !important;
   gap:.75rem;
+  /* reserve space on the LEFT for the badge so the nav can remain centered */
+  padding-left:150px !important;
+  min-height:110px; /* keep header height consistent so nav doesn't "jump" */
+}
+
+/* Round photo on the LEFT */
+.contact-content header > nav:first-of-type::before{
+  content:"";
+  position:absolute; left:16px; top:8px;
+  width:96px; height:96px; border-radius:50%;
+  background-image:url("assets/images/avatar.jpg");
+  background-size:cover; background-position:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+  z-index:1;
+}
+
+/* Your name next to the photo (LEFT side) */
+.contact-content header > nav:first-of-type::after{
+  content:"Tony Angiola";
+  position:absolute; left:120px; top:40px;
+  font-weight:700; font-size:1rem; line-height:1;
+  color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.45);
+  z-index:1;
+}
+
 /* Tame mobile sizes so it still centers nicely on iPhone */
 @media (max-width: 600px){
   .contact-content header > nav:first-of-type{
     padding-left:112px !important;
     min-height:84px;
   }
-.contact-content header > nav:first-of-type::after{
+  .contact-content header > nav:first-of-type::before{
+    width:64px; height:64px; top:10px; left:12px;
+  }
+  .contact-content header > nav:first-of-type::after{
     left:84px; top:28px; font-size:.95rem;
   }
 }
@@ -3433,10 +3628,26 @@ body.contact-page header > nav:first-of-type {
 }
 
 /* The badge container we injected (LEFT side) */
-body.contact-page ."assets/images/avatar.jpg");
+body.contact-page .contact-badge{
+  position:absolute !important;
+  left:16px; top:8px;
+  width:96px; height:96px;
+  border-radius:50%;
+  background-image:url("assets/images/avatar.jpg");
   background-size:cover; background-position:center;
   box-shadow:0 2px 8px rgba(0,0,0,.25);
   z-index:2;
+}
+
+/* Name to the RIGHT of the photo */
+body.contact-page .contact-badge::after{
+  content:"Tony Angiola";
+  position:absolute;
+  left:104px; top:32px;
+  font-weight:700; font-size:1rem; line-height:1;
+  color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,.45);
+  white-space:nowrap;
 }
 
 /* Mobile tweaks */
@@ -3448,7 +3659,14 @@ body.contact-page ."assets/images/avatar.jpg");
     padding-left:112px !important;
     min-height:84px !important;
   }
-  body.contact-page .>
+  body.contact-page .contact-badge{
+    width:64px; height:64px; top:10px; left:12px;
+  }
+  body.contact-page .contact-badge::after{
+    left:80px; top:22px; font-size:.95rem;
+  }
+}
+<!-- deploy-marker 20251025-205414 -->
 <!-- deploy-marker 20251025-210318 -->
 <!-- deploy-marker 20251025-211307 -->
 <!-- deploy-marker 20251025-211419 -->
@@ -3463,7 +3681,7 @@ body.contact-page ."assets/images/avatar.jpg");
 header{position:relative}
 header nav{display:flex; justify-content:center; align-items:center; gap:1rem}
 header nav ul{margin:0; padding:0}
-/* kill any earlier pseudo-name */
+header > nav:first-of-type::before{content:normal !important} /* kill any earlier pseudo-name */
 
 /* Owner badge */
 a.owner-badge{position:absolute; top:10px; right:12px; display:flex; align-items:center; gap:.5rem;
@@ -3606,184 +3824,3 @@ a.owner-badge .owner-avatar{width:40px; height:40px; border-radius:50%; object-f
 /* contact nuke big portrait */
 .contact-content img[src*="/images/tony.jpg"]{display:none !important}
 <!-- deploy-marker 20251025-214926 -->
-
-/* === Canonical site header (clean + minimal) ===================== */
-header.site-header{
-  position:sticky; top:0; z-index:1000;
-  background:#0e1320; border-bottom:1px solid rgba(255,255,255,.12);
-}
-header.site-header .nav{
-  max-width:1100px; margin:0 auto; padding:12px 16px;
-  display:flex; align-items:center; gap:14px;
-}
-header.site-header .nav a{
-  color:#e5e7eb; text-decoration:none; font-weight:600;
-  padding:6px 10px; border-radius:10px;
-}
-header.site-header .nav a:hover{ opacity:.95; }
-header.site-header .nav .nav-links{ margin-left:auto; display:flex; gap:18px; align-items:center; }
-header.site-header .badge{ display:flex; align-items:center; gap:10px; margin-left:12px; }
-header.site-header .badge img{ width:40px; height:40px; border-radius:9999px; object-fit:cover; display:block; }
-header.site-header .badge .name{ font-weight:600; white-space:nowrap; }
-
-/* Absolute kill switch for any future header pseudos (belt & suspenders) */
-header.site-header::before, header.site-header::after,
-header.site-header *::before, header.site-header *::after { content:none !important; display:none !important; background:none !important; box-shadow:none !important; border:0 !important; }
-<!-- deploy-marker 20251027-213241 -->
-<!-- deploy-marker 20251027-213451 -->
-<!-- deploy-marker 20251027-213631 -->
-<!-- deploy-marker 20251027-213747 -->
-<!-- deploy-marker 20251027-214213 -->
-<!-- deploy-marker 20251027-214938 -->
-<!-- deploy-marker 20251027-215147 -->
-<!-- deploy-marker 20251027-215423 -->
-<!-- deploy-marker 20251027-215723 -->
-<!-- deploy-marker 20251027-220040 -->
-<!-- deploy-marker 20251027-220218 -->
-<!-- deploy-marker 20251027-220617 -->
-<!-- deploy-marker 20251027-221027 -->
-
-/* === nav/avatar lock (added by header-sync) === */
-.site-header .badge img{
-  width: 44px !important;
-  height: 44px !important;
-  border-radius: 9999px !important;
-  object-fit: cover !important;
-  display: inline-block !important;
-}
-
-/* deploy-css-bump 20251027-221825 */
-<!-- deploy-marker 20251027-221843 -->
-
-.author-hero{display:block;text-align:center;margin:48px auto 8px;}
-.author-hero-img{display:inline-block;width:220px;height:220px;border-radius:9999px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-@media(min-width:900px){.author-hero-img{width:280px;height:280px}}
-<!-- deploy-marker 20251027-222001 -->
-
-
-body.home-page .author-hero{display:block;text-align:center;margin:48px auto 8px}
-body.home-page .author-hero-img{display:inline-block;width:220px;height:220px;border-radius:9999px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-@media(min-width:900px){body.home-page .author-hero-img{width:280px;height:280px}}
-
-/* navbar badge avatar lock (all pages) */
-.site-header .badge img{width:44px;height:44px;border-radius:9999px;object-fit:cover;display:inline-block}
-
-/* deploy-css-bump 20251027-222231 */
-<!-- deploy-marker 20251027-222249 -->
-
-/* home bottom hero lock */
-body.home-page .author-hero{display:block;text-align:center;margin:48px auto 8px}
-body.home-page .author-hero-img{display:inline-block;width:260px;height:260px;border-radius:9999px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-@media(min-width:900px){body.home-page .author-hero-img{width:300px;height:300px}}
-
-/* deploy-css-bump 20251027-222405 */
-<!-- deploy-marker 20251027-222420 -->
-
-/* home bottom hero lock */
-body.home-page .author-hero{display:block;text-align:center;margin:48px auto 8px}
-body.home-page .author-hero-img{display:inline-block;width:260px;height:260px;border-radius:9999px;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-@media(min-width:900px){body.home-page .author-hero-img{width:300px;height:300px}}
-
-/* navbar badge avatar lock */
-.site-header .badge img{width:44px;height:44px;border-radius:9999px;object-fit:cover;display:inline-block}
-
-/* deploy-css-bump 20251027-222649 */
-<!-- deploy-marker 20251027-222705 -->
-
-/* deploy-css-bump 20251027-222904 */
-<!-- deploy-marker 20251027-222917 -->
-
-/* deploy-css-bump 20251027-223114 */
-<!-- deploy-marker 20251027-223130 -->
-
-/* deploy-css-bump 20251027-223320 */
-<!-- deploy-marker 20251027-223335 -->
-
-/* deploy-css-bump 20251027-223515 */
-<!-- deploy-marker 20251027-223532 -->
-<!-- deploy-marker 20251027-223711 -->
-
-/* deploy-marker: home-hero-20251027-223834 */
-.home-page main{max-width:1100px;margin:0 auto;padding:20px;}
-.home-page img[src*="/assets/images/avatar"]{
-  width:100%;max-width:400px;height:auto;display:block;margin:20px auto;border-radius:8px;
-}
-<!-- deploy-marker 20251027-223848 -->
-
-/* fix-home-hero 20251027-224029 */
-/* Lock homepage hero image size + centering without touching HTML */
-body.home-page main img:first-of-type{
-  width:100%;
-  max-width:420px;   /* adjust to taste (360–480) */
-  height:auto;
-  display:block;
-  margin:28px auto 10px;
-  border-radius:8px;
-}
-body.home-page main{max-width:1100px;margin:0 auto;padding:20px;}
-<!-- deploy-marker 20251027-224040 -->
-
-/* fix-home-hero-by-src 20251027-224148 */
-body.home-page main img[src*="/assets/images/home/bottom-hero.jpg"]{
-  width:100%; max-width:420px !important; height:auto;
-  display:block; margin:28px auto 10px; border-radius:8px;
-}
-/* fix-home-hero-fallback: first image in <main> */
-body.home-page main > img:first-of-type{
-  width:100%;
-  max-width:420px !important;
-  height:auto;
-  display:block;
-  margin:28px auto 10px;
-  border-radius:8px;
-}
-<!-- deploy-marker 20251027-224203 -->
-
-/* home-hero-img lock 20251027-224431 */
-.home-main{max-width:1100px;margin:0 auto;padding:20px;}
-.home-hero-img{
-  width:100%;
-  max-width:420px;
-  height:auto;
-  display:block;
-  margin:28px auto 10px;
-  border-radius:8px;
-}
-<!-- deploy-marker 20251027-224448 -->
-<!-- deploy-marker 20251027-224734 -->
-<!-- deploy-marker 20251027-225000 -->
-
-/* header-photo-kill 20251027-225146 */
-/* Remove any header background/overlay that injects the big photo */
-header, .site-header, .contact-header{
-  background:none !important;
-  background-image:none !important;
-  min-height:auto !important;
-}
-header::before, header::after,
-.site-header::before, .site-header::after,
-.contact-header::before, .contact-header::after{
-  content:none !important;
-  background:none !important;
-  background-image:none !important;
-  box-shadow:none !important;
-  display:none !important;
-}
-/* If any stray <img> gets inserted into the header, hide it (keep the small avatar) */
-header img:not(.owner-avatar), .site-header img:not(.owner-avatar), .contact-header img:not(.owner-avatar){
-  display:none !important;
-}
-<!-- deploy-marker 20251027-225159 -->
-<!-- deploy-marker 20251027-225331 -->
-<!-- deploy-marker 20251027-225455 -->
-<!-- deploy-marker 20251027-225608 -->
-<!-- deploy-marker 20251027-225705 -->
-<!-- deploy-marker 20251027-225820 -->
-
-/* home hard-lock 20251027-230005 */
-.home-main{max-width:1100px;margin:0 auto;padding:20px;}
-.contact-header{background:none!important;min-height:auto!important}
-.contact-header::before,.contact-header::after{content:none!important;display:none!important}
-.owner-avatar{width:44px;height:44px;border-radius:9999px;object-fit:cover;display:inline-block}
-.home-hero-img{max-width:420px;width:100%;height:auto;display:block;margin:28px auto 10px;border-radius:8px}
-<!-- deploy-marker 20251027-230016 -->

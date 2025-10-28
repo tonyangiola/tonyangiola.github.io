@@ -1,0 +1,52 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter — Tony Angiola</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/style.css">
+<!-- Hard, page-scoped overrides so this page matches BIO no matter what -->
+<style id="nl-bg-fix">
+  /* Make this page use the same light background as BIO edge-to-edge */
+  body.newsletter-page, html { background:#f6f7fb !important; }
+  /* Nuke any hero/banner/wrapper backgrounds just on this page */
+  body.newsletter-page main,
+  body.newsletter-page header,
+  body.newsletter-page .hero,
+  body.newsletter-page .banner,
+  body.newsletter-page .masthead,
+  body.newsletter-page .page-header,
+  body.newsletter-page section,
+  body.newsletter-page article,
+  body.newsletter-page .wrapper,
+  body.newsletter-page .content,
+  body.newsletter-page .stack {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+  /* Keep nav readable; don't collapse spacing */
+  body.newsletter-page header nav { background: inherit; }
+  body.newsletter-page header { padding-bottom: 0 !important; margin-bottom: 0 !important; }
+</style>
+<body class="newsletter-page">
+  <!-- Use the same header include as BIO -->
+  <!--#include virtual="/assets/header.html" -->
+
+  <main class="container">
+    <section class="stack" style="margin-top:1.25rem">
+      <h1>Newsletter</h1>
+      <p>Get updates on new investigations, videos, and book progress.</p>
+
+      <form action="mailto:contact@tonyangiola.com" method="post" enctype="text/plain" class="stack" style="max-width:28rem">
+        <label for="nl-email"><strong>Email</strong></label>
+        <input id="nl-email" name="email" type="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+
+      <p style="opacity:.8;font-size:.95rem">We’ll only email when there’s something worth reading.</p>
+    </section>
+  </main>
+</body>
+

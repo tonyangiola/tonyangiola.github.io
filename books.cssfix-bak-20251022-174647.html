@@ -1,0 +1,149 @@
+<!-- deploy-marker books recover 20251022-174553 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Books — Tony Angiola</title>
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+/* ===== BOOKS — locked layout (navbar-safe) ===== */
+:root { --gap: 1rem; }
+.books-page { padding-top:.5rem; }
+
+/* Two-column grid: media left, details/buttons right */
+.book-card{
+  display:grid;
+  grid-template-columns: minmax(560px,1fr) 300px;
+  gap: var(--gap);
+  align-items:start;
+  background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:.75rem;
+  padding:1rem; margin:0 auto 1rem; max-width: 1040px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.03);
+}
+
+/* Snippy WIDE; Socorro SMALL; Gremlins/Cosmic NORMAL */
+#snippy-card   { grid-template-columns: 720px 300px; max-width: 1120px; }
+#socorro-card  { grid-template-columns: 420px 280px; max-width:  760px; }
+#gremlins-card { grid-template-columns: 560px 300px; max-width:  940px; }
+#cosmic-card   { grid-template-columns: 560px 300px; max-width:  940px; }
+
+/* Media box: always visible, 16:9 window */
+.book-media{
+  grid-column:1;
+  width:100%; aspect-ratio:16/9;
+  background:#000; border-radius:.5rem; overflow:hidden;
+}
+.book-media video,
+.book-media img{
+  width:100%; height:100%;
+  display:block; object-fit:cover; background:#000;
+}
+
+/* Right column + blue buttons */
+.book-side{ grid-column:2; }
+.book-actions{ display:flex; flex-direction:column; gap:.5rem; margin-top:.5rem; }
+.book-actions .btn{
+  display:inline-block; text-align:center;
+  padding:.55rem .9rem; border-radius:.6rem;
+  font-weight:600; text-decoration:none;
+  background:#2563eb; color:#fff; border:1px solid rgba(0,0,0,.06);
+}
+.book-actions .btn:hover{ background:#1e4fd3; }
+
+/* Mobile */
+@media (max-width: 900px){
+  .book-card{ grid-template-columns: 1fr; max-width: 720px; }
+  .book-side{ grid-column:1; }
+}
+</style>
+  <link rel="stylesheet" href="/assets/override.css?cb=20251022211125">
+  
+  <script src="assets/name-badge-fixed.js" defer></script>
+</head>
+<body>
+  <!-- keep your existing header/navbar -->
+  <!--#include virtual="/assets/header.html" -->
+  <header>
+    <div class="container">
+      <nav>
+    
+        <a href="/"><strong\1HOME\2/strong>HOME</a>
+        <a href="/books.html" aria-current="page">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container books-page">
+    <h1>Books</h1>
+
+    <!-- SNIPPY (wide) -->
+    <article id="snippy-card" class="book-card">
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/snippy.jpg">
+          <source src="/assets/videos/snippy.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-side">
+        <h2>Snippy</h2>
+        <p>Animated preview.</p>
+        <div class="book-actions">
+          <a class="btn" href="https://www.amazon.com/dp/B0F88SPFDS" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SOCORRO (small) -->
+    <article id="socorro-card" class="book-card">
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/socorro.jpg">
+          <source src="/assets/videos/socorro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-side">
+        <h2>Socorro UFO</h2>
+        <p>Classic 1964 case: blue flame; red inverted “V” with three bars.</p>
+        <div class="book-actions">
+          <a class="btn" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- GREMLINS (normal) -->
+    <article id="gremlins-card" class="book-card">
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/gremlins.jpg">
+          <source src="/assets/videos/gremlins.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-side">
+        <h2>Gremlins</h2>
+        <div class="book-actions">
+          <a class="btn" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- COSMIC (image) -->
+    <article id="cosmic-card" class="book-card">
+      <div class="book-media">
+        <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover">
+      </div>
+      <div class="book-side">
+        <h2>Cosmic Secrets</h2>
+        <p>Coming soon. Get notified when it launches.</p>
+        <div class="book-actions">
+          <a class="btn" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+</body>
+</html>
