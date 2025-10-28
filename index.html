@@ -83,6 +83,43 @@
   
 
 <link rel="stylesheet" href="/assets/zz-final-override.css?cb=1761627204">
+
+  <style id="kill-header-photo-">
+    /* Nuke ALL header backgrounds (any element or pseudo inside header) */
+    body.home-page header,
+    body.home-page .site-header,
+    body.home-page .contact-header,
+    body.home-page header *,
+    body.home-page .site-header *,
+    body.home-page .contact-header *{
+      background: none !important;
+      background-image: none !important;
+      background-size: initial !important;
+      background-repeat: no-repeat !important;
+      background-position: initial !important;
+    }
+    body.home-page header::before,
+    body.home-page header::after,
+    body.home-page .site-header::before,
+    body.home-page .site-header::after,
+    body.home-page .contact-header::before,
+    body.home-page .contact-header::after,
+    body.home-page header *::before,
+    body.home-page header *::after{
+      content: none !important;
+      background: none !important;
+      background-image: none !important;
+      display: none !important;
+      box-shadow: none !important;
+    }
+    /* Keep only the tiny avatar in header, hide any other header <img> */
+    body.home-page header img:not(.owner-avatar){ display:none !important; }
+    /* Ensure header height collapses naturally */
+    body.home-page header, body.home-page .site-header, body.home-page .contact-header{
+      min-height:auto !important; height:auto !important; overflow:visible !important;
+    }
+  </style>
+  
 </head>
 <body class="home-page home-page"><header class="contact-header">
     <div class="container">
@@ -98,6 +135,18 @@
       </a>
     </div>
   </header>
+
+  <script id="scrub-header-images" defer>
+    try{
+      var hdr = document.querySelector("header");
+      if(hdr){
+        Array.from(hdr.querySelectorAll("img:not(.owner-avatar)")).forEach(function(im){
+          if (im.naturalWidth>300 || im.width>300 || im.height>300) im.remove();
+        });
+      }
+    }catch(e){}
+  </script>
+  
 <main class="home-main">
 
 <section class="hero">
