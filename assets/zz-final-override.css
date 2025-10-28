@@ -1,0 +1,38 @@
+/* FINAL override (must load last) */
+header, .site-header, .contact-header{
+  background:none !important;
+  background-image:none !important;
+  min-height:auto !important;
+}
+header::before, header::after,
+.site-header::before, .site-header::after,
+.contact-header::before, .contact-header::after{
+  content:none !important;
+  background:none !important;
+  background-image:none !important;
+  box-shadow:none !important;
+  display:none !important;
+}
+/* keep small avatar, hide other header imgs if injected */
+header img:not(.owner-avatar),
+.site-header img:not(.owner-avatar),
+.contact-header img:not(.owner-avatar){
+  display:none !important;
+}
+
+/* safety: cap the home hero again */
+.home-hero-img{
+  max-width:420px !important;
+  width:100% !important;
+  height:auto !important;
+  display:block !important;
+  margin:28px auto 10px !important;
+  border-radius:8px !important;
+}
+
+/* safety: main width */
+.home-main, body.home-page main{
+  max-width:1100px !important;
+  margin:0 auto !important;
+  padding:20px !important;
+}
