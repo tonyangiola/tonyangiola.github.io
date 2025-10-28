@@ -12,8 +12,16 @@
 </head>
 </head>
 <body>
-<header class="site-header" role="banner">
+  <header class="site-header" role="banner">
   <div class="nav">
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/books.html">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
     <button class="hamburger" aria-label="Menu" aria-controls="mobile-menu" aria-expanded="false">
       <span class="hamburger-bar"></span>
       <span class="hamburger-bar"></span>
@@ -25,9 +33,17 @@
     </a>
   </div>
 
-  </header>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Primary">
+    <a href="/">Home</a>
+    <a href="/books.html">Books</a>
+    <a href="/bio.html">Bio</a>
+    <a href="/newsletter.html">Newsletter</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+</header>
 
 
+  
   <main class="container">
     <section class="bio-card">
       <h1>About Tony Angiola</h1>
