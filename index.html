@@ -1,7 +1,31 @@
 <!doctype html>
 <head>
 <link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
+<style id="home-cards">
+/* Home cards: spacing + visible borders; does not touch header/nav */
+main > section.grid.grid-2{display:grid !important;gap:28px !important;align-items:start !important;}
+main > section.grid.grid-2 > .card{
+  padding:1rem !important;
+  background:rgba(255,255,255,.03) !important;
+  border:1px solid rgba(255,255,255,.20) !important;
+  border-radius:12px !important;
+  box-shadow:0 2px 10px rgba(0,0,0,.25) !important;
+}
+section.hero{margin-bottom:16px !important;}
+</style>
   <link rel="stylesheet" href="/assets/override.css?v=cards-20251031-220434">
+<style id="home-cards">
+/* Home cards: spacing + visible borders; does not touch header/nav */
+main > section.grid.grid-2{display:grid !important;gap:28px !important;align-items:start !important;}
+main > section.grid.grid-2 > .card{
+  padding:1rem !important;
+  background:rgba(255,255,255,.03) !important;
+  border:1px solid rgba(255,255,255,.20) !important;
+  border-radius:12px !important;
+  box-shadow:0 2px 10px rgba(0,0,0,.25) !important;
+}
+section.hero{margin-bottom:16px !important;}
+</style>
 <style id="home-gap">
 html[data-home="1"] body, html[data-home="1"] body * { scroll-padding-top:0 !important; }
 html[data-home="1"] body main, html[data-home="1"] body .site-main, html[data-home="1"] body .container { margin-top:0 !important; padding-top:0 !important; }
@@ -38,7 +62,7 @@ html[data-home="1"] body main > *:first-child, html[data-home="1"] body .contain
 
   
 
-  <main class="container"  style="${1}0!important;${1}0!important;;margin-top:0!important;padding-top:0!important">
+  <main class="container"  style="0!important;0!important;;margin-top:0!important;padding-top:0!important">
     <section class="hero">
       <h1>Author. Researcher. Explorer of High Strangeness.</h1>
       <p class="small">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley,
@@ -61,7 +85,7 @@ html[data-home="1"] body main > *:first-child, html[data-home="1"] body .contain
       </div>
     </section>
 <section class="author-photo" style="text-align:center; margin:2em 0;">
-  <img src="/images/tony.jpg" alt="Tony Angiola" style="width:240px; border-radius:50%; box-shadow:0 0 12px rgba(0,0,0,.25);">>
+  <img src="/images/tony.jpg" alt="Tony Angiola" style="width:240px; border-radius:50%; box-shadow:0 0 12px rgba(0,0,0,.25);">
   <h2 style="margin-top:1em;font-weight:600;">Tony Angiola</h2>
 </section>
   </main>
