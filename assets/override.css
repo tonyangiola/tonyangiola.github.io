@@ -133,3 +133,40 @@ body.home-page .site-main section.panel {
     margin-bottom: 16px !important;
   }
 }
+/* ===== Home: force gap between the two top cards (2025-10-31) ===== */
+body.home-page .site-main { --home-gap: 24px; }
+
+/* 1) If the row is a grid, enforce column gap */
+body.home-page .site-main .grid,
+body.home-page .site-main .row,
+body.home-page .site-main .columns,
+body.home-page .site-main .cards,
+body.home-page .site-main .card-grid,
+body.home-page .site-main .panel-grid {
+  column-gap: var(--home-gap) !important;
+  gap: var(--home-gap) !important;
+}
+
+/* 2) If the row is flex (common case), space children */
+body.home-page .site-main [style*="display:flex"] > * + *,
+body.home-page .site-main .row > * + *,
+body.home-page .site-main .columns > * + *,
+body.home-page .site-main .cards > * + *,
+body.home-page .site-main .card-grid > * + * {
+  margin-left: var(--home-gap) !important;
+}
+
+/* 3) Safety: add bottom margin on each card, so the avatar doesn’t touch them */
+body.home-page .site-main .card,
+body.home-page .site-main .panel,
+body.home-page .site-main .box,
+body.home-page .site-main .feature,
+body.home-page .site-main section.card,
+body.home-page .site-main section.panel {
+  margin-bottom: var(--home-gap) !important;
+}
+
+/* 4) Narrow screens: smaller gap to avoid wrap issues */
+@media (max-width: 768px){
+  body.home-page .site-main { --home-gap: 16px; }
+}
