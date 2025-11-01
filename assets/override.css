@@ -102,3 +102,28 @@ body.home-page .hero + *{
 }
 /* Belt-and-suspenders: kill any spacer after hero */
 body.home-page .after-hero-spacer{display:none!important;height:0!important;margin:0!important;padding:0!important;}
+/* === FINAL GAP NUKE (2025-10-31) === */
+body.home-page main,
+body.home-page .site-main,
+body.home-page .container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.home-page .hero {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove any margins inside hero (h1, p, etc.) */
+body.home-page .hero > * {
+  margin-top: 0 !important;
+  margin-bottom: 0.25rem !important; /* small breathing room */
+  padding: 0 !important;
+}
+
+/* Remove top margin from the first real element after hero as extra safety */
+body.home-page main > *:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
