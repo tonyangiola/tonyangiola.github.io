@@ -348,3 +348,18 @@ body.home-page .site-main .container > section.grid.grid-2 > .card{
     margin-right: 8px !important;
   }
 }
+
+/* === FINAL HOME CARD GUTTER (do not remove) — 2025-11-01 === */
+@media (min-width:720px){
+  body.home-page .site-main .container > section.grid.grid-2#home-cards{
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+    column-gap: 40px !important;   /* adjust 32–48 if you want */
+    row-gap: 28px !important;
+    align-items: start !important;
+  }
+  body.home-page .site-main .container > section.grid.grid-2#home-cards > *{
+    margin: 0 !important;          /* neutralize child margins */
+    box-sizing: border-box !important;
+  }
+}
