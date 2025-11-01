@@ -55,3 +55,27 @@ body.home-page main > section.card{
     margin:0 0 24px 0 !important;
   }
 }
+/* ===== Home hero→cards gap killer (2025-10-31b) ===== */
+
+/* Reduce hero bottom spacing */
+body.home-page .hero{
+  margin-bottom: 6px !important;
+  padding-bottom: .25rem !important;
+}
+
+/* Neutralize any container-level sibling margin that adds space after hero */
+body.home-page .site-main .container > .hero + *{
+  margin-top: 6px !important;
+}
+
+/* If the first content block is a grid/wrapper/card, make sure it starts tight */
+body.home-page .site-main .container > .grid:first-of-type,
+body.home-page .site-main .container > .grid-2:first-of-type,
+body.home-page .site-main .container > .cards:first-of-type,
+body.home-page .site-main .container > .card-grid:first-of-type,
+body.home-page .site-main .container > section.card:first-of-type{
+  margin-top: 6px !important;
+}
+
+/* Some themes add generic spacing to *every* container child; clamp it on Home */
+body.home-page .site-main .container > *:first-child{ margin-top: 0 !important; }
