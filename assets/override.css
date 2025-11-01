@@ -212,3 +212,29 @@ body.home-page .site-main { --home-gap: 36px; }
 @media (max-width: 768px){
   body.home-page .site-main { --home-gap: 20px; }
 }
+/* 2025-10-31 — FORCE spacing between the two Home cards */
+body.home-page .site-main .container .grid,
+body.home-page .site-main .grid,
+body.home-page .site-main .cards,
+body.home-page .home-panels,
+body.home-page main .grid {
+  gap: 44px !important;
+  column-gap: 44px !important;
+  row-gap: 28px !important;
+}
+/* Safety: ensure no negative margins collapse the gutter */
+body.home-page .site-main .grid > *,
+body.home-page .home-panels > * {
+  margin: 0 !important;
+}
+@media (max-width: 768px){
+  body.home-page .site-main .container .grid,
+  body.home-page .site-main .grid,
+  body.home-page .site-main .cards,
+  body.home-page .home-panels,
+  body.home-page main .grid {
+    gap: 24px !important;
+    column-gap: 24px !important;
+    row-gap: 20px !important;
+  }
+}
