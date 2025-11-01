@@ -29,3 +29,29 @@ body.home-page main > section.card{
     margin:0 0 24px 0 !important;
   }
 }
+/* ===== Home hero → cards spacing fix (2025-10-31) ===== */
+body.home-page .hero{
+  margin-bottom: 8px !important;
+  padding-bottom: .5rem !important;
+}
+
+/* If any template adds sibling margin between sections, neutralize it just for the first card row */
+body.home-page main > section.card:first-of-type{
+  margin-top: 8px !important;     /* was too large */
+}
+
+/* keep the two-card spacing you wanted */
+body.home-page main > section.card{
+  display:inline-block !important;
+  vertical-align:top !important;
+  width:calc(50% - 32px) !important;
+  margin:0 16px 28px 16px !important;
+  box-sizing:border-box !important;
+}
+@media (max-width: 840px){
+  body.home-page main > section.card{
+    display:block !important;
+    width:100% !important;
+    margin:0 0 24px 0 !important;
+  }
+}
