@@ -1,29 +1,16 @@
-/* ==== Home dark theme + spacing (2025-10-31) ==== */
-
-/* Dark palette */
-html, body { background:#0B0F1A !important; color:#e5e7eb !important; }
-a { color:#93c5fd !important; } a:hover { color:#bfdbfe !important; }
-header, footer { border-color: rgba(255,255,255,.08) !important; }
-
-/* Card styling on dark */
-.card {
-  background: rgba(255,255,255,.03) !important;
-  border: 1px solid rgba(255,255,255,.12) !important;
-  border-radius: 12px !important;
+:root{
+  --nav-bg:#0B0F1A; --page-bg:#0B0F1A;
+  --text:#e5e7eb; --text-strong:#f1f5f9; --muted:#cbd5e1; --accent:#60a5fa;
 }
-
-/* Bigger gap between the two Home cards (works for grid/flex) */
-body.home-page .grid,
-body.home-page .grid-2,
-body.home-page .cards-grid,
-body.home-page .card-grid {
-  gap: 56px !important;
-  row-gap: 56px !important;
-  column-gap: 56px !important;
-}
-
-/* Ensure we DO NOT force tiny/narrow cards */
-.book-card, .book, .card, .video-card {
-  max-width: none !important;
-  margin: initial !important;
+html,body{background:var(--page-bg)!important;color:var(--text)!important;}
+.site-header,header{background:var(--nav-bg)!important;border-color:rgba(255,255,255,.08)!important;}
+header a,nav a{color:var(--text)!important;} header a:hover,nav a:hover{color:var(--accent)!important;}
+body.home-page .hero, body.home-page .hero *{color:var(--text-strong)!important;opacity:1!important;visibility:visible!important;filter:none!important;}
+.small{color:var(--muted)!important;}
+.card{background:rgba(255,255,255,.03)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:12px!important;color:var(--text)!important;}
+a{color:var(--accent)!important;} a:hover{color:#93c5fd!important;}
+.card .actions a,.card button{background:#1E40AF!important;color:#fff!important;border:none!important;}
+.card .actions a:hover,.card button:hover{filter:brightness(1.12)!important;}
+body.home-page .grid, body.home-page .grid-2, body.home-page .cards-grid, body.home-page .card-grid{
+  gap:56px!important; row-gap:56px!important; column-gap:56px!important;
 }
