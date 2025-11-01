@@ -1,31 +1,7 @@
 <!doctype html>
 <head>
-<link rel="stylesheet" href="/assets/style.css?v=20251029-153537"><style id="home-cards">
-/* Home cards: spacing + visible borders; does not touch header/nav */
-main > section.grid.grid-2{display:grid !important;gap:28px !important;align-items:start !important;}
-main > section.grid.grid-2 > .card{ padding:1rem !important; background:rgba(255,255,255,.03) !important; border:1px solid rgba(255,255,255,.20) !important; border-radius:12px !important; box-shadow:0 2px 10px rgba(0,0,0,.25) !important;
-}
-section.hero{margin-bottom:16px !important;}
-</style> <link rel="stylesheet" href="/assets/override.css?v=navhover-20251031-223151">
-<style id="nav-home-fix">
-/* Home-only: ensure only .active is lit; neutralize any URL/nth-child pills (e.g., Bio) */
-header .container nav a:not(.active){
-  background: transparent !important; border-color: transparent !important; font-weight: 600 !important;
-}
-header .container nav a[href="/bio.html"]:not(.active){
-  background: transparent !important; border-color: transparent !important;
-}
-header .container nav a:hover{
-  background: rgba(255,255,255,.08) !important; border-color: rgba(255,255,255,.15) !important;
-}
-</style>
-<style id="home-cards">
-/* Home cards: spacing + visible borders; does not touch header/nav */
-main > section.grid.grid-2{display:grid !important;gap:28px !important;align-items:start !important;}
-main > section.grid.grid-2 > .card{ padding:1rem !important; background:rgba(255,255,255,.03) !important; border:1px solid rgba(255,255,255,.20) !important; border-radius:12px !important; box-shadow:0 2px 10px rgba(0,0,0,.25) !important;
-}
-section.hero{margin-bottom:16px !important;}
-</style>
+<link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
+  <link rel="stylesheet" href="/assets/override.css?v=cards-20251031-214552">
 <style id="home-gap">
 html[data-home="1"] body, html[data-home="1"] body * { scroll-padding-top:0 !important; }
 html[data-home="1"] body main, html[data-home="1"] body .site-main, html[data-home="1"] body .container { margin-top:0 !important; padding-top:0 !important; }
@@ -37,77 +13,64 @@ html[data-home="1"] body main > *:first-child, html[data-home="1"] body .contain
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tony Angiola — Author</title>
-<!-- deploy-marker: init --> <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml"> <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb"> <script src="assets/name-badge-fixed.js" defer></script>
+<!-- deploy-marker: init -->
+
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
+  
+  <script src="assets/name-badge-fixed.js" defer></script>
 <style id="home-gap-final">body.home-page .grid,body.home-page .grid-2,body.home-page .cards-grid,body.home-page .card-grid{gap:56px !important;row-gap:56px !important;column-gap:56px !important;}</style>
-<style id="nav-home-fix-final">
-/* Home-only: only .active is lit; Bio (and others) neutral unless active */
-body.home-page header .container nav a:not(.active){
-  background: transparent !important;
-  border-color: transparent !important;
-  font-weight: 600 !important; /* keeps widths stable */
-  box-shadow: none !important;
-}
-body.home-page header .container nav a.active{
-  background: rgba(255,255,255,.08) !important;
-  border-color: rgba(255,255,255,.15) !important;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.02) inset !important;
-}
-/* Extra specificity to kill hard-coded Bio rules */
-body.home-page header .container nav a[href="/bio.html"]:not(.active){
-  background: transparent !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-}
-</style>
-<style id="nav-hover-final">
-/* No underline on hover/focus/active; use color/pill only — header nav only */
-header .container nav a,
-header .container nav a:link,
-header .container nav a:visited,
-header .container nav a:hover,
-header .container nav a:focus,
-header .container nav a:active{
-  text-decoration: none !important;
-}
-header .container nav a:hover,
-header .container nav a:focus{
-  background: rgba(255,255,255,.08) !important;
-  border-color: rgba(255,255,255,.15) !important;
-}
-</style><style id="nav-hover-newsletter-final">
-/* Home-only: nuke underline for Newsletter in ALL states; leave pill/hover color intact. */
-body.home-page header .container nav a[href="/newsletter.html"],
-body.home-page header .container nav a[href="/newsletter.html"]:link,
-body.home-page header .container nav a[href="/newsletter.html"]:visited,
-body.home-page header .container nav a[href="/newsletter.html"]:hover,
-body.home-page header .container nav a[href="/newsletter.html"]:focus,
-body.home-page header .container nav a[href="/newsletter.html"]:active,
-body.home-page header .container nav a[href="/newsletter.html"]:any-link,
-body.home-page header .container nav a[href="/newsletter.html"]:is(:link,:visited,:hover,:focus,:active){
-  text-decoration: none !important;
-  text-decoration-line: none !important;
-  border-bottom: none !important;           /* in case underline was faked with border */
-  box-shadow: none !important;               /* in case underline is via inset shadow */
-}
-</style>
-  <style id="home-cards-final">
-    /* FINAL: separate Home cards (wins all) */
-    body.home-page .grid.grid-2 {
-      display: grid !important;
-      gap: 24px !important;       /* space between cards */
-      grid-auto-rows: minmax(min-content, auto);
-    }
-    body.home-page .grid.grid-2 > * {
-      margin: 0 !important;       /* kill collapsing/negative margins */
-    }
-    body.home-page .card {
-      margin: 0 !important;       /* belt & suspenders */
-      display: block !important;
-    }
-  </style>
 </head>
-<body class="home-page" style="background:#0B0F1A!important;color:#e5e7eb!important;" data-home="1"> <header class="site-header" style="position:relative;min-height:66px"> <div class="container"> <nav style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;"> <a href="/" class="active">HOME</a> <a href="/books.html">Books</a> <a href="/bio.html">Bio</a> <a href="/newsletter.html" style="text-decoration:none!important;border-bottom:0!important;box-shadow:none!important;">Newsletter</a> <a href="/contact.html">Contact</a> </nav> <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home" style="position:absolute;right:16px;top:12px;display:inline-flex!important;align-items:center;z-index:1002;opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important;"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola" style="display:block;width:40px;height:40px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);"/></a></div>
-</header> <main class="container" style="0!important;0!important;;margin-top:0!important;padding-top:0!important"> <section class="hero" style="margin-bottom:16px;"> <h1>Author. Researcher. Explorer of High Strangeness.</h1> <p class="small">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley, and updates on current projects.</p> <p><a class="btn" href="/newsletter.html" style="text-decoration:none!important;border-bottom:0!important;box-shadow:none!important;">Join the Newsletter</a></p> </section> <section class="grid grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;"> <div class="card"> <h2>Current Project: <em>Cosmic Secrets</em></h2> <p>A deep dive into disclosure, historical cases, and propulsion hypotheses—told straight, documented, and BS-resistant.</p> <p><a href="/books.html">See books →</a></p> </div> <div class="card"> <h2>New Articles</h2> <ul class="clean"> <li><a href="#">Socorro Revisited — Signatures in the Dust (coming soon)</a></li> <li><a href="#">MHD & “Blue Flame” Notes (coming soon)</a></li> </ul> </div> </section>
-<section class="author-photo" style="text-align:center; margin:2em 0;"> <img src="/images/tony.jpg" alt="Tony Angiola" style="width:240px; border-radius:50%; box-shadow:0 0 12px rgba(0,0,0,.25);"> <h2 style="margin-top:1em;font-weight:600;">Tony Angiola</h2>
-</section> </main> <footer> <div class="container"> <div>© <span id="y"></span> Tony Angiola. All rights reserved.</div> <div class="small">This site is a simple GitHub Pages static site.</div> </div> <script>document.getElementById('y').textContent = new Date().getFullYear();</script> </footer>
+<body class="home-page" style="background:#0B0F1A!important;color:#e5e7eb!important;" data-home="1">
+    <header class="site-header" style="position:relative;min-height:66px">
+  <div class="container">
+    <nav style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;">
+      <a href="/" class="active">HOME</a>
+      <a href="/books.html">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home" style="position:absolute;right:16px;top:12px;display:inline-flex!important;align-items:center;z-index:1002;opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important;"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola" style="display:block;width:40px;height:40px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);"/></a></div>
+</header>
+
+
+
+  
+
+  <main class="container"  style="${1}0!important;${1}0!important;;margin-top:0!important;padding-top:0!important">
+    <section class="hero">
+      <h1>Author. Researcher. Explorer of High Strangeness.</h1>
+      <p class="small">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley,
+      and updates on current projects.</p>
+      <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
+    </section>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h2>Current Project: <em>Cosmic Secrets</em></h2>
+        <p>A deep dive into disclosure, historical cases, and propulsion hypotheses—told straight, documented, and BS-resistant.</p>
+        <p><a href="/books.html">See books →</a></p>
+      </div>
+      <div class="card">
+        <h2>New Articles</h2>
+        <ul class="clean">
+          <li><a href="#">Socorro Revisited — Signatures in the Dust (coming soon)</a></li>
+          <li><a href="#">MHD & “Blue Flame” Notes (coming soon)</a></li>
+        </ul>
+      </div>
+    </section>
+<section class="author-photo" style="text-align:center; margin:2em 0;">
+  <img src="/images/tony.jpg" alt="Tony Angiola" style="width:240px; border-radius:50%; box-shadow:0 0 12px rgba(0,0,0,.25);">>
+  <h2 style="margin-top:1em;font-weight:600;">Tony Angiola</h2>
+</section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="y"></span> Tony Angiola. All rights reserved.</div>
+      <div class="small">This site is a simple GitHub Pages static site.</div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
 </body>
