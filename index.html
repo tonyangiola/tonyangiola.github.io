@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
 <link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
-  <link rel="stylesheet" href="/assets/override.css?v=badgefix-20251031-212917">
+  <link rel="stylesheet" href="/assets/override.css?v=homebadge-20251031-213034">
 <style id="home-gap">
 html[data-home="1"] body, html[data-home="1"] body * { scroll-padding-top:0 !important; }
 html[data-home="1"] body main, html[data-home="1"] body .site-main, html[data-home="1"] body .container { margin-top:0 !important; padding-top:0 !important; }
@@ -22,18 +22,22 @@ html[data-home="1"] body main > *:first-child, html[data-home="1"] body .contain
 <style id="home-gap-final">body.home-page .grid,body.home-page .grid-2,body.home-page .cards-grid,body.home-page .card-grid{gap:56px !important;row-gap:56px !important;column-gap:56px !important;}</style>
 </head>
 <body class="home-page" style="background:#0B0F1A!important;color:#e5e7eb!important;" data-home="1">
-  <header>
-  <div class="container">
-    <nav>
-    
-      <a href="/"><strong\1HOME\2/strong>HOME</a>
-      <a href="/books.html">Books</a>
-      <a href="/bio.html">Bio</a>
-      <a href="/newsletter.html">Newsletter</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+    <header class="contact-header">
+    <div class="container">
+      <nav>
+        <a href="/" class="active">HOME</a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html" class="active" aria-current="page">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
+        <img class="owner-avatar" src="/assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
+      </a>
+    </div>
+  </header>
+
 
   
 
