@@ -6,80 +6,11 @@
   <title>Tony Angiola — Author</title>
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
-  <style>
-    /* keep the dark background and ensure content shows */
-    html, body { background:#0B0F1A; }
-    .site-main, main { display:block; opacity:1; visibility:visible; }
-  </style>
 
-<style id="hero-bright-">
-  /* Brighten hero paragraph */
-  html body.home-page .hero p.small{
-    color:#eaf2ff !important;
-  }
-  /* Brighten the CTA button/link */
-  html body.home-page .hero a.btn,
-  html body.home-page .hero a.btn:link,
-  html body.home-page .hero a.btn:visited{
-    background:#2563eb !important;
-    border:1px solid #2563eb !important;
-    color:#ffffff !important;
-    box-shadow:0 6px 18px rgba(0,0,0,.25) !important;
-    text-decoration:none !important;
-  }
-  html body.home-page .hero a.btn:hover{
-    background:#3b82f6 !important;
-    border-color:#3b82f6 !important;
-    transform:translateY(-1px);
-  }
-</style>
   <link rel="stylesheet" href="/assets/style.css?v=homegap-20251030-122131">
   <link rel="stylesheet" href="/assets/override.css">
 
-<style id="home-cards-hotfix-20251030-115433">
-  /* Force a real two-column grid with a gap */
-  html body.home-page .grid.grid-2{
-    display:grid !important;
-    grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
-    gap: 1.25rem !important;
-    align-items:start !important;
-    justify-items:stretch !important;
-    margin: 0 auto !important;
-  }
-  /* Make sure each card is a clean box (no floats/overlaps) */
-  html body.home-page .grid.grid-2 .card{
-    position:relative !important;
-    float:none !important;
-    clear:none !important;
-    margin:0 !important;
-    height:auto !important;
-    min-height:0 !important;
-    overflow:hidden !important;
-  }
-  /* Nuke any decorative pseudo dividers that slice between cards */
-  html body.home-page .grid.grid-2 .card::before,
-  html body.home-page .grid.grid-2 .card::after{
-    content:none !important;
-  }
-  /* Mobile: stack */
-   (max-width: 820px){
-    html body.home-page .grid.grid-2{ grid-template-columns: 1fr !important; }
-  }
-</style>
 
-<style id="home-card-divider-hotfix-">
-  /* Remove any middle divider or pseudo-border between cards */
-  html body.home-page .grid.grid-2::before,
-  html body.home-page .grid.grid-2::after,
-  html body.home-page .grid.grid-2 .card::before,
-  html body.home-page .grid.grid-2 .card::after {
-    content:none !important;
-    background:none !important;
-    border:0 !important;
-    box-shadow:none !important;
-    display:none !important;
-  }
-</style>
 </head>
 
 

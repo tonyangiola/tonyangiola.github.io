@@ -87,3 +87,49 @@ body.home-page .site-main section.panel {
     margin-bottom: 16px !important;
   }
 }
+/* ===== Home card spacing (unlock) — 2025-10-31 ===== */
+body.home-page .site-main .container > * + * { margin-top: 24px !important; }
+
+body.home-page .site-main .grid,
+body.home-page .site-main .row,
+body.home-page .site-main .columns,
+body.home-page .site-main .cards,
+body.home-page .site-main .card-grid,
+body.home-page .site-main .panel-grid {
+  gap: 24px !important;
+  row-gap: 24px !important;
+  column-gap: 24px !important;
+}
+
+body.home-page .site-main .card,
+body.home-page .site-main .panel,
+body.home-page .site-main .box,
+body.home-page .site-main .tile,
+body.home-page .site-main .feature,
+body.home-page .site-main section.card,
+body.home-page .site-main section.panel {
+  margin-bottom: 24px !important;
+}
+
+@media (max-width: 768px){
+  body.home-page .site-main .container > * + * { margin-top: 16px !important; }
+  body.home-page .site-main .grid,
+  body.home-page .site-main .row,
+  body.home-page .site-main .columns,
+  body.home-page .site-main .cards,
+  body.home-page .site-main .card-grid,
+  body.home-page .site-main .panel-grid {
+    gap: 16px !important;
+    row-gap: 16px !important;
+    column-gap: 16px !important;
+  }
+  body.home-page .site-main .card,
+  body.home-page .site-main .panel,
+  body.home-page .site-main .box,
+  body.home-page .site-main .tile,
+  body.home-page .site-main .feature,
+  body.home-page .site-main section.card,
+  body.home-page .site-main section.panel {
+    margin-bottom: 16px !important;
+  }
+}
