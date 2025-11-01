@@ -14,3 +14,18 @@ a{color:var(--accent)!important;} a:hover{color:#93c5fd!important;}
 body.home-page .grid, body.home-page .grid-2, body.home-page .cards-grid, body.home-page .card-grid{
   gap:56px!important; row-gap:56px!important; column-gap:56px!important;
 }
+/* ===== Home card spacing (direct, no parent dependency) ===== */
+body.home-page main > section.card{
+  display:inline-block !important;
+  vertical-align:top !important;
+  width:calc(50% - 32px) !important;      /* two columns with room for margins */
+  margin:0 16px 28px 16px !important;     /* <-- horizontal room between cards */
+  box-sizing:border-box !important;
+}
+@media (max-width: 840px){
+  body.home-page main > section.card{
+    display:block !important;
+    width:100% !important;
+    margin:0 0 24px 0 !important;
+  }
+}
