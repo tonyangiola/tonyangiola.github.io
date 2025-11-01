@@ -90,30 +90,21 @@ body.home-page header .container nav a[href="/newsletter.html"]:is(:link,:visite
   box-shadow: none !important;               /* in case underline is via inset shadow */
 }
 </style>
-<style id="home-cards-final">
-/* Home-only: card separation + visible borders; does not touch navbar */
-body.home-page main > section.grid.grid-2{
-  display:grid !important;
-  grid-template-columns:1fr 1fr !important;
-  gap:28px !important;              /* space between the two cards */
-  align-items:start !important;
-}
-body.home-page main > section.grid.grid-2 > .card{
-  padding:1rem !important;
-  background:rgba(255,255,255,.03) !important;
-  border:1px solid rgba(255,255,255,.22) !important; /* clear line on dark */
-  border-radius:12px !important;
-  box-shadow:0 2px 10px rgba(0,0,0,.25) !important;  /* subtle lift */
-}
-/* a little space below the hero so it doesn’t kiss the cards */
-body.home-page section.hero{ margin-bottom:16px !important; }
- (max-width:720px){
-  body.home-page main > section.grid.grid-2{
-    grid-template-columns:1fr !important;
-    gap:20px !important;
-  }
-}
-</style>
+  <style id="home-cards-final">
+    /* FINAL: separate Home cards (wins all) */
+    body.home-page .grid.grid-2 {
+      display: grid !important;
+      gap: 24px !important;       /* space between cards */
+      grid-auto-rows: minmax(min-content, auto);
+    }
+    body.home-page .grid.grid-2 > * {
+      margin: 0 !important;       /* kill collapsing/negative margins */
+    }
+    body.home-page .card {
+      margin: 0 !important;       /* belt & suspenders */
+      display: block !important;
+    }
+  </style>
 </head>
 <body class="home-page" style="background:#0B0F1A!important;color:#e5e7eb!important;" data-home="1"> <header class="site-header" style="position:relative;min-height:66px"> <div class="container"> <nav style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;"> <a href="/" class="active">HOME</a> <a href="/books.html">Books</a> <a href="/bio.html">Bio</a> <a href="/newsletter.html" style="text-decoration:none!important;border-bottom:0!important;box-shadow:none!important;">Newsletter</a> <a href="/contact.html">Contact</a> </nav> <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home" style="position:absolute;right:16px;top:12px;display:inline-flex!important;align-items:center;z-index:1002;opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important;"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola" style="display:block;width:40px;height:40px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);"/></a></div>
 </header> <main class="container" style="0!important;0!important;;margin-top:0!important;padding-top:0!important"> <section class="hero" style="margin-bottom:16px;"> <h1>Author. Researcher. Explorer of High Strangeness.</h1> <p class="small">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley, and updates on current projects.</p> <p><a class="btn" href="/newsletter.html" style="text-decoration:none!important;border-bottom:0!important;box-shadow:none!important;">Join the Newsletter</a></p> </section> <section class="grid grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;"> <div class="card"> <h2>Current Project: <em>Cosmic Secrets</em></h2> <p>A deep dive into disclosure, historical cases, and propulsion hypotheses—told straight, documented, and BS-resistant.</p> <p><a href="/books.html">See books →</a></p> </div> <div class="card"> <h2>New Articles</h2> <ul class="clean"> <li><a href="#">Socorro Revisited — Signatures in the Dust (coming soon)</a></li> <li><a href="#">MHD & “Blue Flame” Notes (coming soon)</a></li> </ul> </div> </section>
