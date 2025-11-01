@@ -178,3 +178,23 @@ body.home-page .container > *:first-child {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+/* === Home: card spacing (2025-10-31) === */
+body.home-page .cards,
+body.home-page .card-grid,
+body.home-page .books-grid,
+body.home-page .home-grid {
+  display: grid !important;
+  gap: 1.25rem !important;          /* space between cards */
+}
+
+/* If not using CSS grid, ensure vertical spacing between individual cards */
+body.home-page .card,
+body.home-page .home-card,
+body.home-page .book-card {
+  margin-bottom: 1.25rem !important; /* fallback spacing */
+}
+
+/* Ensure inner content doesn’t collapse margins */
+body.home-page .card > *:first-child,
+body.home-page .home-card > *:first-child,
+body.home-page .book-card > *:first-child { margin-top: 0 !important; }
