@@ -271,3 +271,19 @@ body.home-page main .grid > * { margin: 0 !important; }
   body.home-page .site-main .container,
   body.home-page main { --home-gap: 28px; }
 }
+
+/* ===== Home cards spacing fallback (2025-10-31) ===== */
+@media (min-width: 800px){
+  body.home-page .site-main .container .grid,
+  body.home-page .site-main .container .cards,
+  body.home-page .site-main .container .card-grid,
+  body.home-page .site-main .container .panel-grid {
+    gap: 32px !important;
+    column-gap: 32px !important;
+    row-gap: 24px !important;
+  }
+  /* If the parent is NOT a known grid container, gently space adjacent .card siblings */
+  body.home-page .site-main .container .card + .card {
+    margin-left: 32px !important;
+  }
+}
