@@ -7489,3 +7489,14 @@ body.home-page main .container > .card:last-child {
 <!-- deploy-marker 20251031-201314 -->
 <!-- deploy-marker 20251031-201453 -->
 <!-- deploy-marker 20251031-202421 -->
+/* === Home cards spacing (2025-10-31) === */
+body.home-page .home-cards,
+body.home-page .cards,
+body.home-page .grid,
+body.home-page [class*="grid"],
+body.home-page .highlight .cards,
+body.home-page main .cards-row {
+  gap: 64px !important;
+  column-gap: 64px !important;
+  row-gap: 48px !important;
+}
