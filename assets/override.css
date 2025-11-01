@@ -287,3 +287,12 @@ body.home-page main .grid > * { margin: 0 !important; }
     margin-left: 32px !important;
   }
 }
+/* HOME card gap override */
+body.home-page .site-main .grid,
+body.home-page .site-main .cards,
+body.home-page .site-main .card-grid,
+body.home-page .site-main .columns {
+  gap: 32px !important;
+  row-gap: 32px !important;
+  column-gap: 32px !important;
+}

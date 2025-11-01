@@ -1,79 +1,43 @@
 <!doctype html>
-<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tony Angiola — Author</title>
+<link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tony Angiola — Author</title>
+<link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
+<!-- deploy-marker: init -->
+
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
-
-  <link rel="stylesheet" href="/assets/style.css?v=homegap-20251030-122131">
-  <link rel="stylesheet" href="/assets/override.css">
-
-
-  <script id="home-gap-fallback-20251031-200116">
-  document.addEventListener("DOMContentLoaded",function(){
-    try{
-      const main=document.querySelector("body.home-page main, body.home-page .site-main");
-      if(!main) return;
-      const container=main.querySelector(".container")||main;
-      /* find candidate cards (the two bordered panels) */
-      const sections=[...container.querySelectorAll(":scope > section")];
-      if(sections.length>=2){
-        /* runtime nudge to guarantee visible gap */
-        sections[0].style.marginRight="64px";
-      }
-    }catch(e){}
-  });
-  </script>
-  <!-- home-gap-inject 20251031-200220 -->
-  <style>
-    body.home-page main > *:first-of-type { margin-right: 72px !important; }
-    @media (max-width: 900px){ body.home-page main > *:first-of-type { margin-right: 0 !important; } }
-  </style>
-  <script defer src="assets/home-gap.js?v=1761964450"></script>
-</head>
-
-
-
-<body class="home-page">
-  <header class="contact-header">
-    <div class="container">
-      <nav>
-        <a href="/" class="active" aria-current="page">HOME</a>
-        <a href="/books.html">Books</a>
-        <a href="/bio.html">Bio</a>
-        <a href="/newsletter.html">Newsletter</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-      <a class="owner-badge" href="/bio.html">
-        <span class="owner-name">Tony Angiola</span>
-        <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
-      </a>
-    </div>
-  </header>
-
-  <main class="site-main">
-    <section class="hero">
-      <h1>Author. Researcher. Explorer of High Strangeness.</h1>
-      <p class="small" style="color:#eaf2ff !important">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley, and updates on current projects.</p>
-      <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
-    </section>
-
-    
-    my  = <main class="site-main">
-    <section class="hero">
-      <h1>Author. Researcher. Explorer of High Strangeness.</h1>
-      <p class="small" style="color:#eaf2ff !important">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley, and updates on current projects.</p>
-      <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
-    </section>
-
-        or  .= q{};
-      .
-    } else {
-       . q{} . 
-    }
+  <link rel="stylesheet" href="/assets/override.css?cb=20251022211156">
   
+  <script src="assets/name-badge-fixed.js" defer></script>
+</head>
+<body>
+  <header>
+  <div class="container">
+    <nav>
+    
+      <a href="/"><strong\1HOME\2/strong>HOME</a>
+      <a href="/books.html">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  
+
+  <main class="container">
+    <section class="hero">
+      <h1>Author. Researcher. Explorer of High Strangeness.</h1>
+      <p class="small">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley,
+      and updates on current projects.</p>
+      <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
+    </section>
+
+    <section class="grid grid-2">
       <div class="card">
         <h2>Current Project: <em>Cosmic Secrets</em></h2>
         <p>A deep dive into disclosure, historical cases, and propulsion hypotheses—told straight, documented, and BS-resistant.</p>
@@ -87,75 +51,17 @@
         </ul>
       </div>
     </section>
-
-    <section class="author-photo" style="text-align:center; margin:2em 0;">
-      <img src="/images/tony.jpg" alt="Tony Angiola"
-           style="width:240px; border-radius:50%; box-shadow:0 0 12px rgba(0,0,0,.25);">
-      <h2 style="margin-top:1em;font-weight:600;">Tony Angiola</h2>
-    </section>
+<section class="author-photo" style="text-align:center; margin:2em 0;">
+  <img src="/images/tony.jpg" alt="Tony Angiola" style="width:240px; border-radius:50%; box-shadow:0 0 12px rgba(0,0,0,.25);">>
+  <h2 style="margin-top:1em;font-weight:600;">Tony Angiola</h2>
+</section>
   </main>
 
   <footer>
     <div class="container">
       <div>© <span id="y"></span> Tony Angiola. All rights reserved.</div>
+      <div class="small">This site is a simple GitHub Pages static site.</div>
     </div>
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
-  <!-- home-gap-ultimate 20251031-200605 -->
-  <style>
-    /* Last-wins gap for Home cards */
-    body.home-page .cards, 
-    body.home-page .home-cards, 
-    body.home-page .home-panels, 
-    body.home-page .cards-grid, 
-    body.home-page .books-grid, 
-    body.home-page .grid, 
-    body.home-page main .cards {
-    }
-    /* Generic fallback: any direct siblings under main */
-    body.home-page main > * + * { margin-left: 56px !important; }
-    @media (max-width: 900px){
-      body.home-page main > * + * { margin-left: 0 !important; }
-    }
-  </style>
-  <!-- home-gap-lastwins 20251031-200719 -->
-  /* Force visible spacing between cards on Home */
-    body.home-page main .cards,
-    body.home-page main .card-grid,
-    body.home-page main .home-cards,
-    body.home-page main .panels,
-    body.home-page main .grid {
-      gap: 56px !important;
-    }
-    /* Also work for non-gap layouts (stacked children) */
-    body.home-page main .cards > * + *,
-    body.home-page main .card-grid > * + *,
-    body.home-page main .home-cards > * + *,
-    body.home-page main .panels > * + *,
-    body.home-page main .grid > * + * {
-      margin-top: 56px !important;
-    }
-    /* Direct card elements safety margin */
-    body.home-page main .book-card,
-    body.home-page main .news-card,
-    body.home-page main .card {
-      margin-bottom: 56px !important;
-    }
-  </style>
-  
 </body>
-</html>
-<!-- FIX: Space between home cards -->
-<style>
-  body.home-page .cards,
-  body.home-page .section-cards,
-  body.home-page .grid,
-  body.home-page .row {
-    gap: 40px !important;
-    margin-bottom: 40px !important;
-  }
-  /* fallback for flex without gap */
-  body.home-page .cards > * {
-    margin-right: 20px !important;
-  }
-</style>
