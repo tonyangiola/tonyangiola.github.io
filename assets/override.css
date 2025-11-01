@@ -292,3 +292,18 @@ body.home-page .home-grid {
 body.home-page .card,
 body.home-page .home-card,
 body.home-page .book-card{ margin-bottom:1.25rem !important; }
+/* === Home: Space between cards/sections (2025-10-31) === */
+body.home-page .home-grid,
+body.home-page .cards,
+body.home-page .card-grid {
+  display: grid !important;
+  gap: 2rem !important;         /* space between the left and right cards */
+  margin-top: 1.5rem !important;
+}
+
+body.home-page .card,
+body.home-page .home-card,
+body.home-page .book-card,
+body.home-page section + section {
+  margin-top: 2rem !important;  /* vertical gap between sections like avatar below cards */
+}
