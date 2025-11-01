@@ -11,6 +11,45 @@
   <link rel="stylesheet" href="/assets/override.css">
 
 
+  <style id="home-gap-force-20251031-200116">
+    /* 2025-10-31 — Force wider gap between the two Home cards */
+    body.home-page .site-main .container .grid,
+    body.home-page .site-main .grid,
+    body.home-page main .grid,
+    body.home-page .site-main .container .home-panels,
+    body.home-page .home-panels {
+      gap: 64px !important; column-gap: 64px !important; row-gap: 32px !important;
+    }
+    /* Flex fallback: */
+    body.home-page .site-main .container .home-panels{display:flex !important; gap:64px !important; flex-wrap:wrap;}
+    /* Generic fallback: add right margin to the first of the two sections */
+    body.home-page .site-main .container > section:first-of-type,
+    body.home-page main > section:first-of-type { margin-right:64px !important; }
+    @media (max-width: 900px){
+      body.home-page .site-main .container .grid,
+      body.home-page .site-main .grid,
+      body.home-page main .grid,
+      body.home-page .site-main .container .home-panels,
+      body.home-page .home-panels{ gap:28px !important; column-gap:28px !important; }
+      body.home-page .site-main .container > section:first-of-type,
+      body.home-page main > section:first-of-type { margin-right:0 !important; }
+    }
+  </style>
+  <script id="home-gap-fallback-20251031-200116">
+  document.addEventListener("DOMContentLoaded",function(){
+    try{
+      const main=document.querySelector("body.home-page main, body.home-page .site-main");
+      if(!main) return;
+      const container=main.querySelector(".container")||main;
+      /* find candidate cards (the two bordered panels) */
+      const sections=[...container.querySelectorAll(":scope > section")];
+      if(sections.length>=2){
+        /* runtime nudge to guarantee visible gap */
+        sections[0].style.marginRight="64px";
+      }
+    }catch(e){}
+  });
+  </script>
 </head>
 
 
