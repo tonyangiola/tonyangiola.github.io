@@ -307,3 +307,14 @@ body.home-page .book-card,
 body.home-page section + section {
   margin-top: 2rem !important;  /* vertical gap between sections like avatar below cards */
 }
+/* === Home: card separation (2025-10-31e) === */
+body.home-page main .grid{ gap:24px !important; }
+body.home-page .home-grid,
+body.home-page .cards,
+body.home-page .card-grid{ display:grid !important; gap:24px !important; }
+body.home-page .card,
+body.home-page .home-card,
+body.home-page .book-card{ margin-bottom:24px !important; }
+body.home-page section.card + section.card{ margin-top:24px !important; }
+/* keep a little space below the hero so it doesn't kiss the cards */
+body.home-page .hero{ margin-bottom:12px !important; }
