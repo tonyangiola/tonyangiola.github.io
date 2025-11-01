@@ -207,3 +207,8 @@ body.home-page .site-main section.panel {
 @media (max-width: 768px){
   body.home-page .site-main { --home-gap: 16px; }
 }
+/* 2025-10-31 — bump Home card gap */
+body.home-page .site-main { --home-gap: 36px; }
+@media (max-width: 768px){
+  body.home-page .site-main { --home-gap: 20px; }
+}
