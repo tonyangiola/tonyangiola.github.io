@@ -90,3 +90,15 @@ body.home-page .page-hero{margin-top:0!important;padding-top:0!important;min-hei
 body.home-page header.site-header{margin-bottom:0!important;padding-bottom:0!important;}
 /* also collapse any first child margin that might create a ghost gap */
 body.home-page main > :first-child{margin-top:0!important;}
+/* === Home hero gap collapse (2025-10-31-b) === */
+body.home-page .hero,
+body.home-page .page-hero{
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+body.home-page .hero + *{
+  margin-top: 0 !important;
+}
+/* Belt-and-suspenders: kill any spacer after hero */
+body.home-page .after-hero-spacer{display:none!important;height:0!important;margin:0!important;padding:0!important;}
