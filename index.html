@@ -97,10 +97,10 @@
       # Append/overwrite gap values inside existing style
        =~ s/(gap|column-gap|row-gap)s*:s*[^;]*;?//gi;   # strip existing gap decls
        =~ s/style="/style="gap:72px !important; column-gap:72px !important; row-gap:48px !important; /i
-        or  .= q{ style="gap:72px !important; column-gap:72px !important; row-gap:48px !important;"};
+        or  .= q{};
       .
     } else {
-       . q{ style="gap:72px !important; column-gap:72px !important; row-gap:48px !important;"} . 
+       . q{} . 
     }
   
       <div class="card">
