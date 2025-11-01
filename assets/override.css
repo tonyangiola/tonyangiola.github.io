@@ -127,3 +127,54 @@ body.home-page main > *:first-child {
   margin-top: 0 !important;
   padding-top: 0 !important;
 }
+/* ===== HOME GAP NUKE (2025-10-31c) ===== */
+
+/* Kill any header-compensation (sticky/fixed offsets & scroll padding) */
+body.home-page, html { scroll-padding-top: 0 !important; }
+body.home-page :root { --header-h: 0 !important; --nav-h: 0 !important; }
+
+/* Remove any spacer immediately after the header */
+body.home-page header.site-header + * {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Zero top spacing on main/container */
+body.home-page main,
+body.home-page .site-main,
+body.home-page .container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Hero block: no margins/padding/min-height */
+body.home-page .hero,
+body.home-page .page-hero {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Inside hero: strip default heading/paragraph margins */
+body.home-page .hero > * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* If a spacer element exists by name, nuke it */
+body.home-page .nav-spacer,
+body.home-page .header-spacer,
+body.home-page .after-hero-spacer,
+body.home-page .page-spacer {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* First child after hero: no top margin */
+body.home-page main > *:first-child,
+body.home-page .container > *:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
