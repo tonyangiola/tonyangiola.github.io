@@ -21,24 +21,24 @@ html[data-home="1"] body main > *:first-child, html[data-home="1"] body .contain
   <script src="assets/name-badge-fixed.js" defer></script>
 <style id="home-gap-final">body.home-page .grid,body.home-page .grid-2,body.home-page .cards-grid,body.home-page .card-grid{gap:56px !important;row-gap:56px !important;column-gap:56px !important;}</style>
 </head>
-<body class="home-page" style="background:#0B0F1A!important;color:#e5e7eb!important;" data-home="1">
-    <header class="site-header" style="position:relative;min-height:66px">
+<body class="home-page" data-home="1">
+    <header class="site-header">
   <div class="container">
-    <nav style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;">
+    <nav style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;">
       <a href="/" class="active">HOME</a>
       <a href="/books.html">Books</a>
       <a href="/bio.html">Bio</a>
       <a href="/newsletter.html">Newsletter</a>
       <a href="/contact.html">Contact</a>
     </nav>
-  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home" style="position:absolute;right:16px;top:12px;display:inline-flex!important;align-items:center;z-index:1002;opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important;"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola" style="display:block;width:40px;height:40px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);"/></a></div>
+  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola" style="display:block;width:40px;height:40px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);"/></a></div>
 </header>
 
 
 
   
 
-  <main class="container"  style="${1}0!important;${1}0!important;;margin-top:0!important;padding-top:0!important">
+  <main class="container" >
     <section class="hero">
       <h1>Author. Researcher. Explorer of High Strangeness.</h1>
       <p class="small">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley,
@@ -46,7 +46,7 @@ html[data-home="1"] body main > *:first-child, html[data-home="1"] body .contain
       <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
     </section>
 
-    <section class="grid grid-2">
+    <section id="home-cards" class="grid grid-2">
       <div class="card">
         <h2>Current Project: <em>Cosmic Secrets</em></h2>
         <p>A deep dive into disclosure, historical cases, and propulsion hypotheses—told straight, documented, and BS-resistant.</p>
@@ -60,9 +60,9 @@ html[data-home="1"] body main > *:first-child, html[data-home="1"] body .contain
         </ul>
       </div>
     </section>
-<section class="author-photo" style="text-align:center; margin:2em 0;">
-  <img src="/images/tony.jpg" alt="Tony Angiola" style="width:240px; border-radius:50%; box-shadow:0 0 12px rgba(0,0,0,.25);">
-  <h2 style="margin-top:1em;font-weight:600;">Tony Angiola</h2>
+<section class="author-photo">
+  <img src="/images/tony.jpg" alt="Tony Angiola">
+  <h2>Tony Angiola</h2>
 </section>
   </main>
 
@@ -73,4 +73,14 @@ html[data-home="1"] body main > *:first-child, html[data-home="1"] body .contain
     </div>
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
+  <style id="home-gap-hotfix">
+    /* Home cards gutter — minimal, targeted (2025-11-01) */
+    #home-cards {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      column-gap: 36px !important;
+      row-gap: 28px !important;
+    }
+    #home-cards > * { margin: 0 !important; }
+  </style>
 </body>
