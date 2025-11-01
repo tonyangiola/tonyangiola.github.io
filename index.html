@@ -84,7 +84,25 @@
       <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
     </section>
 
-    <section class="grid grid-2">
+    
+    my  = <main class="site-main">
+    <section class="hero">
+      <h1>Author. Researcher. Explorer of High Strangeness.</h1>
+      <p class="small" style="color:#eaf2ff !important">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley, and updates on current projects.</p>
+      <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
+    </section>
+
+    <section class="grid grid-2"; my =>;
+    if ( =~ /style="/) {
+      # Append/overwrite gap values inside existing style
+       =~ s/(gap|column-gap|row-gap)s*:s*[^;]*;?//gi;   # strip existing gap decls
+       =~ s/style="/style="gap:72px !important; column-gap:72px !important; row-gap:48px !important; /i
+        or  .= q{ style="gap:72px !important; column-gap:72px !important; row-gap:48px !important;"};
+      .
+    } else {
+       . q{ style="gap:72px !important; column-gap:72px !important; row-gap:48px !important;"} . 
+    }
+  
       <div class="card">
         <h2>Current Project: <em>Cosmic Secrets</em></h2>
         <p>A deep dive into disclosure, historical cases, and propulsion hypotheses—told straight, documented, and BS-resistant.</p>
@@ -130,5 +148,7 @@
       body.home-page main > * + * { margin-left: 0 !important; }
     }
   </style>
+  <!-- home-gap-lastwins 20251031-200719 -->
+  <style>body.home-page main > * + * { margin-left: 24px !important; }</style>
 </body>
 </html>
