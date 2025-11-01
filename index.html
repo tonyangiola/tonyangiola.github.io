@@ -1,7 +1,15 @@
 <!doctype html>
 <head>
 <link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
-  <link rel="stylesheet" href="/assets/override.css?v=homegap-20251031-212455">
+  <link rel="stylesheet" href="/assets/override.css?v=homegap-20251031-212611">
+<style id="home-gap">
+html[data-home="1"] body, html[data-home="1"] body * { scroll-padding-top:0 !important; }
+html[data-home="1"] body main, html[data-home="1"] body .site-main, html[data-home="1"] body .container { margin-top:0 !important; padding-top:0 !important; }
+html[data-home="1"] body header.site-header + * { margin-top:0 !important; padding-top:0 !important; }
+html[data-home="1"] body section.hero, html[data-home="1"] body .page-hero { margin:0 !important; padding:0 !important; min-height:0 !important; }
+html[data-home="1"] body section.hero > * { margin:0 !important; padding:0 !important; }
+html[data-home="1"] body main > *:first-child, html[data-home="1"] body .container > *:first-child { margin-top:0 !important; padding-top:0 !important; }
+</style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tony Angiola — Author</title>
@@ -13,7 +21,7 @@
   <script src="assets/name-badge-fixed.js" defer></script>
 <style id="home-gap-final">body.home-page .grid,body.home-page .grid-2,body.home-page .cards-grid,body.home-page .card-grid{gap:56px !important;row-gap:56px !important;column-gap:56px !important;}</style>
 </head>
-<body style="background:#0B0F1A!important;color:#e5e7eb!important;">
+<body class="home-page" style="background:#0B0F1A!important;color:#e5e7eb!important;" data-home="1">
   <header>
   <div class="container">
     <nav>
