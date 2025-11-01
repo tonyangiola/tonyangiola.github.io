@@ -1,6 +1,18 @@
 <!doctype html>
 <head>
 <link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
+<style id="nav-home-fix">
+/* Home-only: ensure only .active is lit; neutralize any URL/nth-child pills (e.g., Bio) */
+header .container nav a:not(.active){
+  background: transparent !important; border-color: transparent !important; font-weight: 600 !important;
+}
+header .container nav a[href="/bio.html"]:not(.active){
+  background: transparent !important; border-color: transparent !important;
+}
+header .container nav a:hover{
+  background: rgba(255,255,255,.08) !important; border-color: rgba(255,255,255,.15) !important;
+}
+</style>
 <style id="home-cards">
 /* Home cards: spacing + visible borders; does not touch header/nav */
 main > section.grid.grid-2{display:grid !important;gap:28px !important;align-items:start !important;}
@@ -8,6 +20,18 @@ main > section.grid.grid-2 > .card{ padding:1rem !important; background:rgba(255
 }
 section.hero{margin-bottom:16px !important;}
 </style> <link rel="stylesheet" href="/assets/override.css?v=cards-20251031-220434">
+<style id="nav-home-fix">
+/* Home-only: ensure only .active is lit; neutralize any URL/nth-child pills (e.g., Bio) */
+header .container nav a:not(.active){
+  background: transparent !important; border-color: transparent !important; font-weight: 600 !important;
+}
+header .container nav a[href="/bio.html"]:not(.active){
+  background: transparent !important; border-color: transparent !important;
+}
+header .container nav a:hover{
+  background: rgba(255,255,255,.08) !important; border-color: rgba(255,255,255,.15) !important;
+}
+</style>
 <style id="home-cards">
 /* Home cards: spacing + visible borders; does not touch header/nav */
 main > section.grid.grid-2{display:grid !important;gap:28px !important;align-items:start !important;}
