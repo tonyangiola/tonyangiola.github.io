@@ -241,3 +241,50 @@ body.home-page .owner-badge{
 }
 /* If any global rule tries to hide it, override that too */
 .owner-badge{ display:inline-flex; } /* baseline */
+/* === Home: card separation (2025-10-31) === */
+body.home-page .cards,
+body.home-page .card-grid,
+body.home-page .books-grid,
+body.home-page .home-grid {
+  display: grid !important;
+  gap: 1.25rem !important;     /* space between cards */
+  row-gap: 1.25rem !important; /* explicit for older browsers */
+}
+
+/* Fallback for non-grid stacks */
+body.home-page .card,
+body.home-page .home-card,
+body.home-page .book-card {
+  margin-bottom: 1.25rem !important; /* vertical spacing */
+}
+
+/* Ensure interior margins don’t collapse */
+body.home-page .card > *:first-child,
+body.home-page .home-card > *:first-child,
+body.home-page .book-card > *:first-child {
+  margin-top: 0 !important;
+}
+
+/* Optional: a little breathing room around the whole block */
+body.home-page .cards,
+body.home-page .card-grid,
+body.home-page .books-grid,
+body.home-page .home-grid {
+  padding-block: 0.25rem !important;
+}
+
+/* Mobile bump for tighter layouts */
+@media (max-width: 680px) {
+  body.home-page .cards,
+  body.home-page .card-grid,
+  body.home-page .books-grid,
+  body.home-page .home-grid {
+    gap: 1rem !important;
+    row-gap: 1rem !important;
+  }
+  body.home-page .card,
+  body.home-page .home-card,
+  body.home-page .book-card {
+    margin-bottom: 1rem !important;
+  }
+}
