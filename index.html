@@ -150,5 +150,34 @@
   </style>
   <!-- home-gap-lastwins 20251031-200719 -->
   <style>body.home-page main > * + * { margin-left: 24px !important; }</style>
+
+  <!-- HOME-CARD-SPACING  -->
+  <style id="HOME-CARD-SPACING">
+    /* Force visible spacing between cards on Home */
+    body.home-page main .cards,
+    body.home-page main .card-grid,
+    body.home-page main .home-cards,
+    body.home-page main .panels,
+    body.home-page main .grid {
+      gap: 56px !important;
+      row-gap: 56px !important;
+      column-gap: 56px !important;
+    }
+    /* Also work for non-gap layouts (stacked children) */
+    body.home-page main .cards > * + *,
+    body.home-page main .card-grid > * + *,
+    body.home-page main .home-cards > * + *,
+    body.home-page main .panels > * + *,
+    body.home-page main .grid > * + * {
+      margin-top: 56px !important;
+    }
+    /* Direct card elements safety margin */
+    body.home-page main .book-card,
+    body.home-page main .news-card,
+    body.home-page main .card {
+      margin-bottom: 56px !important;
+    }
+  </style>
+  
 </body>
 </html>
