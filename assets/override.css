@@ -349,3 +349,19 @@ body.home-page main > section.grid.grid-2 > .card{
 
 /* add a little breathing room below the hero, not touching navbar */
 body.home-page .hero{ margin-bottom: 16px !important; }
+/* === Nav: no underline on hover (2025-10-31) === */
+header .container nav a,
+header .container nav a:link,
+header .container nav a:visited,
+header .container nav a:hover,
+header .container nav a:focus,
+header .container nav a:active{
+  text-decoration: none !important;
+}
+
+/* Optional: ensure hover uses pill style without underline */
+header .container nav a:hover,
+header .container nav a:focus{
+  background: rgba(255,255,255,.08) !important;
+  border-color: rgba(255,255,255,.15) !important;
+}
