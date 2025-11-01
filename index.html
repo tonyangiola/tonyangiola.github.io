@@ -112,5 +112,23 @@
     </div>
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
+  <!-- home-gap-ultimate 20251031-200605 -->
+  <style>
+    /* Last-wins gap for Home cards */
+    body.home-page .cards, 
+    body.home-page .home-cards, 
+    body.home-page .home-panels, 
+    body.home-page .cards-grid, 
+    body.home-page .books-grid, 
+    body.home-page .grid, 
+    body.home-page main .cards {
+      gap: 56px !important; column-gap: 56px !important; row-gap: 40px !important;
+    }
+    /* Generic fallback: any direct siblings under main */
+    body.home-page main > * + * { margin-left: 56px !important; }
+    @media (max-width: 900px){
+      body.home-page main > * + * { margin-left: 0 !important; }
+    }
+  </style>
 </body>
 </html>
