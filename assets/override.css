@@ -288,3 +288,7 @@ body.home-page .home-grid {
     margin-bottom: 1rem !important;
   }
 }
+/* Home cards fallback (no header/nav touched) */
+body.home-page .card,
+body.home-page .home-card,
+body.home-page .book-card{ margin-bottom:1.25rem !important; }
