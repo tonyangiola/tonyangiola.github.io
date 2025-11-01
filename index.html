@@ -74,16 +74,20 @@ header .container nav a:focus{
   background: rgba(255,255,255,.08) !important;
   border-color: rgba(255,255,255,.15) !important;
 }
-</style>
-<style id="nav-hover-newsletter-final">
-/* Home-only: ensure Newsletter never shows underline in any state */
-header .container nav a[href="/newsletter.html"],
-header .container nav a[href="/newsletter.html"]:link,
-header .container nav a[href="/newsletter.html"]:visited,
-header .container nav a[href="/newsletter.html"]:hover,
-header .container nav a[href="/newsletter.html"]:focus,
-header .container nav a[href="/newsletter.html"]:active{
+</style><style id="nav-hover-newsletter-final">
+/* Home-only: nuke underline for Newsletter in ALL states; leave pill/hover color intact. */
+body.home-page header .container nav a[href="/newsletter.html"],
+body.home-page header .container nav a[href="/newsletter.html"]:link,
+body.home-page header .container nav a[href="/newsletter.html"]:visited,
+body.home-page header .container nav a[href="/newsletter.html"]:hover,
+body.home-page header .container nav a[href="/newsletter.html"]:focus,
+body.home-page header .container nav a[href="/newsletter.html"]:active,
+body.home-page header .container nav a[href="/newsletter.html"]:any-link,
+body.home-page header .container nav a[href="/newsletter.html"]:is(:link,:visited,:hover,:focus,:active){
   text-decoration: none !important;
+  text-decoration-line: none !important;
+  border-bottom: none !important;           /* in case underline was faked with border */
+  box-shadow: none !important;               /* in case underline is via inset shadow */
 }
 </style>
 </head>
