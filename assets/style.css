@@ -7403,3 +7403,43 @@ body.books-page .book-card {
 <!-- deploy-marker 20251030-192542 -->
 <!-- deploy-marker 20251030-192729 -->
 <!-- deploy-marker 20251030-192919 -->
+/* ===== Home page card spacing (2025-10-31) ===== */
+body.home-page main > section + section { margin-top: 24px !important; }
+
+body.home-page .cards,
+body.home-page .grid,
+body.home-page .sections,
+body.home-page .card-grid,
+body.home-page .panel-grid {
+  gap: 24px !important;
+  row-gap: 24px !important;
+  column-gap: 24px !important;
+}
+
+body.home-page .card,
+body.home-page .panel,
+body.home-page .box,
+body.home-page .tile,
+body.home-page .feature {
+  margin-bottom: 24px !important;
+}
+
+@media (max-width: 768px){
+  body.home-page main > section + section { margin-top: 16px !important; }
+  body.home-page .cards,
+  body.home-page .grid,
+  body.home-page .sections,
+  body.home-page .card-grid,
+  body.home-page .panel-grid {
+    gap: 16px !important;
+    row-gap: 16px !important;
+    column-gap: 16px !important;
+  }
+  body.home-page .card,
+  body.home-page .panel,
+  body.home-page .box,
+  body.home-page .tile,
+  body.home-page .feature {
+    margin-bottom: 16px !important;
+  }
+}
