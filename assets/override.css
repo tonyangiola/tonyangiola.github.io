@@ -365,3 +365,11 @@ header .container nav a:focus{
   background: rgba(255,255,255,.08) !important;
   border-color: rgba(255,255,255,.15) !important;
 }
+/* === Add space between Home page cards (2025-10-31) === */
+.grid.grid-2 {
+  gap: 2rem !important;           /* Adds space between columns & rows */
+}
+
+.card, .home .card {
+  margin: 0 !important;           /* Ensure no negative margins override */
+}
