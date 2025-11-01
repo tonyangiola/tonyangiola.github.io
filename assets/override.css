@@ -238,3 +238,36 @@ body.home-page .home-panels > * {
     row-gap: 20px !important;
   }
 }
+/* 2025-10-31 — HOME card spacing (aggressive, safe) */
+body.home-page .site-main .container,
+body.home-page main { --home-gap: 72px; }
+
+body.home-page .site-main .container .grid,
+body.home-page .site-main .grid,
+body.home-page .site-main .cards,
+body.home-page .home-panels,
+body.home-page main .grid {
+  display: grid !important;
+  gap: var(--home-gap) !important;
+  column-gap: var(--home-gap) !important;
+  row-gap: 32px !important;
+}
+
+/* Fallbacks if not grid: enforce space via sibling margins */
+body.home-page .site-main .container > .card + .card,
+body.home-page main .card + .card,
+body.home-page .site-main .container > section + section,
+body.home-page main section + section {
+  margin-left: 72px !important;
+}
+
+/* Neutralize any negative margins that collapse gutters */
+body.home-page .site-main .grid > *,
+body.home-page .home-panels > *,
+body.home-page main .grid > * { margin: 0 !important; }
+
+/* Mobile */
+@media (max-width: 768px){
+  body.home-page .site-main .container,
+  body.home-page main { --home-gap: 28px; }
+}
