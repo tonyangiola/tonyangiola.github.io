@@ -7457,3 +7457,30 @@ body.home-page .feature {
 <!-- deploy-marker 20251031-200735 -->
 <!-- deploy-marker 20251031-200838 -->
 <!-- deploy-marker 20251031-200940 -->
+/* ===== FORCE GAP BETWEEN HOME CARDS (2025-10-31) ===== */
+body.home-page .cards,
+body.home-page .section-cards,
+body.home-page .grid,
+body.home-page .row,
+body.home-page .columns,
+body.home-page .container .grid,
+body.home-page main .container > .grid,
+body.home-page main .container > .row {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 36px !important;           /* <- primary spacing */
+  column-gap: 36px !important;    /* <- for older flex implementations */
+  row-gap: 28px !important;
+}
+
+/* If the two boxes are direct children without a common "grid" class, space them anyway */
+body.home-page main .container > .box,
+body.home-page main .container > .panel,
+body.home-page main .container > .card {
+  margin-right: 18px !important;
+}
+body.home-page main .container > .box:last-child,
+body.home-page main .container > .panel:last-child,
+body.home-page main .container > .card:last-child {
+  margin-right: 0 !important;
+}
