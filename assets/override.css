@@ -1,28 +1,29 @@
 /* ==== Home dark theme + spacing (2025-10-31) ==== */
 
-/* Global dark palette */
+/* Dark palette */
 html, body { background:#0B0F1A !important; color:#e5e7eb !important; }
-a { color:#93c5fd !important; }
-a:hover { color:#bfdbfe !important; }
+a { color:#93c5fd !important; } a:hover { color:#bfdbfe !important; }
 header, footer { border-color: rgba(255,255,255,.08) !important; }
 
-/* Cards look good on dark */
+/* Card styling on dark */
 .card {
   background: rgba(255,255,255,.03) !important;
   border: 1px solid rgba(255,255,255,.12) !important;
   border-radius: 12px !important;
 }
 
-/* Restore TWO-COLUMN + add comfortable gap */
-body.home-page .grid, 
-body.home-page .grid-2, 
-body.home-page .cards-grid, 
+/* Bigger gap between the two Home cards (works for grid/flex) */
+body.home-page .grid,
+body.home-page .grid-2,
+body.home-page .cards-grid,
 body.home-page .card-grid {
-  gap: 48px !important;
+  gap: 56px !important;
+  row-gap: 56px !important;
+  column-gap: 56px !important;
 }
 
-/* Ensure we DO NOT force tiny cards */
-.book-card, .book, .card, .video-card { 
-  max-width: none !important; 
-  margin: initial !important; 
+/* Ensure we DO NOT force tiny/narrow cards */
+.book-card, .book, .card, .video-card {
+  max-width: none !important;
+  margin: initial !important;
 }
