@@ -151,8 +151,6 @@
   <!-- home-gap-lastwins 20251031-200719 -->
   <style>body.home-page main > * + * { margin-left: 24px !important; }</style>
 
-  <!-- HOME-CARD-SPACING  -->
-  <style id="HOME-CARD-SPACING">
     /* Force visible spacing between cards on Home */
     body.home-page main .cards,
     body.home-page main .card-grid,
@@ -181,3 +179,17 @@
   
 </body>
 </html>
+<!-- FIX: Space between home cards -->
+<style>
+  body.home-page .cards,
+  body.home-page .section-cards,
+  body.home-page .grid,
+  body.home-page .row {
+    gap: 40px !important;
+    margin-bottom: 40px !important;
+  }
+  /* fallback for flex without gap */
+  body.home-page .cards > * {
+    margin-right: 20px !important;
+  }
+</style>
