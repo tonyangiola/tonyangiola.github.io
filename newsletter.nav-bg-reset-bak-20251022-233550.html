@@ -1,0 +1,27 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter — Tony Angiola</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
+<!-- Hard, page-scoped overrides so this page matches BIO no matter what -->
+<body class="newsletter-page">
+  <!-- Use the same header include as BIO -->
+  <!--#include virtual="/assets/header.html" -->
+
+  <main class="container">
+    <section class="stack" style="margin-top:1.25rem">
+      <h1>Newsletter</h1>
+      <p>Get updates on new investigations, videos, and book progress.</p>
+
+      <form action="mailto:contact@tonyangiola.com" method="post" enctype="text/plain" class="stack" style="max-width:28rem">
+        <label for="nl-email"><strong>Email</strong></label>
+        <input id="nl-email" name="email" type="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+
+      <p style="opacity:.8;font-size:.95rem">We’ll only email when there’s something worth reading.</p>
+    </section>
+  </main>
+</body>
+

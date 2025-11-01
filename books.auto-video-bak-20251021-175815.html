@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Books — Tony Angiola</title>
+
+  <!-- Self-contained CSS: no external styles, no surprises -->
+  <style>
+    html, body, body * { writing-mode: horizontal-tb !important; text-orientation: mixed !important; transform: none !important; box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.5; color:#0f172a; background:#f7fafc; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 24px 16px; }
+    h1 { margin: 0 0 20px; font-size: 28px; letter-spacing: .2px; }
+
+    .books-grid { display:grid; gap:22px; }
+    .book-card {
+      display:grid; grid-template-columns:260px 1fr; gap:16px; align-items:start;
+      background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:12px; padding:16px; box-shadow:0 1px 2px rgba(0,0,0,.04);
+    }
+    .book-media { width:100%; max-width:260px; }
+    .media-box { width:100%; aspect-ratio:3/4; background:#111 center/contain no-repeat; border-radius:8px; }
+    .book-card video { display:block !important; width:100%; max-width:100%; height:auto; background:#111; border-radius:8px; }
+
+    .book-meta h3 { margin:0 0 6px; font-size:20px; }
+    .book-meta p  { margin:0 0 10px; color:#334155; }
+    .book-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
+    .book-actions a {
+      display:inline-block; padding:10px 14px; border-radius:8px; font-weight:600;
+      border:1px solid rgba(0,0,0,.08); white-space:nowrap; text-decoration:none;
+    }
+    .book-actions a.primary { background:#2563eb; color:#fff; }
+    .book-actions a.secondary { background:#f3f4f6; color:#111827; }
+  </style>
+  <link rel="stylesheet" href="/assets/override.css?cb=20251022211121">
+  
+  <script src="assets/name-badge-fixed.js" defer></script>
+</head>
+<body>
+  <header>
+  <div class="container">
+    <nav>
+    
+      <a href="/"><strong\1HOME\2/strong>HOME</a>
+      <a href="/books.html">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="container">
+    <h1>Books</h1>
+
+    <section class="books-grid">
+
+      <!-- 1) Snippy -->
+      <article class="book-card" id="snippy-card">
+        <div class="book-media">
+          <video preload="metadata" poster="/images/books/snippy.jpg" controls playsinline>
+            <source src="/assets/videos/snippy.mp4#t=0.1" type="video/mp4">
+          </video>
+        </div>
+        <div class="book-meta">
+          <h3>Snippy</h3>
+          <p>Animated preview.</p>
+          <div class="book-actions">
+            <a class="primary" target="_blank" rel="noopener noreferrer"
+               href="https://www.amazon.com/Snippy-Horse-Unveiling-Mutilation-Encounters-ebook/dp/B0F88SPFDS/ref=sr_1_1?crid=3MGG0M69SF65K&dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761090591&sprefix=tony+angiol%2Caps%2C187&sr=8-1">Buy on Amazon</a>
+            <a class="secondary" target="_blank" rel="noopener noreferrer" href="/newsletter.html">Get updates</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2) Socorro -->
+      <article class="book-card" id="socorro-card">
+        <div class="book-media">
+          <div class="media-box" style="background-image:url('/images/books/socorro.jpg');"></div>
+        </div>
+        <div class="book-meta">
+          <h3>Socorro UFO</h3>
+          <p>Classic 1964 case. Blue flame, red inverted “V” with three bars.</p>
+          <div class="book-actions">
+            <a class="primary" target="_blank" rel="noopener noreferrer"
+               href="https://www.amazon.com/SOCORRO-UFO-Not-This-World/dp/B0FGQP7PHN/ref=sr_1_3?crid=3MGG0M69SF65K&dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761090607&sprefix=tony+angiol%2Caps%2C187&sr=8-3">Buy on Amazon</a>
+            <a class="secondary" target="_blank" rel="noopener noreferrer" href="/newsletter.html">Get updates</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3) Gremlins -->
+      <article class="book-card" id="gremlins-card">
+        <div class="book-media">
+          <div class="media-box" style="background-image:url('/images/books/gremlins.jpg');"></div>
+        </div>
+        <div class="book-meta">
+          <h3>Gremlins</h3>
+          <p>&nbsp;</p>
+          <div class="book-actions">
+            <a class="primary" target="_blank" rel="noopener noreferrer"
+               href="https://www.amazon.com/Flying-Saucers-Aliens-Gremlins-Angiola-ebook/dp/B0FF3RWHT7/ref=sr_1_2?crid=3MGG0M69SF65K&dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761090607&sprefix=tony+angiol%2Caps%2C187&sr=8-2">Buy on Amazon</a>
+            <a class="secondary" target="_blank" rel="noopener noreferrer" href="/newsletter.html">Get updates</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4) Cosmic Secrets -->
+      <article class="book-card" id="cosmic-card">
+        <div class="book-media">
+          <div class="media-box" style="background-image:url('/images/books/cosmic.jpg');"></div>
+        </div>
+        <div class="book-meta">
+          <h3>Cosmic Secrets</h3>
+          <p>Coming soon. Get notified when it launches.</p>
+          <div class="book-actions">
+            <a class="secondary" target="_blank" rel="noopener noreferrer" href="/newsletter.html">Get updates</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>

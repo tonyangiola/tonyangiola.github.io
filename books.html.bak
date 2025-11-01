@@ -1,0 +1,323 @@
+<script id="books-poster-fallback" defer>
+document.addEventListener("DOMContentLoaded",function(){
+  document.querySelectorAll("article.card#socorro, article.card#gremlins").forEach(function(card){
+    var v = card.querySelector("video");
+    if(!v) return;
+    var go=function(){ card.classList.add("playing"); };
+    v.addEventListener("playing",go,{once:true});
+    v.addEventListener("canplay",go,{once:true});
+    setTimeout(go,1200);
+  });
+});
+</script>
+  <script id="books-size-sync" defer>
+/* books-size-sync: match Socorro & Gremlins to Cosmic’s live box */
+(function(){
+  function sync(){
+    const cosmic = document.querySelector('#cosmic img');
+    const targets = document.querySelectorAll('#socorro video,#socorro img,#gremlins video,#gremlins img');
+    if (!targets.length) return;
+    let w = 0, h = 0;
+    if (cosmic) {
+      w = cosmic.clientWidth || cosmic.naturalWidth || 640;
+      h = cosmic.clientHeight || 0;
+        if (!h) {
+      // fallback if image not measured yet—guess from width (Cosmic is portrait-ish)
+      h = Math.round((w||640) * 1.25);
+        targets.forEach(el=>{
+      el.removeAttribute('width'); el.removeAttribute('height'); el.style.removeProperty('height');
+      el.style.maxWidth   = (w||640) + 'px';
+      el.style.width      = '100%';
+      el.style.maxHeight  = h + 'px';
+      el.style.height     = 'auto';
+      el.style.objectFit  = 'contain';
+      el.style.display    = 'block';
+      el.style.margin     = '0 auto 14px';
+      el.style.borderRadius = '10px';
+    });
+    function ready(fn){ if (document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn);   ready(function(){
+    const cosmic = document.querySelector('#cosmic img');
+    if (cosmic) {
+      if (cosmic.complete) setTimeout(sync, 0);
+      cosmic.addEventListener('load', sync, {once:true});
+        sync();
+    window.addEventListener('resize', sync);
+    setTimeout(sync, 400); setTimeout(sync, 1000);
+  });
+})();
+  </script>
+  <script id="books-size-fallback" defer>
+function sizeUniform(sel){
+  document.querySelectorAll(sel).forEach(el=>{
+    el.removeAttribute('width'); el.removeAttribute('height'); el.style.removeProperty('height');
+    el.style.maxWidth   = '640px';
+    el.style.width      = '100%';
+    el.style.aspectRatio= '4 / 5';
+    el.style.objectFit  = 'cover';
+    el.style.display    = 'block';
+    el.style.margin     = '0 auto 14px';
+    el.style.borderRadius='10px';
+  });
+document.addEventListener('DOMContentLoaded', function(){
+  sizeUniform('#socorro video, #socorro img');
+  sizeUniform('#gremlins video, #gremlins img');
+});
+  </script>
+  
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tony Angiola — Author</title>
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
+  <style>
+    /* keep the dark background and ensure content shows */
+    html, body { background:#0B0F1A;     .site-main, main { display:block; opacity:1; visibility:visible;   </style>
+
+<link rel="stylesheet" href="/assets/style.css?v=books-20251030-174109">
+  <link rel="stylesheet" href="/assets/books.css?v=books-20251030-180645">
+</head>
+
+
+
+
+
+<body data-books="1" class="books-page">
+
+
+  <header class="contact-header">
+    <div class="container">
+      <nav>
+        <a href="/">HOME</a>
+        <a href="/books.html" class="active" aria-current="page">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
+        <img class="owner-avatar" src="/assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy" style="width:36px;height:36px;border-radius:9999px;object-fit:cover">
+      </a>
+    </div>
+  </header>
+
+
+<main class="page">
+  <section aria-label="Books" class="grid">
+
+    <!-- Snippy (full-width video) -->
+    <article class="card" id="snippy">
+      <video autoplay muted loop playsinline preload="metadata" poster="/images/books/snippy.jpg">
+        <source src="/assets/videos/books/snippy.mp4" type="video/mp4">
+      </video>
+      <div class="kicker"></div>
+      <div class="title">Snippy</div>
+      <div class="btnrow">
+        <a class="btn" href="https://www.amazon.com/Snippy-Horse-Unveiling-Mutilation-Encounters-ebook/dp/B0F88SPFDS/ref=sr_1_1?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-1"https://www.amazon.com/Snippy-Horse-Unveiling-Mutilation-Encounters-ebook/dp/B0F88SPFDS/ref=sr_1_1?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-1" . ">Buy on Amazon</a>
+        <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+      </div>
+    </article>
+
+    <!-- Socorro (video) -->
+    
+    my (,)=(<article class="card" id="socorro">
+      <video style="max-width:640px;width:100%;aspect-ratio:4/5;object-fit:cover;display:block;margin:0 auto 14px;border-radius:10px" autoplay muted loop playsinline preload="metadata" poster="/images/books/socorro.jpg");
+     =~ s/sstyle="[^"]*"//i;           # strip existing style if any
+    .." style="max-width:640px;width:100%;aspect-ratio:4/5;object-fit:cover;display:block;margin:0 auto 14px;border-radius:10px">."<img class="poster-fallback" src="/images/books/socorro.jpg" alt="Socorro cover">" "
+  
+        <source src="/assets/videos/books/socorro.mp4" type="video/mp4">
+      </video>
+      <div class="kicker"></div>
+      <div class="title">Socorro UFO</div>
+      <div class="btnrow">
+        <a class="btn" href="https://www.amazon.com/SOCORRO-UFO-Not-This-World/dp/B0FGQP7PHN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-3"https://www.amazon.com/SOCORRO-UFO-Not-This-World/dp/B0FGQP7PHN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-3" . ">Buy on Amazon</a>
+        <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+      </div>
+    </article>
+
+    <!-- Gremlins (video) -->
+    
+    my (,)=(<article class="card" id="gremlins">
+      <video style="max-width:640px;width:100%;aspect-ratio:4/5;object-fit:cover;display:block;margin:0 auto 14px;border-radius:10px" autoplay muted loop playsinline preload="metadata" poster="/images/books/gremlins.jpg");
+     =~ s/sstyle="[^"]*"//i;
+    .." style="max-width:640px;width:100%;aspect-ratio:4/5;object-fit:cover;display:block;margin:0 auto 14px;border-radius:10px">."<img class="poster-fallback" src="/images/books/gremlins.jpg" alt="Gremlins cover">" "
+  
+        <source src="/assets/videos/books/gremlins.mp4" type="video/mp4">
+      </video>
+      <div class="kicker"></div>
+      <div class="title">Gremlins</div>
+      <div class="btnrow">
+        <a class="btn" href="https://www.amazon.com/Flying-Saucers-Aliens-Gremlins-Angiola-ebook/dp/B0FF3RWHT7/ref=sr_1_2?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-2"https://www.amazon.com/Flying-Saucers-Aliens-Gremlins-Angiola-ebook/dp/B0FF3RWHT7/ref=sr_1_2?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-2" . " target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+      </div>
+    </article>
+
+    <!-- Cosmic (image) -->
+    <article class="card" id="cosmic">
+      <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover">
+      <div class="kicker">Coming Soon</div>
+      <div class="title">Cosmic Secrets</div>
+      <div class="btnrow">
+        <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<!-- autoplay nudge -->
+<script>
+  document.querySelectorAll('video[autoplay]').forEach(v=>{
+    const kick=()=>v.play().catch(()=>{});
+    v.addEventListener('canplay',kick,{once:true});
+    document.addEventListener('visibilitychange',()=>{ if(!document.hidden) kick(); });
+  });
+</script>
+
+
+<script id="books-endcap-js-20251029-173315" defer>
+document.addEventListener("DOMContentLoaded", function(){
+  // 1) Brighten any BUY button: detect by visible text containing "buy"
+  document.querySelectorAll(".books .book-card a.btn").forEach(a=>{
+    const t = (a.textContent||"").trim().toLowerCase();
+    if (/\bbuy\b/.test(t)) {
+      a.style.setProperty("display","inline-flex","important");
+      a.style.setProperty("opacity","1","important");
+      a.style.setProperty("visibility","visible","important");
+      a.style.setProperty("background","#2563eb","important");  // bright blue
+      a.style.setProperty("color","#fff","important");
+      a.style.setProperty("border","1px solid #1e4fd3","important");
+      a.style.setProperty("padding",".6rem 1rem","important");
+      a.style.setProperty("border-radius",".6rem","important");
+      a.style.setProperty("z-index","25","important");
+      a.classList.remove("hidden","sr-only");
+      a.removeAttribute("aria-hidden");
+      });
+
+  // 2) Remove stubborn titles/captions including siblings after media
+  document.querySelectorAll(".books .book-card").forEach(card=>{
+    card.querySelectorAll("figcaption,.video-title,.caption,.book-media .title,.book-video .title").forEach(n=>n.remove());
+    const media = card.querySelector(".book-video, .book-media, figure, picture, video, img");
+    if (media){
+      let n = media.nextElementSibling, hops=0;
+      const kill = (el)=> {
+        const cls=(el.className||"");
+        const txt=(el.textContent||"").trim().toLowerCase();
+        if (/(video|media|caption|title)/i.test(cls)) return true;
+        if (/^(trailer|title|caption)i.test(txt)) return true;
+        if (txt.length && txt.length<=40 && /video|trailer|title|caption/.test(txt)) return true;
+        return false;
+      };
+      while(n && hops<6){
+        if (["FIGCAPTION","H3","H4","P","DIV","SPAN"].includes(n.tagName) && kill(n)) {
+          const rem=n; n=n.nextElementSibling; rem.remove(); hops++; continue;
+                n = n.nextElementSibling; hops++;
+            });
+});
+</script>
+
+
+
+<script id="books-buy-fix-js-20251029-174822" defer>
+document.addEventListener("DOMContentLoaded", function(){
+  // 1) Force BUY buttons bright blue (catch ghost/outline/opacity tricks)
+  document.querySelectorAll(".books .book-card a.btn").forEach(a=>{
+    const text = (a.textContent||"").trim().toLowerCase();
+    if (/\bbuy\b/.test(text)) {
+      ["display","opacity","visibility","transform","filter","background","color","border","padding","border-radius","z-index"]
+        .forEach(prop=>a.style.removeProperty(prop));
+      a.style.setProperty("display","inline-flex","important");
+      a.style.setProperty("background","#2563eb","important");
+      a.style.setProperty("color","#fff","important");
+      a.style.setProperty("border","1px solid #1e4fd3","important");
+      a.style.setProperty("padding",".65rem 1.1rem","important");
+      a.style.setProperty("border-radius","9999px","important");
+      a.style.setProperty("opacity","1","important");
+      a.style.setProperty("visibility","visible","important");
+      a.style.setProperty("transform","none","important");
+      a.style.setProperty("filter","none","important");
+      a.classList.remove("ghost","btn-outline","hidden","sr-only");
+      a.removeAttribute("aria-hidden");
+      });
+
+  // 2) Remove any lingering titles/captions near media (brute-force fallback)
+  document.querySelectorAll(".books .book-card").forEach(card=>{
+    card.querySelectorAll("figcaption,.video-title,.caption").forEach(n=>n.remove());
+    const media = card.querySelector(".book-video, .book-media, figure, picture, video, img");
+    if (media){
+      let n = media.nextElementSibling, steps = 0;
+      const killTag = (el)=>["FIGCAPTION","H3","H4","P","DIV","SPAN"].includes(el.tagName);
+      const killText = (t)=>/^(title|trailer|caption)i.test(t.trim());
+      while(n && steps < 6){
+        const txt = (n.textContent||"").slice(0,60);
+        if (killTag(n) && (/(video|media|caption|title)/i.test(n.className||"") || killText(txt))){
+          const rem = n; n = n.nextElementSibling; rem.remove(); steps++; continue;
+                n = n.nextElementSibling; steps++;
+            });
+});
+</script>
+
+<script id="snippy-blue-js">
+  (function(){
+    function blue(el){
+      if(!el) return;
+      el.classList.remove("ghost","btn-ghost");
+      el.style.display = "inline-flex";
+      el.style.background = "#2563eb";
+      el.style.color = "#fff";
+      el.style.border = "1px solid #1e4fd3";
+      el.style.padding = ".6rem 1rem";
+      el.style.borderRadius = "9999px";
+        function light(el){
+      if(!el) return;
+      el.classList.add("ghost");
+      el.style.display = "inline-flex";
+      el.style.background = "#f3f4f6";
+      el.style.color = "#111";
+      el.style.border = "1px solid #d1d5db";
+      el.style.padding = ".6rem 1rem";
+      el.style.borderRadius = "9999px";
+        function fix(){
+      document.querySelectorAll(".books .book-card").forEach(function(card){
+        if(!/Snippy/i.test(card.textContent)) return;
+        var row = card.querySelector(".book-actions, .buttons");
+        if(!row) return;
+        var btns = Array.from(row.querySelectorAll("a,button")).filter(Boolean);
+        if(btns.length){ blue(btns[0]);         if(btns.length>1){ light(btns[1]);       });
+        if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", fix);
+    } else {
+      fix();
+      })();
+</script>
+<!-- BOOKS-NAVFIX-START -->
+
+<!-- BOOKS-NAVFIX-END -->
+<!-- BOOKS-NAV-HOTFIX START -->
+
+<!-- BOOKS-NAV-HOTFIX END -->
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+</html>

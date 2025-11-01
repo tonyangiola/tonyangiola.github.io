@@ -1,0 +1,1476 @@
+:root { --max: 880px; --pad: 16px; }
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.6; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+header, footer { padding: var(--pad); }
+header { border-bottom: 1px solid #eee; }
+footer { border-top: 1px solid #eee; font-size:14px; color:#555; }
+nav a { margin-right:12px; }
+.container { max-width: var(--max); margin: 0 auto; padding: var(--pad); }
+h1 { margin: 0.2em 0 0.4em; }
+.hero { padding: 2rem 0 1rem; }
+.card { padding: 1rem; border: 1px solid #eee; border-radius: 12px; margin: 0.5rem 0; }
+.grid { display: grid; gap: 16px; }
+@media (min-width: 720px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+.btn { display:inline-block; padding:.6rem 1rem; border:1px solid #111; border-radius: 999px; }
+.small { font-size: 0.92rem; color:#444; }
+ul.clean { padding-left: 1.1rem; }
+code { background:#f6f6f6; padding:0 .3rem; border-radius:6px; }
+
+/* Books grid (uniform cover size + working links) */
+.books-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.book .cover {
+  display: block;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0d0d0d;
+  aspect-ratio: 2 / 3;      /* consistent 6x9 box */
+}
+.book .cover .book-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* no cropping */
+  display: block;
+}
+.book h3 { margin: 0.6rem 0 0.4rem; font-size: 1.05rem; }
+.book h3 a { text-decoration: none; }
+.book h3 a:hover { text-decoration: underline; }
+.book .subtitle { font-size: 0.95rem; opacity: 0.8; margin: 0.25rem 0 0.5rem; }
+.actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #444;
+  text-decoration: none;
+}
+.btn:hover { border-color: #777; }
+.btn.ghost { background: transparent; }
+.book .badge {
+  position: absolute; top: 8px; left: 8px;
+  padding: 0.25rem 0.5rem; border-radius: 999px;
+  font-size: 0.75rem; background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  pointer-events: none;   /* ensure clicks work */
+}
+/* fix potential overlay issues */
+header { position: relative; z-index: 10; }
+main { position: relative; z-index: 0; }
+
+
+/* --- Books: left-to-right rows --- */
+.books-rows {
+  display: grid;
+  gap: 1.25rem;
+}
+.book-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;   /* image left, content right */
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid #222;
+  border-radius: 12px;
+}
+.book-row .cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;       /* 6x9 box */
+  background: #0d0d0d;       /* letterbox background */
+  border-radius: 10px;
+  overflow: hidden;
+}
+.book-row .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        /* no cropping */
+  display: block;
+}
+.book-row h3 {
+  margin: 0 0 .4rem;
+  font-size: 1.15rem;
+}
+.book-row p.subtitle {
+  margin: 0 0 .75rem;
+  opacity: .85;
+}
+.book-row .actions {
+  display: flex; gap: .5rem; flex-wrap: wrap;
+}
+.book-row .btn {
+  display: inline-block;
+  padding: .5rem .85rem;
+  border-radius: 999px;
+  border: 1px solid #444;
+  text-decoration: none;
+}
+.book-row .btn:hover { border-color: #777; }
+.book-row .btn.ghost { background: transparent; }
+
+/* mobile: stack vertically */
+@media (max-width: 720px) {
+  .book-row {
+    grid-template-columns: 1fr;
+  }
+  .book-row .cover { max-width: 260px; }
+}
+/* === Author Site Polishing (header, background, nav, buttons) === */
+
+/* 1) Page background: soft paper w/ subtle radial glow */
+:root{
+  --bg: #f8fafc;            /* paper */
+  --text: #0f172a;          /* slate-900 */
+  --muted: #475569;         /* slate-600 */
+  --brand: #334155;         /* slate-700 header */
+  --brand-ink: #e2e8f0;     /* slate-200 text on header */
+  --accent: #2563eb;        /* blue-600 primary */
+  --accent-ink: #ffffff;
+  --amazon: #f59e0b;        /* amber-500 */
+  --amazon-ink: #111827;    /* near-black for contrast */
+  --focus: #22c55e;         /* green-500 focus ring */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg: #0b1020;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+    --brand: #0f172a;
+    --brand-ink: #e2e8f0;
+    --accent: #60a5fa;
+    --accent-ink: #0b1020;
+    --amazon: #fbbf24;
+    --amazon-ink: #111827;
+    --focus: #34d399;
+  }
+}
+
+html, body {
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(2,6,23,0.06), transparent 55%), var(--bg);
+  color: var(--text);
+}
+
+/* 2) Header bar */
+header {
+  background: var(--brand);
+  color: var(--brand-ink);
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem 1rem;
+}
+
+/* 3) Nav → pill buttons */
+nav a {
+  display: inline-block;
+  padding: .5rem .9rem;
+  margin: 0 .15rem;
+  color: var(--brand-ink);
+  text-decoration: none;
+  border-radius: 999px;
+  transition: transform .08s ease, background-color .15s ease, color .15s ease;
+  outline: none;
+}
+
+nav a:hover {
+  background: rgba(226,232,240,.12);   /* light mist */
+  transform: translateY(-1px);
+}
+
+nav a:focus-visible {
+  box-shadow: 0 0 0 3px var(--focus);
+  background: rgba(226,232,240,.16);
+}
+
+/* Mark the active page link (add class="active" in HTML) */
+nav a.active {
+  background: rgba(226,232,240,.22);
+  color: #fff;
+}
+
+/* 4) Generic buttons (for newsletter/Amazon CTAs) */
+.button {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: .75rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform .08s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
+  outline: none;
+}
+
+.button:hover { transform: translateY(-1px); }
+.button:active { transform: translateY(0); }
+
+.button:focus-visible {
+  box-shadow: 0 0 0 3px var(--focus);
+}
+
+/* Primary (Newsletter) */
+.button--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: rgba(0,0,0,.06);
+}
+
+/* Outline (secondary action) */
+.button--outline {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(15,23,42,.25);
+}
+
+/* Amazon (subtle amber) */
+.button--amazon {
+  background: var(--amazon);
+  color: var(--amazon-ink);
+  border-color: rgba(0,0,0,.12);
+}
+
+/* Space and alignment helpers */
+.button + .button { margin-left: .5rem; }
+
+/* Book cover images: keep aspect and visibility */
+.book img, .book-card img, .book-grid img {
+  display:block; max-width:100%; height:auto; aspect-ratio:2/3; object-fit:cover;
+}
+/* === Force header nav links to render as buttons and color-shift on hover === */
+header nav a,
+header nav a:visited {
+  text-decoration: none !important;   /* kill underline even if a global a:hover exists */
+  display: inline-block;
+  padding: .52rem .9rem;
+  margin: 0 .18rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--brand-ink);
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, transform .08s ease, border-color .15s ease;
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+  /* change color instead of underline */
+  text-decoration: none !important;
+  background: rgba(226,232,240,.18);  /* subtle pill background */
+  color: #ffffff;                      /* brighter ink on hover */
+  transform: translateY(-1px);
+}
+
+header nav a.active {
+  background: rgba(226,232,240,.28);
+  color: #ffffff;
+  border-color: rgba(255,255,255,.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  header nav a:hover,
+  header nav a:focus-visible {
+    background: rgba(148,163,184,.22);
+    color: #ffffff;
+  }
+}
+/* deploy-css: 1761013300  — TEMP visible frame below proves CSS is fresh */
+
+/* --- Enforced paper background + pill nav (overrides) --- */
+html, body { 
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(2,6,23,0.06), transparent 55%), #f8fafc !important; 
+  color: #0f172a;
+}
+
+header { 
+  background: #334155 !important; 
+  color: #e2e8f0 !important; 
+  box-shadow: 0 4px 16px rgba(0,0,0,.18) !important;
+}
+
+header nav a, header nav a:visited {
+  text-decoration: none !important;
+  display: inline-block !important;
+  padding: .52rem .9rem !important;
+  margin: 0 .18rem !important;
+  border-radius: 999px !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  color: #e2e8f0 !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  transition: background-color .15s ease, color .15s ease, transform .08s ease, border-color .15s ease;
+}
+
+header nav a:hover, header nav a:focus-visible {
+  text-decoration: none !important;
+  background: rgba(226,232,240,.18) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+}
+
+header nav a.active { 
+  background: rgba(226,232,240,.28) !important; 
+  color: #ffffff !important; 
+  border-color: rgba(255,255,255,.12) !important;
+}
+
+/* Book cover safety (keep) */
+.book img, .book-card img, .book-grid img {
+  display:block; max-width:100%; height:auto; aspect-ratio:2/3; object-fit:cover;
+}
+/* --- Button polish: keep color, no underline on hover/visited --- */
+a.btn { color:#111; text-decoration:none; }
+a.btn:visited { color:#111; }
+a.btn:hover { color:#111; text-decoration:none; } /* keep underline off; existing border-color hover still applies */
+/* --- FINAL: buttons keep color and never underline --- */
+a.btn,
+a.btn:link,
+a.btn:visited,
+a.btn:hover,
+a.btn:active,
+a.btn:focus {
+  color: #111 !important;
+  text-decoration: none !important;
+}
+/* --- Outline .btn hover affordance (match other pills) --- */
+a.btn { 
+  background: transparent !important;
+  border-color: #111 !important;
+}
+a.btn:hover {
+  background: rgba(17,17,17,0.06) !important; /* subtle fill on hover */
+  border-color: #777 !important;              /* keep your original darker-outline hover */
+}
+/* --- FINAL-FINAL: clear hover for the outline CTA on homepage --- */
+main a.btn,
+p a.btn {
+  background: transparent !important;
+  border: 1px solid #111 !important;
+  color: #111 !important;
+  text-decoration: none !important;
+}
+main a.btn:hover,
+p a.btn:hover,
+main a.btn:focus {
+  background: #efeff3 !important;     /* visible fill on hover */
+  border-color: #555 !important;       /* darker outline */
+  color: #111 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08) !important;
+  transform: translateY(-1px) !important;
+}
+/* ==== bio-card (added) ==== */
+.bio-card{
+  background:#fff;
+  border-radius:1rem;
+  padding:1.5rem clamp(1rem,2vw,2rem);
+  box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.08);
+  border:1px solid rgba(0,0,0,.06);
+  max-width:72ch;
+  margin:2rem auto;
+  line-height:1.65;
+}
+.bio-card h1{margin:0 0 .75rem 0;font-size:clamp(1.5rem,2.2vw,2rem);line-height:1.2;}
+.bio-card p + p{margin-top:1rem;}
+.bio-card a{text-decoration:none;border-bottom:1px dashed rgba(0,0,0,.25);}
+.bio-card a:hover{border-bottom-color:transparent;}
+/* ==== /bio-card ==== */
+/* === bio-card overrides: remove stray blue borders/outlines === */
+.bio-card,
+.bio-card:focus,
+.bio-card:focus-within{
+  outline: none !important;
+  border-color: rgba(0,0,0,.06) !important;
+}
+/* retain accessible focus for interactive elements inside the card */
+.bio-card a:focus, .bio-card button:focus, .bio-card input:focus, .bio-card select:focus, .bio-card textarea:focus{
+  outline: 2px solid rgba(37,99,235,.35);
+  outline-offset: 2px;
+}
+/* === bio-card: remove any inherited focus/outline/border highlight === */
+.bio-card{ outline: none !important; border: 1px solid rgba(0,0,0,.06) !important; }
+.bio-card:focus,
+.bio-card:focus-visible,
+.bio-card:focus-within{ outline: none !important; }
+
+/* Keep accessible focus for interactive elements *inside* the card */
+.bio-card a:focus-visible,
+.bio-card button:focus-visible,
+.bio-card input:focus-visible,
+.bio-card select:focus-visible,
+.bio-card textarea:focus-visible{
+  outline: 2px solid rgba(37,99,235,.35);
+  outline-offset: 2px;
+  border-radius: .25rem;
+}
+/* ==== BIO PAGE SAFETY OVERRIDES ==== */
+
+/* Force visible header on pages that might not pick up theme vars */
+header {
+  background: #334155 !important;   /* slate-700 */
+  color: #e2e8f0 !important;         /* slate-200 */
+  border-bottom: 1px solid rgba(0,0,0,.08) !important;
+}
+header a { color: inherit !important; }
+
+/* Render nav as pill buttons so they don't "disappear" on white */
+header nav a,
+header nav a:visited {
+  display: inline-block;
+  padding: .5rem .75rem;
+  margin-right: .5rem;
+  border-radius: .75rem;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.15);
+  color: #e2e8f0 !important;
+  text-decoration: none !important;
+}
+header nav a:hover,
+header nav a:focus-visible {
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.35);
+  color: #ffffff !important;
+}
+
+/* Nuke any blue box around the bio card itself */
+.bio-card,
+.bio-card:focus,
+.bio-card:focus-visible,
+.bio-card:focus-within {
+  outline: none !important;
+  border: 1px solid rgba(0,0,0,.06) !important;
+}
+
+/* Keep proper focus for real controls INSIDE the card */
+.bio-card a:focus-visible,
+.bio-card button:focus-visible,
+.bio-card input:focus-visible,
+.bio-card select:focus-visible,
+.bio-card textarea:focus-visible {
+  outline: 2px solid rgba(37,99,235,.35); /* subtle blue */
+  outline-offset: 2px;
+  border-radius: .25rem;
+}
+
+/* Ensure the card still looks like a raised panel */
+.bio-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.5rem clamp(1rem, 2vw, 2rem);
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08);
+}
+/* ==== Bio-card: nuke any blue box/ring from frameworks or globals ==== */
+.bio-card {
+  /* your intended border */
+  border: 1px solid rgba(0,0,0,.06) !important;
+
+  /* kill outlines & UA rings */
+  outline: none !important;
+  outline-color: transparent !important;
+  -webkit-tap-highlight-color: transparent;
+
+  /* kill Tailwind/utility "ring" shadows and offsets */
+  --tw-ring-inset: initial;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: transparent;
+  --tw-ring-color: transparent;
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+
+  /* ensure only your drop shadow shows */
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.06),
+    0 8px 24px rgba(0,0,0,.08),
+    0 0 0 0 rgba(0,0,0,0) !important;
+}
+
+/* cover every interactive state that might reapply a ring/border */
+.bio-card:hover,
+.bio-card:active,
+.bio-card:focus,
+.bio-card:focus-visible,
+.bio-card:focus-within,
+.bio-card:target {
+  border: 1px solid rgba(0,0,0,.06) !important;
+  outline: none !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.06),
+    0 8px 24px rgba(0,0,0,.08),
+    0 0 0 0 rgba(0,0,0,0) !important;
+}
+
+/* keep proper focus style ONLY for real controls inside the card */
+.bio-card a:focus-visible,
+.bio-card button:focus-visible,
+.bio-card input:focus-visible,
+.bio-card select:focus-visible,
+.bio-card textarea:focus-visible {
+  outline: 2px solid rgba(37,99,235,.35);
+  outline-offset: 2px;
+  border-radius: .25rem;
+}
+
+/* belt-and-suspenders: if a parent container is forcing a border */
+.container .bio-card {
+  border-color: rgba(0,0,0,.06) !important;
+}
+/* ==== BIO CARD BLUE-RING EXORCISM ==== */
+
+/* 0) Make the card a positioned container */
+.bio-card { position: relative !important; }
+
+/* 1) Nuke ANY border/outline/ring on the card and everything inside it */
+.bio-card, .bio-card * {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-width: 0px !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+}
+
+/* 2) Re-apply ONLY the drop shadow we want (on the card) */
+.bio-card {
+  background: #fff !important;
+  border-radius: 1rem !important;
+  padding: 1.5rem clamp(1rem, 2vw, 2rem) !important;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.06),
+    0 8px 24px rgba(0,0,0,.08) !important;
+}
+
+/* 3) Paint a neutral border ABOVE everything via a pseudo element
+      (global focus/outline rules can't touch this) */
+
+/* 4) Keep accessible focus ONLY for real controls inside the card */
+.bio-card a:focus-visible,
+.bio-card button:focus-visible,
+.bio-card input:focus-visible,
+.bio-card select:focus-visible,
+.bio-card textarea:focus-visible {
+  outline: 2px solid rgba(37,99,235,.35) !important;
+  outline-offset: 2px !important;
+  border-radius: .25rem;
+}
+/* ===== BIO PAGE FRAME RESET (scoped) ===== */
+:root[data-page="bio"],
+:root[data-page="bio"] body,
+:root[data-page="bio"] main,
+:root[data-page="bio"] .container {
+  /* Remove any debug frames, UA outlines, framework rings */
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-width: 0px !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+}
+
+/* Keep the header/nav styling you want */
+:root[data-page="bio"] header {
+  background: #334155 !important;
+  color: #e2e8f0 !important;
+  border-bottom: 1px solid rgba(0,0,0,.08) !important;
+}
+:root[data-page="bio"] header nav a,
+:root[data-page="bio"] header nav a:visited {
+  display:inline-block;padding:.5rem .75rem;margin-right:.5rem;border-radius:.75rem;
+  background: rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+  color:#e2e8f0 !important;text-decoration:none !important;
+}
+:root[data-page="bio"] header nav a:hover,
+:root[data-page="bio"] header nav a:focus-visible {
+  background: rgba(255,255,255,.16);border-color: rgba(255,255,255,.35);color:#fff !important;
+}
+
+/* Restore the card's intended raised look (shadow + neutral border via ::before) */
+:root[data-page="bio"] .bio-card {
+  position: relative !important;
+  background:#fff !important;border-radius:1rem !important;
+  padding:1.5rem clamp(1rem,2vw,2rem) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.08) !important;
+}
+
+/* Keep accessible focus only for real controls inside the card */
+:root[data-page="bio"] .bio-card a:focus-visible,
+:root[data-page="bio"] .bio-card button:focus-visible,
+:root[data-page="bio"] .bio-card input:focus-visible,
+:root[data-page="bio"] .bio-card select:focus-visible,
+:root[data-page="bio"] .bio-card textarea:focus-visible {
+  outline:2px solid rgba(37,99,235,.35);outline-offset:2px;border-radius:.25rem;
+}
+/* FINAL SLEDGEHAMMER just for bio page shell */
+:root[data-page="bio"] main,
+:root[data-page="bio"] .container {
+  outline: none !important; border: none !important; box-shadow: none !important;
+}
+/* Canonical neutral card border (final override) */
+/* === canonical border for cards (final override) === */
+:root[data-page="bio"] .bio-card::before,
+.panel::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  border:1px solid rgba(0,0,0,.08) !important;
+  border-radius:inherit;
+  pointer-events:none;
+  box-shadow:none !important;
+}
+/* Book media (img or video) unified styling */
+.book-media,
+.book-media video,
+.book-media img {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius: .75rem;
+  overflow:hidden;
+}
+
+/* Optional: fixed aspect ratio crop like your covers (tall portrait) */
+.book-media video,
+.book-media img {
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+/* Books aspect rules */
+.book-video {
+  width: 100%;
+  aspect-ratio: 16/9;         /* default */
+  display: block;
+  border-radius: .5rem;
+  overflow: hidden;
+  background: #f5f5f7;        /* light, not black */
+  object-fit: cover;          /* fill the box, crop as needed */
+}
+/* Target by card order to avoid HTML edits: */
+.books-grid > article:nth-of-type(1) .book-video { aspect-ratio: 21/9; } /* Snippy wide */
+.books-grid > article:nth-of-type(2) .book-video { aspect-ratio: 3/4;  } /* adjust if Gremlins is 2nd */
+.books-grid > article:nth-of-type(3) .book-video { aspect-ratio: 3/4;  } /* adjust if Socorro is 3rd */
+/* Books: hide any legacy image covers for the three titles */
+.books .book-card img[src*="/images/books/snippy.jpg"],
+.books .book-card img[src*="/images/books/gremlins.jpg"],
+.books .book-card img[src*="/images/books/socorro.jpg"] { display:none !important; }
+/* Books: layout clamp */
+.books .book-card{
+  display:grid; grid-template-columns: 320px 1fr; gap:1rem; align-items:start;
+}
+.books .book-card .book-video{
+  width:100%; max-width:320px;
+  aspect-ratio:16/9;       /* default */
+  border-radius:.5rem; overflow:hidden;
+  background:#f5f5f7;      /* light, not black */
+  object-fit:cover;        /* fill; crop as needed */
+}
+
+/* Set aspects by card order (adjust if your order differs) */
+.books .books-grid > article:nth-of-type(1) .book-video { aspect-ratio:21/9; } /* Snippy wide */
+.books .books-grid > article:nth-of-type(2) .book-video { aspect-ratio:3/4;  } /* Gremlins tall */
+.books .books-grid > article:nth-of-type(3) .book-video { aspect-ratio:3/4;  } /* Socorro tall */
+
+/* On small screens, stack vertically */
+@media (max-width: 720px){
+  .books .book-card{ grid-template-columns: 1fr; }
+  .books .book-card .book-video{ max-width:100%; }
+}
+/* ===== BOOKS HOTFIX (layout + no black box) ===== */
+
+/* 1) Two-column card layout */
+.books .book-card{
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap:1rem;
+  align-items:start;
+  max-width: 100%;
+}
+
+/* 2) Kill the empty legacy media wrapper (causing the black rounded rectangle) */
+.books .book-card .book-media{ display:none !important; }
+
+/* 3) Make the video the left-column media.
+      Show only the FIRST video in each card; hide any duplicates from older markup. */
+.books .book-card video{ display:none !important; }
+.books .book-card video:first-of-type{
+  display:block !important;
+  grid-column:1;
+  width:100%;
+  max-width:320px;
+  border-radius:.5rem;
+  overflow:hidden;
+  background:#f5f5f7;     /* light grey – no black placeholder */
+  object-fit:cover;        /* fill/crop to kill letterboxing */
+  aspect-ratio:16/9;       /* default */
+}
+
+/* 4) Put the text content in the right column */
+.books .book-card .book-meta{ grid-column:2; }
+
+/* 5) Per-card aspect tweaks by order (adjust if your order differs)
+      1: Snippy wide, 2: Gremlins tall, 3: Socorro tall. */
+.books .books-grid > article:nth-of-type(1) video:first-of-type{ aspect-ratio:21/9; }
+.books .books-grid > article:nth-of-type(2) video:first-of-type{ aspect-ratio:3/4;  }
+.books .books-grid > article:nth-of-type(3) video:first-of-type{ aspect-ratio:3/4;  }
+
+/* 6) Mobile: stack vertically */
+@media (max-width: 720px){
+  .books .book-card{ grid-template-columns:1fr; }
+  .books .book-card video:first-of-type{ max-width:100%; }
+}
+/* CANARY books layout */
+.books .books-grid { display:block; margin-top:.75rem; }
+.books .book-card{ display:grid; grid-template-columns: 320px 1fr; gap:1rem; align-items:start; }
+.book-video{ width:100%; max-width:320px; aspect-ratio:16/9; background:#f5f5f7; object-fit:cover; border-radius:.5rem; overflow:hidden; }
+@media (max-width:720px){ .books .book-card{ grid-template-columns:1fr; } .book-video{ max-width:100%; } }
+/* CANARY wrapper hide */
+.books .book-card > :first-child:not(video){ display:none !important; }
+/* === SNIPPY HOTFIX === */
+/* Make the first book card's media column 640px and keep the full frame (no crop) */
+.books .books-grid > article:nth-of-type(1){ 
+  display:grid; 
+  grid-template-columns: 640px 1fr !important;
+  gap: 1rem;
+  align-items: start;
+}
+.books .books-grid > article:nth-of-type(1) .book-video{
+  max-width: 640px !important;
+  aspect-ratio: 16/9 !important;   /* match the source so height increases */
+  object-fit: contain !important;  /* show entire frame, no top/bottom cut */
+  background: #f5f5f7 !important;  /* light gutters instead of black */
+  display:block !important;
+}
+.books .books-grid > article:nth-of-type(1) .book-meta{
+  grid-column: 2 !important;
+}
+/* On small screens fall back to stacking */
+@media (max-width: 900px){
+  .books .books-grid > article:nth-of-type(1){
+    grid-template-columns: 1fr !important;
+  }
+  .books .books-grid > article:nth-of-type(1) .book-video{
+    max-width: 100% !important;
+  }
+}
+/* === /SNIPPY HOTFIX === */
+/* --- BOOKS GLOBAL LAYOUT (no wrapper dependency) --- */
+.books-grid { display:block; margin-top:.75rem; }
+.book-card{ display:grid; grid-template-columns:320px 1fr; gap:1rem; align-items:start; }
+.book-video{ width:100%; max-width:320px; aspect-ratio:16/9; background:#f5f5f7; border-radius:.5rem; overflow:hidden; object-fit:cover; }
+.book-meta{ grid-column:2; }
+
+/* Hide any stray first child wrapper that isn't media */
+.book-card > :first-child:not(video):not(picture):not(img){ display:none !important; }
+
+/* --- SNIPPY (first card) — 2x width and no crop --- */
+.books-grid > article:nth-of-type(1){ grid-template-columns:640px 1fr !important; }
+.books-grid > article:nth-of-type(1) .book-video{
+  max-width:640px !important;
+  aspect-ratio:16/9 !important;
+  object-fit:contain !important;   /* show full frame (no top/bottom cut) */
+  background:#f5f5f7 !important;   /* light gutters, not black */
+}
+
+/* Mobile stack */
+@media (max-width:900px){
+  .book-card{ grid-template-columns:1fr; }
+  .book-video{ max-width:100% !important; }
+}
+/* CLICKTHROUGH HOTFIX: ensure action buttons are clickable even if a card overlay exists */
+.book-card .book-actions a { position: relative; z-index: 3; pointer-events: auto !important; }
+.book-card a.stretched-link,
+.book-card .cover-link,
+.book-card .media-link,
+.book-card > a:first-child { pointer-events: none !important; }
+/* CLICK FIX (cards): disable ALL links inside a book-card... */
+.book-card a { pointer-events: none !important; }
+/* ...except the action buttons */
+.book-card .book-actions a {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 3;
+}
+
+/* ==== Books page: hide stray full-width media under main (hotfix) ==== */
+.books-page main > img,
+.books-page main > video,
+.books-page main > figure,
+.books-page main > picture {
+  display: none !important;
+}
+
+/* ==== Books page card grid hardening ==== */
+.book-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 260px) 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Ensure media sits in the first column and never overlaps */
+.book-card > img,
+.book-card > video,
+.book-card > figure,
+.book-card > picture {
+  grid-column: 1;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: .5rem;
+  object-fit: cover;
+  overflow: hidden;
+  background: #111; /* subtle placeholder if video poster missing */
+}
+
+/* Make sure text/buttons flow in column 2 */
+.book-card > *:not(img):not(video):not(figure):not(picture) {
+  grid-column: 2;
+}
+
+/* Defensive: prevent absolutely-positioned media from overlaying text */
+.book-card img,
+.book-card video {
+  position: static !important;
+}
+
+/* ==== Books: bulletproof card layout (override legacy floats/absolute) ==== */
+.book-card {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 260px) minmax(0,1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+/* Media in column 1 only, no overlay */
+.book-card > img,
+.book-card > video,
+.book-card > figure,
+.book-card > picture,
+.book-card .cover,
+.book-card .media {
+  grid-column: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  position: static !important;
+  float: none !important;
+  clear: both !important;
+  z-index: auto !important;
+  margin: 0 !important;
+  border-radius: .5rem;
+  object-fit: contain !important;  /* prevent cropping */
+  overflow: hidden;
+  background: #111;
+}
+
+/* All other content in column 2 */
+.book-card > *:not(img):not(video):not(figure):not(picture):not(.cover):not(.media) {
+  grid-column: 2 !important;
+}
+
+/* Make sure paragraphs/buttons wrap nicely and don’t collide */
+.book-card h3, .book-card p, .book-card a, .book-card button {
+  position: static !important;
+  float: none !important;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+/* ==== Books page emergency overrides (scoped & safe) ==== */
+.books-page .book-card {
+  display: grid !important;
+  grid-template-columns: minmax(220px,260px) 1fr !important;
+  gap: 1rem !important;
+  align-items: start !important;
+}
+
+/* Nuke stray floats/absolute/stacking inside cards */
+.books-page .book-card * {
+  position: static !important;
+  float: none !important;
+  z-index: auto !important;
+}
+
+/* Make media behave and stop overlaying text */
+.books-page .book-card img,
+.books-page .book-card video,
+.books-page .book-card figure,
+.books-page .book-card picture {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+  border-radius: .5rem;
+  background: #111;
+}
+
+/* Ensure text/buttons are visible and inline */
+.books-page .book-card a,
+.books-page .book-card .btn,
+.books-page .book-card .actions a,
+.books-page .book-card a.primary {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  text-decoration: none;
+}
+
+/* Keep headings where they belong (fix "Books" jumping to bottom) */
+.books-page h1, .books-page h2, .books-page .page-title {
+  position: static !important;
+  float: none !important;
+  margin: 0 0 1rem !important;
+}
+
+/* Mobile: stack nicely */
+@media (max-width: 700px) {
+  .books-page .book-card {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* === Books: card-specific hardening === */
+#socorro-card, #gremlins-card, #cosmic-card {
+  display: grid !important;
+  grid-template-columns: minmax(220px,260px) 1fr !important;
+  gap: 1rem !important;
+  align-items: start !important;
+}
+#socorro-card img, #socorro-card video,
+#gremlins-card img, #gremlins-card video,
+#cosmic-card img, #cosmic-card video {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  position: static !important;
+  float: none !important;
+  margin: 0 !important;
+  border-radius: .5rem;
+  background: #111;
+}
+#socorro-card > *:not(img):not(video):not(figure):not(picture),
+#gremlins-card > *:not(img):not(video):not(figure):not(picture),
+#cosmic-card > *:not(img):not(video):not(figure):not(picture) {
+  grid-column: 2 !important;
+  position: static !important;
+  float: none !important;
+}
+
+#socorro-card .actions a,
+#gremlins-card .actions a,
+#cosmic-card .actions a,
+#socorro-card a.primary, #gremlins-card a.primary, #cosmic-card a.primary {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  background: #2563eb !important;
+  color: #fff !important;
+  padding: .6rem 1rem !important;
+  border-radius: .5rem !important;
+  font-weight: 700 !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  text-decoration: none !important;
+}
+#socorro-card .actions a.secondary,
+#gremlins-card .actions a.secondary,
+#cosmic-card .actions a.secondary {
+  background: transparent !important;
+  color: inherit !important;
+  border: 1px solid rgba(0,0,0,.2) !important;
+}
+
+/* ==== Books page safety net (non-destructive) ==== */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.book-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.book-card img,
+.book-card video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: .5rem;
+  background: #111;
+}
+
+/* Action buttons */
+.book-actions a {
+  display: inline-block;
+  padding: .62rem 1rem;
+  border-radius: .5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+.book-actions a.primary { background:#2563eb; color:#fff; }
+.book-actions a.secondary { background:#f5f5f5; color:#111; }
+.book-actions a:hover { filter: brightness(0.96); }
+
+/* === Books page: Amazon button (nav-safe) === */
+.btn-amazon {
+  display:inline-block; padding:.5rem .8rem; border-radius:.5rem;
+  font-weight:600; text-decoration:none !important;
+  background:#2563eb; color:#fff; border:1px solid rgba(0,0,0,.06);
+  transition:background-color .15s ease, transform .08s ease;
+}
+.btn-amazon:hover { background:#1e4fd3; }
+
+/* ===== Books page: scoped fixes (navbar-safe) ===== */
+
+/* Keep media responsive and never overflow */
+article[id$="-card"] img,
+article[id$="-card"] video {
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:.5rem;
+}
+
+/* --- Snippy: wide media with actions stacked to the right --- */
+#snippy-card {
+  display:grid;
+  grid-template-columns: minmax(520px, 1fr) 240px; /* wide media, compact actions */
+  gap: 1rem;
+  align-items:start;
+}
+#snippy-card > :is(img,video,figure,.media,.poster){ grid-column:1; }
+#snippy-card > :is(.actions, .buttons, .cta, .meta){ grid-column:2; }
+#snippy-card .actions a,
+#snippy-card .buttons a { margin-right:.5rem; margin-bottom:.5rem; }
+
+/* --- Socorro: intentionally smaller media (like your original) --- */
+#socorro-card { max-width: 460px; }
+#socorro-card img, #socorro-card video { max-width: 460px; }
+
+/* --- Gremlins: normal size --- */
+#gremlins-card { max-width: 680px; }
+
+/* --- Cosmic Secrets: static image, normal size --- */
+#cosmic-card   { max-width: 680px; }
+#cosmic-card img { object-fit: cover; }
+
+/* Center each card block and prevent “full bleed” */
+#snippy-card, #socorro-card, #gremlins-card, #cosmic-card {
+  margin-left:auto; margin-right:auto;
+}
+
+/* Blue Amazon button (in case rules were lost) */
+.btn-amazon {
+  display:inline-block; padding:.5rem .8rem; border-radius:.5rem;
+  font-weight:600; text-decoration:none !important;
+  background:#2563eb; color:#fff; border:1px solid rgba(0,0,0,.06);
+  transition:background-color .15s ease, transform .08s ease;
+}
+.btn-amazon:hover { background:#1e4fd3; }
+/* ===== Books page: final navbar-safe layout fixes ===== */
+
+/* Normalize media sizing inside any card */
+article[id$="-card"] > img,
+article[id$="-card"] > video,
+article[id$="-card"] > figure {
+  display:block;
+  width:100% !important;
+  height:auto !important;
+  border-radius:.5rem;
+}
+
+/* ---------- Snippy wide (media left, everything else right) ---------- */
+#snippy-card {
+  display:grid !important;
+  grid-template-columns: minmax(520px, 1fr) 260px !important;
+  gap: 1rem !important;
+  align-items:start !important;
+  max-width: 980px;
+  margin-left:auto; margin-right:auto;
+}
+/* Put media on the left… */
+#snippy-card > img,
+#snippy-card > video,
+#snippy-card > figure { grid-column:1 !important; }
+/* …and everything that is NOT media on the right (title, text, buttons, etc.) */
+#snippy-card > :not(img):not(video):not(figure) { grid-column:2 !important; }
+
+/* ---------- Socorro small ---------- */
+#socorro-card {
+  max-width: 480px !important;
+  margin-left:auto; margin-right:auto;
+}
+#socorro-card img,
+#socorro-card video,
+#socorro-card figure { max-width: 460px !important; }
+
+/* ---------- Gremlins & Cosmic normal ---------- */
+#gremlins-card, #cosmic-card {
+  max-width: 680px !important;
+  margin-left:auto; margin-right:auto;
+}
+#cosmic-card img { object-fit: cover; }
+
+/* Optional: ensure Amazon button blue even if base styles changed */
+#snippy-card a, #socorro-card a, #gremlins-card a, #cosmic-card a {
+  text-decoration: none;
+}
+a.btn-amazon {
+  display:inline-block; padding:.5rem .8rem; border-radius:.5rem;
+  font-weight:600; background:#2563eb; color:#fff; border:1px solid rgba(0,0,0,.06);
+  transition:background-color .15s ease, transform .08s ease;
+}
+a.btn-amazon:hover { background:#1e4fd3; }
+
+/* ===== Books page rebuild (scoped) ===== */
+.books-page { padding-top: 0.5rem; }
+.books-page h1 { margin: .5rem 0 1rem; }
+
+.book-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: .75rem;
+  padding: 1rem;
+  margin: 0 auto 1rem;
+  max-width: 720px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.03);
+}
+.book-card h2 { margin: 0 0 .25rem; font-size: 1.1rem; }
+.book-card p { margin: 0 0 .5rem; color: #444; }
+
+.book-media img,
+.book-media video {
+  display:block; width:100%; height:auto; border-radius:.5rem;
+  background:#000;
+}
+
+/* Actions */
+.book-actions { margin-top:.5rem; display:flex; gap:.5rem; flex-wrap:wrap; }
+.book-actions .btn {
+  display:inline-block; padding:.5rem .8rem; border-radius:.5rem;
+  border:1px solid rgba(0,0,0,.10); background:#f7f7f8; color:#111;
+  font-weight:600; text-decoration:none;
+}
+.book-actions .btn:hover { background:#eee; }
+
+/* Amazon blue */
+.book-actions .btn-amazon {
+  background:#2563eb; color:#fff; border:1px solid rgba(0,0,0,.06);
+}
+.book-actions .btn-amazon:hover { background:#1e4fd3; }
+
+/* Snippy = WIDE: media left, text/buttons right */
+.book-wide {
+  max-width: 1100px;
+  display:grid;
+  grid-template-columns: minmax(560px,1fr) 300px;
+  gap: 1rem;
+  align-items:start;
+}
+.book-wide .book-media { grid-column:1; }
+.book-wide .book-side  { grid-column:2; }
+
+/* Socorro = SMALL card */
+.book-small { max-width: 500px; }
+.book-small .book-media img,
+.book-small .book-media video { max-width: 480px; }
+
+/* Cosmic & Gremlins = normal */
+#gremlins-card, #cosmic-card { max-width: 720px; }
+
+/* Mobile fallbacks */
+@media (max-width: 900px){
+  .book-wide { grid-template-columns: 1fr; }
+  .book-wide .book-side { grid-column:1; }
+}
+/* ===== Books page FINAL rebuild (scoped; navbar-safe) ===== */
+.books-page { padding-top: .5rem; }
+.books-page h1 { margin: .5rem 0 1rem; }
+
+.book-card{
+  display:grid;
+  grid-template-columns: minmax(520px, 1fr) 300px; /* media left, side right */
+  gap: 1rem;
+  align-items:start;
+  background:#fff; border:1px solid rgba(0,0,0,.08);
+  border-radius:.75rem; padding:1rem; margin:0 auto 1rem;
+  max-width: 1024px; box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+.book-media img, .book-media video{
+  display:block; width:100%; height:auto; border-radius:.5rem; background:#000;
+}
+.book-side h2{ margin:.25rem 0 .25rem; font-size:1.15rem; }
+.book-side p { margin:0 0 .5rem; color:#444; }
+
+/* Snippy = wider media column */
+.book-wide{ grid-template-columns: minmax(640px,1fr) 300px; max-width:1180px; }
+
+/* Buttons (blue Amazon, blue Updates) */
+.book-actions{ display:flex; flex-direction:column; gap:.5rem; }
+.btn{
+  display:inline-block; padding:.55rem .9rem; border-radius:.6rem;
+  font-weight:600; text-decoration:none !important; text-align:center;
+  border:1px solid rgba(0,0,0,.06); background:#2563eb; color:#fff;
+  transition:background-color .15s ease, transform .08s ease;
+}
+.btn:hover{ background:#1e4fd3; }
+.btn-amazon{ background:#2563eb; }
+.btn-update{ background:#2563eb; }
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 900px){
+  .book-card, .book-wide{
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+}
+
+/* ========== Books page reset (fresh) ========== */
+
+/* Get the content closer to the nav */
+main.container {
+  margin-top: .35rem;   /* was too big; tighten */
+}
+
+/* Grid wrapper for book cards */
+.books-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* Two cols on wider screens; snippy can span */
+@media (min-width: 900px) {
+  .books-grid { grid-template-columns: 1.1fr 1fr; }
+  .book-card.wide { grid-column: 1 / span 2; }
+}
+
+/* Card */
+.book-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1rem;
+  align-items: start;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: .75rem;
+  padding: .9rem;
+  background: #fff;
+}
+
+/* Stack on narrow widths */
+@media (max-width: 720px) {
+  .book-card { grid-template-columns: 1fr; }
+}
+
+/* Media box (image or video) */
+.book-card .media-box {
+  width: 100%;
+  max-width: 360px;
+}
+.book-card .media-box img,
+.book-card .media-box video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: .5rem;
+}
+
+/* Make Snippy feel wider without being huge */
+.book-card.wide .media-box {
+  max-width: 640px;   /* bigger than others */
+}
+
+/* Title + buttons column */
+.book-card .meta {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+/* Buttons: bring back solid blue */
+.btn { 
+  display:inline-block; 
+  padding:.5rem .8rem; 
+  border-radius:.5rem; 
+  font-weight:600; 
+  text-decoration:none !important; 
+  border:1px solid transparent;
+}
+.btn-blue { 
+  background:#2563eb; 
+  color:#fff; 
+}
+.btn-blue:hover { background:#1e4fd3; }
+.btn-ghost { 
+  background:#f3f4f6; 
+  color:#111827; 
+  border-color:rgba(0,0,0,.08);
+}
+.btn-ghost:hover { background:#e5e7eb; }
+
+/* Space buttons together nicely */
+.btn-row { display:flex; gap:.4rem; flex-wrap:wrap; }
+
+/* Small, subtle overlines for series notes */
+.meta .kicker { font-size:.8rem; opacity:.8; margin-top:.15rem; }
+
+/* Keep links in cards from underlining on hover */
+.book-card a { text-decoration:none; }
+.book-card a:hover { text-decoration:none; }
+
+
+/* tighten books page spacing a hair more */
+main.container { margin-top: .2rem; }
+
+/* keep solid blue buttons across the site */
+.btn { display:inline-block; padding:.5rem .8rem; border-radius:.5rem; font-weight:600; text-decoration:none!important; border:1px solid transparent; }
+.btn-blue { background:#2563eb; color:#fff; }
+.btn-blue:hover { background:#1e4fd3; }
+.btn-ghost { background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
+.btn-ghost:hover { background:#e5e7eb; }
+
+/* ===== Books page hard tighten to nav ===== */
+header { margin-bottom: 0; }
+header .container { padding-bottom: .1rem; }
+header + main.container { margin-top: -0.65rem !important; } /* pull up tight */
+
+/* Grid + card layout */
+.books-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 900px) {
+  .books-grid { grid-template-columns: 1.1fr 1fr; }
+  .book-card.wide { grid-column: 1 / span 2; }
+}
+.book-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1rem;
+  align-items: start;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: .75rem;
+  padding: .9rem;
+  background: #fff;
+}
+@media (max-width: 720px) { .book-card { grid-template-columns: 1fr; } }
+.book-card .media-box { width: 100%; max-width: 360px; }
+.book-card .media-box img,
+.book-card .media-box video { display:block; width:100%; height:auto; border-radius:.5rem; }
+.book-card.wide .media-box { max-width: 640px; }
+.book-card .meta { display:flex; flex-direction:column; gap:.5rem; }
+.meta .kicker { font-size:.8rem; opacity:.8; margin-top:.15rem; }
+
+/* Buttons: solid blue */
+.btn { display:inline-block; padding:.5rem .8rem; border-radius:.5rem; font-weight:600; text-decoration:none!important; border:1px solid transparent; }
+.btn-blue { background:#2563eb; color:#fff; }
+.btn-blue:hover { background:#1e4fd3; }
+.btn-ghost { background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
+.btn-ghost:hover { background:#e5e7eb; }
+.btn-row { display:flex; gap:.4rem; flex-wrap:wrap; }
+
+/* ===== FINAL OVERRIDES: Books page tighten + video visibility ===== */
+body.books-page header,
+body.books-page header * { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+
+body.books-page header + main.container,
+body.books-page main.container {
+  /* yank page content up tight under nav; adjust to taste */
+  margin-top: -1.1rem !important;
+  padding-top: 0 !important;
+}
+
+/* In case any earlier rule hid/inline'd videos */
+body.books-page .book-card .media-box video {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 120px !important; /* prevents zero-height from bad calc */
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Prevent accidental overlays covering video */
+body.books-page .book-card .media-box { position: relative; z-index: 0; }
+body.books-page .book-card .meta      { position: relative; z-index: 1; }
+
+/* Buttons stay solid blue here too */
+body.books-page .btn        { text-decoration: none !important; border:1px solid transparent; }
+body.books-page .btn-blue   { background:#2563eb; color:#fff; }
+body.books-page .btn-blue:hover { background:#1e4fd3; }
+
+/* === Books page: safe spacing & visibility (final overrides) === */
+body.books-page header { margin-bottom: .15rem !important; }
+body.books-page main.container { margin-top: 0 !important; padding-top: .25rem !important; }
+
+/* Layout (Snippy wide, others normal) */
+body.books-page .books-grid { display:grid; grid-template-columns:1fr; gap:1.1rem; }
+@media (min-width:900px){
+  body.books-page .books-grid{ grid-template-columns:1.1fr 1fr; }
+  body.books-page .book-card.wide{ grid-column:1 / span 2; }
+}
+body.books-page .book-card{ display:grid; grid-template-columns:260px 1fr; gap:1rem; align-items:start;
+  border:1px solid rgba(0,0,0,.06); border-radius:.75rem; padding:.9rem; background:#fff; }
+@media (max-width:720px){ body.books-page .book-card{ grid-template-columns:1fr; } }
+
+/* Media blocks */
+body.books-page .book-card .media-box{ width:100%; max-width:360px; }
+body.books-page .book-card.wide .media-box{ max-width:640px; }
+body.books-page .book-card .media-box img,
+body.books-page .book-card .media-box video{ display:block; width:100%; height:auto; border-radius:.5rem; }
+
+/* Force-visible videos in case older rules hid them */
+body.books-page .book-card .media-box video{ display:block !important; visibility:visible !important; opacity:1 !important; }
+
+/* Buttons: blue + ghost */
+body.books-page .btn{ display:inline-block; padding:.5rem .8rem; border-radius:.5rem; font-weight:600; text-decoration:none!important; border:1px solid transparent; }
+body.books-page .btn-blue{ background:#2563eb; color:#fff; }
+body.books-page .btn-blue:hover{ background:#1e4fd3; }
+body.books-page .btn-ghost{ background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
+body.books-page .btn-ghost:hover{ background:#e5e7eb; }
+body.books-page .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }
+
+/* ==== Books page: guaranteed visible media + tighter spacing ==== */
+body.books-page header .container { padding-top:.2rem !important; padding-bottom:.25rem !important; }
+body.books-page main.container    { margin-top:0 !important; padding-top:.15rem !important; }
+
+/* Snippy: wide 16:9 box; others: 3:4 portrait-ish */
+body.books-page #snippy-card   .media-box video { aspect-ratio:16/9; background:#111 !important; display:block !important; width:100% !important; height:auto !important; }
+body.books-page #socorro-card  .media-box video,
+body.books-page #gremlins-card .media-box video { aspect-ratio:3/4;  background:#111 !important; display:block !important; width:100% !important; height:auto !important; }
+
+/* Make sure image-only Cosmic card is sized nicely */
+body.books-page #cosmic-card .media { display:block; width:100%; max-width:360px; border-radius:.5rem; }
+
+/* Keep blue buttons consistent */
+body.books-page .btn{ display:inline-block; padding:.5rem .8rem; border-radius:.5rem; font-weight:600; text-decoration:none!important; border:1px solid transparent; }
+body.books-page .btn-blue{ background:#2563eb; color:#fff; }
+body.books-page .btn-blue:hover{ background:#1e4fd3; }
+body.books-page .btn-ghost{ background:#f3f4f6; color:#111827; border-color:rgba(0,0,0,.08); }
+body.books-page .btn-ghost:hover{ background:#e5e7eb; }
+body.books-page .btn-row{ display:flex; gap:.4rem; flex-wrap:wrap; }

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tony Angiola — Author</title>
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
+  <style>
+    /* keep the dark background and ensure content shows */
+    html, body { background:#0B0F1A; }
+    .site-main, main { display:block; opacity:1; visibility:visible; }
+  </style>
+
+<style id="hero-bright-">
+  /* Brighten hero paragraph */
+  html body.home-page .hero p.small{
+    color:#eaf2ff !important;
+  }
+  /* Brighten the CTA button/link */
+  html body.home-page .hero a.btn,
+  html body.home-page .hero a.btn:link,
+  html body.home-page .hero a.btn:visited{
+    background:#2563eb !important;
+    border:1px solid #2563eb !important;
+    color:#ffffff !important;
+    box-shadow:0 6px 18px rgba(0,0,0,.25) !important;
+    text-decoration:none !important;
+  }
+  html body.home-page .hero a.btn:hover{
+    background:#3b82f6 !important;
+    border-color:#3b82f6 !important;
+    transform:translateY(-1px);
+  }
+</style>
+  <style id="newsletter-navcenter-20251029-20251029-225833">
+    /* FORCE center nav; keep badge on right */
+    .contact-header .container, .site-header .container { position:relative !important; }
+    .contact-header nav, .site-header nav {
+      display:flex !important; align-items:center !important; justify-content:center !important;
+      gap:16px !important; min-height:66px !important;
+    }
+    .owner-badge { position:absolute !important; right:16px !important; top:14px !important; }
+    @media (max-width:720px){
+      .contact-header nav, .site-header nav { justify-content:space-between !important; padding-right:72px !important; }
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/style.css?v=navstd-20251029-234811">
+</head>
+
+<body class="home-page newsletter-page">
+  <header class="contact-header">
+    <div class="container">
+      <nav>
+        <a href="/" class="active">HOME</a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html" class="active" aria-current="page">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
+        <img class="owner-avatar" src="/assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
+      </a>
+    </div>
+  </header>
+
+<main class="newsletter" style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;padding:3rem 1rem;min-height:60vh;">
+  <h1 style="color:#fff;margin-bottom:1rem;">Newsletter</h1>
+  <div class="card" style="max-width:700px;width:100%;background:#141c27;border:1px solid #223047;border-radius:16px;padding:2rem;box-shadow:0 8px 20px rgba(0,0,0,0.15);text-align:center;">
+    <p style="color:#cbd5e1;margin-bottom:1rem;">Get research updates, chapter drops, and behind-the-scenes notes.</p>
+    <form id="newsletter-form" action="https://api.web3forms.com/submit" method="POST" style="display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <input type="email" name="email" placeholder="you.com" required style="flex:1;min-width:240px;padding:.6rem .8rem;border-radius:10px;border:1px solid #2a3547;background:#0f141c;color:#e8edf5;">
+      <button type="submit" style="padding:.6rem 1rem;border-radius:10px;border:1px solid #111827;background:#111827;color:#fff;">Subscribe</button>
+      <input type="hidden" name="subject" value="Newsletter signup">
+      <input type="text" name="botcheck" style="display:none;">
+    </form>
+  </div>
+</main>
+

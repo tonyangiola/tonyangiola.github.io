@@ -1,0 +1,12 @@
+/* Reset header/nav links so they never look like buttons */
+:where(header,.site-header,nav,.navbar) :where(a,button){
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  display: inline !important;
+  color: inherit !important;
+  text-decoration: none; /* your theme can underline on hover elsewhere */
+}

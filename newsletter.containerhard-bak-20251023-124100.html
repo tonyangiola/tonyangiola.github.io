@@ -1,0 +1,103 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newsletter — Tony Angiola</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
+
+<style id="nl-critical">
+  /* === Exact Bio background + full-height paint === */
+  :root { --page-bg:#f6f7fb; --nav-bg:#0f1623; --nav-text:#fff; }
+  html, body { height: 100%; min-height: 100%; background: var(--page-bg) !important; margin:0; }
+  /* Ensure full viewport coverage even if content is short */
+  body { min-height: 100vh; }
+
+  /* === Dark NAV, always === */
+  header { background: var(--nav-bg) !important; box-shadow: 0 1px 6px rgba(0,0,0,.25); }
+  header nav a { color: var(--nav-text) !important; text-decoration: none; }
+
+  /* === Kill ANY non-header backgrounds below the nav on this page === */
+  /* Keep buttons/inputs normal */
+  .newsletter-page :where(main, section, article, div, aside, footer) {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+  /* Also kill pseudo-elements that some “hero” blocks use */
+  .newsletter-page :where(main, .hero, .banner, .masthead, .page-header)::before,
+  .newsletter-page :where(main, .hero, .banner, .masthead, .page-header)::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Containers & basics */
+  .container { max-width: 980px; margin: 0 auto; padding: 0 1rem; }
+  nav { display:flex; gap:1rem; align-items:center; padding:.85rem 0; }
+  main { padding-bottom: 2.5rem; }
+  .hero-pad { margin-top: 1.25rem; }
+  .btn { display:inline-block; padding:.6rem 1rem; border-radius:.7rem; font-weight:600; border:1px solid rgba(0,0,0,.06); background:#2563eb; color:#fff; }
+  input[type="email"] { display:block; width:100%; max-width:28rem; padding:.6rem .7rem; border-radius:.6rem; border:1px solid #d0d4dc; }
+</style>
+
+<body class="newsletter-page" class="newsletter-page" class="newsletter-page">
+<style id="bg-scope-newsletter">
+  :root{ --site-bg:#0e1424; } /* Bio background */
+  html,body{ background:var(--site-bg)!important; background-color:var(--site-bg)!important; }
+
+  /* HARD OVERRIDE: only the newsletter content area */
+  body.newsletter-page main.container,
+  body.newsletter-page main.container * {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+</style>
+</style>
+<style>
+  :root{ --site-bg:#0e1424; } /* Bio background */
+  html,body{ background:var(--site-bg) !important; background-color:var(--site-bg) !important; }
+  /* Unpaint common white wrappers so the page BG shows through */
+  body .site, body .site-wrap, body .site-container,
+  body .wrapper, body .wrapper-inner,
+  body .page-wrap, body .page, body #page,
+  body .content, body .content-wrap, body .content-area, body #content,
+  body .container, body .container-fluid,
+  body .main, body .main-content, body #main, body main,
+  body section[role=\"main\"],
+  body .newsletter, body .newsletter-page,
+  body .subscribe, body .subscribe-wrap,
+  body .form-wrap, body .form-container, body .form-section {
+    background: transparent !important; background-color: transparent !important;
+  }
+</style>
+  <!-- Direct header (no SSI) -->
+  <header>
+    <div class="container">
+      <nav>
+    
+        <a href="/"><strong>HOME</strong>HOME</a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html" aria-current="page">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-pad">
+      <h1>Newsletter</h1>
+      <p>Get updates on new investigations, videos, and book progress.</p>
+
+      <form action="mailto:contact@tonyangiola.com" method="post" enctype="text/plain" style="max-width:28rem">
+        <label for="nl-email"><strong>Email</strong></label>
+        <input id="nl-email" name="email" type="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+
+      <p style="opacity:.85;font-size:.95rem">We’ll only email when there’s something worth reading.</p>
+    </section>
+  </main>
+</body>
+

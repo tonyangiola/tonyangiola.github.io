@@ -1,0 +1,32 @@
+/* === Bio navbar override to match Newsletter (safe, page-local) === */
+.site-header .nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  position: relative !important;
+  min-height: 66px !important;
+  z-index: 1000 !important;
+}
+.site-header nav a {
+  font-size: .95rem !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+}
+/* right-side badge like Newsletter */
+.site-header .owner-badge {
+  position: absolute !important;
+  right: 16px !important;
+  top: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .5rem !important;
+}
+/* make Bio look "active" like Newsletter does */
+.site-header nav a[href="/bio.html"],
+.site-header nav a[href="/bio/"] {
+  background: rgba(37,99,235,.15) !important;
+  border: 1px solid rgba(37,99,235,.35) !important;
+  border-radius: 9999px !important;
+  padding: .5rem .8rem !important;
+}

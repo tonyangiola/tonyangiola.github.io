@@ -1,0 +1,41 @@
+/* ===== Books hard override (2025-10-30) ===== */
+
+/* 1) Nuke any junk inserted via ::before/::after anywhere near cards/videos/titles */
+.book-card::before, .book-card::after,
+.book::before, .book::after,
+.card::before, .card::after,
+.video-card::before, .video-card::after,
+h2::before, h3::before, h4::before, p::before,
+h2::after,  h3::after,  h4::after,  p::after {
+  content: none !important;
+}
+
+/* 2) Sane card width + centered */
+.book-card, .book, .card, .video-card {
+  max-width: 340px !important;
+  margin: 2rem auto !important;
+}
+
+/* 3) Tame images/videos in cards */
+.book-card video, .book-card img,
+.book video, .book img,
+.card video, .card img,
+.video-card video, .video-card img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 420px !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
+}
+
+/* 4) Blue action buttons with a clear hover */
+.book-card .actions a, .book .actions a, .card .actions a,
+.book-card button,      .book button,      .card button {
+  background: #1E40AF !important;
+  color: #fff !important;
+  border: none !important;
+}
+.book-card .actions a:hover, .book .actions a:hover, .card .actions a:hover,
+.book-card button:hover,      .book button:hover,      .card button:hover {
+  filter: brightness(1.1) !important;
+}

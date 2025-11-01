@@ -1,0 +1,92 @@
+<!-- deploy-marker books final 20251022-173401 -->
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Books — Tony Angiola</title>
+<link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
+
+<!-- keep your existing site header/navbar (SSI include + fallback) -->
+<!--#include virtual="/assets/header.html" -->
+<header>
+  <div class="container">
+    <nav>
+    
+      <a href="/"><strong\1HOME\2/strong>HOME</a>
+      <a href="/books.html" aria-current="page">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<body>
+  <main class="container books-page">
+    <h1>Books</h1>
+
+    <!-- ======================= SNIPPY (WIDE) ======================= -->
+    <article id="snippy-card" class="book-card book-wide" aria-label="Snippy">
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/snippy.jpg">
+          <source src="/assets/videos/snippy.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-side">
+        <h2>Snippy</h2>
+        <p>Animated preview.</p>
+        <div class="book-actions">
+          <a class="btn btn-amazon" href="https://www.amazon.com/dp/B0F88SPFDS" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ======================= SOCORRO (NORMAL) ==================== -->
+    <article id="socorro-card" class="book-card" aria-label="Socorro UFO">
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/socorro.jpg">
+          <source src="/assets/videos/socorro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-side">
+        <h2>Socorro UFO</h2>
+        <p>Classic 1964 case: blue flame, red inverted “V” with three bars.</p>
+        <div class="book-actions">
+          <a class="btn btn-amazon" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ======================= GREMLINS (NORMAL) =================== -->
+    <article id="gremlins-card" class="book-card" aria-label="Gremlins">
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/gremlins.jpg">
+          <source src="/assets/videos/gremlins.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-side">
+        <h2>Gremlins</h2>
+        <div class="book-actions">
+          <a class="btn btn-amazon" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ======================= COSMIC (STATIC IMAGE) =============== -->
+    <article id="cosmic-card" class="book-card" aria-label="Cosmic Secrets">
+      <div class="book-media">
+        <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover">
+      </div>
+      <div class="book-side">
+        <h2>Cosmic Secrets</h2>
+        <p>Coming soon. Get notified when it launches.</p>
+        <div class="book-actions">
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+

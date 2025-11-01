@@ -1,0 +1,33 @@
+/* Books navbar override — mirror Newsletter */
+body.books-page .site-header{position:relative;}
+body.books-page .site-header .nav, 
+body.books-page .site-header nav{
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:16px!important;min-height:66px!important;position:relative!important;z-index:1000!important;width:100%!important;
+}
+/* Make room on the right for the badge so "Contact" doesn't overlap */
+body.books-page .site-header nav{padding-right:96px!important;}
+/* Pin the badge exactly like Newsletter */
+body.books-page .site-header .owner-badge{
+  position:absolute!important;right:16px!important;top:14px!important;display:inline-flex!important;
+  align-items:center!important;gap:.5rem!important;
+}
+/* Pills identical to Newsletter */
+body.books-page .site-header nav a{
+  display:inline-block!important;padding:.35rem .9rem!important;border-radius:999px!important;
+  font-size:.95rem!important;font-weight:500!important;line-height:1!important;text-decoration:none!important;
+  background:transparent!important;border:1px solid transparent!important;
+}
+/* Highlight the Books tab */
+body.books-page .site-header nav a[href="/books.html"]{
+  background:rgba(255,255,255,.06)!important;border-color:rgba(255,255,255,.08)!important;color:#fff!important;
+  box-shadow:0 6px 18px rgba(0,0,0,.25)!important;
+}
+/* Neutralize any inline styles that cause jumping */
+body.books-page .site-header nav a[style]{background:transparent!important;border-color:transparent!important;color:inherit!important;}
+/* Mobile tweak */
+@media (max-width:740px){
+  body.books-page .site-header .nav, body.books-page .site-header nav{min-height:64px!important;gap:12px!important;padding-right:72px!important;}
+  body.books-page .site-header .owner-badge{right:12px!important;top:12px!important;}
+  body.books-page .site-header nav a{padding:.32rem .75rem!important;font-size:.92rem!important;}
+}

@@ -1,0 +1,86 @@
+/* === Newsletter navbar center fix (2025-10-29) === */
+body.newsletter-page .site-header .nav,
+body.newsletter-page header .nav,
+body.newsletter-page .contact-header .nav {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:16px !important;
+  min-height:66px !important;
+  position:relative !important;
+  z-index:1000 !important;
+}
+body.newsletter-page .site-header nav a { font-size:.95rem !important; font-weight:500 !important; }
+
+/* owner badge pinned right */
+body.newsletter-page .owner-badge {
+  position:absolute !important;
+  right:16px !important;
+  top:14px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:.5rem !important;
+}
+
+/* fallback if page is missing the class */
+.newsletter-page .site-header .nav { display:flex !important; justify-content:center !important; }
+
+/* small screens: keep space for badge */
+@media (max-width: 720px){
+  body.newsletter-page .site-header .nav{ justify-content:space-between !important; padding-right:72px !important; }
+}
+/* === NEWSLETTER NAV FORCE CENTER — 2025-10-29 === */
+header.contact-header .container{position:relative !important;}
+header.contact-header nav{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:16px !important;
+  min-height:66px !important;
+}
+header.contact-header .owner-badge{
+  position:absolute !important;
+  right:16px !important;
+  top:14px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:.5rem !important;
+}
+/* mobile: keep space for badge */
+@media (max-width:720px){
+  header.contact-header nav{
+    justify-content:space-between !important;
+    padding-right:72px !important;
+  }
+}
+/* === /NEWSLETTER NAV FORCE CENTER — 2025-10-29 === */
+/* === NEWSLETTER HARD CENTER OVERRIDE — 2025-10-29 === */
+.contact-header, .contact-header .container, header.contact-header nav {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:16px !important;
+  position:relative !important;
+  min-height:66px !important;
+  z-index:1000 !important;
+}
+.contact-header nav a {
+  font-size:.95rem !important;
+  font-weight:500 !important;
+}
+.contact-header .owner-badge {
+  position:absolute !important;
+  right:16px !important;
+  top:14px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:.5rem !important;
+}
+/* Mobile layout */
+@media (max-width:720px){
+  .contact-header nav {
+    justify-content:space-between !important;
+    padding-right:72px !important;
+  }
+}
+/* === END NEWSLETTER HARD CENTER OVERRIDE === */

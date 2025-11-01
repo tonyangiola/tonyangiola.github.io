@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tony Angiola — Author</title>
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
+  <link rel="stylesheet" href="/assets/style.css?v=books-REBUILD">
+  <link rel="stylesheet" href="/assets/books.css?v=books-REBUILD">
+
+  <!-- FINAL no-crop rules -->
+  <style id="books-final">
+    html, body { background:#0B0F1A; }
+    .site-main, main { display:block; opacity:1; visibility:visible; }
+
+    /* card layout */
+    body.books-page article.card { max-width: 740px; margin: 2rem auto; }
+    body.books-page article.card img,
+    body.books-page article.card video {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;        /* absolutely no cropping */
+      object-fit: contain !important;      /* show full frame */
+      display: block !important;
+      margin: 0 auto 14px !important;
+      border-radius: 10px !important;
+    }
+    .btnrow { display:flex; gap:.5rem; }
+    .btn     { display:inline-flex; align-items:center; justify-content:center; padding:.65rem 1.1rem; border-radius:.6rem; border:1px solid #1e4fd3; background:#2563eb; color:#fff; text-decoration:none; }
+    .btn.ghost { background:#f3f4f6; color:#111; border:1px solid #d1d5db; }
+    header.contact-header { padding: 16px 0; }
+    header.contact-header nav { display:flex; gap:16px; justify-content:center; align-items:center; }
+    .owner-badge { position:absolute; right:16px; top:14px; display:inline-flex; gap:.5rem; align-items:center; }
+    header.contact-header .container { position:relative; }
+  </style>
+</head>
+
+<body data-books="1" class="books-page">
+  <header class="contact-header">
+    <div class="container">
+      <nav>
+        <a href="/">HOME</a>
+        <a href="/books.html" class="active" aria-current="page">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
+        <img class="owner-avatar" src="/assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy" style="width:36px;height:36px;border-radius:9999px;object-fit:cover">
+      </a>
+    </div>
+  </header>
+
+  <main class="page">
+    <section aria-label="Books" class="grid">
+
+      <!-- Snippy (video) -->
+      <article class="card" id="snippy">
+        <video autoplay muted loop playsinline preload="metadata" poster="/images/books/snippy.jpg">
+          <source src="/assets/videos/books/snippy.mp4" type="video/mp4">
+        </video>
+        <div class="btnrow">
+          <a class="btn" href="https://www.amazon.com/Snippy-Horse-Unveiling-Mutilation-Encounters-ebook/dp/B0F88SPFDS/ref=sr_1_1?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-1" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+        </div>
+      </article>
+
+      <!-- Socorro (video) -->
+      <article class="card" id="socorro">
+        <video autoplay muted loop playsinline preload="metadata" poster="/images/books/socorro.jpg">
+          <source src="/assets/videos/books/socorro.mp4" type="video/mp4">
+        </video>
+        <div class="btnrow">
+          <a class="btn" href="https://www.amazon.com/SOCORRO-UFO-Not-This-World/dp/B0FGQP7PHN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-3" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+        </div>
+      </article>
+
+      <!-- Gremlins (video) -->
+      <article class="card" id="gremlins">
+        <video autoplay muted loop playsinline preload="metadata" poster="/images/books/gremlins.jpg">
+          <source src="/assets/videos/books/gremlins.mp4" type="video/mp4">
+        </video>
+        <div class="btnrow">
+          <a class="btn" href="https://www.amazon.com/Flying-Saucers-Aliens-Gremlins-Angiola-ebook/dp/B0FF3RWHT7/ref=sr_1_2?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-2" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+        </div>
+      </article>
+
+      <!-- Cosmic (image) -->
+      <article class="card" id="cosmic">
+        <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover">
+        <div class="btnrow">
+          <a class="btn ghost" href="/newsletter.html">Get Updates</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- autoplay nudge -->
+  <script>
+    document.querySelectorAll('video[autoplay]').forEach(v=>{
+      const kick=()=>v.play().catch(()=>{});
+      v.addEventListener('canplay',kick,{once:true});
+      document.addEventListener('visibilitychange',()=>{ if(!document.hidden) kick(); });
+    });
+  </script>
+</body>
+</html>

@@ -1,5 +1,139 @@
-﻿<!DOCTYPE html><html><head><meta charset="utf-8"><title>Site</title></head>
-<body><h1>Site</h1><ul>
-<li><a href="/books.html">Books</a></li>
-<li><a href="/contact.html">Contact</a></li>
-</ul></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tony Angiola — Author</title>
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
+  <style>
+    /* keep the dark background and ensure content shows */
+    html, body { background:#0B0F1A; }
+    .site-main, main { display:block; opacity:1; visibility:visible; }
+  </style>
+
+<style id="hero-bright-">
+  /* Brighten hero paragraph */
+  html body.home-page .hero p.small{
+    color:#eaf2ff !important;
+  }
+  /* Brighten the CTA button/link */
+  html body.home-page .hero a.btn,
+  html body.home-page .hero a.btn:link,
+  html body.home-page .hero a.btn:visited{
+    background:#2563eb !important;
+    border:1px solid #2563eb !important;
+    color:#ffffff !important;
+    box-shadow:0 6px 18px rgba(0,0,0,.25) !important;
+    text-decoration:none !important;
+  }
+  html body.home-page .hero a.btn:hover{
+    background:#3b82f6 !important;
+    border-color:#3b82f6 !important;
+    transform:translateY(-1px);
+  }
+</style>
+  <link rel="stylesheet" href="/assets/style.css?v=homegap-20251030-122131">
+
+<style id="home-cards-hotfix-20251030-115433">
+  /* Force a real two-column grid with a gap */
+  html body.home-page .grid.grid-2{
+    display:grid !important;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+    gap: 1.25rem !important;
+    align-items:start !important;
+    justify-items:stretch !important;
+    margin: 0 auto !important;
+  }
+  /* Make sure each card is a clean box (no floats/overlaps) */
+  html body.home-page .grid.grid-2 .card{
+    position:relative !important;
+    float:none !important;
+    clear:none !important;
+    margin:0 !important;
+    height:auto !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+  }
+  /* Nuke any decorative pseudo dividers that slice between cards */
+  html body.home-page .grid.grid-2 .card::before,
+  html body.home-page .grid.grid-2 .card::after{
+    content:none !important;
+  }
+  /* Mobile: stack */
+   (max-width: 820px){
+    html body.home-page .grid.grid-2{ grid-template-columns: 1fr !important; }
+  }
+</style>
+
+<style id="home-card-divider-hotfix-">
+  /* Remove any middle divider or pseudo-border between cards */
+  html body.home-page .grid.grid-2::before,
+  html body.home-page .grid.grid-2::after,
+  html body.home-page .grid.grid-2 .card::before,
+  html body.home-page .grid.grid-2 .card::after {
+    content:none !important;
+    background:none !important;
+    border:0 !important;
+    box-shadow:none !important;
+    display:none !important;
+  }
+</style>
+</head>
+
+
+
+<body class="home-page">
+  <header class="contact-header">
+    <div class="container">
+      <nav>
+        <a href="/" class="active" aria-current="page">HOME</a>
+        <a href="/books.html">Books</a>
+        <a href="/bio.html">Bio</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="owner-badge" href="/bio.html">
+        <span class="owner-name">Tony Angiola</span>
+        <img class="owner-avatar" src="assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy">
+      </a>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="hero">
+      <h1>Author. Researcher. Explorer of High Strangeness.</h1>
+      <p class="small" style="color:#eaf2ff !important">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley, and updates on current projects.</p>
+      <p><a class="btn" href="/newsletter.html">Join the Newsletter</a></p>
+    </section>
+
+    <section class="grid grid-2">
+      <div class="card">
+        <h2>Current Project: <em>Cosmic Secrets</em></h2>
+        <p>A deep dive into disclosure, historical cases, and propulsion hypotheses—told straight, documented, and BS-resistant.</p>
+        <p><a href="/books.html">See books →</a></p>
+      </div>
+      <div class="card">
+        <h2>New Articles</h2>
+        <ul class="clean">
+          <li><a href="#">Socorro Revisited — Signatures in the Dust (coming soon)</a></li>
+          <li><a href="#">MHD & “Blue Flame” Notes (coming soon)</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="author-photo" style="text-align:center; margin:2em 0;">
+      <img src="/images/tony.jpg" alt="Tony Angiola"
+           style="width:240px; border-radius:50%; box-shadow:0 0 12px rgba(0,0,0,.25);">
+      <h2 style="margin-top:1em;font-weight:600;">Tony Angiola</h2>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="y"></span> Tony Angiola. All rights reserved.</div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>

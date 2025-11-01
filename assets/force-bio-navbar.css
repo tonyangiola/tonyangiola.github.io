@@ -1,0 +1,35 @@
+/* === FORCE Bio navbar to match Newsletter (2025-10-30) === */
+:root .site-header .nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  position: relative !important;
+  min-height: 66px !important;
+  z-index: 1000 !important;
+}
+:root .site-header nav a {
+  font-size: .95rem !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  border-radius: 9999px !important;
+}
+:root .site-header .owner-badge {
+  position: absolute !important;
+  right: 16px !important;
+  top: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .5rem !important;
+}
+/* Mark BIO as active, like Newsletter's active pill */
+:root .site-header nav a[href="/bio.html"],
+:root .site-header nav a[href="/bio/"] {
+  background: rgba(37,99,235,.15) !important;
+  border: 1px solid rgba(37,99,235,.35) !important;
+  padding: .5rem .8rem !important;
+}
+/* Prevent page-specific gates from breaking layout */
+:root body .site-header .nav,
+:root body.bio-page .site-header .nav { display:flex !important; }
+/* === END FORCE === */

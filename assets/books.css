@@ -1,0 +1,348 @@
+/* ===== /assets/books.css (2025-10-30) ===== */
+body.books-page, body[data-books] { background:#0B0F1A !important; }
+body.books-page .site-main, body.books-page main,
+body[data-books] .site-main, body[data-books] main {
+  display:block !important; opacity:1 !important; visibility:visible !important;
+  max-width:920px; margin:0 auto; padding:32px 16px;
+}
+
+/* Card layout & spacing */
+body.books-page article.card, body[data-books] article.card {
+  margin:0 auto 36px !important; padding:24px 18px !important;
+  background:#101524 !important; border-radius:14px !important;
+  box-shadow:0 2px 10px rgba(0,0,0,.35) !important;
+}
+
+/* Media sizing */
+body.books-page article.card video,
+body.books-page article.card img,
+body[data-books] article.card video,
+body[data-books] article.card img {
+  display:block; width:100% !important; height:auto !important;
+  max-width:740px !important; margin:0 auto 14px !important; border-radius:10px;
+}
+
+/* CTA buttons – bright blue + hover */
+body.books-page .btnrow, body[data-books] .btnrow { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+body.books-page .btnrow .btn,
+body.books-page a.button,
+body[data-books] .btnrow .btn,
+body[data-books] a.button {
+  display:inline-block; padding:12px 20px; border-radius:10px;
+  background:#2563eb !important; color:#fff !important; text-decoration:none !important; font-weight:600;
+  box-shadow:0 3px 8px rgba(0,0,0,.3); transition:transform .2s, filter .2s, box-shadow .2s;
+}
+body.books-page .btnrow .btn:hover, body.books-page a.button:hover,
+body[data-books] .btnrow .btn:hover, body[data-books] a.button:hover {
+  transform:translateY(-2px); filter:brightness(1.18); box-shadow:0 6px 16px rgba(0,0,0,.4);
+}
+
+/* Ghost button style */
+body.books-page .btnrow .btn.ghost, body[data-books] .btnrow .btn.ghost {
+  background:#f3f4f6 !important; color:#111 !important; border:1px solid #d1d5db !important;
+}
+/* ===== books.css tweak 2025-10-30G ===== */
+/* Make media a touch smaller for better balance */
+body.books-page article.card img,
+body.books-page article.card video,
+body[data-books] article.card img,
+body[data-books] article.card video {
+  max-width:640px !important;
+}
+
+/* Hide the little titles under each video/image */
+body.books-page article.card .title,
+body[data-books] article.card .title {
+  display:none !important;
+}
+/* ===== books.css nuclear 2025-10-30H ===== */
+/* Smaller media inside cards, win over earlier inline with higher specificity */
+html body.books-page article.card img,
+html body.books-page article.card video,
+html body[data-books] article.card img,
+html body[data-books] article.card video {
+  max-width: 600px !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 14px !important;
+  border-radius: 10px;
+}
+
+/* Hide under-media titles */
+html body.books-page article.card .title,
+html body[data-books] article.card .title {
+  display: none !important;
+}
+
+/* Force bright-blue CTAs */
+html body.books-page .btnrow .btn,
+html body[data-books] .btnrow .btn,
+html body.books-page a.button,
+html body[data-books] a.button {
+  background: #2563eb !important;
+  color: #fff !important;
+  border: 1px solid #1e4fd3 !important;
+  padding: 12px 20px !important;
+  border-radius: 10px !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,.3) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+}
+html body.books-page .btnrow .btn:hover,
+html body[data-books] .btnrow .btn:hover,
+html body.books-page a.button:hover,
+html body[data-books] a.button:hover {
+  filter: brightness(1.18) !important;
+  transform: translateY(-2px) !important;
+}
+/* ===== books.css hard-cap 2025-10-30J ===== */
+body[data-books] main img,
+body[data-books] main video,
+body.books-page main img,
+body.books-page main video {
+  display:block !important;
+  max-width:600px !important;
+  width:100% !important;
+  height:auto !important;
+  margin:0 auto 14px !important;
+  border-radius:10px;
+}
+
+/* Hide the small under-media titles everywhere in <main> */
+body[data-books] main .title,
+body.books-page main .title { display:none !important; }
+/* ===== books.css — targeted media shapes (2025-10-30M) ===== */
+
+/* SNIPPY: keep wide banner (landscape 16:9), large and cinematic */
+body.books-page article.card#snippy video,
+body.books-page article.card#snippy img,
+body[data-books] article.card#snippy video,
+body[data-books] article.card#snippy img {
+  aspect-ratio: 16 / 9 !important;
+  width: 100% !important;
+  max-width: 980px !important;        /* banner width */
+  height: auto !important;
+  object-fit: contain !important;        /* fills frame nicely */
+  display: block !important;
+  margin: 0 auto 14px !important;
+  border-radius: 10px !important;
+}
+
+/* SOCORRO & GREMLINS: portrait 3:4 to display book-cover correctly */
+body.books-page article.card#socorro video,
+body.books-page article.card#socorro img,
+body.books-page article.card#gremlins video,
+body.books-page article.card#gremlins img,
+body[data-books] article.card#socorro video,
+body[data-books] article.card#socorro img,
+body[data-books] article.card#gremlins video,
+body[data-books] article.card#gremlins img {
+  aspect-ratio: 3 / 4 !important;     /* portrait */
+  width: 100% !important;
+  max-width: 740px !important;         /* preserves good height */
+  height: auto !important;
+  object-fit: contain !important;      /* entire cover visible */
+  display: block !important;
+  margin: 0 auto 14px !important;
+  border-radius: 10px !important;
+}
+/* ===== books.css — match Socorro & Gremlins to Cosmic (2025-10-30N) ===== */
+/* Make #socorro and #gremlins media the same footprint as #cosmic image */
+body.books-page article.card#socorro video,
+body.books-page article.card#socorro img,
+body.books-page article.card#gremlins video,
+body.books-page article.card#gremlins img,
+body[data-books] article.card#socorro video,
+body[data-books] article.card#socorro img,
+body[data-books] article.card#gremlins video,
+body[data-books] article.card#gremlins img {
+  max-width: 640px !important;   /* match Cosmic Secrets card width */
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 14px !important;
+  border-radius: 10px !important;
+  object-fit: contain !important;
+}
+/* ===== books.css uniform-card 2025-10-30O ===== */
+/* Match Socorro & Gremlins media box to Cosmic card height and width */
+body.books-page article.card#socorro video,
+body.books-page article.card#socorro img,
+body.books-page article.card#gremlins video,
+body.books-page article.card#gremlins img,
+body[data-books] article.card#socorro video,
+body[data-books] article.card#socorro img,
+body[data-books] article.card#gremlins video,
+body[data-books] article.card#gremlins img {
+  max-width: 640px !important;   /* same as Cosmic width */
+  aspect-ratio: 4 / 5 !important; /* Cosmic’s shape */
+  object-fit: contain !important;   /* fills like Cosmic */
+  height: auto !important;
+  margin: 0 auto 14px !important;
+  border-radius: 10px !important;
+  display: block !important;
+}
+/* ===== books.css — uniformize Socorro & Gremlins to Cosmic (2025-10-30P) ===== */
+body.books-page article.card#socorro video,
+body.books-page article.card#socorro img,
+body.books-page article.card#gremlins video,
+body.books-page article.card#gremlins img,
+body[data-books] article.card#socorro video,
+body[data-books] article.card#socorro img,
+body[data-books] article.card#gremlins video,
+body[data-books] article.card#gremlins img {
+  max-width: 640px !important;      /* match Cosmic width */
+  aspect-ratio: 4 / 5 !important;    /* same “portrait-ish” box as Cosmic */
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;      /* fills the box like the Cosmic image */
+  display: block !important;
+  margin: 0 auto 14px !important;
+  border-radius: 10px !important;
+}
+/* ===== books.css — match Socorro & Gremlins to Cosmic (container width) ===== */
+body.books-page article.card#socorro,
+body.books-page article.card#gremlins,
+body[data-books] article.card#socorro,
+body[data-books] article.card#gremlins {
+  max-width: 640px !important;   /* Cosmic width */
+  margin: 0 auto 36px !important; /* center like Cosmic */
+}
+
+body.books-page article.card#socorro video,
+body.books-page article.card#socorro img,
+body.books-page article.card#gremlins video,
+body.books-page article.card#gremlins img,
+body[data-books] article.card#socorro video,
+body[data-books] article.card#socorro img,
+body[data-books] article.card#gremlins video,
+body[data-books] article.card#gremlins img {
+  width: 100% !important;   /* fill the 640px card */
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 14px !important;
+  border-radius: 10px !important;
+}
+/* ===== books.css — books-page nav+avatar fixes (2025-10-30Q) ===== */
+
+/* Do NOT let global img rules hit the header/avatar on books page */
+body.books-page header img,
+body[data-books] header img,
+body.books-page .owner-badge img,
+body[data-books] .owner-badge img {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: none !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  border-radius: 9999px !important;
+  object-fit: contain !important;
+}
+
+/* Neutral nav link styling on books page: no blue fill on hover/active */
+body.books-page .site-header nav a,
+body.books-page .contact-header nav a {
+  background: transparent !important;
+  color: #e5e7eb !important; /* light gray */
+  border-radius: 9999px !important;
+}
+
+body.books-page .site-header nav a:hover,
+body.books-page .contact-header nav a:hover {
+  background: transparent !important;
+  color: #ffffff !important;
+  filter: brightness(1.08) !important;
+}
+
+/* Even if some link has class="active", keep it non-blue on this page */
+body.books-page .site-header nav a.active,
+body.books-page .contact-header nav a.active {
+  background: transparent !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+  color: #ffffff !important;
+}
+
+/* Make sure the header layout stays sane after the overrides */
+body.books-page .site-header .container,
+body.books-page .contact-header .container { position:relative !important; }
+body.books-page .owner-badge { position:absolute !important; right:16px !important; top:14px !important; }
+/* ===== books.css rescue (2025-10-30R) ===== */
+
+/* Nav on books page: no blue hover/fill */
+body.books-page .site-header nav a,
+body.books-page .contact-header nav a { background:transparent !important; color:#e5e7eb !important; }
+body.books-page .site-header nav a:hover,
+body.books-page .contact-header nav a:hover { background:transparent !important; color:#fff !important; }
+body.books-page .site-header nav a.active,
+body.books-page .contact-header nav a.active { background:transparent !important; border:1px solid rgba(255,255,255,.22) !important; color:#fff !important; }
+
+/* Avatar protection (global img rules must not blow it up) */
+body.books-page .owner-badge img { width:36px !important; height:36px !important; border-radius:9999px !important; object-fit: contain !important; }
+
+/* Card sizing */
+body.books-page article.card#socorro,
+body.books-page article.card#gremlins { max-width:640px !important; margin:0 auto 36px !important; }
+body.books-page article.card#socorro video,
+body.books-page article.card#gremlins video { width:100% !important; aspect-ratio:4/5 !important; object-fit: contain !important; display:block !important; border-radius:10px; }
+body.books-page article.card#socorro img.poster-fallback,
+body.books-page article.card#gremlins img.poster-fallback { width:100% !important; max-width:640px !important; display:block !important; border-radius:10px; }
+
+/* Hide fallback once video is playing */
+body.books-page article.card.playing img.poster-fallback { display:none !important; }
+/* ===== Books hard override (2025-10-30) ===== */
+.book-card, .book, .card, .video-card { max-width: 340px !important; margin: 2rem auto !important; }
+.book-card video, .book-card img,
+.book video, .book img,
+.card video, .card img,
+.video-card video, .video-card img {
+  width: 100% !important; height: auto !important; max-height: none !important;
+  object-fit: contain !important; border-radius: 10px !important;
+}
+/* Buttons: blue + clear hover */
+.book-card .actions a, .book .actions a, .card .actions a,
+.book-card button,      .book button,      .card button {
+  background:#1E40AF !important; color:#fff !important; border:none !important;
+}
+.book-card .actions a:hover, .book .actions a:hover, .card .actions a:hover,
+.book-card button:hover,      .book button:hover,      .card button:hover { filter: brightness(1.1) !important; }
+/* ===== Books hard override (2025-10-30) ===== */
+.book-card, .book, .card, .video-card { max-width: 340px !important; margin: 2rem auto !important; }
+.book-card video, .book-card img,
+.book video, .book img,
+.card video, .card img,
+.video-card video, .video-card img {
+  width: 100% !important; height: auto !important; max-height: none !important;
+  object-fit: contain !important; border-radius: 10px !important;
+}
+.book-card .actions a, .book .actions a, .card .actions a,
+.book-card button,      .book button,      .card button {
+  background:#1E40AF !important; color:#fff !important; border:none !important;
+}
+.book-card .actions a:hover, .book .actions a:hover, .card .actions a:hover,
+.book-card button:hover,      .book button:hover,      .card button:hover { filter: brightness(1.1) !important; }
+/* ===== Books page: Socorro & Gremlins no-crop (2025-10-30) ===== */
+#socorro video, #socorro img,
+#gremlins video, #gremlins img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;   /* remove any caps that cause clipping */
+  object-fit: contain !important;/* no cropping */
+  aspect-ratio: auto !important;
+  display: block !important;
+  margin: 0 auto 14px !important;
+  border-radius: 10px !important;
+}
+/* ===== Books page: Socorro & Gremlins NO-CROP override (2025-10-30) ===== */
+article.card#socorro video, article.card#socorro img,
+article.card#gremlins video, article.card#gremlins img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;       /* remove caps that cause clipping */
+  object-fit: contain !important;    /* never crop */
+  aspect-ratio: auto !important;
+  display: block !important;
+  margin: 0 auto 14px !important;
+  border-radius: 10px !important;
+}

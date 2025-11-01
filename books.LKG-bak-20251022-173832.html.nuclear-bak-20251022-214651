@@ -1,0 +1,158 @@
+<!-- deploy-marker books hardlock 20251022-173618 -->
+<!-- deploy-marker books final 20251022-173401 -->
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Books — Tony Angiola</title>
+<link rel="stylesheet" href="/assets/style.css">
+
+<!-- keep your existing site header/navbar (SSI include + fallback) -->
+<!--#include virtual="/assets/header.html" -->
+<header>
+  <div class="container">
+    <nav>
+      <a href="/"><strong>Tony Angiola</strong></a>
+      <a href="/books.html" aria-current="page">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<body>
+  <main id="books-v3" class="container books-page">
+    <h1>Books</h1>
+
+    <!-- ======================= SNIPPY (WIDE) ======================= -->
+    <article id="snippy-card" class="book-card book-wide" aria-label="Snippy">
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/snippy.jpg">
+          <source src="/assets/videos/snippy.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-side">
+        <h2>Snippy</h2>
+        <p>Animated preview.</p>
+        <div class="book-actions">
+          <a class="btn btn-amazon" href="https://www.amazon.com/dp/B0F88SPFDS" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ======================= SOCORRO (NORMAL) ==================== -->
+    <article id="socorro-card" class="book-card" aria-label="Socorro UFO">
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/socorro.jpg">
+          <source src="/assets/videos/socorro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-side">
+        <h2>Socorro UFO</h2>
+        <p>Classic 1964 case: blue flame, red inverted “V” with three bars.</p>
+        <div class="book-actions">
+          <a class="btn btn-amazon" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ======================= GREMLINS (NORMAL) =================== -->
+    <article id="gremlins-card" class="book-card" aria-label="Gremlins">
+      <div class="book-media">
+        <video controls preload="metadata" poster="/images/books/gremlins.jpg">
+          <source src="/assets/videos/gremlins.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="book-side">
+        <h2>Gremlins</h2>
+        <div class="book-actions">
+          <a class="btn btn-amazon" href="https://www.amazon.com/" target="_blank" rel="noopener">Buy on Amazon</a>
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ======================= COSMIC (STATIC IMAGE) =============== -->
+    <article id="cosmic-card" class="book-card" aria-label="Cosmic Secrets">
+      <div class="book-media">
+        <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover">
+      </div>
+      <div class="book-side">
+        <h2>Cosmic Secrets</h2>
+        <p>Coming soon. Get notified when it launches.</p>
+        <div class="book-actions">
+          <a class="btn btn-update" href="/newsletter.html">Get updates</a>
+        </div>
+      </div>
+    </article>
+  </main>
+<!-- books-inline-fix start -->
+<style>
+/* === BOOKS PAGE HARD LOCK (navbar-safe) === */
+/* Scope everything to #books-v3 to avoid touching header/nav */
+#books-v3 .book-card{ 
+  display:grid !important;
+  grid-template-columns: minmax(520px,1fr) 280px !important; 
+  gap:1rem !important; align-items:start !important;
+  background:#fff; border:1px solid rgba(0,0,0,.08); border-radius:.75rem;
+  padding:1rem; margin:0 auto 1rem; max-width:1040px;
+  box-shadow:0 1px 0 rgba(0,0,0,.03);
+}
+/* WIDE Snippy */
+#books-v3 #snippy-card{
+  grid-template-columns: 680px 280px !important; max-width: 1200px !important;
+}
+/* Socorro smaller (narrow media pane) */
+#books-v3 #socorro-card{
+  grid-template-columns: 480px 280px !important; max-width: 820px !important;
+}
+/* Gremlins normal */
+#books-v3 #gremlins-card{
+  grid-template-columns: 520px 280px !important; max-width: 900px !important;
+}
+/* Cosmic normal (image left, button right) */
+#books-v3 #cosmic-card{
+  grid-template-columns: 520px 280px !important; max-width: 900px !important;
+}
+
+/* Media always fills the left column properly */
+#books-v3 .book-media > video,
+#books-v3 .book-media > img{
+  display:block !important; width:100% !important; height:auto !important;
+  border-radius:.5rem !important; background:#000 !important;
+}
+
+/* Make sure the media DIV is the left column and the side panel is the right */
+#books-v3 .book-media{ grid-column:1 !important; }
+#books-v3 .book-side { grid-column:2 !important; }
+
+/* Titles + text spacing */
+#books-v3 .book-side h2{ margin:.25rem 0 .25rem !important; font-size:1.15rem !important; }
+#books-v3 .book-side p { margin:0 0 .5rem !important; color:#444 !important; }
+
+/* Buttons — BLUE, stacked on the right */
+#books-v3 .book-actions{
+  display:flex !important; flex-direction:column !important; gap:.5rem !important;
+}
+#books-v3 .book-actions .btn{
+  display:inline-block !important; text-align:center !important;
+  padding:.55rem .9rem !important; border-radius:.6rem !important;
+  font-weight:600 !important; text-decoration:none !important;
+  background:#2563eb !important; color:#fff !important;
+  border:1px solid rgba(0,0,0,.06) !important;
+  transition:background-color .15s ease, transform .08s ease !important;
+}
+#books-v3 .book-actions .btn:hover{ background:#1e4fd3 !important; }
+
+/* Mobile stack */
+@media (max-width: 900px){
+  #books-v3 .book-card{
+    grid-template-columns: 1fr !important; max-width: 720px !important;
+  }
+  #books-v3 .book-side{ grid-column:1 !important; }
+}
+</style>
+<!-- books-inline-fix end -->
+</body>

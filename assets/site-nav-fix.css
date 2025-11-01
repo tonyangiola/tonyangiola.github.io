@@ -1,0 +1,11 @@
+/* Kill empty header pills */
+header a:empty, header button:empty { display:none !important; }
+header a[href="#"], header a:not([href]) { display:none !important; }
+
+/* Center the nav across all pages */
+.site-header, header { display:flex; align-items:center; }
+.site-header nav, header nav { margin-left:auto; margin-right:auto; }
+.site-header nav ul, header nav ul { display:flex; gap:1.2rem; list-style:none; padding:0; margin:0; }
+
+/* One burger only */
+.menu-toggle + .menu-toggle { display:none !important; }
