@@ -331,3 +331,14 @@ body.home-page .home-card,
 body.home-page .book-card{
   margin-bottom:24px !important;
 }
+/* === Home cards: widen gutter (2025-10-31) === */
+body.home-page .site-main .container > section.grid.grid-2{
+  display:grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  column-gap: 40px !important;   /* <-- adjust (32–48px) if you want more/less */
+  row-gap: 28px !important;
+}
+body.home-page .site-main .container > section.grid.grid-2 > .card{
+  margin: 0 !important;          /* neutralize any margins that collapse the gap */
+  box-sizing: border-box !important;
+}
