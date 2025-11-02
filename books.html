@@ -87,5 +87,18 @@
       document.addEventListener('visibilitychange',()=>{ if(!document.hidden) kick(); });
     });
   </script>
+  <style id="books-nav-final-off">
+    /* Books-only: only .active lit — 2025-11-01 */
+    body[data-books] header .container nav a, body.books-page header .container nav a{
+      background: transparent !important;
+      border-color: transparent !important;
+      color: inherit !important;
+    }
+    body[data-books] header .container nav a.active, body.books-page header .container nav a.active{
+      background: rgba(30,64,175,.9) !important;
+      border: 1px solid rgba(30,64,175,1) !important;
+      color: #fff !important;
+    }
+  </style>
 </body>
 </html>
