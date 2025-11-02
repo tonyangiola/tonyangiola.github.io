@@ -374,3 +374,14 @@ body.home-page section.author-photo img{
   box-shadow: 0 0 12px rgba(0,0,0,.25) !important;
   border: 1px solid rgba(255,255,255,.25) !important;
 }
+/* Home navbar: only .active is lit (2025-11-01) */
+body.home-page header .container nav a:not(.active){
+  background: transparent !important;
+  border-color: transparent !important;
+  color: inherit !important;
+}
+body.home-page header .container nav a.active{
+  background: rgba(30,64,175,.9) !important;  /* same deep blue pill */
+  border: 1px solid rgba(30,64,175,1) !important;
+  color: #fff !important;
+}
