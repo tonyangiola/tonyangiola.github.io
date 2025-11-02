@@ -56,3 +56,13 @@ body.books-page header.site-header .owner-badge {
   body.books-page header.site-header .owner-badge { right:12px !important; top:12px !important; }
   body.books-page header.site-header nav a { padding:.32rem .75rem !important; font-size:.92rem !important; }
 }
+/* addendum: unlight non-Books even if they carry .active */
+body.books-page header.site-header .container nav a.active:not([href="/books.html"]),
+body.books-page header.site-header .container nav a.active.active:not([href="/books.html"]) {
+  background:transparent !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  color:#fff !important;
+  box-shadow:none !important;
+  filter:none !important;
+  opacity:1 !important;
+}
