@@ -25,11 +25,6 @@
     .btnrow { display:flex; gap:.5rem; }
     .btn     { display:inline-flex; align-items:center; justify-content:center; padding:.65rem 1.1rem; border-radius:.6rem; border:1px solid #1e4fd3; background:#2563eb; color:#fff; text-decoration:none; }
     .btn.ghost { background:#f3f4f6; color:#111; border:1px solid #d1d5db; }
-    header.contact-header { padding: 16px 0; }
-    header.contact-header nav { display:flex; gap:16px; justify-content:center; align-items:center; }
-    .owner-badge { position:absolute; right:16px; top:14px; display:inline-flex; gap:.5rem; align-items:center; }
-    header.contact-header .container { position:relative; }
-  </style>
   <link rel="stylesheet" href="/assets/override.css?v=books-20251101-230801">
 </head><body data-books="1" class="books-page">
   <header class="contact-header">
@@ -114,6 +109,16 @@
       background: rgba(30,64,175,.9) !important;
       border: 1px solid rgba(30,64,175,1) !important;
       color: #fff !important;
+    }
+  </style>
+  <style id="books-nav-final-off">
+    /* Books-only: only .active lit (wins over URL/nth-child rules) */
+    body[data-books], body.books-page {}
+    body[data-books] header .container nav a, body.books-page header .container nav a{
+      background: transparent !important; border-color: transparent !important; color: inherit !important;
+    }
+    body[data-books] header .container nav a.active, body.books-page header .container nav a.active{
+      background: rgba(30,64,175,.9) !important; border:1px solid rgba(30,64,175,1) !important; color:#fff !important;
     }
   </style>
 </body>
