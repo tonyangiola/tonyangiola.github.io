@@ -34,6 +34,21 @@
     /* Badge position identical to Home */
     header a.owner-badge{ position:absolute !important; right:16px !important; top:10px !important; transform:none !important; z-index:1001 !important; }
   </style>
+  <style id="books-badge-restore">
+    /* Books-only: restore owner-badge identical to Home */
+    header a.owner-badge{
+      position:absolute !important; right:16px !important; top:10px !important;
+      display:inline-flex !important; align-items:center !important; gap:.5rem !important;
+      transform:none !important; z-index:1001 !important; visibility:visible !important; opacity:1 !important;
+    }
+    header a.owner-badge img, header a.owner-badge .owner-avatar{
+      width:40px !important; height:40px !important; border-radius:9999px !important;
+      display:block !important; object-fit:cover !important;
+      border:1px solid rgba(255,255,255,.25) !important;
+    }
+    /* Nuke any Books-page transforms/offsets from old CSS */
+    body.books-page .site-header .owner-badge{ right:16px !important; top:10px !important; transform:none !important; }
+  </style>
 </head><body data-books="1" class="books-page">
     <header class="site-header">
   <div class="container">
@@ -44,6 +59,9 @@
       <a href="/newsletter.html">Newsletter</a>
       <a href="/contact.html">Contact</a>
     </nav>
+  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home">
+    <img class="owner-badge-img" src="/assets/images/avatar.jpg" alt="Tony Angiola"/>
+  </a>
 </header>
 </header>
 </header>
