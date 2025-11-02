@@ -8,27 +8,31 @@
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
   <link rel="stylesheet" href="/assets/style.css?v=books-REBUILD">
   <link rel="stylesheet" href="/assets/books.css?v=books-REBUILD">  <!-- FINAL no-crop rules -->
-  <style id="books-final">
-    html, body { background:#0B0F1A; }
-    .site-main, main { display:block; opacity:1; visibility:visible; }    /* card layout */
-    body.books-page article.card { max-width: 740px; margin: 2rem auto; }
-    body.books-page article.card img,
-    body.books-page article.card video {
-      width: 100% !important;
-      height: auto !important;
-      max-height: none !important;        /* absolutely no cropping */
-      object-fit: contain !important;      /* show full frame */
-      display: block !important;
-      margin: 0 auto 14px !important;
-      border-radius: 10px !important;
-    }
-    .btnrow { display:flex; gap:.5rem; }
-    .btn     { display:inline-flex; align-items:center; justify-content:center; padding:.65rem 1.1rem; border-radius:.6rem; border:1px solid #1e4fd3; background:#2563eb; color:#fff; text-decoration:none; }
-    .btn.ghost { background:#f3f4f6; color:#111; border:1px solid #d1d5db; }
-  <link rel="stylesheet" href="/assets/override.css?v=books-20251101-230801">
 <style id="books-visibility-rescue">
   body.books-page main, body.books-page .site-main { opacity: 1 !important; visibility: visible !important; display: block !important; }
 </style>
+  <style id="nav-canonical-books">
+    /* Canonical nav to match Home exactly; Books only */
+    :root{--nav-gap:2rem}
+    header .nav, #site-header nav {
+      display:flex !important; align-items:center !important;
+      justify-content:center !important; gap:var(--nav-gap) !important;
+      height:66px !important; padding:0 !important; margin:0 !important;
+    }
+    /* Ensure link pills render consistently */
+    header .nav a, #site-header nav a {
+      display:inline-flex !important; align-items:center !important;
+      padding:8px 14px !important; border-radius:999px !important;
+      font-weight:600 !important; text-decoration:none !important;
+      line-height:1 !important; margin:0 !important;
+      transition:none !important; /* kill page-to-page flicker */
+    }
+    /* Right-side badge identical to Home */
+    header a.owner-badge{
+      position:absolute !important; right:16px !important;
+      top:10px !important; transform:none !important; z-index:1001 !important;
+    }
+  </style>
 </head><body data-books="1" class="books-page">
     <header class="site-header">
   <div class="container">
@@ -40,6 +44,7 @@
       <a href="/contact.html">Contact</a>
     </nav>
   <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola" style="display:block;width:40px;height:40px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);"/></a></div>
+</header>
 </header>
 </header>
 </header>
@@ -85,20 +90,5 @@
       document.addEventListener('visibilitychange',()=>{ if(!document.hidden) kick(); });
     });
   </script>
-  <style id="books-nav-final-off">
-    /* Books: only .active lit; match Home; includes a temporary outline proof */
-    body.books-page header .container nav a{
-      background: transparent !important; border-color: transparent !important; color: inherit !important; text-decoration:none !important;
-    }
-    body.books-page header .container nav a.active{
-      background: rgba(30,64,175,.9) !important; border:1px solid rgba(30,64,175,1) !important; color:#fff !important;
-    }
-    body.books-page header .container nav{
-      display:flex !important; justify-content:center !important; gap:2rem !important; padding-right:120px !important;
-      outline:2px solid #16a34a !important; /* TEMP: proof */
-    }
-    body.books-page .owner-badge{ position:absolute !important; right:16px !important; top:12px !important; display:inline-flex !important; align-items:center !important; z-index:1002 !important; }
-    body.books-page .owner-badge img{ width:40px !important; height:40px !important; border-radius:9999px !important; border:1px solid rgba(255,255,255,.25) !important; object-fit:cover !important; }
-  </style>
 </body>
 </html>
