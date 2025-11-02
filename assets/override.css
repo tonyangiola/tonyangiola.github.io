@@ -363,3 +363,14 @@ body.home-page .site-main .container > section.grid.grid-2 > .card{
     box-sizing: border-box !important;
   }
 }
+/* === Home author hero photo: perfect circle (2025-11-01) === */
+body.home-page section.author-photo img{
+  width: 240px !important;
+  height: 240px !important;         /* ensure square box */
+  border-radius: 50% !important;     /* perfect circle */
+  object-fit: cover !important;      /* fill circle nicely */
+  display: block !important;
+  margin: 0 auto !important;         /* center horizontally */
+  box-shadow: 0 0 12px rgba(0,0,0,.25) !important;
+  border: 1px solid rgba(255,255,255,.25) !important;
+}
