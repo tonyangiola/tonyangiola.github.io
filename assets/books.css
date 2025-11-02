@@ -66,3 +66,24 @@ body.books-page header.site-header .container nav a.active.active:not([href="/bo
   filter:none !important;
   opacity:1 !important;
 }
+/* addendum: Books page — center nav + only Books looks active */
+body.books-page header.site-header .container nav {
+  justify-content: center !important;
+}
+
+/* turn OFF any highlight on non-Books even if .active/aria-current is present */
+body.books-page header.site-header .container nav a.active:not([href="/books.html"]),
+body.books-page header.site-header .container nav a[aria-current]:not([href="/books.html"]) {
+  background: transparent !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* make ONLY Books blue */
+body.books-page header.site-header .container nav a[href="/books.html"].active,
+body.books-page header.site-header .container nav a[href="/books.html"][aria-current] {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #fff !important;
+}
