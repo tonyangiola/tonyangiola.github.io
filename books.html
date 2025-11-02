@@ -12,26 +12,9 @@
   body.books-page main, body.books-page .site-main { opacity: 1 !important; visibility: visible !important; display: block !important; }
 </style>
   <style id="nav-canonical-books">
-    /* Canonical nav to match Home exactly; Books only */
-    :root{--nav-gap:2rem}
-    header .nav, #site-header nav {
-      display:flex !important; align-items:center !important;
-      justify-content:center !important; gap:var(--nav-gap) !important;
-      height:66px !important; padding:0 !important; margin:0 !important;
-    }
-    /* Ensure link pills render consistently */
-    header .nav a, #site-header nav a {
-      display:inline-flex !important; align-items:center !important;
-      padding:8px 14px !important; border-radius:999px !important;
-      font-weight:600 !important; text-decoration:none !important;
-      line-height:1 !important; margin:0 !important;
-      transition:none !important; /* kill page-to-page flicker */
-    }
-    /* Right-side badge identical to Home */
-    header a.owner-badge{
-      position:absolute !important; right:16px !important;
-      top:10px !important; transform:none !important; z-index:1001 !important;
-    }
+    header .nav, #site-header nav {display:flex!important;align-items:center!important;justify-content:center!important;gap:2rem!important;height:66px!important;padding:0!important;margin:0!important}
+    header .nav a, #site-header nav a {display:inline-flex!important;align-items:center!important;padding:8px 14px!important;border-radius:999px!important;font-weight:600!important;text-decoration:none!important;line-height:1!important;margin:0!important;transition:none!important}
+    header a.owner-badge{position:absolute!important;right:16px!important;top:10px!important;transform:none!important;z-index:1001!important}
   </style>
 </head><body data-books="1" class="books-page">
     <header class="site-header">
@@ -44,6 +27,7 @@
       <a href="/contact.html">Contact</a>
     </nav>
   <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola" style="display:block;width:40px;height:40px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);"/></a></div>
+</header>
 </header>
 </header>
 </header>
