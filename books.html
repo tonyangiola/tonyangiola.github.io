@@ -21,7 +21,7 @@
   <div class="container">
     <nav style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;">
       <a href="/" class="active">HOME</a>
-      <a class="active" href="/books.html" aria-current="page">Books</a>
+      <a class="active active" href="/books.html" aria-current="page">Books</a>
       <a href="/bio.html">Bio</a>
       <a href="/newsletter.html">Newsletter</a>
       <a href="/contact.html">Contact</a>
@@ -74,5 +74,13 @@
       document.addEventListener('visibilitychange',()=>{ if(!document.hidden) kick(); });
     });
   </script>
+  <style id="books-nav-final-off">
+    /* FINAL: Only .active link is lit; kill page-specific locks and transitions */
+    header .nav a { transition:none !important; }
+    header .nav a:not(.active)[aria-current], header .nav a[aria-current]:not(.active){
+      aria-current: unset; }
+    /* Neutralize any non-.active highlight coming from older rules */
+    header .nav a:not(.active){ box-shadow:none !important; filter:none !important; opacity:1 !important; }
+  </style>
 </body>
 </html>
