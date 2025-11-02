@@ -87,29 +87,20 @@
       document.addEventListener('visibilitychange',()=>{ if(!document.hidden) kick(); });
     });
   </script>
-  <style id="books-nav-parity">
-    /* Books: match Home navbar; only .active lit (2025-11-01) */
-    body.books-page header.site-header, body.books-page header.contact-header{
-      position:relative !important; min-height:66px !important;
-      background:#0B0F1A !important; box-shadow:0 1px 0 rgba(255,255,255,.06) !important;
-    }
-    body.books-page header.site-header nav, body.books-page header.contact-header nav{
-      display:flex !important; justify-content:center !important; gap:2rem !important; padding-right:120px !important;
-    }
+  <style id="books-nav-final-off">
+    /* Books: only .active lit; match Home; includes a temporary outline proof */
     body.books-page header .container nav a{
-      background:transparent !important; border-color:transparent !important; color:#e5e7eb !important; text-decoration:none !important;
+      background: transparent !important; border-color: transparent !important; color: inherit !important; text-decoration:none !important;
     }
     body.books-page header .container nav a.active{
-      background:rgba(30,64,175,.9) !important; border:1px solid rgba(30,64,175,1) !important; color:#fff !important;
+      background: rgba(30,64,175,.9) !important; border:1px solid rgba(30,64,175,1) !important; color:#fff !important;
     }
-    body.books-page .owner-badge{
-      position:absolute !important; right:16px !important; top:12px !important;
-      display:inline-flex !important; align-items:center !important; z-index:1002 !important;
+    body.books-page header .container nav{
+      display:flex !important; justify-content:center !important; gap:2rem !important; padding-right:120px !important;
+      outline:2px solid #16a34a !important; /* TEMP: proof */
     }
-    body.books-page .owner-badge .owner-avatar, body.books-page .owner-badge img{
-      width:40px !important; height:40px !important; border-radius:9999px !important; object-fit:cover !important;
-      border:1px solid rgba(255,255,255,.25) !important;
-    }
+    body.books-page .owner-badge{ position:absolute !important; right:16px !important; top:12px !important; display:inline-flex !important; align-items:center !important; z-index:1002 !important; }
+    body.books-page .owner-badge img{ width:40px !important; height:40px !important; border-radius:9999px !important; border:1px solid rgba(255,255,255,.25) !important; object-fit:cover !important; }
   </style>
 </body>
 </html>
