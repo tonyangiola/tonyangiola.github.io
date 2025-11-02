@@ -7,14 +7,10 @@
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
   <link rel="stylesheet" href="/assets/style.css?v=books-REBUILD">
-  <link rel="stylesheet" href="/assets/books.css?v=books-REBUILD">
-
-  <!-- FINAL no-crop rules -->
+  <link rel="stylesheet" href="/assets/books.css?v=books-REBUILD">  <!-- FINAL no-crop rules -->
   <style id="books-final">
     html, body { background:#0B0F1A; }
-    .site-main, main { display:block; opacity:1; visibility:visible; }
-
-    /* card layout */
+    .site-main, main { display:block; opacity:1; visibility:visible; }    /* card layout */
     body.books-page article.card { max-width: 740px; margin: 2rem auto; }
     body.books-page article.card img,
     body.books-page article.card video {
@@ -34,9 +30,8 @@
     .owner-badge { position:absolute; right:16px; top:14px; display:inline-flex; gap:.5rem; align-items:center; }
     header.contact-header .container { position:relative; }
   </style>
-</head>
-
-<body data-books="1" class="books-page">
+  <link rel="stylesheet" href="/assets/override.css?v=books-20251101-230801">
+</head><body data-books="1" class="books-page">
   <header class="contact-header">
     <div class="container">
       <nav>
@@ -51,12 +46,8 @@
         <img class="owner-avatar" src="/assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy" style="width:36px;height:36px;border-radius:9999px;object-fit:cover">
       </a>
     </div>
-  </header>
-
-  <main class="page">
-    <section aria-label="Books" class="grid">
-
-      <!-- Snippy (video) -->
+  </header>  <main class="page">
+    <section aria-label="Books" class="grid">      <!-- Snippy (video) -->
       <article class="card" id="snippy">
         <video autoplay muted loop playsinline preload="metadata" poster="/images/books/snippy.jpg">
           <source src="/assets/videos/books/snippy.mp4" type="video/mp4">
@@ -65,9 +56,7 @@
           <a class="btn" href="https://www.amazon.com/Snippy-Horse-Unveiling-Mutilation-Encounters-ebook/dp/B0F88SPFDS/ref=sr_1_1?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-1" target="_blank" rel="noopener">Buy on Amazon</a>
           <a class="btn ghost" href="/newsletter.html">Get Updates</a>
         </div>
-      </article>
-
-      <!-- Socorro (video) -->
+      </article>      <!-- Socorro (video) -->
       <article class="card" id="socorro">
         <video autoplay muted loop playsinline preload="metadata" poster="/images/books/socorro.jpg">
           <source src="/assets/videos/books/socorro.mp4" type="video/mp4">
@@ -76,9 +65,7 @@
           <a class="btn" href="https://www.amazon.com/SOCORRO-UFO-Not-This-World/dp/B0FGQP7PHN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-3" target="_blank" rel="noopener">Buy on Amazon</a>
           <a class="btn ghost" href="/newsletter.html">Get Updates</a>
         </div>
-      </article>
-
-      <!-- Gremlins (video) -->
+      </article>      <!-- Gremlins (video) -->
       <article class="card" id="gremlins">
         <video autoplay muted loop playsinline preload="metadata" poster="/images/books/gremlins.jpg">
           <source src="/assets/videos/books/gremlins.mp4" type="video/mp4">
@@ -87,20 +74,14 @@
           <a class="btn" href="https://www.amazon.com/Flying-Saucers-Aliens-Gremlins-Angiola-ebook/dp/B0FF3RWHT7/ref=sr_1_2?dib=eyJ2IjoiMSJ9.2n8wqVzTDyWkBqeF0Kl5Rk0Th4oy2Ew3wslYo0aYa0zGjHj071QN20LucGBJIEps.X2_KMPH-xTxQGmHlEkn7Mp8tpNJtF1TqhtlVu1enICc&dib_tag=se&keywords=tony+angiola&qid=1761177533&sr=8-2" target="_blank" rel="noopener">Buy on Amazon</a>
           <a class="btn ghost" href="/newsletter.html">Get Updates</a>
         </div>
-      </article>
-
-      <!-- Cosmic (image) -->
+      </article>      <!-- Cosmic (image) -->
       <article class="card" id="cosmic">
         <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover">
         <div class="btnrow">
           <a class="btn ghost" href="/newsletter.html">Get Updates</a>
         </div>
-      </article>
-
-    </section>
-  </main>
-
-  <!-- autoplay nudge -->
+      </article>    </section>
+  </main>  <!-- autoplay nudge -->
   <script>
     document.querySelectorAll('video[autoplay]').forEach(v=>{
       const kick=()=>v.play().catch(()=>{});
@@ -108,5 +89,18 @@
       document.addEventListener('visibilitychange',()=>{ if(!document.hidden) kick(); });
     });
   </script>
+  <style id="books-nav-final-off">
+    /* Books-only: only .active is lit (2025-11-01) */
+    body[data-books] header .container nav a{
+      background: transparent !important;
+      border-color: transparent !important;
+      color: inherit !important;
+    }
+    body[data-books] header .container nav a.active{
+      background: rgba(30,64,175,.9) !important;
+      border: 1px solid rgba(30,64,175,1) !important;
+      color: #fff !important;
+    }
+  </style>
 </body>
 </html>
