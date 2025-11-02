@@ -13,12 +13,33 @@
 </style>
   <style id="nav-canonical-books">
   </style>
+  <style id="nav-home-canonical-books">
+    /* Match Home navbar 1:1 (Books-only) */
+    header .nav, #site-header nav {
+      display:flex !important; align-items:center !important;
+      justify-content:center !important; gap:2rem !important;
+      height:66px !important; padding:0 !important; margin:0 !important;
+    }
+    header .nav a, #site-header nav a {
+      display:inline-flex !important; align-items:center !important;
+      padding:8px 14px !important; border-radius:999px !important;
+      font-weight:600 !important; text-decoration:none !important;
+      line-height:1 !important; margin:0 !important; transition:none !important;
+      border:1px solid rgba(255,255,255,.22) !important; background:transparent !important; color:#fff !important;
+    }
+    /* Only the .active pill gets blue like Home */
+    header .nav a.active { background:#2563eb !important; border-color:#2563eb !important; color:#fff !important; }
+    /* Explicitly keep Bio UNLIT on Books */
+    header .nav a[href="/bio.html"] { background:transparent !important; border:1px solid rgba(255,255,255,.22) !important; color:#fff !important; }
+    /* Badge position identical to Home */
+    header a.owner-badge{ position:absolute !important; right:16px !important; top:10px !important; transform:none !important; z-index:1001 !important; }
+  </style>
 </head><body data-books="1" class="books-page">
     <header class="site-header">
   <div class="container">
     <nav>
       <a href="/" class="active">HOME</a>
-      <a class="active active active active" href="/books.html" aria-current="page">Books</a>
+      <a class="active active active active active" href="/books.html" aria-current="page">Books</a>
       <a href="/bio.html">Bio</a>
       <a href="/newsletter.html">Newsletter</a>
       <a href="/contact.html">Contact</a>
