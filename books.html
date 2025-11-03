@@ -17,6 +17,7 @@
   
   
   
+  <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-110735' />
 </head><body data-books="1" class="books-page">
     <header class="site-header">
   <div class="container">
@@ -148,6 +149,32 @@
     border-radius: 9999px !important;
     object-fit: cover !important;
     border: 1px solid rgba(255,255,255,.25) !important;
+  }
+</style>
+<style id="books-media-center-fix">
+  /* Background & main frame */
+  body.books-page{ background: var(--page-bg, #0B0F1A); }
+  body.books-page main, body.books-page .site-main{ margin: 0 auto; }
+
+  /* Media boxes in book cards: scale down and center */
+  body.books-page .book-card .media-box,
+  body.books-page .book-card .media,
+  body.books-page .book-card .cover {
+    max-width: 640px; margin: 0 auto; position: relative;
+  }
+  body.books-page .book-card .media-box video,
+  body.books-page .book-card .media-box img,
+  body.books-page .book-card video,
+  body.books-page .book-card img{
+    display:block; width:100%; height:auto; max-width:640px; margin:0 auto;
+    object-fit:cover; object-position:center center;
+  }
+
+  /* Optional: reduce huge posters on very small screens */
+  @media (max-width: 640px){
+    body.books-page .book-card .media-box,
+    body.books-page .book-card .media,
+    body.books-page .book-card .cover { max-width: 100%; }
   }
 </style>
 </body>
