@@ -1,0 +1,9 @@
+/* HOME-HERO-FIX (2025-11-03): lock author-photo image to a 240px circle */
+html body.home-page section.author-photo{ display:block !important; text-align:center !important; margin:14px auto 18px !important; }
+html body.home-page section.author-photo > img{
+  width:240px !important; height:240px !important;
+  max-width:240px !important; max-height:240px !important;
+  display:block !important; margin:0 auto !important;
+  border-radius:50% !important; object-fit:cover !important;
+  position:static !important; float:none !important; z-index:1 !important;
+}

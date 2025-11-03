@@ -9,7 +9,6 @@ html body.home-page img[src="/images/tony.jpg"]{
   position:static !important; transform:none !important; float:none !important;
 }
 /* If a global rule sets img { width:100% !important }, neutralize then reassert */
-html body.home-page section.author-photo > img{ width:auto !important; max-width:none !important; }
 html body.home-page section.author-photo > img{ width:240px !important; max-width:240px !important; }
 
 /* Keep navbar visible/normal on Home */
