@@ -23,6 +23,21 @@ html[data-home="1"] body main > *:first-child, html[data-home="1"] body .contain
 
 <link rel="stylesheet" href="/assets/override.css">
 <link rel="stylesheet" href="/assets/home-badge-fix.css">
+  <style id="HOME-FINAL-LOCK-20251103">
+    /* Hard locks for Home (hero img + badge) */
+    body.home-page section.author-photo img{
+      width:240px !important; height:240px !important;
+      max-width:240px !important; max-height:240px !important;
+      display:block !important; margin:0 auto !important;
+      border-radius:50% !important; object-fit:cover !important;
+    }
+
+    /* Badge vertically inline with nav pills */
+    body.home-page header.site-header{ position:relative !important; min-height:66px !important; }
+    body.home-page header.site-header nav{ padding-right:120px !important; }
+    #ownerBadge.owner-badge{ position:absolute !important; right:16px !important; top:-6px !important; transform:none !important; }
+    @media (min-width:900px){ #ownerBadge.owner-badge{ top:-8px !important; } }
+  </style>
 </head>
 <style id="HOME-HOTFIX-20251103">
 /* Light background so page isn’t “all black” */
@@ -48,7 +63,7 @@ body.home-page #home-cards { display:grid !important; grid-template-columns:1fr 
       <a href="/newsletter.html">Newsletter</a>
       <a href="/contact.html">Contact</a>
     </nav>
-  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home" style="position:absolute!important;right:16px!important;top:50%!important;transform:translateY(-50%)!important;z-index:5!important"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola"/></a></div>
+  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola"/></a></div>
 </header>
 
 
