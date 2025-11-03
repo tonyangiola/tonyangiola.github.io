@@ -84,71 +84,13 @@
   
 <!-- books-only final nav unlock (high specificity, gentle) -->
 
-<style id="books-nav-hard-unlock">
-  /* Use the SAME selector as books.css, but restore transitions & hover. */
-  body.books-page header.site-header .container nav a {
-    text-decoration: none !important;
-    pointer-events: auto !important;
-    transition: transform .08s ease, background-color .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease !important;
-  }
-  body.books-page header.site-header .container nav a:hover,
-  body.books-page header.site-header .container nav a:focus-visible {
-    transform: translateY(-1px) !important;
-    opacity: .95 !important;
-    text-decoration: none !important;
-  }
-
-  /* Also cover common alternate selectors we saw in your HTML/CSS */
-  body.books-page header.site-header .nav a,
-  body.books-page .site-header nav a {
-    text-decoration: none !important;
-    pointer-events: auto !important;
-    transition: transform .08s ease, background-color .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease !important;
-  }
-  body.books-page header.site-header .nav a:hover,
-  body.books-page .site-header nav a:hover,
-  body.books-page header.site-header .nav a:focus-visible,
-  body.books-page .site-header nav a:focus-visible {
-    transform: translateY(-1px) !important;
-    opacity: .95 !important;
-    text-decoration: none !important;
-  }
-
-  /* Ensure the nav receives events on top of the badge */
-  body.books-page .site-header { position: relative !important; }
-  body.books-page .site-header nav { position: relative !important; z-index: 1001 !important; pointer-events: auto !important; }
-  body.books-page a.owner-badge { position: absolute !important; right: 16px !important; top: 12px !important; z-index: 900 !important; pointer-events: auto !important; }
-</style>
-<style id="books-nav-hover-ultimate">
-  /* Restore Home-like hover/motion; beat books.css and prior inline locks */
-  html body.books-page header.site-header .container nav a,
-  html body.books-page header.site-header .nav a,
-  html body.books-page .site-header nav a {
-    text-decoration: none !important;
-    pointer-events: auto !important;
-    transition: transform .10s ease, background-color .15s ease,
-                color .15s ease, border-color .15s ease, opacity .15s ease !important;
-  }
-  html body.books-page header.site-header .container nav a:hover,
-  html body.books-page header.site-header .nav a:hover,
-  html body.books-page .site-header nav a:hover,
-  html body.books-page header.site-header .container nav a:focus-visible,
-  html body.books-page header.site-header .nav a:focus-visible,
-  html body.books-page .site-header nav a:focus-visible {
-    transform: translateY(-1px) !important;
-    opacity: .95 !important;
-    text-decoration: none !important;
-  }
-  /* Ensure the nav receives events above the badge */
-  html body.books-page .site-header { position: relative !important; }
-  html body.books-page .site-header nav { position: relative !important; z-index: 1001 !important; pointer-events: auto !important; }
-  html body.books-page a.owner-badge { position: absolute !important; right: 16px !important; top: 12px !important; z-index: 900 !important; pointer-events: auto !important; }
-</style>
 <style id="books-nav-dimensions-match-home">
-  /* Scope: Books only; mirror Home navbar sizing/spacing so nothing jumps page-to-page */
-  body.books-page header.site-header { position: relative !important; padding: 0.75rem 0 !important; }
+  /* Make Books navbar *identical* to Home, beating books.css */
+  body.books-page header.site-header      { position: relative !important; padding: 0.75rem 0 !important; }
   body.books-page header.site-header .container { max-width: 1100px !important; margin: 0 auto !important; padding: 0 1rem !important; }
-  body.books-page header.site-header nav {
+
+  /* Critical: same nav height/gap/padding-right as Home (room for badge), centered */
+  body.books-page header.site-header .container nav {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -156,11 +98,14 @@
     height: 66px !important;
     margin: 0 !important;
     padding: 0 !important;
-    /* Home uses right padding to make room for the badge; keep it identical */
-    padding-right: 120px !important;
+    padding-right: 120px !important; /* matches Home */
+    position: relative !important;
+    z-index: 1001 !important;
   }
-  /* Link chips like Home */
-  body.books-page header.site-header nav a {
+
+  /* Link “chips” dimensions identical to Home (prevents jumping) */
+  body.books-page header.site-header .container nav a,
+  body.books-page header.site-header .nav a {
     display: inline-flex !important;
     align-items: center !important;
     padding: 8px 14px !important;
@@ -168,21 +113,26 @@
     border-radius: 999px !important;
     text-decoration: none !important;
     font-weight: 600 !important;
-    transition: transform .10s ease, background-color .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease !important;
+    transition: transform .10s ease, background-color .15s ease, color .15s ease,
+                border-color .15s ease, opacity .15s ease !important;
+    opacity: 1 !important;
+    filter: none !important;
   }
-  body.books-page header.site-header nav a:hover,
-  body.books-page header.site-header nav a:focus-visible {
+  body.books-page header.site-header .container nav a:hover,
+  body.books-page header.site-header .nav a:hover,
+  body.books-page header.site-header .container nav a:focus-visible,
+  body.books-page header.site-header .nav a:focus-visible {
     transform: translateY(-1px) !important;
     text-decoration: none !important;
   }
 
-  /* Badge dimensions/placement identical to Home */
+  /* Badge: force visible + exact Home placement & size */
   body.books-page header.site-header a.owner-badge {
     position: absolute !important;
     right: 16px !important;
     top: 12px !important;
     transform: none !important;
-    z-index: 1001 !important;
+    z-index: 1002 !important;
     display: inline-flex !important;
     align-items: center !important;
     gap: .5rem !important;
@@ -199,9 +149,6 @@
     object-fit: cover !important;
     border: 1px solid rgba(255,255,255,.25) !important;
   }
-
-  /* Kill underline variants coming from generic a:hover in base CSS */
-  body.books-page header.site-header nav a:hover { text-decoration: none !important; }
 </style>
 </body>
 </html>
