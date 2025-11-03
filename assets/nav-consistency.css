@@ -1,9 +1,9 @@
-/* === Global navbar consistency === */
+/* === Global navbar consistency (wins when linked last) === */
 header.site-header{position:relative;padding:0.75rem 0;}
 header.site-header .container{max-width:1100px;margin:0 auto;padding:0 1rem;}
 header.site-header .container nav, header.site-header .nav{
   display:flex;align-items:center;justify-content:center;gap:2rem;
-  height:66px;margin:0;padding:0;padding-right:120px; /* room for badge, matches Home */
+  height:66px;margin:0;padding:0;padding-right:120px; /* room for badge */
   position:relative;z-index:1001;
 }
 header.site-header .container nav a, header.site-header .nav a{
@@ -15,7 +15,6 @@ header.site-header .container nav a:hover,
 header.site-header .nav a:hover,
 header.site-header .container nav a:focus-visible,
 header.site-header .nav a:focus-visible{transform:translateY(-1px);text-decoration:none;}
-/* Badge identical to Home */
 header.site-header a.owner-badge{
   position:absolute;right:16px;top:12px;transform:none;z-index:1002;
   display:inline-flex;align-items:center;gap:.5rem;visibility:visible;opacity:1;pointer-events:auto;
@@ -23,5 +22,4 @@ header.site-header a.owner-badge{
 header.site-header a.owner-badge img, header.site-header a.owner-badge .owner-avatar{
   display:block;width:40px;height:40px;border-radius:9999px;object-fit:cover;border:1px solid rgba(255,255,255,.25);
 }
-/* Kill generic underline on nav links */
 header.site-header nav a:hover{text-decoration:none;}
