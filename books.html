@@ -17,9 +17,10 @@
   
   
   
-  <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-110735' />
-  <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-111019' />
-  <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-111844' />
+
+
+
+  <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-112144' />
 </head><body data-books="1" class="books-page">
     <header class="site-header">
   <div class="container">
@@ -87,106 +88,18 @@
   
 <!-- books-only final nav unlock (high specificity, gentle) -->
 
-<style id="books-nav-dimensions-match-home">
-  /* Make Books navbar *identical* to Home, beating books.css */
-  body.books-page header.site-header      { position: relative !important; padding: 0.75rem 0 !important; }
-  body.books-page header.site-header .container { max-width: 1100px !important; margin: 0 auto !important; padding: 0 1rem !important; }
-
-  /* Critical: same nav height/gap/padding-right as Home (room for badge), centered */
-  body.books-page header.site-header .container nav {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 2rem !important;
-    height: 66px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    padding-right: 120px !important; /* matches Home */
-    position: relative !important;
-    z-index: 1001 !important;
-  }
-
-  /* Link “chips” dimensions identical to Home (prevents jumping) */
-  body.books-page header.site-header .container nav a,
-  body.books-page header.site-header .nav a {
-    display: inline-flex !important;
-    align-items: center !important;
-    padding: 8px 14px !important;
-    line-height: 1 !important;
-    border-radius: 999px !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    transition: transform .10s ease, background-color .15s ease, color .15s ease,
-                border-color .15s ease, opacity .15s ease !important;
-    opacity: 1 !important;
-    filter: none !important;
-  }
-  body.books-page header.site-header .container nav a:hover,
-  body.books-page header.site-header .nav a:hover,
-  body.books-page header.site-header .container nav a:focus-visible,
-  body.books-page header.site-header .nav a:focus-visible {
-    transform: translateY(-1px) !important;
-    text-decoration: none !important;
-  }
-
-  /* Badge: force visible + exact Home placement & size */
-  body.books-page header.site-header a.owner-badge {
-    position: absolute !important;
-    right: 16px !important;
-    top: 12px !important;
-    transform: none !important;
-    z-index: 1002 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: .5rem !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
-  body.books-page header.site-header a.owner-badge img,
-  body.books-page header.site-header a.owner-badge .owner-avatar {
-    display: block !important;
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 9999px !important;
-    object-fit: cover !important;
-    border: 1px solid rgba(255,255,255,.25) !important;
-  }
-</style>
-<style id="books-media-center-fix">
-  /* Background */
-  body.books-page{ background: var(--page-bg, #0B0F1A); }
-  /* Center the main container if needed */
-  body.books-page main, body.books-page .site-main{ margin:0 auto; }
-
-  /* Scale & center media in book cards */
-  body.books-page .book-card .media-box,
-  body.books-page .book-card .media,
-  body.books-page .book-card .cover{ max-width:640px; margin:0 auto; position:relative; }
-  body.books-page .book-card .media-box video,
-  body.books-page .book-card .media-box img,
-  body.books-page .book-card video,
-  body.books-page .book-card img{
-    display:block; width:100%; height:auto; max-width:640px; margin:0 auto;
-    object-fit:cover; object-position:center center;
-  }
-  @media (max-width:640px){
-    body.books-page .book-card .media-box,
-    body.books-page .book-card .media,
-    body.books-page .book-card .cover{ max-width:100%; }
-  }
-</style>
-<style id="books-final-pin">
-  /* NAV — identical metrics; force transitions */
+<style id="books-lockdown-ultimate">
+  /* === NAV (no jump) — higher specificity + !important, includes font-size === */
   html body.books-page header.site-header .container nav,
   html body.books-page header.site-header .nav{
     display:flex !important; align-items:center !important; justify-content:center !important; gap:2rem !important;
-    height:66px !important; margin:0 !important; padding:0 !important; padding-right:120px !important;
+    height:66px !important; min-height:66px !important; margin:0 !important; padding:0 !important; padding-right:120px !important;
     position:relative !important; z-index:1001 !important;
   }
   html body.books-page header.site-header .container nav a,
   html body.books-page header.site-header .nav a{
-    display:inline-flex !important; align-items:center !important; padding:8px 14px !important; line-height:1 !important;
+    display:inline-flex !important; align-items:center !important;
+    padding:8px 14px !important; line-height:1 !important; font-size:1rem !important;
     border-radius:999px !important; text-decoration:none !important; font-weight:600 !important;
     transition: transform .10s ease, background-color .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease !important;
     opacity:1 !important; filter:none !important;
@@ -197,7 +110,7 @@
   html body.books-page header.site-header .nav a:focus-visible{
     transform: translateY(-1px) !important; text-decoration:none !important;
   }
-  /* Badge — exact placement */
+  /* Badge identical to Home */
   html body.books-page header.site-header a.owner-badge{
     position:absolute !important; right:16px !important; top:12px !important; transform:none !important; z-index:1002 !important;
     display:inline-flex !important; align-items:center !important; gap:.5rem !important; visibility:visible !important; opacity:1 !important; pointer-events:auto !important;
@@ -207,14 +120,18 @@
     display:block !important; width:40px !important; height:40px !important; border-radius:9999px !important; object-fit:cover !important; border:1px solid rgba(255,255,255,.25) !important;
   }
 
-  /* PAGE BG */
+  /* === DARK BG (win over override.css/books.css) === */
   html, body, html body.books-page{ background:#0B0F1A !important; }
-  html body.books-page main, html body.books-page .site-main, html body.books-page .container{ background:transparent !important; }
+  html body.books-page main,
+  html body.books-page .site-main,
+  html body.books-page .container{ background:transparent !important; }
 
-  /* MEDIA — center & max 640px */
+  /* === MEDIA — center & max 640px === */
   html body.books-page .book-card .media-box,
   html body.books-page .book-card .media,
-  html body.books-page .book-card .cover{ max-width:640px !important; margin:0 auto !important; position:relative !important; }
+  html body.books-page .book-card .cover{
+    max-width:640px !important; margin:0 auto !important; position:relative !important;
+  }
   html body.books-page .book-card .media-box video,
   html body.books-page .book-card .media-box img,
   html body.books-page .book-card video,
