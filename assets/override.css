@@ -704,3 +704,37 @@ body[data-books="1"] main img{
   height: auto !important;
   float: none !important;
 }
+/* === BOOKS-NORMALIZE-20251103 === */
+body.books-page, body[data-books="1"]{
+  --nav-height: 92px; --nav-gap: 2rem; --nav-link-pad: 8px 12px; --nav-link-fs: 18px;
+}
+body.books-page header.site-header,
+body[data-books="1"] header.site-header{ min-height: var(--nav-height); }
+
+/* Center and size the video grid */
+body.books-page .video-grid,
+body[data-books="1"] .video-grid{
+  max-width: 1100px; margin: 0 auto; padding: 1rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  gap: 1.25rem; align-items: start;
+}
+
+/* Keep cards normal, not huge */
+body.books-page .video-card,
+body[data-books="1"] .video-card{
+  border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+/* Force embeds to clean 16:9, full width */
+body.books-page .video-card iframe,
+body.books-page .video-card video,
+body[data-books="1"] .video-card iframe,
+body[data-books="1"] .video-card video{
+  width: 100% !important; height: auto !important; aspect-ratio: 16 / 9; display: block;
+}
+
+/* Neutralize stray inline width/height on embeds (Books only) */
+body.books-page .video-card *[width],
+body.books-page .video-card *[height],
+body[data-books="1"] .video-card *[width],
+body[data-books="1"] .video-card *[height]{ width: auto !important; height: auto !important; }

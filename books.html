@@ -8,6 +8,7 @@
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
   <link rel="stylesheet" href="/assets/style.css?v=books-REBUILD">
   <link rel="stylesheet" href="/assets/override.css?v=cards-20251031-214552" />
+  <link rel="stylesheet" href="/assets/nav-badge-final.css?v=1762208562" />
   <!-- FINAL no-crop rules -->
 <style id="books-visibility-rescue">
   body.books-page main, body.books-page .site-main { opacity: 1 !important; visibility: visible !important; display: block !important; }
@@ -20,18 +21,18 @@
   <link rel="stylesheet" href=/assets/nav-badge-final.css?v='20251103-135039' />
   <link rel="stylesheet" href=/assets/nav-badge-final.css?v='20251103-135732' />
   <!-- NAV-BADGE-FINAL-LINK -->
-  <link rel="stylesheet" href="/assets/nav-badge-final.css?v=20251103-151341" />
-</head><body data-books="1" class="books-page">
-            <header class="site-header">
+  </head><body data-books="1" class="books-page">
+    <header class="site-header">
   <div class="container">
     <nav>
-      <a href="/">HOME</a>
-      <a class="active active" href="/books.html">Books</a>
+      <a href="/" class="active">HOME</a>
+      <a href="/books.html">Books</a>
       <a href="/bio.html">Bio</a>
       <a href="/newsletter.html">Newsletter</a>
       <a href="/contact.html">Contact</a>
     </nav>
   <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola"/></a></div>
+</header>
 </header>
 </header></header>
     
@@ -86,59 +87,7 @@
     });
   </script>
   
-<!-- books-only final nav unlock (high specificity, gentle) --><style id="books-lockdown-ultimate">
-  /* === NAV (no jump) — higher specificity + !important, includes font-size === */
-  html body.books-page header.site-header .container nav,
-  html body.books-page header.site-header .nav{
-    display:flex !important; align-items:center !important; justify-content:center !important; gap:2rem !important;
-    height:66px !important; min-height:66px !important; margin:0 !important; padding:0 !important; padding-right:120px !important;
-    position:relative !important; z-index:1001 !important;
-  }
-  html body.books-page header.site-header .container nav a,
-  html body.books-page header.site-header .nav a{
-    display:inline-flex !important; align-items:center !important;
-    padding:8px 14px !important; line-height:1 !important; font-size:1rem !important;
-    border-radius:999px !important; text-decoration:none !important; font-weight:600 !important;
-    transition: transform .10s ease, background-color .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease !important;
-    opacity:1 !important; filter:none !important;
-  }
-  html body.books-page header.site-header .container nav a:hover,
-  html body.books-page header.site-header .nav a:hover,
-  html body.books-page header.site-header .container nav a:focus-visible,
-  html body.books-page header.site-header .nav a:focus-visible{
-    transform: translateY(-1px) !important; text-decoration:none !important;
-  }
-  /* Badge identical to Home */
-  html body.books-page header.site-header a.owner-badge{
-    position:absolute !important; right:16px !important; top:12px !important; transform:none !important; z-index:1002 !important;
-    display:inline-flex !important; align-items:center !important; gap:.5rem !important; visibility:visible !important; opacity:1 !important; pointer-events:auto !important;
-  }
-  html body.books-page header.site-header a.owner-badge img,
-  html body.books-page header.site-header a.owner-badge .owner-avatar{
-    display:block !important; width:40px !important; height:40px !important; border-radius:9999px !important; object-fit:cover !important; border:1px solid rgba(255,255,255,.25) !important;
-  }  /* === DARK BG (win over override.css/books.css) === */
-  html, body, html body.books-page{ background:#0B0F1A !important; }
-  html body.books-page main,
-  html body.books-page .site-main,
-  html body.books-page .container{ background:transparent !important; }  /* === MEDIA — center & max 640px === */
-  html body.books-page .book-card .media-box,
-  html body.books-page .book-card .media,
-  html body.books-page .book-card .cover{
-    max-width:640px !important; margin:0 auto !important; position:relative !important;
-  }
-  html body.books-page .book-card .media-box video,
-  html body.books-page .book-card .media-box img,
-  html body.books-page .book-card video,
-  html body.books-page .book-card img{
-    display:block !important; width:100% !important; height:auto !important; max-width:640px !important; margin:0 auto !important;
-    object-fit:contain !important; object-position:center center !important;
-  }
-  @media (max-width:640px){
-    html body.books-page .book-card .media-box,
-    html body.books-page .book-card .media,
-    html body.books-page .book-card .cover{ max-width:100% !important; }
-  }
-</style>
+<!-- books-only final nav unlock (high specificity, gentle) -->
 </body>
 </html><!-- books-nav-override-20251102-155539 -->
 <!-- books-only final, gentle navbar patch -->
