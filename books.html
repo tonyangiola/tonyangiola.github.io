@@ -7,76 +7,16 @@
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
   <link rel="stylesheet" href="/assets/style.css?v=books-REBUILD">
-  <link rel="stylesheet" href="/assets/books.css?v=books-REBUILD">  <!-- FINAL no-crop rules -->
+  <link rel="stylesheet" href="/assets/override.css?v=cards-20251031-214552" />
+  <!-- FINAL no-crop rules -->
 <style id="books-visibility-rescue">
   body.books-page main, body.books-page .site-main { opacity: 1 !important; visibility: visible !important; display: block !important; }
 </style>
-  <style id="nav-canonical-books">
-  </style>
-  <style id="nav-home-canonical-books">
-    /* Match Home navbar 1:1 (Books-only) */
-    header .nav, #site-header nav {
-      display:flex !important; align-items:center !important;
-      justify-content:center !important; gap:2rem !important;
-    }
-    header .nav a, #site-header nav a {
-      display:inline-flex !important; align-items:center !important;
-      padding:8px 14px !important; border-radius:999px !important;
-      border:1px solid rgba(255,255,255,.22) !important; background:transparent !important; color:#fff !important;
-    }
-    /* Only the .active pill gets blue like Home */
-    header .nav a.active { background:#2563eb ; border-color:#2563eb ; color:#fff ; }
-    /* Explicitly keep Bio UNLIT on Books */
-    header .nav a[href="/bio.html"] { background:transparent ; border:1px solid rgba(255,255,255,.22) ; color:#fff ; }
-    /* Badge position identical to Home */
-  </style>
-  <style id="books-badge-restore">
-    /* Books-only: restore owner-badge identical to Home */
-    header a.owner-badge{
-      display:inline-flex !important; align-items:center !important; gap:.5rem !important;
-    }
-    header a.owner-badge img, header a.owner-badge .owner-avatar{
-      display:block !important; object-fit:cover !important;
-      border:1px solid rgba(255,255,255,.25) !important;
-    }
-    /* Nuke any Books-page transforms/offsets from old CSS */
-  </style>
-  <style id="books-nav-canonical-final">
-    /* Match Home layout & pills; disable flicker; enforce one active */
-    body.books-page header.site-header .nav {
-      display:flex !important; align-items:center !important;
-      justify-content:center !important; gap:2rem !important;
-      height:66px !important; padding:0 !important; margin:0 !important;
-    }
-    body.books-page header.site-header .nav a{
-      display:inline-flex !important; align-items:center !important;
-      padding:8px 14px !important; border-radius:999px !important;
-      line-height:1 !important; margin:0 !important;
-      font-weight:600 !important; text-decoration:none !important;
-      transition:none !important;
-      background:transparent !important; border:1px solid rgba(255,255,255,.22) !important; color:#fff !important;
-    }
-    body.books-page header.site-header .nav a.active{
-      background:#2563eb !important; border-color:#2563eb !important; color:#fff !important;
-    }
-    /* Bio explicitly neutral (never lit here) */
-    body.books-page header.site-header .nav a[href="/bio.html"]{
-      background:transparent !important; border:1px solid rgba(255,255,255,.22) !important; color:#fff !important;
-    }
-    /* Badge restore identical to Home */
-    body.books-page header.site-header a.owner-badge{
-      position:absolute !important; right:16px !important; top:10px !important;
-      display:inline-flex !important; align-items:center !important; gap:.5rem !important;
-      transform:none !important; z-index:1001 !important; visibility:visible !important; opacity:1 !important;
-    }
-    body.books-page header.site-header a.owner-badge img,
-    body.books-page header.site-header a.owner-badge .owner-avatar{
-      width:40px !important; height:40px !important; border-radius:9999px !important;
-      display:block !important; object-fit:cover !important;
-      border:1px solid rgba(255,255,255,.25) !important;
-    }
-  </style>
-  <style id="books-bio-unlight-final">body.books-page header.site-header .nav a[href="/bio.html"]:not(.active){background:transparent ;border:1px solid rgba(255,255,255,.22) ;color:#fff ;}</style>
+  
+  
+  
+  
+  
 </head><body data-books="1" class="books-page">
     <header class="site-header">
   <div class="container">
@@ -139,29 +79,11 @@
       document.addEventListener('visibilitychange',()=>{ if(!document.hidden) kick(); });
     });
   </script>
-  <style id="books-nav-final-off">
-    /* FINAL: Only .active link is lit; kill page-specific locks and transitions */
-    header .nav a { transition:none ; }
-    header .nav a:not(.active)[aria-current], header .nav a[aria-current]:not(.active){
-      aria-current: unset; }
-    /* Neutralize any non-.active highlight coming from older rules */
-    header .nav a:not(.active){ box-shadow:none ; filter:none ; opacity:1 ; }
-  </style>
+  
 <!-- books-only final nav unlock (high specificity, gentle) -->
-<style id="books-nav-hover-fix">
-body.books-page header, body.books-page .site-header { position: relative; z-index: 1000; }
-body.books-page .site-header nav { position: relative; z-index: 1001; pointer-events: auto; }
-body.books-page a.owner-badge { position: absolute; right: 16px; top: 12px; z-index: 900; pointer-events: auto; }
-body.books-page .site-header nav a {
-body.books-page   transition: transform .15s ease, color .15s ease, background-color .15s ease, opacity .15s ease;
-body.books-page }
-body.books-page .site-header nav a:hover {
-body.books-page   transform: translateY(-1px);
-body.books-page   opacity: 1;
-body.books-page }
-</style>
+
 </body>
 </html>
 
-<!-- books-nav-override-20251102-155539 --><script src="/assets/books-nav-override.js?v=20251102-155539" defer></script>
+<!-- books-nav-override-20251102-155539 -->
 <!-- books-only final, gentle navbar patch -->
