@@ -502,3 +502,37 @@ main .author-photo{
 
 /* D) Extra safety: don't let generic img{width:100%} rules blow up avatars */
 img.author-photo{ max-width: none !important; }
+/* === HERO-FINAL-CENTER-20251103 === */
+
+/* Smaller, better-aligned header badge */
+:root{
+  --header-badge-size: 72px;      /* slightly smaller than before */
+  --hero-avatar-size: 220px;      /* bottom (large) hero size stays */
+}
+
+/* Header badge adjustments */
+header .owner-badge img{
+  width: var(--header-badge-size) !important;
+  height: var(--header-badge-size) !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* Center the large hero image at bottom */
+main img.author-photo,
+main .author-photo img,
+.author-photo{
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none !important;
+  width: var(--hero-avatar-size) !important;
+  height: var(--hero-avatar-size) !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* Ensure no second header badge appears anywhere else */
+main .owner-badge{
+  display: none !important;
+}
