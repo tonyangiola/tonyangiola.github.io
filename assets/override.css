@@ -553,3 +553,52 @@ header nav a.active{
   background: rgba(59,130,246,.15) !important; /* subtle pill */
   border: 1px solid rgba(59,130,246,.35) !important;
 }
+/* === BOOKS-BODY-CENTER-20251103 === */
+body.books-page main,
+body[data-books="1"] main {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 2rem 1rem !important;
+  text-align: center !important;
+}
+/* === BOOKS-NAV-MATCH-HOME-20251103 === */
+/* Make sure header uses same flexbox style */
+body.books-page header.site-header,
+body[data-books="1"] header.site-header {
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: var(--nav-height) !important;
+  background: var(--page-bg, #fff) !important;
+}
+
+/* Match the inner container to Home */
+body.books-page header .container,
+body[data-books="1"] header .container {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative;
+}
+
+/* Center nav items horizontally */
+body.books-page header nav,
+body[data-books="1"] header nav {
+  display: flex !important;
+  gap: 2rem !important;
+  margin: 0 auto !important;
+  align-items: center !important;
+}
+
+/* Ensure badge is in same spot as Home */
+body.books-page header .owner-badge,
+body[data-books="1"] header .owner-badge {
+  position: absolute !important;
+  right: 24px !important;
+  top: 12px !important;
+  margin: 0 !important;
+}
