@@ -407,7 +407,7 @@ body.books-page header.site-header .container nav a[href="/books.html"]{
 body.books-page header.site-header .container nav a[aria-current]:not([href="/books.html"]){
   background:transparent!important;border:1px solid rgba(255,255,255,.22)!important;color:#fff!important
 }
-body.books-page header.site-header .owner-badge{
+/* old badge rule removed */ body.books-page header.site-header .owner-badge{
   position:absolute!important;right:16px!important;top:14px!important;display:inline-flex!important;align-items:center!important;gap:.5rem!important
 }
 @media (max-width:740px){
@@ -601,4 +601,13 @@ body[data-books="1"] header .owner-badge {
   right: 24px !important;
   top: 12px !important;
   margin: 0 !important;
+}
+/* === BOOKS-FINAL-BADGE-FIX-20251103 === */
+body.books-page header .owner-badge,
+body[data-books="1"] header .owner-badge {
+  position: absolute !important;
+  top: 12px !important;
+  right: 24px !important;
+  margin: 0 !important;
+  line-height: 0 !important;
 }
