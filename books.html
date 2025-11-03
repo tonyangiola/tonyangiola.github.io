@@ -19,6 +19,7 @@
   
   <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-110735' />
   <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-111019' />
+  <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-111844' />
 </head><body data-books="1" class="books-page">
     <header class="site-header">
   <div class="container">
@@ -176,7 +177,7 @@
   }
 </style>
 <style id="books-final-pin">
-  /* === NAV: force identical metrics and hover === */
+  /* NAV — identical metrics; force transitions */
   html body.books-page header.site-header .container nav,
   html body.books-page header.site-header .nav{
     display:flex !important; align-items:center !important; justify-content:center !important; gap:2rem !important;
@@ -196,7 +197,7 @@
   html body.books-page header.site-header .nav a:focus-visible{
     transform: translateY(-1px) !important; text-decoration:none !important;
   }
-  /* Badge placement identical to Home */
+  /* Badge — exact placement */
   html body.books-page header.site-header a.owner-badge{
     position:absolute !important; right:16px !important; top:12px !important; transform:none !important; z-index:1002 !important;
     display:inline-flex !important; align-items:center !important; gap:.5rem !important; visibility:visible !important; opacity:1 !important; pointer-events:auto !important;
@@ -206,15 +207,14 @@
     display:block !important; width:40px !important; height:40px !important; border-radius:9999px !important; object-fit:cover !important; border:1px solid rgba(255,255,255,.25) !important;
   }
 
-  /* === MEDIA: center & scale with !important to beat books.css === */
-  html body.books-page{ background: var(--page-bg, #0B0F1A) !important; }
-  html body.books-page main, html body.books-page .site-main{ margin:0 auto !important; }
+  /* PAGE BG */
+  html, body, html body.books-page{ background:#0B0F1A !important; }
+  html body.books-page main, html body.books-page .site-main, html body.books-page .container{ background:transparent !important; }
 
+  /* MEDIA — center & max 640px */
   html body.books-page .book-card .media-box,
   html body.books-page .book-card .media,
-  html body.books-page .book-card .cover{
-    max-width:640px !important; margin:0 auto !important; position:relative !important;
-  }
+  html body.books-page .book-card .cover{ max-width:640px !important; margin:0 auto !important; position:relative !important; }
   html body.books-page .book-card .media-box video,
   html body.books-page .book-card .media-box img,
   html body.books-page .book-card video,
