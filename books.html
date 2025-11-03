@@ -7,7 +7,6 @@
   <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
   <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
   <link rel="stylesheet" href="/assets/style.css?v=books-REBUILD">
-  <link rel="stylesheet" href="/assets/override.css?v=20251103-103933" />
   <link rel="stylesheet" href="/assets/override.css?v=cards-20251031-214552" />
   <!-- FINAL no-crop rules -->
 <style id="books-visibility-rescue">
@@ -83,8 +82,25 @@
   
 <!-- books-only final nav unlock (high specificity, gentle) -->
 
+<style id="books-nav-hover-restore">
+  /* Scope to Books only; stronger than books.css */
+  body.books-page .site-header nav a {
+    text-decoration: none !important;
+    transition: transform .08s ease, background-color .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease !important;
+    pointer-events: auto !important;
+  }
+  body.books-page .site-header nav a:hover,
+  body.books-page .site-header nav a:focus-visible {
+    transform: translateY(-1px) !important;
+    opacity: .95 !important;
+    text-decoration: none !important;
+  }
+  /* Ensure nav sits above badge for clean hover */
+  body.books-page .site-header nav { position: relative !important; z-index: 1001 !important; }
+  body.books-page a.owner-badge { position: absolute !important; right: 16px !important; top: 12px !important; z-index: 900 !important; }
+</style>
 </body>
 </html>
 
-
+<!-- books-nav-override-20251102-155539 -->
 <!-- books-only final, gentle navbar patch -->
