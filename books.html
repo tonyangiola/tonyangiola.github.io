@@ -1,5 +1,5 @@
 <!doctype html>
-<head><style id="home-gap">
+<style id="home-gap">
 html[data-home="1"] body, html[data-home="1"] body * { scroll-padding-top:0 !important; }
 html[data-home="1"] body main, html[data-home="1"] body .site-main, html[data-home="1"] body .container { margin-top:0 !important; padding-top:0 !important; }
 html[data-home="1"] body header.site-header + * { margin-top:0 !important; padding-top:0 !important; }
@@ -49,7 +49,21 @@ my = class="home-page" data-home="1";
      =~ s/sclass="([^"]*)"/ " class=" class="home-page" data-home="1" books-page""/ei || ( .= qq{ class="books-page"});
      =~ s/sdata-books="[^"]*"//gi;
      .= qq{ data-books="1"};
-    "<body>";
+    "<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Books – Tony Angiola</title>
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml" />
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb" />
+  <script src="assets/name-badge-fixed.js" defer></script>
+
+  <!-- Canonical stylesheet order -->
+  <link rel="stylesheet" href="/assets/style.css?v=books-REBUILD" />
+  <link rel="stylesheet" href="/assets/override.css?v=cards-20251031-214552" />
+  <link rel="stylesheet" href="/assets/nav-badge-final.css?v=1762210829" />
+</head>
+
+<body class="books-page" data-books="1">";
 
     <header class="site-header">
   <div class="container">
@@ -93,7 +107,6 @@ my = class="home-page" data-home="1";
   <img src="/images/tony.jpg" alt="Tony Angiola">
   <h2>Tony Angiola</h2>
 </section>
-  </main>
   </main>
 
 
