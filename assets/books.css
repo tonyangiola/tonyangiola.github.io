@@ -152,3 +152,7 @@ body.books-page main,body.books-page .site-main,body.books-page .site-main .cont
 body.books-page,body.books-page html{background:#0B0F1A!important}
 body.books-page main,body.books-page .site-main,body.books-page .site-main .container,body.books-page .container{background:transparent!important}
 body.books-page section,body.books-page .card,body.books-page .cards,body.books-page .grid,body.books-page .grid-2{background:transparent!important}
+
+/* books-nav-hover-badge-20251102-193209 */
+body.books-page header.site-header .container nav a:hover{ text-decoration:none!important }
+body.books-page header.site-header .owner-badge{ right:16px!important; top:14px!important }
