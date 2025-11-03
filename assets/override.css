@@ -867,3 +867,18 @@ body[data-books="1"] header.site-header nav{
 }
 
 /* VERSION: 20251103-BOOKS-NAV-HARD-MATCH-B */
+/* === BOOKS-VIS-RESET-20251103 === */
+body.books-page main,
+body[data-books="1"] main,
+body.books-page .container,
+body[data-books="1"] .container,
+body.books-page #books-grid .card,
+body[data-books="1"] #books-grid .card{
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+body.books-page h1, body.books-page h2, body.books-page p,
+body[data-books="1"] h1, body[data-books="1"] h2, body[data-books="1"] p{
+  color: #111827 !important; /* near-black for contrast */
+}
