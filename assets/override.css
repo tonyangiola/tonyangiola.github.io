@@ -923,3 +923,7 @@ body.books-page #books-grid{
   opacity: 1 !important;
   filter: none !important;
 }
+/* BOOKS-EMBED-16x9 */
+body.books-page .embed16x9{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px}
+body.books-page .embed16x9 iframe,
+body.books-page .embed16x9 video{position:absolute;inset:0;width:100%!important;height:100%!important;display:block!important;visibility:visible!important}
