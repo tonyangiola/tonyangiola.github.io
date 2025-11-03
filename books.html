@@ -117,6 +117,31 @@
   body.books-page .site-header nav { position: relative !important; z-index: 1001 !important; pointer-events: auto !important; }
   body.books-page a.owner-badge { position: absolute !important; right: 16px !important; top: 12px !important; z-index: 900 !important; pointer-events: auto !important; }
 </style>
+<style id="books-nav-hover-ultimate">
+  /* Restore Home-like hover/motion; beat books.css and prior inline locks */
+  html body.books-page header.site-header .container nav a,
+  html body.books-page header.site-header .nav a,
+  html body.books-page .site-header nav a {
+    text-decoration: none !important;
+    pointer-events: auto !important;
+    transition: transform .10s ease, background-color .15s ease,
+                color .15s ease, border-color .15s ease, opacity .15s ease !important;
+  }
+  html body.books-page header.site-header .container nav a:hover,
+  html body.books-page header.site-header .nav a:hover,
+  html body.books-page .site-header nav a:hover,
+  html body.books-page header.site-header .container nav a:focus-visible,
+  html body.books-page header.site-header .nav a:focus-visible,
+  html body.books-page .site-header nav a:focus-visible {
+    transform: translateY(-1px) !important;
+    opacity: .95 !important;
+    text-decoration: none !important;
+  }
+  /* Ensure the nav receives events above the badge */
+  html body.books-page .site-header { position: relative !important; }
+  html body.books-page .site-header nav { position: relative !important; z-index: 1001 !important; pointer-events: auto !important; }
+  html body.books-page a.owner-badge { position: absolute !important; right: 16px !important; top: 12px !important; z-index: 900 !important; pointer-events: auto !important; }
+</style>
 </body>
 </html>
 
