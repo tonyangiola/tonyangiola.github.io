@@ -80,15 +80,17 @@
 </head><body data-books="1" class="books-page">
     <header class="site-header">
   <div class="container">
-    <nav style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;">
+    <nav>
       <a href="/" class="active">HOME</a>
       <a href="/books.html">Books</a>
       <a href="/bio.html">Bio</a>
       <a href="/newsletter.html">Newsletter</a>
       <a href="/contact.html">Contact</a>
     </nav>
-  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola" style="display:block;width:40px;height:40px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);"/></a></div>
+  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola"/></a></div>
 </header>
+</header>
+    
 </header>
     
 </header>
@@ -144,57 +146,17 @@
     header .nav a:not(.active){ box-shadow:none ; filter:none ; opacity:1 ; }
   </style>
 <!-- books-only final nav unlock (high specificity, gentle) -->
-<style id="books-nav-unlock-final">
-  /* Ensure predictable header box */
-  body.books-page header.site-header, body.books-page header { position: relative; padding: 0.75rem 0; }
-
-  /* Container sizing */
-  body.books-page header .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
-
-  /* Make nav a centered flex row, ignore earlier floats/absolute tricks */
-  body.books-page header nav,
-  body.books-page .site-header nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    margin: 0; padding: 0;
-    position: static;
-    height: auto;
-    transform: none;
-  }
-
-  /* Links readable, no forced opacity */
-  body.books-page header nav a {
-    text-decoration: none;
-    font-weight: 600;
-    opacity: 1;
-    filter: none;
-  }
-
-  /* Badge normalized */
-  body.books-page a.owner-badge {
-    position: absolute;
-    right: 16px;
-    top: 12px;
-    transform: none;
-  }
-
-  /* Kill any stray per-page display:none or visibility hacks on nav area */
-  body.books-page header, 
-  body.books-page header *, 
-  body.books-page .site-header, 
-  body.books-page .site-header * {
-    visibility: visible;
-  }
+<style id="books-nav-match-home">
+body.books-page html[data-home="1"] body header.site-header + * { margin-top:0 !important; padding-top:0 !important; }
+body.books-page     <header class="site-header">
+body.books-page     <nav style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;">
+body.books-page       <a href="/" class="active">HOME</a>
+body.books-page     </nav>
+body.books-page   <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola" style="display:block;width:40px;height:40px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);"/></a></div>
+body.books-page </header>
 </style>
 </body>
 </html>
 
 <!-- books-nav-override-20251102-155539 --><script src="/assets/books-nav-override.js?v=20251102-155539" defer></script>
 <!-- books-only final, gentle navbar patch -->
-<style id="books-nav-final">
-  header .container{max-width:1100px;margin:0 auto;padding:0 1rem;}
-  header nav{display:flex;align-items:center;justify-content:center;gap:2rem;}
-  a.owner-badge{position:absolute;right:16px;top:12px;transform:none;}
-</style>
