@@ -882,3 +882,38 @@ body.books-page h1, body.books-page h2, body.books-page p,
 body[data-books="1"] h1, body[data-books="1"] h2, body[data-books="1"] p{
   color: #111827 !important; /* near-black for contrast */
 }
+/* === BOOKS-UNFADE-20251103B (Books page only) === */
+body.books-page #books-grid .card,
+body[data-books="1"] #books-grid .card{
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+body.books-page #books-grid .card * ,
+body[data-books="1"] #books-grid .card * {
+  opacity: 1 !important;
+  filter: none !important;
+  color: #111827 !important; /* near-black for text */
+}
+
+/* Ensure media actually renders */
+body.books-page iframe,
+body.books-page video,
+body.books-page .card iframe,
+body.books-page .card video,
+body.books-page .card img {
+  display: block !important;
+  visibility: visible !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  pointer-events: auto !important;
+}
+
+/* Kill any overlay veils */
+body.books-page #books-grid .card::before,
+body.books-page #books-grid .card::after {
+  content: none !important;
+  display: none !important;
+  opacity: 0 !important;
+}
