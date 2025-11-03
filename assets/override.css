@@ -458,3 +458,47 @@ img.author-photo,
 }
 
 header .owner-badge{ line-height: 0 !important; }
+/* === HERO-CENTER-FIX-20251103 === */
+:root{
+  --header-badge-size: 84px;   /* smaller badge in navbar */
+  --hero-avatar-size:  220px;  /* size of big, centered avatar in content */
+}
+
+/* A) Header badge: small & round */
+header .owner-badge,
+header a.owner-badge{
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  line-height: 0 !important;
+  z-index: 5;
+}
+header .owner-badge img,
+header a.owner-badge img{
+  width: var(--header-badge-size) !important;
+  height: var(--header-badge-size) !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  max-width: none !important;
+}
+
+/* B) If any extra .owner-badge exists **outside** the header, hide it (prevents duplicate) */
+main .owner-badge{ display: none !important; }
+
+/* C) Big hero avatar in the page content: centered, round */
+main img.author-photo,
+main .author-photo img,
+main .author-photo{
+  display: block !important;
+  margin: 1.25rem auto !important;
+  width: var(--hero-avatar-size) !important;
+  height: var(--hero-avatar-size) !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  float: none !important;
+}
+
+/* D) Extra safety: don't let generic img{width:100%} rules blow up avatars */
+img.author-photo{ max-width: none !important; }
