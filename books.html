@@ -25,9 +25,9 @@
       border:1px solid rgba(255,255,255,.22) !important; background:transparent !important; color:#fff !important;
     }
     /* Only the .active pill gets blue like Home */
-    header .nav a.active { background:#2563eb !important; border-color:#2563eb !important; color:#fff !important; }
+    header .nav a.active { background:#2563eb ; border-color:#2563eb ; color:#fff ; }
     /* Explicitly keep Bio UNLIT on Books */
-    header .nav a[href="/bio.html"] { background:transparent !important; border:1px solid rgba(255,255,255,.22) !important; color:#fff !important; }
+    header .nav a[href="/bio.html"] { background:transparent ; border:1px solid rgba(255,255,255,.22) ; color:#fff ; }
     /* Badge position identical to Home */
   </style>
   <style id="books-badge-restore">
@@ -76,7 +76,7 @@
       border:1px solid rgba(255,255,255,.25) !important;
     }
   </style>
-  <style id="books-bio-unlight-final">body.books-page header.site-header .nav a[href="/bio.html"]:not(.active){background:transparent !important;border:1px solid rgba(255,255,255,.22) !important;color:#fff !important;}</style>
+  <style id="books-bio-unlight-final">body.books-page header.site-header .nav a[href="/bio.html"]:not(.active){background:transparent ;border:1px solid rgba(255,255,255,.22) ;color:#fff ;}</style>
 </head><body data-books="1" class="books-page">
 </header>
 </header>
@@ -129,6 +129,14 @@
     /* Neutralize any non-.active highlight coming from older rules */
     header .nav a:not(.active){ box-shadow:none !important; filter:none !important; opacity:1 !important; }
   </style>
+<!-- books-only: final, gentle navbar normalization -->
+<style id="books-nav-final">
+  header, .site-header { position: relative; padding: 0.75rem 0; }
+  header .container { max-width: 1100px; margin: 0 auto; padding: 0 1rem; }
+  header nav { display: flex; align-items: center; justify-content: center; gap: 2rem; }
+  header nav a { text-decoration: none; font-weight: 600; }
+  a.owner-badge { position: absolute; right: 16px; top: 12px; transform: none; }
+</style>
 </body>
 </html>
 
