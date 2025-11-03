@@ -82,22 +82,40 @@
   
 <!-- books-only final nav unlock (high specificity, gentle) -->
 
-<style id="books-nav-hover-restore">
-  /* Scope to Books only; stronger than books.css */
+<style id="books-nav-hard-unlock">
+  /* Use the SAME selector as books.css, but restore transitions & hover. */
+  body.books-page header.site-header .container nav a {
+    text-decoration: none !important;
+    pointer-events: auto !important;
+    transition: transform .08s ease, background-color .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease !important;
+  }
+  body.books-page header.site-header .container nav a:hover,
+  body.books-page header.site-header .container nav a:focus-visible {
+    transform: translateY(-1px) !important;
+    opacity: .95 !important;
+    text-decoration: none !important;
+  }
+
+  /* Also cover common alternate selectors we saw in your HTML/CSS */
+  body.books-page header.site-header .nav a,
   body.books-page .site-header nav a {
     text-decoration: none !important;
-    transition: transform .08s ease, background-color .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease !important;
     pointer-events: auto !important;
+    transition: transform .08s ease, background-color .15s ease, color .15s ease, border-color .15s ease, opacity .15s ease !important;
   }
+  body.books-page header.site-header .nav a:hover,
   body.books-page .site-header nav a:hover,
+  body.books-page header.site-header .nav a:focus-visible,
   body.books-page .site-header nav a:focus-visible {
     transform: translateY(-1px) !important;
     opacity: .95 !important;
     text-decoration: none !important;
   }
-  /* Ensure nav sits above badge for clean hover */
-  body.books-page .site-header nav { position: relative !important; z-index: 1001 !important; }
-  body.books-page a.owner-badge { position: absolute !important; right: 16px !important; top: 12px !important; z-index: 900 !important; }
+
+  /* Ensure the nav receives events on top of the badge */
+  body.books-page .site-header { position: relative !important; }
+  body.books-page .site-header nav { position: relative !important; z-index: 1001 !important; pointer-events: auto !important; }
+  body.books-page a.owner-badge { position: absolute !important; right: 16px !important; top: 12px !important; z-index: 900 !important; pointer-events: auto !important; }
 </style>
 </body>
 </html>
