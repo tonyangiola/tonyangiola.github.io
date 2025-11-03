@@ -823,3 +823,47 @@ body[data-books="1"] header.site-header nav{
   gap: 2rem !important;
   min-height: 72px !important;
 }
+/* === BOOKS-NAV-HARD-MATCH-20251103B (post-fix) === */
+/* Scope strictly to Books page; avoid 'all: unset' side-effects */
+
+/* Inactive links — look like Home (no pill) */
+body.books-page header.site-header nav a:not(.active),
+body[data-books="1"] header.site-header nav a:not(.active){
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  color: inherit !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+/* Active link — Home-style pill */
+body.books-page header.site-header nav a.active,
+body[data-books="1"] header.site-header nav a.active{
+  display: inline-block !important;
+  font-weight: 700 !important;
+  padding: 6px 12px !important;
+  border-radius: 999px !important;
+  background: rgba(59,130,246,.15) !important;
+  border: 1px solid rgba(59,130,246,.35) !important;
+  white-space: nowrap !important;
+}
+
+/* Keep Books nav layout identical to Home */
+body.books-page header.site-header nav,
+body[data-books="1"] header.site-header nav{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  min-height: 72px !important;
+}
+
+/* VERSION: 20251103-BOOKS-NAV-HARD-MATCH-B */
