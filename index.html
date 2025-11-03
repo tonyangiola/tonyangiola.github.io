@@ -22,19 +22,20 @@ html[data-home="1"] body main > *:first-child, html[data-home="1"] body .contain
 
 <link rel="stylesheet" href="assets/home-badge-fix.css">
 <link rel="stylesheet" href="/assets/override.css">
+<style id="HOME-AUTHOR-PHOTO-GUARD-20251103">body.home-page section.author-photo img{width:240px!important;height:240px!important;border-radius:50%!important;object-fit:cover!important;display:block!important;margin:0 auto!important}</style>
 </head>
 <style id="HOME-HOTFIX-20251103">
 /* Light background so page isn’t “all black” */
 body.home-page { background:#ffffff !important; color:#111 !important; }
 /* Make sure header provides a positioning context */
-body.home-page header.site-header { position: relative !important; min-height:66px !important; }
+body.home-page header.site-header { position: relative !important; min-height:66px !important;  position: relative !important; min-height:66px !important; }
 /* Align the badge with the nav pills */
-body.home-page .owner-badge { position:absolute !important; top: -12px; right:16px !important; transform:none !important; z-index:5 !important; }
+body.home-page .owner-badge { position:absolute !important; top:50% !important; right:16px !important; transform: translateY(-50%) !important; z-index:5 !important; }
 /* Keep the cards nicely spaced on Home */
 body.home-page #home-cards { display:grid !important; grid-template-columns:1fr 1fr !important; column-gap:36px !important; row-gap:28px !important; }
 @media (max-width:740px){
   body.home-page #home-cards { grid-template-columns:1fr !important; }
-  body.home-page .owner-badge { top: -12px; right:12px !important; }
+  body.home-page .owner-badge { top:50% !important; right:12px !important; }
 }
 </style>
 <body class="home-page" data-home="1">
