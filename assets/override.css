@@ -441,3 +441,20 @@ html body .site-header .owner-badge{
 /* Ensure header is the positioning context */
 html body header,
 html body .site-header{ position:relative !important; }
+/* === HERO-CIRCLE-FIX-20251103 === */
+:root{ --hero-size:132px; } /* adjust as needed */
+
+header .owner-badge img,
+.owner-badge img,
+img.author-photo,
+.author-photo img,
+.author-photo {
+  width: var(--hero-size) !important;
+  height: var(--hero-size) !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  max-width: none !important;
+}
+
+header .owner-badge{ line-height: 0 !important; }

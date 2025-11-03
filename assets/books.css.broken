@@ -1,0 +1,68 @@
+/* books.css — neutralized & unlocked (2025-11-02)
+   Purpose: make Books navbar identical to Home and stop any prior locks.
+   Scope: only affects pages that include this file (Books page).
+*/
+
+/* Center nav, match Home height/spacing */
+body.books-page header.site-header .container nav {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:2rem !important;
+  height:66px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+/* Baseline all links (turn OFF stray highlights) */
+body.books-page header.site-header .container nav a {
+  box-shadow:none !important;
+  filter:none !important;
+  opacity:1 !important;
+  transition:none !important;
+  background:transparent !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  color:#fff !important;
+  line-height:1 !important;
+}
+
+/* Light ONLY Books */
+body.books-page header.site-header .container nav a[href="/books.html"] {
+  background:#2563eb !important;
+  border-color:#2563eb !important;
+  color:#fff !important;
+}
+
+/* Ignore aria-current on anything except the Books link */
+body.books-page header.site-header .container nav a[aria-current]:not([href="/books.html"]) {
+  background:transparent !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  color:#fff !important;
+}
+
+/* Badge position identical to Home */
+body.books-page header.site-header .owner-badge {
+  position:absolute !important;
+  right:16px !important;
+  top:14px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:.5rem !important;
+}
+
+/* Mobile safety */
+@media (max-width:740px){
+  body.books-page header.site-header .container nav { min-height:64px !important; gap:12px !important; }
+  body.books-page header.site-header .owner-badge { right:12px !important; top:12px !important; }
+  body.books-page header.site-header nav a { padding:.32rem .75rem !important; font-size:.92rem !important; }
+}
+/* addendum: unlight non-Books even if they carry .active */
+body.books-page header.site-header .container nav a.active:not([href="/books.html"]),
+body.books-page header.site-header .container nav a.active.active:not([href="/books.html"]) {
+  background:transparent !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+  color:#fff !important;
+  box-shadow:none !important;
+  filter:none !important;
+  opacity:1 !important;
+}
