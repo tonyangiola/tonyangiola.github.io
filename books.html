@@ -78,6 +78,18 @@
   </style>
   <style id="books-bio-unlight-final">body.books-page header.site-header .nav a[href="/bio.html"]:not(.active){background:transparent !important;border:1px solid rgba(255,255,255,.22) !important;color:#fff !important;}</style>
 </head><body data-books="1" class="books-page">
+    <header class="site-header">
+  <div class="container">
+    <nav style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;" style="display:flex;justify-content:center;gap:2rem;padding-right:120px!important;">
+      <a href="/" class="active">HOME</a>
+      <a href="/books.html">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola" style="display:block;width:40px;height:40px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);"/></a></div>
+</header>
+</header>
 </header>
 </header>
 </header>
@@ -133,3 +145,9 @@
 </html>
 
 <!-- books-nav-override-20251102-155539 --><script src="/assets/books-nav-override.js?v=20251102-155539" defer></script>
+<!-- books-only final, gentle navbar patch -->
+<style id="books-nav-final">
+  header .container{max-width:1100px;margin:0 auto;padding:0 1rem;}
+  header nav{display:flex;align-items:center;justify-content:center;gap:2rem;}
+  a.owner-badge{position:absolute;right:16px;top:12px;transform:none;}
+</style>
