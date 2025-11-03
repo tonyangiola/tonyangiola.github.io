@@ -1,14 +1,8 @@
-/* HOME-BADGE-FIX-20251103 — Home page only */
-header, .site-header { position: relative !important; }
-header .owner-badge,
-.site-header .owner-badge{
-  position: absolute !important;
-  top: -10px !important;   /* tweak this value if still a hair low/high */
-  transform: none !important;
-  margin: 0 !important;
-  line-height: 1 !important;
-  z-index: 5 !important;
-}
-@media (max-width: 480px){
-  header .owner-badge{ top: -6px !important; }
+/* HOME-BADGE-FIX-20251103 */
+body.home-page header.site-header{ position:relative !important; }
+body.home-page .owner-badge{
+  position:absolute !important;
+  top:-8px !important;       /* tweak to -6px/-10px as needed */
+  transform:none !important;
+  z-index:5 !important;
 }
