@@ -917,3 +917,9 @@ body.books-page #books-grid .card::after {
   display: none !important;
   opacity: 0 !important;
 }
+/* BOOKS-UNFADE-EXTRA */
+body.books-page main,
+body.books-page #books-grid{
+  opacity: 1 !important;
+  filter: none !important;
+}
