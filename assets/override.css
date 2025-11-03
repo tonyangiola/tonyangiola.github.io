@@ -611,3 +611,96 @@ body[data-books="1"] header .owner-badge {
   margin: 0 !important;
   line-height: 0 !important;
 }
+/* === BOOKS-NAV-LOCK-FINAL-20251103 === */
+body.books-page, body[data-books="1"]{
+  --nav-height: 92px;
+  --nav-gap: 2rem;
+  --nav-link-pad: 8px 12px;
+  --nav-link-fs: 18px;
+}
+body.books-page header.site-header,
+body[data-books="1"] header.site-header{
+  position: relative !important;
+  min-height: var(--nav-height) !important;
+}
+body.books-page header.site-header .container,
+body[data-books="1"] header.site-header .container{
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+body.books-page header.site-header nav,
+body[data-books="1"] header.site-header nav{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--nav-gap) !important;
+  min-height: calc(var(--nav-height) - 20px) !important;
+  margin: 0 auto !important;
+}
+body.books-page header.site-header nav a,
+body[data-books="1"] header.site-header nav a{
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+  padding: var(--nav-link-pad) !important;
+  font-size: var(--nav-link-fs) !important;
+  height: auto !important; /* pill height comes from padding, prevents jump */
+  white-space: nowrap !important; /* stop wrap-induced shift */
+}
+body.books-page header .owner-badge,
+body[data-books="1"] header .owner-badge{
+  position: absolute !important;
+  right: 24px !important;
+  top: 12px !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+}
+
+/* === BOOKS-BODY-CENTER-FINAL-20251103 === */
+body.books-page main,
+body[data-books="1"] main{
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 2rem 1rem !important;
+  text-align: center !important;
+}
+
+/* === BOOKS-VIDEO-CENTER-SIZE-20251103 === */
+/* Center and cap embedded videos/iframes; make responsive without HTML changes */
+body.books-page main iframe,
+body[data-books="1"] main iframe,
+body.books-page main video,
+body[data-books="1"] main video,
+body.books-page main .video,
+body[data-books="1"] main .video,
+body.books-page main .youtube,
+body[data-books="1"] main .youtube,
+body.books-page main .vimeo,
+body[data-books="1"] main .vimeo{
+  display: block !important;
+  margin: 1rem auto !important;
+  width: min(100%, 960px) !important;
+  max-width: 960px !important;
+}
+body.books-page main iframe,
+body[data-books="1"] main iframe{
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  border: 0 !important;
+}
+
+/* If any global img{width:100%} rule is forcing huge media, cap it on Books */
+body.books-page main img,
+body[data-books="1"] main img{
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: min(100%, 960px) !important;
+  height: auto !important;
+  float: none !important;
+}
