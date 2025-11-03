@@ -159,3 +159,35 @@ body.books-page header.site-header .owner-badge{ right:16px!important; top:14px!
 
 /* books-nav-no-underline-newsletter-20251102-193617 */
 body.books-page header.site-header .container nav a[href="/newsletter.html"]:is(:hover,:focus,:active){text-decoration:none!important;border-bottom:0!important;outline:none!important}
+
+/* === books-media-final-20251103 === */
+body.books-page { background: var(--page-bg, #0B0F1A) !important; }
+
+body.books-page main .container,
+body.books-page .site-main .container {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 0 16px !important;
+}
+
+body.books-page section.grid,
+body.books-page .cards-grid,
+body.books-page .grid,
+body.books-page .grid-2{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  column-gap: 40px !important;
+  row-gap: 28px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+body.books-page article.card video,
+body.books-page article.card img{
+  display: block !important;
+  width: 100% !important;
+  max-width: 720px !important;   /* clamp media */
+  height: auto !important;
+  margin: 0 auto !important;     /* center in column */
+  object-fit: contain !important;
+}
