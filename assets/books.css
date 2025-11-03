@@ -147,3 +147,8 @@ body.books-page article#gremlins video{
 /* books-bg-final-20251102-190048 */
 html,body{background:var(--page-bg, #0B0F1A)!important}
 body.books-page main,body.books-page .site-main,body.books-page .site-main .container{background:transparent!important}
+
+/* books-bg-lock-20251102-190704 */
+body.books-page,body.books-page html{background:#0B0F1A!important}
+body.books-page main,body.books-page .site-main,body.books-page .site-main .container,body.books-page .container{background:transparent!important}
+body.books-page section,body.books-page .card,body.books-page .cards,body.books-page .grid,body.books-page .grid-2{background:transparent!important}
