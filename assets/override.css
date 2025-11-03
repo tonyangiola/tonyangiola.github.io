@@ -788,3 +788,38 @@ body[data-books="1"] main video{
   width:min(100%, 960px) !important; max-width:960px !important;
   aspect-ratio:16/9 !important; height:auto !important; border:0 !important;
 }
+/* === BOOKS-NAV-HARD-MATCH-20251103 === */
+/* Inactive links: ABSOLUTELY no pill/border/pad on Books */
+body.books-page header.site-header nav a:not(.active),
+body[data-books="1"] header.site-header nav a:not(.active){
+  all: unset !important;                /* wipe inline/page locks */
+  display: inline-block !important;
+  font-weight: 600 !important;          /* matches Home weight */
+  cursor: pointer !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+}
+
+/* Active link: keep the Home pill */
+body.books-page header.site-header nav a.active,
+body[data-books="1"] header.site-header nav a.active{
+  all: unset !important;
+  display: inline-block !important;
+  font-weight: 700 !important;
+  padding: 6px 12px !important;
+  border-radius: 999px !important;
+  background: rgba(59,130,246,.15) !important;
+  border: 1px solid rgba(59,130,246,.35) !important;
+  white-space: nowrap !important;
+}
+
+/* Keep layout identical */
+body.books-page header.site-header nav,
+body[data-books="1"] header.site-header nav{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  min-height: 72px !important;
+}
