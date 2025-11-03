@@ -738,3 +738,25 @@ body.books-page .video-card *[width],
 body.books-page .video-card *[height],
 body[data-books="1"] .video-card *[width],
 body[data-books="1"] .video-card *[height]{ width: auto !important; height: auto !important; }
+/* === BOOKS-NAV-INACTIVE-CLEAN-20251103 === */
+/* On Books page, make inactive links look like Home: no pill, no border, no extra padding */
+body.books-page header nav a:not(.active),
+body[data-books="1"] header nav a:not(.active){
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-weight: 600 !important;     /* similar to Home */
+  text-transform: none !important; /* avoid accidental ALL CAPS */
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/* Keep layout identical to Home: center nav, consistent gap */
+body.books-page header.site-header nav,
+body[data-books="1"] header.site-header nav{
+  justify-content: center !important;
+  gap: 2rem !important;            /* tweak if you want tighter/looser */
+}
+
+/* Ensure only the active link gets the pill (we already added this globally) */
