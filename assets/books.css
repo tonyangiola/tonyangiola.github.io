@@ -143,3 +143,7 @@ body.books-page article#gremlins video{
   margin:0 auto !important;
   object-fit:contain !important;
 }
+
+/* books-bg-final-20251102-190048 */
+html,body{background:var(--page-bg, #0B0F1A)!important}
+body.books-page main,body.books-page .site-main,body.books-page .site-main .container{background:transparent!important}
