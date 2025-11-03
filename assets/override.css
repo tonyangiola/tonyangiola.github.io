@@ -423,3 +423,21 @@ body.home-page header.site-header .container nav a:is(:focus,:focus-visible){ ou
 /* home-nav-hover-lift-20251102-195403 */
 body.home-page header.site-header .container nav a{transition:transform .12s ease-out}
 body.home-page header.site-header .container nav a:hover{transform:translateY(-2px)}
+
+/* HOME-BADGE-FORCE-20251103 — keep badge vertically inline with nav on Home */
+html body header .owner-badge,
+html body .site-header .owner-badge{
+  position:absolute !important;
+  top:-8px !important;          /* raise to align with buttons */
+  transform:none !important;
+  margin:0 !important;
+  line-height:1 !important;
+  z-index:5 !important;
+}
+@media (min-width: 900px){
+  html body header .owner-badge,
+  html body .site-header .owner-badge{ top:-10px !important; }
+}
+/* Ensure header is the positioning context */
+html body header,
+html body .site-header{ position:relative !important; }
