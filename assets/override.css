@@ -536,3 +536,12 @@ main .author-photo img,
 main .owner-badge{
   display: none !important;
 }
+/* === NAVBAR-LOCK-20251103 === */
+/* Keep header/nav height identical across pages so nothing "jumps" */
+:root{
+  --nav-height: 92px;
+}
+header{ min-height: var(--nav-height) !important; position: relative; }
+header nav{ min-height: calc(var(--nav-height) - 20px) !important; align-items: center !important; }
+header .container{ min-height: var(--nav-height) !important; }
+header .owner-badge{ top: 12px !important; right: 24px !important; }
