@@ -760,3 +760,31 @@ body[data-books="1"] header.site-header nav{
 }
 
 /* Ensure only the active link gets the pill (we already added this globally) */
+/* === BOOKS-NAV-FORCE-HOME-LOOK-20251103 === */
+body.books-page header.site-header nav a:not(.active),
+body[data-books="1"] header.site-header nav a:not(.active){
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/* Keep only .active as pill (same pill we already use sitewide) */
+body.books-page header.site-header nav a.active,
+body[data-books="1"] header.site-header nav a.active{
+  padding: 6px 12px !important;
+  border-radius: 999px !important;
+}
+
+/* Center videos/iframes and cap width */
+body.books-page main iframe,
+body.books-page main video,
+body[data-books="1"] main iframe,
+body[data-books="1"] main video{
+  display:block !important; margin:1rem auto !important;
+  width:min(100%, 960px) !important; max-width:960px !important;
+  aspect-ratio:16/9 !important; height:auto !important; border:0 !important;
+}
