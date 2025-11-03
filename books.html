@@ -1,21 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Books – Tony Angiola</title>
-  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml" />
-  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb" />
-  <script src="assets/name-badge-fixed.js" defer></script>
+<!doctype html>
+<head><style id="home-gap">
+html[data-home="1"] body, html[data-home="1"] body * { scroll-padding-top:0 !important; }
+html[data-home="1"] body main, html[data-home="1"] body .site-main, html[data-home="1"] body .container { margin-top:0 !important; padding-top:0 !important; }
+html[data-home="1"] body header.site-header + * { margin-top:0 !important; padding-top:0 !important; }
+html[data-home="1"] body section.hero, html[data-home="1"] body .page-hero { margin:0 !important; padding:0 !important; min-height:0 !important; }
+html[data-home="1"] body section.hero > * { margin:0 !important; padding:0 !important; }
+html[data-home="1"] body main > *:first-child, html[data-home="1"] body .container > *:first-child { margin-top:0 !important; padding-top:0 !important; }
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Canonical stylesheet order -->
-  <link rel="stylesheet" href="/assets/style.css?v=books-REBUILD" />
-  <link rel="stylesheet" href="/assets/override.css?v=cards-20251031-214552" />
-  <link rel="stylesheet" href="/assets/nav-badge-final.css?v=1762210592" />
-</head>
-<body class="books-page" data-books="1">
+<!-- deploy-marker: init -->
 
-<!-- HEADER (cloned from Home) -->
+  <link rel="icon" href="/favicon.svg?v=fav8" type="image/svg+xml">
+  <link rel="mask-icon" href="/assets/icons/ufo-mask.svg?v=fav8" color="#2563eb">
+  
+  <script src="assets/name-badge-fixed.js" defer></script><style id="HOME-FINAL-LOCK-20251103">
+    /* Hard locks for Home (hero img + badge) */
+    body.home-page section.author-photo img{
+      width:240px !important; height:240px !important;
+      max-width:240px !important; max-height:240px !important;
+      display:block !important; margin:0 auto !important;
+      border-radius:50% !important; object-fit:cover !important;
+    }
+
+    /* Badge vertically inline with nav pills */
+    body.home-page header.site-header{ position:relative !important; min-height:66px !important; }
+    body.home-page header.site-header nav{ padding-right:120px !important; }
+    #ownerBadge.owner-badge{ position:absolute !important; right:16px !important; top:-6px !important; transform:none !important; }
+    @media (min-width:900px){ #ownerBadge.owner-badge{ top:-8px !important; } }
+  </style>
+  <style id="HOME-FINAL-LOCK-20251103">
+    /* Hard locks for Home (hero img + badge) */
+    body.home-page section.author-photo img{
+      width:240px !important; height:240px !important;
+      max-width:240px !important; max-height:240px !important;
+      display:block !important; margin:0 auto !important;
+      border-radius:50% !important; object-fit:cover !important;
+    }
+
+    /* Badge vertically inline with nav pills */
+    body.home-page header.site-header{ position:relative !important; min-height:66px !important; }
+    body.home-page header.site-header nav{ padding-right:120px !important; }
+    #ownerBadge.owner-badge{ position:absolute !important; right:16px !important; top:-6px !important; transform:none !important; }
+    @media (min-width:900px){ #ownerBadge.owner-badge{ top:-8px !important; } }
+  </style>
+my = class="home-page" data-home="1";
+     =~ s/sclass="([^"]*)"/ " class=" class="home-page" data-home="1" books-page""/ei || ( .= qq{ class="books-page"});
+     =~ s/sdata-books="[^"]*"//gi;
+     .= qq{ data-books="1"};
+    "<body>";
+
     <header class="site-header">
   <div class="container">
     <nav>
@@ -27,10 +62,12 @@
     </nav>
   <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola"/></a></div>
 </header>
-</header>
 
-<!-- MAIN (from existing Books) -->
-    <main class="container" >
+
+
+  
+
+      <main class="container" >
     <section class="hero">
       <h1>Author. Researcher. Explorer of High Strangeness.</h1>
       <p class="small">Welcome to my official site. Here you’ll find my books, articles, field notes from the San Luis Valley,
@@ -59,7 +96,7 @@
   </main>
   </main>
 
-<!-- FOOTER (cloned from Home) -->
+
   <footer>
     <div class="container">
       <div>© <span id="y"></span> Tony Angiola. All rights reserved.</div>
@@ -67,7 +104,13 @@
     </div>
     <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </footer>
-  </footer>
-
-</body>
-</html>
+  <style id="home-gap-hotfix">
+    /* Home cards gutter — minimal, targeted (2025-11-01) */
+    #home-cards {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      column-gap: 36px !important;
+      row-gap: 28px !important;
+    }
+    #home-cards > * { margin: 0 !important; }
+  </style>
