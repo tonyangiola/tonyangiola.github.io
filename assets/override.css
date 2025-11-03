@@ -419,3 +419,7 @@ body.books-page header.site-header .owner-badge{
 /* home-nav-no-underline-20251102-194323 */
 body.home-page header.site-header .container nav a:is(:hover,:focus,:active){ text-decoration:none!important; border-bottom:0!important }
 body.home-page header.site-header .container nav a:is(:focus,:focus-visible){ outline:none!important }
+
+/* home-nav-hover-lift-20251102-195403 */
+body.home-page header.site-header .container nav a{transition:transform .12s ease-out}
+body.home-page header.site-header .container nav a:hover{transform:translateY(-2px)}
