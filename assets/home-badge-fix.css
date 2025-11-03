@@ -1,8 +1,12 @@
-/* HOME-BADGE-FIX-20251103 */
-body.home-page header.site-header{ position:relative !important; }
+/* HOME-BADGE-FIX — load LAST so it wins */
+body.home-page header.site-header{ position:relative !important; min-height:66px !important; }
 body.home-page .owner-badge{
   position:absolute !important;
-  top:-8px !important;       /* tweak to -6px/-10px as needed */
-  transform:none !important;
+  right:16px !important;
+  top:50% !important;
+  transform:translateY(-50%) !important;
   z-index:5 !important;
+}
+@media (max-width:740px){
+  body.home-page .owner-badge{ right:12px !important; }
 }
