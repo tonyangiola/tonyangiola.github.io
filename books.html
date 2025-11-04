@@ -38,7 +38,7 @@
   <section class="video-hero" id="snippy-hero" style="margin:1rem 0 2rem;">
     <video autoplay muted loop playsinline preload="metadata"
            poster="/images/books/snippy.jpg"
-           style="width:100%; max-height:560px; border-radius:16px; display:block;">
+          >
       <source src="/assets/videos/books/snippy.mp4" type="video/mp4">
     </video>
     <div class="btnrow" style="text-align:center; margin-top:.75rem;">
@@ -51,7 +51,7 @@
     <!-- Socorro (video) -->
     <article class="card" id="socorro">
       <video autoplay muted loop playsinline preload="metadata"
-             poster="/images/books/socorro.jpg" style="width:100%; border-radius:12px;">
+             poster="/images/books/socorro.jpg">
         <source src="/assets/videos/books/socorro.mp4" type="video/mp4">
       </video>
       <div class="btnrow"><a class="btn ghost" href="/newsletter.html">Get Updates</a></div>
@@ -60,7 +60,7 @@
     <!-- Gremlins (video) -->
     <article class="card" id="gremlins">
       <video autoplay muted loop playsinline preload="metadata"
-             poster="/images/books/gremlins.jpg" style="width:100%; border-radius:12px;">
+             poster="/images/books/gremlins.jpg">
         <source src="/assets/videos/books/gremlins.mp4" type="video/mp4">
       </video>
       <div class="btnrow"><a class="btn ghost" href="/newsletter.html">Get Updates</a></div>
@@ -68,11 +68,25 @@
 
     <!-- Cosmic (image) -->
     <article class="card" id="cosmic">
-      <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover" style="width:100%; border-radius:12px;">
+      <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover">
       <div class="btnrow"><a class="btn ghost" href="/newsletter.html">Get Updates</a></div>
     </article>
   </section>
 ."
 ".</main>"
 </body>
+<style id="BOOKS-FINAL-UNLOCK">
+/* BOOKS-FINAL-UNLOCK */
+body.books-page header.site-header{min-height:66px !important;}
+body.books-page .container{max-width:1100px; margin:0 auto; padding:0 1rem !important;}
+body.books-page .page-hero{margin:1.25rem 0 1rem; text-align:center;}
+body.books-page .video-hero video{width:100% !important; max-height:560px; border-radius:16px; display:block;}
+body.books-page #books-cards .card{display:flex; flex-direction:column; align-items:center;}
+body.books-page #books-cards .card>video,
+body.books-page #books-cards .card>img{width:100% !important; max-width:360px; height:420px !important; border-radius:12px; object-fit:cover;}
+@media (max-width:680px){
+  body.books-page #books-cards .card>video,
+  body.books-page #books-cards .card>img{height:300px !important; max-width:none;}
+}
+</style>
 </html>
