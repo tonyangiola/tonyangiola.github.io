@@ -1006,3 +1006,20 @@ header.site-header nav a.active{ line-height:40px!important; }
 .books-page {
   padding-top: 40px !important;
 }
+/* NAV-LOCK-BOOKS-20251104 */
+:root{ --nav-header-h:72px; --nav-badge-size:56px; --nav-badge-right:40px; --nav-gap:2.5rem; }
+header.site-header{ position:relative; min-height:var(--nav-header-h); background:transparent !important; border:none !important; box-shadow:none !important; }
+header.site-header .container{
+  position:relative; max-width:1100px; margin:0 auto !important;
+  padding:12px 0 !important; padding-left:0 !important; padding-right:calc(var(--nav-badge-size) + var(--nav-badge-right) + 8px) !important;
+  display:flex !important; align-items:center !important; justify-content:center !important; gap:0 !important; background:transparent !important;
+}
+header.site-header nav{ display:flex !important; align-items:center !important; gap:var(--nav-gap) !important; margin:0 !important; padding:0 !important; line-height:1 !important; background:transparent !important; }
+header.site-header nav a{ display:inline-flex !important; align-items:center !important; height:40px !important; font-weight:600 !important; text-decoration:none !important; }
+header.site-header a.owner-badge{
+  position:absolute !important; right:var(--nav-badge-right) !important; top:50% !important; transform:translateY(-50%) !important;
+  width:var(--nav-badge-size) !important; height:var(--nav-badge-size) !important; border-radius:999px !important; overflow:hidden !important;
+}
+/* Prevent any global .container rules from touching header */
+header.site-header .container *{ background:transparent !important; }
+/* END NAV-LOCK-BOOKS-20251104 */
