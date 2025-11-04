@@ -6,9 +6,6 @@
   <title>Books – Tony Angiola</title>
 
   <!-- Site CSS (base → override → nav badge) -->
-  <link rel="stylesheet" href="/assets/style.css">
-  <link rel="stylesheet" href="/assets/override.css">
-  <link rel="stylesheet" href="/assets/nav-badge-final.css">
 
   <script src="/assets/name-badge-fixed.js" defer></script>
 
@@ -23,6 +20,9 @@
     .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
     .card video, .card img{width:100%; height:auto; display:block;}
   </style>
+  <!-- Styles mirrored from Home -->
+  <link rel="stylesheet" href="/assets/style.css?v=20251029-153537">
+  <link rel="stylesheet" href="/assets/override.css">
 </head>
 <body class="books-page" data-books="1">
     <header class="site-header">
@@ -85,7 +85,6 @@
 </main>
 <style id="BOOKS-FINAL-UNLOCK">
 /* BOOKS-FINAL-UNLOCK */
-body.books-page header.site-header{min-height:66px !important;}
 body.books-page .container{max-width:1100px; margin:0 auto; padding:0 1rem !important;}
 body.books-page .page-hero{margin:1.25rem 0 1rem; text-align:center;}
 body.books-page .video-hero video{width:100% !important; max-height:560px; border-radius:16px; display:block; object-fit:cover;}
@@ -98,9 +97,6 @@ body.books-page #books-cards .card>img{width:100% !important; max-width:360px; h
   body.books-page #books-cards .card>video,
   body.books-page #books-cards .card>img{height:300px !important; max-width:none;}
 }
-  body.books-page a.owner-badge{ top:6px !important; }
 </style>
-<style id="BOOKS-BADGE-TWEAK">body.books-page header.site-header a.owner-badge{position:absolute; top:6px !important; transform:translateY(-2px);} @media(max-width:680px){body.books-page header.site-header a.owner-badge{top:4px !important;}}</style>
-<style id="BOOKS-BADGE-TWEAK">body.books-page header.site-header a.owner-badge{transform:translateY(-8px) !important;}</style>
 </body>
 </html>
