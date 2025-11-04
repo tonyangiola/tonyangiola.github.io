@@ -28,8 +28,42 @@
   `cat /tmp/header.books.html`
 
   
-   "<main class="container">
-".`cat /tmp/books.main.html`."
-</main>"
+   "<main class="container">."
+".  <section class="page-hero">
+    <h1>Books</h1>
+    <p class="small">Published &amp; in-progress titles.</p>
+  </section>
+
+  <!-- SNIPPY video hero -->
+  <section class="video-hero" id="snippy-hero" style="margin:1rem 0 2rem;">
+    <video autoplay muted loop playsinline preload="metadata"
+           poster="/images/books/snippy.jpg"
+           style="width:100%; max-height:560px; border-radius:16px;">
+      <source src="/assets/videos/books/snippy.mp4" type="video/mp4">
+    </video>
+    <div class="btnrow" style="text-align:center; margin-top:.75rem;">
+      <a class="btn" href="/newsletter.html">Get Updates</a>
+    </div>
+  </section>
+
+  <!-- Three book cards -->
+  <section class="grid grid-3" id="books-cards">
+    <article class="card" id="socorro">
+      <img src="/images/books/socorro.jpg" alt="Socorro UFO! book cover">
+      <div class="btnrow"><a class="btn ghost" href="/newsletter.html">Get Updates</a></div>
+    </article>
+
+    <article class="card" id="gremlins">
+      <img src="/images/books/gremlins.jpg" alt="Flying Saucers &amp; Gremlins cover">
+      <div class="btnrow"><a class="btn ghost" href="/newsletter.html">Get Updates</a></div>
+    </article>
+
+    <article class="card" id="cosmic">
+      <img src="/images/books/cosmic.jpg" alt="Cosmic Secrets cover">
+      <div class="btnrow"><a class="btn ghost" href="/newsletter.html">Get Updates</a></div>
+    </article>
+  </section>
+."
+".</main>"
 </body>
 </html>
