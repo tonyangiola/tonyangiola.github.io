@@ -25,19 +25,29 @@
   </style>
 </head>
 <body class="books-page" data-books="1">
-  `cat /tmp/header.books.html`
+    <header class="site-header">
+  <div class="container">
+    <nav>
+      <a href="/" class="">HOME</a>
+      <a href="/books.html" class="active">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola"/></a></div>
+</header>
 
   
-   "<main class="container">."
-".  <section class="page-hero">
+   "<main class="container">.
+.  <section class="page-hero">
     <h1>Books</h1>
     <p class="small">Published &amp; in-progress titles.</p>
   </section>
 
   <!-- SNIPPY hero video -->
   <section class="video-hero" id="snippy-hero" style="margin:1rem 0 2rem;">
-    <video autoplay muted loop playsinline preload="metadata"
-           poster="/images/books/snippy.jpg"
+    <video autoplay muted loop playsinline preload="metadata
+           poster="/images/books/snippy.jpg
           >
       <source src="/assets/videos/books/snippy.mp4" type="video/mp4">
     </video>
@@ -50,7 +60,7 @@
   <section class="grid grid-3" id="books-cards">
     <!-- Socorro (video) -->
     <article class="card" id="socorro">
-      <video autoplay muted loop playsinline preload="metadata"
+      <video autoplay muted loop playsinline preload="metadata
              poster="/images/books/socorro.jpg">
         <source src="/assets/videos/books/socorro.mp4" type="video/mp4">
       </video>
@@ -59,7 +69,7 @@
 
     <!-- Gremlins (video) -->
     <article class="card" id="gremlins">
-      <video autoplay muted loop playsinline preload="metadata"
+      <video autoplay muted loop playsinline preload="metadata
              poster="/images/books/gremlins.jpg">
         <source src="/assets/videos/books/gremlins.mp4" type="video/mp4">
       </video>
@@ -72,8 +82,7 @@
       <div class="btnrow"><a class="btn ghost" href="/newsletter.html">Get Updates</a></div>
     </article>
   </section>
-."
-".</main>"
+.</main>
 <style id="BOOKS-FINAL-UNLOCK">
 /* BOOKS-FINAL-UNLOCK */
 body.books-page header.site-header{min-height:66px !important;}
@@ -89,21 +98,6 @@ body.books-page #books-cards .card>img{width:100% !important; max-width:360px; h
   body.books-page #books-cards .card>video,
   body.books-page #books-cards .card>img{height:300px !important; max-width:none;}
 }
-
 </style>
 </body>
-<style id="BOOKS-FINAL-UNLOCK">
-/* BOOKS-FINAL-UNLOCK */
-body.books-page header.site-header{min-height:66px !important;}
-body.books-page .container{max-width:1100px; margin:0 auto; padding:0 1rem !important;}
-body.books-page .page-hero{margin:1.25rem 0 1rem; text-align:center;}
-body.books-page .video-hero video{width:100% !important; max-height:560px; border-radius:16px; display:block;}
-body.books-page #books-cards .card{display:flex; flex-direction:column; align-items:center;}
-body.books-page #books-cards .card>video,
-body.books-page #books-cards .card>img{width:100% !important; max-width:360px; height:420px !important; border-radius:12px; object-fit:cover;}
-@media (max-width:680px){
-  body.books-page #books-cards .card>video,
-  body.books-page #books-cards .card>img{height:300px !important; max-width:none;}
-}
-</style>
 </html>
