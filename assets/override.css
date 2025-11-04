@@ -927,3 +927,16 @@ body.books-page #books-grid{
 body.books-page .embed16x9{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px}
 body.books-page .embed16x9 iframe,
 body.books-page .embed16x9 video{position:absolute;inset:0;width:100%!important;height:100%!important;display:block!important;visibility:visible!important}
+
+/* === BOOKS FINAL PATCH — 2025-11-03 === */
+body.books-page { background:#0f172a; } /* dark page bg like Home */
+body.books-page .container { max-width:1100px; margin:0 auto; padding:0 1rem; }
+body.books-page header.site-header{ min-height:66px; }
+body.books-page .page-hero{ margin:1.25rem 0 1rem; text-align:center; }
+body.books-page .video-hero video{ width:100%; max-height:560px; border-radius:16px; display:block; }
+body.books-page .grid{ display:grid; gap:1.25rem; }
+body.books-page .grid-3{ grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+body.books-page .card video, 
+body.books-page .card img{ width:100%; height:auto; display:block; border-radius:12px; }
+body.books-page .btnrow{ text-align:center; margin:.65rem 0 0; }
+/* === /BOOKS FINAL PATCH === */
