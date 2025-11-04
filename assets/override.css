@@ -1001,3 +1001,8 @@ header.site-header a.owner-badge{
 .home-page header.site-header { margin:0!important; }
 header.site-header nav a.active{ line-height:40px!important; }
 /* END NAV-FIX-IDENTICAL-20251104 */
+/* BOOKS CONTENT SPACING FIX - 20251104 */
+.books-page main,
+.books-page {
+  padding-top: 40px !important;
+}
