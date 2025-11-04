@@ -943,3 +943,32 @@ body.books-page .btnrow{ text-align:center; margin:.65rem 0 0; }
 
 /* BOOKS-BG-HARDEN-20251103 */
 body.books-page { background:#0f172a !important; }
+
+/* BOOKS-TALL-CARDS-20251103 */
+body.books-page{ background:#0f172a !important; }
+body.books-page .container{ max-width:1100px; margin:0 auto; padding:0 1rem; }
+body.books-page .page-hero{ text-align:center; margin:1.25rem 0 1rem; }
+body.books-page #books-cards .card{ display:flex; flex-direction:column; align-items:center; }
+
+/* Make Socorro & Gremlins (and Cosmic for alignment) taller inside cards */
+body.books-page #books-cards .card > video,
+body.books-page #books-cards .card > img{
+  width:100% !important;
+  max-width:380px !important;
+  height:520px !important;     /* TALLER CARDS */
+  border-radius:12px;
+  object-fit:cover;
+}
+@media (max-width:780px){
+  body.books-page #books-cards .card > video,
+  body.books-page #books-cards .card > img{
+    max-width:none !important;
+    height:360px !important;
+  }
+}
+@media (max-width:520px){
+  body.books-page #books-cards .card > video,
+  body.books-page #books-cards .card > img{
+    height:300px !important;
+  }
+}
