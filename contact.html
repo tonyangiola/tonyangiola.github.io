@@ -4,48 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact – Tony Angiola</title><script src="assets/name-badge-fixed.js" defer></script>  <!-- Contact page only: small, safe header styles (won't touch other pages) -->
-  <style>
-    header.contact-header{position:relative; padding:0.75rem 0;}
-    header.contact-header .container{max-width:1100px; margin:0 auto; padding:0 1rem;}
-    header.contact-header nav{display:flex; justify-content:center; gap:2rem;}
-    header.contact-header nav a{font-weight:600; text-decoration:none;}
-    header.contact-header a.owner-badge{
-      position:absolute; top:10px; right:12px;
-      display:flex; align-items:center; gap:.5rem;
-      text-decoration:none; font-weight:600; font-size:.95rem; line-height:1;
-      color:#fff; z-index:5;
-    }
-    header.contact-header .owner-badge .owner-avatar{
-      width:40px; height:40px; border-radius:50%; object-fit:cover; display:block;
-    }
-    @media (max-width:640px){
-      header.contact-header a.owner-badge{top:8px; right:8px}
-      header.contact-header .owner-badge .owner-avatar{width:32px; height:32px}
-    }
-  </style>
-  <link rel="stylesheet" href="/assets/style.css?v=navstd-20251029-234811">
+  
   <link rel="stylesheet" href="/assets/contact-fix.css?v=20251030-192905">
   <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-110735' />
   <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-111019' />
   <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-111433' />
-  <link rel="stylesheet" href=/assets/nav-badge-final.css?v='20251103-135039' />
-  <link rel="stylesheet" href=/assets/nav-badge-final.css?v='20251103-135732' />
   <!-- NAV-BADGE-FINAL-LINK -->
-  <link rel="stylesheet" href="/assets/nav-badge-final.css?v=20251103-151341" />
-</head>
+  
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/override.css">
+  <link rel="stylesheet" href="/assets/nav-badge-final.css"></head>
 <body class="contact-page">
   <!-- CLEAN HEADER: centered nav + small badge (name left, round photo right) -->
-          <header class="site-header">
+              <header class="site-header">
   <div class="container">
     <nav>
-      <a href="/">HOME</a>
+      <a href="/" class="">HOME</a>
       <a href="/books.html">Books</a>
       <a href="/bio.html">Bio</a>
       <a href="/newsletter.html">Newsletter</a>
-      <a class="active active" href="/contact.html">Contact</a>
+      <a href="/contact.html" class="active" aria-current="page">Contact</a>
     </nav>
   <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola"/></a></div>
 </header>
+
 </header>  <!-- MAIN: your existing form only -->
   <main class="page-content contact-content" style="max-width:640px;margin:2rem auto;padding:1rem;">
 <div class="contact-container"><div class="contact-card">

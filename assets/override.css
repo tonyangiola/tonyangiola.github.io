@@ -972,3 +972,32 @@ body.books-page #books-cards .card > img{
     height:300px !important;
   }
 }
+/* NAV-FIX-IDENTICAL-20251104 */
+:root{
+  --nav-header-h:72px;
+  --nav-badge-size:56px;
+  --nav-badge-right:40px;
+  --nav-gap:2.5rem;
+}
+header.site-header{position:relative; min-height:var(--nav-header-h);}
+header.site-header .container{
+  position:relative; max-width:1100px; margin:0 auto;
+  padding:12px 0;
+  display:flex; align-items:center; justify-content:center;
+  padding-right:calc(var(--nav-badge-size) + var(--nav-badge-right) + 8px);
+}
+header.site-header nav{display:flex; align-items:center; gap:var(--nav-gap); margin:0!important; padding:0!important; line-height:1;}
+header.site-header nav a{font-weight:600; text-decoration:none; display:inline-flex; align-items:center; height:40px;}
+header.site-header a.owner-badge{
+  position:absolute!important; right:var(--nav-badge-right)!important; top:50%!important;
+  transform:translateY(-50%)!important; width:var(--nav-badge-size)!important; height:var(--nav-badge-size)!important;
+  border-radius:999px; overflow:hidden;
+}
+/* Neutralize any page nudges */
+.books-page header.site-header,
+.bio-page header.site-header,
+.newsletter-page header.site-header,
+.contact-page header.site-header,
+.home-page header.site-header { margin:0!important; }
+header.site-header nav a.active{ line-height:40px!important; }
+/* END NAV-FIX-IDENTICAL-20251104 */
