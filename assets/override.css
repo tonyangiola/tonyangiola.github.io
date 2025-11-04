@@ -940,3 +940,6 @@ body.books-page .card video,
 body.books-page .card img{ width:100%; height:auto; display:block; border-radius:12px; }
 body.books-page .btnrow{ text-align:center; margin:.65rem 0 0; }
 /* === /BOOKS FINAL PATCH === */
+
+/* BOOKS-BG-HARDEN-20251103 */
+body.books-page { background:#0f172a !important; }
