@@ -30,21 +30,17 @@
   body.books-page main, body.books-page .site-main { opacity: 1 !important; visibility: visible !important; display: block !important; }
 </style>
 </head><body data-books="1" class="books-page">
-  <header class="contact-header">
-    <div class="container">
-      <nav>
-        <a href="/">HOME</a>
-        <a href="/books.html" class="active" aria-current="page">Books</a>
-        <a href="/bio.html">Bio</a>
-        <a href="/newsletter.html">Newsletter</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-      <a class="owner-badge" href="/bio.html">
-        <span class="owner-name">Tony Angiola</span>
-        <img class="owner-avatar" src="/assets/images/avatar.jpg" alt="Tony Angiola" loading="lazy" style="width:36px;height:36px;border-radius:9999px;object-fit:cover">
-      </a>
-    </div>
-  </header>  <main class="page">
+    <header class="site-header">
+  <div class="container">
+    <nav>
+      <a href="/" class="">HOME</a>
+      <a href="/books.html" class="active">Books</a>
+      <a href="/bio.html">Bio</a>
+      <a href="/newsletter.html">Newsletter</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola"/></a></div>
+</header>
     <section aria-label="Books" class="grid">      <!-- Snippy (video) -->
       <article class="card" id="snippy">
         <video autoplay muted loop playsinline preload="metadata" poster="/images/books/snippy.jpg">
