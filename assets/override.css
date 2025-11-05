@@ -806,3 +806,18 @@ body.books-page .grid .card img {
 
 /* Generic overflow guard */
 body.books-page .grid, body.books-page .content { overflow:visible !important; }
+/* === NAV-BADGE-BOOKS-FIX (2025-11-04) === */
+body.books-page header.site-header,
+body.books-page header.site-header *{ overflow:visible !important }
+body.books-page header.site-header .container{
+  padding-right:calc(var(--badge-size,56px) + var(--badge-right,40px) + 8px) !important;
+}
+body.books-page a.owner-badge{
+  position:absolute !important; right:var(--badge-right,40px) !important; top:50% !important;
+  transform:translateY(-50%) !important; display:inline-flex !important; align-items:center !important; gap:.5rem !important;
+  visibility:visible !important; opacity:1 !important; pointer-events:auto !important;
+}
+body.books-page a.owner-badge img{
+  width:56px !important; height:56px !important; border-radius:9999px !important; object-fit:cover !important;
+  border:1px solid rgba(255,255,255,.25) !important;
+}
