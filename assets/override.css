@@ -745,3 +745,64 @@ header.site-header a.owner-badge img{ width:100%!important; height:100%!importan
   :root{ --badge-size:48px; --badge-right:16px; }
   header.site-header .container{ padding-right:calc(var(--badge-size) + var(--badge-right) + 8px); }
 }
+/* === NAV NORMALIZER — 2025-11-04 === */
+header.site-header, #site-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 999 !important;
+  height: 64px !important;
+  min-height: 64px !important;
+  background: var(--page-bg, #0b0b0b) !important;
+}
+#site-header nav, header.site-header nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 24px !important;
+  padding: 0 16px !important;
+  margin: 0 !important;
+}
+.owner-badge, .author-photo {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+#site-header .tech-support-btn { margin-left: 12px !important; }
+
+/* Stop page-specific hero/media from covering the navbar */
+.page-hero, .hero, .banner, .masthead, .video-hero {
+  position: relative !important;
+  z-index: 1 !important;
+}
+main, .content, body > *:not(header) {
+  z-index: 1 !important;
+}
+/* ===== BOOKS-FINAL-CLAMP (2025-11-04) ===== */
+body.books-page header.site-header img,
+body.books-page #site-header img,
+body.books-page .owner-badge img {
+  width:56px !important; height:56px !important; border-radius:50% !important; object-fit:cover !important;
+}
+
+/* Keep header above content */
+body.books-page main { position:relative !important; z-index:1 !important; }
+
+/* Page hero/photo (if present) — shrink & center */
+body.books-page .page-hero img,
+body.books-page .hero img,
+body.books-page .banner img,
+body.books-page .masthead img {
+  max-width:240px !important; width:100% !important; height:auto !important;
+  display:block !important; margin:0 auto 1rem !important; object-fit:cover !important; border-radius:50% !important;
+}
+
+/* Book cards media — scale nicely, stop overflow */
+body.books-page .grid .card video,
+body.books-page .grid .card img {
+  width:100% !important; max-width:720px !important; height:auto !important;
+  display:block !important; margin:0 auto !important; object-fit:contain !important;
+}
+
+/* Generic overflow guard */
+body.books-page .grid, body.books-page .content { overflow:visible !important; }
