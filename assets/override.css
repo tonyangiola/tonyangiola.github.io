@@ -1023,3 +1023,42 @@ header.site-header a.owner-badge{
 /* Prevent any global .container rules from touching header */
 header.site-header .container *{ background:transparent !important; }
 /* END NAV-LOCK-BOOKS-20251104 */
+/* BADGE-FIX-ALLPAGES-20251104 */
+:root{
+  --nav-header-h: 72px;       /* header min height */
+  --badge-size:   56px;       /* avatar circle size (desktop) */
+  --badge-right:  40px;       /* distance from right edge */
+}
+header.site-header{ position:relative; min-height:var(--nav-header-h); }
+header.site-header .container{
+  position:relative;
+  max-width:1100px; margin:0 auto;
+  padding:12px 0;
+  display:flex; align-items:center; justify-content:center;
+  /* reserve space so center stays true even before image paints */
+  padding-right: calc(var(--badge-size) + var(--badge-right) + 8px);
+}
+header.site-header a.owner-badge{
+  position:absolute; right:var(--badge-right); top:50%;
+  transform:translateY(-50%);
+  width:var(--badge-size); height:var(--badge-size);
+  border-radius:999px; overflow:hidden; display:block;
+}
+header.site-header a.owner-badge img.owner-badge-img{
+  display:block; width:100%; height:100%; object-fit:cover; border-radius:inherit;
+}
+/* Mobile tweak */
+@media (max-width: 640px){
+  :root{ --badge-size:48px; --badge-right:16px; }
+}
+/* Nuke any page nudges that previously fought us */
+.home-page header.site-header,
+.books-page header.site-header,
+.bio-page header.site-header,
+.newsletter-page header.site-header,
+.contact-page header.site-header { margin:0 !important; }
+.home-page header.site-header .container,
+.books-page header.site-header .container,
+.bio-page header.site-header .container,
+.newsletter-page header.site-header .container,
+.contact-page header.site-header .container { padding-left:0 !important; }
