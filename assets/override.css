@@ -386,34 +386,24 @@ body.home-page header .container nav a.active{
   color: #fff !important;
 }
 /* Books navbar parity with Home (badge & spacing) — 2025-11-01 */
-body.books-page header.site-header{ position:relative !important; min-height:66px !important; }
-body.books-page header.site-header nav{ display:flex; justify-content:center; gap:2rem; padding-right:120px !important; }
 body.books-page .owner-badge{
   position:absolute !important; right:16px !important; top:12px !important;
   display:inline-flex !important; align-items:center !important; z-index:1002 !important;
 }
 /* books-nav-final-off */
-body.books-page header.site-header .container nav{
   display:flex!important;align-items:center!important;justify-content:center!important;
   gap:2rem!important;height:66px!important;padding:0!important;margin:0!important
 }
-body.books-page header.site-header .container nav a{
   box-shadow:none!important;filter:none!important;opacity:1!important;transition:none!important;
   background:transparent!important;border:1px solid rgba(255,255,255,.22)!important;color:#fff!important
 }
-body.books-page header.site-header .container nav a[href="/books.html"]{
   background:#2563eb!important;border-color:#2563eb!important;color:#fff!important
 }
-body.books-page header.site-header .container nav a[aria-current]:not([href="/books.html"]){
   background:transparent!important;border:1px solid rgba(255,255,255,.22)!important;color:#fff!important
 }
-body.books-page header.site-header .owner-badge{
   position:absolute!important;right:16px!important;top:14px!important;display:inline-flex!important;align-items:center!important;gap:.5rem!important
 }
 @media (max-width:740px){
-  body.books-page header.site-header .container nav{min-height:64px!important;gap:12px!important}
-  body.books-page header.site-header .owner-badge{right:12px!important;top:12px!important}
-  body.books-page header.site-header nav a{padding:.32rem .75rem!important;font-size:.92rem!important}
 }
 
 /* home-nav-no-underline-20251102-194323 */
@@ -786,12 +776,10 @@ body.books-page .grid .card img {
 /* Generic overflow guard */
 body.books-page .grid, body.books-page .content { overflow:visible !important; }
 }
-body.books-page a.owner-badge {
   position:absolute !important; right:var(--badge-right,40px) !important; top:50% !important;
   transform:translateY(-50%) !important; display:inline-flex !important; gap:.5rem !important;
   visibility:visible !important; opacity:1 !important; pointer-events:auto !important;
 }
-body.books-page a.owner-badge img {
   width:56px !important; height:56px !important; border-radius:9999px !important; object-fit:cover !important;
   border:1px solid rgba(255,255,255,.25) !important;
 }
@@ -818,3 +806,14 @@ body.books-page .page-hero { margin: 0 auto 1.25rem !important; text-align:cente
 }
 #books-grid { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 2rem auto; }
 #books-grid .card { flex: 1 1 320px; max-width: 360px; text-align: center; }
+
+/* BOOKS-FINAL-GRID */
+body.books-page #books-grid{
+  display:grid; gap:24px; justify-content:center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 380px));
+  max-width:1200px; margin:24px auto;
+}
+body.books-page #books-grid .card video,
+body.books-page #books-grid .card img{
+  width:100%; height:auto; display:block; object-fit:contain;
+}
