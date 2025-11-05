@@ -817,3 +817,16 @@ body.books-page #books-grid .card video,
 body.books-page #books-grid .card img{
   width:100%; height:auto; display:block; object-fit:contain;
 }
+
+/* BOOKS-GRID-FINAL-LOCK */
+body.books-page #books-grid{
+  display:grid; gap:24px; justify-content:center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 420px));
+  max-width:1280px; margin:24px auto;
+}
+body.books-page #books-grid .card{ display:flex; flex-direction:column; align-items:center; }
+body.books-page #books-grid .card video,
+body.books-page #books-grid .card img{
+  width:100%; max-width:420px; height:auto; display:block; object-fit:contain;
+}
+body.books-page #books-grid .btnrow{ margin-top:12px; }

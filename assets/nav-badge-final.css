@@ -58,3 +58,8 @@ body.books-page #books-grid .card video,
 body.books-page #books-grid .card img{
   width:100%; height:auto; display:block; object-fit:contain;
 }
+
+/* NAV-FINAL-LOCK-HEIGHT (global, 2025-11-04) */
+header.site-header .container{ min-height:72px; padding-right:calc(var(--badge-size,56px) + var(--badge-right,40px) + 8px); }
+a.owner-badge{ position:absolute; right:var(--badge-right,40px); top:50%; transform:translateY(-50%); }
+a.owner-badge img{ width:56px; height:56px; border-radius:9999px; object-fit:cover; }
