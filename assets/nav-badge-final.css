@@ -30,3 +30,32 @@ header.site-header a.owner-badge img,
 header.site-header a.owner-badge .owner-avatar{
   display:block; width:40px; height:40px; border-radius:9999px; object-fit:cover; border:1px solid rgba(255,255,255,.25);
 }
+/* === NAV-FINAL-PIN (global) — do not duplicate === */
+:root{
+  --badge-size:56px;
+  --badge-right:40px;
+}
+header.site-header{ position:sticky; top:0; z-index:9999; }
+header.site-header, header.site-header *{ overflow:visible; }
+header.site-header .container{ padding-right:calc(var(--badge-size) + var(--badge-right) + 8px); }
+a.owner-badge{
+  position:absolute; right:var(--badge-right); top:50%;
+  transform:translateY(-50%); display:inline-flex; align-items:center; gap:.5rem;
+  visibility:visible; opacity:1; pointer-events:auto;
+}
+a.owner-badge img{
+  width:var(--badge-size); height:var(--badge-size); border-radius:9999px; object-fit:cover;
+  border:1px solid rgba(255,255,255,.25);
+}
+
+/* Books-only surface + grid (visual match to Home) */
+body.books-page{ background: var(--page-bg, #0d1117); }
+body.books-page #books-grid{
+  display:grid; gap:24px; justify-content:center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 380px));
+  max-width:1200px; margin:24px auto;
+}
+body.books-page #books-grid .card video,
+body.books-page #books-grid .card img{
+  width:100%; height:auto; display:block; object-fit:contain;
+}
