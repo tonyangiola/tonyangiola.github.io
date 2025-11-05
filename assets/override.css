@@ -585,3 +585,54 @@ header.site-header a.owner-badge img.owner-badge-img{
 .bio-page header.site-header,
 .newsletter-page header.site-header,
 .contact-page header.site-header { margin:0 !important; }
+/* NAV-CANON-LOCK-20251104 */
+:root{
+  --nav-header-h:72px;      /* min header height */
+  --badge-size:56px;        /* avatar circle (desktop) */
+  --badge-right:40px;       /* distance from right edge */
+  --nav-gap:2.5rem;
+}
+/* Always show full badge; never crop */
+html body header.site-header,
+html body header.site-header .container{ overflow:visible !important; }
+
+html body header.site-header{
+  position:relative !important;
+  min-height:var(--nav-header-h) !important;
+}
+html body header.site-header .container{
+  position:relative !important;
+  max-width:1100px !important;
+  margin:0 auto !important;
+  padding:12px 0 !important;
+  display:flex !important; align-items:center !important; justify-content:center !important; gap:0 !important;
+  padding-right:calc(var(--badge-size) + var(--badge-right) + 8px) !important; /* reserve space for badge */
+}
+html body header.site-header nav{
+  display:flex !important; align-items:center !important; gap:var(--nav-gap) !important;
+  margin:0 !important; padding:0 !important; line-height:1 !important;
+}
+html body header.site-header a.owner-badge{
+  position:absolute !important; right:var(--badge-right) !important; top:50% !important;
+  transform:translateY(-50%) !important;
+  width:var(--badge-size) !important; height:var(--badge-size) !important;
+  border-radius:9999px !important; display:block !important; z-index:5 !important;
+  overflow:visible !important;
+}
+/* Neutralize hostile global img rules for the badge only */
+html body header.site-header a.owner-badge img.owner-badge-img{
+  display:block !important; width:100% !important; height:100% !important;
+  object-fit:cover !important; border-radius:inherit !important;
+}
+
+/* Mobile tweak */
+@media (max-width:640px){
+  :root{ --badge-size:48px; --badge-right:16px; }
+}
+
+/* Nuke known per-page nudges */
+.home-page header.site-header,
+.books-page header.site-header,
+.bio-page header.site-header,
+.newsletter-page header.site-header,
+.contact-page header.site-header{ margin:0 !important; }
