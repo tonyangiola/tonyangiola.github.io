@@ -27,7 +27,7 @@
   html[data-page="bio"] .site-header a:hover {
     color:#ffffff !important;
   }
-  html[data-page="bio"] .site-header a.active {
+  html[data-page="bio"] .site-header a. {
     background:#2563eb !important;
     border:1px solid #2563eb !important;
     color:#ffffff !important;
@@ -41,9 +41,9 @@
   <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-111019' />
   <link rel="stylesheet" href=/assets/nav-consistency.css?v='20251103-111433' />
   
+  <!-- (disabled: unify navbar) -->
   <link rel="stylesheet" href="/assets/style.css">
-  <link rel="stylesheet" href="/assets/override.css">
-  <link rel="stylesheet" href="/assets/nav-badge-final.css"></head>
+  <link rel="stylesheet" href="/assets/override.css"></head>
 <style id="final-site-colors">
 
 
@@ -56,17 +56,18 @@
   </header>
 
 
-          <header class="site-header">
+              <header class="site-header">
   <div class="container">
     <nav>
-      <a href="/" class="active">HOME</a>
+      <a href="/" class="">HOME</a>
       <a href="/books.html">Books</a>
-      <a href="/bio.html">Bio</a>
+      <a href="/bio.html" class="active" aria-current="page">Bio</a>
       <a href="/newsletter.html">Newsletter</a>
       <a href="/contact.html">Contact</a>
     </nav>
   <a id="ownerBadge" class="owner-badge" href="/" aria-label="Home"><img class="owner-badge-img" src="/assets/images/avatar.jpg?v=20251031-214552" alt="Tony Angiola"/></a></div>
 </header>
+
 
 
 
