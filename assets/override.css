@@ -778,27 +778,6 @@ header.site-header, #site-header {
 main, .content, body > *:not(header) {
   z-index: 1 !important;
 }
-/* ===== BOOKS-FINAL-CLAMP (2025-11-04) ===== */
-body.books-page header.site-header img,
-body.books-page #site-header img,
-body.books-page .owner-badge img {
-  width:56px !important; height:56px !important; border-radius:50% !important; object-fit:cover !important;
-}
-
-/* Keep header above content */
-body.books-page main { position:relative !important; z-index:1 !important; }
-
-/* Page hero/photo (if present) — shrink & center */
-body.books-page .page-hero img,
-body.books-page .hero img,
-body.books-page .banner img,
-body.books-page .masthead img {
-  max-width:240px !important; width:100% !important; height:auto !important;
-  display:block !important; margin:0 auto 1rem !important; object-fit:cover !important; border-radius:50% !important;
-}
-
-/* Book cards media — scale nicely, stop overflow */
-body.books-page .grid .card video,
 body.books-page .grid .card img {
   width:100% !important; max-width:720px !important; height:auto !important;
   display:block !important; margin:0 auto !important; object-fit:contain !important;
@@ -806,27 +785,6 @@ body.books-page .grid .card img {
 
 /* Generic overflow guard */
 body.books-page .grid, body.books-page .content { overflow:visible !important; }
-/* === NAV-BADGE-BOOKS-FIX (2025-11-04) === */
-body.books-page header.site-header,
-body.books-page header.site-header *{ overflow:visible !important }
-body.books-page header.site-header .container{
-  padding-right:calc(var(--badge-size,56px) + var(--badge-right,40px) + 8px) !important;
-}
-body.books-page a.owner-badge{
-  position:absolute !important; right:var(--badge-right,40px) !important; top:50% !important;
-  transform:translateY(-50%) !important; display:inline-flex !important; align-items:center !important; gap:.5rem !important;
-  visibility:visible !important; opacity:1 !important; pointer-events:auto !important;
-}
-body.books-page a.owner-badge img{
-  width:56px !important; height:56px !important; border-radius:9999px !important; object-fit:cover !important;
-  border:1px solid rgba(255,255,255,.25) !important;
-}
-/* ===== BOOKS-FINAL-20251104 ===== */
-/* Badge identical to Home + never clips */
-body.books-page header.site-header, 
-body.books-page header.site-header * { overflow: visible !important; }
-body.books-page header.site-header .container {
-  padding-right: calc(var(--badge-size,56px) + var(--badge-right,40px) + 8px) !important;
 }
 body.books-page a.owner-badge {
   position:absolute !important; right:var(--badge-right,40px) !important; top:50% !important;
@@ -851,3 +809,12 @@ body.books-page #books-grid .card img {
 
 /* Optional: tighten page hero spacing */
 body.books-page .page-hero { margin: 0 auto 1.25rem !important; text-align:center !important; }
+/* BOOKS-GRID-FINAL: make book cards uniform without touching navbar */
+#books-grid .card img, #books-grid .card video {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  border-radius: 8px;
+}
+#books-grid { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 2rem auto; }
+#books-grid .card { flex: 1 1 320px; max-width: 360px; text-align: center; }
