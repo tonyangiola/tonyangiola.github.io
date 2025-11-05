@@ -726,3 +726,22 @@ header.site-header a.owner-badge img.owner-badge-img{
   :root{ --badge-size:48px; --badge-right:16px; }
   header.site-header .container{ padding-right:calc(var(--badge-size) + var(--badge-right) + 8px); }
 }
+/* NAV-CANON-ONE-20251104 */
+:root{ --nav-header-h:72px; --badge-size:56px; --badge-right:40px; }
+header.site-header{ position:relative !important; min-height:var(--nav-header-h) !important; }
+header.site-header, header.site-header .container{ overflow:visible !important; }
+header.site-header .container{
+  position:relative !important; max-width:1100px; margin:0 auto; padding:12px 0;
+  display:flex; align-items:center; justify-content:center;
+  padding-right:calc(var(--badge-size) + var(--badge-right) + 8px);
+}
+header.site-header a.owner-badge{
+  position:absolute !important; right:var(--badge-right)!important; top:50%!important;
+  transform:translateY(-50%)!important; width:var(--badge-size)!important; height:var(--badge-size)!important;
+  border-radius:9999px!important; overflow:hidden!important; display:block!important; z-index:10!important;
+}
+header.site-header a.owner-badge img{ width:100%!important; height:100%!important; object-fit:cover!important; border-radius:inherit!important; display:block!important; }
+@media (max-width:640px){
+  :root{ --badge-size:48px; --badge-right:16px; }
+  header.site-header .container{ padding-right:calc(var(--badge-size) + var(--badge-right) + 8px); }
+}
