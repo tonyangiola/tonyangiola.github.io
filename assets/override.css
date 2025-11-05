@@ -407,7 +407,7 @@ body.books-page header.site-header .container nav a[href="/books.html"]{
 body.books-page header.site-header .container nav a[aria-current]:not([href="/books.html"]){
   background:transparent!important;border:1px solid rgba(255,255,255,.22)!important;color:#fff!important
 }
-/* old badge rule removed */ body.books-page header.site-header .owner-badge{
+body.books-page header.site-header .owner-badge{
   position:absolute!important;right:16px!important;top:14px!important;display:inline-flex!important;align-items:center!important;gap:.5rem!important
 }
 @media (max-width:740px){
@@ -536,529 +536,52 @@ main .author-photo img,
 main .owner-badge{
   display: none !important;
 }
-/* === NAVBAR-LOCK-20251103 === */
-/* Keep header/nav height identical across pages so nothing "jumps" */
+/* BADGE-HARDLOCK-20251104 */
 :root{
-  --nav-height: 92px;
+  --nav-header-h: 72px;   /* header min height */
+  --badge-size:   56px;   /* avatar circle size (desktop) */
+  --badge-right:  40px;   /* distance from right edge */
+  --nav-gap:      2.5rem;
 }
-header{ min-height: var(--nav-height) !important; position: relative; }
-header nav{ min-height: calc(var(--nav-height) - 20px) !important; align-items: center !important; }
-header .container{ min-height: var(--nav-height) !important; }
-header .owner-badge{ top: 12px !important; right: 24px !important; }
-/* === NAV-ACTIVE-20251103 === */
-header nav a.active{
-  font-weight: 700 !important;
-  padding: 6px 12px !important;
-  border-radius: 999px !important;
-  background: rgba(59,130,246,.15) !important; /* subtle pill */
-  border: 1px solid rgba(59,130,246,.35) !important;
-}
-/* === BOOKS-BODY-CENTER-20251103 === */
-body.books-page main,
-body[data-books="1"] main {
-  max-width: 1100px !important;
-  margin: 0 auto !important;
-  padding: 2rem 1rem !important;
-  text-align: center !important;
-}
-/* === BOOKS-NAV-MATCH-HOME-20251103 === */
-/* Make sure header uses same flexbox style */
-body.books-page header.site-header,
-body[data-books="1"] header.site-header {
-  position: relative !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  min-height: var(--nav-height) !important;
-  background: var(--page-bg, #fff) !important;
-}
-
-/* Match the inner container to Home */
-body.books-page header .container,
-body[data-books="1"] header .container {
-  width: 100% !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+header.site-header{
   position: relative;
+  min-height: var(--nav-header-h);
+  overflow: visible !important;       /* never crop badge */
 }
-
-/* Center nav items horizontally */
-body.books-page header nav,
-body[data-books="1"] header nav {
-  display: flex !important;
-  gap: 2rem !important;
-  margin: 0 auto !important;
-  align-items: center !important;
-}
-
-/* Ensure badge is in same spot as Home */
-body.books-page header .owner-badge,
-body[data-books="1"] header .owner-badge {
-  position: absolute !important;
-  right: 24px !important;
-  top: 12px !important;
-  margin: 0 !important;
-}
-/* === BOOKS-FINAL-BADGE-FIX-20251103 === */
-body.books-page header .owner-badge,
-body[data-books="1"] header .owner-badge {
-  position: absolute !important;
-  top: 12px !important;
-  right: 24px !important;
-  margin: 0 !important;
-  line-height: 0 !important;
-}
-/* === BOOKS-NAV-LOCK-FINAL-20251103 === */
-body.books-page, body[data-books="1"]{
-  --nav-height: 92px;
-  --nav-gap: 2rem;
-  --nav-link-pad: 8px 12px;
-  --nav-link-fs: 18px;
-}
-body.books-page header.site-header,
-body[data-books="1"] header.site-header{
-  position: relative !important;
-  min-height: var(--nav-height) !important;
-}
-body.books-page header.site-header .container,
-body[data-books="1"] header.site-header .container{
-  width: 100% !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: relative !important;
-}
-body.books-page header.site-header nav,
-body[data-books="1"] header.site-header nav{
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: var(--nav-gap) !important;
-  min-height: calc(var(--nav-height) - 20px) !important;
-  margin: 0 auto !important;
-}
-body.books-page header.site-header nav a,
-body[data-books="1"] header.site-header nav a{
-  display: inline-flex !important;
-  align-items: center !important;
-  line-height: 1 !important;
-  padding: var(--nav-link-pad) !important;
-  font-size: var(--nav-link-fs) !important;
-  height: auto !important; /* pill height comes from padding, prevents jump */
-  white-space: nowrap !important; /* stop wrap-induced shift */
-}
-body.books-page header .owner-badge,
-body[data-books="1"] header .owner-badge{
-  position: absolute !important;
-  right: 24px !important;
-  top: 12px !important;
-  margin: 0 !important;
-  line-height: 0 !important;
-}
-
-/* === BOOKS-BODY-CENTER-FINAL-20251103 === */
-body.books-page main,
-body[data-books="1"] main{
-  max-width: 1100px !important;
-  margin: 0 auto !important;
-  padding: 2rem 1rem !important;
-  text-align: center !important;
-}
-
-/* === BOOKS-VIDEO-CENTER-SIZE-20251103 === */
-/* Center and cap embedded videos/iframes; make responsive without HTML changes */
-body.books-page main iframe,
-body[data-books="1"] main iframe,
-body.books-page main video,
-body[data-books="1"] main video,
-body.books-page main .video,
-body[data-books="1"] main .video,
-body.books-page main .youtube,
-body[data-books="1"] main .youtube,
-body.books-page main .vimeo,
-body[data-books="1"] main .vimeo{
-  display: block !important;
-  margin: 1rem auto !important;
-  width: min(100%, 960px) !important;
-  max-width: 960px !important;
-}
-body.books-page main iframe,
-body[data-books="1"] main iframe{
-  aspect-ratio: 16 / 9 !important;
-  height: auto !important;
-  border: 0 !important;
-}
-
-/* If any global img{width:100%} rule is forcing huge media, cap it on Books */
-body.books-page main img,
-body[data-books="1"] main img{
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  max-width: min(100%, 960px) !important;
-  height: auto !important;
-  float: none !important;
-}
-/* === BOOKS-NORMALIZE-20251103 === */
-body.books-page, body[data-books="1"]{
-  --nav-height: 92px; --nav-gap: 2rem; --nav-link-pad: 8px 12px; --nav-link-fs: 18px;
-}
-body.books-page header.site-header,
-body[data-books="1"] header.site-header{ min-height: var(--nav-height); }
-
-/* Center and size the video grid */
-body.books-page .video-grid,
-body[data-books="1"] .video-grid{
-  max-width: 1100px; margin: 0 auto; padding: 1rem;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
-  gap: 1.25rem; align-items: start;
-}
-
-/* Keep cards normal, not huge */
-body.books-page .video-card,
-body[data-books="1"] .video-card{
-  border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,.12);
-}
-
-/* Force embeds to clean 16:9, full width */
-body.books-page .video-card iframe,
-body.books-page .video-card video,
-body[data-books="1"] .video-card iframe,
-body[data-books="1"] .video-card video{
-  width: 100% !important; height: auto !important; aspect-ratio: 16 / 9; display: block;
-}
-
-/* Neutralize stray inline width/height on embeds (Books only) */
-body.books-page .video-card *[width],
-body.books-page .video-card *[height],
-body[data-books="1"] .video-card *[width],
-body[data-books="1"] .video-card *[height]{ width: auto !important; height: auto !important; }
-/* === BOOKS-NAV-INACTIVE-CLEAN-20251103 === */
-/* On Books page, make inactive links look like Home: no pill, no border, no extra padding */
-body.books-page header nav a:not(.active),
-body[data-books="1"] header nav a:not(.active){
-  padding: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  font-weight: 600 !important;     /* similar to Home */
-  text-transform: none !important; /* avoid accidental ALL CAPS */
-  line-height: 1 !important;
-  white-space: nowrap !important;
-}
-
-/* Keep layout identical to Home: center nav, consistent gap */
-body.books-page header.site-header nav,
-body[data-books="1"] header.site-header nav{
-  justify-content: center !important;
-  gap: 2rem !important;            /* tweak if you want tighter/looser */
-}
-
-/* Ensure only the active link gets the pill (we already added this globally) */
-/* === BOOKS-NAV-FORCE-HOME-LOOK-20251103 === */
-body.books-page header.site-header nav a:not(.active),
-body[data-books="1"] header.site-header nav a:not(.active){
-  padding: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  font-weight: 600 !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-}
-
-/* Keep only .active as pill (same pill we already use sitewide) */
-body.books-page header.site-header nav a.active,
-body[data-books="1"] header.site-header nav a.active{
-  padding: 6px 12px !important;
-  border-radius: 999px !important;
-}
-
-/* Center videos/iframes and cap width */
-body.books-page main iframe,
-body.books-page main video,
-body[data-books="1"] main iframe,
-body[data-books="1"] main video{
-  display:block !important; margin:1rem auto !important;
-  width:min(100%, 960px) !important; max-width:960px !important;
-  aspect-ratio:16/9 !important; height:auto !important; border:0 !important;
-}
-/* === BOOKS-NAV-HARD-MATCH-20251103 === */
-/* Inactive links: ABSOLUTELY no pill/border/pad on Books */
-body.books-page header.site-header nav a:not(.active),
-body[data-books="1"] header.site-header nav a:not(.active){
-  all: unset !important;                /* wipe inline/page locks */
-  display: inline-block !important;
-  font-weight: 600 !important;          /* matches Home weight */
-  cursor: pointer !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  margin: 0 !important;
-}
-
-/* Active link: keep the Home pill */
-body.books-page header.site-header nav a.active,
-body[data-books="1"] header.site-header nav a.active{
-  all: unset !important;
-  display: inline-block !important;
-  font-weight: 700 !important;
-  padding: 6px 12px !important;
-  border-radius: 999px !important;
-  background: rgba(59,130,246,.15) !important;
-  border: 1px solid rgba(59,130,246,.35) !important;
-  white-space: nowrap !important;
-}
-
-/* Keep layout identical */
-body.books-page header.site-header nav,
-body[data-books="1"] header.site-header nav{
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 2rem !important;
-  min-height: 72px !important;
-}
-/* === BOOKS-NAV-HARD-MATCH-20251103B (post-fix) === */
-/* Scope strictly to Books page; avoid 'all: unset' side-effects */
-
-/* Inactive links — look like Home (no pill) */
-body.books-page header.site-header nav a:not(.active),
-body[data-books="1"] header.site-header nav a:not(.active){
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  text-decoration: none !important;
-  display: inline-block !important;
-  font-weight: 600 !important;
-  line-height: 1.25 !important;
-  color: inherit !important;
-  white-space: nowrap !important;
-  cursor: pointer !important;
-}
-
-/* Active link — Home-style pill */
-body.books-page header.site-header nav a.active,
-body[data-books="1"] header.site-header nav a.active{
-  display: inline-block !important;
-  font-weight: 700 !important;
-  padding: 6px 12px !important;
-  border-radius: 999px !important;
-  background: rgba(59,130,246,.15) !important;
-  border: 1px solid rgba(59,130,246,.35) !important;
-  white-space: nowrap !important;
-}
-
-/* Keep Books nav layout identical to Home */
-body.books-page header.site-header nav,
-body[data-books="1"] header.site-header nav{
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 2rem !important;
-  min-height: 72px !important;
-}
-
-/* VERSION: 20251103-BOOKS-NAV-HARD-MATCH-B */
-/* === BOOKS-VIS-RESET-20251103 === */
-body.books-page main,
-body[data-books="1"] main,
-body.books-page .container,
-body[data-books="1"] .container,
-body.books-page #books-grid .card,
-body[data-books="1"] #books-grid .card{
-  opacity: 1 !important;
-  filter: none !important;
-}
-
-body.books-page h1, body.books-page h2, body.books-page p,
-body[data-books="1"] h1, body[data-books="1"] h2, body[data-books="1"] p{
-  color: #111827 !important; /* near-black for contrast */
-}
-/* === BOOKS-UNFADE-20251103B (Books page only) === */
-body.books-page #books-grid .card,
-body[data-books="1"] #books-grid .card{
-  opacity: 1 !important;
-  filter: none !important;
-}
-
-body.books-page #books-grid .card * ,
-body[data-books="1"] #books-grid .card * {
-  opacity: 1 !important;
-  filter: none !important;
-  color: #111827 !important; /* near-black for text */
-}
-
-/* Ensure media actually renders */
-body.books-page iframe,
-body.books-page video,
-body.books-page .card iframe,
-body.books-page .card video,
-body.books-page .card img {
-  display: block !important;
-  visibility: visible !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-  pointer-events: auto !important;
-}
-
-/* Kill any overlay veils */
-body.books-page #books-grid .card::before,
-body.books-page #books-grid .card::after {
-  content: none !important;
-  display: none !important;
-  opacity: 0 !important;
-}
-/* BOOKS-UNFADE-EXTRA */
-body.books-page main,
-body.books-page #books-grid{
-  opacity: 1 !important;
-  filter: none !important;
-}
-/* BOOKS-EMBED-16x9 */
-body.books-page .embed16x9{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px}
-body.books-page .embed16x9 iframe,
-body.books-page .embed16x9 video{position:absolute;inset:0;width:100%!important;height:100%!important;display:block!important;visibility:visible!important}
-
-/* === BOOKS FINAL PATCH — 2025-11-03 === */
-body.books-page { background:#0f172a; } /* dark page bg like Home */
-body.books-page .container { max-width:1100px; margin:0 auto; padding:0 1rem; }
-body.books-page header.site-header{ min-height:66px; }
-body.books-page .page-hero{ margin:1.25rem 0 1rem; text-align:center; }
-body.books-page .video-hero video{ width:100%; max-height:560px; border-radius:16px; display:block; }
-body.books-page .grid{ display:grid; gap:1.25rem; }
-body.books-page .grid-3{ grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
-body.books-page .card video, 
-body.books-page .card img{ width:100%; height:auto; display:block; border-radius:12px; }
-body.books-page .btnrow{ text-align:center; margin:.65rem 0 0; }
-/* === /BOOKS FINAL PATCH === */
-
-/* BOOKS-BG-HARDEN-20251103 */
-body.books-page { background:#0f172a !important; }
-
-/* BOOKS-TALL-CARDS-20251103 */
-body.books-page{ background:#0f172a !important; }
-body.books-page .container{ max-width:1100px; margin:0 auto; padding:0 1rem; }
-body.books-page .page-hero{ text-align:center; margin:1.25rem 0 1rem; }
-body.books-page #books-cards .card{ display:flex; flex-direction:column; align-items:center; }
-
-/* Make Socorro & Gremlins (and Cosmic for alignment) taller inside cards */
-body.books-page #books-cards .card > video,
-body.books-page #books-cards .card > img{
-  width:100% !important;
-  max-width:380px !important;
-  height:520px !important;     /* TALLER CARDS */
-  border-radius:12px;
-  object-fit:cover;
-}
-@media (max-width:780px){
-  body.books-page #books-cards .card > video,
-  body.books-page #books-cards .card > img{
-    max-width:none !important;
-    height:360px !important;
-  }
-}
-@media (max-width:520px){
-  body.books-page #books-cards .card > video,
-  body.books-page #books-cards .card > img{
-    height:300px !important;
-  }
-}
-/* NAV-FIX-IDENTICAL-20251104 */
-:root{
-  --nav-header-h:72px;
-  --nav-badge-size:56px;
-  --nav-badge-right:40px;
-  --nav-gap:2.5rem;
-}
-header.site-header{position:relative; min-height:var(--nav-header-h);}
 header.site-header .container{
-  position:relative; max-width:1100px; margin:0 auto;
-  padding:12px 0;
-  display:flex; align-items:center; justify-content:center;
-  padding-right:calc(var(--nav-badge-size) + var(--nav-badge-right) + 8px);
+  position: relative;
+  max-width: 1100px; margin: 0 auto;
+  padding: 12px 0;
+  display: flex; align-items: center; justify-content: center; gap: 0;
+  padding-right: calc(var(--badge-size) + var(--badge-right) + 8px); /* keep nav centered even before img loads */
+  overflow: visible !important;       /* allow absolute badge to render fully */
 }
-header.site-header nav{display:flex; align-items:center; gap:var(--nav-gap); margin:0!important; padding:0!important; line-height:1;}
-header.site-header nav a{font-weight:600; text-decoration:none; display:inline-flex; align-items:center; height:40px;}
-header.site-header a.owner-badge{
-  position:absolute!important; right:var(--nav-badge-right)!important; top:50%!important;
-  transform:translateY(-50%)!important; width:var(--nav-badge-size)!important; height:var(--nav-badge-size)!important;
-  border-radius:999px; overflow:hidden;
-}
-/* Neutralize any page nudges */
-.books-page header.site-header,
-.bio-page header.site-header,
-.newsletter-page header.site-header,
-.contact-page header.site-header,
-.home-page header.site-header { margin:0!important; }
-header.site-header nav a.active{ line-height:40px!important; }
-/* END NAV-FIX-IDENTICAL-20251104 */
-/* BOOKS CONTENT SPACING FIX - 20251104 */
-.books-page main,
-.books-page {
-  padding-top: 40px !important;
-}
-/* NAV-LOCK-BOOKS-20251104 */
-:root{ --nav-header-h:72px; --nav-badge-size:56px; --nav-badge-right:40px; --nav-gap:2.5rem; }
-header.site-header{ position:relative; min-height:var(--nav-header-h); background:transparent !important; border:none !important; box-shadow:none !important; }
-header.site-header .container{
-  position:relative; max-width:1100px; margin:0 auto !important;
-  padding:12px 0 !important; padding-left:0 !important; padding-right:calc(var(--nav-badge-size) + var(--nav-badge-right) + 8px) !important;
-  display:flex !important; align-items:center !important; justify-content:center !important; gap:0 !important; background:transparent !important;
-}
-header.site-header nav{ display:flex !important; align-items:center !important; gap:var(--nav-gap) !important; margin:0 !important; padding:0 !important; line-height:1 !important; background:transparent !important; }
-header.site-header nav a{ display:inline-flex !important; align-items:center !important; height:40px !important; font-weight:600 !important; text-decoration:none !important; }
-header.site-header a.owner-badge{
-  position:absolute !important; right:var(--nav-badge-right) !important; top:50% !important; transform:translateY(-50%) !important;
-  width:var(--nav-badge-size) !important; height:var(--nav-badge-size) !important; border-radius:999px !important; overflow:hidden !important;
-}
-/* Prevent any global .container rules from touching header */
-header.site-header .container *{ background:transparent !important; }
-/* END NAV-LOCK-BOOKS-20251104 */
-/* BADGE-FIX-ALLPAGES-20251104 */
-:root{
-  --nav-header-h: 72px;       /* header min height */
-  --badge-size:   56px;       /* avatar circle size (desktop) */
-  --badge-right:  40px;       /* distance from right edge */
-}
-header.site-header{ position:relative; min-height:var(--nav-header-h); }
-header.site-header .container{
-  position:relative;
-  max-width:1100px; margin:0 auto;
-  padding:12px 0;
-  display:flex; align-items:center; justify-content:center;
-  /* reserve space so center stays true even before image paints */
-  padding-right: calc(var(--badge-size) + var(--badge-right) + 8px);
+header.site-header nav{
+  display: flex; align-items: center; gap: var(--nav-gap);
+  margin: 0 !important; padding: 0 !important; line-height: 1;
 }
 header.site-header a.owner-badge{
-  position:absolute; right:var(--badge-right); top:50%;
-  transform:translateY(-50%);
-  width:var(--badge-size); height:var(--badge-size);
-  border-radius:999px; overflow:hidden; display:block;
+  position: absolute !important;
+  right: var(--badge-right) !important;
+  top: 50% !important; transform: translateY(-50%) !important;
+  width: var(--badge-size) !important; height: var(--badge-size) !important;
+  border-radius: 9999px !important; display: block !important;
+  overflow: visible !important; z-index: 5 !important;
 }
 header.site-header a.owner-badge img.owner-badge-img{
-  display:block; width:100%; height:100%; object-fit:cover; border-radius:inherit;
+  display: block !important;
+  width: 100% !important; height: 100% !important;
+  object-fit: cover !important; border-radius: inherit !important;
 }
-/* Mobile tweak */
+
+/* Mobile */
 @media (max-width: 640px){
-  :root{ --badge-size:48px; --badge-right:16px; }
+  :root{ --badge-size: 48px; --badge-right: 16px; }
 }
-/* Nuke any page nudges that previously fought us */
+
+/* Nuke stray page nudges */
 .home-page header.site-header,
 .books-page header.site-header,
 .bio-page header.site-header,
 .newsletter-page header.site-header,
 .contact-page header.site-header { margin:0 !important; }
-.home-page header.site-header .container,
-.books-page header.site-header .container,
-.bio-page header.site-header .container,
-.newsletter-page header.site-header .container,
-.contact-page header.site-header .container { padding-left:0 !important; }
